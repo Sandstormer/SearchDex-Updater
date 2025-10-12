@@ -1078,11 +1078,11 @@ attributes = ['row','form','parno','dex','img','sp','desc','t1','t2','a1','a2','
              #  0     1       2      3     4    5     6     7    8    9    10   11   12    
               'bst','hp','atk','def','spa','spd','spe','catchrate','exp','mpc','fe','e1','e2','e3','e4','movedict',
              #  13   14    15    16    17    18    19       20       21    22   23   24   25   26   27      28
-              'co','et','sh','ge','startable','startRow','startInd','specInd','specKey','fa',
-             # 29   30   31   32      33          34         35         36        37     38
+              'co','et','sh','ge','st','startRow','startInd','specInd','specKey','fa',
+             # 29   30   31   32   33      34         35         36        37     38
               'fs','biomes','fx','unobtainable','nv','formClass','ex']
              # 39     40     41        42        43      44       45
-omitAttr = [0, 1, 2, 5, 6, 20, 21, 22, 28, 33, 34, 35, 36, 37, 40, 42, 44] # Some attributes are not written to the database
+omitAttr = [0, 1, 2, 5, 6, 20, 21, 22, 28, 34, 35, 36, 37, 40, 42, 44] # Some attributes are not written to the database
 keyText = {7:'type', 8:'type', 9:'ability', 10:'ability', 11:'ability', 12:'ability', 24:'move', 25:'move', 26:'move', 27:'move'}
 jsdict = ['// pokedex_data.js\nconst items=[']
 
