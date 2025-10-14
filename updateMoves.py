@@ -372,12 +372,12 @@ for line in moveData:
                             move2D[-1][2].append([effChance,index+(not isSelf)*7,amount])
             elif 'recklessMove' in line: # reckless and recoil moves
                 move2D[-1][3].append(32)
-            elif 'RecoilAttr, true, 0.5' in line:
+            elif 'RecoilAttr, true, 0.5' in line or 'HalfSacrificialAttr' in line:
                 move2D[-1][3].append(9)
-            elif 'HalfSacrificialAttr' in line:
+            elif 'CurseAttr' in line:
                 move2D[-1][3].append(8)
             # elif 'RecoilAttr, true, 0.25' in line: # struggle
-            #     move2D[-1][3].append(35)
+            #     move2D[-1][3].append()
             elif 'RecoilAttr, false, 0.33' in line:
                 move2D[-1][3].append(11)
             elif 'RecoilAttr, false, 0.5' in line:
@@ -423,7 +423,7 @@ for line in moveData:
             elif 'LeechSeedAttr' in line: # leech seed
                 move2D[-1][3].append(24)
             # elif 'StealHeldItemChanceAttr' in line: # thief, covet
-            #     move2D[-1][3].append(14)
+            #     move2D[-1][3].append()
             elif 'TrappedTag' in line: # no retreat
                 move2D[-1][3].append(54)
             elif 'TRAPPED' in line: # mean look
@@ -458,9 +458,9 @@ for line in moveData:
                     input('Unknown boosting move',line)
             # Unused tags below this line ================================
             # elif 'ProtectAttr' in line: # show different protect moves ????
-            #     move2D[-1][3].append(15)
+            #     move2D[-1][3].append()
             # elif 'failIfLastCondition' in line:
-            #     move2D[-1][3].append(15)
+            #     move2D[-1][3].append()
             elif 'crashDamageFunc' in line:
                 e = 'nothing'
             elif 'HealAttr' in line:
