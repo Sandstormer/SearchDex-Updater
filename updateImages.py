@@ -59,46 +59,6 @@ def hex_to_rgb(hex_code):
     hex_code = hex_code[:6]
     return tuple(int(hex_code[i:i+2], 16) for i in (0, 2, 4))
 
-# Function to do palette swap
-def palette_swap(image, json_path, tier):
-    if not os.path.isfile(json_path):
-        return None
-    with open(json_path, "r") as f:
-        data = json.load(f)
-    tier_key = str(tier - 1)
-    if tier_key not in data:
-        return None
-    hexDict = data[tier_key]
-    rgb2rgbaDict = {hex_to_rgb(key): hex_to_rgba(hexDict[key]) for key in hexDict}
-    # Check for similar color keys
-    if warnSimilarColors or warnPureBlackJson:
-        for index, color in enumerate(rgb2rgbaDict.keys()):
-            if warnPureBlackJson and color == (0,0,0):
-                print("Pure black found in:",json_path.split('/')[-1])
-            if warnSimilarColors:
-                for index2, color2 in enumerate(rgb2rgbaDict.keys()):
-                    if color != color2 and index2 > index:
-                        diff = [abs(color[i] - color2[i]) <= warnSimilarColors for i in [0,1,2]]
-                        if all(diff):
-                            print('Similar colors:',color,color2,'\n',json_path.split('/')[-1])
-    colorFound = {key: 0 for key in rgb2rgbaDict}
-    image = image.convert("RGBA") # Ensure the image is in RGBA mode
-    # Convert to NumPy array
-    data = np.array(image)  # shape: (height, width, 4)
-    # Mask for non-transparent pixels (alpha != 0)
-    alpha_mask = data[:, :, 3] != 0
-    # Iterate only over keys in rgb2rgbaDict
-    for rgb, new_rgba in rgb2rgbaDict.items():
-        # Create a mask for matching RGB where alpha != 0
-        match = np.all(data[:, :, :3] == rgb, axis=-1) & alpha_mask
-        colorFound[rgb] = match.any() # Note that the color was found
-        data[match] = new_rgba # Assign new RGBA
-        alpha_mask[match] = False # Prevent a swapped color from swapping again
-    image = Image.fromarray(data, mode="RGBA") # Convert back to PIL image
-    if len(colorFound) - sum(colorFound.values()) >= warnMissingColors and warnMissingColors:
-        print('Missing',len(colorFound) - sum(colorFound.values()),'colors from',json_path.split('/')[-1])
-    return image
-
 def getBestFrame(thisImgPath, altJsonPath=''):
     # This looks at all the frames in the animation sheet, and crops to the most common one
     thisImage = Image.open(f'{thisImgPath}.png')
@@ -128,8 +88,8 @@ def getBestFrame(thisImgPath, altJsonPath=''):
             x,y,w,h = indFrames[i]['x'], indFrames[i]['y'], indFrames[i]['w'], indFrames[i]['h']
             return thisImage.crop((x, y, x+w, y+h))
 
-# Function to do palette swap NEWWWWWWWWWWWWWWWWWWWWWWWWWWW
-def new_palette_swap(image, json_path, tier):
+# Function to do palette swap
+def palette_swap(image, json_path, tier):
     if not os.path.isfile(json_path):
         return None
     with open(json_path, "r") as f:
@@ -139,6 +99,7 @@ def new_palette_swap(image, json_path, tier):
         return None
     hexDict = data[tier_key]
     rgb2rgbDict = {hex_to_rgb(key): hex_to_rgb(hexDict[key]) for key in hexDict}
+
     # Check for similar color keys
     if warnSimilarColors or warnPureBlackJson:
         for index, color in enumerate(rgb2rgbDict.keys()):
@@ -152,13 +113,14 @@ def new_palette_swap(image, json_path, tier):
                             print('Similar colors:',color,color2,'\n',json_path.split('/')[-1])
 
     # Access the palette (returns a flat list of RGB triples)
-    palette = image.getpalette()  # length is 256*3 internally
+    palette = image.getpalette() # length is 256*3 internally
 
     # Modify the first few colors (used colors)
     for i in range(0,len(palette),3):
-        key = (palette[i],palette[i+1],palette[i+2])
+        # key = (palette[i],palette[i+1],palette[i+2])
+        key = tuple(palette[i:i+3])
         if key in rgb2rgbDict:
-            palette[i],palette[i+1],palette[i+2] = rgb2rgbDict[key]
+            palette[i:i+3] = rgb2rgbDict[key]
 
     # Apply the modified palette back
     image.putpalette(palette)
@@ -195,15 +157,14 @@ def convert_to_exact_palette(img: Image.Image) -> Image.Image:
 
     # Collect unique colors
     unique_colors = np.unique(pixels, axis=0)
-
     if len(unique_colors) > 256:
         raise ValueError(f"Too many colors ({len(unique_colors)}). Cannot fit into P-mode (max 256).")
+    for col in unique_colors:
+        if col[3] == 0 and any(x != 0 for x in col):
+            print("Fully transparent color found other than (0,0,0)")
 
     # Build palette (R,G,B only)
-    palette = []
-    for rgba in unique_colors:
-        r, g, b, a = rgba
-        palette.extend([r, g, b])
+    palette = [x for row in unique_colors for x in row[:3]]
 
     # Pad palette to 256 entries (768 values) (doesn't affect file size)
     while len(palette) < 768:
@@ -244,22 +205,19 @@ def processImage(spriteIndex, shinyIndex, femIndex):
     defPath = f'{defPath}/{spriteIndex}'
     savePath = f'{dest_dir}/{simpleName}'
     sliced_img = None
-    if shinyIndex and os.path.isfile(f'{varPath}_{shinyIndex}.png'): 
-        # Check for custom shiny first
+
+    if shinyIndex and os.path.isfile(f'{varPath}_{shinyIndex}.png'): # Check for custom shiny first
         sliced_img = getBestFrame(f'{varPath}_{shinyIndex}',defPath)
-    elif shinyIndex and os.path.isfile(f'{varPath}.json'): 
-        # Check for palette swap (sometimes even T1)
+    elif shinyIndex and os.path.isfile(f'{varPath}.json'): # Check for palette swap (sometimes even T1)
         sliced_img = getBestFrame(defPath)
         if sliced_img.mode != 'P':
             sliced_img = convert_to_exact_palette(sliced_img)
-        sliced_img = new_palette_swap(sliced_img, f'{varPath}.json', shinyIndex)
-    if not sliced_img and os.path.isfile(f'{thisPath}.png'):
-        # If not custom, use official shiny
+        sliced_img = palette_swap(sliced_img, f'{varPath}.json', shinyIndex)
+    if not sliced_img and os.path.isfile(f'{thisPath}.png'): # If not custom, use official shiny
         sliced_img = getBestFrame(thisPath,defPath)
-    if sliced_img:
-        # Add partner heart to pika and eevee
-        if 'partner' in spriteIndex: 
-            sliced_img = addPartnerHeart(sliced_img)
+    if sliced_img: # If there is an image available
+        if 'partner' in spriteIndex:
+            sliced_img = addPartnerHeart(sliced_img) # Add partner heart to pika and eevee
 
         # Crop to a bounding box of solid pixels
         pixels = np.array(sliced_img)
@@ -271,29 +229,37 @@ def processImage(spriteIndex, shinyIndex, femIndex):
 
         # Strip the color profile to save space (it is useless for pixel art)
         sliced_img.info.pop('icc_profile', None)
-
+        
+        # Convert to palette mode, with exact colors
         if sliced_img.mode != 'P':
             sliced_img = convert_to_exact_palette(sliced_img)
 
         # Check for differences with the previous image
-        prev_img = Image.open(f"{savePath}.png")
-        arr_new = np.array(sliced_img.convert("RGBA"))
-        arr_old = np.array(prev_img.convert("RGBA"))
-        if arr_new.shape != arr_old.shape:
-            print('Size changed in',simpleName)
-        else:
-            changed_mask = np.any(arr_new[:, :, :3] != arr_old[:, :, :3], axis=-1)  # Compare RGB only
-            alpha_mask = arr_new[:, :, 3] > 0  # Only count pixels that are not fully transparent
-            pixelsChanged = np.sum(changed_mask & alpha_mask)
-            if pixelsChanged: print(pixelsChanged,'pixels changed in',simpleName)
+        if os.path.isfile(f"{savePath}.png"):
+            prev_img = Image.open(f"{savePath}.png")
+            arr_new = np.array(sliced_img.convert("RGBA"))
+            arr_old = np.array(prev_img.convert("RGBA"))
+            if arr_new.shape != arr_old.shape:
+                print('Updated image size changed in',simpleName)
+            else:
+                changed_mask = np.any(arr_new[:, :, :3] != arr_old[:, :, :3], axis=-1)  # Compare RGB only
+                alpha_mask = arr_new[:, :, 3] > 0  # Only count pixels that are not fully transparent
+                pixelsChanged = np.sum(changed_mask & alpha_mask)
+                if pixelsChanged: print(pixelsChanged,'pixels changed in',simpleName)
 
-        # Save the image to the website folder
-        sliced_img.save(f"{savePath}.png", optimize=True, compress_level=9)
-        # sliced_img.save(f"{savePath}.png")
+        sliced_img.save(f"{savePath}.png", optimize=True, compress_level=9) # Save the image to the website folder
         
-        global biggestH, biggestW # Update the largest dimensions
+        global biggestH, biggestW, thisH, thisW 
+        # Update the largest dimensions among all images
         biggestH = max(biggestH, sliced_img.height)
         biggestW = max(biggestW, sliced_img.width)
+        # Check that the size is the same between variants
+        # It's okay if this shows for a few images, due to animation differences
+        if thisH == 0 and thisW == 0:
+            thisH = sliced_img.height
+            thisW = sliced_img.width
+        elif sliced_img.height != thisH or sliced_img.width != thisW:
+            print(f'Different variant sizes for {simpleName}')
     else: # There is no image
         if shinyIndex < 2 and femIndex == 0: # If it should exist, show an error
             print('Could not find any tier',shinyIndex,'shiny for',spriteIndex)
@@ -341,10 +307,15 @@ else:
     print('\nProcessing all images...')
 
 # Loop through each sprite in the list
-for thisSpriteName in spriteNames:
-    for thisShinyIndex in [0,1,2,3]:
-        for thisFemIndex in [0,1]:
+progressCount = 0
+for index, thisSpriteName in enumerate(spriteNames):
+    for thisFemIndex in [0,1]:
+        thisW, thisH = 0, 0
+        for thisShinyIndex in [0,1,2,3]:
             processImage(thisSpriteName, thisShinyIndex, thisFemIndex)
+    if index/(len(spriteNames)-1) > (progressCount+1)*0.05:
+        progressCount = int(index/(len(spriteNames)-1)*20)
+        print(f'{progressCount*5}% complete...')
 
 if overrideSpriteList: 
     print(f'\nFinished processing {len(overrideSpriteList)} images')
