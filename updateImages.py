@@ -104,23 +104,34 @@ def palette_swap(image, json_path, tier):
     if warnSimilarColors or warnPureBlackJson:
         for index, color in enumerate(rgb2rgbDict.keys()):
             if warnPureBlackJson and color == (0,0,0):
-                print("Pure black found in:",json_path.split('/')[-1])
+                print("Pure black found in:", json_path.split('/')[-1])
             if warnSimilarColors:
                 for index2, color2 in enumerate(rgb2rgbDict.keys()):
                     if color != color2 and index2 > index:
                         diff = [abs(color[i] - color2[i]) <= warnSimilarColors for i in [0,1,2]]
                         if all(diff):
-                            print('Similar colors:',color,color2,'\n',json_path.split('/')[-1])
+                            print('Similar colors:', color, color2, 'in', json_path.split('/')[-1])
 
     # Access the palette (returns a flat list of RGB triples)
     palette = image.getpalette() # length is 256*3 internally
 
     # Modify the first few colors (used colors)
+    usedColors = {}
     for i in range(0,len(palette),3):
-        # key = (palette[i],palette[i+1],palette[i+2])
         key = tuple(palette[i:i+3])
         if key in rgb2rgbDict:
             palette[i:i+3] = rgb2rgbDict[key]
+            usedColors[key] = True
+    
+    # Check for colors in the JSON that are not in the image
+    if warnMissingColors:
+        missingColorReport = []
+        for key in rgb2rgbDict.keys():
+            if key not in usedColors:
+                missingColorReport.append(f"Missing color: {key} in {json_path.split('/')[-1]}")
+        if len(missingColorReport) >= warnMissingColors:
+            for line in missingColorReport:
+                print(line)
 
     # Apply the modified palette back
     image.putpalette(palette)
