@@ -12,6 +12,7 @@ def format_for_attr(arg): # Remove spaces
     return arg.replace(' ','').lower() 
 
 import re, json
+from datetime import date
 # Open and read the files *******************************
 with open("local_files/my_json/filterToFID.json", "r") as f:
     filterToFID = json.load(f)
@@ -567,7 +568,13 @@ input('Continue to writing website database?')
 
 # Load the numeric data from the main script
 typeColors = ["#ADBD21","#735A4A","#7B63E7","#FFC631","#EF70EF","#A55239","#F75231","#9CADF7","#6363B5","#7BCE52","#AE7A3B","#5ACEE7","#ADA594","#9141CB","#EF4179","#BDA55A","#81A6BE","#399CFF"]
-lines = ['const typeColors = ['] # Type colors
+lines = []
+with open("game_files/live/package.json", "r") as fp:
+    packageInfo = json.load(fp)
+    lines.append(f'const gameVersion = "{packageInfo["version"]}";') # Type colors
+todayDate = date.today().strftime("%Y-%m-%d")
+lines.append(f'const latestDate = "{todayDate}";')
+lines.append('const typeColors = [') # Type colors
 for color in typeColors:
     lines.append(f"'{color}',")
 lines.append('];\nconst fidThreshold = [') # fid category thresholds
@@ -622,13 +629,12 @@ for fidLine in orderedData:
 
     # Write tags =======
     text = f'{text}['
-    # Contact move tag is written to my data is true
-    # In the game data, it is only described for special contact moves, or physical moves that aren't contact
     if len(fidLine) > 4: # For moves
+        # Contact move tag is written to my data is true
+        # In the game data, it is only described for special contact moves, or physical moves that aren't contact
         if 201 in fidLine[3] or (fidLine[5] == 0 and (200 not in fidLine[3])):
             text = f'{text}60,'
-    # All other tags
-    for tag in fidLine[3]:
+    for tag in fidLine[3]: # All other tags, for moves and abilities
         if tag < 200: # Don't add internal tags (contact, etc.)
             text = f'{text}{tag},'
     text = f'{text}],'
@@ -642,19 +648,8 @@ for fidLine in orderedData:
     text = re.sub(',]',']',text) # Remove unnecessary commas
     lines.append(text)
 
-    # elif len(fidLine) == 4: # For abilities
-    #     text = '[['
-    #     # Write procs =======
-    #     for procLine in fidLine[2]:
-    #         text = f'{text}[{procLine[0]},{procLine[1]},{procLine[2]}],'
-    #     text = f'{text}],['
-    #     # Write tags =======
-    #     for tag in fidLine[3]:
-    #         text = f'{text}{tag},'
-    #     text = f'{text}]],'
-    #     text = re.sub(',]',']',text)
-    #     lines.append(text)
 lines.append('];')
+
 with open("website/filters_global.js", "w") as file:
     file.writelines(f"{line}\n" for line in lines)
 

@@ -259,25 +259,26 @@ print('Finished reading all moves')
 combined_data = [] 
 for i in range(len(output_data)):
     combined_data.append([])
-    # I always use output_data[i][2] to tell if an entry is a form
+    # I always use [2] (parent row) to tell if an entry is a form (it will be blank for base species)
     if output_data[i][2] == '': # For base species, not forms
         par = i
-        combined_data[-1].extend(output_data[i][0:6])
-        combined_data[-1].append(output_data[i][10])
-        combined_data[-1].append(output_data[i][11])
+        # row number [0], form key [1], parent row number [2], dex number [3], image filename [4], display name [5]
+        combined_data[-1].extend(output_data[i][0:6]) 
+        combined_data[-1].append(output_data[i][10]) # Species description (unused) [6]
+        combined_data[-1].append(output_data[i][11]) # Type 1 [7]
         if output_data[i][12] == 'Null':
             combined_data[-1].append('')
         else:
-            combined_data[-1].append(output_data[i][12])
-        combined_data[-1].append(output_data[i][15]) # Ability 1
+            combined_data[-1].append(output_data[i][12]) # Type 2 [8]
+        combined_data[-1].append(output_data[i][15]) # Ability 1 [9]
         if output_data[i][16] == output_data[i][15] or output_data[i][16] == 'None':
             combined_data[-1].append('')
         else:
-            combined_data[-1].append(output_data[i][16]) # Ability 2
+            combined_data[-1].append(output_data[i][16]) # Ability 2 [10]
         if output_data[i][17] == output_data[i][15] or output_data[i][17] == 'None':
             combined_data[-1].append('')
         else:
-            combined_data[-1].append(output_data[i][17]) # Hidden ability
+            combined_data[-1].append(output_data[i][17]) # Hidden ability [11]
         combined_data[-1].append('') # Blank passive combined_data[12]
         combined_data[-1].extend(output_data[i][18:26])
         combined_data[-1].extend(output_data[i][28:31])
@@ -337,12 +338,15 @@ for i in range(len(output_data)):
     for spec in ['Maushold','Dudunsparce','Sinistcha']:
         if spec in combined_data[-1][5]:
             combined_data[-1][41] = '' # Force certain forms to startable (not exclusive)
-    # Check for unobtainable entries (must be 'forms' listed as 'True' in output_data[i][25])
-    if output_data[i][2] != '' and len(output_data[i]) > 25 and 'Revavroom' not in output_data[par][5]: 
-        # Revavroom is technically onobtainable, but I still want to include it
-        combined_data[-1].append(1 if 'True' in output_data[i][25] else 0) # Unobtainable [42]
-    else:
-        combined_data[-1].append(0)
+    # Check for unobtainable entries (forms must be listed as 'True' in output_data[i][25])
+    unobtainable = 0 # Can be obtained, by default
+    if output_data[i][2] != '' and len(output_data[i]) > 25 and 'True' in output_data[i][25]:
+        unobtainable = 1
+    if 'Revavroom' in output_data[par][5]: # Revavroom is technically unobtainable, but I still want to include it
+        unobtainable = 0
+    if '10 Complete' in output_data[i][4]: # Remove "Complete 10% Zygarde"
+        unobtainable = 1
+    combined_data[-1].append(unobtainable) # Unobtainable [42]
     combined_data[-1].append('') # Newly added variants [43]
     combined_data[-1].append('') # Form type [44] (fullevo, mega, giga)
     combined_data[-1].append('') # Exclusive type [45] (regular, eggExc, baby, paradox, eterna, starmobile)
@@ -832,7 +836,7 @@ for i in range(1,1026):
 if trimmed_data[-1][5] != "Bloodmoon Ursaluna":
     print(trimmed_data[-5:])
     throwError('Final dex entry is not correct')
-if len(trimmed_data) != 1453:
+if len(trimmed_data) != 1452:
     print(trimmed_data[-5:])
     throwError('Total number of entries is not correct')
 
@@ -1008,7 +1012,7 @@ attNames = ['rowno','form','parno','dexno','img','spec','desc','type1','type2','
            #    28       29      30       31     32       33          34         35         36        37       38
             'freshStart','biomes','formExclusive','unobtainable','newVariants','formClass','exclusiveClass']
            #    39          40           41             42             43           44            45
-omitAttr = [0, 1, 2, 20, 21, 22, 28, 34, 35, 36, 37, 38, 40, 41, 42]
+omitAttr = [0, 1, 2, 20, 21, 22, 28, 34, 35, 36, 37, 38, 40, 41]
 attPatchCount = [0 for arg in attNames] # How many times each attribute was changed
 eggPatchCount = [0 for arg in trimmed_data] # How many times any egg move was changed
 patch_lines = ['patchNotes = `']
