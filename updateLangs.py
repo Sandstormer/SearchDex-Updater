@@ -2,9 +2,15 @@
 import re, os, json, importlib
 pathLocales = './game_files/locales' # File path to the official localization files
 pathOverrides = "local_files/lang_overrides"
-langs = ['en','fr','ko','ja','zh-Hans','es-ES']
+langs = ['en','fr','ko','ja','zh-Hans','es-ES','it']
 
-warnLongNames = 0 # Set to 1 to warn of names that may be too long for the UI
+ignoreOverrides = [] 
+# Put a language in here to ignore all override files
+# This lets you see what the script can auto-translate
+
+warnLongNames = 0 
+# Set to 1 to warn of names that may be too long for the UI
+# Set to 0 to ignore this check
 
 # - en - English
 # - de - German
@@ -57,73 +63,78 @@ manualTran = {
         'shinyVariants': 'Shiny Variants',
         'new': 'New',
         'tag': 'Tag',
-        'lure': 'Lure Ability',
+        'lureAbility': 'Lure Ability',
         'ignoresAbilities': 'Ignores Abilities',
-        'phazing': 'Target Switches Out',
-        'spread': 'Spread Moves'
+        'targetSwitchesOut': 'Target Switches Out',
+        'spreadMoves': 'Spread Moves',
+        'waterImmunity': 'Water Immunity',
+        'electricImmunity': 'Electric Immunity',
+        'sunAbility': 'Sun Ability',
+        'rainAbility': 'Rain Ability',
+        'sandAbility': 'Sand Ability',
+        'snowAbility': 'Snow Ability',
     },
     'fr': {
         'exclusive': 'Exclusif',
         'shinyVariants': 'Variantes Chromatique',
         'new': 'Nouvelle',
-        'tag': 'Étiquette',
-        'lure': 'Talent d’Appât',
+        'tag': 'Attribut',
+        'lureAbility': 'Talent d’Appât',
         'ignoresAbilities': 'Ignore les Talents',
-        'phazing': 'Force le Changement',
-        'spread': 'Attaques de Zone'
+        'targetSwitchesOut': 'Force le Changement',
+        'spreadMoves': 'Attaques de Zone'
     },
     'ko': {
         'exclusive': '한정',
         'shinyVariants': '색 다른 이로치',
         'new': '새로운',
-        'tag': '태그',
-        'lure': '유인 특성',
+        'tag': '속성',
+        'lureAbility': '유인 특성',
         'ignoresAbilities': '특성 무시',
-        'phazing': '상대 교체',
-        'spread': '범위 기술'
+        'targetSwitchesOut': '상대 교체',
+        'spreadMoves': '범위 기술'
     },
     'ja': {
         'exclusive': '限定',
         'shinyVariants': '色違い',
         'new': '新しい',
-        'tag': 'タグ',
-        'lure': 'おびき寄せ特性',
+        'tag': '属性',
+        'lureAbility': 'おびき寄せ特性',
         'ignoresAbilities': '特性無視',
-        'phazing': '強制交代',
-        'spread': '範囲技'
+        'targetSwitchesOut': '強制交代',
+        'spreadMoves': '範囲技'
     },
     'zh-Hans': {
         'exclusive': '限定',
         'shinyVariants': '变种闪光',
         'new': '新的',
-        'tag': '标签',
-        'lure': '诱导特性',
+        'tag': '属性',
+        'lureAbility': '诱导特性',
         'ignoresAbilities': '无视特性',
-        'phazing': '迫使对手替换',
-        'spread': '范围招式'
+        'targetSwitchesOut': '迫使对手替换',
+        'spreadMoves': '范围招式'
     },
     'es-ES': {
         'exclusive': 'Exclusivo',
         'shinyVariants': 'Variantes Shiny',
         'new': 'Nuevo',
-        'tag': 'Etiqueta',
-        'lure': 'Habilidad de Colonia',
+        'tag': 'Atributo',
+        'lureAbility': 'Habilidad de Colonia',
         'ignoresAbilities': 'Ignora Habilidades',
-        'phazing': 'Cambia al Objetivo',
-        'spread': 'Movimientos de Área'
+        'targetSwitchesOut': 'Cambia al Objetivo',
+        'spreadMoves': 'Movimientos de Área'
     },
     'it': {
         'exclusive': 'Esclusivo',
         'shinyVariants': 'Varianti Cromatiche',
         'new': 'Nuovo',
-        'tag': 'Etichetta',
-        'lure': 'Abilità Esca',
+        'tag': 'Attributo',
+        'lureAbility': 'Abilità Esca',
         'ignoresAbilities': 'Ignora Abilità',
-        'phazing': 'Forza il Cambio',
-        'spread': 'Mosse ad Area'
+        'targetSwitchesOut': 'Forza il Cambio',
+        'spreadMoves': 'Mosse ad Area'
     }
 }
-
 
 # Functions for formatting the text
 def format_for_camel(arg): # Key format for official jsons
@@ -275,7 +286,7 @@ for lang in langs: # =========================================== Main loop for e
     # Translate tag names
     for index,filter in enumerate(allFilters):
         if filter[0] == 'Tag':
-            for key in ['lure','ignoresAbilities','phazing','spread']:
+            for key in ['lureAbility','ignoresAbilities','targetSwitchesOut','spreadMoves']:
                 if manualTran['en'][key] in filter[1]:
                     text = manualTran[lang][key]
                     # if '(Ability)' in filter[1]: text += f"({re.sub(r' *: *','',tall['filter-text']['ability1Field'])})"
@@ -584,19 +595,24 @@ for lang in langs: # =========================================== Main loop for e
     locUI['tagToDesc'][38] = tall['move']['protect']['name']
     locUI['tagToDesc'][59] = tall['modifier-type']['ModifierType']['LURE']['name']
 
+    locUI['biomeLongText'] = ['' for line in overrides['en']['biomeLongText']]
+    
+    locUI['warningText'] = ['' for line in overrides['en']['warningText']]
+
     print('Done translating ui elements')
     missingAmount = sum([1 for line in locUI['headerNames']+locUI['altText']+locUI['catToName']+locUI['biomeText']+locUI['infoText'] if not line])
     if missingAmount: print('Could not auto translate',missingAmount,'ui elements')
 
     # Apply manual overrides from the lang_overrides folder =========================
     # These go directly onto the searchdex
-    for overrideName in overrides['en'].keys():
-        if overrideName in overrides[lang]:
-            locUI[overrideName] = overrides[lang][overrideName]
-        elif overrideName in ['procToDesc','tagToDesc','biomeLongText','warningText']:
-            locUI[overrideName] = overrides['en'][overrideName] # Fallback to english names
-        else:
-            print('***** Missing override object',overrideName,'in',lang)
+    if lang not in ignoreOverrides:
+        for overrideName in overrides['en'].keys():
+            if overrideName in overrides[lang]:
+                locUI[overrideName] = overrides[lang][overrideName]
+            elif overrideName in ['procToDesc','tagToDesc','biomeLongText','warningText']:
+                locUI[overrideName] = overrides['en'][overrideName] # Fallback to english names
+            else:
+                print('***** Missing override object',overrideName,'in',lang)
     # Do a final check for missing UI elements
     missingAmount = sum([1 for line in locUI['headerNames']+locUI['altText']+locUI['catToName']+locUI['biomeText']+locUI['infoText'] if not line])
     if missingAmount: print('***** Missing',missingAmount,'ui elements')
@@ -627,8 +643,6 @@ for lang in langs: # =========================================== Main loop for e
         if "'" in line: 
             print('** Single quote found in',line)
             line = line.replace("'","’")
-        # if '"' in line: 
-        #     print('** Double quote found in',line)
         lines.append(f"\n'{line}',")
     lines[-1] = lines[-1][:-1]
     lines.append('\n];\n')
@@ -649,10 +663,7 @@ for lang in langs: # =========================================== Main loop for e
 
     lines.append('helpMenuText = `') # help text
     # This must be done last because it references other strings
-    if 'helpMenuText' in overrides[lang]:
-        lines.append(overrides[lang]['helpMenuText'])
-    else:
-        lines.append(overrides['en']['helpMenuText'])
+    lines.append(locUI['helpMenuText'])
     lines[-1] = lines[-1][:-1]
     lines.append('`;')
 
