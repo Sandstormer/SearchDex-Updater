@@ -581,6 +581,8 @@ for lang in langs: # =========================================== Main loop for e
     locUI['procToDesc'][27] = tall['modifier-type']['ModifierType']['QUICK_CLAW']['description']
 
     locUI['tagToDesc'] = ['' for line in overrides['en']['tagToDesc']]
+    locUI['tagToDesc'][23] = f"{tall['pokemon-info']['type']['grass']}/{tall['ability']['overcoat']['name']}"
+    locUI['tagToDesc'][24] = tall['pokemon-info']['type']['grass']
     locUI['tagToDesc'][25] = tall['ability']['triage']['name']
     locUI['tagToDesc'][26] = tall['ability']['dancer']['name']
     locUI['tagToDesc'][27] = tall['ability']['windRider']['name']
