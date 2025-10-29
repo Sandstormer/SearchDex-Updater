@@ -69,6 +69,7 @@ clone_or_update(
 )
 
 # SearchDex Website files
+# If you already have these, they will not be updated/replaced
 clone_or_update(
     repo_url="https://github.com/Sandstormer/PokeRogue-Dex.git",
     repo_dest="./website",
