@@ -4,7 +4,7 @@
 # This is ONLY for numeric data; all localized text is written from updateLangs.py
 
 pathLoc = './game_files/locales/en'   # File path to the official localization files
-pathData = "game_files/live/src/data" # File path for game data
+pathData = "game_files/src/data" # File path for game data
 
 def format_for_disp(arg): # Remove spaces, and convert _ and - to spaces, then capitalize
     return arg.replace(' ','').replace('_',' ').replace('-',' ').title()   
@@ -23,7 +23,7 @@ orderedData = [[] for _ in filterToFID][fidThresholds[0]:fidThresholds[2]]
 print('\n=========== Reading abilities ===========\n')
 with open(f'{pathData}/abilities/ability.ts', "r", encoding="utf-8") as f:
     abilityData = f.read()
-abilityData = re.findall(r'allAbilities\.push\(\n(.*?)\);\n\}', abilityData, re.DOTALL)[0]
+abilityData = re.findall(r'Ability\[\]\)\.push\(\n(.*?)  \);\n', abilityData, re.DOTALL)[0]
 abilityData = re.sub(r'\/\* Unused.*?End Unused \*\/', '', abilityData, flags=re.DOTALL)
 abilityData = re.sub(r' +new ', 'new ', abilityData)
 abilityData = abilityData.split('\n')
@@ -63,19 +63,18 @@ for index,line in enumerate(abilityData):
                     if entry not in ability2D[-1][2]:
                         ability2D[-1][2].append(entry)
                     # print('Found ability stat boost:',abilityName,stat,amount)
+        elif 'playerFaints' in line:
+            amount = 10
+            ability2D[-1][2].append([-3,26,amount]) # supremeoverlord
         elif 'MovePowerBoostAbAttr' in line:
-            for i in range(5):
+            for i in range(5): # Search for a number in the next 5 lines
                 if re.findall(r'(\d\.?\d?\d?)', abilityData[index+i]):
-                    amount = re.findall(r'(\d\.?\d?\d?)', abilityData[index+i])[-1]
+                    amount = re.findall(r'(\d\.?\d?\d?)', abilityData[index+i])[-1] # Use the last value on that line
                     if float(amount) < 60:
-                        break
+                        break # Once it finds the multiplier value, break
             else:
                 print(abilityName,line)
-            if abilityName == 'supremeoverlord':
-                amount = 10
-                ability2D[-1][2].append([-3,26,amount])
-            else:
-                ability2D[-1][2].append([-2,26,amount])
+            ability2D[-1][2].append([-2,26,amount])
             # print('Found ability power boost:',abilityName,amount)
         elif 'LowHpMoveTypePowerBoostAbAttr' in line:
             ability2D[-1][2].append([-2,26,1.5])
@@ -192,7 +191,7 @@ for index,line in enumerate(abilityData):
 print('\n=========== Reading moves ===========\n')
 with open(f'{pathData}/moves/move.ts', "r") as f:
     moveData = f.read()
-moveData = re.findall(r'allMoves\.push\(\n(.*?)\);\n}', moveData, re.DOTALL)[0]
+moveData = re.findall(r'Move\[\]\)\.push\(\n(.*?)  \);\n', moveData, re.DOTALL)[0]
 moveData = re.sub(r'\/\* Unused.*?End Unused \*\/', '', moveData, flags=re.DOTALL)
 moveData = re.sub(r'LapseBattlerTagAttr,.*?true\)', '', moveData, flags=re.DOTALL)
 moveData = re.sub(r' +new ', 'new ', moveData)
@@ -546,6 +545,7 @@ friendData[-2] = friendData[-3]
 print('\n==============================\n')
 input('Review patch changes?')
 print("Reviewing patch changes...")
+attNames = ['fid','name','procs list','tags list','type','category','power','accuracy','pp','priority']
 # Write all the trimmed data to a json file
 with open("local_files/proc_data.json", "w") as f:
     json.dump(orderedData, f, indent=4)
@@ -558,7 +558,7 @@ for line in orderedData:
             if oldLine and oldLine[1] == line[1]: # Match the ability/move name
                 for i in range(2,len(line)):
                     if line[i] != oldLine[i]:
-                        print('Changes at index',i,'in',line[1])
+                        print('Changes in',attNames[i],'for',line[1])
                         print('    from',oldLine[i],'to',line[i])
                 break
         else:
@@ -569,7 +569,7 @@ input('Continue to writing website database?')
 # Load the numeric data from the main script
 typeColors = ["#ADBD21","#735A4A","#7B63E7","#FFC631","#EF70EF","#A55239","#F75231","#9CADF7","#6363B5","#7BCE52","#AE7A3B","#5ACEE7","#ADA594","#9141CB","#EF4179","#BDA55A","#81A6BE","#399CFF"]
 lines = []
-with open("game_files/live/package.json", "r") as fp:
+with open("game_files/package.json", "r") as fp:
     packageInfo = json.load(fp)
     lines.append(f'const gameVersion = "{packageInfo["version"]}";') # Type colors
 todayDate = date.today().strftime("%Y-%m-%d")
@@ -586,13 +586,13 @@ for index,costLine in enumerate(costParsed):
  
 # Format of orderedData: 
 #   Abilities: [fid[0], name[1], procs[2], tags[3]]
-#   Moves: [fid, name, __, __, type, cat, pow, acc, pp, prio, [procs[chance,stat,val]], [tags]]
-#            0     1    2   3    4    5    6    7    8    9      10                       11
+#   Moves: [fid, name, [procs[chance,stat,val]], [tags], type, cat, pow, acc, pp, prio]
+#            0     1      2                        3      4    5    6    7    8    9
 
 # Final structure of fidToProc[fid]:
 # ==================================
 # Abilities: [ [procs], [tags] ]
-#   procs = [[chance,stat,val], [...]]
+#   procs = [[chance,stat,value], [...]]
 #       chance = chance of ability activating (flame body, etc.) > error on chance of 0 ???????????????????????
 #           or -1 for no chance indicator
 #           or -2 for ×value (default is +)
@@ -606,13 +606,6 @@ for index,costLine in enumerate(costParsed):
 #           0 is don't show
 # Moves: [ [procs[chance,stat,val]], [tags], type, cat(phys/spec/stat), pow, acc, pp, prio]
 #             0                        1       2    3                    4    5    6    7
-    
-            # Stat index for proc entries in [10][1]
-            #   0-6 = self atk/def/spa/spd/spe/acc/eva
-            #  7-13 = opp  atk/def/spa/spd/spe/acc/eva
-            # 14-20 = pois/tox/sleep/freeze/para/burn/confuse
-            # 21-26 = flinch/omni/dire/triatt/terablast/damage
-            # [10] proc [chance, stat, stages] >>>>>>    
 
 # Write all the numeric data to a filters_global.js
 # All localized strings are written from another script

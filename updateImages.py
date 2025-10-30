@@ -2,10 +2,9 @@
 # ======================== Written by Sandstorm ==========================
 # It assembles all the shiny pokemon, and warns of any palette swap issues
 
-source_dir = "./game_files/live/public/images/pokemon"
-# source_dir = "./game_files/beta/public/images/pokemon" # File path for beta pre-load
-# The official files from github must be in "game_files/live" folder, in same directory as this script
-# Either clone the github repo, or download and unzip the zip file from github
+source_dir = "./game_files/assets/images/pokemon"
+# The official files from github must be in "game_files" folder, in same directory as this script
+# That folder will be created when you run updateGameFiles.py
 
 dest_dir = "./website/images"
 # Where to put all the processed images
@@ -30,6 +29,10 @@ warnSimilarColors = 0
 warnPureBlackJson = 0
 # Warns if pure black is found on a json
 # Set to 0 to ignore this check
+
+warnVariantDimensions = 1
+# Warns if variants of the same pokemon have different dimensions
+# This usually happens if the animations are packed differently
 
 # Since there is no official static frame, one must be chosen
 # By defualt, it chooses the most common frame of the animation 
@@ -270,7 +273,8 @@ def processImage(spriteIndex, shinyIndex, femIndex):
             thisH = sliced_img.height
             thisW = sliced_img.width
         elif sliced_img.height != thisH or sliced_img.width != thisW:
-            print(f'Different variant sizes for {simpleName}')
+            if warnVariantDimensions:
+                print(f'Different variant dimensions for {simpleName}')
     else: # There is no image
         if shinyIndex < 2 and femIndex == 0: # If it should exist, show an error
             print('Could not find any tier',shinyIndex,'shiny for',spriteIndex)

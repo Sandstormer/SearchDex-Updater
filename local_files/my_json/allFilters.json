@@ -149,15 +149,11 @@
     ],
     [
         "Ability",
-        "Dauntless Shield"
+        "Bulletproof"
     ],
     [
         "Ability",
         "Mega Launcher"
-    ],
-    [
-        "Ability",
-        "Bulletproof"
     ],
     [
         "Ability",
@@ -241,7 +237,7 @@
     ],
     [
         "Ability",
-        "Moxie"
+        "Speed Boost"
     ],
     [
         "Ability",
@@ -525,10 +521,6 @@
     ],
     [
         "Ability",
-        "Shadow Shield"
-    ],
-    [
-        "Ability",
         "Cursed Body"
     ],
     [
@@ -586,6 +578,10 @@
     [
         "Ability",
         "Reckless"
+    ],
+    [
+        "Ability",
+        "Moxie"
     ],
     [
         "Ability",
@@ -738,10 +734,6 @@
     [
         "Ability",
         "Wind Rider"
-    ],
-    [
-        "Ability",
-        "Speed Boost"
     ],
     [
         "Ability",
@@ -913,6 +905,10 @@
     ],
     [
         "Ability",
+        "Shadow Shield"
+    ],
+    [
+        "Ability",
         "Well Baked Body"
     ],
     [
@@ -1058,6 +1054,10 @@
     [
         "Ability",
         "Grim Neigh"
+    ],
+    [
+        "Ability",
+        "Dauntless Shield"
     ],
     [
         "Ability",
@@ -4489,6 +4489,14 @@
     ],
     [
         "Move",
+        "Burning Jealousy"
+    ],
+    [
+        "Move",
+        "Draco Meteor"
+    ],
+    [
+        "Move",
         "Behemoth Bash"
     ],
     [
@@ -4502,10 +4510,6 @@
     [
         "Move",
         "Grassy Glide"
-    ],
-    [
-        "Move",
-        "Steel Beam"
     ],
     [
         "Move",
@@ -4529,10 +4533,6 @@
     ],
     [
         "Move",
-        "Draco Meteor"
-    ],
-    [
-        "Move",
         "Sky Drop"
     ],
     [
@@ -4549,15 +4549,15 @@
     ],
     [
         "Move",
+        "Steel Beam"
+    ],
+    [
+        "Move",
         "Meteor Beam"
     ],
     [
         "Move",
         "Misty Explosion"
-    ],
-    [
-        "Move",
-        "Burning Jealousy"
     ],
     [
         "Move",

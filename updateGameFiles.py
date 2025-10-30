@@ -12,10 +12,10 @@
 # Step 8 is to push the changes to the SearchDex GitHub.
 
 branchName="main" # Set this to "main" or "beta"
-# "beta" often causes errors, due to PokeRogue developers rapidly changing the game's code
+# Using "beta" often causes errors, due to PokeRogue developers rapidly changing the game's code
+# You should only do that temporarily, to apply an update before it hits live
 
 import subprocess, os
-os.makedirs("./game_files", exist_ok=True) # Ensure the directory exists
 
 # Function to reset everything in the folder, or clone it from scratch
 def clone_or_update(repo_url, repo_dest, branch_name=None, only_clone=False):
@@ -51,21 +51,8 @@ def clone_or_update(repo_url, repo_dest, branch_name=None, only_clone=False):
 # Main files
 clone_or_update(
     repo_url="https://github.com/pagefaultgames/pokerogue.git",
-    repo_dest="./game_files/live",
+    repo_dest="./game_files",
     branch_name=branchName
-)
-
-# Localization files
-clone_or_update(
-    repo_url="https://github.com/pagefaultgames/pokerogue-locales.git",
-    repo_dest="./game_files/locales"
-)
-
-# Beta files
-clone_or_update(
-    repo_url="https://github.com/pagefaultgames/pokerogue.git",
-    repo_dest="./game_files/beta",
-    branch_name="beta"
 )
 
 # SearchDex Website files

@@ -1,7 +1,7 @@
 import os, json
 from PIL import Image
 
-source_dir = "./game_files/live/public/images/arenas"
+source_dir = "./game_files/assets/images/arenas"
 dest_dir = "./website/ui"
 
 with open("local_files/my_json/allFilters.json", "r") as file:

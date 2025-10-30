@@ -2,84 +2,8 @@
 # ===== It links all the data between evolutions and forms          =====
 # ===== It saves the data in an optimized format as pokedex_data.js =====
 
-# Here are the rules for how pokedex_data.js is structured:
-#     The data contains the full data on every Pokemon, and the structure allows for fast lookups of information.
-#     The pokemon must be in the same order as speciesNames in the lang file. This is also the default sort option.
-#     The entries for each pokemon can be in any order.
-#     dex:    Pokedex number
-#     img:    File name of the image
-#             Gets the actual image as "ui/{img}_0.png" for tier 0 (non-shiny)
-#     t1, t2, a1, a2, ha, pa: Types, Abilities, Hidden Ability, Passive
-#             Contains the Filter ID (FID) that corresponds to the type/ability described
-#             An entry is omitted if it does not apply to the pokemon
-#     bst, hp, atk, def, spa, spd, spe: Stats
-#     e1, e2, e3, e4: Egg moves
-#             Contains the Filter ID (FID) of the corresponding move
-#     co: Base cost of the pokemon
-#     et: Egg tier      
-#             0 = common, 1 = rare, 2 = epic, 3 = manaphy, 4 = legendary
-#     sh: Number of shiny variants the Pokemon has
-#             Either 1 (no variants), or 3 (all variants)
-#     ge: Which generation the pokemon is in
-# vvv All the remaining entries are omitted if not applicable to the pokemon
-#     fe: If the Pokemon has a female form
-#             Value is 1 if they have traditional sprite differences, like Venusaur
-#             Value is 2 if they have named female forms, like Meowstic
-#     fa: Which family the pokemon is in
-#             This is used for the "Related To" filters
-#             Contains the FID that corresponds to that family filter
-#     st: Value is 1 if the Pokemon is available from starter select (i.e. being the lowest evolution)
-#     fs: Value is 1 if the Pokemon is available in fresh start (i.e. being a first partner pokemon)
-#     nv: Value is 1 if the Pokemon had new variants recently added
-#     fx: If the Pokemon is form exclusive
-#             Value is 1 for Mega, G-Max, item form changes, or temporary form changes
-#     ex: If the Pokemon is egg exclusive
-#             Value is 1 for traditional egg exclusives, like Arceus
-#             Value is 2 for baby Pokemon, like Pichu
-#             Value is 3 for paradox egg exclusives, like Scream Tail
-#             Value is 4 only for Eternatus
-#             Value is 5 only for Starmobile Revavroom
-#     numerical entries: These are like FID:value
-#             FID is the Filter ID, which can be a type, ability, move, biome
-#             value is how that pokemon relates to that FID (this is different depending on the FID)
-#             Do not include entries that don't apply to that pokemon
-#             For Moves: (i.e. 876:204, 328:1, 1125:209, or anything like that)
-#                     fidThreshold[1] <= FID < fidThreshold[2]
-#                     value shows how the pokemon learns the move
-#                             -1:mushroom, 0:evo, 1-200:level, 
-#                             201:egg&commonTM, 202:egg&greatTM, 203:egg&ultraTM, 204:egg,
-#                             205:rareEgg&commonTM, 206:rareEgg&greatTM, 205:rareEgg&ultraTM, 208:rareEgg,
-#                             209:commonTM, 210:greatTM, 211: ultraTM
-#             For Types: (i.e. 9:307)
-#                     fidThreshold[0] <= FID < fidThreshold[1]
-#                     value shows which slot the pokemon has that type (307 = type1, 308 = type2)
-#                     This data is technically redundant but allows for faster lookups
-#             For Abilities: (i.e. 18:309)
-#                     fidThreshold[1] <= FID < fidThreshold[2]
-#                     value shows which slot the pokemon has that ability (309 = ab1, 310 = ab2, 311 = ha, 312 = pa)
-#                     This data is technically redundant but allows for faster lookups
-#             For Biomes: (i.e. 1197:[80,100])
-#                     fidThreshold[8] <= FID < fidThreshold[9]
-#                     value is an array describing the encounter types in that biome
-#                             Each of those entries encodes the encounter rarity and time of day
-#                             Each rarity is a number:
-#                                     20 = COMMON,  40 = UNCOMMON,  60 = BOSS,  80 = RARE,  100 = BOSS_RARE,
-#                                     120 = SUPER_RARE,  140 = BOSS_SUPER_RARE,  160 = ULTRA_RARE,  180 = BOSS_ULTRA_RARE
-#                             If a pokemon is only available at a certain time of day, it has a modifier added to that number
-#                                     +1 for dawn, +2 for day, +4 for dusk, +8 for night
-#                                     Modifiers are added together if the Pokemon is available during more than one time of day
-#                             If there is more than one entry for encounter types that are always put in a predictable order
-#                                     The first entry is the most common nonboss encounter
-#                                     The second entry is the most common boss encounter
-#                                     Entries beyond the second can be in any order
-#                                     If a pokemon is only Boss encounters, the first entry is the lowest number
-#                     For example, Amoonguss has 1201:[32,72,83,103]
-#                             This means it is in the Jungle (FID = 1201)
-#                             The rarities are Common (Dusk, Night), Boss Common (Dusk, Night), Rare (Dawn, Day), Boss Rare (Dawn, Day)
-
 import re, os, copy, json
-pathBal  = './game_files/live/src/data/balance' # File path to the balance files
-# pathBal  = './game_files/beta/src/data/balance' # File path for beta pre-load
+pathBal  = './game_files/src/data/balance' # File path to the balance files
 pathImg = './website/images'
 
 # Function to determine if a value is numeric
@@ -98,7 +22,7 @@ def throwError(text = ''):
 with open(f"{pathBal}/pokemon-species.ts", "r") as file:
     content = file.read()
 # Use a regular expression to extract text between the markers
-input_data = re.findall(r'allSpecies\.push\((.*?)\);\n}', content, re.DOTALL)[0]
+input_data = re.findall(r'PokemonSpecies\[\]\)\.push\((.*?)\);\n}', content, re.DOTALL)[0]
 print('\nLoading data...')
 
 # Counter to keep track of incrementing numbers
@@ -138,9 +62,9 @@ print('Finished reading species')
 with open(f"{pathBal}/pokemon-evolutions.ts", "r") as file:
     content = file.read()
 # Use a regular expression to extract text between "PokemonEvolutions = {" and "};"
-inputEvoData = re.findall(r'PokemonEvolutions\s*=\s*{(.*?)};', content, re.DOTALL)[0]
-inputEvoData = re.sub(r'\[.*SpeciesId\.', '[', inputEvoData)
-inputEvoLines = re.split('  ],', inputEvoData)
+inputEvoData = re.findall(r'PokemonEvolutions = {(.*?)};', content, re.DOTALL)[0]
+inputEvoData = re.sub(r'\[SpeciesId\.', '[', inputEvoData)
+inputEvoLines = re.split('],\n', inputEvoData)
 result = []
 for line in inputEvoLines:
     row = [re.findall(r'\[(\w+)\]:', line)[0]]  # First entry is the species name
@@ -153,8 +77,8 @@ print('Finished reading evolutions')
 # Open and read all the moves files ************************************
 with open(f"{pathBal}/pokemon-level-moves.ts", "r") as file: # Level up moves for species ***********************
     content = file.read()
-# Use a regular expression to extract text between "PokemonSpeciesLevelMoves = {" and "};"
-inputMoveData = re.findall(r'PokemonSpeciesLevelMoves\s*=\s*{(.*?)export', content, re.DOTALL)[0]
+# Use a regular expression to extract text between "pokemonSpeciesLevelMoves = {" and "PokemonSpeciesLevelMoves"
+inputMoveData = re.findall(r'pokemonSpeciesLevelMoves\s*=\s*\{(.*?)PokemonSpeciesLevelMoves', content, re.DOTALL)[0]
 inputMoveData = re.sub(r'\[.*SpeciesId\.', '[', inputMoveData)
 inputMoveData = re.sub(r'MoveId\.', '', inputMoveData)
 inputMoveData = re.split(r'\n\s*],', inputMoveData)
@@ -183,8 +107,8 @@ for line in levelMoveData:
 print('Finished reading level moves')
 with open(f"{pathBal}/egg-moves.ts", "r") as file: # Egg moves **************************
     content = file.read()
-# Use a regular expression to extract text between "speciesEggMoves = {" and "};"
-inputMoveData = re.findall(r'speciesEggMoves\s*=\s*{(.*?)};', content, re.DOTALL)[0]
+# Use a regular expression to extract text between "speciesEggMoves = {" and "} satisfies"
+inputMoveData = re.findall(r'speciesEggMoves\s*=\s*{(.*?)}\ssatisfies', content, re.DOTALL)[0]
 inputMoveData = re.sub(r'\[.*SpeciesId\.', '[', inputMoveData)
 inputMoveData = re.sub(r'MoveId\.', '', inputMoveData)
 inputMoveData = re.split(r',\n', inputMoveData)
@@ -203,12 +127,14 @@ for line in movesByCategory:
 print('Finished reading egg moves')
 # Convert movesByCategory to a dictionary for faster lookups
 move4D_dict = {speciesMoveLine[0]: speciesMoveLine for speciesMoveLine in movesByCategory}
-with open(f"{pathBal}/tms.ts", "r") as file: # Read the file of TM moves ************************
+with open(f"{pathBal}/tm-species-map.ts", "r") as file: # Read the file of TM moves ************************
     content = file.read()
 # Use a regular expression to extract text of each TM separately
 inputMoveData = re.findall(r'\[(MoveId\..*?)\n\s\s\],', content, re.DOTALL)
 inputMoveData = [re.split(r'\]:\s?\[', line) for line in inputMoveData]
 inputMoveData = [[line[0], re.split('\n', line[1])] for line in inputMoveData]
+with open(f"{pathBal}/tms.ts", "r") as file: # Read the file of TM tiers
+    content = file.read()
 # Use a regular expression to extract text between "TmPoolTiers = {" and "};" from TM Tier data
 tierData = re.findall(r'TmPoolTiers\s*=\s*{(.*?)\n};', content, re.DOTALL)[0]
 tierData = re.split(r',\n', tierData)
@@ -255,7 +181,7 @@ print('Finished reading TM moves')
 print('Finished reading all moves')
 
 # Currently, base species and forms have different formats in output_data
-# This puts base species and forms into a consistent data format, combined_data
+# This puts base species and forms into a consistent data format: combined_data
 combined_data = [] 
 for i in range(len(output_data)):
     combined_data.append([])
@@ -334,7 +260,7 @@ for i in range(len(output_data)):
         # print('Form Change Only:',line[5])
     # Force certain forms to be startable (they still didn't fix this...)
     # These species are missing isStarterSelectable in balance/pokemon-species.ts
-    # Also, Minior core forms are selectable (which makes my biomes show up)
+    # Also, Minior core forms are marked as selectable there (which makes my biomes show up)
     for spec in ['Maushold','Dudunsparce','Sinistcha']:
         if spec in combined_data[-1][5]:
             combined_data[-1][41] = '' # Force certain forms to startable (not exclusive)
@@ -356,7 +282,8 @@ print('Finished normalizing data')
 with open(f"{pathBal}/starters.ts", "r") as file:
     content = file.read()
 # Use a regular expression to extract text between "speciesStarterCosts = {" and "};"
-inputCostData = re.findall(r'speciesStarterCosts\s*=\s*{(.*?)};', content, re.DOTALL)
+inputCostData = re.findall(r'speciesStarterCosts = {(.*?)};', content, re.DOTALL)
+if not inputCostData: throwError('Could not find cost data')
 costSpecies = re.findall(r'\[SpeciesId\.(.*)\]:', inputCostData[0])
 costValues  = re.findall(r'\]: (.*),', inputCostData[0])
 for i in range(len(costSpecies)):
@@ -372,9 +299,10 @@ print('Finished assigning base costs')
 with open(f"{pathBal}/species-egg-tiers.ts", "r") as file:
     content = file.read()
 # Use a regular expression to extract text between "speciesEggTiers = {" and "};"
-inputCostData = re.findall(r'speciesEggTiers\s*=\s*{(.*?)};', content, re.DOTALL)
-tierSpecies = re.findall(r'\[SpeciesId\.(.*)\]:', inputCostData[0])
-tierValues  = re.findall(r'EggTier\.(.*)\n', inputCostData[0])
+inputTierData = re.findall(r'speciesEggTiers\s*=\s*{(.*?)};', content, re.DOTALL)
+if not inputTierData: throwError('Could not find tier data')
+tierSpecies = re.findall(r'\[SpeciesId\.(.*)\]:', inputTierData[0])
+tierValues  = re.findall(r'EggTier\.(.*)\n', inputTierData[0])
 for i,tierLine in enumerate(tierSpecies):
     isFound = False
     for line in combined_data: # Find the species name
@@ -399,11 +327,11 @@ for i,tierLine in enumerate(tierSpecies):
 print('Finished assigning base egg tiers')
 
 # Open and read the biomes file ************************************
-with open(f"{pathBal}/biomes.ts", "r") as file:
+with open(f"{pathBal}/init-biomes.ts", "r") as file:
     content = file.read()
 # Use a regular expression to extract text between "pokemonBiomes = [" and "const trainerBiomes"
 inputBiomeData = re.findall(r'pokemonBiomes = \[(.*?)const trainerBiomes', content, re.DOTALL)[0]
-inputBiomeData = re.findall(r'\[ (SpeciesId.*?)    \][,\n]', inputBiomeData, re.DOTALL)
+inputBiomeData = re.findall(r'\[(SpeciesId.*?)    ]', inputBiomeData, re.DOTALL)
 inputBiomeLines = [re.split('\n', line) for line in inputBiomeData]
 biome_data = [[format_for_disp(re.findall(r'SpeciesId\.(.*?),',line[0])[0]), line[1:-1]] for line in inputBiomeLines]
 rarities = ['COMMON','UNCOMMON','BOSS','RARE','BOSS_RARE','SUPER_RARE','BOSS_SUPER_RARE','ULTRA_RARE','BOSS_ULTRA_RARE']
@@ -411,8 +339,8 @@ for line in biome_data:
     for index in range(len(line[1])):
         line[1][index] = [
             re.findall(r'BiomeId\.(.*?),',line[1][index])[0],
-            re.findall(r'BiomePoolTier\.(.*?)(?:,|\s\])',line[1][index])[0],
-            re.findall(r'TimeOfDay\.(.*?)(?:,|\s\])',line[1][index]),
+            re.findall(r'BiomePoolTier\.(.*?)(?:,|\])',line[1][index])[0],
+            re.findall(r'TimeOfDay\.(.*?)(?:,|\])',line[1][index]),
         ]
         for i, rarity in enumerate(rarities): # Encode the rarity
             if line[1][index][1] == rarity: 
@@ -510,13 +438,13 @@ for line in combined_data: # Assign data through forms **********************
 print('Finished propagating data to evolutions and forms')
 for line in combined_data: # Check for empty properties in combined_data
     if line[12] == '':
-        print('Missing Passives:',line[5])
+        throwError(f'Missing Passives: {line[5]}')
     if line[24:28] == '':
-        print('Missing Egg Moves:',line[5])
+        throwError(f'Missing Egg Moves: {line[5]}')
     if line[29] == '' or line[29] == 0:
-        print('Missing Cost:',line[5])
+        throwError(f'Missing Cost: {line[5]}')
     if line[30] == '' or line[30] == -1:
-        print('Missing Egg Tier:',line[5])
+        throwError(f'Missing Egg Tier: {line[5]}')
     if line[40] == []:
         line[45] = 1 # Exclusive to egg
         if 'Pichu' in line[5]: # Manual override for spiky pichu bc it is missing evo hookup
@@ -543,13 +471,13 @@ for line in combined_data: # Check for empty properties in combined_data
     if 'Starmobile' in line[5]:
         line[40] = []
         line[41] = '' # Not form exclusive
-        line[45] = 5 # Just unobtainable
+        line[45] = 5  # Just unobtainable
         print('Starmobile:',line[5])
     # if line[41] and line[45]:
     #     print('Double exclusive:',line[5])
     #     print(line[5],line[45])
     if line[40] == '' and line[45] == -1:
-        print('Missing Biomes:',line[5])
+        throwError(f'Missing Biomes: {line[5]}')
 
 # How assigning moves is done:
     # Assign egg moves to first evolution
@@ -579,8 +507,8 @@ for line in combined_data:
 # Parse the level up moves for alternate forms
 with open(f"{pathBal}/pokemon-level-moves.ts", "r") as file: # Level up moves for alt forms ****
     content = file.read()
-# Use a regular expression to extract text between "PokemonSpeciesFormLevelMoves = {" and "};"
-inputMoveData = re.findall(r'PokemonSpeciesFormLevelMoves\s*=\s*{(.*?)};', content, re.DOTALL)[0]
+# Use a regular expression to extract text between "pokemonFormLevelMoves = {" and "} as PokemonSpeciesFormLevelMoves"
+inputMoveData = re.findall(r'pokemonFormLevelMoves = {(.*?)} as PokemonSpeciesFormLevelMoves', content, re.DOTALL)[0]
 inputMoveData = re.sub(r'\[.*SpeciesId\.', '[', inputMoveData)
 inputMoveData = re.sub(r'MoveId\.', '', inputMoveData)
 inputMoveData = re.split(r'\n\s*},', inputMoveData)
@@ -644,7 +572,7 @@ for line in combined_data:
             print('Imported unique TMs for',normName)
             move4D_dict[normName].append('done')
 # Check that every entry in move4D_dict was assigned
-# A correct move4D_dict[key] looks like [[[levelmove,src],[]], [[eggmove,src],[]], [[tmmove,src],[]], 'done']
+# A correct move4D_dict[key] looks like [species, [[levelmove,src],[]], [[eggmove,src],[]], [[tmmove,src],[]], 'done']
 for key, value in move4D_dict.items():
     if len(value) > 5:
         throwError(f'Double counted moves in {key}') # Base species will have value[3] = 'done'
@@ -736,9 +664,10 @@ for line in trimmed_data: # Count how many times each child is listed
 # Determine which pokemon are in fresh start
 gen, freshThisGen, freshStarterIndices = 1, 0, []
 for line in trimmed_data:
-    if int(line[32]) == gen and (line[35] not in freshStarterIndices) and line[29] < 6 and freshThisGen < 3:
-        freshStarterIndices.append(line[35])
-        freshThisGen += 1
+    if int(line[32]) == gen and (line[35] not in freshStarterIndices) and freshThisGen < 3:
+        if line[29] < 6:
+            freshStarterIndices.append(line[35])
+            freshThisGen += 1
     if freshThisGen == 3:
         gen = gen + 1 
         freshThisGen = 0
@@ -891,21 +820,15 @@ for j in ['Lure Ability','Ignores Abilities','Ignores Abilities (Move)','Target 
 # Currently, biome_data[species] is like ['Bulbasaur', ['GRASS', 'RARE', [], 80]]
 # Encode the biome data as [Biome Name, fid, [code1,code2,...]]
 # Will be written to js file as fid:[code1,code2,...]
-biomeForms = [ # manually updated from getSpeciesFormIndex in src/field/arena.ts
+biomeForms = [ # manually updated from getSpeciesFormIndex in file:///.\game_files\src\field\arena.ts
     ['Plant Burmy','Forest'],
     ['Sandy Burmy','Beach'],
     ['Trash Burmy','Slum'],
     ['Plant Wormadam','Forest'],
     ['Sandy Wormadam','Beach'],
     ['Trash Wormadam','Slum'],
-    ['Rotom','Laboratory'],
-    ['Heat Rotom','Volcano'],
-    ['Wash Rotom','Sea'],
-    ['Frost Rotom','Ice Cave'],
-    ['Fan Rotom','Mountain'],
-    ['Mow Rotom','Tall Grass'],
 ]   
-biomeFormsTime = [ # manually updated from get SpeciesFormIndex in arena.ts
+biomeFormsTime = [ # manually updated from getSpeciesFormIndex in arena.ts
     ['Midday Lycanroc',[1,2]], # 1=dawn, 2=day, 4=dusk, 8=night
     ['Dusk Lycanroc',[4]],
     ['Midnight Lycanroc',[8]],
@@ -1006,13 +929,19 @@ with open("local_files/trimmed_data_prev_shvar.json", "r") as fp: # Older versio
 # Github may detect more changes because of how fid are assigned
 attNames = ['rowno','form','parno','dexno','img','spec','desc','type1','type2','ab1','ab2','hab','Passive',
            #   0      1       2       3      4     5      6       7       8      9    10    11    12
-            'bst','hp','atk','def','spa','spd','spe','catchrate','exp','mpc','fem','Egg Move 1','Egg Move 2','Egg Move 3','Rare Egg Move',
-           # 13    14   15    16    17    18    19        20      21    22    23        24           25           26        27
+            'bst','HP','Atk','Def','SpAtk','SpDef','Speed','catchrate','exp','mpc','fem','Egg Move 1','Egg Move 2','Egg Move 3','Rare Egg Move',
+           # 13    14   15    16     17      18      19        20      21    22    23        24           25           26        27
             'movedict','cost','eggtier','shvar','gen','startable','startRow','startInd','specInd','specKey','famFID',
            #    28       29      30       31     32       33          34         35         36        37       38
             'freshStart','biomes','formExclusive','unobtainable','newVariants','formClass','exclusiveClass']
            #    39          40           41             42             43           44            45
 omitAttr = [0, 1, 2, 20, 21, 22, 28, 34, 35, 36, 37, 38, 40, 41]
+soloAttr = [] # Put an attribute here to only show changes to that, and ignores changes to others
+for i in range(len(soloAttr)):                              # You can use strings for ranges (inclusive)
+    if isinstance(soloAttr[i], str) and '-' in soloAttr[i]: # i.e. [1,'3-5',8] becomes [1,3,4,5,8]
+        for j in range(int(soloAttr[i].split('-')[0]),int(soloAttr[i].split('-')[1])):
+            soloAttr.append(j)
+        soloAttr[i] = j+1
 attPatchCount = [0 for arg in attNames] # How many times each attribute was changed
 eggPatchCount = [0 for arg in trimmed_data] # How many times any egg move was changed
 patch_lines = ['patchNotes = `']
@@ -1035,7 +964,8 @@ for i,line in enumerate(trimmed_data):
                 break
         # Loop through all attributes for comparison
         for j in range(0,min(len(line),len(trimmed_data_prev[ii]))):
-            if j not in omitAttr: # For all the main values, they are only 'changed'
+            # For all the main values, they are only 'changed'
+            if (not soloAttr and j not in omitAttr) or j in soloAttr: 
                 if line[j] != trimmed_data_prev[ii][j]:
                     print(line[5],attNames[j],'changed from',trimmed_data_prev[ii][j],'to',line[j])
                     patch_lines.append(f'{attNames[j]}: {trimmed_data_prev[ii][j]} > {line[j]}')
@@ -1139,5 +1069,80 @@ with open("website/pokedex_data.js", "w") as file:
     # Add a newline character to each string and write it to the file
     file.writelines(f"{line}\n" for line in jsdict)
 print("Data writing complete")
+
+# Here are the rules for how pokedex_data.js is structured:
+#     The data contains the full data on every Pokemon, and the structure allows for fast lookups of information.
+#     The pokemon must be in the same order as speciesNames in the lang file. This is also the default sort option.
+#     The entries for each pokemon can be in any order.
+#     dex:    Pokedex number
+#     img:    File name of the image
+#             Gets the actual image as "ui/{img}_0.png" for tier 0 (non-shiny)
+#     t1, t2, a1, a2, ha, pa: Types, Abilities, Hidden Ability, Passive
+#             Contains the Filter ID (FID) that corresponds to the type/ability described
+#             An entry is omitted if it does not apply to the pokemon
+#     bst, hp, atk, def, spa, spd, spe: Stats
+#     e1, e2, e3, e4: Egg moves
+#             Contains the Filter ID (FID) of the corresponding move
+#     co: Base cost of the pokemon
+#     et: Egg tier      
+#             0 = common, 1 = rare, 2 = epic, 3 = manaphy, 4 = legendary
+#     sh: Number of shiny variants the Pokemon has
+#             Either 1 (no variants), or 3 (all variants)
+#     ge: Which generation the pokemon is in
+# vvv All the remaining entries are omitted if not applicable to the pokemon
+#     fe: If the Pokemon has a female form
+#             Value is 1 if they have traditional sprite differences, like Venusaur
+#             Value is 2 if they have named female forms, like Meowstic
+#     fa: Which family the pokemon is in
+#             This is used for the "Related To" filters
+#             Contains the FID that corresponds to that family filter
+#     st: Value is 1 if the Pokemon is available from starter select (i.e. being the lowest evolution)
+#     fs: Value is 1 if the Pokemon is available in fresh start (i.e. being a first partner pokemon)
+#     nv: Value is 1 if the Pokemon had new variants recently added
+#     fx: If the Pokemon is form exclusive
+#             Value is 1 for Mega, G-Max, item form changes, or temporary form changes
+#     ex: If the Pokemon is egg exclusive
+#             Value is 1 for traditional egg exclusives, like Arceus
+#             Value is 2 for baby Pokemon, like Pichu
+#             Value is 3 for paradox egg exclusives, like Scream Tail
+#             Value is 4 only for Eternatus
+#             Value is 5 only for Starmobile Revavroom
+#     numerical entries: These are like FID:value
+#             FID is the Filter ID, which can be a type, ability, move, biome
+#             value is how that pokemon relates to that FID (this is different depending on the FID)
+#             Do not include entries that don't apply to that pokemon
+#             For Moves: (i.e. 876:204, 328:1, 1125:209, or anything like that)
+#                     fidThreshold[1] <= FID < fidThreshold[2]
+#                     value shows how the pokemon learns the move
+#                             -1:mushroom, 0:evo, 1-200:level, 
+#                             201:egg&commonTM, 202:egg&greatTM, 203:egg&ultraTM, 204:egg,
+#                             205:rareEgg&commonTM, 206:rareEgg&greatTM, 205:rareEgg&ultraTM, 208:rareEgg,
+#                             209:commonTM, 210:greatTM, 211: ultraTM
+#             For Types: (i.e. 9:307)
+#                     fidThreshold[0] <= FID < fidThreshold[1]
+#                     value shows which slot the pokemon has that type (307 = type1, 308 = type2)
+#                     This data is technically redundant but allows for faster lookups
+#             For Abilities: (i.e. 18:309)
+#                     fidThreshold[1] <= FID < fidThreshold[2]
+#                     value shows which slot the pokemon has that ability (309 = ab1, 310 = ab2, 311 = ha, 312 = pa)
+#                     This data is technically redundant but allows for faster lookups
+#             For Biomes: (i.e. 1197:[80,100])
+#                     fidThreshold[8] <= FID < fidThreshold[9]
+#                     value is an array describing the encounter types in that biome
+#                             Each of those entries encodes the encounter rarity and time of day
+#                             Each rarity is a number:
+#                                     20 = COMMON,  40 = UNCOMMON,  60 = BOSS,  80 = RARE,  100 = BOSS_RARE,
+#                                     120 = SUPER_RARE,  140 = BOSS_SUPER_RARE,  160 = ULTRA_RARE,  180 = BOSS_ULTRA_RARE
+#                             If a pokemon is only available at a certain time of day, it has a modifier added to that number
+#                                     +1 for dawn, +2 for day, +4 for dusk, +8 for night
+#                                     Modifiers are added together if the Pokemon is available during more than one time of day
+#                             If there is more than one entry for encounter types that are always put in a predictable order
+#                                     The first entry is the most common nonboss encounter
+#                                     The second entry is the most common boss encounter
+#                                     Entries beyond the second can be in any order
+#                                     If a pokemon is only Boss encounters, the first entry is the lowest number
+#                     For example, Amoonguss has 1201:[32,72,83,103]
+#                             This means it is in the Jungle (FID = 1201)
+#                             The rarities are Common (Dusk, Night), Boss Common (Dusk, Night), Rare (Dawn, Day), Boss Rare (Dawn, Day)
 
 print("Filter writing complete\n\n========== ALL DONE ==========\n")
