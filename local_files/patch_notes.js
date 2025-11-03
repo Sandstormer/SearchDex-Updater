@@ -320,6 +320,9 @@ Gliscor:<br>
 Egg Move 1: Floaty Fall > Fly<br>
 Egg Move 3: Spiky Shield > Baneful Bunker<br>
 <br>
+Uxie:<br>
+Passive: Illusion > Magic Bounce<br>
+<br>
 Snivy:<br>
 Egg Move 1: Flamethrower > Burning Jealousy<br>
 Egg Move 2: Clanging Scales > Leech Life<br>

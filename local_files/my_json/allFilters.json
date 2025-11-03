@@ -997,10 +997,6 @@
     ],
     [
         "Ability",
-        "Illusion"
-    ],
-    [
-        "Ability",
         "Slow Start"
     ],
     [
@@ -1034,6 +1030,10 @@
     [
         "Ability",
         "Wimp Out"
+    ],
+    [
+        "Ability",
+        "Illusion"
     ],
     [
         "Ability",
