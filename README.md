@@ -2,12 +2,14 @@
   <img src="https://github.com/Sandstormer/PokeRogue-Dex/raw/main/ui/bigbutton.png">
 </a>
 
-### ❌ This is <b>NOT</b> the repository for [Sandstorm's PokeRogue SearchDex](https://sandstormer.github.io/PokeRogue-Dex/).
+## This repository is for the updater scripts for [Sandstorm's SearchDex](https://sandstormer.github.io/PokeRogue-Dex/). 
 
-### 🔧 This repository is for the update scripts that assemble the data for that site. 
-These scripts read all the necessary data from the [game code](https://github.com/pagefaultgames/pokerogue/tree/main), process all the images, and put all the data into a compact format for my site. I run these scripts whenever there is a game update. There is no need for anyone else to run these, unless I am unable to continue the project.
+### 🔧 These scripts are only intended for use by developers.
+The updater scripts read all the necessary data from the [game code](https://github.com/pagefaultgames/pokerogue/tree/main), process all the images, and put all the data into a compact format that is easily searchable for the SearchDex. I run these scripts whenever there is a game update. There is no need for anyone else to run these, unless I am unable to continue the project.
+### ❌ This is <b>NOT</b> the repository for the SearchDex itself. 
+If that is what you are looking for, you can go to [the website](https://sandstormer.github.io/PokeRogue-Dex/), or [see the source code](https://github.com/Sandstormer/PokeRogue-Dex).
 
-# How to use
+## How to use
 
 1. Install Python. I use Python 3.10.6, but other versions will probably work. Check your installed Python version with this command:
 
