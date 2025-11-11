@@ -2,10 +2,15 @@
 import re, os, json, importlib
 pathLocales = './game_files/locales' # File path to the official localization files
 pathOverrides = "local_files/lang_overrides"
-langs = ['en','fr','ko','ja','zh-Hans','es-ES','it']
+allLangs = ['en','fr','ko','ja','zh-Hans','es-ES','it']
+
+langsToDo = ['es-ES']
+# Specify a subset of languages to process
+# Leave blank to process al languages
 
 ignoreOverrides = [] 
-# Put a language in here to ignore all override files
+# Put a language in here to ignore the .py override file
+# Can put 'all' to ignore for every language
 # This lets you see what the script can auto-translate
 
 warnLongNames = 0 
@@ -149,6 +154,7 @@ def shortenText(text):
     return text
 
 # Load all the manual overrides from the lang_overrides folder, these are applied at the end
+langs = langsToDo or allLangs
 overrides = {}
 for lang in langs:
     spec = importlib.util.spec_from_file_location(f"{lang}_over", f'local_files/lang_overrides/{lang}.py')
@@ -607,7 +613,7 @@ for lang in langs: # =========================================== Main loop for e
 
     # Apply manual overrides from the lang_overrides folder =========================
     # These go directly onto the searchdex
-    if lang not in ignoreOverrides:
+    if lang not in ignoreOverrides and 'all' not in ignoreOverrides:
         for overrideName in overrides['en'].keys():
             if overrideName in overrides[lang]:
                 locUI[overrideName] = overrides[lang][overrideName]
