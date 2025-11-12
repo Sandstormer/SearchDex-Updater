@@ -4,9 +4,9 @@ pathLocales = './game_files/locales' # File path to the official localization fi
 pathOverrides = "local_files/lang_overrides"
 allLangs = ['en','fr','ko','ja','zh-Hans','es-ES','it']
 
-langsToDo = ['es-ES']
+langsToDo = []
 # Specify a subset of languages to process
-# Leave blank to process al languages
+# Leave blank to process all languages
 
 ignoreOverrides = [] 
 # Put a language in here to ignore the .py override file
@@ -224,7 +224,8 @@ for lang in langs: # =========================================== Main loop for e
                 print('Long move found:',text)
     # Copy numeric values
     for index,filter in enumerate(allFilters):
-        if is_numeric(filter[1]):
+        # if is_numeric(filter[1]):
+        if filter[0] == 'Gen' or filter[0] == 'Cost':
             # print('Copied',filter[1])
             locFilters[index] = filter[1]
     # Translate female

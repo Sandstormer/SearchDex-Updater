@@ -797,6 +797,10 @@ for j in range(1,10):
     allFilters.append(['Gen',j])
 for j in range(1,11):
     allFilters.append(['Cost',j])
+for j in range(2,10):
+    allFilters.append(['Cost',f'≤ {j}'])
+for j in range(2,10):
+    allFilters.append(['Cost',f'≥ {j}'])
 allFilters.append(['Gender','Female'])
 for j in ['Starter Select','Fresh Start','Flipped Stats']:
     allFilters.append(['Mode',j])
