@@ -35,7 +35,7 @@ warnVariantDimensions = 1
 # This usually happens if the animations are packed differently
 
 # Since there is no official static frame, one must be chosen
-# By defualt, it chooses the most common frame of the animation 
+# By default, it chooses the most common frame of the animation 
 # However, you can override here to choose a specific frame
 overrideFrame = {
     '12':0,
@@ -218,17 +218,23 @@ def processImage(spriteIndex, shinyIndex, femIndex):
     varPath = f'{varPath}/{spriteIndex}'
     defPath = f'{defPath}/{spriteIndex}'
     savePath = f'{dest_dir}/{simpleName}'
-    sliced_img = None
 
-    if shinyIndex and os.path.isfile(f'{varPath}_{shinyIndex}.png'): # Check for custom shiny first
+    global masterList
+    sliced_img = None
+    kind = 0 # Which kind of image to look for in the game files
+    if shinyIndex and spriteIndex in masterList:
+        kind = masterList[spriteIndex][shinyIndex-1]
+
+    if shinyIndex and os.path.isfile(f'{varPath}_{shinyIndex}.png') and kind == 2: # Check for custom shiny first
         sliced_img = getBestFrame(f'{varPath}_{shinyIndex}',defPath)
-    elif shinyIndex and os.path.isfile(f'{varPath}.json'): # Check for palette swap (sometimes even T1)
+    elif shinyIndex and os.path.isfile(f'{varPath}.json') and kind == 1: # Check for palette swap (sometimes even T1)
         sliced_img = getBestFrame(defPath)
         if sliced_img.mode != 'P':
             sliced_img = convert_to_exact_palette(sliced_img)
         sliced_img = palette_swap(sliced_img, f'{varPath}.json', shinyIndex)
-    if not sliced_img and os.path.isfile(f'{thisPath}.png'): # If not custom, use official shiny
+    if not sliced_img and os.path.isfile(f'{thisPath}.png') and kind == 0: # If not custom, use official shiny
         sliced_img = getBestFrame(thisPath,defPath)
+
     if sliced_img: # If there is an image available
         if 'partner' in spriteIndex:
             sliced_img = addPartnerHeart(sliced_img) # Add partner heart to pika and eevee
@@ -275,6 +281,7 @@ def processImage(spriteIndex, shinyIndex, femIndex):
         elif sliced_img.height != thisH or sliced_img.width != thisW:
             if warnVariantDimensions:
                 print(f'Different variant dimensions for {simpleName}')
+
     else: # There is no image
         if shinyIndex < 2 and femIndex == 0: # If it should exist, show an error
             print('Could not find any tier',shinyIndex,'shiny for',spriteIndex)
@@ -309,26 +316,29 @@ try:
 except Exception as e:
     print(f"Error writing to {output_file}: {e}")
 
+# Load the masterlist 
+with open(f'game_files/assets/images/pokemon/variant/_masterlist.json', "r") as f:
+    masterList = json.load(f)
+
 # Assemble the list of all images to be processed
-png_files = [file for file in os.listdir(source_dir) if file.lower().endswith('.png') and not file.lower().endswith('sub.png')]
-spriteNames = [re.sub('.png','',file) for file in png_files]
-biggestW, biggestH = 0, 0
+spriteNames = [file.replace('.png','') for file in os.listdir(source_dir) if '.png' in file and 'sub.png' not in file]
 # Use override list if applicable, instead of the full list
 if overrideSpriteList: 
     spriteNames = [str(name) for name in overrideSpriteList]
     print('\n***** Running with override sprite list *****')
-    print(f'\nProcessing {len(overrideSpriteList)} images...')
+    print(f'\nProcessing {len(overrideSpriteList)} images...\n')
 else:
-    print('\nProcessing all images...')
+    print('\nProcessing all images...\n')
 
 # Loop through each sprite in the list
 progressCount = 0
+biggestW, biggestH = 0, 0
 for index, thisSpriteName in enumerate(spriteNames):
     for thisFemIndex in [0,1]:
         thisW, thisH = 0, 0
         for thisShinyIndex in [0,1,2,3]:
             processImage(thisSpriteName, thisShinyIndex, thisFemIndex)
-    if index/(len(spriteNames)-1) > (progressCount+1)*0.05:
+    if index/(len(spriteNames)-1) >= (progressCount+1)*0.05:
         progressCount = int(index/(len(spriteNames)-1)*20)
         print(f'{progressCount*5}% complete...')
 
