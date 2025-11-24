@@ -18,6 +18,8 @@ def throwError(text = ''):
     print(f'***** Major Error Found ¯\_(ツ)_/¯\n***** {text}')
     print('Continuing...') # PUT A BREAKPOINT ON THIS LINE FOR DEBUGGING ****************
 
+megaList = ['Mega Clefable','Mega Victreebel','Mega Starmie','Mega Dragonite','Mega Meganium','Mega Feraligatr','Mega Skarmory','Mega Froslass','Mega Emboar','Mega Excadrill','Mega Scolipede','Mega Scrafty','Mega Eelektross','Mega Chandelure','Mega Chesnaught','Mega Delphox','Mega Greninja','Mega Pyroar','Mega Floette','Mega Malamar','Mega Barbaracle','Mega Dragalge','Mega Hawlucha','Mega Zygarde','Mega Drampa','Mega Falinks','Mega Raichu X','Mega Raichu Y','Mega Chimecho','Mega Baxcalibur']
+
 # Open and read the file of main data *******************************
 with open(f"{pathBal}/pokemon-species.ts", "r") as file:
     content = file.read()
