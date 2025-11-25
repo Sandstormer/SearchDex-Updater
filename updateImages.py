@@ -1,6 +1,7 @@
-# ======================= Image Updating Script ==========================
-# ======================== Written by Sandstorm ==========================
+# ======================== Image Updating Script ===========================
+# ========================= Written by Sandstorm ===========================
 # It assembles all the shiny pokemon, and warns of any palette swap issues
+# This script will take ~2 minutes to run all images (depending on your CPU)
 
 source_dir = "./game_files/assets/images/pokemon"
 # The official files from github must be in "game_files" folder, in same directory as this script
@@ -338,8 +339,8 @@ for index, thisSpriteName in enumerate(spriteNames):
         thisW, thisH = 0, 0
         for thisShinyIndex in [0,1,2,3]:
             processImage(thisSpriteName, thisShinyIndex, thisFemIndex)
-    if index/(len(spriteNames)-1) >= (progressCount+1)*0.05:
-        progressCount = int(index/(len(spriteNames)-1)*20)
+    if (index+1)/len(spriteNames) >= (progressCount+1)*0.05:
+        progressCount = int((index+1)/len(spriteNames)*20)
         print(f'{progressCount*5}% complete...')
 
 if overrideSpriteList: 

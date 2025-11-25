@@ -641,6 +641,9 @@ for lang in langs: # =========================================== Main loop for e
     print("\nWriting to website language files...")
     # Assemble the lines of data
     lines = []
+    lines.append('// Do not edit these files directly\n')
+    lines.append('// They are changed automatically by the update script\n')
+    lines.append('// Changes must be made through the updater repository\n')
     for overrideName in overrides['en'].keys():
         if overrideName != 'helpMenuText':
             lines.append(f'{overrideName} = [') # Add each UI category
