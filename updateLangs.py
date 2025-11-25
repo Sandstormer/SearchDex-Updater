@@ -4,11 +4,11 @@ pathLocales = './game_files/locales' # File path to the official localization fi
 pathOverrides = "local_files/lang_overrides"
 allLangs = ['en','fr','ko','ja','zh-Hans','es-ES','it']
 
-langsToDo = []
+langsToDo = ['']
 # Specify a subset of languages to process
 # Leave blank to process all languages
 
-ignoreOverrides = [] 
+ignoreOverrides = [''] 
 # Put a language in here to ignore the .py override file
 # Can put 'all' to ignore for every language
 # This lets you see what the script can auto-translate
@@ -154,9 +154,11 @@ def shortenText(text):
     return text
 
 # Load all the manual overrides from the lang_overrides folder, these are applied at the end
-langs = langsToDo or allLangs
+langs = allLangs
+if langsToDo != [''] and langsToDo != []:
+    langs = langsToDo
 overrides = {}
-for lang in langs:
+for lang in allLangs:
     spec = importlib.util.spec_from_file_location(f"{lang}_over", f'local_files/lang_overrides/{lang}.py')
     mod = importlib.util.module_from_spec(spec)
     spec.loader.exec_module(mod)
@@ -320,8 +322,8 @@ for lang in langs: # =========================================== Main loop for e
             if 'Paldea' in filter[1]:
                 nameFormat = tall['pokemon-form']['appendForm']['paldea']
             nameFormat = re.sub('{{pokemonName}}',justLocSpec,nameFormat)
-            nameFormat = re.sub("[.'-]",'',nameFormat)
-            nameFormat = re.sub(":",' ',nameFormat)
+            nameFormat = re.sub("'",'',nameFormat) # Remove single quotes
+            # nameFormat = re.sub(":",' ',nameFormat)
             # print('Translated',specLine[0],'to',nameFormat)
             locFilters[index] = nameFormat
             if len(nameFormat) > 20 and warnLongNames:
@@ -346,8 +348,10 @@ for lang in langs: # =========================================== Main loop for e
     # print('Longest species name in default list is',longest)
     locSpecies = ['' for line in allSpecies]
     maxLenSpec = 0
-    for index,specLine in enumerate(allSpecies):
-        # specLine is [full name, form name, species name]
+    for index,specLine in enumerate(allSpecies): # specLine is [full name, form name, species name]
+        
+        if specLine[2] == 'Koraidon' or specLine[2] == 'Miraidon':
+            specLine[1] = '' # Remove form key of those pokemon
 
         # Translate just the base species name
         text = format_for_camel(specLine[2])
@@ -415,15 +419,21 @@ for lang in langs: # =========================================== Main loop for e
         if tall['pokemon-form']['appendForm']['generic'] != '{{pokemonName}} ({{formName}})':
             input('Odd format detected') # This is never used, but it's just to check the format
         if specLine[1]: # If it is a form
-            nameFormat = f'{justLocForm} {nameFormat}'
+            if lang == 'fr':
+                nameFormat = f'{nameFormat} {justLocForm}' # French has form name after
+                if 'Méga' in justLocForm:
+                    nameFormat = f'Méga-{nameFormat.replace(" Méga","")}'
+            else:
+                nameFormat = f'{justLocForm} {nameFormat}' # Other langs have form name first
 
         # Insert the species name, and remove most punctuation
         nameFormat = re.sub('{{pokemonName}}',justLocSpec,nameFormat)
-        nameFormat = re.sub("[.'-]",'',nameFormat) # Keep ’
-        nameFormat = re.sub(":",' ',nameFormat)
+        nameFormat = re.sub("'",'',nameFormat) # Keep ’
+        # nameFormat = re.sub(":",' ',nameFormat)
         # print('Translated',specLine[0],'to',nameFormat)
         if lang == 'en': # Use my custom english names, using form keys, not actual form names
-            nameFormat = specLine[0]
+            nameFormat = specLine[0] # They don't have punctuation because I just use the keys from the code
+            # To-do: Farfetch'd, Sirfetch'd, Ho-oh, Porygon-Z, Porygon2, Type: Null, Mr. Mime, Mime Jr., Mr. Rime
         nameFormat = shortenText(nameFormat)
         locSpecies[index] = nameFormat
         maxLenSpec = max(maxLenSpec, len(nameFormat))
@@ -605,8 +615,8 @@ for lang in langs: # =========================================== Main loop for e
     locUI['tagToDesc'][59] = tall['modifier-type']['ModifierType']['LURE']['name']
 
     locUI['biomeLongText'] = ['' for line in overrides['en']['biomeLongText']]
-    
     locUI['warningText'] = ['' for line in overrides['en']['warningText']]
+    locUI['helpMenuText'] = overrides['en']['helpMenuText']
 
     print('Done translating ui elements')
     missingAmount = sum([1 for line in locUI['headerNames']+locUI['altText']+locUI['catToName']+locUI['biomeText']+locUI['infoText'] if not line])
@@ -673,7 +683,6 @@ for lang in langs: # =========================================== Main loop for e
     lines.append('helpMenuText = `') # help text
     # This must be done last because it references other strings
     lines.append(locUI['helpMenuText'])
-    lines[-1] = lines[-1][:-1]
     lines.append('`;')
 
     with open(f"website/lang/{lang}.js", "w", encoding="utf-8") as file:

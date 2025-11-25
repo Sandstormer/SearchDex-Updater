@@ -774,9 +774,6 @@ if len(trimmed_data) != 1452:
 # Check that Normal Deoxys has Swift, Icy Wind, and Cosmic Power (and speed, speed, attack)
 # Check that Normal/Ice Calyrex has Body Press
 
-# Repair names that have punctuation? probably not
-    # Zygarde, Farfetch'd, Sirfetch'd, Ho-oh, Porygon-Z, Porygon2, Type: Null, Mr. Mime, Mime Jr., Mr. Rime
-
 # Sort the abilities and moves into order based on frequency?
 # They are in arbitrary order. Types are alphabetical.
 
