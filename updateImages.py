@@ -294,17 +294,9 @@ os.makedirs(dest_dir, exist_ok=True) # Ensure the directory exists
 # List the dex no of all the sprite files, this is IMPORTANT for assigning dex numbers
 print('\nReading all regional dex numbers...')
 # List all image files in the current directory
-files = [f for f in os.listdir(source_dir) if f.lower().endswith(".png")]
-# Define the patterns to exclude
-exclude_patterns = [
-    re.compile(r"\d+s\.png$"),    # digits + 's.png' (base shinies)
-    re.compile(r"\d+s-"),         # digits + s- (form shinies)
-    re.compile(r"\d+_\d"),        # digits underscore digit
-    re.compile(r"sub\.png$"),     # end in 'sub.png'
-]
-# Loop through files and create the list of files that are only base species
-baseFormFiles = [f for f in files if not any(p.search(f) for p in exclude_patterns)]
-filenames = [re.sub(r'[_-].*','',file).replace('.png','') for file in baseFormFiles] # Remove form names
+files = [f for f in os.listdir(source_dir) if f.endswith(".png") and 'sub' not in f]
+# Remove form names, but keep that entry in the list
+filenames = [re.sub(r'[_-].*','',file).replace('.png','') for file in files] 
 filenames = [int(file) for file in filenames]
 filenames.sort()
 regionalFormNumbers = [str(file) for file in filenames if file > 1025]
