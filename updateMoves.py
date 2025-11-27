@@ -254,7 +254,7 @@ for line in moveData:
                 move2D[-1][3].append(3)
             elif 'CritOnlyAttr' in line: # auto crit
                 move2D[-1][3].append(4)
-            elif 'CRIT_BOOST' in line: # focus energy
+            elif 'CRIT_BOOST' in line and 'target' not in line: # focus energy, not dragon cheer
                 move2D[-1][3].append(5)
             elif '.makesContact(false)' in line: # these contact values are overrides
                 move2D[-1][3].append(200)       # if it doesn't exist, look at move category

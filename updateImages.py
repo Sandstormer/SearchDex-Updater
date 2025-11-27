@@ -289,23 +289,22 @@ def processImage(spriteIndex, shinyIndex, femIndex):
 
 os.makedirs(dest_dir, exist_ok=True) # Ensure the directory exists
 
+# ======================= Determine regional dex numbers =======================
+
 # List the dex no of all the sprite files, this is IMPORTANT for assigning dex numbers
 print('\nReading all regional dex numbers...')
-# List all files in the current directory
-files = [file for file in os.listdir(source_dir) if file.lower().endswith('.png')]
-baseFormFiles = []
-# Define the pattern to match
-pattern1 = lambda filename: filename.endswith("s.png") and filename[-6].isdigit()
-pattern2 = re.compile(r'\d+s-')
-pattern3 = re.compile(r'\d+_\d')
-pattern4 = re.compile(r'sub.png')
+# List all image files in the current directory
+files = [f for f in os.listdir(source_dir) if f.lower().endswith(".png")]
+# Define the patterns to exclude
+exclude_patterns = [
+    re.compile(r"\d+s\.png$"),    # digits + 's.png' (base shinies)
+    re.compile(r"\d+s-"),         # digits + s- (form shinies)
+    re.compile(r"\d+_\d"),        # digits underscore digit
+    re.compile(r"sub\.png$"),     # end in 'sub.png'
+]
 # Loop through files and create the list of files that are only base species
-for file in files:
-    if not pattern1(file) and not pattern2.search(file) and not pattern3.search(file) and not pattern4.search(file):
-        baseFormFiles.append(file)
-filenames = [re.sub(r'-.*','',file) for file in baseFormFiles] # Remove form names
-filenames = [re.sub(r'_.*','',file) for file in filenames]     # Remove form names
-filenames = [re.sub(r'.png','',file) for file in filenames]    # Remove file extensions
+baseFormFiles = [f for f in files if not any(p.search(f) for p in exclude_patterns)]
+filenames = [re.sub(r'[_-].*','',file).replace('.png','') for file in baseFormFiles] # Remove form names
 filenames = [int(file) for file in filenames]
 filenames.sort()
 regionalFormNumbers = [str(file) for file in filenames if file > 1025]
@@ -316,6 +315,8 @@ try:
     print(f"List of regional form numbers saved to {output_file}")
 except Exception as e:
     print(f"Error writing to {output_file}: {e}")
+
+# ======================= Process all the pokemon images =======================
 
 # Load the masterlist 
 with open(f'game_files/assets/images/pokemon/variant/_masterlist.json', "r") as f:
@@ -344,11 +345,67 @@ for index, thisSpriteName in enumerate(spriteNames):
         print(f'{progressCount*5}% complete...')
 
 if overrideSpriteList: 
-    print(f'\nFinished processing {len(overrideSpriteList)} images')
+    print(f'\nFinished processing {len(overrideSpriteList)} pokemon images')
 else:
-    print('\nFinished processing all the images')
+    print('\nFinished processing all pokemon images')
 print('Largest width:' ,biggestW) # usually 115
 print('Largest height:',biggestH) # usually 119
+
+# ======================= Composite all the biome images =======================
+biome_src = "./game_files/assets/images/arenas"
+biome_dest = "./website/ui/biomes"
+with open("local_files/my_json/allFilters.json", "r") as file:
+    allFilters = json.load(file)
+with open("local_files/my_json/fidThresholds.json", "r") as fp:
+    fidThresholds = json.load(fp)
+biomeNames = [filter[1].lower().replace(' ','_') for filter in allFilters if filter[0] == 'Biome']
+thisFID = fidThresholds[8]-1
+
+# Delete previous biome images
+for filename in os.listdir(biome_dest):
+    file_path = os.path.join(biome_dest, filename)
+    if os.path.isfile(file_path):
+        os.remove(file_path)
+
+for thisBiome in biomeNames:
+
+    background_filename = f"{thisBiome}_bg.png"
+    thisFID += 1
+    output_filename = f"{thisFID}.png"
+
+    bg_path = os.path.join(biome_src, background_filename) # Load background image
+    background = Image.open(bg_path).convert("RGBA")
+    overlay_filenames = [ # Get overlay image paths
+        f for f in os.listdir(biome_src) if f.startswith(f"{thisBiome}_b") and f.endswith(".png") and f != background_filename
+    ]
+    overlay_filenames.sort() # Sort for consistent layering
+
+    # Paste each overlay image on top of the background
+    for filename in overlay_filenames:
+        # Open the image
+        overlay_path = os.path.join(biome_src, filename)
+        overlay = Image.open(overlay_path).convert("RGBA")
+        bg_pos = [0, 0] # Where to paste the overlay image on the background
+
+        # If json data exists, crop the image
+        if os.path.isfile(f'{biome_src}/{filename[:-4]}.json'):
+            with open(f'{biome_src}/{filename[:-4]}.json', "r") as f:
+                json_data = json.load(f)
+            frame_data = json_data['textures'][0]['frames'][0]
+            bg_pos = [frame_data["spriteSourceSize"]["x"], frame_data["spriteSourceSize"]["y"]]
+            crop_box = [val for val in frame_data["frame"].values()] # Get x, y, w, h
+            crop_box[2] += crop_box[0] # Add w to x
+            crop_box[3] += crop_box[1] # Add h to y
+            overlay = overlay.crop(crop_box)
+
+        # Overlay the image on the bg
+        background.paste(overlay, bg_pos, overlay)
+
+    background = background.crop((150, 20, 282, 110)) # Crop to a nice size for the SearchDex
+    background.save(os.path.join(biome_dest, output_filename))
+    print(f"Composite biome image saved as: {output_filename}")
+print('\nFinished processing all biome images')
+
 print('\n======= ALL DONE =======\n')
 
 # ********* Reminder for what colors and indices are used

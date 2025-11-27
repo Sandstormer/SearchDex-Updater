@@ -2,23 +2,23 @@
 # ===== It links all the data between evolutions and forms          =====
 # ===== It saves the data in an optimized format as pokedex_data.js =====
 
+# There are rules at the bottom of this file for how pokedex_data.js is structured
+
 import re, os, copy, json
 pathBal  = './game_files/src/data/balance' # File path to the balance files
-pathImg = './website/images'
+pathImg = './website/images' # Path to read processed images from updateImages.py
 
 # Function to determine if a value is numeric
 def is_numeric(value):
     return re.match(r'^-?\d+(\.\d+)?$', str(value)) is not None
-# Function to format arguments
+# Functions to format arguments
 def format_for_disp(arg): # Remove spaces, and convert _ and - to spaces, then capitalize
     return arg.replace(' ','').replace('_',' ').replace('-',' ').title()
-def format_for_attr(arg): # Remove spaces
+def format_for_attr(arg): # Remove spaces, all lower case
     return arg.replace(' ','').lower()
 def throwError(text = ''):
     print(f'***** Major Error Found ¯\_(ツ)_/¯\n***** {text}')
     print('Continuing...') # PUT A BREAKPOINT ON THIS LINE FOR DEBUGGING ****************
-
-megaList = ['Mega Clefable','Mega Victreebel','Mega Starmie','Mega Dragonite','Mega Meganium','Mega Feraligatr','Mega Skarmory','Mega Froslass','Mega Emboar','Mega Excadrill','Mega Scolipede','Mega Scrafty','Mega Eelektross','Mega Chandelure','Mega Chesnaught','Mega Delphox','Mega Greninja','Mega Pyroar','Mega Floette','Mega Malamar','Mega Barbaracle','Mega Dragalge','Mega Hawlucha','Mega Zygarde','Mega Drampa','Mega Falinks','Mega Raichu X','Mega Raichu Y','Mega Chimecho','Mega Baxcalibur']
 
 # Open and read the file of main data *******************************
 with open(f"{pathBal}/pokemon-species.ts", "r") as file:
@@ -218,8 +218,8 @@ for i in range(len(output_data)):
         combined_data[-1].append(output_data[par][3]) # dex number [3]
         if output_data[i][4] == '': 
             # If the form key is blank, like a 'normal' form, just use the species name
-            combined_data[-1].append(output_data[par][4])
-            combined_data[-1].append(output_data[par][5])
+            combined_data[-1].append(output_data[par][4]) # image filename [4]
+            combined_data[-1].append(output_data[par][5]) # Display name [5]
         else: # If it is a named form
             spriteName = f'{output_data[par][4]}-{output_data[i][4]}'
             combined_data[-1].append(spriteName.replace(" ", "-")) # image filename [4]
@@ -276,8 +276,9 @@ for i in range(len(output_data)):
         unobtainable = 1
     combined_data[-1].append(unobtainable) # Unobtainable [42]
     combined_data[-1].append('') # Newly added variants [43]
-    combined_data[-1].append('') # Form type [44] (fullevo, mega, giga)
+    combined_data[-1].append('') # Evo class [44] (0 = can evolve, 1 = fully evolved, 2 = single stage)
     combined_data[-1].append('') # Exclusive type [45] (regular, eggExc, baby, paradox, eterna, starmobile)
+    combined_data[-1].append('') # Form class [46] (0 = base, 1 = mega, 2 = giga, 3 = other)
 print('Finished normalizing data')
 
 # Parse the data for starter costs ****************************
@@ -632,7 +633,8 @@ with open("./local_files/my_json/regionalformnumbers.txt", "r") as file:
     regionalDexNo = re.split('\n',file.read()) # Generated using sprite names
 for i in range(len(regionalDexNo)):
     trimmed_data[-i-1][3] = regionalDexNo[-i-1]
-    if trimmed_data[-i-1][2] == "":
+    # Usually I check parentRow[2] to see if it is a form, but here I check formKey[1] because it could be blank
+    if trimmed_data[-i-1][1] == "": 
         trimmed_data[-i-1][4] = f'{regionalDexNo[-i-1]}' # Replace img with new dex number
     else:
         trimmed_data[-i-1][4] = f'{regionalDexNo[-i-1]}-{trimmed_data[-i-1][1]}' # Add form to img name
@@ -643,6 +645,7 @@ for i, line in enumerate(trimmed_data):
         throwError(f'Unassigned starter row for {line[5]}')
     # Trimmed data no longer has base species or unobtainable forms
     # So now we rebase the row numbers as specIndex[36] to be sequential
+    # This is the speciesID (SID) on the SearchDex, used to look up data for that species
     line[36] = i
     # Also rebase to sequential numbers for starterIndex [35]
     # This requires finding which row the child is in
@@ -676,8 +679,10 @@ for line in trimmed_data:
     if line[35] in freshStarterIndices:
         line[39] = 1
 
-# Determine the form class [44] of each pokemon
-# 0 = not fully evolved, 1 = fully evolved, 2 = mega, 3 = giga ......................
+# Determine the Evo class [44] and Form class [46] of each pokemon
+# Evo class [44] (0 = can evolve, 1 = fully evolved, 2 = single stage)
+# Form class [46] (0 = base, 1 = mega, 2 = giga, 3 = other)
+megaList = ['Mega Clefable','Mega Victreebel','Mega Starmie','Mega Dragonite','Mega Meganium','Mega Feraligatr','Mega Skarmory','Mega Froslass','Mega Emboar','Mega Excadrill','Mega Scolipede','Mega Scrafty','Mega Eelektross','Mega Chandelure','Mega Chesnaught','Mega Delphox','Mega Greninja','Mega Pyroar','Mega Floette','Mega Malamar','Mega Barbaracle','Mega Dragalge','Mega Hawlucha','Mega Zygarde','Mega Drampa','Mega Falinks','Mega Raichu X','Mega Raichu Y','Mega Chimecho','Mega Baxcalibur']
 
 # Error checking **************************************************************************************
 print('\n==============================\n')
@@ -691,9 +696,9 @@ for i in range(len(trimmed_data)):
             # print(f'{trimmed_data[i][5]}: Replaced {trimmed_data[i][4]} with base image')
             trimmed_data[i][4] = f'{trimmed_data[i][3]}' # Get image from dexno
         elif trimmed_data[i][3] == trimmed_data[i-1][3]: # If same species as one above
-            if int(trimmed_data[i][3]) not in [1012,1013]: # Ignore Sinistcha family
-                print(f'{trimmed_data[i][5]}: Replaced {trimmed_data[i][4]} with {trimmed_data[i-1][4]}')
             trimmed_data[i][4] = trimmed_data[i-1][4] # Take that image
+            if int(trimmed_data[i][3]) not in [1012,1013]: # Report if not Sinistcha family
+                print(f'{trimmed_data[i][5]}: Replaced {trimmed_data[i][4]} with {trimmed_data[i-1][4]}')
         else:
             throwError(f'Could not find any image for {trimmed_data[i][4]}_0.png')
 # Check for the existence of variant shinies
@@ -936,8 +941,8 @@ attNames = ['rowno','form','parno','dexno','img','spec','desc','type1','type2','
            # 13    14   15    16     17      18      19        20      21    22    23        24           25           26        27
             'movedict','cost','eggtier','shvar','gen','startable','startRow','startInd','specInd','specKey','famFID',
            #    28       29      30       31     32       33          34         35         36        37       38
-            'freshStart','biomes','formExclusive','unobtainable','newVariants','formClass','exclusiveClass']
-           #    39          40           41             42             43           44            45
+            'freshStart','biomes','formExclusive','unobtainable','newVariants','evoClass','exclusiveClass','formClass']
+           #    39          40           41             42             43           44            45           46
 omitAttr = [0, 1, 2, 20, 21, 22, 28, 34, 35, 36, 37, 38, 40, 41]
 soloAttr = [] # Put an attribute here to only show changes to that, and ignores changes to others
 for i in range(len(soloAttr)):                              # You can use strings for ranges (inclusive)
@@ -996,7 +1001,7 @@ for i,line in enumerate(trimmed_data):
     if patch_lines[-1] == f'{line[5]}:':
         patch_lines.pop()                   
         patch_lines.pop()    
-print('Summary of patch notes:')
+print('\nSummary of patch notes:')
 for j in range(len(attNames)):
     if attPatchCount[j] > 0:
         print(f'{attNames[j]} changed: {attPatchCount[j]}')
@@ -1011,18 +1016,21 @@ print('\n==============================\n')
 print("Writing to website database...")
 
 # Write all the main data to a Javascript file *********************************************
-attributes = ['row','form','parno','dex','img','sp','desc','t1','t2','a1','a2','ha','pa', # Names are short to reduce file size
+# Names are short to reduce database file size
+attributes = ['row','form','parno','dex','img','sp','desc','t1','t2','a1','a2','ha','pa',
              #  0     1       2      3     4    5     6     7    8    9    10   11   12    
               'bst','hp','atk','def','spa','spd','spe','catchrate','exp','mpc','fe','e1','e2','e3','e4','movedict',
              #  13   14    15    16    17    18    19       20       21    22   23   24   25   26   27      28
               'co','et','sh','ge','st','startRow','startInd','specInd','specKey','fa',
              # 29   30   31   32   33      34         35         36        37     38
-              'fs','biomes','fx','unobtainable','nv','formClass','ex']
-             # 39     40     41        42        43      44       45
-omitAttr = [0, 1, 2, 5, 6, 20, 21, 22, 28, 34, 35, 36, 37, 40, 42, 44] # Some attributes are not written to the database
+              'fs','biomes','fx','unobtainable','nv','evoClass','ex','formClass']
+             # 39     40     41        42        43      44      45      46
+# Some attributes are not written to the SearchDex database
+omitAttr = [0, 1, 2, 5, 6, 20, 21, 22, 28, 34, 35, 36, 37, 40, 42, 44, 46] 
+# Key text to convert type/ability/move to filterID (FID) via filterToFID
 keyText = {7:'type', 8:'type', 9:'ability', 10:'ability', 11:'ability', 12:'ability', 24:'move', 25:'move', 26:'move', 27:'move'}
-jsdict = ['// pokedex_data.js\nconst items=[']
 
+jsdict = ['// pokedex_data.js\nconst items=[']
 for line in trimmed_data:
     text = '{' # Start the entry of that Pokemon
     # Write all the main attributes as {text}:{value}
@@ -1065,8 +1073,8 @@ for line in trimmed_data:
                     text = f'{text}]'
     text = f'{text}}},' # End the entry of that Pokemon
     jsdict.append(text)
-
 jsdict.append('];')
+
 # Open the file in write mode ('w') - this will overwrite the file if it exists
 with open("website/pokedex_data.js", "w") as file:
     # Add a newline character to each string and write it to the file
