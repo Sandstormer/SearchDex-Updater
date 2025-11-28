@@ -1156,4 +1156,4 @@ print("Data writing complete")
 #                             This means it is in the Jungle (FID = 1201)
 #                             The rarities are Common (Dusk, Night), Boss Common (Dusk, Night), Rare (Dawn, Day), Boss Rare (Dawn, Day)
 
-print("Filter writing complete\n\n========== ALL DONE ==========\n")
+print("Filter writing complete\n\n=========== ALL DONE ===========\n")

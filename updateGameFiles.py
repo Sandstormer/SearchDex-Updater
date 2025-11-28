@@ -5,7 +5,7 @@
 # Step 1 is to run this script
 # Step 2 is to run updateImages.py
 # Step 3 is to run updateDatabase.py
-# Step 4 is to run updateMoves.py
+# Step 4 is to run updateFilters.py
 # Step 5 is to run updateLangs.py
 # Step 6 is to use GitHub to review changes to the SearchDex website data.
 # Step 7 is to manually test the functionality of the SearchDex.

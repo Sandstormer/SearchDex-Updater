@@ -24,7 +24,7 @@ If that is what you are looking for, you can go to [the website](https://sandsto
 - updateGameFiles.py
 - updateImages.py
 - updateDatabase.py
-- updateMoves.py
+- updateFilters.py
 - updateLangs.py
 
 The website files for the [Searchdex itself](https://github.com/Sandstormer/PokeRogue-Dex) will be cloned into the "website" folder. If that folder already exists, that step will be skipped, and the website structure files (index.html, style.css, script.js) will not be updated. 

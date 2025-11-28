@@ -565,6 +565,7 @@ for line in orderedData:
             print('Could not find old entry for',line[1])
 print('\n==============================\n')
 input('Continue to writing website database?')
+print('Writing...')
 
 # Load the numeric data from the main script
 typeColors = ["#ADBD21","#735A4A","#7B63E7","#FFC631","#EF70EF","#A55239","#F75231","#9CADF7","#6363B5","#7BCE52","#AE7A3B","#5ACEE7","#ADA594","#9141CB","#EF4179","#BDA55A","#81A6BE","#399CFF"]
@@ -607,8 +608,8 @@ for index,costLine in enumerate(costParsed):
 # Moves: [ [procs[chance,stat,val]], [tags], type, cat(phys/spec/stat), pow, acc, pp, prio]
 #             0                        1       2    3                    4    5    6    7
 
-# Write all the numeric data to a filters_global.js
-# All localized strings are written from another script
+# ======================= Write numeric filter data to filters_global.js =======================
+# This is just numbers. Localized strings are written from updateLangs.py
 lines.append('];\nconst fidToProc = [') # Ability/move descriptions
 for fidLine in orderedData:
 
@@ -646,4 +647,66 @@ lines.append('];')
 with open("website/filters_global.js", "w") as file:
     file.writelines(f"{line}\n" for line in lines)
 
-print("\nDescription writing complete - ALL DONE\n")
+print("Done writing numeric filter data")
+
+# ======================= Composite all the biome images =======================
+print('\n==============================\n')
+print('Creating biome images...')
+
+biome_src = "./game_files/assets/images/arenas"
+biome_dest = "./website/ui/biomes"
+with open("local_files/my_json/allFilters.json", "r") as file:
+    allFilters = json.load(file)
+with open("local_files/my_json/fidThresholds.json", "r") as fp:
+    fidThresholds = json.load(fp)
+biomeNames = [filter[1].lower().replace(' ','_') for filter in allFilters if filter[0] == 'Biome']
+thisFID = fidThresholds[8]-1
+
+import os
+from PIL import Image
+# Delete previous biome images
+for filename in os.listdir(biome_dest):
+    file_path = os.path.join(biome_dest, filename)
+    if os.path.isfile(file_path):
+        os.remove(file_path)
+
+for thisBiome in biomeNames:
+
+    background_filename = f"{thisBiome}_bg.png"
+    thisFID += 1
+    output_filename = f"{thisFID}.png"
+
+    bg_path = os.path.join(biome_src, background_filename) # Load background image
+    background = Image.open(bg_path).convert("RGBA")
+    overlay_filenames = [ # Get overlay image paths
+        f for f in os.listdir(biome_src) if f.startswith(f"{thisBiome}_b") and f.endswith(".png") and f != background_filename
+    ]
+    overlay_filenames.sort() # Sort for consistent layering
+
+    # Paste each overlay image on top of the background
+    for filename in overlay_filenames:
+        # Open the image
+        overlay_path = os.path.join(biome_src, filename)
+        overlay = Image.open(overlay_path).convert("RGBA")
+        bg_pos = [0, 0] # Where to paste the overlay image on the background
+
+        # If json data exists, crop the image
+        if os.path.isfile(f'{biome_src}/{filename[:-4]}.json'):
+            with open(f'{biome_src}/{filename[:-4]}.json', "r") as f:
+                json_data = json.load(f)
+            frame_data = json_data['textures'][0]['frames'][0]
+            bg_pos = [frame_data["spriteSourceSize"]["x"], frame_data["spriteSourceSize"]["y"]]
+            crop_box = [val for val in frame_data["frame"].values()] # Get x, y, w, h
+            crop_box[2] += crop_box[0] # Add w to x
+            crop_box[3] += crop_box[1] # Add h to y
+            overlay = overlay.crop(crop_box)
+
+        # Overlay the image on the bg
+        background.paste(overlay, bg_pos, overlay)
+
+    background = background.crop((150, 20, 282, 110)) # Crop to a nice size for the SearchDex
+    background.save(os.path.join(biome_dest, output_filename))
+    print(f"Composite biome image saved as: {output_filename}")
+print('Done processing all biome images')
+
+print('\n=========== ALL DONE ===========\n')
