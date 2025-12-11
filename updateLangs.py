@@ -47,7 +47,6 @@ subs = { # Replacement strings to make text fit
         ["50 PC Zygarde","Power Construct 50% Zygarde"],
         ["10 Zygarde","10% Zygarde"],
         ["10 PC Zygarde","Power Construct 10% Zygarde"],
-        ["10 Complete Zygarde","Complete 10% Zygarde"],
         ["Lowkey Toxtricity","Low Key Toxtricity"],
         ["???","The End"],
     ],
@@ -58,7 +57,10 @@ subs = { # Replacement strings to make text fit
         ['Masque ',''],
         ['Rassemblement Forme','Rassemblement'],
         ['Mode Transe ','Transe '],
-    ]
+    ],
+    'es-ES': [
+        ['Teracristal Ogerpon','Tera Ogerpon'],
+    ],
 }
 
 # All the manual translations =====================
@@ -320,7 +322,7 @@ for lang in langs: # =========================================== Main loop for e
             if 'Hisui' in filter[1]:
                 nameFormat = tall['pokemon-form']['appendForm']['hisui']
             if 'Paldea' in filter[1]:
-                nameFormat = tall['pokemon-form']['appendForm']['paldea']
+                nameFormat = tall['pokemon-form']['appendForm']['paldea'].replace('Galar','Paldea') # Remove later !!!!
             nameFormat = re.sub('{{pokemonName}}',justLocSpec,nameFormat)
             nameFormat = re.sub("'",'',nameFormat) # Remove single quotes
             # nameFormat = re.sub(":",' ',nameFormat)
@@ -393,8 +395,9 @@ for lang in langs: # =========================================== Main loop for e
             if effSpec == 'Dudunsparce': effSpec = 'Dunsparce'
             if effSpec == 'Sinistcha': effSpec = 'Poltchageist'
             if effSpec == 'Galar Darmanitan': effSpec = 'Galar Darumaka'
-            if specLine[1] == '10 Complete': specLine[1] = 'Complete'
             text = format_for_camel(f'{effSpec} {specLine[1]}')
+            if lang=='es-ES' and specLine[2] == 'Ursaluna':
+                e=7
             if text in tall['pokemon-form']: # For regular forms
                 justLocForm = tall['pokemon-form'][text]
                 # print('Translated',specLine[0],'to',justLocForm,justLocSpec)
@@ -415,7 +418,11 @@ for lang in langs: # =========================================== Main loop for e
         if 'Hisui' in specLine[2]:
             nameFormat = tall['pokemon-form']['appendForm']['hisui']
         if 'Paldea' in specLine[2]:
-            nameFormat = tall['pokemon-form']['appendForm']['paldea']
+            nameFormat = tall['pokemon-form']['appendForm']['paldea'].replace('Galar','Paldea') # Remove later !!!!
+        if specLine[2] == 'Bloodmoon Ursaluna':
+            nameFormat = tall['pokemon-form']['appendForm']['bloodmoon']
+        if specLine[2] == 'Eternal Floette':
+            nameFormat = tall['pokemon-form']['appendForm']['eternal']
         if tall['pokemon-form']['appendForm']['generic'] != '{{pokemonName}} ({{formName}})':
             input('Odd format detected') # This is never used, but it's just to check the format
         if specLine[1]: # If it is a form

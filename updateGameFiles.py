@@ -51,7 +51,7 @@ def clone_or_update(repo_url, repo_dest, branch_name=None, only_clone=False):
 # Main files
 clone_or_update(
     repo_url="https://github.com/pagefaultgames/pokerogue.git",
-    repo_dest="./game_files",
+    repo_dest="game_files",
     branch_name=branchName
 )
 
@@ -59,7 +59,7 @@ clone_or_update(
 # If you already have these, they will not be updated/replaced
 clone_or_update(
     repo_url="https://github.com/Sandstormer/PokeRogue-Dex.git",
-    repo_dest="./website",
+    repo_dest="website",
     only_clone=True
 )
 

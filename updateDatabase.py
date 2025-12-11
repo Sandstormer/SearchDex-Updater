@@ -629,7 +629,7 @@ for i in range(len(combined_data)-1):
 trimmed_data.append(combined_data[-1]) # Add the last entry
 
 # Regional forms dex number override
-with open("./local_files/my_json/regionalformnumbers.txt", "r") as file:
+with open("local_files/my_json/regionalformnumbers.txt", "r") as file:
     regionalDexNo = re.split('\n',file.read()) # Generated using sprite names
 for i in range(len(regionalDexNo)):
     trimmed_data[-i-1][3] = regionalDexNo[-i-1]

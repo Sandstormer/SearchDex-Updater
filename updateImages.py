@@ -3,14 +3,14 @@
 # It assembles all the shiny pokemon, and warns of any palette swap issues
 # This script will take ~2 minutes to run all images (depending on your CPU)
 
-source_dir = "./game_files/assets/images/pokemon"
+source_dir = "game_files/assets/images/pokemon"
 # The official files from github must be in "game_files" folder, in same directory as this script
 # That folder will be created when you run updateGameFiles.py
 
-dest_dir = "./website/images"
+dest_dir = "website/images"
 # Where to put all the processed images
 
-# =============================== Options ================================
+# =============================== Options ==================================
 
 overrideSpriteList = []
 # Specify a subset of images, rather than running the entire list
@@ -31,7 +31,7 @@ warnPureBlackJson = 0
 # Warns if pure black is found on a json
 # Set to 0 to ignore this check
 
-warnVariantDimensions = 1
+warnVariantDimensions = True
 # Warns if variants of the same pokemon have different dimensions
 # This usually happens if the animations are packed differently
 
@@ -45,7 +45,7 @@ overrideFrame = {
     '890':-8
 }
 
-# ==================== Do not touch below this line ======================
+# ===================== Do not touch below this line =======================
 
 import re, os, json
 import numpy as np
@@ -300,7 +300,7 @@ filenames = [re.sub(r'[_-].*','',file).replace('.png','') for file in files]
 filenames = [int(file) for file in filenames]
 filenames.sort()
 regionalFormNumbers = [str(file) for file in filenames if file > 1025]
-output_file = "./local_files/my_json/regionalformnumbers.txt"
+output_file = "local_files/my_json/regionalformnumbers.txt"
 try:
     with open(output_file, 'w') as file:
         file.write("\n".join(regionalFormNumbers))

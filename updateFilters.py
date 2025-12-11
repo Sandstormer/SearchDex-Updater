@@ -497,7 +497,7 @@ print('Checking for errors...\n')
 if orderedData[-1][1] != 'eternabeam':
     print('\nLast five moves:')
     print([orderedData[-index][1] for index in range(5,0,-1)])
-print('There should be 4 attacks with multiple procs')
+multiProcs = []
 for fidLine in orderedData:
     if len(fidLine) > 4: # For moves
         procCount = 0
@@ -505,7 +505,7 @@ for fidLine in orderedData:
             if procLine[0] > -1:
                 procCount += 1
             if procCount > 1:
-                print('Multiple procs found in',fidLine[1])
+                multiProcs.append(fidLine)
         if 203 in fidLine[3] and fidLine[5] != 2:
             input('***** Reflectable attack',fidLine[1])
         if 203 not in fidLine[3] and fidLine[5] == 2 and 202 not in fidLine[3]:
@@ -524,6 +524,10 @@ for fidLine in orderedData:
         for procLine in fidLine[2]:
             if procLine[0] == 0 and procLine[2] == 0:
                 print('Empty proc',fidLine[1],procLine)
+if len(multiProcs) != 4: # Check for moves with more than one proc (e.g. Fire Fang)
+    print('There should be 4 attacks with multiple procs')
+    for line in multiProcs:
+        print('Multiple procs found in',line[1])
 
 # Read the upgrade cost data
 with open(f'{pathData}/balance/starters.ts', "r") as f:
@@ -653,8 +657,8 @@ print("Done writing numeric filter data")
 print('\n==============================\n')
 print('Creating biome images...')
 
-biome_src = "./game_files/assets/images/arenas"
-biome_dest = "./website/ui/biomes"
+biome_src = "game_files/assets/images/arenas"
+biome_dest = "website/ui/biomes"
 with open("local_files/my_json/allFilters.json", "r") as file:
     allFilters = json.load(file)
 with open("local_files/my_json/fidThresholds.json", "r") as fp:
