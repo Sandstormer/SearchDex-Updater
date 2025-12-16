@@ -31,9 +31,9 @@ warnPureBlackJson = 0
 # Warns if pure black is found on a json
 # Set to 0 to ignore this check
 
-warnVariantDimensions = True
+warnVariantDimensions = 1
 # Warns if variants of the same pokemon have different dimensions
-# This usually happens if the animations are packed differently
+# This usually happens if the animations are packed differently, not a big problem
 
 # Since there is no official static frame, one must be chosen
 # By default, it chooses the most common frame of the animation 
@@ -69,28 +69,23 @@ def getBestFrame(thisImgPath, altJsonPath=''):
     if not os.path.isfile(f'{thisImgPath}.json'): # If there is no specific json
         thisImgPath = altJsonPath
     if not os.path.isfile(f'{thisImgPath}.json'): # If there is no default json
-        input('json error')
+        input('***** Error: Could not find any JSON file for',thisImgPath)
     with open(f'{thisImgPath}.json', "r") as f:
         jsonLoad = json.load(f)
     if 'textures' in jsonLoad:
         allFrames = jsonLoad['textures'][0]['frames']
     else:
         allFrames = jsonLoad['frames']
-    indFrames = [line['frame'] for line in allFrames] # Each frame
+    indFrames = [list(line['frame'].values()) for line in allFrames] # Each frame [x,y,w,h]
+    
     # If the pokemon has an override frame, only use that frame
     if thisImgPath.split('/')[-1] in overrideFrame:
-        if len(indFrames) >= abs(overrideFrame[thisImgPath.split('/')[-1]]):
-            indFrames = [indFrames[overrideFrame[thisImgPath.split('/')[-1]]]]
-    frameCount = [0 for line in indFrames]
-    for line in indFrames:
-        for i in range(len(indFrames)):
-            if line['x'] == indFrames[i]['x'] and line['y'] == indFrames[i]['y']:
-                if line['w'] == indFrames[i]['w'] and line['h'] == indFrames[i]['h']:
-                    frameCount[i] += 1 # Count how many times each frame occurs
-    for i in range(len(indFrames)):
-        if frameCount[i] == max(frameCount): # Choose the first most common frame
-            x,y,w,h = indFrames[i]['x'], indFrames[i]['y'], indFrames[i]['w'], indFrames[i]['h']
-            return thisImage.crop((x, y, x+w, y+h))
+        indFrames = [indFrames[min(len(indFrames),overrideFrame[thisImgPath.split('/')[-1]])]]
+
+    # Count how many times each frame occurs
+    frameCount = [sum([lineA==lineB for lineB in indFrames]) for lineA in indFrames]
+    x,y,w,h = indFrames[np.argmax(frameCount)] # Choose the first most common frame
+    return thisImage.crop((x, y, x+w, y+h))
 
 # Function to do palette swap
 def palette_swap(image, json_path, tier):
@@ -320,7 +315,7 @@ spriteNames = [file.replace('.png','') for file in os.listdir(source_dir) if '.p
 if overrideSpriteList: 
     spriteNames = [str(name) for name in overrideSpriteList]
     print('\n***** Running with override sprite list *****')
-    print(f'\nProcessing {len(overrideSpriteList)} images...\n')
+    print(f'\nProcessing {len(overrideSpriteList)} species...\n')
 else:
     print('\nProcessing all images...\n')
 
@@ -337,7 +332,7 @@ for index, thisSpriteName in enumerate(spriteNames):
         print(f'{progressCount*5}% complete...')
 
 if overrideSpriteList: 
-    print(f'\nFinished processing {len(overrideSpriteList)} pokemon images')
+    print(f'\nFinished processing {len(overrideSpriteList)} pokemon species')
 else:
     print('\nFinished processing all pokemon images')
 print('Largest width:' ,biggestW) # usually 115
