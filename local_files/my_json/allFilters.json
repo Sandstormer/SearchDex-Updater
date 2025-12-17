@@ -73,579 +73,7 @@
     ],
     [
         "Ability",
-        "Overgrow"
-    ],
-    [
-        "Ability",
-        "Chlorophyll"
-    ],
-    [
-        "Ability",
-        "Grassy Surge"
-    ],
-    [
-        "Ability",
-        "Thick Fat"
-    ],
-    [
-        "Ability",
-        "Seed Sower"
-    ],
-    [
-        "Ability",
-        "Effect Spore"
-    ],
-    [
-        "Ability",
-        "Flower Veil"
-    ],
-    [
-        "Ability",
-        "Blaze"
-    ],
-    [
-        "Ability",
-        "Solar Power"
-    ],
-    [
-        "Ability",
-        "Sheer Force"
-    ],
-    [
-        "Ability",
-        "Beast Boost"
-    ],
-    [
-        "Ability",
-        "Tough Claws"
-    ],
-    [
-        "Ability",
-        "Levitate"
-    ],
-    [
-        "Ability",
-        "Drought"
-    ],
-    [
-        "Ability",
-        "Turboblaze"
-    ],
-    [
-        "Ability",
-        "Berserk"
-    ],
-    [
-        "Ability",
-        "Unnerve"
-    ],
-    [
-        "Ability",
-        "Torrent"
-    ],
-    [
-        "Ability",
-        "Rain Dish"
-    ],
-    [
-        "Ability",
-        "Bulletproof"
-    ],
-    [
-        "Ability",
-        "Mega Launcher"
-    ],
-    [
-        "Ability",
-        "Shell Armor"
-    ],
-    [
-        "Ability",
-        "Shield Dust"
-    ],
-    [
-        "Ability",
-        "Run Away"
-    ],
-    [
-        "Ability",
-        "Gluttony"
-    ],
-    [
-        "Ability",
-        "Shed Skin"
-    ],
-    [
-        "Ability",
-        "Sturdy"
-    ],
-    [
-        "Ability",
-        "Compound Eyes"
-    ],
-    [
-        "Ability",
-        "Tinted Lens"
-    ],
-    [
-        "Ability",
-        "Magician"
-    ],
-    [
-        "Ability",
-        "Poison Touch"
-    ],
-    [
-        "Ability",
-        "Swarm"
-    ],
-    [
-        "Ability",
-        "Sniper"
-    ],
-    [
-        "Ability",
         "Adaptability"
-    ],
-    [
-        "Ability",
-        "Keen Eye"
-    ],
-    [
-        "Ability",
-        "Tangled Feet"
-    ],
-    [
-        "Ability",
-        "Big Pecks"
-    ],
-    [
-        "Ability",
-        "No Guard"
-    ],
-    [
-        "Ability",
-        "Guts"
-    ],
-    [
-        "Ability",
-        "Hustle"
-    ],
-    [
-        "Ability",
-        "Strong Jaw"
-    ],
-    [
-        "Ability",
-        "Speed Boost"
-    ],
-    [
-        "Ability",
-        "Intimidate"
-    ],
-    [
-        "Ability",
-        "Regenerator"
-    ],
-    [
-        "Ability",
-        "Static"
-    ],
-    [
-        "Ability",
-        "Lightning Rod"
-    ],
-    [
-        "Ability",
-        "Electric Surge"
-    ],
-    [
-        "Ability",
-        "Costar"
-    ],
-    [
-        "Ability",
-        "Iron Fist"
-    ],
-    [
-        "Ability",
-        "Queenly Majesty"
-    ],
-    [
-        "Ability",
-        "Misty Surge"
-    ],
-    [
-        "Ability",
-        "Libero"
-    ],
-    [
-        "Ability",
-        "Sand Veil"
-    ],
-    [
-        "Ability",
-        "Sand Rush"
-    ],
-    [
-        "Ability",
-        "Poison Point"
-    ],
-    [
-        "Ability",
-        "Rivalry"
-    ],
-    [
-        "Ability",
-        "Toxic Debris"
-    ],
-    [
-        "Ability",
-        "Cute Charm"
-    ],
-    [
-        "Ability",
-        "Magic Guard"
-    ],
-    [
-        "Ability",
-        "Friend Guard"
-    ],
-    [
-        "Ability",
-        "Prankster"
-    ],
-    [
-        "Ability",
-        "Unaware"
-    ],
-    [
-        "Ability",
-        "Analytic"
-    ],
-    [
-        "Ability",
-        "Flash Fire"
-    ],
-    [
-        "Ability",
-        "Fur Coat"
-    ],
-    [
-        "Ability",
-        "Competitive"
-    ],
-    [
-        "Ability",
-        "Huge Power"
-    ],
-    [
-        "Ability",
-        "Frisk"
-    ],
-    [
-        "Ability",
-        "Inner Focus"
-    ],
-    [
-        "Ability",
-        "Infiltrator"
-    ],
-    [
-        "Ability",
-        "Triage"
-    ],
-    [
-        "Ability",
-        "Stench"
-    ],
-    [
-        "Ability",
-        "Dry Skin"
-    ],
-    [
-        "Ability",
-        "Damp"
-    ],
-    [
-        "Ability",
-        "Fluffy"
-    ],
-    [
-        "Ability",
-        "Wonder Skin"
-    ],
-    [
-        "Ability",
-        "Simple"
-    ],
-    [
-        "Ability",
-        "Arena Trap"
-    ],
-    [
-        "Ability",
-        "Sand Force"
-    ],
-    [
-        "Ability",
-        "Pickup"
-    ],
-    [
-        "Ability",
-        "Technician"
-    ],
-    [
-        "Ability",
-        "Limber"
-    ],
-    [
-        "Ability",
-        "Cloud Nine"
-    ],
-    [
-        "Ability",
-        "Swift Swim"
-    ],
-    [
-        "Ability",
-        "Vital Spirit"
-    ],
-    [
-        "Ability",
-        "Anger Point"
-    ],
-    [
-        "Ability",
-        "Defiant"
-    ],
-    [
-        "Ability",
-        "Justified"
-    ],
-    [
-        "Ability",
-        "Water Absorb"
-    ],
-    [
-        "Ability",
-        "Synchronize"
-    ],
-    [
-        "Ability",
-        "Comatose"
-    ],
-    [
-        "Ability",
-        "Trace"
-    ],
-    [
-        "Ability",
-        "Steadfast"
-    ],
-    [
-        "Ability",
-        "Quick Feet"
-    ],
-    [
-        "Ability",
-        "Flower Gift"
-    ],
-    [
-        "Ability",
-        "Clear Body"
-    ],
-    [
-        "Ability",
-        "Liquid Ooze"
-    ],
-    [
-        "Ability",
-        "Toxic Chain"
-    ],
-    [
-        "Ability",
-        "Rock Head"
-    ],
-    [
-        "Ability",
-        "Flame Body"
-    ],
-    [
-        "Ability",
-        "Oblivious"
-    ],
-    [
-        "Ability",
-        "Own Tempo"
-    ],
-    [
-        "Ability",
-        "Magnet Pull"
-    ],
-    [
-        "Ability",
-        "Early Bird"
-    ],
-    [
-        "Ability",
-        "Parental Bond"
-    ],
-    [
-        "Ability",
-        "Hydration"
-    ],
-    [
-        "Ability",
-        "Ice Body"
-    ],
-    [
-        "Ability",
-        "Water Bubble"
-    ],
-    [
-        "Ability",
-        "Sticky Hold"
-    ],
-    [
-        "Ability",
-        "Skill Link"
-    ],
-    [
-        "Ability",
-        "Overcoat"
-    ],
-    [
-        "Ability",
-        "Ice Scales"
-    ],
-    [
-        "Ability",
-        "Cursed Body"
-    ],
-    [
-        "Ability",
-        "Shadow Tag"
-    ],
-    [
-        "Ability",
-        "Weak Armor"
-    ],
-    [
-        "Ability",
-        "Rocky Payload"
-    ],
-    [
-        "Ability",
-        "Insomnia"
-    ],
-    [
-        "Ability",
-        "Forewarn"
-    ],
-    [
-        "Ability",
-        "Hyper Cutter"
-    ],
-    [
-        "Ability",
-        "Unburden"
-    ],
-    [
-        "Ability",
-        "Soundproof"
-    ],
-    [
-        "Ability",
-        "Aftermath"
-    ],
-    [
-        "Ability",
-        "Transistor"
-    ],
-    [
-        "Ability",
-        "Harvest"
-    ],
-    [
-        "Ability",
-        "Ripen"
-    ],
-    [
-        "Ability",
-        "Battle Armor"
-    ],
-    [
-        "Ability",
-        "Reckless"
-    ],
-    [
-        "Ability",
-        "Moxie"
-    ],
-    [
-        "Ability",
-        "Cheek Pouch"
-    ],
-    [
-        "Ability",
-        "Neutralizing Gas"
-    ],
-    [
-        "Ability",
-        "White Smoke"
-    ],
-    [
-        "Ability",
-        "Solid Rock"
-    ],
-    [
-        "Ability",
-        "Natural Cure"
-    ],
-    [
-        "Ability",
-        "Serene Grace"
-    ],
-    [
-        "Ability",
-        "Healer"
-    ],
-    [
-        "Ability",
-        "Leaf Guard"
-    ],
-    [
-        "Ability",
-        "Scrappy"
-    ],
-    [
-        "Ability",
-        "Dragons Maw"
-    ],
-    [
-        "Ability",
-        "Water Veil"
-    ],
-    [
-        "Ability",
-        "Multiscale"
-    ],
-    [
-        "Ability",
-        "Illuminate"
-    ],
-    [
-        "Ability",
-        "Filter"
-    ],
-    [
-        "Ability",
-        "Psychic Surge"
-    ],
-    [
-        "Ability",
-        "Mold Breaker"
     ],
     [
         "Ability",
@@ -653,303 +81,7 @@
     ],
     [
         "Ability",
-        "Stamina"
-    ],
-    [
-        "Ability",
-        "Rattled"
-    ],
-    [
-        "Ability",
-        "Imposter"
-    ],
-    [
-        "Ability",
-        "Anticipation"
-    ],
-    [
-        "Ability",
-        "Protean"
-    ],
-    [
-        "Ability",
-        "Volt Absorb"
-    ],
-    [
-        "Ability",
-        "Download"
-    ],
-    [
-        "Ability",
-        "Pressure"
-    ],
-    [
-        "Ability",
-        "Immunity"
-    ],
-    [
-        "Ability",
-        "Snow Cloak"
-    ],
-    [
-        "Ability",
-        "Snow Warning"
-    ],
-    [
-        "Ability",
-        "Drizzle"
-    ],
-    [
-        "Ability",
-        "Marvel Scale"
-    ],
-    [
-        "Ability",
-        "Neuroforce"
-    ],
-    [
-        "Ability",
-        "Super Luck"
-    ],
-    [
-        "Ability",
-        "Pixilate"
-    ],
-    [
-        "Ability",
-        "Magic Bounce"
-    ],
-    [
-        "Ability",
-        "Plus"
-    ],
-    [
-        "Ability",
-        "Electromorphosis"
-    ],
-    [
-        "Ability",
-        "Sap Sipper"
-    ],
-    [
-        "Ability",
-        "Wind Rider"
-    ],
-    [
-        "Ability",
-        "Beads Of Ruin"
-    ],
-    [
-        "Ability",
-        "Contrary"
-    ],
-    [
-        "Ability",
-        "Dazzling"
-    ],
-    [
-        "Ability",
-        "Emergency Exit"
-    ],
-    [
-        "Ability",
-        "Good As Gold"
-    ],
-    [
-        "Ability",
-        "Honey Gather"
-    ],
-    [
-        "Ability",
-        "Klutz"
-    ],
-    [
-        "Ability",
-        "Moody"
-    ],
-    [
-        "Ability",
-        "Opportunist"
-    ],
-    [
-        "Ability",
-        "Quick Draw"
-    ],
-    [
-        "Ability",
-        "Victory Star"
-    ],
-    [
-        "Ability",
-        "Wandering Spirit"
-    ],
-    [
-        "Ability",
-        "Fairy Aura"
-    ],
-    [
-        "Ability",
-        "Dark Aura"
-    ],
-    [
-        "Ability",
-        "Aura Break"
-    ],
-    [
-        "Ability",
-        "Pure Power"
-    ],
-    [
-        "Ability",
-        "Telepathy"
-    ],
-    [
-        "Ability",
-        "Rough Skin"
-    ],
-    [
-        "Ability",
-        "Iron Barbs"
-    ],
-    [
-        "Ability",
-        "Sand Spit"
-    ],
-    [
-        "Ability",
-        "Light Metal"
-    ],
-    [
-        "Ability",
-        "Pickpocket"
-    ],
-    [
-        "Ability",
-        "Magma Armor"
-    ],
-    [
-        "Ability",
-        "Desolate Land"
-    ],
-    [
-        "Ability",
-        "Storm Drain"
-    ],
-    [
-        "Ability",
-        "Suction Cups"
-    ],
-    [
-        "Ability",
-        "Ball Fetch"
-    ],
-    [
-        "Ability",
-        "Sand Stream"
-    ],
-    [
-        "Ability",
-        "Delta Stream"
-    ],
-    [
-        "Ability",
-        "Sharpness"
-    ],
-    [
-        "Ability",
-        "Poison Heal"
-    ],
-    [
-        "Ability",
-        "Truant"
-    ],
-    [
-        "Ability",
-        "Stall"
-    ],
-    [
-        "Ability",
-        "Wonder Guard"
-    ],
-    [
-        "Ability",
-        "Punk Rock"
-    ],
-    [
-        "Ability",
-        "Normalize"
-    ],
-    [
-        "Ability",
-        "Heavy Metal"
-    ],
-    [
-        "Ability",
-        "Earth Eater"
-    ],
-    [
-        "Ability",
-        "Minds Eye"
-    ],
-    [
-        "Ability",
-        "Minus"
-    ],
-    [
-        "Ability",
-        "Power Spot"
-    ],
-    [
-        "Ability",
-        "Toxic Boost"
-    ],
-    [
-        "Ability",
-        "Shadow Shield"
-    ],
-    [
-        "Ability",
-        "Well Baked Body"
-    ],
-    [
-        "Ability",
-        "Forecast"
-    ],
-    [
-        "Ability",
-        "Color Change"
-    ],
-    [
-        "Ability",
-        "Refrigerate"
-    ],
-    [
-        "Ability",
-        "Primordial Sea"
-    ],
-    [
-        "Ability",
-        "Anger Shell"
-    ],
-    [
-        "Ability",
-        "Gale Wings"
-    ],
-    [
-        "Ability",
-        "Full Metal Body"
-    ],
-    [
-        "Ability",
-        "Steely Spirit"
-    ],
-    [
-        "Ability",
-        "Prism Armor"
-    ],
-    [
-        "Ability",
-        "Teravolt"
+        "Aftermath"
     ],
     [
         "Ability",
@@ -957,255 +89,31 @@
     ],
     [
         "Ability",
-        "Purifying Salt"
+        "Analytic"
     ],
     [
         "Ability",
-        "Orichalcum Pulse"
+        "Anger Point"
     ],
     [
         "Ability",
-        "Flare Boost"
+        "Anger Shell"
     ],
     [
         "Ability",
-        "Heatproof"
+        "Anticipation"
     ],
     [
         "Ability",
-        "Mirror Armor"
+        "Arena Trap"
     ],
     [
         "Ability",
-        "Hospitality"
-    ],
-    [
-        "Ability",
-        "Vessel Of Ruin"
-    ],
-    [
-        "Ability",
-        "Slush Rush"
-    ],
-    [
-        "Ability",
-        "Motor Drive"
-    ],
-    [
-        "Ability",
-        "Hadron Engine"
-    ],
-    [
-        "Ability",
-        "Slow Start"
-    ],
-    [
-        "Ability",
-        "Bad Dreams"
-    ],
-    [
-        "Ability",
-        "Multitype"
-    ],
-    [
-        "Ability",
-        "Supreme Overlord"
-    ],
-    [
-        "Ability",
-        "Gorilla Tactics"
-    ],
-    [
-        "Ability",
-        "Zen Mode"
-    ],
-    [
-        "Ability",
-        "Mummy"
-    ],
-    [
-        "Ability",
-        "Defeatist"
-    ],
-    [
-        "Ability",
-        "Wimp Out"
-    ],
-    [
-        "Ability",
-        "Illusion"
-    ],
-    [
-        "Ability",
-        "Cud Chew"
-    ],
-    [
-        "Ability",
-        "Mycelium Might"
-    ],
-    [
-        "Ability",
-        "Sword Of Ruin"
-    ],
-    [
-        "Ability",
-        "Intrepid Sword"
-    ],
-    [
-        "Ability",
-        "Grim Neigh"
-    ],
-    [
-        "Ability",
-        "Dauntless Shield"
-    ],
-    [
-        "Ability",
-        "Stakeout"
-    ],
-    [
-        "Ability",
-        "Battle Bond"
-    ],
-    [
-        "Ability",
-        "Symbiosis"
-    ],
-    [
-        "Ability",
-        "Grass Pelt"
-    ],
-    [
-        "Ability",
-        "Stance Change"
+        "Armor Tail"
     ],
     [
         "Ability",
         "Aroma Veil"
-    ],
-    [
-        "Ability",
-        "Sweet Veil"
-    ],
-    [
-        "Ability",
-        "Gooey"
-    ],
-    [
-        "Ability",
-        "Soul Heart"
-    ],
-    [
-        "Ability",
-        "Power Construct"
-    ],
-    [
-        "Ability",
-        "Long Reach"
-    ],
-    [
-        "Ability",
-        "Liquid Voice"
-    ],
-    [
-        "Ability",
-        "Battery"
-    ],
-    [
-        "Ability",
-        "Dancer"
-    ],
-    [
-        "Ability",
-        "Schooling"
-    ],
-    [
-        "Ability",
-        "Merciless"
-    ],
-    [
-        "Ability",
-        "Corrosion"
-    ],
-    [
-        "Ability",
-        "Receiver"
-    ],
-    [
-        "Ability",
-        "Water Compaction"
-    ],
-    [
-        "Ability",
-        "Innards Out"
-    ],
-    [
-        "Ability",
-        "Rks System"
-    ],
-    [
-        "Ability",
-        "Shields Down"
-    ],
-    [
-        "Ability",
-        "Disguise"
-    ],
-    [
-        "Ability",
-        "Steelworker"
-    ],
-    [
-        "Ability",
-        "Cotton Down"
-    ],
-    [
-        "Ability",
-        "Steam Engine"
-    ],
-    [
-        "Ability",
-        "Gulp Missile"
-    ],
-    [
-        "Ability",
-        "Propeller Tail"
-    ],
-    [
-        "Ability",
-        "Perish Body"
-    ],
-    [
-        "Ability",
-        "Screen Cleaner"
-    ],
-    [
-        "Ability",
-        "Tablets Of Ruin"
-    ],
-    [
-        "Ability",
-        "Ice Face"
-    ],
-    [
-        "Ability",
-        "Hunger Switch"
-    ],
-    [
-        "Ability",
-        "Thermal Exchange"
-    ],
-    [
-        "Ability",
-        "Stalwart"
-    ],
-    [
-        "Ability",
-        "Unseen Fist"
-    ],
-    [
-        "Ability",
-        "Chilling Neigh"
     ],
     [
         "Ability",
@@ -1217,23 +125,79 @@
     ],
     [
         "Ability",
-        "Lingering Aroma"
+        "Aura Break"
     ],
     [
         "Ability",
-        "Wind Power"
+        "Bad Dreams"
     ],
     [
         "Ability",
-        "Guard Dog"
+        "Ball Fetch"
     ],
     [
         "Ability",
-        "Zero To Hero"
+        "Battery"
     ],
     [
         "Ability",
-        "Tera Shell"
+        "Battle Armor"
+    ],
+    [
+        "Ability",
+        "Battle Bond"
+    ],
+    [
+        "Ability",
+        "Beads Of Ruin"
+    ],
+    [
+        "Ability",
+        "Beast Boost"
+    ],
+    [
+        "Ability",
+        "Berserk"
+    ],
+    [
+        "Ability",
+        "Big Pecks"
+    ],
+    [
+        "Ability",
+        "Blaze"
+    ],
+    [
+        "Ability",
+        "Bulletproof"
+    ],
+    [
+        "Ability",
+        "Cheek Pouch"
+    ],
+    [
+        "Ability",
+        "Chilling Neigh"
+    ],
+    [
+        "Ability",
+        "Chlorophyll"
+    ],
+    [
+        "Ability",
+        "Clear Body"
+    ],
+    [
+        "Ability",
+        "Cloud Nine"
+    ],
+    [
+        "Ability",
+        "Color Change"
+    ],
+    [
+        "Ability",
+        "Comatose"
     ],
     [
         "Ability",
@@ -1241,19 +205,131 @@
     ],
     [
         "Ability",
-        "Armor Tail"
+        "Competitive"
     ],
     [
         "Ability",
-        "Protosynthesis"
+        "Compound Eyes"
     ],
     [
         "Ability",
-        "Quark Drive"
+        "Contrary"
     ],
     [
         "Ability",
-        "Supersweet Syrup"
+        "Corrosion"
+    ],
+    [
+        "Ability",
+        "Costar"
+    ],
+    [
+        "Ability",
+        "Cotton Down"
+    ],
+    [
+        "Ability",
+        "Cud Chew"
+    ],
+    [
+        "Ability",
+        "Curious Medicine"
+    ],
+    [
+        "Ability",
+        "Cursed Body"
+    ],
+    [
+        "Ability",
+        "Cute Charm"
+    ],
+    [
+        "Ability",
+        "Damp"
+    ],
+    [
+        "Ability",
+        "Dancer"
+    ],
+    [
+        "Ability",
+        "Dark Aura"
+    ],
+    [
+        "Ability",
+        "Dauntless Shield"
+    ],
+    [
+        "Ability",
+        "Dazzling"
+    ],
+    [
+        "Ability",
+        "Defeatist"
+    ],
+    [
+        "Ability",
+        "Defiant"
+    ],
+    [
+        "Ability",
+        "Delta Stream"
+    ],
+    [
+        "Ability",
+        "Desolate Land"
+    ],
+    [
+        "Ability",
+        "Disguise"
+    ],
+    [
+        "Ability",
+        "Download"
+    ],
+    [
+        "Ability",
+        "Dragons Maw"
+    ],
+    [
+        "Ability",
+        "Drizzle"
+    ],
+    [
+        "Ability",
+        "Drought"
+    ],
+    [
+        "Ability",
+        "Dry Skin"
+    ],
+    [
+        "Ability",
+        "Early Bird"
+    ],
+    [
+        "Ability",
+        "Earth Eater"
+    ],
+    [
+        "Ability",
+        "Effect Spore"
+    ],
+    [
+        "Ability",
+        "Electric Surge"
+    ],
+    [
+        "Ability",
+        "Electromorphosis"
+    ],
+    [
+        "Ability",
+        "Embody Aspect Cornerstone"
+    ],
+    [
+        "Ability",
+        "Embody Aspect Hearthflame"
     ],
     [
         "Ability",
@@ -1265,11 +341,819 @@
     ],
     [
         "Ability",
-        "Embody Aspect Hearthflame"
+        "Emergency Exit"
     ],
     [
         "Ability",
-        "Embody Aspect Cornerstone"
+        "Fairy Aura"
+    ],
+    [
+        "Ability",
+        "Filter"
+    ],
+    [
+        "Ability",
+        "Flame Body"
+    ],
+    [
+        "Ability",
+        "Flare Boost"
+    ],
+    [
+        "Ability",
+        "Flash Fire"
+    ],
+    [
+        "Ability",
+        "Flower Gift"
+    ],
+    [
+        "Ability",
+        "Flower Veil"
+    ],
+    [
+        "Ability",
+        "Fluffy"
+    ],
+    [
+        "Ability",
+        "Forecast"
+    ],
+    [
+        "Ability",
+        "Forewarn"
+    ],
+    [
+        "Ability",
+        "Friend Guard"
+    ],
+    [
+        "Ability",
+        "Frisk"
+    ],
+    [
+        "Ability",
+        "Full Metal Body"
+    ],
+    [
+        "Ability",
+        "Fur Coat"
+    ],
+    [
+        "Ability",
+        "Gale Wings"
+    ],
+    [
+        "Ability",
+        "Galvanize"
+    ],
+    [
+        "Ability",
+        "Gluttony"
+    ],
+    [
+        "Ability",
+        "Good As Gold"
+    ],
+    [
+        "Ability",
+        "Gooey"
+    ],
+    [
+        "Ability",
+        "Gorilla Tactics"
+    ],
+    [
+        "Ability",
+        "Grass Pelt"
+    ],
+    [
+        "Ability",
+        "Grassy Surge"
+    ],
+    [
+        "Ability",
+        "Grim Neigh"
+    ],
+    [
+        "Ability",
+        "Guard Dog"
+    ],
+    [
+        "Ability",
+        "Gulp Missile"
+    ],
+    [
+        "Ability",
+        "Guts"
+    ],
+    [
+        "Ability",
+        "Hadron Engine"
+    ],
+    [
+        "Ability",
+        "Harvest"
+    ],
+    [
+        "Ability",
+        "Healer"
+    ],
+    [
+        "Ability",
+        "Heatproof"
+    ],
+    [
+        "Ability",
+        "Heavy Metal"
+    ],
+    [
+        "Ability",
+        "Honey Gather"
+    ],
+    [
+        "Ability",
+        "Hospitality"
+    ],
+    [
+        "Ability",
+        "Huge Power"
+    ],
+    [
+        "Ability",
+        "Hunger Switch"
+    ],
+    [
+        "Ability",
+        "Hustle"
+    ],
+    [
+        "Ability",
+        "Hydration"
+    ],
+    [
+        "Ability",
+        "Hyper Cutter"
+    ],
+    [
+        "Ability",
+        "Ice Body"
+    ],
+    [
+        "Ability",
+        "Ice Face"
+    ],
+    [
+        "Ability",
+        "Ice Scales"
+    ],
+    [
+        "Ability",
+        "Illuminate"
+    ],
+    [
+        "Ability",
+        "Illusion"
+    ],
+    [
+        "Ability",
+        "Immunity"
+    ],
+    [
+        "Ability",
+        "Imposter"
+    ],
+    [
+        "Ability",
+        "Infiltrator"
+    ],
+    [
+        "Ability",
+        "Innards Out"
+    ],
+    [
+        "Ability",
+        "Inner Focus"
+    ],
+    [
+        "Ability",
+        "Insomnia"
+    ],
+    [
+        "Ability",
+        "Intimidate"
+    ],
+    [
+        "Ability",
+        "Intrepid Sword"
+    ],
+    [
+        "Ability",
+        "Iron Barbs"
+    ],
+    [
+        "Ability",
+        "Iron Fist"
+    ],
+    [
+        "Ability",
+        "Justified"
+    ],
+    [
+        "Ability",
+        "Keen Eye"
+    ],
+    [
+        "Ability",
+        "Klutz"
+    ],
+    [
+        "Ability",
+        "Leaf Guard"
+    ],
+    [
+        "Ability",
+        "Levitate"
+    ],
+    [
+        "Ability",
+        "Libero"
+    ],
+    [
+        "Ability",
+        "Light Metal"
+    ],
+    [
+        "Ability",
+        "Lightning Rod"
+    ],
+    [
+        "Ability",
+        "Limber"
+    ],
+    [
+        "Ability",
+        "Lingering Aroma"
+    ],
+    [
+        "Ability",
+        "Liquid Ooze"
+    ],
+    [
+        "Ability",
+        "Liquid Voice"
+    ],
+    [
+        "Ability",
+        "Long Reach"
+    ],
+    [
+        "Ability",
+        "Magic Bounce"
+    ],
+    [
+        "Ability",
+        "Magic Guard"
+    ],
+    [
+        "Ability",
+        "Magician"
+    ],
+    [
+        "Ability",
+        "Magma Armor"
+    ],
+    [
+        "Ability",
+        "Magnet Pull"
+    ],
+    [
+        "Ability",
+        "Marvel Scale"
+    ],
+    [
+        "Ability",
+        "Mega Launcher"
+    ],
+    [
+        "Ability",
+        "Merciless"
+    ],
+    [
+        "Ability",
+        "Mimicry"
+    ],
+    [
+        "Ability",
+        "Minds Eye"
+    ],
+    [
+        "Ability",
+        "Minus"
+    ],
+    [
+        "Ability",
+        "Mirror Armor"
+    ],
+    [
+        "Ability",
+        "Misty Surge"
+    ],
+    [
+        "Ability",
+        "Mold Breaker"
+    ],
+    [
+        "Ability",
+        "Moody"
+    ],
+    [
+        "Ability",
+        "Motor Drive"
+    ],
+    [
+        "Ability",
+        "Moxie"
+    ],
+    [
+        "Ability",
+        "Multiscale"
+    ],
+    [
+        "Ability",
+        "Multitype"
+    ],
+    [
+        "Ability",
+        "Mummy"
+    ],
+    [
+        "Ability",
+        "Mycelium Might"
+    ],
+    [
+        "Ability",
+        "Natural Cure"
+    ],
+    [
+        "Ability",
+        "Neuroforce"
+    ],
+    [
+        "Ability",
+        "Neutralizing Gas"
+    ],
+    [
+        "Ability",
+        "No Guard"
+    ],
+    [
+        "Ability",
+        "Normalize"
+    ],
+    [
+        "Ability",
+        "Oblivious"
+    ],
+    [
+        "Ability",
+        "Opportunist"
+    ],
+    [
+        "Ability",
+        "Orichalcum Pulse"
+    ],
+    [
+        "Ability",
+        "Overcoat"
+    ],
+    [
+        "Ability",
+        "Overgrow"
+    ],
+    [
+        "Ability",
+        "Own Tempo"
+    ],
+    [
+        "Ability",
+        "Parental Bond"
+    ],
+    [
+        "Ability",
+        "Pastel Veil"
+    ],
+    [
+        "Ability",
+        "Perish Body"
+    ],
+    [
+        "Ability",
+        "Pickpocket"
+    ],
+    [
+        "Ability",
+        "Pickup"
+    ],
+    [
+        "Ability",
+        "Pixilate"
+    ],
+    [
+        "Ability",
+        "Plus"
+    ],
+    [
+        "Ability",
+        "Poison Heal"
+    ],
+    [
+        "Ability",
+        "Poison Point"
+    ],
+    [
+        "Ability",
+        "Poison Puppeteer"
+    ],
+    [
+        "Ability",
+        "Poison Touch"
+    ],
+    [
+        "Ability",
+        "Power Construct"
+    ],
+    [
+        "Ability",
+        "Power Of Alchemy"
+    ],
+    [
+        "Ability",
+        "Power Spot"
+    ],
+    [
+        "Ability",
+        "Prankster"
+    ],
+    [
+        "Ability",
+        "Pressure"
+    ],
+    [
+        "Ability",
+        "Primordial Sea"
+    ],
+    [
+        "Ability",
+        "Prism Armor"
+    ],
+    [
+        "Ability",
+        "Propeller Tail"
+    ],
+    [
+        "Ability",
+        "Protean"
+    ],
+    [
+        "Ability",
+        "Protosynthesis"
+    ],
+    [
+        "Ability",
+        "Psychic Surge"
+    ],
+    [
+        "Ability",
+        "Punk Rock"
+    ],
+    [
+        "Ability",
+        "Pure Power"
+    ],
+    [
+        "Ability",
+        "Purifying Salt"
+    ],
+    [
+        "Ability",
+        "Quark Drive"
+    ],
+    [
+        "Ability",
+        "Queenly Majesty"
+    ],
+    [
+        "Ability",
+        "Quick Draw"
+    ],
+    [
+        "Ability",
+        "Quick Feet"
+    ],
+    [
+        "Ability",
+        "Rain Dish"
+    ],
+    [
+        "Ability",
+        "Rattled"
+    ],
+    [
+        "Ability",
+        "Receiver"
+    ],
+    [
+        "Ability",
+        "Reckless"
+    ],
+    [
+        "Ability",
+        "Refrigerate"
+    ],
+    [
+        "Ability",
+        "Regenerator"
+    ],
+    [
+        "Ability",
+        "Ripen"
+    ],
+    [
+        "Ability",
+        "Rivalry"
+    ],
+    [
+        "Ability",
+        "Rks System"
+    ],
+    [
+        "Ability",
+        "Rock Head"
+    ],
+    [
+        "Ability",
+        "Rocky Payload"
+    ],
+    [
+        "Ability",
+        "Rough Skin"
+    ],
+    [
+        "Ability",
+        "Run Away"
+    ],
+    [
+        "Ability",
+        "Sand Force"
+    ],
+    [
+        "Ability",
+        "Sand Rush"
+    ],
+    [
+        "Ability",
+        "Sand Spit"
+    ],
+    [
+        "Ability",
+        "Sand Stream"
+    ],
+    [
+        "Ability",
+        "Sand Veil"
+    ],
+    [
+        "Ability",
+        "Sap Sipper"
+    ],
+    [
+        "Ability",
+        "Schooling"
+    ],
+    [
+        "Ability",
+        "Scrappy"
+    ],
+    [
+        "Ability",
+        "Screen Cleaner"
+    ],
+    [
+        "Ability",
+        "Seed Sower"
+    ],
+    [
+        "Ability",
+        "Serene Grace"
+    ],
+    [
+        "Ability",
+        "Shadow Shield"
+    ],
+    [
+        "Ability",
+        "Shadow Tag"
+    ],
+    [
+        "Ability",
+        "Sharpness"
+    ],
+    [
+        "Ability",
+        "Shed Skin"
+    ],
+    [
+        "Ability",
+        "Sheer Force"
+    ],
+    [
+        "Ability",
+        "Shell Armor"
+    ],
+    [
+        "Ability",
+        "Shield Dust"
+    ],
+    [
+        "Ability",
+        "Shields Down"
+    ],
+    [
+        "Ability",
+        "Simple"
+    ],
+    [
+        "Ability",
+        "Skill Link"
+    ],
+    [
+        "Ability",
+        "Slow Start"
+    ],
+    [
+        "Ability",
+        "Slush Rush"
+    ],
+    [
+        "Ability",
+        "Sniper"
+    ],
+    [
+        "Ability",
+        "Snow Cloak"
+    ],
+    [
+        "Ability",
+        "Snow Warning"
+    ],
+    [
+        "Ability",
+        "Solar Power"
+    ],
+    [
+        "Ability",
+        "Solid Rock"
+    ],
+    [
+        "Ability",
+        "Soul Heart"
+    ],
+    [
+        "Ability",
+        "Soundproof"
+    ],
+    [
+        "Ability",
+        "Speed Boost"
+    ],
+    [
+        "Ability",
+        "Stakeout"
+    ],
+    [
+        "Ability",
+        "Stall"
+    ],
+    [
+        "Ability",
+        "Stalwart"
+    ],
+    [
+        "Ability",
+        "Stamina"
+    ],
+    [
+        "Ability",
+        "Stance Change"
+    ],
+    [
+        "Ability",
+        "Static"
+    ],
+    [
+        "Ability",
+        "Steadfast"
+    ],
+    [
+        "Ability",
+        "Steam Engine"
+    ],
+    [
+        "Ability",
+        "Steelworker"
+    ],
+    [
+        "Ability",
+        "Steely Spirit"
+    ],
+    [
+        "Ability",
+        "Stench"
+    ],
+    [
+        "Ability",
+        "Sticky Hold"
+    ],
+    [
+        "Ability",
+        "Storm Drain"
+    ],
+    [
+        "Ability",
+        "Strong Jaw"
+    ],
+    [
+        "Ability",
+        "Sturdy"
+    ],
+    [
+        "Ability",
+        "Suction Cups"
+    ],
+    [
+        "Ability",
+        "Super Luck"
+    ],
+    [
+        "Ability",
+        "Supersweet Syrup"
+    ],
+    [
+        "Ability",
+        "Supreme Overlord"
+    ],
+    [
+        "Ability",
+        "Surge Surfer"
+    ],
+    [
+        "Ability",
+        "Swarm"
+    ],
+    [
+        "Ability",
+        "Sweet Veil"
+    ],
+    [
+        "Ability",
+        "Swift Swim"
+    ],
+    [
+        "Ability",
+        "Sword Of Ruin"
+    ],
+    [
+        "Ability",
+        "Symbiosis"
+    ],
+    [
+        "Ability",
+        "Synchronize"
+    ],
+    [
+        "Ability",
+        "Tablets Of Ruin"
+    ],
+    [
+        "Ability",
+        "Tangled Feet"
+    ],
+    [
+        "Ability",
+        "Tangling Hair"
+    ],
+    [
+        "Ability",
+        "Technician"
+    ],
+    [
+        "Ability",
+        "Telepathy"
+    ],
+    [
+        "Ability",
+        "Tera Shell"
     ],
     [
         "Ability",
@@ -1281,763 +1165,151 @@
     ],
     [
         "Ability",
-        "Poison Puppeteer"
+        "Teravolt"
     ],
     [
         "Ability",
-        "Surge Surfer"
+        "Thermal Exchange"
     ],
     [
         "Ability",
-        "Tangling Hair"
+        "Thick Fat"
     ],
     [
         "Ability",
-        "Galvanize"
+        "Tinted Lens"
     ],
     [
         "Ability",
-        "Power Of Alchemy"
+        "Torrent"
     ],
     [
         "Ability",
-        "Pastel Veil"
+        "Tough Claws"
     ],
     [
         "Ability",
-        "Curious Medicine"
+        "Toxic Boost"
     ],
     [
         "Ability",
-        "Mimicry"
+        "Toxic Chain"
     ],
     [
-        "Move",
-        "Tackle"
+        "Ability",
+        "Toxic Debris"
     ],
     [
-        "Move",
-        "Growl"
+        "Ability",
+        "Trace"
     ],
     [
-        "Move",
-        "Vine Whip"
+        "Ability",
+        "Transistor"
     ],
     [
-        "Move",
-        "Growth"
+        "Ability",
+        "Triage"
     ],
     [
-        "Move",
-        "Leech Seed"
+        "Ability",
+        "Truant"
     ],
     [
-        "Move",
-        "Razor Leaf"
+        "Ability",
+        "Turboblaze"
     ],
     [
-        "Move",
-        "Poison Powder"
+        "Ability",
+        "Unaware"
     ],
     [
-        "Move",
-        "Sleep Powder"
+        "Ability",
+        "Unburden"
     ],
     [
-        "Move",
-        "Seed Bomb"
+        "Ability",
+        "Unnerve"
     ],
     [
-        "Move",
-        "Take Down"
+        "Ability",
+        "Unseen Fist"
     ],
     [
-        "Move",
-        "Sweet Scent"
+        "Ability",
+        "Vessel Of Ruin"
     ],
     [
-        "Move",
-        "Synthesis"
+        "Ability",
+        "Victory Star"
     ],
     [
-        "Move",
-        "Worry Seed"
+        "Ability",
+        "Vital Spirit"
     ],
     [
-        "Move",
-        "Power Whip"
+        "Ability",
+        "Volt Absorb"
     ],
     [
-        "Move",
-        "Solar Beam"
+        "Ability",
+        "Wandering Spirit"
     ],
     [
-        "Move",
-        "Petal Blizzard"
+        "Ability",
+        "Water Absorb"
     ],
     [
-        "Move",
-        "Petal Dance"
+        "Ability",
+        "Water Bubble"
     ],
     [
-        "Move",
-        "Scratch"
+        "Ability",
+        "Water Compaction"
     ],
     [
-        "Move",
-        "Ember"
+        "Ability",
+        "Water Veil"
     ],
     [
-        "Move",
-        "Smokescreen"
+        "Ability",
+        "Weak Armor"
     ],
     [
-        "Move",
-        "Dragon Breath"
+        "Ability",
+        "Well Baked Body"
     ],
     [
-        "Move",
-        "Fire Fang"
+        "Ability",
+        "White Smoke"
     ],
     [
-        "Move",
-        "Slash"
+        "Ability",
+        "Wimp Out"
     ],
     [
-        "Move",
-        "Flamethrower"
+        "Ability",
+        "Wind Power"
     ],
     [
-        "Move",
-        "Scary Face"
+        "Ability",
+        "Wind Rider"
     ],
     [
-        "Move",
-        "Fire Spin"
+        "Ability",
+        "Wonder Guard"
     ],
     [
-        "Move",
-        "Inferno"
+        "Ability",
+        "Wonder Skin"
     ],
     [
-        "Move",
-        "Flare Blitz"
+        "Ability",
+        "Zen Mode"
     ],
     [
-        "Move",
-        "Air Slash"
-    ],
-    [
-        "Move",
-        "Heat Wave"
-    ],
-    [
-        "Move",
-        "Dragon Claw"
-    ],
-    [
-        "Move",
-        "Tail Whip"
-    ],
-    [
-        "Move",
-        "Water Gun"
-    ],
-    [
-        "Move",
-        "Withdraw"
-    ],
-    [
-        "Move",
-        "Rapid Spin"
-    ],
-    [
-        "Move",
-        "Bite"
-    ],
-    [
-        "Move",
-        "Water Pulse"
-    ],
-    [
-        "Move",
-        "Protect"
-    ],
-    [
-        "Move",
-        "Rain Dance"
-    ],
-    [
-        "Move",
-        "Aqua Tail"
-    ],
-    [
-        "Move",
-        "Shell Smash"
-    ],
-    [
-        "Move",
-        "Iron Defense"
-    ],
-    [
-        "Move",
-        "Hydro Pump"
-    ],
-    [
-        "Move",
-        "Wave Crash"
-    ],
-    [
-        "Move",
-        "Flash Cannon"
-    ],
-    [
-        "Move",
-        "String Shot"
-    ],
-    [
-        "Move",
-        "Bug Bite"
-    ],
-    [
-        "Move",
-        "Harden"
-    ],
-    [
-        "Move",
-        "Gust"
-    ],
-    [
-        "Move",
-        "Supersonic"
-    ],
-    [
-        "Move",
-        "Confusion"
-    ],
-    [
-        "Move",
-        "Stun Spore"
-    ],
-    [
-        "Move",
-        "Psybeam"
-    ],
-    [
-        "Move",
-        "Whirlwind"
-    ],
-    [
-        "Move",
-        "Safeguard"
-    ],
-    [
-        "Move",
-        "Bug Buzz"
-    ],
-    [
-        "Move",
-        "Tailwind"
-    ],
-    [
-        "Move",
-        "Rage Powder"
-    ],
-    [
-        "Move",
-        "Quiver Dance"
-    ],
-    [
-        "Move",
-        "Poison Sting"
-    ],
-    [
-        "Move",
-        "Twineedle"
-    ],
-    [
-        "Move",
-        "Fury Attack"
-    ],
-    [
-        "Move",
-        "Fury Cutter"
-    ],
-    [
-        "Move",
-        "Rage"
-    ],
-    [
-        "Move",
-        "Pursuit"
-    ],
-    [
-        "Move",
-        "Focus Energy"
-    ],
-    [
-        "Move",
-        "Venoshock"
-    ],
-    [
-        "Move",
-        "Assurance"
-    ],
-    [
-        "Move",
-        "Toxic Spikes"
-    ],
-    [
-        "Move",
-        "Pin Missile"
-    ],
-    [
-        "Move",
-        "Poison Jab"
-    ],
-    [
-        "Move",
-        "Agility"
-    ],
-    [
-        "Move",
-        "Endeavor"
-    ],
-    [
-        "Move",
-        "Fell Stinger"
-    ],
-    [
-        "Move",
-        "Sand Attack"
-    ],
-    [
-        "Move",
-        "Quick Attack"
-    ],
-    [
-        "Move",
-        "Twister"
-    ],
-    [
-        "Move",
-        "Feather Dance"
-    ],
-    [
-        "Move",
-        "Wing Attack"
-    ],
-    [
-        "Move",
-        "Roost"
-    ],
-    [
-        "Move",
-        "Aerial Ace"
-    ],
-    [
-        "Move",
-        "Hurricane"
-    ],
-    [
-        "Move",
-        "Laser Focus"
-    ],
-    [
-        "Move",
-        "Crunch"
-    ],
-    [
-        "Move",
-        "Sucker Punch"
-    ],
-    [
-        "Move",
-        "Super Fang"
-    ],
-    [
-        "Move",
-        "Double Edge"
-    ],
-    [
-        "Move",
-        "Swords Dance"
-    ],
-    [
-        "Move",
-        "Peck"
-    ],
-    [
-        "Move",
-        "Leer"
-    ],
-    [
-        "Move",
-        "Drill Peck"
-    ],
-    [
-        "Move",
-        "Pluck"
-    ],
-    [
-        "Move",
-        "Drill Run"
-    ],
-    [
-        "Move",
-        "Wrap"
-    ],
-    [
-        "Move",
-        "Glare"
-    ],
-    [
-        "Move",
-        "Screech"
-    ],
-    [
-        "Move",
-        "Acid"
-    ],
-    [
-        "Move",
-        "Swallow"
-    ],
-    [
-        "Move",
-        "Stockpile"
-    ],
-    [
-        "Move",
-        "Spit Up"
-    ],
-    [
-        "Move",
-        "Acid Spray"
-    ],
-    [
-        "Move",
-        "Sludge Bomb"
-    ],
-    [
-        "Move",
-        "Gastro Acid"
-    ],
-    [
-        "Move",
-        "Belch"
-    ],
-    [
-        "Move",
-        "Haze"
-    ],
-    [
-        "Move",
-        "Coil"
-    ],
-    [
-        "Move",
-        "Gunk Shot"
-    ],
-    [
-        "Move",
-        "Thunder Fang"
-    ],
-    [
-        "Move",
-        "Ice Fang"
-    ],
-    [
-        "Move",
-        "Thunder Shock"
-    ],
-    [
-        "Move",
-        "Sweet Kiss"
-    ],
-    [
-        "Move",
-        "Charm"
-    ],
-    [
-        "Move",
-        "Nasty Plot"
-    ],
-    [
-        "Move",
-        "Play Nice"
-    ],
-    [
-        "Move",
-        "Nuzzle"
-    ],
-    [
-        "Move",
-        "Thunder Wave"
-    ],
-    [
-        "Move",
-        "Double Team"
-    ],
-    [
-        "Move",
-        "Electro Ball"
-    ],
-    [
-        "Move",
-        "Feint"
-    ],
-    [
-        "Move",
-        "Spark"
-    ],
-    [
-        "Move",
-        "Iron Tail"
-    ],
-    [
-        "Move",
-        "Discharge"
-    ],
-    [
-        "Move",
-        "Thunderbolt"
-    ],
-    [
-        "Move",
-        "Light Screen"
-    ],
-    [
-        "Move",
-        "Thunder"
-    ],
-    [
-        "Move",
-        "Pika Papow"
-    ],
-    [
-        "Move",
-        "Zippy Zap"
-    ],
-    [
-        "Move",
-        "Thunder Punch"
-    ],
-    [
-        "Move",
-        "Defense Curl"
-    ],
-    [
-        "Move",
-        "Rollout"
-    ],
-    [
-        "Move",
-        "Bulldoze"
-    ],
-    [
-        "Move",
-        "Swift"
-    ],
-    [
-        "Move",
-        "Fury Swipes"
-    ],
-    [
-        "Move",
-        "Dig"
-    ],
-    [
-        "Move",
-        "Gyro Ball"
-    ],
-    [
-        "Move",
-        "Sandstorm"
-    ],
-    [
-        "Move",
-        "Earthquake"
-    ],
-    [
-        "Move",
-        "Crush Claw"
-    ],
-    [
-        "Move",
-        "Sand Tomb"
-    ],
-    [
-        "Move",
-        "Double Kick"
-    ],
-    [
-        "Move",
-        "Helping Hand"
-    ],
-    [
-        "Move",
-        "Toxic"
-    ],
-    [
-        "Move",
-        "Flatter"
-    ],
-    [
-        "Move",
-        "Earth Power"
-    ],
-    [
-        "Move",
-        "Superpower"
-    ],
-    [
-        "Move",
-        "Sludge Wave"
-    ],
-    [
-        "Move",
-        "Horn Attack"
-    ],
-    [
-        "Move",
-        "Megahorn"
-    ],
-    [
-        "Move",
-        "Pound"
-    ],
-    [
-        "Move",
-        "Sing"
-    ],
-    [
-        "Move",
-        "Splash"
-    ],
-    [
-        "Move",
-        "Copycat"
-    ],
-    [
-        "Move",
-        "Disarming Voice"
-    ],
-    [
-        "Move",
-        "Spotlight"
-    ],
-    [
-        "Move",
-        "Stored Power"
-    ],
-    [
-        "Move",
-        "Encore"
-    ],
-    [
-        "Move",
-        "After You"
-    ],
-    [
-        "Move",
-        "Life Dew"
-    ],
-    [
-        "Move",
-        "Metronome"
-    ],
-    [
-        "Move",
-        "Moonlight"
-    ],
-    [
-        "Move",
-        "Gravity"
-    ],
-    [
-        "Move",
-        "Meteor Mash"
-    ],
-    [
-        "Move",
-        "Follow Me"
-    ],
-    [
-        "Move",
-        "Cosmic Power"
-    ],
-    [
-        "Move",
-        "Moonblast"
-    ],
-    [
-        "Move",
-        "Healing Wish"
-    ],
-    [
-        "Move",
-        "Disable"
-    ],
-    [
-        "Move",
-        "Spite"
-    ],
-    [
-        "Move",
-        "Incinerate"
-    ],
-    [
-        "Move",
-        "Confuse Ray"
-    ],
-    [
-        "Move",
-        "Will O Wisp"
-    ],
-    [
-        "Move",
-        "Extrasensory"
-    ],
-    [
-        "Move",
-        "Imprison"
-    ],
-    [
-        "Move",
-        "Fire Blast"
-    ],
-    [
-        "Move",
-        "Echoed Voice"
-    ],
-    [
-        "Move",
-        "Covet"
-    ],
-    [
-        "Move",
-        "Round"
-    ],
-    [
-        "Move",
-        "Rest"
-    ],
-    [
-        "Move",
-        "Body Slam"
-    ],
-    [
-        "Move",
-        "Mimic"
-    ],
-    [
-        "Move",
-        "Hyper Voice"
-    ],
-    [
-        "Move",
-        "Play Rough"
+        "Ability",
+        "Zero To Hero"
     ],
     [
         "Move",
@@ -2045,323 +1317,11 @@
     ],
     [
         "Move",
-        "Astonish"
+        "Accelerock"
     ],
     [
         "Move",
-        "Mean Look"
-    ],
-    [
-        "Move",
-        "Poison Fang"
-    ],
-    [
-        "Move",
-        "Quick Guard"
-    ],
-    [
-        "Move",
-        "Air Cutter"
-    ],
-    [
-        "Move",
-        "Leech Life"
-    ],
-    [
-        "Move",
-        "Mega Drain"
-    ],
-    [
-        "Move",
-        "Giga Drain"
-    ],
-    [
-        "Move",
-        "Grassy Terrain"
-    ],
-    [
-        "Move",
-        "Aromatherapy"
-    ],
-    [
-        "Move",
-        "Spore"
-    ],
-    [
-        "Move",
-        "X Scissor"
-    ],
-    [
-        "Move",
-        "Cross Poison"
-    ],
-    [
-        "Move",
-        "Zen Headbutt"
-    ],
-    [
-        "Move",
-        "Psychic"
-    ],
-    [
-        "Move",
-        "Silver Wind"
-    ],
-    [
-        "Move",
-        "Mud Slap"
-    ],
-    [
-        "Move",
-        "Fissure"
-    ],
-    [
-        "Move",
-        "Tri Attack"
-    ],
-    [
-        "Move",
-        "Night Slash"
-    ],
-    [
-        "Move",
-        "Rototiller"
-    ],
-    [
-        "Move",
-        "Fake Out"
-    ],
-    [
-        "Move",
-        "Pay Day"
-    ],
-    [
-        "Move",
-        "Taunt"
-    ],
-    [
-        "Move",
-        "Power Gem"
-    ],
-    [
-        "Move",
-        "Switcheroo"
-    ],
-    [
-        "Move",
-        "Water Sport"
-    ],
-    [
-        "Move",
-        "Soak"
-    ],
-    [
-        "Move",
-        "Psych Up"
-    ],
-    [
-        "Move",
-        "Amnesia"
-    ],
-    [
-        "Move",
-        "Wonder Room"
-    ],
-    [
-        "Move",
-        "Aqua Jet"
-    ],
-    [
-        "Move",
-        "Me First"
-    ],
-    [
-        "Move",
-        "Low Kick"
-    ],
-    [
-        "Move",
-        "Seismic Toss"
-    ],
-    [
-        "Move",
-        "Swagger"
-    ],
-    [
-        "Move",
-        "Cross Chop"
-    ],
-    [
-        "Move",
-        "Thrash"
-    ],
-    [
-        "Move",
-        "Close Combat"
-    ],
-    [
-        "Move",
-        "Stomping Tantrum"
-    ],
-    [
-        "Move",
-        "Outrage"
-    ],
-    [
-        "Move",
-        "Final Gambit"
-    ],
-    [
-        "Move",
-        "Fling"
-    ],
-    [
-        "Move",
-        "Rage Fist"
-    ],
-    [
-        "Move",
-        "Howl"
-    ],
-    [
-        "Move",
-        "Flame Wheel"
-    ],
-    [
-        "Move",
-        "Retaliate"
-    ],
-    [
-        "Move",
-        "Roar"
-    ],
-    [
-        "Move",
-        "Reversal"
-    ],
-    [
-        "Move",
-        "Extreme Speed"
-    ],
-    [
-        "Move",
-        "Odor Sleuth"
-    ],
-    [
-        "Move",
-        "Hypnosis"
-    ],
-    [
-        "Move",
-        "Mud Shot"
-    ],
-    [
-        "Move",
-        "Bubble Beam"
-    ],
-    [
-        "Move",
-        "Belly Drum"
-    ],
-    [
-        "Move",
-        "Dynamic Punch"
-    ],
-    [
-        "Move",
-        "Circle Throw"
-    ],
-    [
-        "Move",
-        "Teleport"
-    ],
-    [
-        "Move",
-        "Kinesis"
-    ],
-    [
-        "Move",
-        "Reflect"
-    ],
-    [
-        "Move",
-        "Ally Switch"
-    ],
-    [
-        "Move",
-        "Psycho Cut"
-    ],
-    [
-        "Move",
-        "Recover"
-    ],
-    [
-        "Move",
-        "Psyshock"
-    ],
-    [
-        "Move",
-        "Role Play"
-    ],
-    [
-        "Move",
-        "Future Sight"
-    ],
-    [
-        "Move",
-        "Calm Mind"
-    ],
-    [
-        "Move",
-        "Revenge"
-    ],
-    [
-        "Move",
-        "Low Sweep"
-    ],
-    [
-        "Move",
-        "Knock Off"
-    ],
-    [
-        "Move",
-        "Vital Throw"
-    ],
-    [
-        "Move",
-        "Strength"
-    ],
-    [
-        "Move",
-        "Dual Chop"
-    ],
-    [
-        "Move",
-        "Bulk Up"
-    ],
-    [
-        "Move",
-        "Karate Chop"
-    ],
-    [
-        "Move",
-        "Wide Guard"
-    ],
-    [
-        "Move",
-        "Slam"
-    ],
-    [
-        "Move",
-        "Leaf Storm"
-    ],
-    [
-        "Move",
-        "Leaf Blade"
-    ],
-    [
-        "Move",
-        "Hex"
+        "Acid"
     ],
     [
         "Move",
@@ -2369,703 +1329,7 @@
     ],
     [
         "Move",
-        "Surf"
-    ],
-    [
-        "Move",
-        "Reflect Type"
-    ],
-    [
-        "Move",
-        "Wring Out"
-    ],
-    [
-        "Move",
-        "Rock Polish"
-    ],
-    [
-        "Move",
-        "Rock Throw"
-    ],
-    [
-        "Move",
-        "Smack Down"
-    ],
-    [
-        "Move",
-        "Self Destruct"
-    ],
-    [
-        "Move",
-        "Stealth Rock"
-    ],
-    [
-        "Move",
-        "Rock Blast"
-    ],
-    [
-        "Move",
-        "Explosion"
-    ],
-    [
-        "Move",
-        "Stone Edge"
-    ],
-    [
-        "Move",
-        "Heavy Slam"
-    ],
-    [
-        "Move",
-        "Flame Charge"
-    ],
-    [
-        "Move",
-        "Stomp"
-    ],
-    [
-        "Move",
-        "Smart Strike"
-    ],
-    [
-        "Move",
-        "Curse"
-    ],
-    [
-        "Move",
-        "Yawn"
-    ],
-    [
-        "Move",
-        "Headbutt"
-    ],
-    [
-        "Move",
-        "Slack Off"
-    ],
-    [
-        "Move",
-        "Heal Pulse"
-    ],
-    [
-        "Move",
-        "Magnet Rise"
-    ],
-    [
-        "Move",
-        "Metal Sound"
-    ],
-    [
-        "Move",
-        "Lock On"
-    ],
-    [
-        "Move",
-        "Zap Cannon"
-    ],
-    [
-        "Move",
-        "Electric Terrain"
-    ],
-    [
-        "Move",
-        "Cut"
-    ],
-    [
-        "Move",
-        "False Swipe"
-    ],
-    [
-        "Move",
-        "Brave Bird"
-    ],
-    [
-        "Move",
-        "Double Hit"
-    ],
-    [
-        "Move",
-        "Uproar"
-    ],
-    [
-        "Move",
-        "Acupressure"
-    ],
-    [
-        "Move",
-        "Icy Wind"
-    ],
-    [
-        "Move",
-        "Ice Shard"
-    ],
-    [
-        "Move",
-        "Aqua Ring"
-    ],
-    [
-        "Move",
-        "Aurora Beam"
-    ],
-    [
-        "Move",
-        "Brine"
-    ],
-    [
-        "Move",
-        "Dive"
-    ],
-    [
-        "Move",
-        "Ice Beam"
-    ],
-    [
-        "Move",
-        "Snowscape"
-    ],
-    [
-        "Move",
-        "Sheer Cold"
-    ],
-    [
-        "Move",
-        "Signal Beam"
-    ],
-    [
-        "Move",
-        "Poison Gas"
-    ],
-    [
-        "Move",
-        "Sludge"
-    ],
-    [
-        "Move",
-        "Minimize"
-    ],
-    [
-        "Move",
-        "Memento"
-    ],
-    [
-        "Move",
-        "Whirlpool"
-    ],
-    [
-        "Move",
-        "Razor Shell"
-    ],
-    [
-        "Move",
-        "Icicle Spear"
-    ],
-    [
-        "Move",
-        "Spikes"
-    ],
-    [
-        "Move",
-        "Icicle Crash"
-    ],
-    [
-        "Move",
-        "Lick"
-    ],
-    [
-        "Move",
-        "Payback"
-    ],
-    [
-        "Move",
-        "Night Shade"
-    ],
-    [
-        "Move",
-        "Dark Pulse"
-    ],
-    [
-        "Move",
-        "Shadow Ball"
-    ],
-    [
-        "Move",
-        "Destiny Bond"
-    ],
-    [
-        "Move",
-        "Dream Eater"
-    ],
-    [
-        "Move",
-        "Shadow Punch"
-    ],
-    [
-        "Move",
-        "Perish Song"
-    ],
-    [
-        "Move",
-        "Bind"
-    ],
-    [
-        "Move",
-        "Mud Sport"
-    ],
-    [
-        "Move",
-        "Rock Slide"
-    ],
-    [
-        "Move",
-        "Nightmare"
-    ],
-    [
-        "Move",
-        "Metal Claw"
-    ],
-    [
-        "Move",
-        "Flail"
-    ],
-    [
-        "Move",
-        "Crabhammer"
-    ],
-    [
-        "Move",
-        "Guillotine"
-    ],
-    [
-        "Move",
-        "Hammer Arm"
-    ],
-    [
-        "Move",
-        "Charge"
-    ],
-    [
-        "Move",
-        "Eerie Impulse"
-    ],
-    [
-        "Move",
-        "Charge Beam"
-    ],
-    [
-        "Move",
-        "Mirror Coat"
-    ],
-    [
-        "Move",
-        "Magnetic Flux"
-    ],
-    [
-        "Move",
-        "Barrage"
-    ],
-    [
-        "Move",
-        "Bullet Seed"
-    ],
-    [
-        "Move",
-        "Wood Hammer"
-    ],
-    [
-        "Move",
-        "Bone Rush"
-    ],
-    [
-        "Move",
-        "Bonemerang"
-    ],
-    [
-        "Move",
-        "Bone Club"
-    ],
-    [
-        "Move",
-        "Brick Break"
-    ],
-    [
-        "Move",
-        "Jump Kick"
-    ],
-    [
-        "Move",
-        "Rolling Kick"
-    ],
-    [
-        "Move",
-        "Mach Punch"
-    ],
-    [
-        "Move",
-        "Endure"
-    ],
-    [
-        "Move",
-        "Blaze Kick"
-    ],
-    [
-        "Move",
-        "Mega Kick"
-    ],
-    [
-        "Move",
-        "High Jump Kick"
-    ],
-    [
-        "Move",
-        "Axe Kick"
-    ],
-    [
-        "Move",
-        "Drain Punch"
-    ],
-    [
-        "Move",
-        "Comet Punch"
-    ],
-    [
-        "Move",
-        "Vacuum Wave"
-    ],
-    [
-        "Move",
-        "Detect"
-    ],
-    [
-        "Move",
-        "Bullet Punch"
-    ],
-    [
-        "Move",
-        "Ice Punch"
-    ],
-    [
-        "Move",
-        "Fire Punch"
-    ],
-    [
-        "Move",
-        "Mega Punch"
-    ],
-    [
-        "Move",
-        "Counter"
-    ],
-    [
-        "Move",
-        "Focus Punch"
-    ],
-    [
-        "Move",
-        "Smog"
-    ],
-    [
-        "Move",
-        "Clear Smog"
-    ],
-    [
-        "Move",
-        "Horn Drill"
-    ],
-    [
-        "Move",
-        "Soft Boiled"
-    ],
-    [
-        "Move",
-        "Last Resort"
-    ],
-    [
-        "Move",
-        "Constrict"
-    ],
-    [
-        "Move",
-        "Ancient Power"
-    ],
-    [
-        "Move",
-        "Tickle"
-    ],
-    [
-        "Move",
-        "Ingrain"
-    ],
-    [
-        "Move",
-        "Dragon Pulse"
-    ],
-    [
-        "Move",
-        "Dragon Dance"
-    ],
-    [
-        "Move",
-        "Waterfall"
-    ],
-    [
-        "Move",
-        "Baton Pass"
-    ],
-    [
-        "Move",
-        "Power Swap"
-    ],
-    [
-        "Move",
-        "Guard Swap"
-    ],
-    [
-        "Move",
-        "Barrier"
-    ],
-    [
-        "Move",
-        "Recycle"
-    ],
-    [
-        "Move",
-        "Dazzling Gleam"
-    ],
-    [
-        "Move",
-        "Teeter Dance"
-    ],
-    [
-        "Move",
-        "Steel Wing"
-    ],
-    [
-        "Move",
-        "Powder Snow"
-    ],
-    [
-        "Move",
-        "Fake Tears"
-    ],
-    [
-        "Move",
-        "Lovely Kiss"
-    ],
-    [
-        "Move",
-        "Blizzard"
-    ],
-    [
-        "Move",
-        "Shock Wave"
-    ],
-    [
-        "Move",
-        "Giga Impact"
-    ],
-    [
-        "Move",
-        "Lava Plume"
-    ],
-    [
-        "Move",
-        "Sunny Day"
-    ],
-    [
-        "Move",
-        "Hyper Beam"
-    ],
-    [
-        "Move",
-        "Vise Grip"
-    ],
-    [
-        "Move",
-        "Storm Throw"
-    ],
-    [
-        "Move",
-        "Submission"
-    ],
-    [
-        "Move",
-        "Work Up"
-    ],
-    [
-        "Move",
-        "Raging Bull"
-    ],
-    [
-        "Move",
-        "Mist"
-    ],
-    [
-        "Move",
-        "Transform"
-    ],
-    [
-        "Move",
-        "Baby Doll Eyes"
-    ],
-    [
-        "Move",
-        "Veevee Volley"
-    ],
-    [
-        "Move",
-        "Bouncy Bubble"
-    ],
-    [
-        "Move",
-        "Muddy Water"
-    ],
-    [
-        "Move",
-        "Buzzy Buzz"
-    ],
-    [
-        "Move",
-        "Sizzly Slide"
-    ],
-    [
-        "Move",
-        "Conversion"
-    ],
-    [
-        "Move",
-        "Conversion 2"
-    ],
-    [
-        "Move",
-        "Magic Coat"
-    ],
-    [
-        "Move",
-        "Spike Cannon"
-    ],
-    [
-        "Move",
-        "Liquidation"
-    ],
-    [
-        "Move",
-        "Iron Head"
-    ],
-    [
-        "Move",
-        "Block"
-    ],
-    [
-        "Move",
-        "Snore"
-    ],
-    [
-        "Move",
-        "Sleep Talk"
-    ],
-    [
-        "Move",
-        "High Horsepower"
-    ],
-    [
-        "Move",
-        "Freeze Dry"
-    ],
-    [
-        "Move",
-        "Overheat"
-    ],
-    [
-        "Move",
-        "Sky Attack"
-    ],
-    [
-        "Move",
-        "Dragon Tail"
-    ],
-    [
-        "Move",
-        "Dragon Rush"
-    ],
-    [
-        "Move",
-        "Aura Sphere"
-    ],
-    [
-        "Move",
-        "Psystrike"
-    ],
-    [
-        "Move",
-        "Magical Leaf"
-    ],
-    [
-        "Move",
-        "Eruption"
-    ],
-    [
-        "Move",
-        "Defog"
-    ],
-    [
-        "Move",
-        "Struggle Bug"
-    ],
-    [
-        "Move",
-        "Infestation"
-    ],
-    [
-        "Move",
-        "Shadow Sneak"
-    ],
-    [
-        "Move",
-        "Sticky Web"
-    ],
-    [
-        "Move",
-        "Toxic Thread"
-    ],
-    [
-        "Move",
-        "Wish"
-    ],
-    [
-        "Move",
-        "Fairy Wind"
-    ],
-    [
-        "Move",
-        "Psycho Shift"
-    ],
-    [
-        "Move",
-        "Cotton Spore"
-    ],
-    [
-        "Move",
-        "Cotton Guard"
-    ],
-    [
-        "Move",
-        "Ion Deluge"
-    ],
-    [
-        "Move",
-        "Bounce"
-    ],
-    [
-        "Move",
-        "Rock Tomb"
-    ],
-    [
-        "Move",
-        "Tearful Look"
-    ],
-    [
-        "Move",
-        "Head Smash"
+        "Acid Spray"
     ],
     [
         "Move",
@@ -3073,143 +1337,11 @@
     ],
     [
         "Move",
-        "U Turn"
+        "Acupressure"
     ],
     [
         "Move",
-        "Glitzy Glow"
-    ],
-    [
-        "Move",
-        "Morning Sun"
-    ],
-    [
-        "Move",
-        "Baddy Bad"
-    ],
-    [
-        "Move",
-        "Snarl"
-    ],
-    [
-        "Move",
-        "Foul Play"
-    ],
-    [
-        "Move",
-        "Torment"
-    ],
-    [
-        "Move",
-        "Quash"
-    ],
-    [
-        "Move",
-        "Chilly Reception"
-    ],
-    [
-        "Move",
-        "Psywave"
-    ],
-    [
-        "Move",
-        "Pain Split"
-    ],
-    [
-        "Move",
-        "Hidden Power"
-    ],
-    [
-        "Move",
-        "Twin Beam"
-    ],
-    [
-        "Move",
-        "Mirror Shot"
-    ],
-    [
-        "Move",
-        "Hyper Drill"
-    ],
-    [
-        "Move",
-        "Poison Tail"
-    ],
-    [
-        "Move",
-        "Autotomize"
-    ],
-    [
-        "Move",
-        "Bide"
-    ],
-    [
-        "Move",
-        "Guard Split"
-    ],
-    [
-        "Move",
-        "Power Split"
-    ],
-    [
-        "Move",
-        "Power Trick"
-    ],
-    [
-        "Move",
-        "Arm Thrust"
-    ],
-    [
-        "Move",
-        "Throat Chop"
-    ],
-    [
-        "Move",
-        "Hone Claws"
-    ],
-    [
-        "Move",
-        "Beat Up"
-    ],
-    [
-        "Move",
-        "Octazooka"
-    ],
-    [
-        "Move",
-        "Present"
-    ],
-    [
-        "Move",
-        "Comeuppance"
-    ],
-    [
-        "Move",
-        "Psyshield Bash"
-    ],
-    [
-        "Move",
-        "Sketch"
-    ],
-    [
-        "Move",
-        "Triple Kick"
-    ],
-    [
-        "Move",
-        "Heal Bell"
-    ],
-    [
-        "Move",
-        "Milk Drink"
-    ],
-    [
-        "Move",
-        "Sacred Fire"
-    ],
-    [
-        "Move",
-        "Weather Ball"
+        "Aerial Ace"
     ],
     [
         "Move",
@@ -3217,1267 +1349,19 @@
     ],
     [
         "Move",
-        "Heal Block"
+        "After You"
     ],
     [
         "Move",
-        "Leafage"
+        "Agility"
     ],
     [
         "Move",
-        "Energy Ball"
+        "Air Cutter"
     ],
     [
         "Move",
-        "Shed Tail"
-    ],
-    [
-        "Move",
-        "Rock Smash"
-    ],
-    [
-        "Move",
-        "Thief"
-    ],
-    [
-        "Move",
-        "Attract"
-    ],
-    [
-        "Move",
-        "Draining Kiss"
-    ],
-    [
-        "Move",
-        "Misty Terrain"
-    ],
-    [
-        "Move",
-        "Mystical Fire"
-    ],
-    [
-        "Move",
-        "Ominous Wind"
-    ],
-    [
-        "Move",
-        "Force Palm"
-    ],
-    [
-        "Move",
-        "Mind Reader"
-    ],
-    [
-        "Move",
-        "Shadow Claw"
-    ],
-    [
-        "Move",
-        "Grudge"
-    ],
-    [
-        "Move",
-        "Phantom Force"
-    ],
-    [
-        "Move",
-        "Boomburst"
-    ],
-    [
-        "Move",
-        "Headlong Rush"
-    ],
-    [
-        "Move",
-        "Facade"
-    ],
-    [
-        "Move",
-        "Metal Burst"
-    ],
-    [
-        "Move",
-        "Wild Charge"
-    ],
-    [
-        "Move",
-        "Entrainment"
-    ],
-    [
-        "Move",
-        "Flash"
-    ],
-    [
-        "Move",
-        "Tail Glow"
-    ],
-    [
-        "Move",
-        "Water Spout"
-    ],
-    [
-        "Move",
-        "Noble Roar"
-    ],
-    [
-        "Move",
-        "Dizzy Punch"
-    ],
-    [
-        "Move",
-        "Feint Attack"
-    ],
-    [
-        "Move",
-        "Power Trip"
-    ],
-    [
-        "Move",
-        "Spiky Shield"
-    ],
-    [
-        "Move",
-        "Magic Room"
-    ],
-    [
-        "Move",
-        "Hail"
-    ],
-    [
-        "Move",
-        "Substitute"
-    ],
-    [
-        "Move",
-        "Trick"
-    ],
-    [
-        "Move",
-        "Synchronoise"
-    ],
-    [
-        "Move",
-        "Frost Breath"
-    ],
-    [
-        "Move",
-        "Ice Ball"
-    ],
-    [
-        "Move",
-        "Clamp"
-    ],
-    [
-        "Move",
-        "Fly"
-    ],
-    [
-        "Move",
-        "Dual Wingbeat"
-    ],
-    [
-        "Move",
-        "Mist Ball"
-    ],
-    [
-        "Move",
-        "Luster Purge"
-    ],
-    [
-        "Move",
-        "Simple Beam"
-    ],
-    [
-        "Move",
-        "Origin Pulse"
-    ],
-    [
-        "Move",
-        "Precipice Blades"
-    ],
-    [
-        "Move",
-        "Dragon Ascent"
-    ],
-    [
-        "Move",
-        "Doom Desire"
-    ],
-    [
-        "Move",
-        "Skill Swap"
-    ],
-    [
-        "Move",
-        "Psycho Boost"
-    ],
-    [
-        "Move",
-        "Raging Fury"
-    ],
-    [
-        "Move",
-        "Hyper Fang"
-    ],
-    [
-        "Move",
-        "Volt Switch"
-    ],
-    [
-        "Move",
-        "Venom Drench"
-    ],
-    [
-        "Move",
-        "Chip Away"
-    ],
-    [
-        "Move",
-        "Lunge"
-    ],
-    [
-        "Move",
-        "Aromatic Mist"
-    ],
-    [
-        "Move",
-        "Attack Order"
-    ],
-    [
-        "Move",
-        "Defend Order"
-    ],
-    [
-        "Move",
-        "Heal Order"
-    ],
-    [
-        "Move",
-        "Flower Shield"
-    ],
-    [
-        "Move",
-        "Strength Sap"
-    ],
-    [
-        "Move",
-        "Frustration"
-    ],
-    [
-        "Move",
-        "Return"
-    ],
-    [
-        "Move",
-        "Lucky Chant"
-    ],
-    [
-        "Move",
-        "Chatter"
-    ],
-    [
-        "Move",
-        "Confide"
-    ],
-    [
-        "Move",
-        "Mirror Move"
-    ],
-    [
-        "Move",
-        "Grass Knot"
-    ],
-    [
-        "Move",
-        "Leaf Tornado"
-    ],
-    [
-        "Move",
-        "Aurora Veil"
-    ],
-    [
-        "Move",
-        "Embargo"
-    ],
-    [
-        "Move",
-        "Rock Wrecker"
-    ],
-    [
-        "Move",
-        "Sappy Seed"
-    ],
-    [
-        "Move",
-        "Freezy Frost"
-    ],
-    [
-        "Move",
-        "Trick Room"
-    ],
-    [
-        "Move",
-        "Sacred Sword"
-    ],
-    [
-        "Move",
-        "Aqua Cutter"
-    ],
-    [
-        "Move",
-        "Expanding Force"
-    ],
-    [
-        "Move",
-        "Mystical Power"
-    ],
-    [
-        "Move",
-        "Roar Of Time"
-    ],
-    [
-        "Move",
-        "Spacial Rend"
-    ],
-    [
-        "Move",
-        "Magma Storm"
-    ],
-    [
-        "Move",
-        "Foresight"
-    ],
-    [
-        "Move",
-        "Body Press"
-    ],
-    [
-        "Move",
-        "Crush Grip"
-    ],
-    [
-        "Move",
-        "Shadow Force"
-    ],
-    [
-        "Move",
-        "Lunar Dance"
-    ],
-    [
-        "Move",
-        "Lunar Blessing"
-    ],
-    [
-        "Move",
-        "Take Heart"
-    ],
-    [
-        "Move",
-        "Heart Swap"
-    ],
-    [
-        "Move",
-        "Dark Void"
-    ],
-    [
-        "Move",
-        "Natural Gift"
-    ],
-    [
-        "Move",
-        "Seed Flare"
-    ],
-    [
-        "Move",
-        "Punishment"
-    ],
-    [
-        "Move",
-        "Judgment"
-    ],
-    [
-        "Move",
-        "V Create"
-    ],
-    [
-        "Move",
-        "Searing Shot"
-    ],
-    [
-        "Move",
-        "Heat Crash"
-    ],
-    [
-        "Move",
-        "Assist"
-    ],
-    [
-        "Move",
-        "Flame Burst"
-    ],
-    [
-        "Move",
-        "Scald"
-    ],
-    [
-        "Move",
-        "Psychic Terrain"
-    ],
-    [
-        "Move",
-        "Bubble"
-    ],
-    [
-        "Move",
-        "Mat Block"
-    ],
-    [
-        "Move",
-        "Grass Whistle"
-    ],
-    [
-        "Move",
-        "Crafty Shield"
-    ],
-    [
-        "Move",
-        "Night Daze"
-    ],
-    [
-        "Move",
-        "Tail Slap"
-    ],
-    [
-        "Move",
-        "Snatch"
-    ],
-    [
-        "Move",
-        "Avalanche"
-    ],
-    [
-        "Move",
-        "Camouflage"
-    ],
-    [
-        "Move",
-        "Horn Leech"
-    ],
-    [
-        "Move",
-        "Spider Web"
-    ],
-    [
-        "Move",
-        "Electroweb"
-    ],
-    [
-        "Move",
-        "Rock Climb"
-    ],
-    [
-        "Move",
-        "Gear Grind"
-    ],
-    [
-        "Move",
-        "Shift Gear"
-    ],
-    [
-        "Move",
-        "Gear Up"
-    ],
-    [
-        "Move",
-        "Breaking Swipe"
-    ],
-    [
-        "Move",
-        "Water Shuriken"
-    ],
-    [
-        "Move",
-        "Head Charge"
-    ],
-    [
-        "Move",
-        "Fire Lash"
-    ],
-    [
-        "Move",
-        "Fiery Dance"
-    ],
-    [
-        "Move",
-        "Bleakwind Storm"
-    ],
-    [
-        "Move",
-        "Wildbolt Storm"
-    ],
-    [
-        "Move",
-        "Fusion Flare"
-    ],
-    [
-        "Move",
-        "Blue Flare"
-    ],
-    [
-        "Move",
-        "Fusion Bolt"
-    ],
-    [
-        "Move",
-        "Bolt Strike"
-    ],
-    [
-        "Move",
-        "Sandsear Storm"
-    ],
-    [
-        "Move",
-        "Glaciate"
-    ],
-    [
-        "Move",
-        "Secret Sword"
-    ],
-    [
-        "Move",
-        "Relic Song"
-    ],
-    [
-        "Move",
-        "Techno Blast"
-    ],
-    [
-        "Move",
-        "Needle Arm"
-    ],
-    [
-        "Move",
-        "Powder"
-    ],
-    [
-        "Move",
-        "Parting Shot"
-    ],
-    [
-        "Move",
-        "Kings Shield"
-    ],
-    [
-        "Move",
-        "Topsy Turvy"
-    ],
-    [
-        "Move",
-        "Skull Bash"
-    ],
-    [
-        "Move",
-        "Parabolic Charge"
-    ],
-    [
-        "Move",
-        "Electrify"
-    ],
-    [
-        "Move",
-        "Razor Wind"
-    ],
-    [
-        "Move",
-        "Nature Power"
-    ],
-    [
-        "Move",
-        "Sparkly Swirl"
-    ],
-    [
-        "Move",
-        "Flying Press"
-    ],
-    [
-        "Move",
-        "Fairy Lock"
-    ],
-    [
-        "Move",
-        "Branch Poke"
-    ],
-    [
-        "Move",
-        "Forests Curse"
-    ],
-    [
-        "Move",
-        "Trick Or Treat"
-    ],
-    [
-        "Move",
-        "Geomancy"
-    ],
-    [
-        "Move",
-        "Oblivion Wing"
-    ],
-    [
-        "Move",
-        "Focus Blast"
-    ],
-    [
-        "Move",
-        "Thousand Arrows"
-    ],
-    [
-        "Move",
-        "Thousand Waves"
-    ],
-    [
-        "Move",
-        "Core Enforcer"
-    ],
-    [
-        "Move",
-        "Lands Wrath"
-    ],
-    [
-        "Move",
-        "Diamond Storm"
-    ],
-    [
-        "Move",
-        "Hyperspace Hole"
-    ],
-    [
-        "Move",
-        "Steam Eruption"
-    ],
-    [
-        "Move",
-        "Spirit Shackle"
-    ],
-    [
-        "Move",
-        "Darkest Lariat"
-    ],
-    [
-        "Move",
-        "Sparkling Aria"
-    ],
-    [
-        "Move",
-        "Beak Blast"
-    ],
-    [
-        "Move",
-        "Ice Hammer"
-    ],
-    [
-        "Move",
-        "Revelation Dance"
-    ],
-    [
-        "Move",
-        "Pollen Puff"
-    ],
-    [
-        "Move",
-        "Accelerock"
-    ],
-    [
-        "Move",
-        "Baneful Bunker"
-    ],
-    [
-        "Move",
-        "Solar Blade"
-    ],
-    [
-        "Move",
-        "Captivate"
-    ],
-    [
-        "Move",
-        "Brutal Swing"
-    ],
-    [
-        "Move",
-        "Trop Kick"
-    ],
-    [
-        "Move",
-        "Floral Healing"
-    ],
-    [
-        "Move",
-        "Instruct"
-    ],
-    [
-        "Move",
-        "First Impression"
-    ],
-    [
-        "Move",
-        "Shore Up"
-    ],
-    [
-        "Move",
-        "Purify"
-    ],
-    [
-        "Move",
-        "Multi Attack"
-    ],
-    [
-        "Move",
-        "Shell Trap"
-    ],
-    [
-        "Move",
-        "Zing Zap"
-    ],
-    [
-        "Move",
-        "Psychic Fangs"
-    ],
-    [
-        "Move",
-        "Anchor Shot"
-    ],
-    [
-        "Move",
-        "Sky Uppercut"
-    ],
-    [
-        "Move",
-        "Clanging Scales"
-    ],
-    [
-        "Move",
-        "Clangorous Soul"
-    ],
-    [
-        "Move",
-        "Natures Madness"
-    ],
-    [
-        "Move",
-        "Sunsteel Strike"
-    ],
-    [
-        "Move",
-        "Wake Up Slap"
-    ],
-    [
-        "Move",
-        "Moongeist Beam"
-    ],
-    [
-        "Move",
-        "Power Up Punch"
-    ],
-    [
-        "Move",
-        "Speed Swap"
-    ],
-    [
-        "Move",
-        "Photon Geyser"
-    ],
-    [
-        "Move",
-        "Prismatic Laser"
-    ],
-    [
-        "Move",
-        "Fleur Cannon"
-    ],
-    [
-        "Move",
-        "Spectral Thief"
-    ],
-    [
-        "Move",
-        "Mind Blown"
-    ],
-    [
-        "Move",
-        "Plasma Fists"
-    ],
-    [
-        "Move",
-        "Double Iron Bash"
-    ],
-    [
-        "Move",
-        "Drum Beating"
-    ],
-    [
-        "Move",
-        "Pyro Ball"
-    ],
-    [
-        "Move",
-        "Court Change"
-    ],
-    [
-        "Move",
-        "Snipe Shot"
-    ],
-    [
-        "Move",
-        "Stuff Cheeks"
-    ],
-    [
-        "Move",
-        "Jaw Lock"
-    ],
-    [
-        "Move",
-        "Tar Shot"
-    ],
-    [
-        "Move",
-        "Grav Apple"
-    ],
-    [
-        "Move",
-        "Apple Acid"
-    ],
-    [
-        "Move",
-        "Overdrive"
-    ],
-    [
-        "Move",
-        "Burn Up"
-    ],
-    [
-        "Move",
-        "Octolock"
-    ],
-    [
-        "Move",
-        "Teatime"
-    ],
-    [
-        "Move",
-        "Magic Powder"
-    ],
-    [
-        "Move",
-        "False Surrender"
-    ],
-    [
-        "Move",
-        "Spirit Break"
-    ],
-    [
-        "Move",
-        "Obstruct"
-    ],
-    [
-        "Move",
-        "Meteor Assault"
-    ],
-    [
-        "Move",
-        "Decorate"
-    ],
-    [
-        "Move",
-        "No Retreat"
-    ],
-    [
-        "Move",
-        "Aura Wheel"
-    ],
-    [
-        "Move",
-        "Bolt Beak"
-    ],
-    [
-        "Move",
-        "Fishious Rend"
-    ],
-    [
-        "Move",
-        "Dragon Darts"
-    ],
-    [
-        "Move",
-        "Dynamax Cannon"
-    ],
-    [
-        "Move",
-        "Wicked Blow"
-    ],
-    [
-        "Move",
-        "Jungle Healing"
-    ],
-    [
-        "Move",
-        "Thunder Cage"
-    ],
-    [
-        "Move",
-        "Dragon Energy"
-    ],
-    [
-        "Move",
-        "Stone Axe"
-    ],
-    [
-        "Move",
-        "Dire Claw"
-    ],
-    [
-        "Move",
-        "Barb Barrage"
-    ],
-    [
-        "Move",
-        "Springtide Storm"
-    ],
-    [
-        "Move",
-        "Flower Trick"
-    ],
-    [
-        "Move",
-        "Torch Song"
-    ],
-    [
-        "Move",
-        "Aqua Step"
-    ],
-    [
-        "Move",
-        "Skitter Smack"
-    ],
-    [
-        "Move",
-        "Silk Trap"
-    ],
-    [
-        "Move",
-        "Revival Blessing"
-    ],
-    [
-        "Move",
-        "Double Shock"
-    ],
-    [
-        "Move",
-        "Population Bomb"
-    ],
-    [
-        "Move",
-        "Tidy Up"
-    ],
-    [
-        "Move",
-        "Terrain Pulse"
-    ],
-    [
-        "Move",
-        "Salt Cure"
-    ],
-    [
-        "Move",
-        "Armor Cannon"
-    ],
-    [
-        "Move",
-        "Bitter Blade"
-    ],
-    [
-        "Move",
-        "Doodle"
-    ],
-    [
-        "Move",
-        "Spicy Extract"
-    ],
-    [
-        "Move",
-        "Lumina Crash"
-    ],
-    [
-        "Move",
-        "Gigaton Hammer"
-    ],
-    [
-        "Move",
-        "Triple Dive"
-    ],
-    [
-        "Move",
-        "Flip Turn"
-    ],
-    [
-        "Move",
-        "Jet Punch"
-    ],
-    [
-        "Move",
-        "Spin Out"
-    ],
-    [
-        "Move",
-        "Mortal Spin"
-    ],
-    [
-        "Move",
-        "Last Respects"
-    ],
-    [
-        "Move",
-        "Ice Spinner"
-    ],
-    [
-        "Move",
-        "Fillet Away"
-    ],
-    [
-        "Move",
-        "Order Up"
-    ],
-    [
-        "Move",
-        "Kowtow Cleave"
-    ],
-    [
-        "Move",
-        "Steel Roller"
-    ],
-    [
-        "Move",
-        "Glaive Rush"
-    ],
-    [
-        "Move",
-        "Make It Rain"
-    ],
-    [
-        "Move",
-        "Ruination"
-    ],
-    [
-        "Move",
-        "Scale Shot"
-    ],
-    [
-        "Move",
-        "Collision Course"
-    ],
-    [
-        "Move",
-        "Electro Drift"
-    ],
-    [
-        "Move",
-        "Hydro Steam"
-    ],
-    [
-        "Move",
-        "Psyblade"
-    ],
-    [
-        "Move",
-        "Dragon Cheer"
-    ],
-    [
-        "Move",
-        "Syrup Bomb"
-    ],
-    [
-        "Move",
-        "Matcha Gotcha"
-    ],
-    [
-        "Move",
-        "Ivy Cudgel"
-    ],
-    [
-        "Move",
-        "Electro Shot"
-    ],
-    [
-        "Move",
-        "Fickle Beam"
-    ],
-    [
-        "Move",
-        "Burning Bulwark"
-    ],
-    [
-        "Move",
-        "Thunderclap"
-    ],
-    [
-        "Move",
-        "Dragon Hammer"
-    ],
-    [
-        "Move",
-        "Rising Voltage"
-    ],
-    [
-        "Move",
-        "Mighty Cleave"
-    ],
-    [
-        "Move",
-        "Tachyon Cutter"
-    ],
-    [
-        "Move",
-        "Tera Starstorm"
-    ],
-    [
-        "Move",
-        "Malignant Chain"
-    ],
-    [
-        "Move",
-        "Shadow Bone"
-    ],
-    [
-        "Move",
-        "Light Of Ruin"
-    ],
-    [
-        "Move",
-        "Shell Side Arm"
-    ],
-    [
-        "Move",
-        "Strange Steam"
-    ],
-    [
-        "Move",
-        "Freezing Glare"
-    ],
-    [
-        "Move",
-        "Thunderous Kick"
-    ],
-    [
-        "Move",
-        "Fiery Wrath"
-    ],
-    [
-        "Move",
-        "Eerie Spell"
-    ],
-    [
-        "Move",
-        "Snap Trap"
-    ],
-    [
-        "Move",
-        "Chloroblast"
-    ],
-    [
-        "Move",
-        "Infernal Parade"
-    ],
-    [
-        "Move",
-        "Ceaseless Edge"
-    ],
-    [
-        "Move",
-        "Victory Dance"
-    ],
-    [
-        "Move",
-        "Bitter Malice"
-    ],
-    [
-        "Move",
-        "Esper Wing"
-    ],
-    [
-        "Move",
-        "Shelter"
-    ],
-    [
-        "Move",
-        "Mountain Gale"
-    ],
-    [
-        "Move",
-        "Triple Arrows"
-    ],
-    [
-        "Move",
-        "Blood Moon"
-    ],
-    [
-        "Move",
-        "Noxious Torque"
-    ],
-    [
-        "Move",
-        "Floaty Fall"
-    ],
-    [
-        "Move",
-        "Triple Axel"
-    ],
-    [
-        "Move",
-        "Heart Stamp"
-    ],
-    [
-        "Move",
-        "Surging Strikes"
-    ],
-    [
-        "Move",
-        "Volt Tackle"
-    ],
-    [
-        "Move",
-        "Splishy Splash"
-    ],
-    [
-        "Move",
-        "Magical Torque"
-    ],
-    [
-        "Move",
-        "Trailblaze"
-    ],
-    [
-        "Move",
-        "Glacial Lance"
-    ],
-    [
-        "Move",
-        "Supercell Slam"
-    ],
-    [
-        "Move",
-        "Wicked Torque"
-    ],
-    [
-        "Move",
-        "Astral Barrage"
-    ],
-    [
-        "Move",
-        "Scorching Sands"
-    ],
-    [
-        "Move",
-        "Blazing Torque"
+        "Air Slash"
     ],
     [
         "Move",
@@ -4485,15 +1369,147 @@
     ],
     [
         "Move",
-        "Combat Torque"
+        "Ally Switch"
     ],
     [
         "Move",
-        "Burning Jealousy"
+        "Amnesia"
     ],
     [
         "Move",
-        "Draco Meteor"
+        "Anchor Shot"
+    ],
+    [
+        "Move",
+        "Ancient Power"
+    ],
+    [
+        "Move",
+        "Apple Acid"
+    ],
+    [
+        "Move",
+        "Aqua Cutter"
+    ],
+    [
+        "Move",
+        "Aqua Jet"
+    ],
+    [
+        "Move",
+        "Aqua Ring"
+    ],
+    [
+        "Move",
+        "Aqua Step"
+    ],
+    [
+        "Move",
+        "Aqua Tail"
+    ],
+    [
+        "Move",
+        "Arm Thrust"
+    ],
+    [
+        "Move",
+        "Armor Cannon"
+    ],
+    [
+        "Move",
+        "Aromatherapy"
+    ],
+    [
+        "Move",
+        "Aromatic Mist"
+    ],
+    [
+        "Move",
+        "Assist"
+    ],
+    [
+        "Move",
+        "Assurance"
+    ],
+    [
+        "Move",
+        "Astonish"
+    ],
+    [
+        "Move",
+        "Astral Barrage"
+    ],
+    [
+        "Move",
+        "Attack Order"
+    ],
+    [
+        "Move",
+        "Attract"
+    ],
+    [
+        "Move",
+        "Aura Sphere"
+    ],
+    [
+        "Move",
+        "Aura Wheel"
+    ],
+    [
+        "Move",
+        "Aurora Beam"
+    ],
+    [
+        "Move",
+        "Aurora Veil"
+    ],
+    [
+        "Move",
+        "Autotomize"
+    ],
+    [
+        "Move",
+        "Avalanche"
+    ],
+    [
+        "Move",
+        "Axe Kick"
+    ],
+    [
+        "Move",
+        "Baby Doll Eyes"
+    ],
+    [
+        "Move",
+        "Baddy Bad"
+    ],
+    [
+        "Move",
+        "Baneful Bunker"
+    ],
+    [
+        "Move",
+        "Barb Barrage"
+    ],
+    [
+        "Move",
+        "Barrage"
+    ],
+    [
+        "Move",
+        "Barrier"
+    ],
+    [
+        "Move",
+        "Baton Pass"
+    ],
+    [
+        "Move",
+        "Beak Blast"
+    ],
+    [
+        "Move",
+        "Beat Up"
     ],
     [
         "Move",
@@ -4505,19 +1521,31 @@
     ],
     [
         "Move",
-        "Psychic Noise"
+        "Belch"
     ],
     [
         "Move",
-        "Grassy Glide"
+        "Belly Drum"
     ],
     [
         "Move",
-        "Happy Hour"
+        "Bide"
     ],
     [
         "Move",
-        "Secret Power"
+        "Bind"
+    ],
+    [
+        "Move",
+        "Bite"
+    ],
+    [
+        "Move",
+        "Bitter Blade"
+    ],
+    [
+        "Move",
+        "Bitter Malice"
     ],
     [
         "Move",
@@ -4525,63 +1553,175 @@
     ],
     [
         "Move",
-        "Hydro Cannon"
+        "Blaze Kick"
     ],
     [
         "Move",
-        "Frenzy Plant"
+        "Blazing Torque"
     ],
     [
         "Move",
-        "Sky Drop"
+        "Bleakwind Storm"
     ],
     [
         "Move",
-        "Water Pledge"
+        "Blizzard"
     ],
     [
         "Move",
-        "Fire Pledge"
+        "Block"
     ],
     [
         "Move",
-        "Grass Pledge"
+        "Blood Moon"
     ],
     [
         "Move",
-        "Steel Beam"
+        "Blue Flare"
     ],
     [
         "Move",
-        "Meteor Beam"
+        "Body Press"
     ],
     [
         "Move",
-        "Misty Explosion"
+        "Body Slam"
     ],
     [
         "Move",
-        "Lash Out"
+        "Bolt Beak"
     ],
     [
         "Move",
-        "Poltergeist"
+        "Bolt Strike"
     ],
     [
         "Move",
-        "Corrosive Gas"
+        "Bone Club"
     ],
     [
         "Move",
-        "Coaching"
+        "Bone Rush"
     ],
     [
         "Move",
-        "Tera Blast"
+        "Bonemerang"
     ],
     [
         "Move",
-        "Pounce"
+        "Boomburst"
+    ],
+    [
+        "Move",
+        "Bounce"
+    ],
+    [
+        "Move",
+        "Bouncy Bubble"
+    ],
+    [
+        "Move",
+        "Branch Poke"
+    ],
+    [
+        "Move",
+        "Brave Bird"
+    ],
+    [
+        "Move",
+        "Breaking Swipe"
+    ],
+    [
+        "Move",
+        "Brick Break"
+    ],
+    [
+        "Move",
+        "Brine"
+    ],
+    [
+        "Move",
+        "Brutal Swing"
+    ],
+    [
+        "Move",
+        "Bubble"
+    ],
+    [
+        "Move",
+        "Bubble Beam"
+    ],
+    [
+        "Move",
+        "Bug Bite"
+    ],
+    [
+        "Move",
+        "Bug Buzz"
+    ],
+    [
+        "Move",
+        "Bulk Up"
+    ],
+    [
+        "Move",
+        "Bulldoze"
+    ],
+    [
+        "Move",
+        "Bullet Punch"
+    ],
+    [
+        "Move",
+        "Bullet Seed"
+    ],
+    [
+        "Move",
+        "Burn Up"
+    ],
+    [
+        "Move",
+        "Burning Bulwark"
+    ],
+    [
+        "Move",
+        "Burning Jealousy"
+    ],
+    [
+        "Move",
+        "Buzzy Buzz"
+    ],
+    [
+        "Move",
+        "Calm Mind"
+    ],
+    [
+        "Move",
+        "Camouflage"
+    ],
+    [
+        "Move",
+        "Captivate"
+    ],
+    [
+        "Move",
+        "Ceaseless Edge"
+    ],
+    [
+        "Move",
+        "Charge"
+    ],
+    [
+        "Move",
+        "Charge Beam"
+    ],
+    [
+        "Move",
+        "Charm"
+    ],
+    [
+        "Move",
+        "Chatter"
     ],
     [
         "Move",
@@ -4589,15 +1729,659 @@
     ],
     [
         "Move",
-        "Hard Press"
+        "Chilly Reception"
     ],
     [
         "Move",
-        "Temper Flare"
+        "Chip Away"
     ],
     [
         "Move",
-        "Upper Hand"
+        "Chloroblast"
+    ],
+    [
+        "Move",
+        "Circle Throw"
+    ],
+    [
+        "Move",
+        "Clamp"
+    ],
+    [
+        "Move",
+        "Clanging Scales"
+    ],
+    [
+        "Move",
+        "Clangorous Soul"
+    ],
+    [
+        "Move",
+        "Clear Smog"
+    ],
+    [
+        "Move",
+        "Close Combat"
+    ],
+    [
+        "Move",
+        "Coaching"
+    ],
+    [
+        "Move",
+        "Coil"
+    ],
+    [
+        "Move",
+        "Collision Course"
+    ],
+    [
+        "Move",
+        "Combat Torque"
+    ],
+    [
+        "Move",
+        "Comet Punch"
+    ],
+    [
+        "Move",
+        "Comeuppance"
+    ],
+    [
+        "Move",
+        "Confide"
+    ],
+    [
+        "Move",
+        "Confuse Ray"
+    ],
+    [
+        "Move",
+        "Confusion"
+    ],
+    [
+        "Move",
+        "Constrict"
+    ],
+    [
+        "Move",
+        "Conversion"
+    ],
+    [
+        "Move",
+        "Conversion 2"
+    ],
+    [
+        "Move",
+        "Copycat"
+    ],
+    [
+        "Move",
+        "Core Enforcer"
+    ],
+    [
+        "Move",
+        "Corrosive Gas"
+    ],
+    [
+        "Move",
+        "Cosmic Power"
+    ],
+    [
+        "Move",
+        "Cotton Guard"
+    ],
+    [
+        "Move",
+        "Cotton Spore"
+    ],
+    [
+        "Move",
+        "Counter"
+    ],
+    [
+        "Move",
+        "Court Change"
+    ],
+    [
+        "Move",
+        "Covet"
+    ],
+    [
+        "Move",
+        "Crabhammer"
+    ],
+    [
+        "Move",
+        "Crafty Shield"
+    ],
+    [
+        "Move",
+        "Cross Chop"
+    ],
+    [
+        "Move",
+        "Cross Poison"
+    ],
+    [
+        "Move",
+        "Crunch"
+    ],
+    [
+        "Move",
+        "Crush Claw"
+    ],
+    [
+        "Move",
+        "Crush Grip"
+    ],
+    [
+        "Move",
+        "Curse"
+    ],
+    [
+        "Move",
+        "Cut"
+    ],
+    [
+        "Move",
+        "Dark Pulse"
+    ],
+    [
+        "Move",
+        "Dark Void"
+    ],
+    [
+        "Move",
+        "Darkest Lariat"
+    ],
+    [
+        "Move",
+        "Dazzling Gleam"
+    ],
+    [
+        "Move",
+        "Decorate"
+    ],
+    [
+        "Move",
+        "Defend Order"
+    ],
+    [
+        "Move",
+        "Defense Curl"
+    ],
+    [
+        "Move",
+        "Defog"
+    ],
+    [
+        "Move",
+        "Destiny Bond"
+    ],
+    [
+        "Move",
+        "Detect"
+    ],
+    [
+        "Move",
+        "Diamond Storm"
+    ],
+    [
+        "Move",
+        "Dig"
+    ],
+    [
+        "Move",
+        "Dire Claw"
+    ],
+    [
+        "Move",
+        "Disable"
+    ],
+    [
+        "Move",
+        "Disarming Voice"
+    ],
+    [
+        "Move",
+        "Discharge"
+    ],
+    [
+        "Move",
+        "Dive"
+    ],
+    [
+        "Move",
+        "Dizzy Punch"
+    ],
+    [
+        "Move",
+        "Doodle"
+    ],
+    [
+        "Move",
+        "Doom Desire"
+    ],
+    [
+        "Move",
+        "Double Edge"
+    ],
+    [
+        "Move",
+        "Double Hit"
+    ],
+    [
+        "Move",
+        "Double Iron Bash"
+    ],
+    [
+        "Move",
+        "Double Kick"
+    ],
+    [
+        "Move",
+        "Double Shock"
+    ],
+    [
+        "Move",
+        "Double Team"
+    ],
+    [
+        "Move",
+        "Draco Meteor"
+    ],
+    [
+        "Move",
+        "Dragon Ascent"
+    ],
+    [
+        "Move",
+        "Dragon Breath"
+    ],
+    [
+        "Move",
+        "Dragon Cheer"
+    ],
+    [
+        "Move",
+        "Dragon Claw"
+    ],
+    [
+        "Move",
+        "Dragon Dance"
+    ],
+    [
+        "Move",
+        "Dragon Darts"
+    ],
+    [
+        "Move",
+        "Dragon Energy"
+    ],
+    [
+        "Move",
+        "Dragon Hammer"
+    ],
+    [
+        "Move",
+        "Dragon Pulse"
+    ],
+    [
+        "Move",
+        "Dragon Rush"
+    ],
+    [
+        "Move",
+        "Dragon Tail"
+    ],
+    [
+        "Move",
+        "Drain Punch"
+    ],
+    [
+        "Move",
+        "Draining Kiss"
+    ],
+    [
+        "Move",
+        "Dream Eater"
+    ],
+    [
+        "Move",
+        "Drill Peck"
+    ],
+    [
+        "Move",
+        "Drill Run"
+    ],
+    [
+        "Move",
+        "Drum Beating"
+    ],
+    [
+        "Move",
+        "Dual Chop"
+    ],
+    [
+        "Move",
+        "Dual Wingbeat"
+    ],
+    [
+        "Move",
+        "Dynamax Cannon"
+    ],
+    [
+        "Move",
+        "Dynamic Punch"
+    ],
+    [
+        "Move",
+        "Earth Power"
+    ],
+    [
+        "Move",
+        "Earthquake"
+    ],
+    [
+        "Move",
+        "Echoed Voice"
+    ],
+    [
+        "Move",
+        "Eerie Impulse"
+    ],
+    [
+        "Move",
+        "Eerie Spell"
+    ],
+    [
+        "Move",
+        "Electric Terrain"
+    ],
+    [
+        "Move",
+        "Electrify"
+    ],
+    [
+        "Move",
+        "Electro Ball"
+    ],
+    [
+        "Move",
+        "Electro Drift"
+    ],
+    [
+        "Move",
+        "Electro Shot"
+    ],
+    [
+        "Move",
+        "Electroweb"
+    ],
+    [
+        "Move",
+        "Embargo"
+    ],
+    [
+        "Move",
+        "Ember"
+    ],
+    [
+        "Move",
+        "Encore"
+    ],
+    [
+        "Move",
+        "Endeavor"
+    ],
+    [
+        "Move",
+        "Endure"
+    ],
+    [
+        "Move",
+        "Energy Ball"
+    ],
+    [
+        "Move",
+        "Entrainment"
+    ],
+    [
+        "Move",
+        "Eruption"
+    ],
+    [
+        "Move",
+        "Esper Wing"
+    ],
+    [
+        "Move",
+        "Eternabeam"
+    ],
+    [
+        "Move",
+        "Expanding Force"
+    ],
+    [
+        "Move",
+        "Explosion"
+    ],
+    [
+        "Move",
+        "Extrasensory"
+    ],
+    [
+        "Move",
+        "Extreme Speed"
+    ],
+    [
+        "Move",
+        "Facade"
+    ],
+    [
+        "Move",
+        "Fairy Lock"
+    ],
+    [
+        "Move",
+        "Fairy Wind"
+    ],
+    [
+        "Move",
+        "Fake Out"
+    ],
+    [
+        "Move",
+        "Fake Tears"
+    ],
+    [
+        "Move",
+        "False Surrender"
+    ],
+    [
+        "Move",
+        "False Swipe"
+    ],
+    [
+        "Move",
+        "Feather Dance"
+    ],
+    [
+        "Move",
+        "Feint"
+    ],
+    [
+        "Move",
+        "Feint Attack"
+    ],
+    [
+        "Move",
+        "Fell Stinger"
+    ],
+    [
+        "Move",
+        "Fickle Beam"
+    ],
+    [
+        "Move",
+        "Fiery Dance"
+    ],
+    [
+        "Move",
+        "Fiery Wrath"
+    ],
+    [
+        "Move",
+        "Fillet Away"
+    ],
+    [
+        "Move",
+        "Final Gambit"
+    ],
+    [
+        "Move",
+        "Fire Blast"
+    ],
+    [
+        "Move",
+        "Fire Fang"
+    ],
+    [
+        "Move",
+        "Fire Lash"
+    ],
+    [
+        "Move",
+        "Fire Pledge"
+    ],
+    [
+        "Move",
+        "Fire Punch"
+    ],
+    [
+        "Move",
+        "Fire Spin"
+    ],
+    [
+        "Move",
+        "First Impression"
+    ],
+    [
+        "Move",
+        "Fishious Rend"
+    ],
+    [
+        "Move",
+        "Fissure"
+    ],
+    [
+        "Move",
+        "Flail"
+    ],
+    [
+        "Move",
+        "Flame Burst"
+    ],
+    [
+        "Move",
+        "Flame Charge"
+    ],
+    [
+        "Move",
+        "Flame Wheel"
+    ],
+    [
+        "Move",
+        "Flamethrower"
+    ],
+    [
+        "Move",
+        "Flare Blitz"
+    ],
+    [
+        "Move",
+        "Flash"
+    ],
+    [
+        "Move",
+        "Flash Cannon"
+    ],
+    [
+        "Move",
+        "Flatter"
+    ],
+    [
+        "Move",
+        "Fleur Cannon"
+    ],
+    [
+        "Move",
+        "Fling"
+    ],
+    [
+        "Move",
+        "Flip Turn"
+    ],
+    [
+        "Move",
+        "Floaty Fall"
+    ],
+    [
+        "Move",
+        "Floral Healing"
+    ],
+    [
+        "Move",
+        "Flower Shield"
+    ],
+    [
+        "Move",
+        "Flower Trick"
+    ],
+    [
+        "Move",
+        "Fly"
+    ],
+    [
+        "Move",
+        "Flying Press"
+    ],
+    [
+        "Move",
+        "Focus Blast"
+    ],
+    [
+        "Move",
+        "Focus Energy"
+    ],
+    [
+        "Move",
+        "Focus Punch"
+    ],
+    [
+        "Move",
+        "Follow Me"
+    ],
+    [
+        "Move",
+        "Force Palm"
+    ],
+    [
+        "Move",
+        "Foresight"
+    ],
+    [
+        "Move",
+        "Forests Curse"
+    ],
+    [
+        "Move",
+        "Foul Play"
+    ],
+    [
+        "Move",
+        "Freeze Dry"
     ],
     [
         "Move",
@@ -4605,7 +2389,311 @@
     ],
     [
         "Move",
-        "Ice Burn"
+        "Freezing Glare"
+    ],
+    [
+        "Move",
+        "Freezy Frost"
+    ],
+    [
+        "Move",
+        "Frenzy Plant"
+    ],
+    [
+        "Move",
+        "Frost Breath"
+    ],
+    [
+        "Move",
+        "Frustration"
+    ],
+    [
+        "Move",
+        "Fury Attack"
+    ],
+    [
+        "Move",
+        "Fury Cutter"
+    ],
+    [
+        "Move",
+        "Fury Swipes"
+    ],
+    [
+        "Move",
+        "Fusion Bolt"
+    ],
+    [
+        "Move",
+        "Fusion Flare"
+    ],
+    [
+        "Move",
+        "Future Sight"
+    ],
+    [
+        "Move",
+        "Gastro Acid"
+    ],
+    [
+        "Move",
+        "Gear Grind"
+    ],
+    [
+        "Move",
+        "Gear Up"
+    ],
+    [
+        "Move",
+        "Geomancy"
+    ],
+    [
+        "Move",
+        "Giga Drain"
+    ],
+    [
+        "Move",
+        "Giga Impact"
+    ],
+    [
+        "Move",
+        "Gigaton Hammer"
+    ],
+    [
+        "Move",
+        "Glacial Lance"
+    ],
+    [
+        "Move",
+        "Glaciate"
+    ],
+    [
+        "Move",
+        "Glaive Rush"
+    ],
+    [
+        "Move",
+        "Glare"
+    ],
+    [
+        "Move",
+        "Glitzy Glow"
+    ],
+    [
+        "Move",
+        "Grass Knot"
+    ],
+    [
+        "Move",
+        "Grass Pledge"
+    ],
+    [
+        "Move",
+        "Grass Whistle"
+    ],
+    [
+        "Move",
+        "Grassy Glide"
+    ],
+    [
+        "Move",
+        "Grassy Terrain"
+    ],
+    [
+        "Move",
+        "Grav Apple"
+    ],
+    [
+        "Move",
+        "Gravity"
+    ],
+    [
+        "Move",
+        "Growl"
+    ],
+    [
+        "Move",
+        "Growth"
+    ],
+    [
+        "Move",
+        "Grudge"
+    ],
+    [
+        "Move",
+        "Guard Split"
+    ],
+    [
+        "Move",
+        "Guard Swap"
+    ],
+    [
+        "Move",
+        "Guillotine"
+    ],
+    [
+        "Move",
+        "Gunk Shot"
+    ],
+    [
+        "Move",
+        "Gust"
+    ],
+    [
+        "Move",
+        "Gyro Ball"
+    ],
+    [
+        "Move",
+        "Hail"
+    ],
+    [
+        "Move",
+        "Hammer Arm"
+    ],
+    [
+        "Move",
+        "Happy Hour"
+    ],
+    [
+        "Move",
+        "Hard Press"
+    ],
+    [
+        "Move",
+        "Harden"
+    ],
+    [
+        "Move",
+        "Haze"
+    ],
+    [
+        "Move",
+        "Head Charge"
+    ],
+    [
+        "Move",
+        "Head Smash"
+    ],
+    [
+        "Move",
+        "Headbutt"
+    ],
+    [
+        "Move",
+        "Headlong Rush"
+    ],
+    [
+        "Move",
+        "Heal Bell"
+    ],
+    [
+        "Move",
+        "Heal Block"
+    ],
+    [
+        "Move",
+        "Heal Order"
+    ],
+    [
+        "Move",
+        "Heal Pulse"
+    ],
+    [
+        "Move",
+        "Healing Wish"
+    ],
+    [
+        "Move",
+        "Heart Stamp"
+    ],
+    [
+        "Move",
+        "Heart Swap"
+    ],
+    [
+        "Move",
+        "Heat Crash"
+    ],
+    [
+        "Move",
+        "Heat Wave"
+    ],
+    [
+        "Move",
+        "Heavy Slam"
+    ],
+    [
+        "Move",
+        "Helping Hand"
+    ],
+    [
+        "Move",
+        "Hex"
+    ],
+    [
+        "Move",
+        "Hidden Power"
+    ],
+    [
+        "Move",
+        "High Horsepower"
+    ],
+    [
+        "Move",
+        "High Jump Kick"
+    ],
+    [
+        "Move",
+        "Hone Claws"
+    ],
+    [
+        "Move",
+        "Horn Attack"
+    ],
+    [
+        "Move",
+        "Horn Drill"
+    ],
+    [
+        "Move",
+        "Horn Leech"
+    ],
+    [
+        "Move",
+        "Howl"
+    ],
+    [
+        "Move",
+        "Hurricane"
+    ],
+    [
+        "Move",
+        "Hydro Cannon"
+    ],
+    [
+        "Move",
+        "Hydro Pump"
+    ],
+    [
+        "Move",
+        "Hydro Steam"
+    ],
+    [
+        "Move",
+        "Hyper Beam"
+    ],
+    [
+        "Move",
+        "Hyper Drill"
+    ],
+    [
+        "Move",
+        "Hyper Fang"
+    ],
+    [
+        "Move",
+        "Hyper Voice"
     ],
     [
         "Move",
@@ -4613,7 +2701,1919 @@
     ],
     [
         "Move",
-        "Eternabeam"
+        "Hyperspace Hole"
+    ],
+    [
+        "Move",
+        "Hypnosis"
+    ],
+    [
+        "Move",
+        "Ice Ball"
+    ],
+    [
+        "Move",
+        "Ice Beam"
+    ],
+    [
+        "Move",
+        "Ice Burn"
+    ],
+    [
+        "Move",
+        "Ice Fang"
+    ],
+    [
+        "Move",
+        "Ice Hammer"
+    ],
+    [
+        "Move",
+        "Ice Punch"
+    ],
+    [
+        "Move",
+        "Ice Shard"
+    ],
+    [
+        "Move",
+        "Ice Spinner"
+    ],
+    [
+        "Move",
+        "Icicle Crash"
+    ],
+    [
+        "Move",
+        "Icicle Spear"
+    ],
+    [
+        "Move",
+        "Icy Wind"
+    ],
+    [
+        "Move",
+        "Imprison"
+    ],
+    [
+        "Move",
+        "Incinerate"
+    ],
+    [
+        "Move",
+        "Infernal Parade"
+    ],
+    [
+        "Move",
+        "Inferno"
+    ],
+    [
+        "Move",
+        "Infestation"
+    ],
+    [
+        "Move",
+        "Ingrain"
+    ],
+    [
+        "Move",
+        "Instruct"
+    ],
+    [
+        "Move",
+        "Ion Deluge"
+    ],
+    [
+        "Move",
+        "Iron Defense"
+    ],
+    [
+        "Move",
+        "Iron Head"
+    ],
+    [
+        "Move",
+        "Iron Tail"
+    ],
+    [
+        "Move",
+        "Ivy Cudgel"
+    ],
+    [
+        "Move",
+        "Jaw Lock"
+    ],
+    [
+        "Move",
+        "Jet Punch"
+    ],
+    [
+        "Move",
+        "Judgment"
+    ],
+    [
+        "Move",
+        "Jump Kick"
+    ],
+    [
+        "Move",
+        "Jungle Healing"
+    ],
+    [
+        "Move",
+        "Karate Chop"
+    ],
+    [
+        "Move",
+        "Kinesis"
+    ],
+    [
+        "Move",
+        "Kings Shield"
+    ],
+    [
+        "Move",
+        "Knock Off"
+    ],
+    [
+        "Move",
+        "Kowtow Cleave"
+    ],
+    [
+        "Move",
+        "Lands Wrath"
+    ],
+    [
+        "Move",
+        "Laser Focus"
+    ],
+    [
+        "Move",
+        "Lash Out"
+    ],
+    [
+        "Move",
+        "Last Resort"
+    ],
+    [
+        "Move",
+        "Last Respects"
+    ],
+    [
+        "Move",
+        "Lava Plume"
+    ],
+    [
+        "Move",
+        "Leaf Blade"
+    ],
+    [
+        "Move",
+        "Leaf Storm"
+    ],
+    [
+        "Move",
+        "Leaf Tornado"
+    ],
+    [
+        "Move",
+        "Leafage"
+    ],
+    [
+        "Move",
+        "Leech Life"
+    ],
+    [
+        "Move",
+        "Leech Seed"
+    ],
+    [
+        "Move",
+        "Leer"
+    ],
+    [
+        "Move",
+        "Lick"
+    ],
+    [
+        "Move",
+        "Life Dew"
+    ],
+    [
+        "Move",
+        "Light Of Ruin"
+    ],
+    [
+        "Move",
+        "Light Screen"
+    ],
+    [
+        "Move",
+        "Liquidation"
+    ],
+    [
+        "Move",
+        "Lock On"
+    ],
+    [
+        "Move",
+        "Lovely Kiss"
+    ],
+    [
+        "Move",
+        "Low Kick"
+    ],
+    [
+        "Move",
+        "Low Sweep"
+    ],
+    [
+        "Move",
+        "Lucky Chant"
+    ],
+    [
+        "Move",
+        "Lumina Crash"
+    ],
+    [
+        "Move",
+        "Lunar Blessing"
+    ],
+    [
+        "Move",
+        "Lunar Dance"
+    ],
+    [
+        "Move",
+        "Lunge"
+    ],
+    [
+        "Move",
+        "Luster Purge"
+    ],
+    [
+        "Move",
+        "Mach Punch"
+    ],
+    [
+        "Move",
+        "Magic Coat"
+    ],
+    [
+        "Move",
+        "Magic Powder"
+    ],
+    [
+        "Move",
+        "Magic Room"
+    ],
+    [
+        "Move",
+        "Magical Leaf"
+    ],
+    [
+        "Move",
+        "Magical Torque"
+    ],
+    [
+        "Move",
+        "Magma Storm"
+    ],
+    [
+        "Move",
+        "Magnet Rise"
+    ],
+    [
+        "Move",
+        "Magnetic Flux"
+    ],
+    [
+        "Move",
+        "Make It Rain"
+    ],
+    [
+        "Move",
+        "Malignant Chain"
+    ],
+    [
+        "Move",
+        "Mat Block"
+    ],
+    [
+        "Move",
+        "Matcha Gotcha"
+    ],
+    [
+        "Move",
+        "Me First"
+    ],
+    [
+        "Move",
+        "Mean Look"
+    ],
+    [
+        "Move",
+        "Mega Drain"
+    ],
+    [
+        "Move",
+        "Mega Kick"
+    ],
+    [
+        "Move",
+        "Mega Punch"
+    ],
+    [
+        "Move",
+        "Megahorn"
+    ],
+    [
+        "Move",
+        "Memento"
+    ],
+    [
+        "Move",
+        "Metal Burst"
+    ],
+    [
+        "Move",
+        "Metal Claw"
+    ],
+    [
+        "Move",
+        "Metal Sound"
+    ],
+    [
+        "Move",
+        "Meteor Assault"
+    ],
+    [
+        "Move",
+        "Meteor Beam"
+    ],
+    [
+        "Move",
+        "Meteor Mash"
+    ],
+    [
+        "Move",
+        "Metronome"
+    ],
+    [
+        "Move",
+        "Mighty Cleave"
+    ],
+    [
+        "Move",
+        "Milk Drink"
+    ],
+    [
+        "Move",
+        "Mimic"
+    ],
+    [
+        "Move",
+        "Mind Blown"
+    ],
+    [
+        "Move",
+        "Mind Reader"
+    ],
+    [
+        "Move",
+        "Minimize"
+    ],
+    [
+        "Move",
+        "Mirror Coat"
+    ],
+    [
+        "Move",
+        "Mirror Move"
+    ],
+    [
+        "Move",
+        "Mirror Shot"
+    ],
+    [
+        "Move",
+        "Mist"
+    ],
+    [
+        "Move",
+        "Mist Ball"
+    ],
+    [
+        "Move",
+        "Misty Explosion"
+    ],
+    [
+        "Move",
+        "Misty Terrain"
+    ],
+    [
+        "Move",
+        "Moonblast"
+    ],
+    [
+        "Move",
+        "Moongeist Beam"
+    ],
+    [
+        "Move",
+        "Moonlight"
+    ],
+    [
+        "Move",
+        "Morning Sun"
+    ],
+    [
+        "Move",
+        "Mortal Spin"
+    ],
+    [
+        "Move",
+        "Mountain Gale"
+    ],
+    [
+        "Move",
+        "Mud Shot"
+    ],
+    [
+        "Move",
+        "Mud Slap"
+    ],
+    [
+        "Move",
+        "Mud Sport"
+    ],
+    [
+        "Move",
+        "Muddy Water"
+    ],
+    [
+        "Move",
+        "Multi Attack"
+    ],
+    [
+        "Move",
+        "Mystical Fire"
+    ],
+    [
+        "Move",
+        "Mystical Power"
+    ],
+    [
+        "Move",
+        "Nasty Plot"
+    ],
+    [
+        "Move",
+        "Natural Gift"
+    ],
+    [
+        "Move",
+        "Nature Power"
+    ],
+    [
+        "Move",
+        "Natures Madness"
+    ],
+    [
+        "Move",
+        "Needle Arm"
+    ],
+    [
+        "Move",
+        "Night Daze"
+    ],
+    [
+        "Move",
+        "Night Shade"
+    ],
+    [
+        "Move",
+        "Night Slash"
+    ],
+    [
+        "Move",
+        "Nightmare"
+    ],
+    [
+        "Move",
+        "No Retreat"
+    ],
+    [
+        "Move",
+        "Noble Roar"
+    ],
+    [
+        "Move",
+        "Noxious Torque"
+    ],
+    [
+        "Move",
+        "Nuzzle"
+    ],
+    [
+        "Move",
+        "Oblivion Wing"
+    ],
+    [
+        "Move",
+        "Obstruct"
+    ],
+    [
+        "Move",
+        "Octazooka"
+    ],
+    [
+        "Move",
+        "Octolock"
+    ],
+    [
+        "Move",
+        "Odor Sleuth"
+    ],
+    [
+        "Move",
+        "Ominous Wind"
+    ],
+    [
+        "Move",
+        "Order Up"
+    ],
+    [
+        "Move",
+        "Origin Pulse"
+    ],
+    [
+        "Move",
+        "Outrage"
+    ],
+    [
+        "Move",
+        "Overdrive"
+    ],
+    [
+        "Move",
+        "Overheat"
+    ],
+    [
+        "Move",
+        "Pain Split"
+    ],
+    [
+        "Move",
+        "Parabolic Charge"
+    ],
+    [
+        "Move",
+        "Parting Shot"
+    ],
+    [
+        "Move",
+        "Pay Day"
+    ],
+    [
+        "Move",
+        "Payback"
+    ],
+    [
+        "Move",
+        "Peck"
+    ],
+    [
+        "Move",
+        "Perish Song"
+    ],
+    [
+        "Move",
+        "Petal Blizzard"
+    ],
+    [
+        "Move",
+        "Petal Dance"
+    ],
+    [
+        "Move",
+        "Phantom Force"
+    ],
+    [
+        "Move",
+        "Photon Geyser"
+    ],
+    [
+        "Move",
+        "Pika Papow"
+    ],
+    [
+        "Move",
+        "Pin Missile"
+    ],
+    [
+        "Move",
+        "Plasma Fists"
+    ],
+    [
+        "Move",
+        "Play Nice"
+    ],
+    [
+        "Move",
+        "Play Rough"
+    ],
+    [
+        "Move",
+        "Pluck"
+    ],
+    [
+        "Move",
+        "Poison Fang"
+    ],
+    [
+        "Move",
+        "Poison Gas"
+    ],
+    [
+        "Move",
+        "Poison Jab"
+    ],
+    [
+        "Move",
+        "Poison Powder"
+    ],
+    [
+        "Move",
+        "Poison Sting"
+    ],
+    [
+        "Move",
+        "Poison Tail"
+    ],
+    [
+        "Move",
+        "Pollen Puff"
+    ],
+    [
+        "Move",
+        "Poltergeist"
+    ],
+    [
+        "Move",
+        "Population Bomb"
+    ],
+    [
+        "Move",
+        "Pounce"
+    ],
+    [
+        "Move",
+        "Pound"
+    ],
+    [
+        "Move",
+        "Powder"
+    ],
+    [
+        "Move",
+        "Powder Snow"
+    ],
+    [
+        "Move",
+        "Power Gem"
+    ],
+    [
+        "Move",
+        "Power Split"
+    ],
+    [
+        "Move",
+        "Power Swap"
+    ],
+    [
+        "Move",
+        "Power Trick"
+    ],
+    [
+        "Move",
+        "Power Trip"
+    ],
+    [
+        "Move",
+        "Power Up Punch"
+    ],
+    [
+        "Move",
+        "Power Whip"
+    ],
+    [
+        "Move",
+        "Precipice Blades"
+    ],
+    [
+        "Move",
+        "Present"
+    ],
+    [
+        "Move",
+        "Prismatic Laser"
+    ],
+    [
+        "Move",
+        "Protect"
+    ],
+    [
+        "Move",
+        "Psybeam"
+    ],
+    [
+        "Move",
+        "Psyblade"
+    ],
+    [
+        "Move",
+        "Psych Up"
+    ],
+    [
+        "Move",
+        "Psychic"
+    ],
+    [
+        "Move",
+        "Psychic Fangs"
+    ],
+    [
+        "Move",
+        "Psychic Noise"
+    ],
+    [
+        "Move",
+        "Psychic Terrain"
+    ],
+    [
+        "Move",
+        "Psycho Boost"
+    ],
+    [
+        "Move",
+        "Psycho Cut"
+    ],
+    [
+        "Move",
+        "Psycho Shift"
+    ],
+    [
+        "Move",
+        "Psyshield Bash"
+    ],
+    [
+        "Move",
+        "Psyshock"
+    ],
+    [
+        "Move",
+        "Psystrike"
+    ],
+    [
+        "Move",
+        "Psywave"
+    ],
+    [
+        "Move",
+        "Punishment"
+    ],
+    [
+        "Move",
+        "Purify"
+    ],
+    [
+        "Move",
+        "Pursuit"
+    ],
+    [
+        "Move",
+        "Pyro Ball"
+    ],
+    [
+        "Move",
+        "Quash"
+    ],
+    [
+        "Move",
+        "Quick Attack"
+    ],
+    [
+        "Move",
+        "Quick Guard"
+    ],
+    [
+        "Move",
+        "Quiver Dance"
+    ],
+    [
+        "Move",
+        "Rage"
+    ],
+    [
+        "Move",
+        "Rage Fist"
+    ],
+    [
+        "Move",
+        "Rage Powder"
+    ],
+    [
+        "Move",
+        "Raging Bull"
+    ],
+    [
+        "Move",
+        "Raging Fury"
+    ],
+    [
+        "Move",
+        "Rain Dance"
+    ],
+    [
+        "Move",
+        "Rapid Spin"
+    ],
+    [
+        "Move",
+        "Razor Leaf"
+    ],
+    [
+        "Move",
+        "Razor Shell"
+    ],
+    [
+        "Move",
+        "Razor Wind"
+    ],
+    [
+        "Move",
+        "Recover"
+    ],
+    [
+        "Move",
+        "Recycle"
+    ],
+    [
+        "Move",
+        "Reflect"
+    ],
+    [
+        "Move",
+        "Reflect Type"
+    ],
+    [
+        "Move",
+        "Relic Song"
+    ],
+    [
+        "Move",
+        "Rest"
+    ],
+    [
+        "Move",
+        "Retaliate"
+    ],
+    [
+        "Move",
+        "Return"
+    ],
+    [
+        "Move",
+        "Revelation Dance"
+    ],
+    [
+        "Move",
+        "Revenge"
+    ],
+    [
+        "Move",
+        "Reversal"
+    ],
+    [
+        "Move",
+        "Revival Blessing"
+    ],
+    [
+        "Move",
+        "Rising Voltage"
+    ],
+    [
+        "Move",
+        "Roar"
+    ],
+    [
+        "Move",
+        "Roar Of Time"
+    ],
+    [
+        "Move",
+        "Rock Blast"
+    ],
+    [
+        "Move",
+        "Rock Climb"
+    ],
+    [
+        "Move",
+        "Rock Polish"
+    ],
+    [
+        "Move",
+        "Rock Slide"
+    ],
+    [
+        "Move",
+        "Rock Smash"
+    ],
+    [
+        "Move",
+        "Rock Throw"
+    ],
+    [
+        "Move",
+        "Rock Tomb"
+    ],
+    [
+        "Move",
+        "Rock Wrecker"
+    ],
+    [
+        "Move",
+        "Role Play"
+    ],
+    [
+        "Move",
+        "Rolling Kick"
+    ],
+    [
+        "Move",
+        "Rollout"
+    ],
+    [
+        "Move",
+        "Roost"
+    ],
+    [
+        "Move",
+        "Rototiller"
+    ],
+    [
+        "Move",
+        "Round"
+    ],
+    [
+        "Move",
+        "Ruination"
+    ],
+    [
+        "Move",
+        "Sacred Fire"
+    ],
+    [
+        "Move",
+        "Sacred Sword"
+    ],
+    [
+        "Move",
+        "Safeguard"
+    ],
+    [
+        "Move",
+        "Salt Cure"
+    ],
+    [
+        "Move",
+        "Sand Attack"
+    ],
+    [
+        "Move",
+        "Sand Tomb"
+    ],
+    [
+        "Move",
+        "Sandsear Storm"
+    ],
+    [
+        "Move",
+        "Sandstorm"
+    ],
+    [
+        "Move",
+        "Sappy Seed"
+    ],
+    [
+        "Move",
+        "Scald"
+    ],
+    [
+        "Move",
+        "Scale Shot"
+    ],
+    [
+        "Move",
+        "Scary Face"
+    ],
+    [
+        "Move",
+        "Scorching Sands"
+    ],
+    [
+        "Move",
+        "Scratch"
+    ],
+    [
+        "Move",
+        "Screech"
+    ],
+    [
+        "Move",
+        "Searing Shot"
+    ],
+    [
+        "Move",
+        "Secret Power"
+    ],
+    [
+        "Move",
+        "Secret Sword"
+    ],
+    [
+        "Move",
+        "Seed Bomb"
+    ],
+    [
+        "Move",
+        "Seed Flare"
+    ],
+    [
+        "Move",
+        "Seismic Toss"
+    ],
+    [
+        "Move",
+        "Self Destruct"
+    ],
+    [
+        "Move",
+        "Shadow Ball"
+    ],
+    [
+        "Move",
+        "Shadow Bone"
+    ],
+    [
+        "Move",
+        "Shadow Claw"
+    ],
+    [
+        "Move",
+        "Shadow Force"
+    ],
+    [
+        "Move",
+        "Shadow Punch"
+    ],
+    [
+        "Move",
+        "Shadow Sneak"
+    ],
+    [
+        "Move",
+        "Shed Tail"
+    ],
+    [
+        "Move",
+        "Sheer Cold"
+    ],
+    [
+        "Move",
+        "Shell Side Arm"
+    ],
+    [
+        "Move",
+        "Shell Smash"
+    ],
+    [
+        "Move",
+        "Shell Trap"
+    ],
+    [
+        "Move",
+        "Shelter"
+    ],
+    [
+        "Move",
+        "Shift Gear"
+    ],
+    [
+        "Move",
+        "Shock Wave"
+    ],
+    [
+        "Move",
+        "Shore Up"
+    ],
+    [
+        "Move",
+        "Signal Beam"
+    ],
+    [
+        "Move",
+        "Silk Trap"
+    ],
+    [
+        "Move",
+        "Silver Wind"
+    ],
+    [
+        "Move",
+        "Simple Beam"
+    ],
+    [
+        "Move",
+        "Sing"
+    ],
+    [
+        "Move",
+        "Sizzly Slide"
+    ],
+    [
+        "Move",
+        "Sketch"
+    ],
+    [
+        "Move",
+        "Skill Swap"
+    ],
+    [
+        "Move",
+        "Skitter Smack"
+    ],
+    [
+        "Move",
+        "Skull Bash"
+    ],
+    [
+        "Move",
+        "Sky Attack"
+    ],
+    [
+        "Move",
+        "Sky Drop"
+    ],
+    [
+        "Move",
+        "Sky Uppercut"
+    ],
+    [
+        "Move",
+        "Slack Off"
+    ],
+    [
+        "Move",
+        "Slam"
+    ],
+    [
+        "Move",
+        "Slash"
+    ],
+    [
+        "Move",
+        "Sleep Powder"
+    ],
+    [
+        "Move",
+        "Sleep Talk"
+    ],
+    [
+        "Move",
+        "Sludge"
+    ],
+    [
+        "Move",
+        "Sludge Bomb"
+    ],
+    [
+        "Move",
+        "Sludge Wave"
+    ],
+    [
+        "Move",
+        "Smack Down"
+    ],
+    [
+        "Move",
+        "Smart Strike"
+    ],
+    [
+        "Move",
+        "Smog"
+    ],
+    [
+        "Move",
+        "Smokescreen"
+    ],
+    [
+        "Move",
+        "Snap Trap"
+    ],
+    [
+        "Move",
+        "Snarl"
+    ],
+    [
+        "Move",
+        "Snatch"
+    ],
+    [
+        "Move",
+        "Snipe Shot"
+    ],
+    [
+        "Move",
+        "Snore"
+    ],
+    [
+        "Move",
+        "Snowscape"
+    ],
+    [
+        "Move",
+        "Soak"
+    ],
+    [
+        "Move",
+        "Soft Boiled"
+    ],
+    [
+        "Move",
+        "Solar Beam"
+    ],
+    [
+        "Move",
+        "Solar Blade"
+    ],
+    [
+        "Move",
+        "Spacial Rend"
+    ],
+    [
+        "Move",
+        "Spark"
+    ],
+    [
+        "Move",
+        "Sparkling Aria"
+    ],
+    [
+        "Move",
+        "Sparkly Swirl"
+    ],
+    [
+        "Move",
+        "Spectral Thief"
+    ],
+    [
+        "Move",
+        "Speed Swap"
+    ],
+    [
+        "Move",
+        "Spicy Extract"
+    ],
+    [
+        "Move",
+        "Spider Web"
+    ],
+    [
+        "Move",
+        "Spike Cannon"
+    ],
+    [
+        "Move",
+        "Spikes"
+    ],
+    [
+        "Move",
+        "Spiky Shield"
+    ],
+    [
+        "Move",
+        "Spin Out"
+    ],
+    [
+        "Move",
+        "Spirit Break"
+    ],
+    [
+        "Move",
+        "Spirit Shackle"
+    ],
+    [
+        "Move",
+        "Spit Up"
+    ],
+    [
+        "Move",
+        "Spite"
+    ],
+    [
+        "Move",
+        "Splash"
+    ],
+    [
+        "Move",
+        "Splishy Splash"
+    ],
+    [
+        "Move",
+        "Spore"
+    ],
+    [
+        "Move",
+        "Spotlight"
+    ],
+    [
+        "Move",
+        "Springtide Storm"
+    ],
+    [
+        "Move",
+        "Stealth Rock"
+    ],
+    [
+        "Move",
+        "Steam Eruption"
+    ],
+    [
+        "Move",
+        "Steel Beam"
+    ],
+    [
+        "Move",
+        "Steel Roller"
+    ],
+    [
+        "Move",
+        "Steel Wing"
+    ],
+    [
+        "Move",
+        "Sticky Web"
+    ],
+    [
+        "Move",
+        "Stockpile"
+    ],
+    [
+        "Move",
+        "Stomp"
+    ],
+    [
+        "Move",
+        "Stomping Tantrum"
+    ],
+    [
+        "Move",
+        "Stone Axe"
+    ],
+    [
+        "Move",
+        "Stone Edge"
+    ],
+    [
+        "Move",
+        "Stored Power"
+    ],
+    [
+        "Move",
+        "Storm Throw"
+    ],
+    [
+        "Move",
+        "Strange Steam"
+    ],
+    [
+        "Move",
+        "Strength"
+    ],
+    [
+        "Move",
+        "Strength Sap"
+    ],
+    [
+        "Move",
+        "String Shot"
+    ],
+    [
+        "Move",
+        "Struggle Bug"
+    ],
+    [
+        "Move",
+        "Stuff Cheeks"
+    ],
+    [
+        "Move",
+        "Stun Spore"
+    ],
+    [
+        "Move",
+        "Submission"
+    ],
+    [
+        "Move",
+        "Substitute"
+    ],
+    [
+        "Move",
+        "Sucker Punch"
+    ],
+    [
+        "Move",
+        "Sunny Day"
+    ],
+    [
+        "Move",
+        "Sunsteel Strike"
+    ],
+    [
+        "Move",
+        "Super Fang"
+    ],
+    [
+        "Move",
+        "Supercell Slam"
+    ],
+    [
+        "Move",
+        "Superpower"
+    ],
+    [
+        "Move",
+        "Supersonic"
+    ],
+    [
+        "Move",
+        "Surf"
+    ],
+    [
+        "Move",
+        "Surging Strikes"
+    ],
+    [
+        "Move",
+        "Swagger"
+    ],
+    [
+        "Move",
+        "Swallow"
+    ],
+    [
+        "Move",
+        "Sweet Kiss"
+    ],
+    [
+        "Move",
+        "Sweet Scent"
+    ],
+    [
+        "Move",
+        "Swift"
+    ],
+    [
+        "Move",
+        "Switcheroo"
+    ],
+    [
+        "Move",
+        "Swords Dance"
+    ],
+    [
+        "Move",
+        "Synchronoise"
+    ],
+    [
+        "Move",
+        "Synthesis"
+    ],
+    [
+        "Move",
+        "Syrup Bomb"
+    ],
+    [
+        "Move",
+        "Tachyon Cutter"
+    ],
+    [
+        "Move",
+        "Tackle"
+    ],
+    [
+        "Move",
+        "Tail Glow"
+    ],
+    [
+        "Move",
+        "Tail Slap"
+    ],
+    [
+        "Move",
+        "Tail Whip"
+    ],
+    [
+        "Move",
+        "Tailwind"
+    ],
+    [
+        "Move",
+        "Take Down"
+    ],
+    [
+        "Move",
+        "Take Heart"
+    ],
+    [
+        "Move",
+        "Tar Shot"
+    ],
+    [
+        "Move",
+        "Taunt"
+    ],
+    [
+        "Move",
+        "Tearful Look"
+    ],
+    [
+        "Move",
+        "Teatime"
+    ],
+    [
+        "Move",
+        "Techno Blast"
+    ],
+    [
+        "Move",
+        "Teeter Dance"
+    ],
+    [
+        "Move",
+        "Teleport"
+    ],
+    [
+        "Move",
+        "Temper Flare"
+    ],
+    [
+        "Move",
+        "Tera Blast"
+    ],
+    [
+        "Move",
+        "Tera Starstorm"
+    ],
+    [
+        "Move",
+        "Terrain Pulse"
+    ],
+    [
+        "Move",
+        "Thief"
+    ],
+    [
+        "Move",
+        "Thousand Arrows"
+    ],
+    [
+        "Move",
+        "Thousand Waves"
+    ],
+    [
+        "Move",
+        "Thrash"
+    ],
+    [
+        "Move",
+        "Throat Chop"
+    ],
+    [
+        "Move",
+        "Thunder"
+    ],
+    [
+        "Move",
+        "Thunder Cage"
+    ],
+    [
+        "Move",
+        "Thunder Fang"
+    ],
+    [
+        "Move",
+        "Thunder Punch"
+    ],
+    [
+        "Move",
+        "Thunder Shock"
+    ],
+    [
+        "Move",
+        "Thunder Wave"
+    ],
+    [
+        "Move",
+        "Thunderbolt"
+    ],
+    [
+        "Move",
+        "Thunderclap"
+    ],
+    [
+        "Move",
+        "Thunderous Kick"
+    ],
+    [
+        "Move",
+        "Tickle"
+    ],
+    [
+        "Move",
+        "Tidy Up"
+    ],
+    [
+        "Move",
+        "Topsy Turvy"
+    ],
+    [
+        "Move",
+        "Torch Song"
+    ],
+    [
+        "Move",
+        "Torment"
+    ],
+    [
+        "Move",
+        "Toxic"
+    ],
+    [
+        "Move",
+        "Toxic Spikes"
+    ],
+    [
+        "Move",
+        "Toxic Thread"
+    ],
+    [
+        "Move",
+        "Trailblaze"
+    ],
+    [
+        "Move",
+        "Transform"
+    ],
+    [
+        "Move",
+        "Tri Attack"
+    ],
+    [
+        "Move",
+        "Trick"
+    ],
+    [
+        "Move",
+        "Trick Or Treat"
+    ],
+    [
+        "Move",
+        "Trick Room"
+    ],
+    [
+        "Move",
+        "Triple Arrows"
+    ],
+    [
+        "Move",
+        "Triple Axel"
+    ],
+    [
+        "Move",
+        "Triple Dive"
+    ],
+    [
+        "Move",
+        "Triple Kick"
+    ],
+    [
+        "Move",
+        "Trop Kick"
+    ],
+    [
+        "Move",
+        "Twin Beam"
+    ],
+    [
+        "Move",
+        "Twineedle"
+    ],
+    [
+        "Move",
+        "Twister"
+    ],
+    [
+        "Move",
+        "U Turn"
+    ],
+    [
+        "Move",
+        "Upper Hand"
+    ],
+    [
+        "Move",
+        "Uproar"
+    ],
+    [
+        "Move",
+        "V Create"
+    ],
+    [
+        "Move",
+        "Vacuum Wave"
+    ],
+    [
+        "Move",
+        "Veevee Volley"
+    ],
+    [
+        "Move",
+        "Venom Drench"
+    ],
+    [
+        "Move",
+        "Venoshock"
+    ],
+    [
+        "Move",
+        "Victory Dance"
+    ],
+    [
+        "Move",
+        "Vine Whip"
+    ],
+    [
+        "Move",
+        "Vise Grip"
+    ],
+    [
+        "Move",
+        "Vital Throw"
+    ],
+    [
+        "Move",
+        "Volt Switch"
+    ],
+    [
+        "Move",
+        "Volt Tackle"
+    ],
+    [
+        "Move",
+        "Wake Up Slap"
+    ],
+    [
+        "Move",
+        "Water Gun"
+    ],
+    [
+        "Move",
+        "Water Pledge"
+    ],
+    [
+        "Move",
+        "Water Pulse"
+    ],
+    [
+        "Move",
+        "Water Shuriken"
+    ],
+    [
+        "Move",
+        "Water Sport"
+    ],
+    [
+        "Move",
+        "Water Spout"
+    ],
+    [
+        "Move",
+        "Waterfall"
+    ],
+    [
+        "Move",
+        "Wave Crash"
+    ],
+    [
+        "Move",
+        "Weather Ball"
+    ],
+    [
+        "Move",
+        "Whirlpool"
+    ],
+    [
+        "Move",
+        "Whirlwind"
+    ],
+    [
+        "Move",
+        "Wicked Blow"
+    ],
+    [
+        "Move",
+        "Wicked Torque"
+    ],
+    [
+        "Move",
+        "Wide Guard"
+    ],
+    [
+        "Move",
+        "Wild Charge"
+    ],
+    [
+        "Move",
+        "Wildbolt Storm"
+    ],
+    [
+        "Move",
+        "Will O Wisp"
+    ],
+    [
+        "Move",
+        "Wing Attack"
+    ],
+    [
+        "Move",
+        "Wish"
+    ],
+    [
+        "Move",
+        "Withdraw"
+    ],
+    [
+        "Move",
+        "Wonder Room"
+    ],
+    [
+        "Move",
+        "Wood Hammer"
+    ],
+    [
+        "Move",
+        "Work Up"
+    ],
+    [
+        "Move",
+        "Worry Seed"
+    ],
+    [
+        "Move",
+        "Wrap"
+    ],
+    [
+        "Move",
+        "Wring Out"
+    ],
+    [
+        "Move",
+        "X Scissor"
+    ],
+    [
+        "Move",
+        "Yawn"
+    ],
+    [
+        "Move",
+        "Zap Cannon"
+    ],
+    [
+        "Move",
+        "Zen Headbutt"
+    ],
+    [
+        "Move",
+        "Zing Zap"
+    ],
+    [
+        "Move",
+        "Zippy Zap"
     ],
     [
         "Gen",

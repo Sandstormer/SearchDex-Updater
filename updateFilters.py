@@ -196,7 +196,7 @@ with open(f'{pathData}/moves/move.ts', "r") as f:
 moveData = re.findall(r'Move\[\]\)\.push\(\n(.*?)  \);\n', moveData, re.DOTALL)[0]
 moveData = re.sub(r'\/\* Unused.*?End Unused \*\/', '', moveData, flags=re.DOTALL)
 moveData = re.sub(r'LapseBattlerTagAttr,.*?true\)', '', moveData, flags=re.DOTALL)
-moveData = re.sub(r' +new ', 'new ', moveData)
+moveData = re.sub(r' +new ', 'new ', moveData) # Remove leading spaces
 moveData = moveData.split('\n')
 move2D = []
 for line in moveData:
@@ -496,9 +496,6 @@ for line in move2D:
 
 print('\n==============================\n')
 print('Checking for errors...\n')
-if orderedData[-1][1] != 'eternabeam':
-    print('\nLast five moves:')
-    print([orderedData[-index][1] for index in range(5,0,-1)])
 multiProcs = []
 for fidLine in orderedData:
     if len(fidLine) > 4: # For moves
