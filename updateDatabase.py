@@ -91,10 +91,10 @@ levelMoveData = [[re.split(',', arg) for arg in line] for line in levelMoveData]
 # [species, [[levelmove,src],[]], [[eggmove,src],[]], [[tmmove,src],[]]]
 # src = -1:mushroom, 0:evo, 1-200:level, 201-203:egg&TM, 204:egg, 205-207:rare&TM, 208:rare, 209-211:comm/great/ultra TM
 # Moves learned by egg AND by TM are encoded later
-movesByCategory = []
-move_list_dict = {}
+allMovesDict = {}
+moveBySpecToCat = {}
 for line in levelMoveData:
-    movesByCategory.append([line[0][0],[],[],[]])
+    moveBySpecToCat[line[0][0]] = [[],[],[]]
     for j in range(1,len(line)):
         if line[j][0] == 'Evolve Move':
             line[j][0] = 0
@@ -102,10 +102,10 @@ for line in levelMoveData:
             line[j][0] = -1
         if int(line[j][0]) > 100:
             throwError(f'High level move found: {line[0][0]} {line[j]}')
-        # Level moves are added to [1] in movesByCategory[i], along with their level
-        movesByCategory[-1][1].append([line[j][1], int(line[j][0])])
-        if line[j][1] not in move_list_dict:
-            move_list_dict[line[j][1]] = 'level'
+        # Level moves are added to [0] in moveBySpecToCat[species], along with their level
+        moveBySpecToCat[line[0][0]][0].append([line[j][1], int(line[j][0])])
+        if line[j][1] not in allMovesDict:
+            allMovesDict[line[j][1]] = 'level'
 print('Finished reading level moves')
 with open(f"{pathBal}/egg-moves.ts", "r") as file: # Egg moves **************************
     content = file.read()
@@ -118,17 +118,16 @@ eggMoveData = [re.findall(r'\[(.*)\]', line) for line in inputMoveData]
 eggMoveData = [format_for_disp(line[0]) for line in eggMoveData]
 eggMoveData = [re.split('\]:\[', line) for line in eggMoveData]
 eggMoveData = [[line[0], re.split(',', line[1])] for line in eggMoveData]
-for line in movesByCategory:
-    for eggLine in eggMoveData:
-        if line[0] == eggLine[0]:
-            for k in range(4):
-                # Egg moves are added to [2] in movesByCategory[i], encoded as 204(common) or 208(rare)
-                line[2].append([eggLine[1][k],204+(k==3)*4])
-                if eggLine[1][k] not in move_list_dict:
-                    move_list_dict[eggLine[1][k]] = 'egg'
+for eggLine in eggMoveData:
+    if eggLine[0] in moveBySpecToCat:
+        for k in range(4):
+            # Egg moves are added to [1] in moveBySpecToCat[species], encoded as 204(common) or 208(rare)
+            moveBySpecToCat[eggLine[0]][1].append([eggLine[1][k],204+(k==3)*4])
+            if eggLine[1][k] not in allMovesDict:
+                allMovesDict[eggLine[1][k]] = 'egg'
+    else:
+        print('egg species not found')
 print('Finished reading egg moves')
-# Convert movesByCategory to a dictionary for faster lookups
-move4D_dict = {speciesMoveLine[0]: speciesMoveLine for speciesMoveLine in movesByCategory}
 with open(f"{pathBal}/tm-species-map.ts", "r") as file: # Read the file of TM moves ************************
     content = file.read()
 # Use a regular expression to extract text of each TM separately
@@ -154,8 +153,8 @@ TMtier_dict = {thisTierLine[0]: thisTierLine[1] for thisTierLine in tierData}
 for line in inputMoveData:
     # Get the move name
     moveName = format_for_disp(line[0].split("MoveId.")[1].strip())
-    if moveName not in move_list_dict: # Add the TM itself to the list of all moves
-        move_list_dict[moveName] = TMtier_dict[moveName]
+    if moveName not in allMovesDict: # Add the TM itself to the list of all moves
+        allMovesDict[moveName] = TMtier_dict[moveName]
     # Format the list of species and forms that can learn it
     baseSpecies = ''
     speciesListForThisTM = []
@@ -176,9 +175,9 @@ for line in inputMoveData:
         prevSpecLine = specLine
     # For each species, add the TM to the big move dict
     for species in speciesListForThisTM:
-        if species not in move4D_dict: # Forms with unique TM learnset will not have an entry yet
-            move4D_dict[species] = [species,[],[],[]] 
-        move4D_dict[species][3].append([moveName, TMtier_dict[moveName]]) # Add the TM to each pokemon's compatible moves
+        if species not in moveBySpecToCat: # Forms with unique TM learnset will not have an entry yet
+            moveBySpecToCat[species] = [[],[],[]] 
+        moveBySpecToCat[species][2].append([moveName, TMtier_dict[moveName]]) # Add the TM to each pokemon's compatible moves
 print('Finished reading TM moves')
 print('Finished reading all moves')
 
@@ -382,13 +381,13 @@ for passiveIndex in range(len(passive_species)): # Assign passives from list of 
             combined_data[i][12] = passive_abilities[passiveIndex][0] # Assign the passive to the base species
             if len(passive_abilities[passiveIndex]) > 1:
                 # If the passive is a list (for those Pokemon's forms)
-                for formIndex in range(len(passive_abilities[passiveIndex])):
-                    if combined_data[i+1+formIndex][2] != '': # It has to be a form
+                for formInd in range(len(passive_abilities[passiveIndex])):
+                    if combined_data[i+1+formInd][2] != '': # It has to be a form
                         # Assign the passive to the forms in order
                         # Reminder that combined_data has the base species, and then form0, form1, etc.
                         # (base species and form0 will use the same passive)
                         # (base species is trimmed later in this script)
-                        combined_data[i+1+formIndex][12] = passive_abilities[passiveIndex][formIndex]
+                        combined_data[i+1+formInd][12] = passive_abilities[passiveIndex][formInd]
                     else:
                         throwError(f'Passive error: {passive_species[passiveIndex]} {passive_abilities[passiveIndex]}')
             break
@@ -396,13 +395,13 @@ print('Finished assigning passives')
 
 # Add only egg moves to the attributes and dictionary
 for line in combined_data:
-    if line[5] in move4D_dict and line[2] == '': # Only for base species
-        if move4D_dict[line[5]][2]:
+    if line[5] in moveBySpecToCat and line[2] == '': # Only for base species
+        if moveBySpecToCat[line[5]][1]:
             line[33] = 1 # Anything with egg moves is startable [33] (forms exclusives [41] are on top of that)
-            line[24:28] = [eggLine[0] for eggLine in move4D_dict[line[5]][2]] # Put egg moves in [24-27]
-            if len(move4D_dict[line[5]][2]) != 4:
+            line[24:28] = [eggLine[0] for eggLine in moveBySpecToCat[line[5]][1]] # Put egg moves in [24-27]
+            if len(moveBySpecToCat[line[5]][1]) != 4:
                 print(f'Weird number of egg moves found in {line[5]}')
-        for move in move4D_dict[line[5]][2]:
+        for move in moveBySpecToCat[line[5]][1]:
             if move[0] not in line[28]:
                 line[28][move[0]] = move[1] # Add the move to the dict
 print('Finished assigning egg moves')
@@ -495,9 +494,9 @@ for line in combined_data: # Check for empty properties in combined_data
 # src = -1:mushroom, 0:evo, 1-200:level, 201-203:egg&TM, 204:egg, 205-207:rare&TM, 208:rare, 209-211:TM
 for line in combined_data:
     if line[2] == '': # Only for base species
-        if line[5] in move4D_dict:
-            move4D_dict[line[5]].append('done')
-            for move in move4D_dict[line[5]][1]+move4D_dict[line[5]][3]:
+        if line[5] in moveBySpecToCat:
+            moveBySpecToCat[line[5]].append('done')
+            for move in moveBySpecToCat[line[5]][0]+moveBySpecToCat[line[5]][2]:
                 if move[0] not in line[28]:
                     line[28][move[0]] = move[1] # Add level and TM moves to base species
                 else:
@@ -522,78 +521,88 @@ formLevelMoveData = [[re.findall(r'\s\s\s\s\[(.*)\]', arg) for arg in line] for 
 formLevelMoveData = [[[format_for_disp(u) for u in arg] for arg in line] for line in formLevelMoveData]
 formLevelMoveData = [[[re.split(',', u) for u in arg] for arg in line] for line in formLevelMoveData]
 # If an alternate form has different level-up moves, add them to the move list (egg moves are there)
-for spec_ind in range(len(formLevelMoveData)):
-    for index,formLine in enumerate(formLevelMoveData[spec_ind]):
-        if index > 0: # The first line is always blank
+for specInd,specLine in enumerate(formLevelMoveData):
+    for formInd,formLine in enumerate(specLine):
+        if formInd > 0: # The first form (base form) is always blank
             for i in range(len(combined_data)):
-                if combined_data[i][5] == formLevelSpecies[spec_ind] and combined_data[i][2] == '':
-                    # Find the matching base species line (it will not have a parent index [2])
+                # Find the matching base species entry (it will have a blank parent index [2])
+                if combined_data[i][5] == formLevelSpecies[specInd] and combined_data[i][2] == '':
+                    thisEntry = combined_data[i+formInd+1]
+                    # Forms with unique levelup may not have an entry yet
+                    if thisEntry[5] not in moveBySpecToCat and len(formLine): 
+                        moveBySpecToCat[thisEntry[5]] = [[],[],[]]
                     for move in formLine:
                         if move[0] == 'Evolve Move':
                             move[0] = 0
                         elif move[0] == 'Relearn Move':
                             move[0] = -1
                         move[0], move[1] = move[1], int(move[0])
-                        if move[0] not in combined_data[i+index+1][28]:
-                            combined_data[i+index+1][28][move[0]] = move[1] # Add the unique form moves
-                        if move[0] not in move_list_dict:
-                            move_list_dict[move[0]] = 'formlevel'
-# Assign TM moves and level moves to forms:
+                        # if move[0] not in thisEntry[28]:
+                        #     thisEntry[28][move[0]] = move[1] # Add the unique form moves
+                        moveBySpecToCat[thisEntry[5]][0].append([move[0], move[1]]) # Add to level up moves
+                        if move[0] not in allMovesDict:
+                            allMovesDict[move[0]] = 'formlevel'
+# Assign TM moves and level moves to forms: ==================
 # If the form doesn't have a unique moveset, inherit that from the base species
     # If it does, only inherit TM moves
 # Either way, add TM moves that are unique to forms (in addition to the inherited TM moves)
 for line in combined_data: 
     if line[2] != '': # Only for forms
+        # Determine the name of the form, for lookup in moveBySpecToCat
         # TMs are only given from the base species (not from the 'normal' form) to their forms
-        if len(line[28]) == 4: # If there are only egg moves, that form doesn't have unique level moves
-            # Copy all moves from parent (level, egg, TM)
-            # This inherits all the level up moves if the form does not have a unique moveset
-            line[28] = copy.deepcopy(combined_data[line[2]][28]) 
-        else: # Only try to inherit TMs if the form has unique level moves (if it didn't just inherit moves)
-            parentName = combined_data[int(line[2])][5]
-            if parentName in move4D_dict: 
-                for move in move4D_dict[parentName][3]:
+        if line[1] == '': 
+            formName = f'Normal {line[5]}' # Add 'Normal' to distinguish from base species, like Normal Calyrex
+        else:
+            formName = line[5]
+        parentName = combined_data[int(line[2])][5]
+
+        # Add level/TM moves that are specific to that form
+        if formName in moveBySpecToCat:
+            # If there are unique level up moves, import them =======
+            if len(moveBySpecToCat[formName][0]):
+                for move in moveBySpecToCat[formName][0]:
                     if move[0] not in line[28]:
-                        line[28][move[0]] = move[1] # Add the TM move to the form's list
+                        line[28][move[0]] = move[1] # Add level moves
+                print('Imported unique level moves for',formName)
+            else: # If there are NOT unique level up moves =======
+                if parentName in moveBySpecToCat: 
+                    for move in moveBySpecToCat[parentName][0]:
+                        if move[0] not in line[28]:
+                            line[28][move[0]] = move[1] # Add level moves from parent
+                else:
+                    throwError(f'Failed to find parent species {parentName}')
+            # If there are unique TM moves, import them =======
+            if len(moveBySpecToCat[formName][2]): 
+                for move in moveBySpecToCat[formName][2]:
+                    if move[0] not in line[28]:
+                        line[28][move[0]] = move[1] # Add TM moves
                     else:
                         if line[28][move[0]] in [204,208] and move[1] > 208:
-                            line[28][move[0]] += move[1]-212 # Encode the move as an egg move and a TM
+                            line[28][move[0]] += move[1]-212 # Encode as TM and egg move
+                print('Imported unique TMs for',formName)
+            # Import parent TMs even if there were unique TMs =======
+            if parentName in moveBySpecToCat: 
+                for move in moveBySpecToCat[parentName][2]:
+                    if move[0] not in line[28]:
+                        line[28][move[0]] = move[1] # Add TM moves from parent
+                    else:
+                        if line[28][move[0]] in [204,208] and move[1] > 208:
+                            line[28][move[0]] += move[1]-212 # Encode as TM and egg move
             else:
                 throwError(f'Failed to find parent species {parentName}')
-        # Add TM moves that are specific to forms
-        if line[1] == '': # Add 'normal' to distinguish from base species, like Normal Calyrex
-            normName = f'Normal {line[5]}'
+            moveBySpecToCat[formName].append('done')
         else:
-            normName = line[5]
-        if normName in move4D_dict:
-            for move in move4D_dict[normName][1]+move4D_dict[normName][2]+move4D_dict[normName][3]:
-                if move[0] not in line[28]:
-                    line[28][move[0]] = move[1] # Add all level/egg/TM moves
-                else:
-                    if line[28][move[0]] in [204,208] and move[1] > 208:
-                        line[28][move[0]] += move[1]-212
-            print('Imported unique TMs for',normName)
-            move4D_dict[normName].append('done')
-# Check that every entry in move4D_dict was assigned
-# A correct move4D_dict[key] looks like [species, [[levelmove,src],[]], [[eggmove,src],[]], [[tmmove,src],[]], 'done']
-for key, value in move4D_dict.items():
-    if len(value) > 5:
+            # If that form can't be looked up, it doesn't have unique level/TM moves
+            # Copy all moves from parent (level, egg, TM)
+            line[28] = copy.deepcopy(combined_data[line[2]][28]) 
+            
+# Check that every entry in moveBySpecToCat was assigned
+# A correct moveBySpecToCat[key] looks like [species, [[levelmove,src],[]], [[eggmove,src],[]], [[tmmove,src],[]], 'done']
+for key, value in moveBySpecToCat.items():
+    if len(value) > 4:
         throwError(f'Double counted moves in {key}') # Base species will have value[3] = 'done'
-    elif len(value) < 5: # If moves could not be assigned from move4D_dict (likely for form-unique TMs)
+    elif len(value) < 4: # If moves could not be assigned from moveBySpecToCat (likely for form-unique TMs)
         throwError(f'Failed to assign TM to form - key: {key} - value: {value}')
-
-# Assemble lists of all abilities and biomes *****************************
-allAbilities = []
-for line in combined_data:
-    for ab_slot in [9,10,11,12]:
-        if line[ab_slot] != '' and line[ab_slot] not in allAbilities:
-            allAbilities.append(line[ab_slot])
-allBiomes = []
-for line in biome_data:
-    for biomeLine in line[1]:
-        if biomeLine[0] != '' and format_for_disp(biomeLine[0]) not in allBiomes:
-            allBiomes.append(format_for_disp(biomeLine[0]))
-allBiomes.sort()
 
 # Species specific manual overrides
 for line in combined_data:
@@ -736,7 +745,8 @@ for line in trimmed_data:
         throwError(f'Missing level-up entries in {line[5]}')
     if check[1] != 4:
         throwError(f'Missing egg move entries in {line[5]}')
-    if check[2] != 1 and int(line[3]) not in [132, 201, 202, 235, 360, 789, 790]:
+    if check[2] != 1 and int(line[3]) not in [132, 201, 202, 235, 360, 789, 790] and line[2] == '':
+        # If there is a base species that is supposed to have TM moves
         throwError(f'Missing TM move entries in {line[5]}')
     if int(line[32]) not in range(1,10):
         throwError(f'Generation Error in {line[5]}')
@@ -751,12 +761,13 @@ for i,line in enumerate(trimmed_data):
         for j in range(i, len(trimmed_data)):
             if trimmed_data[j][3] == dexNo:
                 familyNames.append(trimmed_data[j][5])
-                if not trimmed_data[j][41]:
+                if not trimmed_data[j][41]: # If not form exclusive, it is startable
                     hasStartableForms = 1
             else:
                 break
         if not hasStartableForms:
-            if line[5] in move4D_dict and move4D_dict[line[5]][2]: # Only for first-evo base species
+            if line[5] in moveBySpecToCat and moveBySpecToCat[line[5]][1]: 
+                # Show error if a pokemon has egg moves, but no startable forms
                 throwError(f'No startable forms found in {familyNames}')
             else:
                 print(f'No evolved startable forms in {familyNames}') # Not a problem
@@ -782,19 +793,42 @@ if len(trimmed_data) != 1452:
 # Sort the abilities and moves into order based on frequency?
 # They are in arbitrary order. Types are alphabetical.
 
-types = ['Bug','Dark','Dragon','Electric','Fairy','Fighting','Fire','Flying','Ghost','Grass','Ground','Ice','Normal','Poison','Psychic','Rock','Steel','Water']
-moveList = [*move_list_dict] # Get a regular list of moves
-allFilters = []
-filterToFID = {}
-# Put all filters into a big list [[Categ, Value], []]
-# Get FID with e.g. filterToFID('typebug') = 0
-for type in types:
+# Assemble lists of all filters of each category *****************************
+allTypes = ['Bug','Dark','Dragon','Electric','Fairy','Fighting','Fire','Flying','Ghost','Grass','Ground','Ice','Normal','Poison','Psychic','Rock','Steel','Water']
+allAbilities = []
+for line in combined_data:
+    for ab_slot in [9,10,11,12]:
+        if line[ab_slot] != '' and line[ab_slot] not in allAbilities:
+            allAbilities.append(line[ab_slot])
+# allAbilities.sort()
+# allMovesDict = {}
+# for specLine in moveBySpecToCat.values():
+#     for moveCat in specLine:
+#         for moveLine in moveCat:
+#             if moveLine[0] not in allMovesDict:
+#                 allMovesDict[moveLine[0]] = ''
+# if 'Nihil Light' not in move_list_dict:
+#     move_list_dict['Nihil Light'] = 'remove this later'
+allMoves = [*allMovesDict] # Get a list of moves from the move dict
+# allMoves.sort()
+allBiomes = []
+for line in biome_data:
+    for biomeLine in line[1]:
+        if biomeLine[0] != '' and format_for_disp(biomeLine[0]) not in allBiomes:
+            allBiomes.append(format_for_disp(biomeLine[0]))
+allBiomes.sort()
+
+# Assign filter ID numbers (FID) to each filter *****************************
+allFilters = []  # List of all filters, in numerical order: FID: ['Category','Filter Name']
+filterToFID = {} # Get FID from name: e.g. filterToFID('typebug') = FID
+# All strings from trimmed_data are encoded as FID before writing to the website data
+for type in allTypes:
     filterToFID[f'type{format_for_attr(type)}'] = len(allFilters)
     allFilters.append(['Type',type])
 for line in allAbilities:
     filterToFID[f'ability{format_for_attr(line)}'] = len(allFilters)
     allFilters.append(['Ability',line])
-for line in moveList:
+for line in allMoves:
     filterToFID[f'move{format_for_attr(line)}'] = len(allFilters)
     allFilters.append(['Move',line])
 for j in range(1,10):
@@ -828,7 +862,7 @@ for j in ['Lure Ability','Ignores Abilities','Ignores Abilities (Move)','Target 
 # Currently, biome_data[species] is like ['Bulbasaur', ['GRASS', 'RARE', [], 80]]
 # Encode the biome data as [Biome Name, fid, [code1,code2,...]]
 # Will be written to js file as fid:[code1,code2,...]
-biomeForms = [ # manually updated from getSpeciesFormIndex in file:///.\game_files\src\field\arena.ts
+biomeForms = [ # manually updated from getSpeciesFormIndex in file:///\.\game_files\src\field\arena.ts
     ['Plant Burmy','Forest'],
     ['Sandy Burmy','Beach'],
     ['Trash Burmy','Slum'],
@@ -902,9 +936,9 @@ for index,line in enumerate(allFilters):
 fidThresholds.append(len(allFilters))
 if fidThresholds[0] != 18: throwError('Wrong number of types')
 if fidThresholds[1] != 328: throwError('Wrong number of abilities')
-if types[-1] != allFilters[fidThresholds[0]-1][1]: throwError('Name error with types')
+if allTypes[-1] != allFilters[fidThresholds[0]-1][1]: throwError('Name error with types')
 if allAbilities[-1] != allFilters[fidThresholds[1]-1][1]: throwError('Name error with abilities')
-if moveList[-1] != allFilters[fidThresholds[2]-1][1]: throwError('Name error with moves')
+if allMoves[-1] != allFilters[fidThresholds[2]-1][1]: throwError('Name error with moves')
 
 # Write some variables to files
 # These are read by my other scripts, and some are written to the website

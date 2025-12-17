@@ -79,7 +79,9 @@ for index,line in enumerate(abilityData):
         elif 'LowHpMoveTypePowerBoostAbAttr' in line:
             ability2D[-1][2].append([-2,26,1.5])
             # print('Found low hp type boost:',abilityName,1.5)
-        elif 'FieldMoveTypePowerBoostAbAttr' in line:
+        elif 'UserFieldMoveTypePowerBoostAbAttr' in line: # Steely Spirit
+            ability2D[-1][2].append([-2,26,1.5])
+        elif 'FieldMoveTypePowerBoostAbAttr' in line: # Aura Break, Fairy/Dark Aura
             if abilityName == 'aurabreak':
                 amount = '0.75'
             else:
@@ -87,7 +89,7 @@ for index,line in enumerate(abilityData):
             if [-2,26,amount] not in ability2D[-1][2]:
                 ability2D[-1][2].append([-2,26,amount])
             # print('Found field type boost:',abilityName,amount)
-        elif 'MoveTypePowerBoostAbAttr' in line:
+        elif 'MoveTypePowerBoostAbAttr' in line: # Transistor, Rocky Payload, etc.
             if re.findall(r'(\d\.?\d?\d?)', line):
                 amount = re.findall(r'(\d\.?\d?\d?)', line)[-1]
             else:
