@@ -794,8 +794,6 @@ for specLine in moveBySpecToCat.values():
         for moveLine in moveCat:
             if moveLine[0] not in allMovesDict:
                 allMovesDict[moveLine[0]] = ''
-# if 'Nihil Light' not in allMovesDict:
-#     allMovesDict['Nihil Light'] = 'remove this later'
 allMoves = [*allMovesDict] # Get a list of moves from the move dict
 allMoves.sort()
 allBiomes = []

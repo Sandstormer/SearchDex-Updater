@@ -1,10 +1,11 @@
 # ===== This script parses all the ability/move attributes from the game =====
-# =====      It writes that data to filters_global.js as fidToProc       ===== 
-# =====      It also writes typeColors, fidThreshold, upgradeCosts       =====
+# =====  fidToProc, typeColors, fidThreshold, upgradeCosts, gameVersion  =====
+# =====           It writes all that data to filters_global.js           ===== 
 # This is ONLY for numeric data; all localized text is written from updateLangs.py
+# This script also composites the layers of the biome images
 
-pathLoc = './game_files/locales/en'   # File path to the official localization files
-pathData = "game_files/src/data" # File path for game data
+pathLoc = "game_files/locales/en" # File path to the official localization files
+pathData = "game_files/src/data"  # File path for game data
 
 def format_for_disp(arg): # Remove spaces, and convert _ and - to spaces, then capitalize
     return arg.replace(' ','').replace('_',' ').replace('-',' ').title()   
@@ -331,8 +332,7 @@ for line in moveData:
                 elif 'StatusEffect.FREEZE' in line:
                     move2D[-1][3].append(21)
                 elif 'StatusEffect.PARALYSIS' in line:
-                    input('unused')
-                    move2D[-1][3].append(203)
+                    input('Unknown tag found: Para Heal')
                 elif 'StatusEffect.BURN' in line:
                     move2D[-1][3].append(22)
             elif 'MultiStatusEffectAttr' in line: # dire claw and tri attack
@@ -499,31 +499,35 @@ print('Checking for errors...\n')
 multiProcs = []
 for fidLine in orderedData:
     if len(fidLine) > 4: # For moves
-        procCount = 0
-        for procLine in fidLine[2]:
-            if procLine[0] > -1:
-                procCount += 1
-            if procCount > 1:
-                multiProcs.append(fidLine)
+        # The game tracks which moves are reflectable, but almost every offensive status is reflectable
+        # However, i think it's ugly to show something that obvious
+        # I'd rather show CAN'T be reflected, to be in line with other tag wording
         if 203 in fidLine[3] and fidLine[5] != 2:
             input('***** Reflectable attack',fidLine[1])
         if 203 not in fidLine[3] and fidLine[5] == 2 and 202 not in fidLine[3]:
-            if 25 not in fidLine[3] and 6 not in fidLine[3]:
+            # If it is a status move, not marked as reflectable, and not targeting self
+            if 25 not in fidLine[3] and 6 not in fidLine[3]: # If not a healing move, and not belly drum
                 isBoosting = 0
                 for procLine in fidLine[2]:
                     if procLine[1] < 7 or procLine[1] == 22:
-                        isBoosting = 1
+                        isBoosting = 1 # Move is a self stat boost (or omni boost)
                 if not isBoosting:
-                    # The game tracks which moves are reflectable, but almost every offensive status is reflectable
-                    # However, i think it's ugly to show something that obvious
-                    # I'd rather show CAN'T be reflected, to be in line with other tag wording
                     # print('Non-reflectable status',fidLine)
-                    fidLine[3].append(52)
+                    fidLine[3].append(52) # I only show this for offensive status moves
     elif len(fidLine) == 4: # For abilities
         for procLine in fidLine[2]:
             if procLine[0] == 0 and procLine[2] == 0:
                 print('Empty proc',fidLine[1],procLine)
-if len(multiProcs) != 4: # Check for moves with more than one proc (e.g. Fire Fang)
+    # Check for moves with more than one proc (e.g. Fire Fang)            
+    procCount = 0
+    for procLine in fidLine[2]:
+        if procLine[0] == 0:
+            print('***** Zero chance proc found')
+        if procLine[0] > -1:
+            procCount += 1
+        if procCount > 1:
+            multiProcs.append(fidLine)
+if len(multiProcs) != 4:
     print('There should be 4 attacks with multiple procs')
     for line in multiProcs:
         print('Multiple procs found in',line[1])
