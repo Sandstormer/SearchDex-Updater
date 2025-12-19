@@ -60,6 +60,7 @@ subs = { # Replacement strings to make text fit
     ],
     'es-ES': [
         ['Teracristal Ogerpon','Tera Ogerpon'],
+        ['Variedad ',''],
     ],
 }
 

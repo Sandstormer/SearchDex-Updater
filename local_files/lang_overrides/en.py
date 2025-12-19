@@ -5,7 +5,8 @@ altText = ['Moves','Main Only','Hidden Only','Passive Only','Search','Pow','Acc'
     'Common','Great','Ultra','TM','Lv.','Evo','Egg'] # [13-19]
 catToName = ['Type','Ability','Move','Gen','Cost','Gender','Mode','Egg Tier','Shiny Variants','Biome','Related To','Tag'] # [0-11]
 infoText = ['Friendship per Candy','Passive','Cost Reduction','Species Egg','Hidden Ability', # [0-4]
-    'Egg Exclusive','Baby Exclusive','Paradox Pokemon','Form Change','Biomes','Filters'] # [5-10]
+    'Egg Exclusive','Baby Exclusive','Paradox Pokemon','Form Change','Biomes','Filters', # [5-10]
+    'Reduced after ## eggs'] # [11]
 biomeText = ['Common','Uncommon','Rare','Super Rare','Ultra Rare', # [0-4]
     'Boss','Com.','Unc.','Rare','SR','UR','Dawn','Day','Dusk','Night'] # [5-10][11-14]
 biomeLongText = [

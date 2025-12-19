@@ -192,9 +192,9 @@ for index,line in enumerate(abilityData):
 
 # Read all the move attributes from the game data
 print('\n=========== Reading moves ===========\n')
-with open(f'{pathData}/moves/move.ts', "r") as f:
+with open(f'{pathData}/moves/move.ts', "r", encoding="utf-8", errors="replace") as f:
     moveData = f.read()
-moveData = re.findall(r'Move\[\]\)\.push\(\n(.*?)  \);\n', moveData, re.DOTALL)[0]
+moveData = re.findall(r'Move\[\]\)\.push\(\n(.*?)  \);\n\}\n', moveData, re.DOTALL)[0]
 moveData = re.sub(r'\/\* Unused.*?End Unused \*\/', '', moveData, flags=re.DOTALL)
 moveData = re.sub(r'LapseBattlerTagAttr,.*?true\)', '', moveData, flags=re.DOTALL)
 moveData = re.sub(r' +new ', 'new ', moveData) # Remove leading spaces
@@ -323,7 +323,7 @@ for line in moveData:
                 move2D[-1][2].append([-1,0,1])
                 move2D[-1][2].append([-1,2,1])
             elif '(HealStatusEffectAttr,' in line: # cleansing status effects
-                if '[ StatusEffect' in line:
+                if 'HealStatusEffectAttr, true, [' in line:
                     move2D[-1][3].append(19)
                 elif 'getNonVolatile' in line:
                     move2D[-1][3].append(19)
@@ -361,7 +361,7 @@ for line in moveData:
                 index = -1
                 if len(stats) == 5:
                     move2D[-1][2].append([procChance,22,1]) # ancient power, silver wind, ominous wind, no retreat
-                elif 'PokemonType.STELLAR' in line:
+                elif moveName == 'terablast':
                     move2D[-1][2].append([procChance,25,-1]) # tera blast
                 else:
                     if 'effectChanceOverride' in line:
@@ -533,16 +533,17 @@ if len(multiProcs) != 4:
         print('Multiple procs found in',line[1])
 
 # Read the upgrade cost data
-with open(f'{pathData}/balance/starters.ts', "r") as f:
+with open(f'{pathData}/balance/starters.ts', "r", encoding="utf-8", errors="replace") as f:
     costDataRaw = f.read()
-costData = re.findall(r'starterCandyCosts(.*?)\];\n', costDataRaw, re.DOTALL)[0]
-costData = costData.split('\n')[1:-1]
+costData = re.findall(r'StarterCandyCosts\[\] = \[\n(.*?)\];\n', costDataRaw, re.DOTALL)[0]
+costData = costData.split('\n')[:-1]
+passiveData = [re.findall(r'passive: (.*?),', line)[0] for line in costData]
 costParsed = [[
-    re.findall(r'passive: (.*?),', line)[0],
-    re.findall(r'\[ (.*?) \]', line)[0].split(', ')[0],
-    re.findall(r'\[ (.*?) \]', line)[0].split(', ')[1],
-    re.findall(r'egg: (.*?) }', line)[0],
+    re.findall(r'\[(.*?)\]', line)[0].split(', '), # costReduction
+    re.findall(r'\[(.*?)\]', line)[1].split(', '), # eggCosts
+    re.findall(r'\[(.*?)\]', line)[2].split(', '), # eggCostReductionThresholds
 ] for line in costData]
+costParsed = [[[int(arg) for arg in line] for line in cost] for cost in costParsed]
 friendData = re.findall(r'getStarterValueFriendshipCap(.*?)}\n}', costDataRaw, re.DOTALL)[0]
 friendData = re.findall(r'return (.*?);', friendData, re.DOTALL)
 friendData.append(friendData[-1])
@@ -590,7 +591,7 @@ for threshold in fidThresholds:
     lines.append(f"{threshold},")
 lines.append('];\nconst upgradeCosts = [') # upgrade costs
 for index,costLine in enumerate(costParsed):
-    lines.append(f"[{costLine[0]},{costLine[1]},{costLine[2]},{costLine[3]},{friendData[index]}],")
+    lines.append(f"[{passiveData[index]},{costLine[0]},{costLine[1]},{costLine[2]},{friendData[index]}],".replace(', ',','))
  
 # Format of orderedData: 
 #   Abilities: [fid[0], name[1], procs[2], tags[3]]

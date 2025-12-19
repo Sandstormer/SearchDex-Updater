@@ -4,7 +4,8 @@ altText = ['Capacités','Principaux','Caché','Passif','Chercher','Puis.','Préc
            'Évolutions','Capacités Œuf','Rare Capac. Œuf','Commun','Super','Hyper','CT','N.','Évo','Œuf']
 catToName = ['Type','Talent','Capacité','Gen','Cout','Sexe','Mode','Œuf','Variantes Chromatique','Biome','Lié à','Étiquette']
 infoText = ['Bonheur par Bonbon','Passif','Cout réduit','Acheter un Œuf','Talent Caché',
-            'Exclusif aux Œufs','Exclusif aux Bébés','Pokémon Paradoxe','Changement de forme','Biomes','Filtres']
+            'Exclusif aux Œufs','Exclusif aux Bébés','Pokémon Paradoxe','Changement de forme','Biomes','Filtres',
+            'Réduit après ## œufs']
 biomeText = ['Commun','Peu Commun','Rare','Super Rare','Hyper Rare','Boss','Com.','PC','Rare','SR','HR',
              'Aube','Jour','Crépuscule','Nuit']
 biomeLongText = [
