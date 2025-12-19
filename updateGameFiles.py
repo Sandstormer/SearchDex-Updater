@@ -11,8 +11,8 @@
 # Step 7 is to manually test the functionality of the SearchDex.
 # Step 8 is to push the changes to the SearchDex GitHub.
 
-branchName="main" # Set this to "main" or "beta"
-# Using "beta" often causes errors, due to PokeRogue developers rapidly changing the game's code
+branchName="beta" # Set this to "main" or "beta"
+# Using "beta" usually causes errors, due to PokeRogue developers rapidly changing the game's code
 # You should only do that temporarily, to apply an update before it hits live
 
 import subprocess, os
@@ -22,14 +22,20 @@ def clone_or_update(repo_url, repo_dest, branch_name=None, only_clone=False):
     if os.path.exists(repo_dest):
         if only_clone:
             print(f"\nSearchDex files already exist at {repo_dest}")
-            print(f"Those files will not be updated...")
+            print(f"SearchDex website files will not be updated...")
         else:
             if os.path.exists(os.path.join(repo_dest, ".git")):
                 print(f"\nResetting repository at {repo_dest}...")
                 subprocess.run(["git", "-C", repo_dest, "fetch", "--depth", "1", "origin"], check=True)
                 if branch_name:
-                    subprocess.run(["git", "-C", repo_dest, "checkout", branch_name], check=True)
-                    subprocess.run(["git", "-C", repo_dest, "reset", "--hard", f"origin/{branch_name}"], check=True)
+                    subprocess.run(
+                        ["git", "-C", repo_dest, "fetch", "--depth", "1", "origin", branch_name],
+                        check=True
+                    )
+                    subprocess.run(
+                        ["git", "-C", repo_dest, "checkout", "-B", branch_name, "FETCH_HEAD"],
+                        check=True
+                    )
                 else:
                     subprocess.run(["git", "-C", repo_dest, "reset", "--hard", "origin/HEAD"], check=True)
                 # Clean any untracked files/directories

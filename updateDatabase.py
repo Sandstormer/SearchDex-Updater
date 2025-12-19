@@ -18,10 +18,11 @@ def format_for_attr(arg): # Remove spaces, all lower case
     return arg.replace(' ','').lower()
 def throwError(text = ''):
     print(f'***** Major Error Found ¯\_(ツ)_/¯\n***** {text}')
-    print('Continuing...') # PUT A BREAKPOINT ON THIS LINE FOR DEBUGGING ****************
+    breakpoint()
+    print('***** Ignoring error...')
 
 # Open and read the file of main data *******************************
-with open(f"{pathBal}/pokemon-species.ts", "r") as file:
+with open(f"{pathBal}/pokemon-species.ts", "r", encoding="utf-8", errors="replace") as file:
     content = file.read()
 # Use a regular expression to extract text between the markers
 input_data = re.findall(r'PokemonSpecies\[\]\)\.push\((.*?)\);\n}', content, re.DOTALL)[0]
@@ -61,7 +62,7 @@ for i in range(len(output_data)):
 print('Finished reading species')
 
 # Open and read the evolutions file ************************************
-with open(f"{pathBal}/pokemon-evolutions.ts", "r") as file:
+with open(f"{pathBal}/pokemon-evolutions.ts", "r", encoding="utf-8", errors="replace") as file:
     content = file.read()
 # Use a regular expression to extract text between "PokemonEvolutions = {" and "};"
 inputEvoData = re.findall(r'PokemonEvolutions = {(.*?)};', content, re.DOTALL)[0]
@@ -77,7 +78,7 @@ evolution_data = [[format_for_disp(arg) for arg in line] for line in result]
 print('Finished reading evolutions')
 
 # Open and read all the moves files ************************************
-with open(f"{pathBal}/pokemon-level-moves.ts", "r") as file: # Level up moves for species ***********************
+with open(f"{pathBal}/pokemon-level-moves.ts", "r", encoding="utf-8", errors="replace") as file: # Level up moves for species ***********************
     content = file.read()
 # Use a regular expression to extract text between "pokemonSpeciesLevelMoves = {" and "PokemonSpeciesLevelMoves"
 inputMoveData = re.findall(r'pokemonSpeciesLevelMoves\s*=\s*\{(.*?)PokemonSpeciesLevelMoves', content, re.DOTALL)[0]
@@ -104,7 +105,7 @@ for line in levelMoveData:
         # Level moves are added to [0] in moveBySpecToCat[species], along with their level
         moveBySpecToCat[line[0][0]][0].append([line[j][1], int(line[j][0])])
 print('Finished reading level moves')
-with open(f"{pathBal}/egg-moves.ts", "r") as file: # Egg moves **************************
+with open(f"{pathBal}/egg-moves.ts", "r", encoding="utf-8", errors="replace") as file: # Egg moves **************************
     content = file.read()
 # Use a regular expression to extract text between "speciesEggMoves = {" and "} satisfies"
 inputMoveData = re.findall(r'speciesEggMoves\s*=\s*{(.*?)}\ssatisfies', content, re.DOTALL)[0]
@@ -123,13 +124,13 @@ for eggLine in eggMoveData:
     else:
         print('egg species not found')
 print('Finished reading egg moves')
-with open(f"{pathBal}/tm-species-map.ts", "r") as file: # Read the file of TM moves ************************
+with open(f"{pathBal}/tm-species-map.ts", "r", encoding="utf-8", errors="replace") as file: # Read the file of TM moves ************************
     content = file.read()
 # Use a regular expression to extract text of each TM separately
 inputMoveData = re.findall(r'\[(MoveId\..*?)\n\s\s\],', content, re.DOTALL)
 inputMoveData = [re.split(r'\]:\s?\[', line) for line in inputMoveData]
 inputMoveData = [[line[0], re.split('\n', line[1])] for line in inputMoveData]
-with open(f"{pathBal}/tms.ts", "r") as file: # Read the file of TM tiers
+with open(f"{pathBal}/tms.ts", "r", encoding="utf-8", errors="replace") as file: # Read the file of TM tiers
     content = file.read()
 # Use a regular expression to extract text between "TmPoolTiers = {" and "};" from TM Tier data
 tierData = re.findall(r'TmPoolTiers\s*=\s*{(.*?)\n};', content, re.DOTALL)[0]
@@ -273,7 +274,7 @@ for i in range(len(output_data)):
 print('Finished normalizing data')
 
 # Parse the data for starter costs ****************************
-with open(f"{pathBal}/starters.ts", "r") as file:
+with open(f"{pathBal}/starters.ts", "r", encoding="utf-8", errors="replace") as file:
     content = file.read()
 # Use a regular expression to extract text between "speciesStarterCosts = {" and "};"
 inputCostData = re.findall(r'speciesStarterCosts = {(.*?)};', content, re.DOTALL)
@@ -290,7 +291,7 @@ for i in range(len(costSpecies)):
         throwError(f'Could not assign cost of {costSpecies[i]}')
 print('Finished assigning base costs')
 # Parse the data for starter egg tiers ****************************
-with open(f"{pathBal}/species-egg-tiers.ts", "r") as file:
+with open(f"{pathBal}/species-egg-tiers.ts", "r", encoding="utf-8", errors="replace") as file:
     content = file.read()
 # Use a regular expression to extract text between "speciesEggTiers = {" and "};"
 inputTierData = re.findall(r'speciesEggTiers\s*=\s*{(.*?)};', content, re.DOTALL)
@@ -321,7 +322,7 @@ for i,tierLine in enumerate(tierSpecies):
 print('Finished assigning base egg tiers')
 
 # Open and read the biomes file ************************************
-with open(f"{pathBal}/init-biomes.ts", "r") as file:
+with open(f"{pathBal}/init-biomes.ts", "r", encoding="utf-8", errors="replace") as file:
     content = file.read()
 # Use a regular expression to extract text between "pokemonBiomes = [" and "const trainerBiomes"
 inputBiomeData = re.findall(r'pokemonBiomes = \[(.*?)const trainerBiomes', content, re.DOTALL)[0]
@@ -356,7 +357,7 @@ for line in biome_data:
 print('Finished assigning base biomes')
 
 # Open and read the file of passives ***********************************
-with open(f"{pathBal}/passives.ts", "r") as file:
+with open(f"{pathBal}/passives.ts", "r", encoding="utf-8", errors="replace") as file:
     content = file.read()
 # Use a regular expression to extract text between the markers
 inputPassiveData = re.findall(r'StarterPassiveAbilities\s*=\s*{\n(.*?)\n};', content, re.DOTALL)[0]
@@ -499,7 +500,7 @@ for line in combined_data:
             throwError(f'Failed to find base species {line[5]}')
 
 # Parse the level up moves for alternate forms
-with open(f"{pathBal}/pokemon-level-moves.ts", "r") as file: # Level up moves for alt forms ****
+with open(f"{pathBal}/pokemon-level-moves.ts", "r", encoding="utf-8", errors="replace") as file: # Level up moves for alt forms ****
     content = file.read()
 # Use a regular expression to extract text between "pokemonFormLevelMoves = {" and "} as PokemonSpeciesFormLevelMoves"
 inputMoveData = re.findall(r'pokemonFormLevelMoves = {(.*?)} as PokemonSpeciesFormLevelMoves', content, re.DOTALL)[0]
@@ -544,14 +545,13 @@ for line in combined_data:
             formName = line[5]
         parentName = combined_data[int(line[2])][5]
 
-        # Add level/TM moves that are specific to that form
-        if formName in moveBySpecToCat:
+        if formName in moveBySpecToCat: # If that form has specific moves (either level or TM)
 
             # If there are unique level up moves, import them =======
             if len(moveBySpecToCat[formName][0]):
                 for move in moveBySpecToCat[formName][0]:
                     if move[0] not in line[28]:
-                        line[28][move[0]] = move[1] # Add level moves
+                        line[28][move[0]] = move[1] # Add unique level moves
                 print('Imported unique level moves for',formName)
             else: # If there are NOT unique level up moves =======
                 if parentName in moveBySpecToCat: 
@@ -565,7 +565,7 @@ for line in combined_data:
             if len(moveBySpecToCat[formName][2]): 
                 for move in moveBySpecToCat[formName][2]:
                     if move[0] not in line[28]:
-                        line[28][move[0]] = move[1] # Add TM moves
+                        line[28][move[0]] = move[1] # Add unique TM moves
                     else:
                         if line[28][move[0]] in [204,208] and move[1] > 208:
                             line[28][move[0]] += move[1]-212 # Encode as TM and egg move
@@ -587,12 +587,12 @@ for line in combined_data:
             line[28] = copy.deepcopy(combined_data[line[2]][28]) 
             
 # Check that every entry in moveBySpecToCat was assigned
-# A correct moveBySpecToCat[key] looks like [species, [[levelmove,src],[]], [[eggmove,src],[]], [[tmmove,src],[]], 'done']
+# A correct moveBySpecToCat[key] looks like [[[levelmove,src],[]], [[eggmove,src],[]], [[tmmove,src],[]], 'done']
 for key, value in moveBySpecToCat.items():
     if len(value) > 4:
         throwError(f'Double counted moves in {key}') # Base species will have value[3] = 'done'
-    elif len(value) < 4: # If moves could not be assigned from moveBySpecToCat (likely for form-unique TMs)
-        throwError(f'Failed to assign TM to form - key: {key} - value: {value}')
+    elif len(value) < 4: # If moves could not be assigned from moveBySpecToCat (form-unique moves)
+        throwError(f'Failed to assign unique moves to form - Species: {key} - Moves: {value}')
 
 # Species specific manual overrides
 for line in combined_data:
@@ -628,7 +628,7 @@ for i in range(len(combined_data)-1):
 trimmed_data.append(combined_data[-1]) # Add the last entry
 
 # Regional forms dex number override
-with open("local_files/my_json/regionalformnumbers.txt", "r") as file:
+with open("local_files/my_json/regionalformnumbers.txt", "r", encoding="utf-8", errors="replace") as file:
     regionalDexNo = re.split('\n',file.read()) # Generated using sprite names
 for i in range(len(regionalDexNo)):
     trimmed_data[-i-1][3] = regionalDexNo[-i-1]
@@ -945,12 +945,12 @@ print("Reviewing patch changes...")
 
 # Patch note creating **********************************************************************************
 # Write all the trimmed data to a json file
-with open("local_files/trimmed_data.json", "w") as f:
-    json.dump(trimmed_data, f, indent=4)
+with open("local_files/trimmed_data.json", "w", encoding="utf-8") as f:
+    json.dump(trimmed_data, f, ensure_ascii=False, indent=4)
 # Load the previous trimmed data > You need to manually rename the old one to _prev
-with open("local_files/trimmed_data_prev.json", "r") as fp:
+with open("local_files/trimmed_data_prev.json", "r", encoding="utf-8", errors="replace") as fp:
     trimmed_data_prev = json.load(fp)
-with open("local_files/trimmed_data_prev_shvar.json", "r") as fp: # Older version for purpose of new variants
+with open("local_files/trimmed_data_prev_shvar.json", "r", encoding="utf-8", errors="replace") as fp: # Older version for purpose of new variants
     trimmed_data_shvar = json.load(fp)
 # Look for changes and report them in a patch notes format
 # Github may detect more changes because of how fid are assigned
