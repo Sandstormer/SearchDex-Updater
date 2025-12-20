@@ -42,7 +42,8 @@ overrideFrame = {
     '12':0,
     '49':0,
     '68':0,
-    '890':-8
+    '781':99, # Dhelmise at (574,243)
+    '890':-8,
 }
 
 # ===================== Do not touch below this line =======================
@@ -76,7 +77,11 @@ def getBestFrame(thisImgPath, altJsonPath=''):
         allFrames = jsonLoad['textures'][0]['frames']
     else:
         allFrames = jsonLoad['frames']
-    indFrames = [list(line['frame'].values()) for line in allFrames] # Each frame [x,y,w,h]
+
+    if (isinstance(allFrames, list)):    
+        indFrames = [list(line['frame'].values()) for line in allFrames] # Each frame [x,y,w,h]
+    else:
+        indFrames = [list(line['frame'].values()) for line in allFrames.values()] # Each frame [x,y,w,h]
     
     # If the pokemon has an override frame, only use that frame
     if thisImgPath.split('/')[-1] in overrideFrame:
