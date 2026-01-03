@@ -5085,6 +5085,10 @@
     ],
     [
         "Related To",
+        "Farfetchd"
+    ],
+    [
+        "Related To",
         "Doduo"
     ],
     [
@@ -5193,11 +5197,19 @@
     ],
     [
         "Related To",
+        "Tauros"
+    ],
+    [
+        "Related To",
         "Magikarp"
     ],
     [
         "Related To",
         "Lapras"
+    ],
+    [
+        "Related To",
+        "Ditto"
     ],
     [
         "Related To",
@@ -5225,11 +5237,27 @@
     ],
     [
         "Related To",
+        "Articuno"
+    ],
+    [
+        "Related To",
+        "Zapdos"
+    ],
+    [
+        "Related To",
+        "Moltres"
+    ],
+    [
+        "Related To",
         "Dratini"
     ],
     [
         "Related To",
         "Mewtwo"
+    ],
+    [
+        "Related To",
+        "Mew"
     ],
     [
         "Related To",
@@ -5341,6 +5369,14 @@
     ],
     [
         "Related To",
+        "Qwilfish"
+    ],
+    [
+        "Related To",
+        "Shuckle"
+    ],
+    [
+        "Related To",
         "Heracross"
     ],
     [
@@ -5361,11 +5397,23 @@
     ],
     [
         "Related To",
+        "Corsola"
+    ],
+    [
+        "Related To",
         "Remoraid"
     ],
     [
         "Related To",
+        "Delibird"
+    ],
+    [
+        "Related To",
         "Mantyke"
+    ],
+    [
+        "Related To",
+        "Skarmory"
     ],
     [
         "Related To",
@@ -5381,7 +5429,39 @@
     ],
     [
         "Related To",
+        "Smeargle"
+    ],
+    [
+        "Related To",
+        "Miltank"
+    ],
+    [
+        "Related To",
+        "Raikou"
+    ],
+    [
+        "Related To",
+        "Entei"
+    ],
+    [
+        "Related To",
+        "Suicune"
+    ],
+    [
+        "Related To",
         "Larvitar"
+    ],
+    [
+        "Related To",
+        "Lugia"
+    ],
+    [
+        "Related To",
+        "Ho Oh"
+    ],
+    [
+        "Related To",
+        "Celebi"
     ],
     [
         "Related To",
@@ -5481,6 +5561,22 @@
     ],
     [
         "Related To",
+        "Plusle"
+    ],
+    [
+        "Related To",
+        "Minun"
+    ],
+    [
+        "Related To",
+        "Volbeat"
+    ],
+    [
+        "Related To",
+        "Illumise"
+    ],
+    [
+        "Related To",
         "Budew"
     ],
     [
@@ -5501,7 +5597,15 @@
     ],
     [
         "Related To",
+        "Torkoal"
+    ],
+    [
+        "Related To",
         "Spoink"
+    ],
+    [
+        "Related To",
+        "Spinda"
     ],
     [
         "Related To",
@@ -5514,6 +5618,22 @@
     [
         "Related To",
         "Swablu"
+    ],
+    [
+        "Related To",
+        "Zangoose"
+    ],
+    [
+        "Related To",
+        "Seviper"
+    ],
+    [
+        "Related To",
+        "Lunatone"
+    ],
+    [
+        "Related To",
+        "Solrock"
     ],
     [
         "Related To",
@@ -5545,11 +5665,19 @@
     ],
     [
         "Related To",
+        "Kecleon"
+    ],
+    [
+        "Related To",
         "Shuppet"
     ],
     [
         "Related To",
         "Duskull"
+    ],
+    [
+        "Related To",
+        "Tropius"
     ],
     [
         "Related To",
@@ -5573,11 +5701,31 @@
     ],
     [
         "Related To",
+        "Relicanth"
+    ],
+    [
+        "Related To",
+        "Luvdisc"
+    ],
+    [
+        "Related To",
         "Bagon"
     ],
     [
         "Related To",
         "Beldum"
+    ],
+    [
+        "Related To",
+        "Regirock"
+    ],
+    [
+        "Related To",
+        "Regice"
+    ],
+    [
+        "Related To",
+        "Registeel"
     ],
     [
         "Related To",
@@ -5598,6 +5746,10 @@
     [
         "Related To",
         "Rayquaza"
+    ],
+    [
+        "Related To",
+        "Jirachi"
     ],
     [
         "Related To",
@@ -5649,6 +5801,10 @@
     ],
     [
         "Related To",
+        "Pachirisu"
+    ],
+    [
+        "Related To",
         "Buizel"
     ],
     [
@@ -5681,6 +5837,14 @@
     ],
     [
         "Related To",
+        "Chatot"
+    ],
+    [
+        "Related To",
+        "Spiritomb"
+    ],
+    [
+        "Related To",
         "Gible"
     ],
     [
@@ -5701,6 +5865,10 @@
     ],
     [
         "Related To",
+        "Carnivine"
+    ],
+    [
+        "Related To",
         "Finneon"
     ],
     [
@@ -5713,6 +5881,18 @@
     ],
     [
         "Related To",
+        "Uxie"
+    ],
+    [
+        "Related To",
+        "Mesprit"
+    ],
+    [
+        "Related To",
+        "Azelf"
+    ],
+    [
+        "Related To",
         "Dialga"
     ],
     [
@@ -5721,7 +5901,31 @@
     ],
     [
         "Related To",
+        "Heatran"
+    ],
+    [
+        "Related To",
+        "Regigigas"
+    ],
+    [
+        "Related To",
         "Giratina"
+    ],
+    [
+        "Related To",
+        "Cresselia"
+    ],
+    [
+        "Related To",
+        "Phione"
+    ],
+    [
+        "Related To",
+        "Manaphy"
+    ],
+    [
+        "Related To",
+        "Darkrai"
     ],
     [
         "Related To",
@@ -5730,6 +5934,10 @@
     [
         "Related To",
         "Arceus"
+    ],
+    [
+        "Related To",
+        "Victini"
     ],
     [
         "Related To",
@@ -5805,6 +6013,14 @@
     ],
     [
         "Related To",
+        "Throh"
+    ],
+    [
+        "Related To",
+        "Sawk"
+    ],
+    [
+        "Related To",
         "Sewaddle"
     ],
     [
@@ -5833,11 +6049,19 @@
     ],
     [
         "Related To",
+        "Maractus"
+    ],
+    [
+        "Related To",
         "Dwebble"
     ],
     [
         "Related To",
         "Scraggy"
+    ],
+    [
+        "Related To",
+        "Sigilyph"
     ],
     [
         "Related To",
@@ -5885,6 +6109,10 @@
     ],
     [
         "Related To",
+        "Emolga"
+    ],
+    [
+        "Related To",
         "Karrablast"
     ],
     [
@@ -5894,6 +6122,10 @@
     [
         "Related To",
         "Frillish"
+    ],
+    [
+        "Related To",
+        "Alomomola"
     ],
     [
         "Related To",
@@ -5929,11 +6161,23 @@
     ],
     [
         "Related To",
+        "Cryogonal"
+    ],
+    [
+        "Related To",
         "Shelmet"
     ],
     [
         "Related To",
+        "Stunfisk"
+    ],
+    [
+        "Related To",
         "Mienfoo"
+    ],
+    [
+        "Related To",
+        "Druddigon"
     ],
     [
         "Related To",
@@ -5945,11 +6189,23 @@
     ],
     [
         "Related To",
+        "Bouffalant"
+    ],
+    [
+        "Related To",
         "Rufflet"
     ],
     [
         "Related To",
         "Vullaby"
+    ],
+    [
+        "Related To",
+        "Heatmor"
+    ],
+    [
+        "Related To",
+        "Durant"
     ],
     [
         "Related To",
@@ -5961,11 +6217,31 @@
     ],
     [
         "Related To",
+        "Cobalion"
+    ],
+    [
+        "Related To",
+        "Terrakion"
+    ],
+    [
+        "Related To",
+        "Virizion"
+    ],
+    [
+        "Related To",
         "Tornadus"
     ],
     [
         "Related To",
         "Thundurus"
+    ],
+    [
+        "Related To",
+        "Reshiram"
+    ],
+    [
+        "Related To",
+        "Zekrom"
     ],
     [
         "Related To",
@@ -6077,7 +6353,23 @@
     ],
     [
         "Related To",
+        "Hawlucha"
+    ],
+    [
+        "Related To",
+        "Dedenne"
+    ],
+    [
+        "Related To",
+        "Carbink"
+    ],
+    [
+        "Related To",
         "Goomy"
+    ],
+    [
+        "Related To",
+        "Klefki"
     ],
     [
         "Related To",
@@ -6101,6 +6393,10 @@
     ],
     [
         "Related To",
+        "Yveltal"
+    ],
+    [
+        "Related To",
         "Zygarde"
     ],
     [
@@ -6110,6 +6406,10 @@
     [
         "Related To",
         "Hoopa"
+    ],
+    [
+        "Related To",
+        "Volcanion"
     ],
     [
         "Related To",
@@ -6189,11 +6489,27 @@
     ],
     [
         "Related To",
+        "Comfey"
+    ],
+    [
+        "Related To",
+        "Oranguru"
+    ],
+    [
+        "Related To",
+        "Passimian"
+    ],
+    [
+        "Related To",
         "Wimpod"
     ],
     [
         "Related To",
         "Sandygast"
+    ],
+    [
+        "Related To",
+        "Pyukumuku"
     ],
     [
         "Related To",
@@ -6205,7 +6521,31 @@
     ],
     [
         "Related To",
+        "Komala"
+    ],
+    [
+        "Related To",
+        "Turtonator"
+    ],
+    [
+        "Related To",
+        "Togedemaru"
+    ],
+    [
+        "Related To",
         "Mimikyu"
+    ],
+    [
+        "Related To",
+        "Bruxish"
+    ],
+    [
+        "Related To",
+        "Drampa"
+    ],
+    [
+        "Related To",
+        "Dhelmise"
     ],
     [
         "Related To",
@@ -6213,7 +6553,51 @@
     ],
     [
         "Related To",
+        "Tapu Koko"
+    ],
+    [
+        "Related To",
+        "Tapu Lele"
+    ],
+    [
+        "Related To",
+        "Tapu Bulu"
+    ],
+    [
+        "Related To",
+        "Tapu Fini"
+    ],
+    [
+        "Related To",
         "Cosmog"
+    ],
+    [
+        "Related To",
+        "Nihilego"
+    ],
+    [
+        "Related To",
+        "Buzzwole"
+    ],
+    [
+        "Related To",
+        "Pheromosa"
+    ],
+    [
+        "Related To",
+        "Xurkitree"
+    ],
+    [
+        "Related To",
+        "Celesteela"
+    ],
+    [
+        "Related To",
+        "Kartana"
+    ],
+    [
+        "Related To",
+        "Guzzlord"
     ],
     [
         "Related To",
@@ -6225,7 +6609,23 @@
     ],
     [
         "Related To",
+        "Marshadow"
+    ],
+    [
+        "Related To",
         "Poipole"
+    ],
+    [
+        "Related To",
+        "Stakataka"
+    ],
+    [
+        "Related To",
+        "Blacephalon"
+    ],
+    [
+        "Related To",
+        "Zeraora"
     ],
     [
         "Related To",
@@ -6345,7 +6745,19 @@
     ],
     [
         "Related To",
+        "Falinks"
+    ],
+    [
+        "Related To",
+        "Pincurchin"
+    ],
+    [
+        "Related To",
         "Snom"
+    ],
+    [
+        "Related To",
+        "Stonjourner"
     ],
     [
         "Related To",
@@ -6362,6 +6774,22 @@
     [
         "Related To",
         "Cufant"
+    ],
+    [
+        "Related To",
+        "Dracozolt"
+    ],
+    [
+        "Related To",
+        "Arctozolt"
+    ],
+    [
+        "Related To",
+        "Dracovish"
+    ],
+    [
+        "Related To",
+        "Arctovish"
     ],
     [
         "Related To",
@@ -6390,6 +6818,22 @@
     [
         "Related To",
         "Zarude"
+    ],
+    [
+        "Related To",
+        "Regieleki"
+    ],
+    [
+        "Related To",
+        "Regidrago"
+    ],
+    [
+        "Related To",
+        "Glastrier"
+    ],
+    [
+        "Related To",
+        "Spectrier"
     ],
     [
         "Related To",
@@ -6485,6 +6929,10 @@
     ],
     [
         "Related To",
+        "Klawf"
+    ],
+    [
+        "Related To",
         "Capsakid"
     ],
     [
@@ -6505,11 +6953,23 @@
     ],
     [
         "Related To",
+        "Bombirdier"
+    ],
+    [
+        "Related To",
         "Finizen"
     ],
     [
         "Related To",
         "Varoom"
+    ],
+    [
+        "Related To",
+        "Cyclizar"
+    ],
+    [
+        "Related To",
+        "Orthworm"
     ],
     [
         "Related To",
@@ -6521,7 +6981,19 @@
     ],
     [
         "Related To",
+        "Flamigo"
+    ],
+    [
+        "Related To",
         "Cetoddle"
+    ],
+    [
+        "Related To",
+        "Veluza"
+    ],
+    [
+        "Related To",
+        "Dondozo"
     ],
     [
         "Related To",
@@ -6533,6 +7005,54 @@
     ],
     [
         "Related To",
+        "Great Tusk"
+    ],
+    [
+        "Related To",
+        "Scream Tail"
+    ],
+    [
+        "Related To",
+        "Brute Bonnet"
+    ],
+    [
+        "Related To",
+        "Flutter Mane"
+    ],
+    [
+        "Related To",
+        "Slither Wing"
+    ],
+    [
+        "Related To",
+        "Sandy Shocks"
+    ],
+    [
+        "Related To",
+        "Iron Treads"
+    ],
+    [
+        "Related To",
+        "Iron Bundle"
+    ],
+    [
+        "Related To",
+        "Iron Hands"
+    ],
+    [
+        "Related To",
+        "Iron Jugulis"
+    ],
+    [
+        "Related To",
+        "Iron Moth"
+    ],
+    [
+        "Related To",
+        "Iron Thorns"
+    ],
+    [
+        "Related To",
         "Frigibax"
     ],
     [
@@ -6541,7 +7061,59 @@
     ],
     [
         "Related To",
+        "Wo Chien"
+    ],
+    [
+        "Related To",
+        "Chien Pao"
+    ],
+    [
+        "Related To",
+        "Ting Lu"
+    ],
+    [
+        "Related To",
+        "Chi Yu"
+    ],
+    [
+        "Related To",
+        "Roaring Moon"
+    ],
+    [
+        "Related To",
+        "Iron Valiant"
+    ],
+    [
+        "Related To",
+        "Koraidon"
+    ],
+    [
+        "Related To",
+        "Miraidon"
+    ],
+    [
+        "Related To",
+        "Walking Wake"
+    ],
+    [
+        "Related To",
+        "Iron Leaves"
+    ],
+    [
+        "Related To",
         "Poltchageist"
+    ],
+    [
+        "Related To",
+        "Okidogi"
+    ],
+    [
+        "Related To",
+        "Munkidori"
+    ],
+    [
+        "Related To",
+        "Fezandipiti"
     ],
     [
         "Related To",
@@ -6549,7 +7121,27 @@
     ],
     [
         "Related To",
+        "Gouging Fire"
+    ],
+    [
+        "Related To",
+        "Raging Bolt"
+    ],
+    [
+        "Related To",
+        "Iron Boulder"
+    ],
+    [
+        "Related To",
+        "Iron Crown"
+    ],
+    [
+        "Related To",
         "Terapagos"
+    ],
+    [
+        "Related To",
+        "Pecharunt"
     ],
     [
         "Related To",
@@ -6581,6 +7173,10 @@
     ],
     [
         "Related To",
+        "Eternal Floette"
+    ],
+    [
+        "Related To",
         "Galar Ponyta"
     ],
     [
@@ -6589,7 +7185,23 @@
     ],
     [
         "Related To",
+        "Galar Articuno"
+    ],
+    [
+        "Related To",
+        "Galar Zapdos"
+    ],
+    [
+        "Related To",
+        "Galar Moltres"
+    ],
+    [
+        "Related To",
         "Galar Darumaka"
+    ],
+    [
+        "Related To",
+        "Galar Stunfisk"
     ],
     [
         "Related To",
@@ -6606,6 +7218,10 @@
     [
         "Related To",
         "Paldea Tauros"
+    ],
+    [
+        "Related To",
+        "Bloodmoon Ursaluna"
     ],
     [
         "Tag",
