@@ -835,7 +835,7 @@ for line in allBiomes:
     filterToFID[f'biome{format_for_attr(line)}'] = len(allFilters)
     allFilters.append(['Biome',line])
 for key,value in starterList.items():
-    if value > 1:
+    if value > 0:
         allFilters.append(['Related To',trimmed_data[key][37]])
         for line in trimmed_data:
             if line[35] == key: # If starterIndex is equal to the one in starterList
