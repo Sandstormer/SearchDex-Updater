@@ -62,6 +62,10 @@ subs = { # Replacement strings to make text fit
         ['Teracristal Ogerpon','Tera Ogerpon'],
         ['Variedad ',''],
     ],
+    'it': [
+        ['Maschera ',''],
+        ['Teracristal Ogerpon','Tera Ogerpon'],
+    ],
 }
 
 # All the manual translations =====================
@@ -206,7 +210,7 @@ for lang in langs: # =========================================== Main loop for e
                 elif 'Cornerstone' in key:
                     text = f"{tall['ability'][key]['name']} {tall['pokemon-info']['stat']['def'].replace(' ','&nbsp')}"
                 else:
-                    input('Could not find mask')
+                    input(f'***** Error: Could not find ogerpon mask {key}')
             elif key == 'asOneGlastrier': # Add horse names to "As One"
                 text = f"{tall['ability'][key]['name']} {tall['pokemon']['glastrier']}"
             elif key == 'asOneSpectrier':
@@ -312,8 +316,7 @@ for lang in langs: # =========================================== Main loop for e
                 justLocForm = ''
                 justLocSpec = tall['pokemon'][text]
             else:
-                print('Could not find base species',text)
-                input()
+                input(f'***** Error: Could not find base species {text}')
             # Put the name in correct format
             nameFormat = '{{pokemonName}}'
             if 'Alola' in filter[1]:
@@ -325,32 +328,48 @@ for lang in langs: # =========================================== Main loop for e
             if 'Paldea' in filter[1]:
                 nameFormat = tall['pokemon-form']['appendForm']['paldea'].replace('Galar','Paldea') # Remove later !!!!
             nameFormat = re.sub('{{pokemonName}}',justLocSpec,nameFormat)
-            nameFormat = re.sub("'",'',nameFormat) # Remove single quotes
+            nameFormat = re.sub("'",'’',nameFormat) # Replace single quotes with unicode
             # nameFormat = re.sub(":",' ',nameFormat)
             # print('Translated',specLine[0],'to',nameFormat)
             locFilters[index] = nameFormat
             if len(nameFormat) > 20 and warnLongNames:
                 print('Long name found:',nameFormat)
             if not nameFormat or '{' in nameFormat:
-                input('Blank pokemon entry')
+                input(f'***** Error: Pokemon name failure\n{nameFormat}')
     for i in range(len(locFilters)):
         locFilters[i] = re.sub('-',' ',str(locFilters[i]))
     if lang == 'en': # Many of the english filters are custom from updateDatabase.py
         locFilters = [shortenText(line[1]) for line in allFilters] # Only some are modified in this file (like biome)
+    print('Done translating filter names')
+    # Check for the shortest and longest translations of types/abilities/moves
+    with open("local_files/my_json/fidThresholds.json", "r") as fp:
+        fidThresholds = json.load(fp)
+    catNames = ['TYPE','ABILITY','MOVE']
+    for i in [0,1,2]:
+        filterStart = fidThresholds[i-1]
+        if (i==0): filterStart = 0
+        maxLengthCat = max(locFilters[filterStart:fidThresholds[i]], key=len)
+        print('Longest translated',catNames[i],'is',maxLengthCat,'(',len(maxLengthCat),'char )')
+        minLengthCat = min(locFilters[filterStart:fidThresholds[i]], key=len)
+        print('Shortest translated',catNames[i],'is',minLengthCat,'(',len(minLengthCat),'char )')
+    for line in locFilters[:fidThresholds[2]]:
+        collisionCount = sum(1 for inLine in locFilters if line.lower() in inLine.lower())
+        if collisionCount > 20:
+            print('High collisions in',line,'[',collisionCount,'hits ]')
+
+    # Report any missing filter translations (these are mandatory)
     missingAmount = sum([1 for line in locFilters if not line])
-    print('Done translating filter names')     
-    if missingAmount: input(f'***** Missing {missingAmount} filter names')
+    if missingAmount: input(f'***** Error: Missing {missingAmount} filter names')
     
     # Translate speciesNames =========================
     print('\nTranslating species names...')
     with open("local_files/my_json/allSpecies.json", "r") as file:
         allSpecies = json.load(file)
-    maxSpecLength = 0
-    for specLine in allSpecies:
-        maxSpecLength = max(maxSpecLength, len(specLine[0]))
-    # print('Longest species name in default list is',longest)
+    maxLengthSpeciesEng = max(len(specLine[0]) for specLine in allSpecies)
+    if lang == 'en':
+        print('Longest species name in english list is',maxLengthSpeciesEng)
     locSpecies = ['' for line in allSpecies]
-    maxLenSpec = 0
+    maxLengthSpecies = 0
     for index,specLine in enumerate(allSpecies): # specLine is [full name, form name, species name]
         
         if specLine[2] == 'Koraidon' or specLine[2] == 'Miraidon':
@@ -362,8 +381,7 @@ for lang in langs: # =========================================== Main loop for e
             justLocForm = ''
             justLocSpec = tall['pokemon'][text]
         else:
-            print('Could not find base species',text)
-            input()
+            input(f'***** Error: Could not find base species {text}')
 
         # Translate the form name
         if specLine[1]: # If it is a form
@@ -407,8 +425,7 @@ for lang in langs: # =========================================== Main loop for e
             elif effSpec == 'Arceus' or effSpec == 'Silvally':
                 justLocForm = tall['pokemon-info']['type'][specLine[1].lower()]
             else:
-                print('Could not find',text)
-                input()
+                input(f'***** Error: Could not find form name {text}')
 
         # Put the name in correct format (for regionals or forms)
         nameFormat = '{{pokemonName}}'
@@ -425,7 +442,7 @@ for lang in langs: # =========================================== Main loop for e
         if specLine[2] == 'Eternal Floette':
             nameFormat = tall['pokemon-form']['appendForm']['eternal']
         if tall['pokemon-form']['appendForm']['generic'] != '{{pokemonName}} ({{formName}})':
-            input('Odd format detected') # This is never used, but it's just to check the format
+            input('***** Error: Odd format detected') # This is never used, but it's just to check the format
         if specLine[1]: # If it is a form
             if lang == 'fr':
                 nameFormat = f'{nameFormat} {justLocForm}' # French has form name after
@@ -436,7 +453,7 @@ for lang in langs: # =========================================== Main loop for e
 
         # Insert the species name, and remove most punctuation
         nameFormat = re.sub('{{pokemonName}}',justLocSpec,nameFormat)
-        nameFormat = re.sub("'",'',nameFormat) # Keep ’
+        nameFormat = re.sub("'",'’',nameFormat) # Replace single quotes with unicode
         # nameFormat = re.sub(":",' ',nameFormat)
         # print('Translated',specLine[0],'to',nameFormat)
         if lang == 'en': # Use my custom english names, using form keys, not actual form names
@@ -444,20 +461,22 @@ for lang in langs: # =========================================== Main loop for e
             # To-do: Farfetch'd, Sirfetch'd, Ho-oh, Porygon-Z, Porygon2, Type: Null, Mr. Mime, Mime Jr., Mr. Rime
         nameFormat = shortenText(nameFormat)
         locSpecies[index] = nameFormat
-        maxLenSpec = max(maxLenSpec, len(nameFormat))
-        if len(nameFormat) > maxSpecLength and warnLongNames:
-            print('Name longer than',maxSpecLength,'found:',nameFormat)
+        maxLengthSpecies = max(maxLengthSpecies, len(nameFormat))
+        if len(nameFormat) > maxLengthSpeciesEng and warnLongNames:
+            print('Name longer than',maxLengthSpeciesEng,'found:',nameFormat)
         if not nameFormat or '{' in nameFormat:
-            input('Error with pokemon entry',nameFormat,specLine)
-    missingAmount = sum([1 for line in locSpecies if not line])
+            input(f'***** Error: Pokemon name failure\n{nameFormat}\n{specLine}')
     print('Done translating species names')
-    if missingAmount: input('***** Missing',missingAmount,'species names')
+    maxLengthCat = max(locSpecies, key=len)
+    print('Longest translated species is',maxLengthCat,'(',len(maxLengthCat),'char )')
+    minLengthSpecies = min(locSpecies, key=len)
+    print('Shortest translated species is',minLengthCat,'(',len(minLengthCat),'char )')
+    missingAmount = sum([1 for line in locSpecies if not line])
+    if missingAmount: input(f'***** Missing {missingAmount} species names')
 
     # Translate the descriptions of abilities/moves =========================
     print('\nTranslating filter descriptions...')
     locDesc = ['' for line in allFilters if (line[0] == 'Move' or line[0] == 'Ability')]
-    with open("local_files/my_json/fidThresholds.json", "r") as fp:
-        fidThresholds = json.load(fp)
     # Translate abilities
     for index,filter in enumerate(allFilters):
         if filter[0] == 'Ability':
@@ -477,8 +496,8 @@ for lang in langs: # =========================================== Main loop for e
                 text = ''
                 print('** No description for',filter[1],'in',lang)
             locDesc[index-fidThresholds[0]] = text
-    missingAmount = sum([1 for line in locDesc if not line])
     print('Done translating ability/move descriptions')
+    missingAmount = sum([1 for line in locDesc if not line])
     if missingAmount: print('** Missing',missingAmount,'ability/move descriptions')
 
     # Translate the header names and other ui elements =========================
@@ -647,23 +666,27 @@ for lang in langs: # =========================================== Main loop for e
     # Write all the translated text to lang/{lang}.js =========================
     # headerNames, altText, catToName, fidToDesc, speciesNames, fidToName
     print("\nWriting to website language files...")
-    # Assemble the lines of data
     lines = []
+    # Show a warning to not edit the javascript files directly
+    # Changes must be done through the python override files
     lines.append('// Do not edit these files directly\n')
     lines.append('// They are changed automatically by the update script\n')
     lines.append('// Changes must be made through the updater repository\n')
-    for overrideName in overrides['en'].keys():
-        if overrideName != 'helpMenuText':
-            lines.append(f'{overrideName} = [') # Add each UI category
-            for line in locUI[overrideName]:
-                if overrideName in ['biomeLongText','warningText']:
+    for categoryName in overrides['en'].keys():
+        if categoryName != 'helpMenuText':
+            lines.append(f'{categoryName} = [') # Add each UI category
+            for line in locUI[categoryName]:
+                if categoryName in ['biomeLongText','warningText']:
+                    if "'" in line: 
+                        # print('** Single quote found in',line)
+                        line = line.replace("'","’")
+                    lines.append(f"\n'{line}',")
+                elif categoryName in ['procToDesc','tagToDesc']:
+                    lines.append(f'\n"{line}",')
+                else:
                     if "'" in line: 
                         print('** Single quote found in',line)
                         line = line.replace("'","’")
-                    lines.append(f"\n'{line}',")
-                elif overrideName in ['procToDesc','tagToDesc']:
-                    lines.append(f'\n"{line}",')
-                else:
                     lines.append(f"'{line}',")
             lines[-1] = lines[-1][:-1] # Remove comma
             lines.append('];\n')
@@ -671,7 +694,7 @@ for lang in langs: # =========================================== Main loop for e
     lines.append('fidToDesc = [') # filter descriptions
     for line in locDesc:
         if "'" in line: 
-            print('** Single quote found in',line)
+            # print('** Single quote found in',line)
             line = line.replace("'","’")
         lines.append(f"\n'{line}',")
     lines[-1] = lines[-1][:-1]
@@ -687,7 +710,7 @@ for lang in langs: # =========================================== Main loop for e
     for filter in locFilters:
         lines.append(f"\n'{filter}',")
         if "'" in str(filter):
-            input('Single quote found in',filter)
+            input('***** Error: Single quote found in',filter)
     lines[-1] = lines[-1][:-1]
     lines.append('\n];\n')
 
