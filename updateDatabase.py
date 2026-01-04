@@ -613,37 +613,46 @@ for line in combined_data:
         line[4] = f"{line[3]}-normal" # Image path
         line[5] = "Normal Arceus"     # Species
 
-# Don't keep base form of a species with forms
+# Convert combined_data into trimmed_data by removing base species and unobtainables
 trimmed_data = []
 print('\nTrimming base species and unobtainable pokemon...')
 for i in range(len(combined_data)-1):
+    # Keep entries under two scenarios:
+    # If it IS A FORM: because we want to keep all forms
+    # If the next is NOT A FORM: this ensures we keep base species that do not have forms
+    # The result is that any base species at the top of form lists get removed
     if combined_data[i][2] != "" or combined_data[i+1][2] == "": # If it is a form, or next is not
         if not combined_data[i][42]: 
             trimmed_data.append(combined_data[i]) # Keep everything except for unobtainables
         else:
-            # Should be 2: Unknown Arceus, Zenith Marshadow
-            print('Unobtainable:',combined_data[i][5])
-    elif combined_data[i][3] != combined_data[i+1][3]: # Remove the base of species with forms
+            print('Unobtainable:',combined_data[i][5]) # Should be 2: Unknown Arceus, Zenith Marshadow
+    elif combined_data[i][3] != combined_data[i+1][3]:
         throwError(f"Ignored {combined_data[i][5]}") # Show error if removing unique species
 trimmed_data.append(combined_data[-1]) # Add the last entry
 
-# Regional forms dex number override
-with open("local_files/my_json/regionalformnumbers.txt", "r", encoding="utf-8", errors="replace") as file:
-    regionalDexNo = re.split('\n',file.read()) # Generated using sprite names
-for i in range(len(regionalDexNo)):
-    trimmed_data[-i-1][3] = regionalDexNo[-i-1]
-    # Usually I check parentRow[2] to see if it is a form, but here I check formKey[1] because it could be blank
-    if trimmed_data[-i-1][1] == "": 
-        trimmed_data[-i-1][4] = f'{regionalDexNo[-i-1]}' # Replace img with new dex number
-    else:
-        trimmed_data[-i-1][4] = f'{regionalDexNo[-i-1]}-{trimmed_data[-i-1][1]}' # Add form to img name
+# If the pokemon is from a region, find the original species for the dex number
+for line in trimmed_data:
+    allRegionText = { "Alola":2000, "Eternal":2000, "Galar":4000, "Hisui":6000, "Paldea":8000, "Bloodmoon":8000 }
+    for regionText, regionValue in allRegionText.items():
+        if regionText in line[5]:
+            # Look for a name [5] that matches the regional name with the region removed
+            for parentLine in trimmed_data:
+                # Floette must be serached for differently because it only has colored forms (not just "Floette")
+                if parentLine[5] == line[5].split(f'{regionText} ')[1] or (regionText=="Eternal" and "Floette" in parentLine[5]):
+                    line[3] = int(parentLine[3]) + regionValue
+                    break
+            else:
+                print(f'***** Error: Could not find regional dex number for {line[5]}')
+            line[3] = str(line[3]) # Set dex number back to a string
+            line[4] = line[3] # Replace img with new dex number
+            if line[1] != "": line[4] = f'{line[3]}-{line[1]}' # If there is a formKey [1], add that to the image name
 
-# Reminder: isStartable [33], starterRow [34], starterIndex [35], specIndex[36]
+# Reminder: isStartable [33], starterRow [34], starterIndex [35], specIndex [36]
 for i, line in enumerate(trimmed_data): 
     if line[34] == '': # Check for invalid starter row
         throwError(f'Unassigned starter row for {line[5]}')
     # Trimmed data no longer has base species or unobtainable forms
-    # So now we rebase the row numbers as specIndex[36] to be sequential
+    # So now we rebase the row numbers as specIndex [36] to be sequential
     # This is the speciesID (SID) on the SearchDex, used to look up data for that species
     line[36] = i
     # Also rebase to sequential numbers for starterIndex [35]
@@ -693,9 +702,9 @@ for i in range(len(trimmed_data)):
         # print(f'{trimmed_data[i][5]}: Could not find {trimmed_data[i][4]}')
         if os.path.isfile(f'{pathImg}/{trimmed_data[i][3]}_0.png'): # Check if the base img exists
             # print(f'{trimmed_data[i][5]}: Replaced {trimmed_data[i][4]} with base image')
-            trimmed_data[i][4] = f'{trimmed_data[i][3]}' # Get image from dexno
+            trimmed_data[i][4] = f'{trimmed_data[i][3]}' # Get base image from dexno
         elif trimmed_data[i][3] == trimmed_data[i-1][3]: # If same species as one above
-            trimmed_data[i][4] = trimmed_data[i-1][4] # Take that image
+            trimmed_data[i][4] = trimmed_data[i-1][4] # Take image from form above
             if int(trimmed_data[i][3]) not in [1012,1013]: # Report if not Sinistcha family
                 print(f'{trimmed_data[i][5]}: Replaced {trimmed_data[i][4]} with {trimmed_data[i-1][4]}')
         else:
@@ -707,11 +716,11 @@ for line in trimmed_data:
     else:
         line[31] = 1 # Shiny variants [31]
     if os.path.isfile(f'{pathImg}/{line[4]}_0f.png'): # Check if the base female sprite exists
-        line[23] = 1
+        line[23] = 1 # Mark as female sprite difference
         femlist = ['','f']
     else:
         if 'Female' in line[5] or line[5] == 'Nidoran F':
-            line[23] = 2
+            line[23] = 2 # Mark as a distinct female form (Nidoran, Meowstic, etc.)
         else:
             line[23] = ''
         femlist = ['']

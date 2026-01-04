@@ -287,28 +287,9 @@ def processImage(spriteIndex, shinyIndex, femIndex):
         if shinyIndex < 2 and femIndex == 0: # If it should exist, show an error
             print('Could not find any tier',shinyIndex,'shiny for',spriteIndex)
 
-os.makedirs(dest_dir, exist_ok=True) # Ensure the directory exists
-
-# ======================= Determine regional dex numbers =======================
-
-# List the dex no of all the sprite files, this is IMPORTANT for assigning dex numbers
-print('\nReading all regional dex numbers...')
-# List all image files in the current directory
-files = [f for f in os.listdir(source_dir) if f.endswith(".png") and 'sub' not in f]
-# Remove form names, but keep that entry in the list
-filenames = [re.sub(r'[_-].*','',file).replace('.png','') for file in files] 
-filenames = [int(file) for file in filenames]
-filenames.sort()
-regionalFormNumbers = [str(file) for file in filenames if file > 1025]
-output_file = "local_files/my_json/regionalformnumbers.txt"
-try:
-    with open(output_file, 'w') as file:
-        file.write("\n".join(regionalFormNumbers))
-    print(f"List of regional form numbers saved to {output_file}")
-except Exception as e:
-    print(f"Error writing to {output_file}: {e}")
-
 # ======================= Process all the pokemon images =======================
+
+os.makedirs(dest_dir, exist_ok=True) # Ensure the directory exists
 
 # Load the masterlist 
 with open(f'game_files/assets/images/pokemon/variant/_masterlist.json', "r") as f:
