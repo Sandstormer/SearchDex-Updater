@@ -4,7 +4,7 @@ catToName = ['Tipo','Habilidad','Movimiento','Gen','Coste','Género','Modo','Niv
 biomeText = ['Común','Poco Común','Raro','Super Raro','Ultra Raro','Jefe','Com.','PCom.','Raro','SR','UR','Amanecer','Día','Atardecer','Noche']
 infoText = ['Amistad por Caramelo','Pasiva','Reducción de Coste','Huevo de Especie','Habilidad Oculta',
             'Exclusivo de Huevo','Exclusivo de Cría','Pokémon Paradoja','Cambio de Forma','Biomas','Filtros',
-            'Reducido después de ## huevos']
+            'Reducido después de ## huevos','por Nivel','por Huevo','por MT']
 helpMenuText = """
 <b><span style="color:rgb(140, 130, 240);">Búsqueda rápida y potente</span> para PokeRogue</b>
 <hr>

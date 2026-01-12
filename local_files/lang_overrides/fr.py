@@ -5,7 +5,7 @@ altText = ['Capacités','Principaux','Caché','Passif','Chercher','Puis.','Préc
 catToName = ['Type','Talent','Capacité','Gen','Cout','Sexe','Mode','Œuf','Variantes Chromatique','Biome','Lié à','Étiquette']
 infoText = ['Bonheur par Bonbon','Passif','Cout réduit','Acheter un Œuf','Talent Caché',
             'Exclusif aux Œufs','Exclusif aux Bébés','Pokémon Paradoxe','Changement de forme','Biomes','Filtres',
-            'Réduit après ## œufs']
+            'Réduit après ## œufs','par Niveau','par Œuf','par CT']
 biomeText = ['Commun','Peu Commun','Rare','Super Rare','Hyper Rare','Boss','Com.','PC','Rare','SR','HR',
              'Aube','Jour','Crépuscule','Nuit']
 biomeLongText = [
@@ -112,12 +112,12 @@ tagToDesc = [
     "Ne peut pas être ignorée",
     "Ne peut pas être redirigée",
     "Ne peut pas être renvoyée",
-    "Frappe toujous s'il pleut",
+    "Frappe toujours s'il pleut",
     "Le lanceur ne peut pas être remplacé",
-    "La ciblé ne peut pas être remplacée",
+    "La cible ne peut pas être remplacée",
     "K.-O. en 1 coup",
     "Altérée contre les Boss",
-    "Sucun effet sur les Boss",
+    "Aucun effet sur les Boss",
     "Trompe le talent",
     "Contact",
     "Partiellement implémenté",

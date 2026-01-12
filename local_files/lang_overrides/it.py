@@ -6,7 +6,7 @@ catToName = ['Tipo','Abilità','Mossa','Gen','Costo','Genere','Modalità','Uova'
 infoText = [
     'Amicizia per Caramella', 'Passiva', 'Riduzione di Costo', 'Costi di un Uovo', 'Abilità Nascosta', 
     'Solo da Uovo', 'Solo Baby', 'Pokémon Paradosso', 'Cambio Forma', 'Biomi', 'Filtri',
-    'Ridotto dopo ## uova'
+    'Ridotto dopo ## uova','per Livello','da Uovo','per MT'
 ]
 biomeText = ['Comune','Non Comune','Raro','Super Raro','Ultra Raro',
              'Boss','Com.','NC','Raro','SR','UR','Alba','Giorno','Tramonto','Notte']

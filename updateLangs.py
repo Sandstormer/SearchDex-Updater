@@ -56,11 +56,12 @@ subs = { # Replacement strings to make text fit
         ['Masque du ',''],
         ['Masque ',''],
         ['Rassemblement Forme','Rassemblement'],
-        ['Mode Transe ','Transe '],
+        [' Mode Transe',' Transe'],
     ],
     'es-ES': [
         ['Teracristal Ogerpon','Tera Ogerpon'],
         ['Variedad ',''],
+        ['Modo Daruma Darmanitan','Daruma Darmanitan']
     ],
     'it': [
         ['Maschera ',''],
@@ -646,8 +647,11 @@ for lang in langs: # =========================================== Main loop for e
     locUI['helpMenuText'] = overrides['en']['helpMenuText']
 
     print('Done translating ui elements')
-    missingAmount = sum([1 for line in locUI['headerNames']+locUI['altText']+locUI['catToName']+locUI['biomeText']+locUI['infoText'] if not line])
-    if missingAmount: print('Could not auto translate',missingAmount,'ui elements')
+    allCatToCheck = ['headerNames','altText','catToName','biomeText','infoText']
+    for catToCheck in allCatToCheck:
+        if catToCheck not in overrides[lang]:
+            missingAmount = sum([1 for line in locUI[catToCheck] if not line])
+            if missingAmount: print('Could not auto translate',missingAmount,'ui elements in',catToCheck)
 
     # Apply manual overrides from the lang_overrides folder =========================
     # These go directly onto the searchdex
@@ -660,8 +664,10 @@ for lang in langs: # =========================================== Main loop for e
             else:
                 print('***** Missing override object',overrideName,'in',lang)
     # Do a final check for missing UI elements
-    missingAmount = sum([1 for line in locUI['headerNames']+locUI['altText']+locUI['catToName']+locUI['biomeText']+locUI['infoText'] if not line])
-    if missingAmount: print('***** Missing',missingAmount,'ui elements')
+    missingAmount = 0
+    for catToCheck in allCatToCheck:
+        missingAmount += len(overrides['en'][catToCheck]) - sum([1 for line in locUI[catToCheck] if line])
+    if missingAmount: print('\n***** Missing',missingAmount,'ui elements')
 
     # Write all the translated text to lang/{lang}.js =========================
     # headerNames, altText, catToName, fidToDesc, speciesNames, fidToName
