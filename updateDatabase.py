@@ -849,7 +849,7 @@ for key,value in starterList.items():
         for line in trimmed_data:
             if line[35] == key: # If starterIndex is equal to the one in starterList
                 line[38] = len(allFilters)-1 # Set familyFID to this fid
-for j in ['Lure Ability','Ignores Abilities','Ignores Abilities (Move)','Target Switches Out','Spread Moves']:
+for j in ['Lure Ability','Ignores Abilities']:
     allFilters.append(['Tag',j])
 
 # Process the biome data:

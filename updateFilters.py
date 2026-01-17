@@ -18,8 +18,8 @@ from datetime import date
 with open("local_files/my_json/filterToFID.json", "r") as f:
     filterToFID = json.load(f)
 with open("local_files/my_json/fidThresholds.json", "r") as fp:
-    fidThresholds = json.load(fp)
-orderedData = [[] for _ in filterToFID][fidThresholds[0]:fidThresholds[2]]
+    fidThreshold = json.load(fp)
+orderedData = [[] for _ in filterToFID][fidThreshold[0]:fidThreshold[2]]
          
 print('\n=========== Reading abilities ===========\n')
 with open(f'{pathData}/abilities/ability.ts', "r", encoding="utf-8") as f:
@@ -34,14 +34,14 @@ for index,line in enumerate(abilityData):
         abilityName = format_for_attr(format_for_disp(re.findall(r'AbilityId\.(.*?),', line)[0]))
         if f'ability{abilityName}' not in filterToFID:
             if abilityName != 'none':
-                input('*****', abilityName, 'does not exist')
+                input(f'***** ${abilityName} does not exist')
             ability2D.append(['xxxxx',abilityName])
         else:
             # print('Found ability:',abilityName)
             abilityFID = filterToFID[f'ability{abilityName}']
             ability2D.append([abilityFID, abilityName, [], []]) # [fid[0], name[1], procs[2], tags[3]]
         if abilityName in ['magicguard', 'comatose', 'shieldsdown', 'fullmetalbody', 'shadowshield', 'prismarmor']:
-            ability2D[-1][3].append(50) 
+            ability2D[-1][3].append(50) # Abilities that "Can't be ignored"
     elif len(ability2D[-1]):
         # All the procs and tags are shared between abilities and moves
         # Tags should be in sequential order as they will be displayed on my site
@@ -65,8 +65,7 @@ for index,line in enumerate(abilityData):
                         ability2D[-1][2].append(entry)
                     # print('Found ability stat boost:',abilityName,stat,amount)
         elif 'playerFaints' in line:
-            amount = 10
-            ability2D[-1][2].append([-3,26,amount]) # supremeoverlord
+            ability2D[-1][2].append([-3,26,10]) # supremeoverlord
         elif 'MovePowerBoostAbAttr' in line:
             for i in range(5): # Search for a number in the next 5 lines
                 if re.findall(r'(\d\.?\d?\d?)', abilityData[index+i]):
@@ -180,9 +179,8 @@ for index,line in enumerate(abilityData):
             ability2D[-1][3].append(48)
         elif '.unreplaceable()' in line:
             ability2D[-1][3].append(49)
-        # Unignorable is 50, done in the previous section
         elif 'MoveAbilityBypassAbAttr' in line: # Ignores abilities (Mold Breaker, etc.)
-            ability2D[-1][3].append(37)
+            ability2D[-1][3].append(37)         # "Can't be ignored" is 50, done in the previous section
         elif 'DoubleBattleChanceAbAttr' in line: # Lure abilities
             ability2D[-1][3].append(59)
         # elif 'ultipl' in line or 'oost' in line or 'pow' in line:
@@ -485,14 +483,15 @@ for line in moveData:
                 e = 'nothing'
                 # print('\n',move2D[-1][0],'\n',line)
 
-# The above data is just ordered how the moves/abilities appear in the game code
-# This next step reorders them according to the fid list
+# The data in ability2D/move2D is just ordered how the moves/abilities appear in the game code
+# This next step reorders them according to the fid list (which is alphabetical in english)
+# orderedData does not includes types => it starts at fidThreshold[0]
 for line in ability2D:
     if f'ability{line[1]}' in filterToFID:
-        orderedData[line[0]-fidThresholds[0]] = line # Replace ability rows with assembled ability row
+        orderedData[line[0]-fidThreshold[0]] = line # Replace ability rows with assembled ability row
 for line in move2D:
     if f'move{line[1]}' in filterToFID:
-        orderedData[line[0]-fidThresholds[0]] = line # Replace move rows with assembled move row
+        orderedData[line[0]-fidThreshold[0]] = line # Replace move rows with assembled move row
 
 print('\n==============================\n')
 print('Checking for errors...\n')
@@ -576,7 +575,6 @@ input('Continue to writing website database?')
 print('Writing...')
 
 # Load the numeric data from the main script
-typeColors = ["#ADBD21","#735A4A","#7B63E7","#FFC631","#EF70EF","#A55239","#F75231","#9CADF7","#6363B5","#7BCE52","#AE7A3B","#5ACEE7","#ADA594","#9141CB","#EF4179","#BDA55A","#81A6BE","#399CFF"]
 lines = []
 with open("game_files/package.json", "r") as fp:
     packageInfo = json.load(fp)
@@ -584,41 +582,64 @@ with open("game_files/package.json", "r") as fp:
 todayDate = date.today().strftime("%Y-%m-%d")
 lines.append(f'const latestDate = "{todayDate}";')
 lines.append('const typeColors = [') # Type colors
+typeColors = ["#ADBD21","#735A4A","#7B63E7","#FFC631","#EF70EF","#A55239","#F75231","#9CADF7","#6363B5","#7BCE52","#AE7A3B","#5ACEE7","#ADA594","#9141CB","#EF4179","#BDA55A","#81A6BE","#399CFF"]
 for color in typeColors:
     lines.append(f"'{color}',")
 lines.append('];\nconst fidThreshold = [') # fid category thresholds
-for threshold in fidThresholds:
+for threshold in fidThreshold:
     lines.append(f"{threshold},")
 lines.append('];\nconst upgradeCosts = [') # upgrade costs
 for index,costLine in enumerate(costParsed):
     lines.append(f"[{passiveData[index]},{costLine[0]},{costLine[1]},{costLine[2]},{friendData[index]}],".replace(', ',','))
- 
+
+TagToFID = { # List of ability/move FIDs that match specific tag filters
+    fidThreshold[10]:   [ str(line[0]) for line in orderedData if 59 in line[3] ], # Lure ability
+    fidThreshold[10]+1: [ str(line[0]) for line in orderedData if 37 in line[3] and line[0] < fidThreshold[1]], # Ignores abilities
+#   [fidThreshold[10]+1]: possibleFID.filter((fidToProc[fid-fidThreshold[0]][1].includes(37))), 
+#   [fidThreshold[10]+2]: possibleFID.filter((fidToProc[fid-fidThreshold[0]][1].includes(37))),
+#   [fidThreshold[10]+3]: possibleFID.filter((fidToProc[fid-fidThreshold[0]][1].includes(40))),
+#   [fidThreshold[10]+4]: possibleFID.filter(fidToProc[fid-fidThreshold[0]][1]<2
+#     && (fidToProc[fid-fidThreshold[0]][1].includes(1) || fidToProc[fid-fidThreshold[0]][1].includes(2))),
+#   Switches out target
+#   Spread moves
+#   Healing
+#   Setup
+#   Priority [fidThreshold[10]+3]: possibleFID.filter((fid) => fid >= fidThreshold[1] && fid < fidThreshold[2] && fidToProc[fid-fidThreshold[0]][5]>0 && fidToProc[fid-fidThreshold[0]][1]<2),
+}
+print(TagToFID)
+lines.append('];\nconst tagToFID = {') # fid associated with each tag
+for tagFID, relatedFID in TagToFID.items():
+    lines.append(f'{tagFID}: [{",".join(relatedFID)}],')
+
 # Format of orderedData: 
 #   Abilities: [fid[0], name[1], procs[2], tags[3]]
-#   Moves: [fid, name, [procs[chance,stat,val]], [tags], type, cat, pow, acc, pp, prio]
+#   Moves: [fid, name, [procs[chance,stat,mag]], [tags], type, cat, pow, acc, pp, prio]
 #            0     1      2                        3      4    5    6    7    8    9
 
 # Final structure of fidToProc[fid]:
 # ==================================
 # Abilities: [ [procs], [tags] ]
-#   procs = [[chance,stat,value], [...]]
-#       chance = chance of ability activating (flame body, etc.) > error on chance of 0 ???????????????????????
-#           or -1 for no chance indicator
-#           or -2 for ×value (default is +)
-#           or -3 for +value%
+#   procs = [[chance,stat,magnitude], [...]]
+#       chance is the chance of effect activating (flame body, etc.)
+#           > 0  : displays as value%
+#           = -1 : does not display chance indicator
+#           = -2 : changes magnitude display to ×magnitude (e.g. swift swim is [-2,4,2])
+#           = -3 : changes magnitude display to +magnitude% (e.g. supreme overlord is [-3,26,10])
 #       stat is which stat, status, etc.
-#           0-6 = self atk/def/spa/spd/spe/acc/eva
-#           7-13 = opp  atk/def/spa/spd/spe/acc/eva
-#           14-20 = pois/tox/sleep/freeze/para/burn/confuse
-#           21-26 = flinch/omni/dire/triatt/terablast/damage
-#       value is how much (default +value or -value)
-#           0 is don't show
-# Moves: [ [procs[chance,stat,val]], [tags], type, cat(phys/spec/stat), pow, acc, pp, prio]
+#           0  to  6 : atk/def/spa/spd/spe/acc/eva (for self)
+#           7  to 13 : atk/def/spa/spd/spe/acc/eva (for enemy)
+#           14 to 20 : pois/tox/sleep/freeze/para/burn/confuse
+#           21 to 26 : flinch/omni/direclaw/triattack/terablast/damage
+#       magnitude is how much the stat is altered by
+#           > 0 : displays as +value
+#           < 0 : displays as -value
+#           = 0 : does not display magnitude (used for status conditions, etc.)
+# Moves: [ [procs[chance,stat,mag]], [tags], type, cat(phys/spec/stat), pow, acc, pp, prio]
 #             0                        1       2    3                    4    5    6    7
 
 # ======================= Write numeric filter data to filters_global.js =======================
 # This is just numbers. Localized strings are written from updateLangs.py
-lines.append('];\nconst fidToProc = [') # Ability/move descriptions
+lines.append('};\nconst fidToProc = [') # Ability/move descriptions
 for fidLine in orderedData:
 
     text = "["
@@ -665,10 +686,8 @@ biome_src = "game_files/assets/images/arenas"
 biome_dest = "website/ui/biomes"
 with open("local_files/my_json/allFilters.json", "r") as file:
     allFilters = json.load(file)
-with open("local_files/my_json/fidThresholds.json", "r") as fp:
-    fidThresholds = json.load(fp)
 biomeNames = [filter[1].lower().replace(' ','_') for filter in allFilters if filter[0] == 'Biome']
-thisFID = fidThresholds[8]-1
+thisFID = fidThreshold[8]-1
 
 import os
 from PIL import Image
