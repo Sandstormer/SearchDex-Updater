@@ -13,7 +13,7 @@ ignoreOverrides = ['']
 # Can put 'all' to ignore for every language
 # This lets you see what the script can auto-translate
 
-warnLongNames = 0 
+warnNameLength = 0 
 # Set to 1 to warn of names that may be too long for the UI
 # Set to 0 to ignore this check
 
@@ -29,15 +29,15 @@ warnLongNames = 0
 # - zh-Hant - Chinese (Traditional)
 
 # How to do a translation:
-#   Add language to the langs loop
+#   Add language to allLangs
 #   Manually translate the phrases in manualTran
 #   If the main loop gives an error, the in-game translation is incomplete
 #   Only continue if there are no errors
 #   Check length of types/abilities/moves/species
 #   Check length and meaning of headers/etc
-#   Put in overrides for those if necessary
-#   Auto translate the help menu, but use exact translate for words that appear in headers/etc
-#   Provide overrides for headers/etc. to make sure spacing is good, and check for other bugs
+#   Put custom UI translations into the python override file
+#   Use consistent translations for words that appear elsewhere (headers/tags/etc.)
+#   Make sure spacing is good, shorten UI phrases if needed
 
 subs = { # Replacement strings to make text fit
     'en': [
@@ -48,7 +48,6 @@ subs = { # Replacement strings to make text fit
         ["10 Zygarde","10% Zygarde"],
         ["10 PC Zygarde","Power Construct 10% Zygarde"],
         ["Lowkey Toxtricity","Low Key Toxtricity"],
-        ["???","The End"],
     ],
     'fr': [
         ['Osmose Équine','Osmose'],
@@ -73,13 +72,13 @@ subs = { # Replacement strings to make text fit
 manualTran = {
     'en': {
         'exclusive': 'Exclusive',
-        'shinyVariants': 'Shiny Variants',
         'new': 'New',
-        'tag': 'Tag',
+        'tag': 'Tag', # A tag/attribute/property of a move
         'lureAbility': 'Lure Ability',
         'ignoresAbilities': 'Ignores Abilities',
         'targetSwitchesOut': 'Target Switches Out',
         'spreadMoves': 'Spread Moves',
+        'theEnd': 'The End', # The final biome/zone
         'waterImmunity': 'Water Immunity',
         'electricImmunity': 'Electric Immunity',
         'sunAbility': 'Sun Ability',
@@ -89,63 +88,99 @@ manualTran = {
     },
     'fr': {
         'exclusive': 'Exclusif',
-        'shinyVariants': 'Variantes Chromatique',
         'new': 'Nouvelle',
         'tag': 'Attribut',
         'lureAbility': 'Talent d’Appât',
         'ignoresAbilities': 'Ignore les Talents',
         'targetSwitchesOut': 'Force le Changement',
-        'spreadMoves': 'Attaques de Zone'
+        'spreadMoves': 'Attaques de Zone',
+        'theEnd': 'La Fin',
+        'waterImmunity': 'Immunité Eau',
+        'electricImmunity': 'Immunité Électrik',
+        'sunAbility': 'Talent Soleil',
+        'rainAbility': 'Talent Pluie',
+        'sandAbility': 'Talent Tempête de Sable',
+        'snowAbility': 'Talent Neige',
     },
     'ko': {
         'exclusive': '한정',
-        'shinyVariants': '색 다른 이로치',
         'new': '새로운',
         'tag': '속성',
         'lureAbility': '유인 특성',
         'ignoresAbilities': '특성 무시',
         'targetSwitchesOut': '상대 교체',
-        'spreadMoves': '범위 기술'
+        'spreadMoves': '범위 기술',
+        'theEnd': '끝',
+        'waterImmunity': '물 면역',
+        'electricImmunity': '전기 면역',
+        'sunAbility': '쾌청 특성',
+        'rainAbility': '비 특성',
+        'sandAbility': '모래바람 특성',
+        'snowAbility': '눈 특성',
     },
     'ja': {
         'exclusive': '限定',
-        'shinyVariants': '色違い',
         'new': '新しい',
         'tag': '属性',
         'lureAbility': 'おびき寄せ特性',
         'ignoresAbilities': '特性無視',
         'targetSwitchesOut': '強制交代',
-        'spreadMoves': '範囲技'
+        'spreadMoves': '範囲技',
+        'theEnd': '終わり',
+        'waterImmunity': 'みず無効',
+        'electricImmunity': 'でんき無効',
+        'sunAbility': '晴れ とくせい',
+        'rainAbility': '雨 とくせい',
+        'sandAbility': 'すなあらし とくせい',
+        'snowAbility': 'ゆき とくせい',
     },
     'zh-Hans': {
         'exclusive': '限定',
-        'shinyVariants': '变种闪光',
         'new': '新的',
         'tag': '属性',
         'lureAbility': '诱导特性',
         'ignoresAbilities': '无视特性',
         'targetSwitchesOut': '迫使对手替换',
-        'spreadMoves': '范围招式'
+        'spreadMoves': '范围招式',
+        'theEnd': '终点',
+        'waterImmunity': '免疫水',
+        'electricImmunity': '免疫电',
+        'sunAbility': '晴天特性',
+        'rainAbility': '雨天特性',
+        'sandAbility': '沙暴特性',
+        'snowAbility': '雪天特性',
     },
     'es-ES': {
         'exclusive': 'Exclusivo',
-        'shinyVariants': 'Variantes Shiny',
         'new': 'Nuevo',
         'tag': 'Atributo',
         'lureAbility': 'Habilidad de Colonia',
         'ignoresAbilities': 'Ignora Habilidades',
         'targetSwitchesOut': 'Cambia al Objetivo',
-        'spreadMoves': 'Movimientos de Área'
+        'spreadMoves': 'Movimientos de Área',
+        'theEnd': 'El Final',
+        'waterImmunity': 'Inmunidad Agua',
+        'electricImmunity': 'Inmunidad Eléctrica',
+        'sunAbility': 'Habilidad de Sol',
+        'rainAbility': 'Habilidad de Lluvia',
+        'sandAbility': 'Habilidad de Tormenta de Arena',
+        'snowAbility': 'Habilidad de Nieve',
     },
     'it': {
         'exclusive': 'Esclusivo',
-        'shinyVariants': 'Varianti Cromatiche',
         'new': 'Nuovo',
         'tag': 'Attributo',
         'lureAbility': 'Abilità Esca',
         'ignoresAbilities': 'Ignora Abilità',
         'targetSwitchesOut': 'Forza il Cambio',
-        'spreadMoves': 'Mosse ad Area'
+        'spreadMoves': 'Mosse ad Area',
+        'theEnd': 'La Fine',
+        'waterImmunity': 'Immunità Acqua',
+        'electricImmunity': 'Immunità Elettro',
+        'sunAbility': 'Abilità Sole',
+        'rainAbility': 'Abilità Pioggia',
+        'sandAbility': 'Abilità Tempesta di Sabbia',
+        'snowAbility': 'Abilità Neve',
     }
 }
 
@@ -177,7 +212,8 @@ for lang in langs: # =========================================== Main loop for e
     print(f"\n============= Beginning {lang} =============")
     path = f'{pathLocales}/{lang}'
 
-    tall = {}
+    # Load all the official translations for the current language
+    tall = {} # t(ranslations) all
     fileNames = [file for file in os.listdir(path) if file.lower().endswith('.json')]
     for fileName in fileNames:
         with open(f'{path}/{fileName}', "r", encoding="utf-8") as file:
@@ -195,7 +231,7 @@ for lang in langs: # =========================================== Main loop for e
             text = tall['pokemon-info']['type'][filter[1].lower()]
             text = shortenText(text)
             locFilters[index] = text
-            if len(text) > 8 and warnLongNames:
+            if len(text) > 8 and warnNameLength:
                 print('Long type found:',text)
     # Translate abilities
     for index,filter in enumerate(allFilters):
@@ -221,7 +257,7 @@ for lang in langs: # =========================================== Main loop for e
             text = shortenText(text)
             locFilters[index] = text
             # print('Translated',filter[1],'to',text)
-            if len(text) > 15 and warnLongNames:
+            if len(text) > 15 and warnNameLength:
                 print('Long ability found:',text)
     # Translate moves
     for index,filter in enumerate(allFilters):
@@ -230,7 +266,7 @@ for lang in langs: # =========================================== Main loop for e
             text = shortenText(text)
             locFilters[index] = text
             # print('Translated',filter[1],'to',text)
-            if len(text) > 15 and warnLongNames:
+            if len(text) > 15 and warnNameLength:
                 print('Long move found:',text)
     # Copy numeric values
     for index,filter in enumerate(allFilters):
@@ -297,7 +333,9 @@ for lang in langs: # =========================================== Main loop for e
     for index,filter in enumerate(allFilters):
         if filter[0] == 'Biome':
             text = tall['biomes'][format_for_camel(filter[1])]
-            if lang == 'en': # Get official names of biome, even in english
+            if text == "???":
+                text = manualTran[lang]['theEnd']
+            if lang == 'en': # Get official names of biomes, even in english
                 filter[1] = text
             locFilters[index] = shortenText(text)
     # Translate tag names
@@ -305,10 +343,7 @@ for lang in langs: # =========================================== Main loop for e
         if filter[0] == 'Tag':
             for key in ['lureAbility','ignoresAbilities','targetSwitchesOut','spreadMoves']:
                 if manualTran['en'][key] in filter[1]:
-                    text = manualTran[lang][key]
-                    # if '(Ability)' in filter[1]: text += f"({re.sub(r' *: *','',tall['filter-text']['ability1Field'])})"
-                    # if '(Move)' in filter[1]: text += f"({re.sub(r' *: *','',tall['filter-text']['move1Field'])})"
-                    locFilters[index] = text
+                    locFilters[index] = manualTran[lang][key]
     # Translate names of family filters
     for index,filter in enumerate(allFilters):
         if filter[0] == 'Related To':
@@ -330,33 +365,34 @@ for lang in langs: # =========================================== Main loop for e
                 nameFormat = tall['pokemon-form']['appendForm']['paldea'].replace('Galar','Paldea') # Remove later !!!!
             nameFormat = re.sub('{{pokemonName}}',justLocSpec,nameFormat)
             nameFormat = re.sub("'",'’',nameFormat) # Replace single quotes with unicode
-            # nameFormat = re.sub(":",' ',nameFormat)
             # print('Translated',specLine[0],'to',nameFormat)
             locFilters[index] = nameFormat
-            if len(nameFormat) > 20 and warnLongNames:
+            if len(nameFormat) > 20 and warnNameLength:
                 print('Long name found:',nameFormat)
             if not nameFormat or '{' in nameFormat:
                 input(f'***** Error: Pokemon name failure\n{nameFormat}')
     for i in range(len(locFilters)):
         locFilters[i] = re.sub('-',' ',str(locFilters[i]))
-    if lang == 'en': # Many of the english filters are custom from updateDatabase.py
-        locFilters = [shortenText(line[1]) for line in allFilters] # Only some are modified in this file (like biome)
+    # Many of the english filters are custom from updateDatabase.py
+    if lang == 'en': # Only some are modified in this file (currently just biomes)
+        locFilters = [shortenText(line[1]) for line in allFilters]
     print('Done translating filter names')
     # Check for the shortest and longest translations of types/abilities/moves
     with open("local_files/my_json/fidThresholds.json", "r") as fp:
-        fidThresholds = json.load(fp)
+        fidThreshold = json.load(fp)
     catNames = ['TYPE','ABILITY','MOVE']
-    for i in [0,1,2]:
-        filterStart = fidThresholds[i-1]
-        if (i==0): filterStart = 0
-        maxLengthCat = max(locFilters[filterStart:fidThresholds[i]], key=len)
-        print('Longest translated',catNames[i],'is',maxLengthCat,'(',len(maxLengthCat),'char )')
-        minLengthCat = min(locFilters[filterStart:fidThresholds[i]], key=len)
-        print('Shortest translated',catNames[i],'is',minLengthCat,'(',len(minLengthCat),'char )')
-    for line in locFilters[:fidThresholds[2]]:
-        collisionCount = sum(1 for inLine in locFilters if line.lower() in inLine.lower())
-        if collisionCount > 20:
-            print('High collisions in',line,'[',collisionCount,'hits ]')
+    if warnNameLength:
+        for i in [0,1,2]:
+            filterStart = fidThreshold[i-1]
+            if (i==0): filterStart = 0
+            maxLengthCat = max(locFilters[filterStart:fidThreshold[i]], key=len)
+            print('Longest translated',catNames[i],'is',maxLengthCat,'(',len(maxLengthCat),'char )')
+            minLengthCat = min(locFilters[filterStart:fidThreshold[i]], key=len)
+            print('Shortest translated',catNames[i],'is',minLengthCat,'(',len(minLengthCat),'char )')
+        for line in locFilters[:fidThreshold[2]]:
+            collisionCount = sum(1 for inLine in locFilters if line.lower() in inLine.lower())
+            if collisionCount > 20:
+                print('High collisions in',line,'[',collisionCount,'hits ]')
 
     # Report any missing filter translations (these are mandatory)
     missingAmount = sum([1 for line in locFilters if not line])
@@ -367,7 +403,7 @@ for lang in langs: # =========================================== Main loop for e
     with open("local_files/my_json/allSpecies.json", "r") as file:
         allSpecies = json.load(file)
     maxLengthSpeciesEng = max(len(specLine[0]) for specLine in allSpecies)
-    if lang == 'en':
+    if lang == 'en' and warnNameLength:
         print('Longest species name in english list is',maxLengthSpeciesEng)
     locSpecies = ['' for line in allSpecies]
     maxLengthSpecies = 0
@@ -455,23 +491,23 @@ for lang in langs: # =========================================== Main loop for e
         # Insert the species name, and remove most punctuation
         nameFormat = re.sub('{{pokemonName}}',justLocSpec,nameFormat)
         nameFormat = re.sub("'",'’',nameFormat) # Replace single quotes with unicode
-        # nameFormat = re.sub(":",' ',nameFormat)
         # print('Translated',specLine[0],'to',nameFormat)
-        if lang == 'en': # Use my custom english names, using form keys, not actual form names
+        if lang == 'en': # Use my original english names, using form keys, not actual form names
             nameFormat = specLine[0] # They don't have punctuation because I just use the keys from the code
             # To-do: Farfetch'd, Sirfetch'd, Ho-oh, Porygon-Z, Porygon2, Type: Null, Mr. Mime, Mime Jr., Mr. Rime
         nameFormat = shortenText(nameFormat)
         locSpecies[index] = nameFormat
         maxLengthSpecies = max(maxLengthSpecies, len(nameFormat))
-        if len(nameFormat) > maxLengthSpeciesEng and warnLongNames:
+        if len(nameFormat) > maxLengthSpeciesEng and warnNameLength:
             print('Name longer than',maxLengthSpeciesEng,'found:',nameFormat)
         if not nameFormat or '{' in nameFormat:
             input(f'***** Error: Pokemon name failure\n{nameFormat}\n{specLine}')
     print('Done translating species names')
-    maxLengthCat = max(locSpecies, key=len)
-    print('Longest translated species is',maxLengthCat,'(',len(maxLengthCat),'char )')
-    minLengthSpecies = min(locSpecies, key=len)
-    print('Shortest translated species is',minLengthCat,'(',len(minLengthCat),'char )')
+    if warnNameLength:
+        maxLengthCat = max(locSpecies, key=len)
+        print('Longest translated species is',maxLengthCat,'(',len(maxLengthCat),'char )')
+        minLengthSpecies = min(locSpecies, key=len)
+        print('Shortest translated species is',minLengthCat,'(',len(minLengthCat),'char )')
     missingAmount = sum([1 for line in locSpecies if not line])
     if missingAmount: input(f'***** Missing {missingAmount} species names')
 
@@ -487,7 +523,7 @@ for lang in langs: # =========================================== Main loop for e
             else:
                 text = ''
                 print('No description for',filter[1],'in',lang)
-            locDesc[index-fidThresholds[0]] = text
+            locDesc[index-fidThreshold[0]] = text
     # Translate moves
     for index,filter in enumerate(allFilters):
         if filter[0] == 'Move':
@@ -496,7 +532,7 @@ for lang in langs: # =========================================== Main loop for e
             else:
                 text = ''
                 print('** No description for',filter[1],'in',lang)
-            locDesc[index-fidThresholds[0]] = text
+            locDesc[index-fidThreshold[0]] = text
     print('Done translating ability/move descriptions')
     missingAmount = sum([1 for line in locDesc if not line])
     if missingAmount: print('** Missing',missingAmount,'ability/move descriptions')
@@ -544,7 +580,7 @@ for lang in langs: # =========================================== Main loop for e
     locUI['altText'][15] = re.sub(r'\s*:\s*','',tall['pokedex-ui-handler']['ultra'])
     locUI['altText'][16] = tall['pokedex-ui-handler']['menuTmMoves']
     locUI['altText'][17] = tall['pokemon-summary']['lv']
-    # locUI['altText'][18] = 'Evo'
+    # locUI['altText'][18] = 'Evo'  # (a 3-char version of 'Evolution')
     locUI['altText'][19] = tall['filter-bar']['egg']
 
     locUI['catToName'] = ['' for line in overrides['en']['catToName']]
@@ -556,10 +592,10 @@ for lang in langs: # =========================================== Main loop for e
     locUI['catToName'][5] = re.sub(r'\s*:\s*','',tall['pokedex-ui-handler']['cycleGender'])
     locUI['catToName'][6] = re.sub('[&nbsp\s]','',tall['run-history']['mode'])
     locUI['catToName'][7] = tall['filter-bar']['egg']
-    locUI['catToName'][8] = manualTran[lang]['shinyVariants']
+    locUI['catToName'][8] = f"{re.sub(r' *: *','',tall['pokedex-ui-handler']['cycleShiny'])} {re.sub(r' *: *','',tall['pokedex-ui-handler']['cycleVariant'])}"
     locUI['catToName'][9] = tall['filter-bar']['biomeFilter']
     locUI['catToName'][10] = tall['pokedex-ui-handler']['evolutions']
-    locUI['catToName'][11] = manualTran[lang]['tag']
+    # locUI['catToName'][11] = manualTran[lang]['tag']
 
     locUI['infoText'] = ['' for line in overrides['en']['infoText']]
     locUI['infoText'][0] = tall['pokemon-summary']['friendship']
@@ -567,7 +603,7 @@ for lang in langs: # =========================================== Main loop for e
     locUI['infoText'][2] = tall['filter-bar']['costReduction']
     locUI['infoText'][3] = tall['pokedex-ui-handler']['sameSpeciesEgg']
     locUI['infoText'][4] = tall['filter-bar']['hiddenAbility']
-    locUI['infoText'][5] = f"{tall['filter-bar']['egg']} {manualTran[lang]['exclusive']}"
+    # locUI['infoText'][5] = f"{tall['filter-bar']['egg']} {manualTran[lang]['exclusive']}"
     # locUI['infoText'][6] = 'Baby Exclusive'
     # locUI['infoText'][7] = 'Paradox Pokemon'
     # locUI['infoText'][8] = 'Form Change'
