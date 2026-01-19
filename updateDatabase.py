@@ -348,12 +348,14 @@ for line in biome_data:
             code += 2*('DAY' in line[1][index][2])
             code += 4*('DUSK' in line[1][index][2])
             code += 8*('NIGHT' in line[1][index][2])
+            if code%20 == 15:
+                print('** Warning: All times of day fround in',line)
         line[1][index].append(code)
     for specLine in combined_data:
         if line[0] == specLine[5]: # Assign biome data to base species
             specLine[40] = line[1]
             break
-# Structure of biome_data[species] is like ['Bulbasaur', ['GRASS', 'RARE', [], 80]]
+# Structure of line[40] is like [ 'Caterpie', [ ['TOWN', 'COMMON', ['DAWN', 'DAY'], 23],[] ] ]
 print('Finished assigning base biomes')
 
 # Open and read the file of passives ***********************************
@@ -409,14 +411,37 @@ for stages in range(2): # Up to 2 evolutions
             throwError(f'Failed to find pre-evo {evoLine[0]}')
         for parentName in evoLine[1:]:
             for parentLine in combined_data:
-                if parentName == parentLine[5]: # Copy properties from child
+                if parentName == parentLine[5]: # Copy properties from child to parent
                     parentLine[24:28] = childLine[24:28]          # Egg moves
                     parentLine[28] = copy.deepcopy(childLine[28]) # All moves
                     parentLine[29:31] = childLine[29:31]          # Cost, egg tier
                     parentLine[34] = childLine[34]                # Starter row
+                    for biomeLine in childLine[40]:
+                        parentLine[40].append(biomeLine)
                     break # Break the parent search loop
             else: # If the parent search loop fails to break
                 throwError(f'Failed to find post-evo: {parentName}')
+# The game usually only provides biome data to one species per evolution line
+# The evolution stage is upgraded/downgraded by determineEnemySpecies in file:///\.\game_files\src\data\pokemon-species.ts
+# Biome propagation (line[40]) in my code must be done in a particular way: forward twice, then backward twice
+# That prevents split evolutions from influencing each other (e.g. Dustox/Beautifly)
+# Structure of line[40] is like [ 'Caterpie', [ ['TOWN', 'COMMON', ['DAWN', 'DAY'], 23],[] ] ]
+for stages in range(2): # Up to 2 evolutions
+    for evoLine in evolution_data: # Assign biome data backwards
+        for childLine in combined_data:
+            if evoLine[0] == childLine[5]: # Find the childLine, break when matching
+                break
+        else: # If the child search loop fails to break
+            throwError(f'Failed to find pre-evo {evoLine[0]}')
+        for parentName in evoLine[1:]:
+            for parentLine in combined_data:
+                if parentName == parentLine[5]: # Copy biomes from parent to child (reverse)
+                    for biomeLine in parentLine[40]:
+                        childLine[40].append(biomeLine)
+                    break # Break the parent search loop
+            else: # If the parent search loop fails to break
+                throwError(f'Failed to find post-evo: {parentName}')
+
 for line in combined_data: # Assign data through forms **********************
     if line[2] != '': # Only for forms
         par = int(line[2])
@@ -467,10 +492,9 @@ for line in combined_data: # Check for empty properties in combined_data
         line[40] = []
         line[41] = '' # Not form exclusive
         line[45] = 5  # Just unobtainable
-        print('Starmobile:',line[5])
+        # print('Starmobile:',line[5])
     # if line[41] and line[45]:
-    #     print('Double exclusive:',line[5])
-    #     print(line[5],line[45])
+    #     print('Double exclusive:',line[5],line[41],line[45])
     if line[40] == '' and line[45] == -1:
         throwError(f'Missing Biomes: {line[5]}')
 
@@ -853,9 +877,11 @@ for j in ['Lure Ability','Ignores Abilities']:
     allFilters.append(['Tag',j])
 
 # Process the biome data:
-# Currently, biome_data[species] is like ['Bulbasaur', ['GRASS', 'RARE', [], 80]]
-# Encode the biome data as [Biome Name, fid, [code1,code2,...]]
-# Will be written to js file as fid:[code1,code2,...]
+# Structure of line[40] is like [ 'Caterpie', [ ['TOWN', 'COMMON', ['DAWN', 'DAY'], 23],[] ] ]
+# This step encodes that data as [Biome Name, fid, [code1,code2,...]]
+# Multiple encounters in the same biome are put into a list in that biome (instead of a separate line)
+# Will eventually be written to js file as fid:[code1,code2,...]
+# 'code' is the encoded rarity and time of day
 biomeForms = [ # manually updated from getSpeciesFormIndex in file:///\.\game_files\src\field\arena.ts
     ['Plant Burmy','Forest'],
     ['Sandy Burmy','Beach'],
@@ -871,16 +897,16 @@ biomeFormsTime = [ # manually updated from getSpeciesFormIndex in arena.ts
 ]   
 for line in trimmed_data:
     encoded = []
-    if isinstance(line[40],list): # If there are biomes, and pokemon is base or form exclusive
+    if isinstance(line[40],list): # If there are biomes
         for biomeLine in line[40]:
             abort = 0
             # If a species is limited by biome/time, it must pass a check before the biomes are written
-            for speciesLine in biomeForms: # Enforce biome specific forms by matching biome name
+            for speciesLine in biomeForms: # Enforce specific BIOME FORMS by matching biome name
                 if line[5] == speciesLine[0]:
                     if format_for_disp(biomeLine[0]) != speciesLine[1]:
                         abort = 1
                         # print(line[5],biomeLine[0])
-            for speciesLine in biomeFormsTime: # Enforce time of day forms by checking remainder of encounter code
+            for speciesLine in biomeFormsTime: # Enforce TIME OF DAY forms by checking remainder of encounter code
                 if line[5] == speciesLine[0]:  # Abort if none of the valid times are in the encounter code
                     if all(not(i & (biomeLine[3]%20)) for i in speciesLine[1]):
                         abort = 1
@@ -890,7 +916,17 @@ for line in trimmed_data:
                 newFID = filterToFID[f'biome{format_for_attr(format_for_disp(biomeLine[0]))}']
                 for encLine in encoded:
                     if encLine[1] == newFID: # If the biome already exists, add this encounter to the list
-                        encLine[2].append(biomeLine[3])
+                        # In the encounter codes for that biome, check for an entry that matches the rarity
+                        for index,existingEncoding in enumerate(encLine[2]):
+                            if biomeLine[3]//20 == existingEncoding//20:
+                                # Add the time of day together with bitwise OR
+                                # If no times are active, it counts as ALL times (15)
+                                # If the combination is ALL times, do mod 15 to not show any times
+                                timeOfDayEncoding = ( ( biomeLine[3]%20 or 15 ) | ( existingEncoding%20 or 15 ) ) % 15
+                                encLine[2][index] = timeOfDayEncoding + existingEncoding//20*20
+                                break
+                        else: # Add the encounter code as a new rarity
+                            encLine[2].append(biomeLine[3])
                         break
                 else: # Create a new FID entry for the biome
                     encoded.append([biomeLine[0], newFID, [biomeLine[3]]])
@@ -971,7 +1007,7 @@ attNames = ['rowno','form','parno','dexno','img','spec','desc','type1','type2','
            #    28       29      30       31     32       33          34         35         36        37       38
             'freshStart','biomes','formExclusive','unobtainable','newVariants','evoClass','exclusiveClass','formClass']
            #    39          40           41             42             43           44            45           46
-omitAttr = [0, 1, 2, 20, 21, 22, 28, 34, 35, 36, 37, 38, 40, 41]
+omitAttr = [0, 1, 2, 20, 21, 22, 28, 34, 35, 36, 37, 38]
 soloAttr = [] # Put an attribute here to only show changes to that, and ignores changes to others
 for i in range(len(soloAttr)):                              # You can use strings for ranges (inclusive)
     if isinstance(soloAttr[i], str) and '-' in soloAttr[i]: # i.e. [1,'3-5',8] becomes [1,3,4,5,8]
