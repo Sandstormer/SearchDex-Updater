@@ -592,24 +592,26 @@ lines.append('];\nconst upgradeCosts = [') # upgrade costs
 for index,costLine in enumerate(costParsed):
     lines.append(f"[{passiveData[index]},{costLine[0]},{costLine[1]},{costLine[2]},{friendData[index]}],".replace(', ',','))
 
-TagToFID = { # List of ability/move FIDs that match specific tag filters
-    fidThreshold[10]:   [ str(line[0]) for line in orderedData if 59 in line[3] ], # Lure ability
-    fidThreshold[10]+1: [ str(line[0]) for line in orderedData if 37 in line[3] and line[0] < fidThreshold[1]], # Ignores abilities
-#   [fidThreshold[10]+1]: possibleFID.filter((fidToProc[fid-fidThreshold[0]][1].includes(37))), 
-#   [fidThreshold[10]+2]: possibleFID.filter((fidToProc[fid-fidThreshold[0]][1].includes(37))),
-#   [fidThreshold[10]+3]: possibleFID.filter((fidToProc[fid-fidThreshold[0]][1].includes(40))),
-#   [fidThreshold[10]+4]: possibleFID.filter(fidToProc[fid-fidThreshold[0]][1]<2
-#     && (fidToProc[fid-fidThreshold[0]][1].includes(1) || fidToProc[fid-fidThreshold[0]][1].includes(2))),
-#   Switches out target
-#   Spread moves
-#   Healing
-#   Setup
-#   Priority [fidThreshold[10]+3]: possibleFID.filter((fid) => fid >= fidThreshold[1] && fid < fidThreshold[2] && fidToProc[fid-fidThreshold[0]][5]>0 && fidToProc[fid-fidThreshold[0]][1]<2),
+tagToFID = [ # List of ability/move FIDs that match specific tag filters
+    [ str(line[0]) for line in orderedData if 59 in line[3] ], # Lure ability
+    [ str(line[0]) for line in orderedData if 37 in line[3] and line[0] < fidThreshold[1]], # Ignores abilities
+    # Possible things to add later: Switches out target, Spread moves, Healing, Setup, Priority
+]
+synergyAbilities = {
+    'electric':['lightningrod','motordrive','voltabsorb'],
+    'fire':['flashfire','wellbakedbody'],
+    'water':['dryskin','stormdrain','waterabsorb'],
+    'rain':['drizzle','primordialsea','dryskin','hydration','raindish','swiftswim'],
+    'sand':['sandstream','sandforce','sandrush','sandveil'],
+    'snow':['snowwarning','icebody','iceface','slushrush','snowcloak'],
+    'sun':['drought','desolateland','orichalcumpulse','chlorophyll','flowergift','harvest','leafguard','protosynthesis','solarpower'],
 }
-print(TagToFID)
-lines.append('];\nconst tagToFID = {') # fid associated with each tag
-for tagFID, relatedFID in TagToFID.items():
-    lines.append(f'{tagFID}: [{",".join(relatedFID)}],')
+for synLine in synergyAbilities.values():
+    tagToFID.append([str(filterToFID[f'ability{abName}']) for abName in synLine])
+# Write fid associated with each tag to filters_global.js
+lines.append('];\nconst tagToFID = {')
+for index, relatedFID in enumerate(tagToFID):
+    lines.append(f'{fidThreshold[10]+index}: [{",".join(relatedFID)}],')
 
 # Format of orderedData: 
 #   Abilities: [fid[0], name[1], procs[2], tags[3]]

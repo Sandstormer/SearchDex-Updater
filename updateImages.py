@@ -48,7 +48,7 @@ overrideFrame = {
 
 # ===================== Do not touch below this line =======================
 
-import re, os, json
+import os, json
 import numpy as np
 from PIL import Image
 

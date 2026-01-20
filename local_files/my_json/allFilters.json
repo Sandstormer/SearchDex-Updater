@@ -7230,5 +7230,33 @@
     [
         "Tag",
         "Ignores Abilities"
+    ],
+    [
+        "Tag",
+        "Electric Immunity"
+    ],
+    [
+        "Tag",
+        "Fire Immunity"
+    ],
+    [
+        "Tag",
+        "Water Immunity"
+    ],
+    [
+        "Tag",
+        "Rain Ability"
+    ],
+    [
+        "Tag",
+        "Sand Ability"
+    ],
+    [
+        "Tag",
+        "Snow Ability"
+    ],
+    [
+        "Tag",
+        "Sun Ability"
     ]
 ]
