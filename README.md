@@ -11,15 +11,21 @@ If that is what you are looking for, you can go to [the website](https://sandsto
 
 ## How to use
 
-1. Install Python. I use Python 3.10.6, but other versions will probably work. Check your installed Python version with this command:
+1. Install [Python 3.10.6](https://www.python.org/downloads/release/python-3106/). Newer versions may also work. You can check your installed Python version with this command:
 
         python --version
+
+2. Install the following Python submodules, by executing this command:
+
+        pip install numpy pillow
+
+3. Install [Git](https://git-scm.com/download/win) for your operating system. This is necessary.
    
-2. Download or clone this repository. If you have Git installed, you can use the command:
+4. Clone this repository, by running the following command in a folder of your choice:
 
         git clone https://github.com/Sandstormer/SearchDex-Updater.git
 
-3. Run the following scripts in order, from an IDE. There are more instructions in each file.
+5. Run the following scripts in order, from an IDE. There are more instructions in each file.
 
 - updateGameFiles.py
 - updateImages.py
@@ -27,6 +33,6 @@ If that is what you are looking for, you can go to [the website](https://sandsto
 - updateFilters.py
 - updateLangs.py
 
-The website files for the [Searchdex itself](https://github.com/Sandstormer/PokeRogue-Dex) will be cloned into the "website" folder. If that folder already exists, that step will be skipped, and the website structure files (index.html, style.css, script.js) will not be updated. 
+The first script clones the repository of the game files. Also, the website files for the [SearchDex itself](https://github.com/Sandstormer/PokeRogue-Dex) will be cloned into the "website" folder. If the "website" folder already exists, that step will be skipped, and the website structure files (index.html, style.css, script.js) will not be updated. This allows the script to fetch new game files without overwriting changes I make to the website.
 
 Running the update scripts will update the website data files such as pokedex_data.js, global_data.js, all {lang}.js, and all images. The website 'structure' mentioned above will not be modified.
