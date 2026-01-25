@@ -11,7 +11,7 @@ If that is what you are looking for, you can go to [the website](https://sandsto
 
 ## How to use
 
-1. Install [Python 3.10.6](https://www.python.org/downloads/release/python-3106/). Newer version may also work. You can check your installed Python version with this command:
+1. Install [Python 3.10.6](https://www.python.org/downloads/release/python-3106/). Newer versions may also work. You can check your installed Python version with this command:
 
         python --version
 
