@@ -6,17 +6,26 @@ biomes: [['GRASS', 1213, [80]]] > [['GRASS', 1213, [80, 100]]]<br>
 Ivysaur:<br>
 biomes: [['GRASS', 1213, [80]]] > [['GRASS', 1213, [80, 100]]]<br>
 <br>
+Gigantamax Venusaur:<br>
+formExclusive: 1 > 2<br>
+<br>
 Charmander:<br>
 biomes: [['VOLCANO', 1235, [80]]] > [['VOLCANO', 1235, [80, 100]]]<br>
 <br>
 Charmeleon:<br>
 biomes: [['VOLCANO', 1235, [80]]] > [['VOLCANO', 1235, [80, 100]]]<br>
 <br>
+Gigantamax Charizard:<br>
+formExclusive: 1 > 2<br>
+<br>
 Squirtle:<br>
 biomes: [['LAKE', 1219, [80]]] > [['LAKE', 1219, [80, 100]]]<br>
 <br>
 Wartortle:<br>
 biomes: [['LAKE', 1219, [80]]] > [['LAKE', 1219, [80, 100]]]<br>
+<br>
+Gigantamax Blastoise:<br>
+formExclusive: 1 > 2<br>
 <br>
 Caterpie:<br>
 biomes: [['TOWN', 1234, [23]]] > [['TOWN', 1234, [23]], ['FOREST', 1212, [23]]]<br>
@@ -29,6 +38,7 @@ biomes: [['FOREST', 1212, [23]]] > [['FOREST', 1212, [23]], ['TOWN', 1234, [23]]
 <br>
 Gigantamax Butterfree:<br>
 biomes: [['FOREST', 1212, [23]]] > [['FOREST', 1212, [23]], ['TOWN', 1234, [23]]]<br>
+formExclusive: 1 > 2<br>
 <br>
 Weedle:<br>
 biomes: [['TOWN', 1234, [32]]] > [['TOWN', 1234, [32]], ['FOREST', 1212, [32]]]<br>
@@ -95,6 +105,7 @@ biomes: [['PLAINS', 1223, [40]], ['METROPOLIS', 1221, [40]], ['POWER_PLANT', 122
 <br>
 Gigantamax Pikachu:<br>
 biomes: [['PLAINS', 1223, [40]], ['METROPOLIS', 1221, [40]], ['POWER_PLANT', 1224, [20]]] > [['PLAINS', 1223, [40]], ['METROPOLIS', 1221, [40]], ['POWER_PLANT', 1224, [20, 60]], ['TOWN', 1234, [120]], ['ISLAND', 1216, [43, 63]]]<br>
+formExclusive: 1 > 2<br>
 <br>
 Raichu:<br>
 biomes: [['POWER_PLANT', 1224, [60]]] > [['POWER_PLANT', 1224, [20, 60]], ['PLAINS', 1223, [40]], ['METROPOLIS', 1221, [40]], ['TOWN', 1234, [120]]]<br>
@@ -173,6 +184,7 @@ biomes: [['TOWN', 1234, [52]], ['PLAINS', 1223, [32]]] > [['TOWN', 1234, [52]], 
 <br>
 Gigantamax Meowth:<br>
 biomes: [['TOWN', 1234, [52]], ['PLAINS', 1223, [32]]] > [['TOWN', 1234, [52]], ['PLAINS', 1223, [32, 72]]]<br>
+formExclusive: 1 > 2<br>
 <br>
 Persian:<br>
 biomes: [['PLAINS', 1223, [32, 72]]] > [['PLAINS', 1223, [32, 72]], ['TOWN', 1234, [52]]]<br>
@@ -224,6 +236,7 @@ biomes: [['CONSTRUCTION_SITE', 1206, [60]]] > [['CONSTRUCTION_SITE', 1206, [20, 
 <br>
 Gigantamax Machamp:<br>
 biomes: [['CONSTRUCTION_SITE', 1206, [60]]] > [['CONSTRUCTION_SITE', 1206, [20, 60]], ['MOUNTAIN', 1222, [40]], ['FACTORY', 1210, [20]]]<br>
+formExclusive: 1 > 2<br>
 <br>
 Bellsprout:<br>
 biomes: [['TOWN', 1234, [43]], ['FOREST', 1212, [23]]] > [['TOWN', 1234, [43]], ['FOREST', 1212, [23, 63]]]<br>
@@ -287,6 +300,7 @@ biomes: [['GRAVEYARD', 1214, [60]], ['ABYSS', 1202, [60]]] > [['GRAVEYARD', 1214
 <br>
 Gigantamax Gengar:<br>
 biomes: [['GRAVEYARD', 1214, [60]], ['ABYSS', 1202, [60]]] > [['GRAVEYARD', 1214, [20, 60]], ['ABYSS', 1202, [40, 60]], ['TEMPLE', 1233, [20]]]<br>
+formExclusive: 1 > 2<br>
 <br>
 Onix:<br>
 biomes: [['BADLANDS', 1203, [80]], ['CAVE', 1205, [80, 60]], ['CONSTRUCTION_SITE', 1206, [80]]] > [['BADLANDS', 1203, [80, 100]], ['CAVE', 1205, [80, 60]], ['CONSTRUCTION_SITE', 1206, [80]]]<br>
@@ -299,6 +313,9 @@ biomes: [['RUINS', 1225, [20, 60]]] > [['RUINS', 1225, [20, 60]], ['SLUM', 1228,
 <br>
 Krabby:<br>
 biomes: [['BEACH', 1204, [20]]] > [['BEACH', 1204, [20, 60]]]<br>
+<br>
+Gigantamax Kingler:<br>
+formExclusive: 1 > 2<br>
 <br>
 Voltorb:<br>
 biomes: [['POWER_PLANT', 1224, [20]], ['FACTORY', 1210, [20]], ['LABORATORY', 1218, [20]]] > [['POWER_PLANT', 1224, [20]], ['FACTORY', 1210, [20]], ['LABORATORY', 1218, [20, 60]]]<br>
@@ -363,6 +380,9 @@ biomes: [['VOLCANO', 1235, [40]]] > [['VOLCANO', 1235, [40, 60]], ['FACTORY', 12
 Magikarp:<br>
 biomes: [['SEA', 1226, [40]], ['LAKE', 1219, [40]]] > [['SEA', 1226, [40, 100]], ['LAKE', 1219, [40, 100]]]<br>
 <br>
+Gigantamax Lapras:<br>
+formExclusive: 1 > 2<br>
+<br>
 Eevee:<br>
 biomes: [['TOWN', 1234, [120]], ['PLAINS', 1223, [120]], ['METROPOLIS', 1221, [120]], ['MEADOW', 1220, [80]]] > [['TOWN', 1234, [120]], ['PLAINS', 1223, [120]], ['METROPOLIS', 1221, [120]], ['MEADOW', 1220, [80, 100, 120]], ['RUINS', 1225, [122, 102]], ['ABYSS', 1202, [120, 100]], ['LAKE', 1219, [120, 100]], ['POWER_PLANT', 1224, [120, 100]], ['VOLCANO', 1235, [120, 100]], ['JUNGLE', 1217, [100]], ['ICE_CAVE', 1215, [100]]]<br>
 <br>
@@ -371,6 +391,7 @@ biomes: [['TOWN', 1234, [120]], ['PLAINS', 1223, [120]], ['METROPOLIS', 1221, [1
 <br>
 Gigantamax Eevee:<br>
 biomes: [['TOWN', 1234, [120]], ['PLAINS', 1223, [120]], ['METROPOLIS', 1221, [120]], ['MEADOW', 1220, [80]]] > [['TOWN', 1234, [120]], ['PLAINS', 1223, [120]], ['METROPOLIS', 1221, [120]], ['MEADOW', 1220, [80, 100, 120]], ['RUINS', 1225, [122, 102]], ['ABYSS', 1202, [120, 100]], ['LAKE', 1219, [120, 100]], ['POWER_PLANT', 1224, [120, 100]], ['VOLCANO', 1235, [120, 100]], ['JUNGLE', 1217, [100]], ['ICE_CAVE', 1215, [100]]]<br>
+formExclusive: 1 > 2<br>
 <br>
 Vaporeon:<br>
 biomes: [['LAKE', 1219, [120, 100]]] > [['LAKE', 1219, [120, 100]], ['TOWN', 1234, [120]], ['PLAINS', 1223, [120]], ['METROPOLIS', 1221, [120]], ['MEADOW', 1220, [80]]]<br>
@@ -395,6 +416,7 @@ biomes: [['PLAINS', 1223, [120, 100]]] > [['PLAINS', 1223, [120, 100]], ['TOWN',
 <br>
 Gigantamax Snorlax:<br>
 biomes: [['PLAINS', 1223, [120, 100]]] > [['PLAINS', 1223, [120, 100]], ['TOWN', 1234, [160]]]<br>
+formExclusive: 1 > 2<br>
 <br>
 Dratini:<br>
 biomes: [['WASTELAND', 1236, [80]]] > [['WASTELAND', 1236, [80, 60]]]<br>
@@ -838,6 +860,15 @@ biomes: [['SEABED', 1227, [80]]] > [['SEABED', 1227, [80, 100]]]<br>
 Milotic:<br>
 biomes: [['SEABED', 1227, [100]]] > [['SEABED', 1227, [80, 100]]]<br>
 <br>
+Sunny Castform:<br>
+formExclusive: 1 > 3<br>
+<br>
+Rainy Castform:<br>
+formExclusive: 1 > 3<br>
+<br>
+Snowy Castform:<br>
+formExclusive: 1 > 3<br>
+<br>
 Shuppet:<br>
 biomes: [['GRAVEYARD', 1214, [20]], ['SLUM', 1228, [32]]] > [['GRAVEYARD', 1214, [20, 60]], ['SLUM', 1228, [32]]]<br>
 <br>
@@ -886,6 +917,21 @@ biomes: [['FACTORY', 1210, [120]], ['SPACE', 1230, [120]]] > [['FACTORY', 1210, 
 <br>
 Metang:<br>
 biomes: [['FACTORY', 1210, [120]], ['SPACE', 1230, [120]]] > [['FACTORY', 1210, [120, 100]], ['SPACE', 1230, [120, 100]]]<br>
+<br>
+Primal Kyogre:<br>
+formExclusive: 1 > 3<br>
+<br>
+Primal Groudon:<br>
+formExclusive: 1 > 3<br>
+<br>
+Attack Deoxys:<br>
+formExclusive: 1 > 3<br>
+<br>
+Defense Deoxys:<br>
+formExclusive: 1 > 3<br>
+<br>
+Speed Deoxys:<br>
+formExclusive: 1 > 3<br>
 <br>
 Turtwig:<br>
 biomes: [['GRASS', 1213, [80]]] > [['GRASS', 1213, [80, 100]]]<br>
@@ -971,6 +1017,7 @@ biomes: [['GRASS', 1213, [43]], ['JUNGLE', 1217, [23, 63]]] > [['GRASS', 1213, [
 <br>
 Sunshine Cherrim:<br>
 biomes: [['GRASS', 1213, [43]], ['JUNGLE', 1217, [23, 63]]] > [['GRASS', 1213, [40]], ['JUNGLE', 1217, [23, 63]], ['TOWN', 1234, [43]]]<br>
+formExclusive: 1 > 3<br>
 <br>
 East Shellos:<br>
 biomes: [['SWAMP', 1231, [20]], ['SEABED', 1227, [40]]] > [['SWAMP', 1231, [20, 60]], ['SEABED', 1227, [40]]]<br>
@@ -1109,6 +1156,69 @@ biomes: [['CAVE', 1205, [60]], ['CONSTRUCTION_SITE', 1206, [60]]] > [['CAVE', 12
 Dusknoir:<br>
 biomes: [['GRAVEYARD', 1214, [60]]] > [['GRAVEYARD', 1214, [20, 60]], ['TEMPLE', 1233, [20]]]<br>
 <br>
+Origin Dialga:<br>
+formExclusive: 1 > 3<br>
+<br>
+Origin Palkia:<br>
+formExclusive: 1 > 3<br>
+<br>
+Origin Giratina:<br>
+formExclusive: 1 > 3<br>
+<br>
+Sky Shaymin:<br>
+formExclusive: 1 > 3<br>
+<br>
+Fighting Arceus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Flying Arceus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Poison Arceus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Ground Arceus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Rock Arceus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Bug Arceus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Ghost Arceus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Steel Arceus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Fire Arceus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Water Arceus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Grass Arceus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Electric Arceus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Psychic Arceus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Ice Arceus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Dragon Arceus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Dark Arceus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Fairy Arceus:<br>
+formExclusive: 1 > 3<br>
+<br>
 Snivy:<br>
 biomes: [['JUNGLE', 1217, [80]]] > [['JUNGLE', 1217, [80, 100]]]<br>
 <br>
@@ -1244,6 +1354,9 @@ biomes: [['DESERT', 1207, [40]]] > [['DESERT', 1207, [40, 60]]]<br>
 Darumaka:<br>
 biomes: [['DESERT', 1207, [80]]] > [['DESERT', 1207, [80, 60]]]<br>
 <br>
+Zen Darmanitan:<br>
+formExclusive: 1 > 3<br>
+<br>
 Dwebble:<br>
 biomes: [['BEACH', 1204, [20]]] > [['BEACH', 1204, [20, 60]]]<br>
 <br>
@@ -1264,6 +1377,9 @@ biomes: [['RUINS', 1225, [120]]] > [['RUINS', 1225, [120, 100]], ['MOUNTAIN', 12
 <br>
 Trubbish:<br>
 biomes: [['SLUM', 1228, [20]]] > [['SLUM', 1228, [20, 60]]]<br>
+<br>
+Gigantamax Garbodor:<br>
+formExclusive: 1 > 2<br>
 <br>
 Zorua:<br>
 biomes: [['TOWN', 1234, [160]], ['ABYSS', 1202, [80]]] > [['TOWN', 1234, [160]], ['ABYSS', 1202, [80, 60]]]<br>
@@ -1406,6 +1522,36 @@ biomes: [['WASTELAND', 1236, [52]], ['ABYSS', 1202, [120]]] > [['WASTELAND', 123
 Larvesta:<br>
 biomes: [['VOLCANO', 1235, [120]]] > [['VOLCANO', 1235, [120, 100]]]<br>
 <br>
+Therian Tornadus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Therian Thundurus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Therian Landorus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Black Kyurem:<br>
+formExclusive: 1 > 3<br>
+<br>
+White Kyurem:<br>
+formExclusive: 1 > 3<br>
+<br>
+Resolute Keldeo:<br>
+formExclusive: 1 > 3<br>
+<br>
+Shock Genesect:<br>
+formExclusive: 1 > 3<br>
+<br>
+Burn Genesect:<br>
+formExclusive: 1 > 3<br>
+<br>
+Chill Genesect:<br>
+formExclusive: 1 > 3<br>
+<br>
+Douse Genesect:<br>
+formExclusive: 1 > 3<br>
+<br>
 Chespin:<br>
 biomes: [['FOREST', 1212, [80]]] > [['FOREST', 1212, [80, 100]]]<br>
 <br>
@@ -1429,6 +1575,9 @@ biomes: [['LAKE', 1219, [80]]] > [['LAKE', 1219, [80, 100]]]<br>
 <br>
 Battle Bond Frogadier:<br>
 biomes: [['LAKE', 1219, [80]]] > [['LAKE', 1219, [80, 100]]]<br>
+<br>
+Ash Greninja:<br>
+formExclusive: 1 > 3<br>
 <br>
 Bunnelby:<br>
 biomes: [['CAVE', 1205, [20]]] > [['CAVE', 1205, [20, 60]]]<br>
@@ -1696,6 +1845,7 @@ biomes: [['TEMPLE', 1233, [60]]] > [['TEMPLE', 1233, [20, 60]]]<br>
 <br>
 Blade Aegislash:<br>
 biomes: [['TEMPLE', 1233, [60]]] > [['TEMPLE', 1233, [20, 60]]]<br>
+formExclusive: 1 > 3<br>
 <br>
 Spritzee:<br>
 biomes: [['FAIRY_CAVE', 1211, [20]]] > [['FAIRY_CAVE', 1211, [20, 60]]]<br>
@@ -1775,6 +1925,15 @@ biomes: [['CAVE', 1205, [40]], ['GRASS', 1213, [92]]] > [['CAVE', 1205, [40, 60]
 Noivern:<br>
 biomes: [['GRASS', 1213, [63]], ['CAVE', 1205, [40, 60]]] > [['GRASS', 1213, [92, 63]], ['CAVE', 1205, [40, 60]]]<br>
 <br>
+Active Xerneas:<br>
+formExclusive: 1 > 3<br>
+<br>
+Complete Zygarde:<br>
+formExclusive: 1 > 3<br>
+<br>
+Unbound Hoopa:<br>
+formExclusive: 1 > 3<br>
+<br>
 Rowlet:<br>
 biomes: [['FOREST', 1212, [80]]] > [['FOREST', 1212, [80, 100]], ['DOJO', 1208, [100]]]<br>
 <br>
@@ -1832,6 +1991,9 @@ biomes: [['PLAINS', 1223, [43]], ['FOREST', 1212, [48]], ['CAVE', 1205, [44]]] >
 Midday Lycanroc:<br>
 biomes: [['PLAINS', 1223, [42, 102]]] > [['PLAINS', 1223, [43, 102]]]<br>
 <br>
+School Wishiwashi:<br>
+formExclusive: 1 > 3<br>
+<br>
 Mareanie:<br>
 biomes: [['BEACH', 1204, [20]], ['SWAMP', 1231, [40]]] > [['BEACH', 1204, [20, 60]], ['SWAMP', 1231, [40, 60]]]<br>
 <br>
@@ -1868,6 +2030,88 @@ biomes: [['CAVE', 1205, [40]]] > [['CAVE', 1205, [40, 60]]]<br>
 Sandygast:<br>
 biomes: [['BEACH', 1204, [40]]] > [['BEACH', 1204, [40, 60]]]<br>
 <br>
+Fighting Silvally:<br>
+formExclusive: 1 > 3<br>
+<br>
+Flying Silvally:<br>
+formExclusive: 1 > 3<br>
+<br>
+Poison Silvally:<br>
+formExclusive: 1 > 3<br>
+<br>
+Ground Silvally:<br>
+formExclusive: 1 > 3<br>
+<br>
+Rock Silvally:<br>
+formExclusive: 1 > 3<br>
+<br>
+Bug Silvally:<br>
+formExclusive: 1 > 3<br>
+<br>
+Ghost Silvally:<br>
+formExclusive: 1 > 3<br>
+<br>
+Steel Silvally:<br>
+formExclusive: 1 > 3<br>
+<br>
+Fire Silvally:<br>
+formExclusive: 1 > 3<br>
+<br>
+Water Silvally:<br>
+formExclusive: 1 > 3<br>
+<br>
+Grass Silvally:<br>
+formExclusive: 1 > 3<br>
+<br>
+Electric Silvally:<br>
+formExclusive: 1 > 3<br>
+<br>
+Psychic Silvally:<br>
+formExclusive: 1 > 3<br>
+<br>
+Ice Silvally:<br>
+formExclusive: 1 > 3<br>
+<br>
+Dragon Silvally:<br>
+formExclusive: 1 > 3<br>
+<br>
+Dark Silvally:<br>
+formExclusive: 1 > 3<br>
+<br>
+Fairy Silvally:<br>
+formExclusive: 1 > 3<br>
+<br>
+Red Minior:<br>
+startable: 1 > <br>
+formExclusive:  > 3<br>
+<br>
+Orange Minior:<br>
+startable: 1 > <br>
+formExclusive:  > 3<br>
+<br>
+Yellow Minior:<br>
+startable: 1 > <br>
+formExclusive:  > 3<br>
+<br>
+Green Minior:<br>
+startable: 1 > <br>
+formExclusive:  > 3<br>
+<br>
+Blue Minior:<br>
+startable: 1 > <br>
+formExclusive:  > 3<br>
+<br>
+Indigo Minior:<br>
+startable: 1 > <br>
+formExclusive:  > 3<br>
+<br>
+Violet Minior:<br>
+startable: 1 > <br>
+formExclusive:  > 3<br>
+<br>
+Busted Mimikyu:<br>
+formExclusive: 1 > 3<br>
+<br>
 Dhelmise:<br>
 newVariants:  > 1<br>
 <br>
@@ -1889,11 +2133,26 @@ biomes: [['SPACE', 1230, [182]]] > [['SPACE', 1230, [160, 182]]]<br>
 Lunala:<br>
 biomes: [['SPACE', 1230, [188]]] > [['SPACE', 1230, [160, 188]]]<br>
 <br>
+Dusk Mane Necrozma:<br>
+formExclusive: 1 > 3<br>
+<br>
+Dawn Wings Necrozma:<br>
+formExclusive: 1 > 3<br>
+<br>
+Ultra Necrozma:<br>
+formExclusive: 1 > 3<br>
+<br>
+Gigantamax Melmetal:<br>
+formExclusive: 1 > 2<br>
+<br>
 Grookey:<br>
 biomes: [['JUNGLE', 1217, [80]]] > [['JUNGLE', 1217, [80, 100]]]<br>
 <br>
 Thwackey:<br>
 biomes: [['JUNGLE', 1217, [80]]] > [['JUNGLE', 1217, [80, 100]]]<br>
+<br>
+Gigantamax Rillaboom:<br>
+formExclusive: 1 > 2<br>
 <br>
 Scorbunny:<br>
 biomes: [['VOLCANO', 1235, [80]]] > [['VOLCANO', 1235, [80, 100]]]<br>
@@ -1901,11 +2160,17 @@ biomes: [['VOLCANO', 1235, [80]]] > [['VOLCANO', 1235, [80, 100]]]<br>
 Raboot:<br>
 biomes: [['VOLCANO', 1235, [80]]] > [['VOLCANO', 1235, [80, 100]]]<br>
 <br>
+Gigantamax Cinderace:<br>
+formExclusive: 1 > 2<br>
+<br>
 Sobble:<br>
 biomes: [['LAKE', 1219, [80]]] > [['LAKE', 1219, [80, 100]]]<br>
 <br>
 Drizzile:<br>
 biomes: [['LAKE', 1219, [80]]] > [['LAKE', 1219, [80, 100]]]<br>
+<br>
+Gigantamax Inteleon:<br>
+formExclusive: 1 > 2<br>
 <br>
 Skwovet:<br>
 biomes: [['TOWN', 1234, [23]], ['PLAINS', 1223, [23]]] > [['TOWN', 1234, [23]], ['PLAINS', 1223, [23, 63]]]<br>
@@ -1924,6 +2189,7 @@ biomes: [['PLAINS', 1223, [80]], ['MOUNTAIN', 1222, [43, 63]]] > [['PLAINS', 122
 <br>
 Gigantamax Corviknight:<br>
 biomes: [['PLAINS', 1223, [80]], ['MOUNTAIN', 1222, [43, 63]]] > [['PLAINS', 1223, [80]], ['MOUNTAIN', 1222, [43, 63]], ['TOWN', 1234, [80]]]<br>
+formExclusive: 1 > 2<br>
 <br>
 Blipbug:<br>
 biomes: [['TOWN', 1234, [32]]] > [['TOWN', 1234, [32]], ['FOREST', 1212, [52, 72]]]<br>
@@ -1936,6 +2202,7 @@ biomes: [['FOREST', 1212, [52, 72]]] > [['FOREST', 1212, [52, 72]], ['TOWN', 123
 <br>
 Gigantamax Orbeetle:<br>
 biomes: [['FOREST', 1212, [52, 72]]] > [['FOREST', 1212, [52, 72]], ['TOWN', 1234, [32]]]<br>
+formExclusive: 1 > 2<br>
 <br>
 Thievul:<br>
 biomes: [] > [['PLAINS', 1223, [52]]]<br>
@@ -1950,6 +2217,9 @@ biomes: [['MEADOW', 1220, [20, 60]]] > [['MEADOW', 1220, [20, 60]], ['TOWN', 123
 Chewtle:<br>
 biomes: [['LAKE', 1219, [20]]] > [['LAKE', 1219, [20, 60]]]<br>
 <br>
+Gigantamax Drednaw:<br>
+formExclusive: 1 > 2<br>
+<br>
 Yamper:<br>
 biomes: [['METROPOLIS', 1221, [23]]] > [['METROPOLIS', 1221, [23, 63]]]<br>
 <br>
@@ -1959,6 +2229,9 @@ biomes: [['VOLCANO', 1235, [20]]] > [['VOLCANO', 1235, [20, 60]]]<br>
 Carkol:<br>
 biomes: [['VOLCANO', 1235, [20]]] > [['VOLCANO', 1235, [20, 60]]]<br>
 <br>
+Gigantamax Coalossal:<br>
+formExclusive: 1 > 2<br>
+<br>
 Applin:<br>
 biomes: [['MEADOW', 1220, [80]]] > [['MEADOW', 1220, [80, 100]]]<br>
 <br>
@@ -1967,15 +2240,26 @@ biomes: [['MEADOW', 1220, [100]]] > [['MEADOW', 1220, [80, 100]]]<br>
 <br>
 Gigantamax Flapple:<br>
 biomes: [['MEADOW', 1220, [100]]] > [['MEADOW', 1220, [80, 100]]]<br>
+formExclusive: 1 > 2<br>
 <br>
 Appletun:<br>
 biomes: [['MEADOW', 1220, [100]]] > [['MEADOW', 1220, [80, 100]]]<br>
 <br>
 Gigantamax Appletun:<br>
 biomes: [['MEADOW', 1220, [100]]] > [['MEADOW', 1220, [80, 100]]]<br>
+formExclusive: 1 > 2<br>
 <br>
 Silicobra:<br>
 biomes: [['DESERT', 1207, [20]]] > [['DESERT', 1207, [20, 60]]]<br>
+<br>
+Gigantamax Sandaconda:<br>
+formExclusive: 1 > 2<br>
+<br>
+Gulping Cramorant:<br>
+formExclusive: 1 > 3<br>
+<br>
+Gorging Cramorant:<br>
+formExclusive: 1 > 3<br>
 <br>
 Arrokuda:<br>
 biomes: [['SEABED', 1227, [20]]] > [['SEABED', 1227, [20, 60]]]<br>
@@ -1983,8 +2267,14 @@ biomes: [['SEABED', 1227, [20]]] > [['SEABED', 1227, [20, 60]]]<br>
 Toxel:<br>
 biomes: [['SLUM', 1228, [80]]] > [['SLUM', 1228, [80, 100]]]<br>
 <br>
+Gigantamax Toxtricity:<br>
+formExclusive: 1 > 2<br>
+<br>
 Sizzlipede:<br>
 biomes: [['BADLANDS', 1203, [43]]] > [['BADLANDS', 1203, [43, 63]]]<br>
+<br>
+Gigantamax Centiskorch:<br>
+formExclusive: 1 > 2<br>
 <br>
 Clobbopus:<br>
 biomes: [['DOJO', 1208, [20]]] > [['DOJO', 1208, [20, 60]]]<br>
@@ -2001,11 +2291,17 @@ biomes: [['FAIRY_CAVE', 1211, [40]]] > [['FAIRY_CAVE', 1211, [40, 60]]]<br>
 Hattrem:<br>
 biomes: [['FAIRY_CAVE', 1211, [40]]] > [['FAIRY_CAVE', 1211, [40, 60]]]<br>
 <br>
+Gigantamax Hatterene:<br>
+formExclusive: 1 > 2<br>
+<br>
 Impidimp:<br>
 biomes: [['ABYSS', 1202, [20]]] > [['ABYSS', 1202, [20, 60]]]<br>
 <br>
 Morgrem:<br>
 biomes: [['ABYSS', 1202, [20]]] > [['ABYSS', 1202, [20, 60]]]<br>
+<br>
+Gigantamax Grimmsnarl:<br>
+formExclusive: 1 > 2<br>
 <br>
 Sirfetchd:<br>
 biomes: [['DOJO', 1208, [100]]] > [['DOJO', 1208, [120, 100]]]<br>
@@ -2013,23 +2309,57 @@ biomes: [['DOJO', 1208, [100]]] > [['DOJO', 1208, [120, 100]]]<br>
 Milcery:<br>
 biomes: [['FAIRY_CAVE', 1211, [20]]] > [['FAIRY_CAVE', 1211, [20, 60]]]<br>
 <br>
+Gigantamax Alcremie:<br>
+formExclusive: 1 > 2<br>
+<br>
 Snom:<br>
 biomes: [['ICE_CAVE', 1215, [20]], ['SNOWY_FOREST', 1229, [20]]] > [['ICE_CAVE', 1215, [20]], ['SNOWY_FOREST', 1229, [20, 60]]]<br>
 <br>
+No Ice Eiscue:<br>
+formExclusive: 1 > 3<br>
+<br>
+Hangry Morpeko:<br>
+formExclusive: 1 > 3<br>
+<br>
 Cufant:<br>
 biomes: [['BADLANDS', 1203, [40]]] > [['BADLANDS', 1203, [40, 60]]]<br>
+<br>
+Gigantamax Copperajah:<br>
+formExclusive: 1 > 2<br>
 <br>
 Duraludon:<br>
 biomes: [['CONSTRUCTION_SITE', 1206, [120]]] > [['CONSTRUCTION_SITE', 1206, [120, 100]]]<br>
 <br>
 Gigantamax Duraludon:<br>
 biomes: [['CONSTRUCTION_SITE', 1206, [120]]] > [['CONSTRUCTION_SITE', 1206, [120, 100]]]<br>
+formExclusive: 1 > 2<br>
 <br>
 Dreepy:<br>
 biomes: [['WASTELAND', 1236, [92]], ['ABYSS', 1202, [120]]] > [['WASTELAND', 1236, [92, 72]], ['ABYSS', 1202, [120, 100]]]<br>
 <br>
 Drakloak:<br>
 biomes: [['WASTELAND', 1236, [92]], ['ABYSS', 1202, [120]]] > [['WASTELAND', 1236, [92, 72]], ['ABYSS', 1202, [120, 100]]]<br>
+<br>
+Crowned Zacian:<br>
+formExclusive: 1 > 3<br>
+<br>
+Crowned Zamazenta:<br>
+formExclusive: 1 > 3<br>
+<br>
+Eternamax Eternatus:<br>
+formExclusive: 1 > 3<br>
+<br>
+Gigantamax Single Urshifu:<br>
+formExclusive: 1 > 2<br>
+<br>
+Gigantamax Rapid Urshifu:<br>
+formExclusive: 1 > 2<br>
+<br>
+Ice Calyrex:<br>
+formExclusive: 1 > 3<br>
+<br>
+Shadow Calyrex:<br>
+formExclusive: 1 > 3<br>
 <br>
 Wyrdeer:<br>
 biomes: [['SNOWY_FOREST', 1229, [60]]] > [['SNOWY_FOREST', 1229, [40, 60]], ['FOREST', 1212, [83, 103]]]<br>
@@ -2051,6 +2381,9 @@ biomes: [['SNOWY_FOREST', 1229, [103]]] > [['SNOWY_FOREST', 1229, [123, 103]]]<b
 <br>
 Overqwil:<br>
 biomes: [['SEABED', 1227, [100]]] > [['SEABED', 1227, [120, 100]]]<br>
+<br>
+Therian Enamorus:<br>
+formExclusive: 1 > 3<br>
 <br>
 Sprigatito:<br>
 biomes: [['MEADOW', 1220, [80]]] > [['MEADOW', 1220, [80, 100]]]<br>
@@ -2161,6 +2494,9 @@ biomes: [['RUINS', 1225, [40]]] > [['RUINS', 1225, [40, 60]]]<br>
 Finizen:<br>
 biomes: [['SEA', 1226, [23]]] > [['SEA', 1226, [23, 63]]]<br>
 <br>
+Hero Palafin:<br>
+formExclusive: 1 > 3<br>
+<br>
 Varoom:<br>
 biomes: [['METROPOLIS', 1221, [80]], ['SLUM', 1228, [80]]] > [['METROPOLIS', 1221, [80, 100]], ['SLUM', 1228, [80, 100]]]<br>
 <br>
@@ -2197,11 +2533,38 @@ biomes: [['BADLANDS', 1203, [80]]] > [['BADLANDS', 1203, [80, 100]]]<br>
 Artisan Poltchageist:<br>
 biomes: [['BADLANDS', 1203, [80]]] > [['BADLANDS', 1203, [80, 100]]]<br>
 <br>
+Wellspring Mask Ogerpon:<br>
+formExclusive: 1 > 3<br>
+<br>
+Hearthflame Mask Ogerpon:<br>
+formExclusive: 1 > 3<br>
+<br>
+Cornerstone Mask Ogerpon:<br>
+formExclusive: 1 > 3<br>
+<br>
+Teal Mask Tera Ogerpon:<br>
+formExclusive: 1 > 3<br>
+<br>
+Wellspring Mask Tera Ogerpon:<br>
+formExclusive: 1 > 3<br>
+<br>
+Hearthflame Mask Tera Ogerpon:<br>
+formExclusive: 1 > 3<br>
+<br>
+Cornerstone Mask Tera Ogerpon:<br>
+formExclusive: 1 > 3<br>
+<br>
 Archaludon:<br>
 biomes: [['CONSTRUCTION_SITE', 1206, [100]]] > [['CONSTRUCTION_SITE', 1206, [120, 100]]]<br>
 <br>
 Hydrapple:<br>
 biomes: [['MEADOW', 1220, [100]]] > [['MEADOW', 1220, [80, 100]]]<br>
+<br>
+Terastal Terapagos:<br>
+formExclusive: 1 > 3<br>
+<br>
+Stellar Terapagos:<br>
+formExclusive: 1 > 3<br>
 <br>
 Alola Rattata:<br>
 biomes: [['ISLAND', 1216, [32]], ['SLUM', 1228, [40]]] > [['ISLAND', 1216, [32, 72]], ['SLUM', 1228, [40, 60]]]<br>
@@ -2274,6 +2637,9 @@ biomes: [['SLUM', 1228, [40]]] > [['SLUM', 1228, [40, 60]]]<br>
 <br>
 Galar Darumaka:<br>
 biomes: [['SNOWY_FOREST', 1229, [83]]] > [['SNOWY_FOREST', 1229, [83, 103]]]<br>
+<br>
+Zen Galar Darmanitan:<br>
+formExclusive: 1 > 3<br>
 <br>
 Galar Yamask:<br>
 biomes: [['RUINS', 1225, [132]]] > [['RUINS', 1225, [132, 112]]]<br>

@@ -244,33 +244,36 @@ for i in range(len(output_data)):
         combined_data[-1].append(output_data[par][6])
     combined_data[-1].extend(['','','','']) # isStartable [33], starterRow [34], starterIndex [35], specIndex[36]
     combined_data[-1].extend([output_data[par][5],'','','']) # specKey [37], familyFID [38], freshStart [39], biomes [40]
-    # Form exclusive [41] (if the form is only available via form change, not startable/encounterable)
+    
+    # Form exclusive [41] ('' = starter, 1 = mega, 2 = giga, 3 = transformed)
     # In-game, the form is chosen from getSpeciesFormIndex in src/battle-scene.ts
     # Base species are always startable, argument 24 defaults to True (Forms are exclusive unless marked otherwise)
     if output_data[i][2] == '' or (len(output_data[i]) > 24 and 'True' in output_data[i][24]):
-        combined_data[-1].append('')
+        formExclusive = ''
+        if 'Minior' in combined_data[-1][5] and 'Meteor' not in combined_data[-1][5]:
+            formExclusive = 3 # Force minior core to be transformed
     else:
-        combined_data[-1].append(1)
-        # print('Form Change Only:',line[5])
-    # Force certain forms to be startable (they still didn't fix this...)
-    # These species are missing isStarterSelectable in balance/pokemon-species.ts
-    # Also, Minior core forms are marked as selectable there (which makes my biomes show up)
-    for spec in ['Maushold','Dudunsparce','Sinistcha']:
-        if spec in combined_data[-1][5]:
-            combined_data[-1][41] = '' # Force certain forms to startable (not exclusive)
-    # Check for unobtainable entries (forms must be listed as 'True' in output_data[i][25])
+        # Some forms are missing isStarterSelectable in balance/pokemon-species.ts (they have not fixed it)
+        if 'Maushold' in combined_data[-1][5] or 'Dudunsparce' in combined_data[-1][5]:
+            formExclusive = '' # Force those forms to be startable, i.e. not exclusive
+        else: # Determine what kind of form it is
+            formExclusive = 3 # Other transformed (Zacian, Mimikyu, etc.)
+            if 'Mega ' in combined_data[-1][5]: formExclusive = 1 # Mega
+            if 'Gigantamax' in combined_data[-1][5]: formExclusive = 2 # Giga
+    combined_data[-1].append(formExclusive)
+
+    # Unobtainable [42] (forms must be listed as 'True' in output_data[i][25])
     unobtainable = 0 # Can be obtained, by default
-    if output_data[i][2] != '' and len(output_data[i]) > 25 and 'True' in output_data[i][25]:
-        unobtainable = 1
-    if 'Revavroom' in output_data[par][5]: # Revavroom is technically unobtainable, but I still want to include it
-        unobtainable = 0
-    if '10 Complete' in output_data[i][4]: # Remove "Complete 10% Zygarde"
-        unobtainable = 1
+    if output_data[i][2] != '' and len(output_data[i]) > 25 and 'True' in output_data[i][25]: unobtainable = 1
+    if 'Revavroom' in output_data[par][5]: unobtainable = 0 # Keep Starmobiles
+    if '10 Complete' in output_data[i][4]: unobtainable = 1 # Remove "Complete 10% Zygarde"
     combined_data[-1].append(unobtainable) # Unobtainable [42]
+
     combined_data[-1].append('') # Newly added variants [43]
-    combined_data[-1].append('') # Evo class [44] (0 = can evolve, 1 = fully evolved, 2 = single stage)
+    combined_data[-1].append('') # Evo class [44] (0 = starter, 1 = fully evolved, 2 = single stage)
     combined_data[-1].append('') # Exclusive type [45] (regular, eggExc, baby, paradox, eterna, starmobile)
-    combined_data[-1].append('') # Form class [46] (0 = base, 1 = mega, 2 = giga, 3 = other)
+    combined_data[-1].append('') # Form class [46] (0 = starter, 1 = mega, 2 = giga, 3 = transformed)
+    # combined_data[-1].append('') # Related to form [47] ( ??? )
 print('Finished normalizing data')
 
 # Parse the data for starter costs ****************************
@@ -436,6 +439,9 @@ for stages in range(2): # Up to 2 evolutions
         for parentName in evoLine[1:]:
             for parentLine in combined_data:
                 if parentName == parentLine[5]: # Copy biomes from parent to child (reverse)
+                    # tyrogue,smoochum,elekid,magby,wynaut,toxel
+                    # These babies can appear in the wild, because they are level evolutions
+                    # Friendship evolutions cannot devolve at low levels
                     for biomeLine in parentLine[40]:
                         childLine[40].append(biomeLine)
                     break # Break the parent search loop
@@ -712,8 +718,8 @@ for line in trimmed_data:
         line[39] = 1
 
 # Determine the Evo class [44] and Form class [46] of each pokemon
-# Evo class [44] (0 = can evolve, 1 = fully evolved, 2 = single stage)
-# Form class [46] (0 = base, 1 = mega, 2 = giga, 3 = other)
+# Evo class [44] (0 = starter, 1 = fully evolved, 2 = single stage)
+# Form class [46] (0 = starter, 1 = mega, 2 = giga, 3 = transformed)
 megaList = ['Mega Clefable','Mega Victreebel','Mega Starmie','Mega Dragonite','Mega Meganium','Mega Feraligatr','Mega Skarmory','Mega Froslass','Mega Emboar','Mega Excadrill','Mega Scolipede','Mega Scrafty','Mega Eelektross','Mega Chandelure','Mega Chesnaught','Mega Delphox','Mega Greninja','Mega Pyroar','Mega Floette','Mega Malamar','Mega Barbaracle','Mega Dragalge','Mega Hawlucha','Mega Zygarde','Mega Drampa','Mega Falinks','Mega Raichu X','Mega Raichu Y','Mega Chimecho','Mega Baxcalibur']
 
 # Error checking **************************************************************************************
