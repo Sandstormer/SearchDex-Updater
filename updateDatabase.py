@@ -177,96 +177,93 @@ print('Finished reading all moves')
 # Currently, base species and forms have different formats in output_data
 # This puts base species and forms into a consistent data format: combined_data
 combined_data = [] 
-for i in range(len(output_data)):
+for i,line in enumerate(output_data):
     combined_data.append([])
     # I always use [2] (parent row) to tell if an entry is a form (it will be blank for base species)
-    if output_data[i][2] == '': # For base species, not forms
-        par = i
+    if line[2] == '': # For base species, not forms
+        par = i # Set the parent to itself
         # row number [0], form key [1], parent row number [2], dex number [3], image filename [4], display name [5]
-        combined_data[-1].extend(output_data[i][0:6]) 
-        combined_data[-1].append(output_data[i][10]) # Species description (unused) [6]
-        combined_data[-1].append(output_data[i][11]) # Type 1 [7]
-        if output_data[i][12] == 'Null':
+        combined_data[-1].extend(line[0:6]) 
+        combined_data[-1].append(line[10]) # Species description (unused) [6]
+        combined_data[-1].append(line[11]) # Type 1 [7]
+        if line[12] == 'Null':
             combined_data[-1].append('')
         else:
-            combined_data[-1].append(output_data[i][12]) # Type 2 [8]
-        combined_data[-1].append(output_data[i][15]) # Ability 1 [9]
-        if output_data[i][16] == output_data[i][15] or output_data[i][16] == 'None':
+            combined_data[-1].append(line[12]) # Type 2 [8]
+        combined_data[-1].append(line[15]) # Ability 1 [9]
+        if line[16] == line[15] or line[16] == 'None':
             combined_data[-1].append('')
         else:
-            combined_data[-1].append(output_data[i][16]) # Ability 2 [10]
-        if output_data[i][17] == output_data[i][15] or output_data[i][17] == 'None':
+            combined_data[-1].append(line[16]) # Ability 2 [10]
+        if line[17] == line[15] or line[17] == 'None':
             combined_data[-1].append('')
         else:
-            combined_data[-1].append(output_data[i][17]) # Hidden ability [11]
+            combined_data[-1].append(line[17]) # Hidden ability [11]
         combined_data[-1].append('') # Blank passive combined_data[12]
-        combined_data[-1].extend(output_data[i][18:26])
-        combined_data[-1].extend(output_data[i][28:31])
+        combined_data[-1].extend(line[18:26])
     else: # For forms
-        combined_data[-1].append(output_data[i][0]) # row number [0]
-        combined_data[-1].append(output_data[i][4]) # form key [1]
-        combined_data[-1].append(output_data[i][2]) # parent row number [2]
-        par = int(output_data[i][2]) # Note which row the parent is
+        combined_data[-1].append(line[0]) # row number [0]
+        combined_data[-1].append(line[4]) # form key [1]
+        combined_data[-1].append(line[2]) # parent row number [2]
+        par = int(line[2]) # Note which row the parent is
         combined_data[-1].append(output_data[par][3]) # dex number [3]
-        if output_data[i][4] == '': 
+        if line[4] == '': 
             # If the form key is blank, like a 'normal' form, just use the species name
             combined_data[-1].append(output_data[par][4]) # image filename [4]
-            combined_data[-1].append(output_data[par][5]) # Display name [5]
+            combined_data[-1].append(output_data[par][5]) # display name [5]
         else: # If it is a named form
-            spriteName = f'{output_data[par][4]}-{output_data[i][4]}'
-            combined_data[-1].append(spriteName.replace(" ", "-")) # image filename [4]
-            combined_data[-1].append(f'{output_data[i][4]} {output_data[par][5]}') # Display name [5]
+            spriteName = f'{output_data[par][4]}-{line[4]}'
+            combined_data[-1].append(spriteName.replace(" ", "-"))       # image filename [4]
+            combined_data[-1].append(f'{line[4]} {output_data[par][5]}') # display name [5]
         combined_data[-1].append(output_data[par][10]) # Species description (unused) [6]
-        combined_data[-1].append(output_data[i][5]) # Type 1 [7]
-        if output_data[i][6] == 'Null':
+        combined_data[-1].append(line[5]) # Type 1 [7]
+        if line[6] == 'Null':
             combined_data[-1].append('') # Type 2 [8]
         else:
-            combined_data[-1].append(output_data[i][6])
-        combined_data[-1].append(output_data[i][9]) # Ability 1 [9]
-        if output_data[i][10] == output_data[i][9] or output_data[i][10] == 'None': # Ability 2 [10]
+            combined_data[-1].append(line[6])
+        combined_data[-1].append(line[9]) # Ability 1 [9]
+        if line[10] == line[9] or line[10] == 'None': # Ability 2 [10]
             combined_data[-1].append('')
         else:
-            combined_data[-1].append(output_data[i][10])
-        if output_data[i][11] == output_data[i][9] or output_data[i][11] == 'None': # [11] Hidden ability
+            combined_data[-1].append(line[10])
+        if line[11] == line[9] or line[11] == 'None': # [11] Hidden ability
             combined_data[-1].append('')
         else:
-            combined_data[-1].append(output_data[i][11])
-        combined_data[-1].append('')                      # [12] Passive (filled in later)
-        combined_data[-1].extend(output_data[i][12:19])   # [13-19] Stats
+            combined_data[-1].append(line[11])
+        combined_data[-1].append('')            # [12] Passive (filled in later)
+        combined_data[-1].extend(line[12:19])   # [13-19] Stats
         combined_data[-1].append(output_data[par][25])    # [20] Catch rate
-        combined_data[-1].extend(output_data[par][28:31]) # [21-23] growthRate, malePercent, femDiff
+    combined_data[-1].extend(output_data[par][28:31]) # [21-23] growthRate, malePercent, femDiff
     combined_data[-1].extend(['','','','']) # Add 4 empty lines for egg moves [24-27]
     combined_data[-1].append({}) # Add dict for all moves [28]
     combined_data[-1].extend(['','','']) # Add cost [29], egg tier [30], shiny variants [31]
-    if output_data[i][2] == '':
-        combined_data[-1].append(output_data[i][6]) # Generation [32]
+    if line[2] == '':
+        combined_data[-1].append(line[6]) # Generation [32]
     else:
         combined_data[-1].append(output_data[par][6])
     combined_data[-1].extend(['','','','']) # isStartable [33], starterRow [34], starterIndex [35], specIndex[36]
-    combined_data[-1].extend([output_data[par][5],'','','']) # specKey [37], familyFID [38], freshStart [39], biomes [40]
+    combined_data[-1].append(output_data[par][5]) # specKey [37] used for "Related" filters, and translation lookup
+    combined_data[-1].extend(['','','']) # familyFID [38], freshStart [39], biomes [40]
     
     # Form exclusive [41] ('' = starter, 1 = mega, 2 = giga, 3 = transformed)
+    name = combined_data[-1][5]
+    formExclusive = '' # Startable by default, for base species and most forms
+    # In the game data, argument 24 defaults to False (Forms are exclusive unless marked otherwise)
+    # Check for mega, giga, or other transformed (Zacian, Mimikyu, etc.)
+    if line[2] != '' and (len(line) < 25 or 'True' not in line[24]): formExclusive = 3
+    if 'Mega ' in name: formExclusive = 1 # Mega
+    if 'Gigantamax' in name: formExclusive = 2 # Giga
     # In-game, the form is chosen from getSpeciesFormIndex in src/battle-scene.ts
-    # Base species are always startable, argument 24 defaults to True (Forms are exclusive unless marked otherwise)
-    if output_data[i][2] == '' or (len(output_data[i]) > 24 and 'True' in output_data[i][24]):
-        formExclusive = ''
-        if 'Minior' in combined_data[-1][5] and 'Meteor' not in combined_data[-1][5]:
-            formExclusive = 3 # Force minior core to be transformed
-    else:
-        # Some forms are missing isStarterSelectable in balance/pokemon-species.ts (they have not fixed it)
-        if 'Maushold' in combined_data[-1][5] or 'Dudunsparce' in combined_data[-1][5]:
-            formExclusive = '' # Force those forms to be startable, i.e. not exclusive
-        else: # Determine what kind of form it is
-            formExclusive = 3 # Other transformed (Zacian, Mimikyu, etc.)
-            if 'Mega ' in combined_data[-1][5]: formExclusive = 1 # Mega
-            if 'Gigantamax' in combined_data[-1][5]: formExclusive = 2 # Giga
+    # Some forms have the wrong isStarterSelectable in balance/pokemon-species.ts (error with the game code)
+    if 'Minior'   in name and 'Meteor' not in name: formExclusive = 3  # Force minior core to count as transformed
+    if 'Maushold' in name or 'Dudunsparce' in name: formExclusive = '' # Force those forms to be not exclusive
     combined_data[-1].append(formExclusive)
 
     # Unobtainable [42] (forms must be listed as 'True' in output_data[i][25])
     unobtainable = 0 # Can be obtained, by default
-    if output_data[i][2] != '' and len(output_data[i]) > 25 and 'True' in output_data[i][25]: unobtainable = 1
+    if line[2] != '' and len(line) > 25 and 'True' in line[25]: unobtainable = 1
     if 'Revavroom' in output_data[par][5]: unobtainable = 0 # Keep Starmobiles
-    if '10 Complete' in output_data[i][4]: unobtainable = 1 # Remove "Complete 10% Zygarde"
+    if '10 Complete' in line[4]: unobtainable = 1 # Remove "Complete 10% Zygarde"
     combined_data[-1].append(unobtainable) # Unobtainable [42]
 
     combined_data[-1].append('') # Newly added variants [43]
@@ -626,30 +623,19 @@ for key, value in moveBySpecToCat.items():
 
 # Species specific manual overrides
 for line in combined_data:
-    if line[5] == "Apex Build Koraidon":
-        line[5] = "Koraidon" # 1007 Koraidon override
-    if line[5] == "Ultimate Mode Miraidon":
-        line[5] = "Miraidon" # 1008 Miraidon override
-    if line[5] == "Hero Of Many Battles Zamazenta":
-        line[5] = "Zamazenta" # 888 Zama override
-    if line[5] == 'Hero Of Many Battles Zacian':
-        line[5] = "Zacian" # 889 Zacian override
     if line[3] == '718': # 718 Zygarde override
         for text in ['10','50','Complete']:
             if text in line[5]:
                 line[4] = re.sub('-50','',f'718-{text}') # Image path
                 line[5] = re.sub('Pc','PC',line[5])      # Species
-    if line[5] == 'Arceus': # 493 Arceus override
-        line[4] = f"{line[3]}-normal" # Image path
-        line[5] = "Normal Arceus"     # Species
 
 # Convert combined_data into trimmed_data by removing base species and unobtainables
 trimmed_data = []
 print('\nTrimming base species and unobtainable pokemon...')
 for i in range(len(combined_data)-1):
     # Keep entries under two scenarios:
-    # If it IS A FORM: because we want to keep all forms
-    # If the next is NOT A FORM: this ensures we keep base species that do not have forms
+    #   If it IS A FORM: because we want to keep all forms
+    #   If the next is NOT A FORM: this ensures we keep base species that do not have forms
     # The result is that any base species at the top of form lists get removed
     if combined_data[i][2] != "" or combined_data[i+1][2] == "": # If it is a form, or next is not
         if not combined_data[i][42]: 
@@ -660,14 +646,14 @@ for i in range(len(combined_data)-1):
         throwError(f"Ignored {combined_data[i][5]}") # Show error if removing unique species
 trimmed_data.append(combined_data[-1]) # Add the last entry
 
-# If the pokemon is from a region, find the original species for the dex number
+# If the pokemon is from a region, find the original species, to calculate the regional dex number
 for line in trimmed_data:
     allRegionText = { "Alola":2000, "Eternal":2000, "Galar":4000, "Hisui":6000, "Paldea":8000, "Bloodmoon":8000 }
     for regionText, regionValue in allRegionText.items():
         if regionText in line[5]:
             # Look for a name [5] that matches the regional name with the region removed
             for parentLine in trimmed_data:
-                # Floette must be serached for differently because it only has colored forms (not just "Floette")
+                # Floette must be searched for differently because it only has colored forms (not just "Floette")
                 if parentLine[5] == line[5].split(f'{regionText} ')[1] or (regionText=="Eternal" and "Floette" in parentLine[5]):
                     line[3] = int(parentLine[3]) + regionValue
                     break
@@ -874,11 +860,10 @@ for line in allBiomes:
     filterToFID[f'biome{format_for_attr(line)}'] = len(allFilters)
     allFilters.append(['Biome',line])
 for key,value in starterList.items():
-    if value > 0:
-        allFilters.append(['Related To',trimmed_data[key][37]])
-        for line in trimmed_data:
-            if line[35] == key: # If starterIndex is equal to the one in starterList
-                line[38] = len(allFilters)-1 # Set familyFID to this fid
+    allFilters.append(['Related To',trimmed_data[key][37]])
+    for line in trimmed_data:
+        if line[35] == key: # If starterIndex is equal to the one in starterList
+            line[38] = len(allFilters)-1 # Set familyFID to this fid
 for j in ['Lure Ability','Ignores Abilities','Electric Immunity','Fire Immunity','Water Immunity','Rain Ability','Sand Ability','Snow Ability','Sun Ability']:
     allFilters.append(['Tag',j])
 
@@ -984,9 +969,8 @@ with open("local_files/my_json/fidThresholds.json", "w") as f:
     json.dump(fidThresholds, f, indent=4)
 with open("local_files/my_json/filterToFID.json", "w") as f:
     json.dump(filterToFID, f, indent=4)
-allSpecies = []
-for line in trimmed_data:
-    allSpecies.append([line[5],line[1],line[37]]) # Combined/form/species keys
+# Save all the names: [displayname/form/species] (regional is included in species)
+allSpecies = [[line[5],line[1],line[37]] for line in trimmed_data]
 with open("local_files/my_json/allSpecies.json", "w") as f:
     json.dump(allSpecies, f, indent=4)
 
@@ -1024,15 +1008,14 @@ attPatchCount = [0 for arg in attNames] # How many times each attribute was chan
 eggPatchCount = [0 for arg in trimmed_data] # How many times any egg move was changed
 patch_lines = ['patchNotes = `']
 for i,line in enumerate(trimmed_data):
-    patch_lines.append('')
-    patch_lines.append(f'{line[5]}:')
+    patch_lines.append(f'<br>\n{line[5]}:')
     # Find where the species is, in _prev (the index may be different)
     for ii in range(i-10,min(i+10,len(trimmed_data_prev))):
         if line[5] == trimmed_data_prev[ii][5]:
             break
     else:
         print('Could not find',line[5],'in previous data')
-        break
+        continue
     if line[5] == trimmed_data_prev[ii][5]: # Make sure species is the same
         # Find where the species is, in _prev_shvar (which may be different length from _prev)
         for iii in range(i-10,min(i+10,len(trimmed_data_shvar))):
@@ -1068,9 +1051,8 @@ for i,line in enumerate(trimmed_data):
                         print('Move',key,'removed from',line[5])
                         if line[33] == 1:
                             patch_lines.append(f'{key}: Removed ({value})')
-    if patch_lines[-1] == f'{line[5]}:':
-        patch_lines.pop()                   
-        patch_lines.pop()    
+    if patch_lines[-1] == f'<br>\n{line[5]}:':
+        patch_lines.pop()
 print('\nSummary of patch notes:')
 for j in range(len(attNames)):
     if attPatchCount[j] > 0:

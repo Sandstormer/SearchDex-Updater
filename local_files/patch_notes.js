@@ -2340,8 +2340,12 @@ biomes: [['WASTELAND', 1236, [92]], ['ABYSS', 1202, [120]]] > [['WASTELAND', 123
 Drakloak:<br>
 biomes: [['WASTELAND', 1236, [92]], ['ABYSS', 1202, [120]]] > [['WASTELAND', 1236, [92, 72]], ['ABYSS', 1202, [120, 100]]]<br>
 <br>
+Hero Of Many Battles Zacian:<br>
+<br>
 Crowned Zacian:<br>
 formExclusive: 1 > 3<br>
+<br>
+Hero Of Many Battles Zamazenta:<br>
 <br>
 Crowned Zamazenta:<br>
 formExclusive: 1 > 3<br>
@@ -2523,6 +2527,10 @@ biomes: [['TEMPLE', 1233, [80]]] > [['TEMPLE', 1233, [80, 100]]]<br>
 <br>
 Roaming Gimmighoul:<br>
 biomes: [['TEMPLE', 1233, [80]]] > [['TEMPLE', 1233, [80, 100]]]<br>
+<br>
+Apex Build Koraidon:<br>
+<br>
+Ultimate Mode Miraidon:<br>
 <br>
 Dipplin:<br>
 biomes: [['MEADOW', 1220, [80]]] > [['MEADOW', 1220, [80, 100]]]<br>

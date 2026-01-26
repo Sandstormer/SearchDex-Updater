@@ -349,7 +349,7 @@ for lang in langs: # =========================================== Main loop for e
     for index,filter in enumerate(allFilters):
         if filter[0] == 'Tag':
             for key, value in manualTran['en'].items():
-                if value in filter[1]:
+                if value == filter[1]:
                     locFilters[index] = manualTran[lang][key]
     # Translate names of family filters
     for index,filter in enumerate(allFilters):
@@ -369,7 +369,7 @@ for lang in langs: # =========================================== Main loop for e
             if 'Hisui' in filter[1]:
                 nameFormat = tall['pokemon-form']['appendForm']['hisui']
             if 'Paldea' in filter[1]:
-                nameFormat = tall['pokemon-form']['appendForm']['paldea'].replace('Galar','Paldea') # Remove later !!!!
+                nameFormat = tall['pokemon-form']['appendForm']['paldea'].replace('Galar','Paldea') # To-do: Remove later !!!!
             nameFormat = re.sub('{{pokemonName}}',justLocSpec,nameFormat)
             nameFormat = re.sub("'",'’',nameFormat) # Replace single quotes with unicode
             # print('Translated',specLine[0],'to',nameFormat)
@@ -400,7 +400,6 @@ for lang in langs: # =========================================== Main loop for e
             collisionCount = sum(1 for inLine in locFilters if line.lower() in inLine.lower())
             if collisionCount > 20:
                 print('High collisions in',line,'[',collisionCount,'hits ]')
-
     # Report any missing filter translations (these are mandatory)
     missingAmount = sum([1 for line in locFilters if not line])
     if missingAmount: input(f'***** Error: Missing {missingAmount} filter names')
@@ -416,8 +415,8 @@ for lang in langs: # =========================================== Main loop for e
     maxLengthSpecies = 0
     for index,specLine in enumerate(allSpecies): # specLine is [full name, form name, species name]
         
-        if specLine[2] == 'Koraidon' or specLine[2] == 'Miraidon':
-            specLine[1] = '' # Remove form key of those pokemon
+        if specLine[2] == 'Koraidon' or specLine[2] == 'Miraidon' or 'Hero Of Many Battles' in specLine[0]:
+            specLine[0:2] = [specLine[2],''] # Remove form key of those pokemon
 
         # Translate just the base species name
         text = format_for_camel(specLine[2])
@@ -459,8 +458,6 @@ for lang in langs: # =========================================== Main loop for e
             if effSpec == 'Sinistcha': effSpec = 'Poltchageist'
             if effSpec == 'Galar Darmanitan': effSpec = 'Galar Darumaka'
             text = format_for_camel(f'{effSpec} {specLine[1]}')
-            if lang=='es-ES' and specLine[2] == 'Ursaluna':
-                e=7
             if text in tall['pokemon-form']: # For regular forms
                 justLocForm = tall['pokemon-form'][text]
                 # print('Translated',specLine[0],'to',justLocForm,justLocSpec)
@@ -515,6 +512,10 @@ for lang in langs: # =========================================== Main loop for e
         print('Longest translated species is',maxLengthCat,'(',len(maxLengthCat),'char )')
         minLengthSpecies = min(locSpecies, key=len)
         print('Shortest translated species is',minLengthCat,'(',len(minLengthCat),'char )')
+        for index,line in enumerate(locFilters[fidThreshold[0]:fidThreshold[2]]+locSpecies):
+            for index2,line2 in enumerate(locFilters[fidThreshold[0]:fidThreshold[2]]+locSpecies):
+                if line == line2 and index != index2:
+                    print('***** Same name of pokemon/ability/move in',line)
     missingAmount = sum([1 for line in locSpecies if not line])
     if missingAmount: input(f'***** Missing {missingAmount} species names')
 
@@ -772,4 +773,4 @@ for lang in langs: # =========================================== Main loop for e
         file.writelines(lines)
     print("Filter writing complete")
 
-print("\n********** ALL LANGUAGES DONE **********\n")
+print("\n=========== ALL LANGUAGES DONE ===========\n")
