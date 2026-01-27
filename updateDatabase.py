@@ -172,8 +172,8 @@ for line in inputMoveData:
 print('Finished reading TM moves')
 print('Finished reading all moves')
 
-# Currently, base species and forms have different formats in output_data
-# This puts base species and forms into a consistent data format: combined_data
+# Currently, base species and forms have different formats in raw_data
+# This puts base species and forms into a consistent data format: full_data
 full_data = [] 
 for i,line in enumerate(raw_data):
     full_data.append([])
@@ -189,7 +189,7 @@ for i,line in enumerate(raw_data):
         newLine.append(line[15]) # Ability 1 [9]
         newLine.append('' if line[16] == line[15] or line[16] == 'None' else line[16]) # Ability 2 [10]
         newLine.append('' if line[17] == line[15] or line[17] == 'None' else line[17]) # Hidden ability [11]
-        newLine.append('') # Blank passive combined_data[12]
+        newLine.append('') # Blank passive full_data[12]
         newLine.extend(line[18:26])
     else: # For forms
         newLine.append(line[0]) # row number [0]
@@ -244,7 +244,7 @@ for i,line in enumerate(raw_data):
     if 'Maushold' in name or 'Dudunsparce' in name: formExclusive = '' # Force those forms to be not exclusive
     newLine.append(formExclusive)
 
-    # Unobtainable [42] (forms must be listed as 'True' in output_data[i][25])
+    # Unobtainable [42] (forms must be listed as 'True' in raw_data[i][25])
     unobtainable = 0 # Can be obtained, by default
     if line[2] != '' and len(line) > 25 and 'True' in line[25]: unobtainable = 1
     if 'Revavroom' in parentLine[5]: unobtainable = 0 # Keep Starmobiles
@@ -254,7 +254,7 @@ for i,line in enumerate(raw_data):
     newLine.append('') # Newly added variants [43]
     newLine.append('') # Evo class [44] (1 = starter, 2 = fully evolved)
     newLine.append('') # Exclusive class [45] (regular, eggExc, baby, paradox, eterna, starmobile)
-    newLine.append('') # Fully Evolved [46] ('' = can evolve, 1 = fully evolved)
+    newLine.append(1)  # Fully Evolved [46] ('' = can evolve, 1 = fully evolved)
 print('Finished normalizing data')
 
 # Parse the data for starter costs ****************************
@@ -363,7 +363,7 @@ for passiveIndex in range(len(passive_species)): # Assign passives from list of 
                 for formInd in range(len(passive_abilities[passiveIndex])):
                     if full_data[i+1+formInd][2] != '': # It has to be a form
                         # Assign the passive to the forms in order
-                        # Reminder that combined_data has the base species, and then form0, form1, etc.
+                        # Reminder that full_data has the base species, and then form0, form1, etc.
                         # (base species and form0 will use the same passive)
                         # (base species is trimmed later in this script)
                         full_data[i+1+formInd][12] = passive_abilities[passiveIndex][formInd]
@@ -384,8 +384,6 @@ for line in full_data:
                     line[28][move[0]] = move[1] # Add the move to the dict
 print('Finished assigning egg moves')
 
-# Determine the Evo class [44] and Form class [46] of each pokemon
-# Evo class [44] (1 = starter, 2 = fully evolved)
 megaList = ['Mega Clefable','Mega Victreebel','Mega Starmie','Mega Dragonite','Mega Meganium','Mega Feraligatr','Mega Skarmory','Mega Froslass','Mega Emboar','Mega Excadrill','Mega Scolipede','Mega Scrafty','Mega Eelektross','Mega Chandelure','Mega Chesnaught','Mega Delphox','Mega Greninja','Mega Pyroar','Mega Floette','Mega Malamar','Mega Barbaracle','Mega Dragalge','Mega Hawlucha','Mega Zygarde','Mega Drampa','Mega Falinks','Mega Raichu X','Mega Raichu Y','Mega Chimecho','Mega Baxcalibur']
 
 # Propagate egg moves and other data via evolution **************************
@@ -393,6 +391,7 @@ for stages in range(2): # Up to 2 evolutions
     for evoLine in evolution_data: # Assign data through evolution **********
         for childLine in full_data:
             if evoLine[0] == childLine[5]: # Find the childLine, break when matching
+                childLine[46] = '' # Set the child to not be fullyEvolved
                 break
         else: # If the child search loop fails to break
             throwError(f'Failed to find pre-evo {evoLine[0]}')
@@ -444,8 +443,9 @@ for line in full_data: # Assign data through forms **********************
         line[33] = parentLine[33] # isStartable
         line[34] = parentLine[34] # starterRow
         line[40] = parentLine[40] # Inherit biomes, even on exclusive forms
+        line[46] = parentLine[46] # Inherit fullyEvolved
 print('Finished propagating data to evolutions and forms')
-for line in full_data: # Check for empty properties in combined_data
+for line in full_data: # Check for empty properties in full_data
     if line[12] == '':
         throwError(f'Missing Passives: {line[5]}')
     if line[24:28] == '':
@@ -615,7 +615,7 @@ for line in full_data:
                 line[4] = re.sub('-50','',f'718-{text}') # Image path
                 line[5] = re.sub('Pc','PC',line[5])      # Species
 
-# Convert combined_data into trimmed_data by removing base species and unobtainables
+# Convert full_data into trimmed_data by removing base species and unobtainables
 trimmed_data = []
 print('\nTrimming base species and unobtainable pokemon...')
 for i in range(len(full_data)-1):
@@ -971,8 +971,8 @@ attNames = ['rowno','form','parno','dexno','img','spec','desc','type1','type2','
            # 13    14   15    16     17      18      19        20      21    22    23        24           25           26        27
             'movedict','cost','eggtier','shvar','gen','startable','startRow','startInd','specInd','specKey','famFID',
            #    28       29      30       31     32       33          34         35         36        37       38
-            'freshStart','biomes','formExclusive','unobtainable','newVariants','evoClass','exclusiveClass']
-           #    39          40           41             42             43           44            45
+            'freshStart','biomes','formExclusive','unobtainable','newVariants','evoClass','exclusiveClass','fullyEvolved']
+           #    39          40           41             42             43           44            45             46
 omitAttr = [0, 1, 2, 20, 21, 22, 28, 34, 35, 36, 37, 38]
 soloAttr = [] # Put an attribute here to only show changes to that, and ignores changes to others
 for i in range(len(soloAttr)):                              # You can use strings for ranges (inclusive)
@@ -1051,10 +1051,10 @@ attributes = ['row','form','parno','dex','img','sp','desc','t1','t2','a1','a2','
              #  13   14    15    16    17    18    19       20       21    22   23   24   25   26   27      28
               'co','et','sh','ge','st','startRow','startInd','specInd','specKey','fa',
              # 29   30   31   32   33      34         35         36        37     38
-              'fs','biomes','fx','unobtainable','nv','evoClass','ex']
-             # 39     40     41        42        43      44      45
+              'fs','biomes','fx','unobtainable','nv','evoClass','ex','ev']
+             # 39     40     41        42        43      44      45   46
 # Some attributes are not written to the SearchDex database
-omitAttr = [0, 1, 2, 5, 6, 20, 21, 22, 28, 34, 35, 36, 37, 40, 42, 44, 46] 
+omitAttr = [0, 1, 2, 5, 6, 20, 21, 22, 28, 34, 35, 36, 37, 40, 42, 44] 
 # Key text to convert type/ability/move to filterID (FID) via filterToFID
 keyText = {7:'type', 8:'type', 9:'ability', 10:'ability', 11:'ability', 12:'ability', 24:'move', 25:'move', 26:'move', 27:'move'}
 
