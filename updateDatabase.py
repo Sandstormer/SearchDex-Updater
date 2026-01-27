@@ -683,12 +683,7 @@ for i, line in enumerate(trimmed_data):
                 break
         else:
             throwError(f'Could not find starter row {line[34]} for {line[5]}')
-starterList = {}
-for line in trimmed_data: # Count how many times each child is listed
-    if line[35] not in starterList:
-        starterList[line[35]] = 1
-    else:
-        starterList[line[35]] += 1
+familyList = sorted(list(set([ line[35] for line in trimmed_data ])))
 
 # Determine which pokemon are in fresh start
 gen, freshThisGen, freshStarterIndices = 1, 0, []
@@ -859,10 +854,10 @@ for j in ['New','All','None']:
 for line in allBiomes:
     filterToFID[f'biome{format_for_attr(line)}'] = len(allFilters)
     allFilters.append(['Biome',line])
-for key,value in starterList.items():
-    allFilters.append(['Related To',trimmed_data[key][37]])
+for starterIndex in familyList:
+    allFilters.append(['Related To',trimmed_data[starterIndex][37]])
     for line in trimmed_data:
-        if line[35] == key: # If starterIndex is equal to the one in starterList
+        if line[35] == starterIndex: # If starterIndex is equal to the one in starterList
             line[38] = len(allFilters)-1 # Set familyFID to this fid
 for j in ['Lure Ability','Ignores Abilities','Electric Immunity','Fire Immunity','Water Immunity','Rain Ability','Sand Ability','Snow Ability','Sun Ability']:
     allFilters.append(['Tag',j])
