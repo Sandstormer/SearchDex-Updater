@@ -18,6 +18,27 @@ biomeLongText = [
     'Questo Pokémon può essere catturato dopo aver ottenuto <b><span style="color:rgb(239, 131, 131);">Tutti gli Altri Pokémon</span></b>.<br>Non appare nelle Uova normali.',
     '<b>Questa forma non può essere ottenuta.</b>',
 ]
+phrases = {
+    'exclusive': 'Esclusivo',
+    'new': 'Nuovo',
+    'tag': 'Attributo',
+    'theEnd': 'La Fine',
+    'lureAbility': 'Abilità Esca',
+    'ignoresAbilities': 'Ignora Abilità',
+    'electricImmunity': 'Immunità Elettro',
+    'fireImmunity': 'Immunità Fuoco',
+    'waterImmunity': 'Immunità Acqua',
+    'rainAbility': 'Abilità Pioggia',
+    'sandAbility': 'Abilità Tempesta di Sabbia',
+    'snowAbility': 'Abilità Neve',
+    'sunAbility': 'Abilità Sole',
+    'targetSwitchesOut': 'Forza il Cambio',
+    'spreadMoves': 'Mosse ad Area',
+}
+substitutions = [
+    ['Maschera ',''],
+    ['Teracristal Ogerpon','Tera Ogerpon'],
+]
 warningText = [
     'Limitato ai Pokémon che hanno varianti cromatiche.',
     'Abilità limitate alle sole Abilità Principali.',

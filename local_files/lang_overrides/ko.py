@@ -13,6 +13,23 @@ biomeLongText = [
     '이 포켓몬은 <b><span style="color:rgb(239, 131, 131);">모든 다른 포켓몬</span></b>을 획득한 후에만 잡을 수 있습니다.<br>일반 알에서는 등장하지 않습니다.',
     '<b>이 형태는 획득할 수 없습니다.</b>',
 ]
+phrases = {
+    'exclusive': '한정',
+    'new': '새로운',
+    'tag': '속성',
+    'theEnd': '끝',
+    'lureAbility': '유인 특성',
+    'ignoresAbilities': '특성 무시',
+    'electricImmunity': '전기 면역',
+    'fireImmunity': '불꽃 면역',
+    'waterImmunity': '물 면역',
+    'rainAbility': '비 특성',
+    'sandAbility': '모래바람 특성',
+    'snowAbility': '눈 특성',
+    'sunAbility': '쾌청 특성',
+    'targetSwitchesOut': '상대 교체',
+    'spreadMoves': '범위 기술',
+}
 warningText = [
     '색이 다른 포켓몬(이로치)만 사용할 수 있습니다.',
     '특성은 일반 특성으로만 제한됩니다.',

@@ -17,6 +17,32 @@ biomeLongText = [
     'This Pokemon can only be caught after obtaining <b><span style="color:rgb(239, 131, 131);">All Other Pokemon</span></b>.<br>It does not appear in standard eggs.',
     '<b>This form is unobtainable.</b>',
 ]
+phrases = { # Phrases to be used in the auto-translating of filters (do not translate the left side of each line)
+    'exclusive': 'Exclusive',
+    'new': 'New',
+    'tag': 'Tag', # A tag/attribute/property of a move
+    'theEnd': 'The End', # The final biome/zone
+    'lureAbility': 'Lure Ability',
+    'ignoresAbilities': 'Ignores Abilities',
+    'electricImmunity': 'Electric Immunity',
+    'fireImmunity': 'Fire Immunity',
+    'waterImmunity': 'Water Immunity',
+    'rainAbility': 'Rain Ability',
+    'sandAbility': 'Sand Ability',
+    'snowAbility': 'Snow Ability',
+    'sunAbility': 'Sun Ability',
+    'targetSwitchesOut': 'Target Switches Out',
+    'spreadMoves': 'Spread Moves',
+}
+substitutions = [ # Text shortenings to make it fit in the UI
+    ["Nidoran F","Female Nidoran"],
+    ["Nidoran M","Male Nidoran"],
+    ["50 Zygarde","50% Zygarde"],
+    ["50 PC Zygarde","Power Construct 50% Zygarde"],
+    ["10 Zygarde","10% Zygarde"],
+    ["10 PC Zygarde","Power Construct 10% Zygarde"],
+    ["Lowkey Toxtricity","Low Key Toxtricity"],
+]
 warningText = [
     'Restricted to Pokemon that have shiny variants.',
     'Abilities are restricted to only Main Abilities.',

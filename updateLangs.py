@@ -39,158 +39,6 @@ warnNameLength = 0
 #   Use consistent translations for words that appear elsewhere (headers/tags/etc.)
 #   Make sure spacing is good, shorten UI phrases if needed
 
-subs = { # Replacement strings to make text fit
-    'en': [
-        ["Nidoran F","Female Nidoran"],
-        ["Nidoran M","Male Nidoran"],
-        ["50 Zygarde","50% Zygarde"],
-        ["50 PC Zygarde","Power Construct 50% Zygarde"],
-        ["10 Zygarde","10% Zygarde"],
-        ["10 PC Zygarde","Power Construct 10% Zygarde"],
-        ["Lowkey Toxtricity","Low Key Toxtricity"],
-    ],
-    'fr': [
-        ['Osmose Équine','Osmose'],
-        ['Masque de la ',''],
-        ['Masque du ',''],
-        ['Masque ',''],
-        ['Rassemblement Forme','Rassemblement'],
-        [' Mode Transe',' Transe'],
-    ],
-    'es-ES': [
-        ['Teracristal Ogerpon','Tera Ogerpon'],
-        ['Variedad ',''],
-        ['Modo Daruma Darmanitan','Daruma Darmanitan']
-    ],
-    'it': [
-        ['Maschera ',''],
-        ['Teracristal Ogerpon','Tera Ogerpon'],
-    ],
-}
-
-# All the manual translations =====================
-manualTran = {
-    'en': {
-        'exclusive': 'Exclusive',
-        'new': 'New',
-        'tag': 'Tag', # A tag/attribute/property of a move
-        'theEnd': 'The End', # The final biome/zone
-        'lureAbility': 'Lure Ability',
-        'ignoresAbilities': 'Ignores Abilities',
-        'electricImmunity': 'Electric Immunity',
-        'fireImmunity': 'Fire Immunity',
-        'waterImmunity': 'Water Immunity',
-        'rainAbility': 'Rain Ability',
-        'sandAbility': 'Sand Ability',
-        'snowAbility': 'Snow Ability',
-        'sunAbility': 'Sun Ability',
-        'targetSwitchesOut': 'Target Switches Out',
-        'spreadMoves': 'Spread Moves',
-    },
-    'fr': {
-        'exclusive': 'Exclusif',
-        'new': 'Nouvelle',
-        'tag': 'Attribut',
-        'theEnd': 'La Fin',
-        'lureAbility': 'Talent d’Appât',
-        'ignoresAbilities': 'Ignore les Talents',
-        'electricImmunity': 'Immunité Électrik',
-        'fireImmunity': 'Immunité Feu',
-        'waterImmunity': 'Immunité Eau',
-        'rainAbility': 'Talent Pluie',
-        'sandAbility': 'Talent Tempête de Sable',
-        'snowAbility': 'Talent Neige',
-        'sunAbility': 'Talent Soleil',
-        'targetSwitchesOut': 'Force le Changement',
-        'spreadMoves': 'Attaques de Zone',
-    },
-    'ko': {
-        'exclusive': '한정',
-        'new': '새로운',
-        'tag': '속성',
-        'theEnd': '끝',
-        'lureAbility': '유인 특성',
-        'ignoresAbilities': '특성 무시',
-        'electricImmunity': '전기 면역',
-        'fireImmunity': '불꽃 면역',
-        'waterImmunity': '물 면역',
-        'rainAbility': '비 특성',
-        'sandAbility': '모래바람 특성',
-        'snowAbility': '눈 특성',
-        'sunAbility': '쾌청 특성',
-        'targetSwitchesOut': '상대 교체',
-        'spreadMoves': '범위 기술',
-    },
-    'ja': {
-        'exclusive': '限定',
-        'new': '新しい',
-        'tag': '属性',
-        'theEnd': '終わり',
-        'lureAbility': 'おびき寄せ特性',
-        'ignoresAbilities': '特性無視',
-        'electricImmunity': 'でんき無効',
-        'fireImmunity': 'ほのお無効',
-        'waterImmunity': 'みず無効',
-        'rainAbility': '雨 とくせい',
-        'sandAbility': 'すなあらし とくせい',
-        'snowAbility': 'ゆき とくせい',
-        'sunAbility': '晴れ とくせい',
-        'targetSwitchesOut': '強制交代',
-        'spreadMoves': '範囲技',
-    },
-    'zh-Hans': {
-        'exclusive': '限定',
-        'new': '新的',
-        'tag': '属性',
-        'theEnd': '终点',
-        'lureAbility': '诱导特性',
-        'ignoresAbilities': '无视特性',
-        'electricImmunity': '免疫电',
-        'fireImmunity': '免疫火',
-        'waterImmunity': '免疫水',
-        'rainAbility': '雨天特性',
-        'sandAbility': '沙暴特性',
-        'snowAbility': '雪天特性',
-        'sunAbility': '晴天特性',
-        'targetSwitchesOut': '迫使对手替换',
-        'spreadMoves': '范围招式',
-    },
-    'es-ES': {
-        'exclusive': 'Exclusivo',
-        'new': 'Nuevo',
-        'tag': 'Atributo',
-        'theEnd': 'El Final',
-        'lureAbility': 'Habilidad de Colonia',
-        'ignoresAbilities': 'Ignora Habilidades',
-        'electricImmunity': 'Inmunidad Eléctrica',
-        'fireImmunity': 'Inmunidad Fuego',
-        'waterImmunity': 'Inmunidad Agua',
-        'rainAbility': 'Habilidad de Lluvia',
-        'sandAbility': 'Habilidad de Tormenta de Arena',
-        'snowAbility': 'Habilidad de Nieve',
-        'sunAbility': 'Habilidad de Sol',
-        'targetSwitchesOut': 'Cambia al Objetivo',
-        'spreadMoves': 'Movimientos de Área',
-    },
-    'it': {
-        'exclusive': 'Esclusivo',
-        'new': 'Nuovo',
-        'tag': 'Attributo',
-        'theEnd': 'La Fine',
-        'lureAbility': 'Abilità Esca',
-        'ignoresAbilities': 'Ignora Abilità',
-        'electricImmunity': 'Immunità Elettro',
-        'fireImmunity': 'Immunità Fuoco',
-        'waterImmunity': 'Immunità Acqua',
-        'rainAbility': 'Abilità Pioggia',
-        'sandAbility': 'Abilità Tempesta di Sabbia',
-        'snowAbility': 'Abilità Neve',
-        'sunAbility': 'Abilità Sole',
-        'targetSwitchesOut': 'Forza il Cambio',
-        'spreadMoves': 'Mosse ad Area',
-    }
-}
-
 # Functions for formatting the text
 def format_for_camel(arg): # Key format for official jsons
     arg = arg.title().replace(' ','')
@@ -198,8 +46,8 @@ def format_for_camel(arg): # Key format for official jsons
 def is_numeric(value): # Function to determine if a value is numeric
     return re.match(r'^-?\d+(\.\d+)?$', str(value)) is not None
 def shortenText(text):
-    if lang in subs:
-        for line in subs[lang]:
+    if 'substitutions' in overrides[lang]:
+        for line in overrides[lang]['substitutions']:
             text = str(text).replace(line[0],line[1])
     return text
 
@@ -326,12 +174,12 @@ for lang in langs: # =========================================== Main loop for e
     # Translate exclusive egg tier
     for index,filter in enumerate(allFilters):
         if filter[0] == 'Egg Tier' and filter[1] == 'Exclusive':
-            locFilters[index] = manualTran[lang]['exclusive']
+            locFilters[index] = overrides[lang]['phrases']['exclusive']
     # Translate new variants filter
     for index,filter in enumerate(allFilters):
         if filter[0] == 'Shiny Variants':
             if filter[1] == 'New':
-                locFilters[index] = manualTran[lang]['new']
+                locFilters[index] = overrides[lang]['phrases']['new']
             if filter[1] == 'All':
                 locFilters[index] = tall['menu']['yes']
             if filter[1] == 'None':
@@ -341,16 +189,16 @@ for lang in langs: # =========================================== Main loop for e
         if filter[0] == 'Biome':
             text = tall['biomes'][format_for_camel(filter[1])]
             if text == "???":
-                text = manualTran[lang]['theEnd']
+                text = overrides[lang]['phrases']['theEnd']
             if lang == 'en': # Get official names of biomes, even in english
                 filter[1] = text
             locFilters[index] = shortenText(text)
     # Translate tag names
     for index,filter in enumerate(allFilters):
         if filter[0] == 'Tag':
-            for key, value in manualTran['en'].items():
+            for key, value in overrides['en']['phrases'].items():
                 if value == filter[1]:
-                    locFilters[index] = manualTran[lang][key]
+                    locFilters[index] = overrides[lang]['phrases'][key]
     # Translate names of family filters
     for index,filter in enumerate(allFilters):
         if filter[0] == 'Related To':
@@ -603,7 +451,7 @@ for lang in langs: # =========================================== Main loop for e
     locUI['catToName'][8] = f"{re.sub(r' *: *','',tall['pokedex-ui-handler']['cycleShiny'])} {re.sub(r' *: *','',tall['pokedex-ui-handler']['cycleVariant'])}"
     locUI['catToName'][9] = tall['filter-bar']['biomeFilter']
     locUI['catToName'][10] = tall['pokedex-ui-handler']['evolutions']
-    # locUI['catToName'][11] = manualTran[lang]['tag']
+    # locUI['catToName'][11] = overrides[lang]['phrases']['tag']
 
     locUI['infoText'] = ['' for line in overrides['en']['infoText']]
     locUI['infoText'][0] = tall['pokemon-summary']['friendship']
@@ -611,7 +459,7 @@ for lang in langs: # =========================================== Main loop for e
     locUI['infoText'][2] = tall['filter-bar']['costReduction']
     locUI['infoText'][3] = tall['pokedex-ui-handler']['sameSpeciesEgg']
     locUI['infoText'][4] = tall['filter-bar']['hiddenAbility']
-    # locUI['infoText'][5] = f"{tall['filter-bar']['egg']} {manualTran[lang]['exclusive']}"
+    # locUI['infoText'][5] = f"{tall['filter-bar']['egg']} {overrides[lang]['phrases']['exclusive']}"
     # locUI['infoText'][6] = 'Baby Exclusive'
     # locUI['infoText'][7] = 'Paradox Pokemon'
     # locUI['infoText'][8] = 'Form Change'
@@ -692,8 +540,8 @@ for lang in langs: # =========================================== Main loop for e
 
     print('Done translating ui elements')
     allCatToCheck = ['headerNames','altText','catToName','biomeText','infoText']
-    for catToCheck in allCatToCheck:
-        if catToCheck not in overrides[lang]:
+    if lang in ignoreOverrides or 'all' in ignoreOverrides:
+        for catToCheck in allCatToCheck:
             missingAmount = sum([1 for line in locUI[catToCheck] if not line])
             if missingAmount: print('Could not auto translate',missingAmount,'ui elements in',catToCheck)
 
@@ -723,7 +571,7 @@ for lang in langs: # =========================================== Main loop for e
     lines.append('// They are changed automatically by the update script\n')
     lines.append('// Changes must be made through the updater repository\n')
     for categoryName in overrides['en'].keys():
-        if categoryName != 'helpMenuText':
+        if categoryName not in ['helpMenuText','phrases','substitutions']:
             lines.append(f'{categoryName} = [') # Add each UI category
             for line in locUI[categoryName]:
                 if categoryName in ['biomeLongText','warningText']:

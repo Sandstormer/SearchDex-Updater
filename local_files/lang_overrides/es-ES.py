@@ -1,10 +1,32 @@
 headerNames = ['Dex','Shiny','Especie','Tipos','Habilidades','Mov. Huevo','Coste','BST','PS','Atq','Def','AtE','DfE','Vel']
 altText = ['Movimientos','Solo Principal','Solo Oculta','Solo Pasiva','Buscar','Pot.','Prec.','PP','Añadir a filtros','Recuerdo','Evolución','Mov. Huevo','Mov. Huevo Raro','Común','Súper','Ultra','MT','Nv.','Evo','Huevo']
 catToName = ['Tipo','Habilidad','Movimiento','Gen','Coste','Género','Modo','Nivel de Huevo','Variantes Shiny','Bioma','Relacionado con','Etiqueta']
-biomeText = ['Común','Poco Común','Raro','Super Raro','Ultra Raro','Jefe','Com.','PCom.','Raro','SR','UR','Amanecer','Día','Atardecer','Noche']
 infoText = ['Amistad por Caramelo','Pasiva','Reducción de Coste','Huevo de Especie','Habilidad Oculta',
             'Exclusivo de Huevo','Exclusivo de Cría','Pokémon Paradoja','Cambio de Forma','Biomas','Filtros',
             'Reducido después de ## huevos','por Nivel','por Huevo','por MT']
+biomeText = ['Común','Poco Común','Raro','Super Raro','Ultra Raro','Jefe','Com.','PCom.','Raro','SR','UR','Amanecer','Día','Atardecer','Noche']
+phrases = {
+    'exclusive': 'Exclusivo',
+    'new': 'Nuevo',
+    'tag': 'Atributo',
+    'theEnd': 'El Final',
+    'lureAbility': 'Habilidad de Colonia',
+    'ignoresAbilities': 'Ignora Habilidades',
+    'electricImmunity': 'Inmunidad Eléctrica',
+    'fireImmunity': 'Inmunidad Fuego',
+    'waterImmunity': 'Inmunidad Agua',
+    'rainAbility': 'Habilidad de Lluvia',
+    'sandAbility': 'Habilidad de Tormenta de Arena',
+    'snowAbility': 'Habilidad de Nieve',
+    'sunAbility': 'Habilidad de Sol',
+    'targetSwitchesOut': 'Cambia al Objetivo',
+    'spreadMoves': 'Movimientos de Área',
+}
+substitutions = [
+    ['Teracristal Ogerpon','Tera Ogerpon'],
+    ['Variedad ',''],
+    ['Modo Daruma Darmanitan','Daruma Darmanitan']
+]
 helpMenuText = """
 <b><span style="color:rgb(140, 130, 240);">Búsqueda rápida y potente</span> para PokeRogue</b>
 <hr>

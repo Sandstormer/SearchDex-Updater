@@ -16,6 +16,31 @@ biomeLongText = [
     'Ce Pokémon ne peut être obtenu qu’après avoir obtenu <b><span style="color:rgb(239, 131, 131);">tous les autres Pokémon</span></b>.<br>Il n’apparait par dans les Œuf standards.',
     '<b>This form is unobtainable.</b>'
 ]
+phrases = {
+    'exclusive': 'Exclusif',
+    'new': 'Nouvelle',
+    'tag': 'Attribut',
+    'theEnd': 'La Fin',
+    'lureAbility': 'Talent d’Appât',
+    'ignoresAbilities': 'Ignore les Talents',
+    'electricImmunity': 'Immunité Électrik',
+    'fireImmunity': 'Immunité Feu',
+    'waterImmunity': 'Immunité Eau',
+    'rainAbility': 'Talent Pluie',
+    'sandAbility': 'Talent Tempête de Sable',
+    'snowAbility': 'Talent Neige',
+    'sunAbility': 'Talent Soleil',
+    'targetSwitchesOut': 'Force le Changement',
+    'spreadMoves': 'Attaques de Zone',
+}
+substitutions = [
+    ['Osmose Équine','Osmose'],
+    ['Masque de la ',''],
+    ['Masque du ',''],
+    ['Masque ',''],
+    ['Rassemblement Forme','Rassemblement'],
+    [' Mode Transe',' Transe'],
+]
 warningText = [
     'Limité aux Pokémon qui ont des variants chromatiques.',
     'Talents limités qu’aux talents principaux.',

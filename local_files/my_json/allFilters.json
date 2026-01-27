@@ -4985,10 +4985,6 @@
     ],
     [
         "Related To",
-        "Pichu"
-    ],
-    [
-        "Related To",
         "Sandshrew"
     ],
     [
@@ -5001,15 +4997,7 @@
     ],
     [
         "Related To",
-        "Cleffa"
-    ],
-    [
-        "Related To",
         "Vulpix"
-    ],
-    [
-        "Related To",
-        "Igglybuff"
     ],
     [
         "Related To",
@@ -5133,10 +5121,6 @@
     ],
     [
         "Related To",
-        "Tyrogue"
-    ],
-    [
-        "Related To",
         "Lickitung"
     ],
     [
@@ -5146,10 +5130,6 @@
     [
         "Related To",
         "Rhyhorn"
-    ],
-    [
-        "Related To",
-        "Happiny"
     ],
     [
         "Related To",
@@ -5173,23 +5153,7 @@
     ],
     [
         "Related To",
-        "Mime Jr"
-    ],
-    [
-        "Related To",
         "Scyther"
-    ],
-    [
-        "Related To",
-        "Smoochum"
-    ],
-    [
-        "Related To",
-        "Elekid"
-    ],
-    [
-        "Related To",
-        "Magby"
     ],
     [
         "Related To",
@@ -5230,10 +5194,6 @@
     [
         "Related To",
         "Aerodactyl"
-    ],
-    [
-        "Related To",
-        "Munchlax"
     ],
     [
         "Related To",
@@ -5293,6 +5253,18 @@
     ],
     [
         "Related To",
+        "Pichu"
+    ],
+    [
+        "Related To",
+        "Cleffa"
+    ],
+    [
+        "Related To",
+        "Igglybuff"
+    ],
+    [
+        "Related To",
         "Togepi"
     ],
     [
@@ -5302,14 +5274,6 @@
     [
         "Related To",
         "Mareep"
-    ],
-    [
-        "Related To",
-        "Azurill"
-    ],
-    [
-        "Related To",
-        "Bonsly"
     ],
     [
         "Related To",
@@ -5342,10 +5306,6 @@
     [
         "Related To",
         "Unown"
-    ],
-    [
-        "Related To",
-        "Wynaut"
     ],
     [
         "Related To",
@@ -5409,10 +5369,6 @@
     ],
     [
         "Related To",
-        "Mantyke"
-    ],
-    [
-        "Related To",
         "Skarmory"
     ],
     [
@@ -5430,6 +5386,22 @@
     [
         "Related To",
         "Smeargle"
+    ],
+    [
+        "Related To",
+        "Tyrogue"
+    ],
+    [
+        "Related To",
+        "Smoochum"
+    ],
+    [
+        "Related To",
+        "Elekid"
+    ],
+    [
+        "Related To",
+        "Magby"
     ],
     [
         "Related To",
@@ -5533,6 +5505,10 @@
     ],
     [
         "Related To",
+        "Azurill"
+    ],
+    [
+        "Related To",
         "Nosepass"
     ],
     [
@@ -5574,10 +5550,6 @@
     [
         "Related To",
         "Illumise"
-    ],
-    [
-        "Related To",
-        "Budew"
     ],
     [
         "Related To",
@@ -5681,11 +5653,11 @@
     ],
     [
         "Related To",
-        "Chingling"
+        "Absol"
     ],
     [
         "Related To",
-        "Absol"
+        "Wynaut"
     ],
     [
         "Related To",
@@ -5785,6 +5757,10 @@
     ],
     [
         "Related To",
+        "Budew"
+    ],
+    [
+        "Related To",
         "Cranidos"
     ],
     [
@@ -5829,11 +5805,27 @@
     ],
     [
         "Related To",
+        "Chingling"
+    ],
+    [
+        "Related To",
         "Stunky"
     ],
     [
         "Related To",
         "Bronzor"
+    ],
+    [
+        "Related To",
+        "Bonsly"
+    ],
+    [
+        "Related To",
+        "Mime Jr"
+    ],
+    [
+        "Related To",
+        "Happiny"
     ],
     [
         "Related To",
@@ -5846,6 +5838,10 @@
     [
         "Related To",
         "Gible"
+    ],
+    [
+        "Related To",
+        "Munchlax"
     ],
     [
         "Related To",
@@ -5870,6 +5866,10 @@
     [
         "Related To",
         "Finneon"
+    ],
+    [
+        "Related To",
+        "Mantyke"
     ],
     [
         "Related To",
@@ -6721,26 +6721,6 @@
     ],
     [
         "Related To",
-        "Galar Zigzagoon"
-    ],
-    [
-        "Related To",
-        "Galar Meowth"
-    ],
-    [
-        "Related To",
-        "Galar Corsola"
-    ],
-    [
-        "Related To",
-        "Galar Farfetchd"
-    ],
-    [
-        "Related To",
-        "Galar Yamask"
-    ],
-    [
-        "Related To",
         "Milcery"
     ],
     [
@@ -6838,14 +6818,6 @@
     [
         "Related To",
         "Calyrex"
-    ],
-    [
-        "Related To",
-        "Hisui Sneasel"
-    ],
-    [
-        "Related To",
-        "Hisui Qwilfish"
     ],
     [
         "Related To",
@@ -6998,10 +6970,6 @@
     [
         "Related To",
         "Tatsugiri"
-    ],
-    [
-        "Related To",
-        "Paldea Wooper"
     ],
     [
         "Related To",
@@ -7177,11 +7145,19 @@
     ],
     [
         "Related To",
+        "Galar Meowth"
+    ],
+    [
+        "Related To",
         "Galar Ponyta"
     ],
     [
         "Related To",
         "Galar Slowpoke"
+    ],
+    [
+        "Related To",
+        "Galar Farfetchd"
     ],
     [
         "Related To",
@@ -7197,7 +7173,19 @@
     ],
     [
         "Related To",
+        "Galar Corsola"
+    ],
+    [
+        "Related To",
+        "Galar Zigzagoon"
+    ],
+    [
+        "Related To",
         "Galar Darumaka"
+    ],
+    [
+        "Related To",
+        "Galar Yamask"
     ],
     [
         "Related To",
@@ -7213,11 +7201,23 @@
     ],
     [
         "Related To",
+        "Hisui Qwilfish"
+    ],
+    [
+        "Related To",
+        "Hisui Sneasel"
+    ],
+    [
+        "Related To",
         "Hisui Zorua"
     ],
     [
         "Related To",
         "Paldea Tauros"
+    ],
+    [
+        "Related To",
+        "Paldea Wooper"
     ],
     [
         "Related To",
