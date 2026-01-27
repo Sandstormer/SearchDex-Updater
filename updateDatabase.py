@@ -25,7 +25,7 @@ def throwError(text = ''):
 with open(f"{pathBal}/pokemon-species.ts", "r", encoding="utf-8", errors="replace") as file:
     content = file.read()
 # Use a regular expression to extract text between the markers
-input_data = re.findall(r'PokemonSpecies\[\]\)\.push\((.*?)\);\n}', content, re.DOTALL)[0]
+raw_data = re.findall(r'PokemonSpecies\[\]\)\.push\((.*?)\);\n}', content, re.DOTALL)[0]
 print('\nLoading data...')
 
 # Counter to keep track of incrementing numbers
@@ -35,30 +35,28 @@ def replace_species(_):
     current_number = species_counter[0]
     species_counter[0] += 1
     return f"{current_number}, {current_number}, "
-input_data = re.sub(r'SpeciesId\.', replace_species, input_data)
+raw_data = re.sub(r'SpeciesId\.', replace_species, raw_data)
 # Replace object prefixes
-input_data = re.sub(r'\bPokemonType\.', '', input_data)
-input_data = re.sub(r'\bAbilityId\.', '', input_data)
-input_data = re.sub(r'\bGrowthRate\.', '', input_data)
-input_data = re.sub(r'\bSpeciesFormKey\.', '', input_data)
-input_data = re.sub(r'\s+new\sPokemonSpecies\(', '\nrow, , ,', input_data)
-input_data = re.sub(r'\s+new\sPokemonForm\(', '\nrow,form,parent,', input_data)
-input_data = re.sub(r'\s+\),', '', input_data)
-input_data = re.sub(r'\"', '', input_data)
-
-# Split arguments and organize into a 2D list, and apply formatting
-output_data = input_data.strip().split('\n')
-output_data = [re.split(r'\),|,', line) for line in output_data]
-output_data = [[format_for_disp(arg) for arg in line] for line in output_data]
+raw_data = re.sub(r'\bPokemonType\.', '', raw_data)
+raw_data = re.sub(r'\bAbilityId\.', '', raw_data)
+raw_data = re.sub(r'\bGrowthRate\.', '', raw_data)
+raw_data = re.sub(r'\bSpeciesFormKey\.', '', raw_data)
+raw_data = re.sub(r'\s+new\sPokemonSpecies\(', '\nrow, , ,', raw_data)
+raw_data = re.sub(r'\s+new\sPokemonForm\(', '\nrow,form,parent,', raw_data)
+raw_data = re.sub(r'\s+\),', '', raw_data)
+raw_data = re.sub(r'\"', '', raw_data)
+raw_data = raw_data.strip().split('\n') # Split lines
+raw_data = [re.split(r'\),|,', line) for line in raw_data] # Split arguments on each line
+raw_data = [[format_for_disp(arg) for arg in line] for line in raw_data] # Format the text
 
 # Assign the parent rows to the alternate forms
 parentCurrent = 0
-for i in range(len(output_data)):
-    output_data[i][0] = i # Add the row number at the start of all rows
-    if output_data[i][2] == 'Parent': # If it has been marked as needing a parent row
-        output_data[i][2] = parentCurrent
+for i in range(len(raw_data)):
+    raw_data[i][0] = i # Add the row number at the start of all rows
+    if raw_data[i][2] == 'Parent': # If it has been marked as needing a parent row
+        raw_data[i][2] = parentCurrent
     else:
-        parentCurrent = output_data[i][0] # Parent is the row of base form
+        parentCurrent = raw_data[i][0] # Parent is the row of base form
 print('Finished reading species')
 
 # Open and read the evolutions file ************************************
@@ -176,11 +174,11 @@ print('Finished reading all moves')
 
 # Currently, base species and forms have different formats in output_data
 # This puts base species and forms into a consistent data format: combined_data
-combined_data = [] 
-for i,line in enumerate(output_data):
-    combined_data.append([])
-    newLine = combined_data[-1]
-    parentLine = output_data[ i if line[2] == '' else int(line[2]) ] # Get the parent row (base species)
+full_data = [] 
+for i,line in enumerate(raw_data):
+    full_data.append([])
+    newLine = full_data[-1]
+    parentLine = raw_data[ i if line[2] == '' else int(line[2]) ] # Get the parent row (itself for base species)
     # I always use [2] (parent row) to tell if an entry is a form (it will be blank for base species)
     if line[2] == '': # For base species, not forms
         # row number [0], form key [1], parent row number [2], dex number [3], image filename [4], display name [5]
@@ -204,7 +202,7 @@ for i,line in enumerate(output_data):
             newLine.append(parentLine[5]) # display name [5]
         else: # If it is a named form
             spriteName = f'{parentLine[4]}-{line[4]}'
-            newLine.append(spriteName.replace(" ", "-"))       # image filename [4]
+            newLine.append(spriteName.replace(" ", "-")) # image filename [4]
             newLine.append(f'{line[4]} {parentLine[5]}') # display name [5]
         newLine.append(parentLine[10]) # Species description (unused) [6]
         newLine.append(line[5]) # Type 1 [7]
@@ -269,7 +267,7 @@ costSpecies = re.findall(r'\[SpeciesId\.(.*)\]:', inputCostData[0])
 costValues  = re.findall(r'\]: (.*),', inputCostData[0])
 for i in range(len(costSpecies)):
     isFound = False
-    for line in combined_data:
+    for line in full_data:
         if line[5] == format_for_disp(costSpecies[i]):
             isFound = True
             line[29] = int(costValues[i])
@@ -286,7 +284,7 @@ tierSpecies = re.findall(r'\[SpeciesId\.(.*)\]:', inputTierData[0])
 tierValues  = re.findall(r'EggTier\.(.*)\n', inputTierData[0])
 for i,tierLine in enumerate(tierSpecies):
     isFound = False
-    for line in combined_data: # Find the species name
+    for line in full_data: # Find the species name
         if line[5] == format_for_disp(tierLine) and line[2] == '':
             isFound = True
             line[34] = line[0] # starterRow equals this row
@@ -337,7 +335,7 @@ for line in biome_data:
             if code%20 == 15:
                 print('** Warning: All times of day fround in',line)
         line[1][index].append(code)
-    for specLine in combined_data:
+    for specLine in full_data:
         if line[0] == specLine[5]: # Assign biome data to base species
             specLine[40] = line[1]
             break
@@ -357,25 +355,25 @@ passive_abilities = [re.findall(r'AbilityId\.(.*?)[,\s]', line) for line in inpu
 passive_abilities = [[format_for_disp(arg) for arg in line] for line in passive_abilities]
 print('Finished reading passives')
 for passiveIndex in range(len(passive_species)): # Assign passives from list of passives *****
-    for i in range(len(combined_data)): # Find the base species that matches that passive
-        if passive_species[passiveIndex] == combined_data[i][5] and combined_data[i][2] == '':
-            combined_data[i][12] = passive_abilities[passiveIndex][0] # Assign the passive to the base species
+    for i in range(len(full_data)): # Find the base species that matches that passive
+        if passive_species[passiveIndex] == full_data[i][5] and full_data[i][2] == '':
+            full_data[i][12] = passive_abilities[passiveIndex][0] # Assign the passive to the base species
             if len(passive_abilities[passiveIndex]) > 1:
                 # If the passive is a list (for those Pokemon's forms)
                 for formInd in range(len(passive_abilities[passiveIndex])):
-                    if combined_data[i+1+formInd][2] != '': # It has to be a form
+                    if full_data[i+1+formInd][2] != '': # It has to be a form
                         # Assign the passive to the forms in order
                         # Reminder that combined_data has the base species, and then form0, form1, etc.
                         # (base species and form0 will use the same passive)
                         # (base species is trimmed later in this script)
-                        combined_data[i+1+formInd][12] = passive_abilities[passiveIndex][formInd]
+                        full_data[i+1+formInd][12] = passive_abilities[passiveIndex][formInd]
                     else:
                         throwError(f'Passive error: {passive_species[passiveIndex]} {passive_abilities[passiveIndex]}')
             break
 print('Finished assigning passives')
 
 # Add only egg moves to the attributes and dictionary
-for line in combined_data:
+for line in full_data:
     if line[5] in moveBySpecToCat and line[2] == '': # Only for base species
         if moveBySpecToCat[line[5]][1]:
             if len(moveBySpecToCat[line[5]][1]) != 4:
@@ -393,13 +391,13 @@ megaList = ['Mega Clefable','Mega Victreebel','Mega Starmie','Mega Dragonite','M
 # Propagate egg moves and other data via evolution **************************
 for stages in range(2): # Up to 2 evolutions
     for evoLine in evolution_data: # Assign data through evolution **********
-        for childLine in combined_data:
+        for childLine in full_data:
             if evoLine[0] == childLine[5]: # Find the childLine, break when matching
                 break
         else: # If the child search loop fails to break
             throwError(f'Failed to find pre-evo {evoLine[0]}')
         for parentName in evoLine[1:]:
-            for parentLine in combined_data:
+            for parentLine in full_data:
                 if parentName == parentLine[5]: # Copy properties from child to parent
                     parentLine[24:28] = childLine[24:28]          # Egg moves
                     parentLine[28] = copy.deepcopy(childLine[28]) # All moves
@@ -417,13 +415,13 @@ for stages in range(2): # Up to 2 evolutions
 # Structure of line[40] is like [ 'Caterpie', [ ['TOWN', 'COMMON', ['DAWN', 'DAY'], 23],[] ] ]
 for stages in range(2): # Up to 2 evolutions
     for evoLine in evolution_data: # Assign biome data backwards
-        for childLine in combined_data:
+        for childLine in full_data:
             if evoLine[0] == childLine[5]: # Find the childLine, break when matching
                 break
         else: # If the child search loop fails to break
             throwError(f'Failed to find pre-evo {evoLine[0]}')
         for parentName in evoLine[1:]:
-            for parentLine in combined_data:
+            for parentLine in full_data:
                 if parentName == parentLine[5]: # Copy biomes from parent to child (reverse)
                     # tyrogue,smoochum,elekid,magby,wynaut,toxel
                     # These babies can appear in the wild, because they are level evolutions
@@ -434,9 +432,9 @@ for stages in range(2): # Up to 2 evolutions
             else: # If the parent search loop fails to break
                 throwError(f'Failed to find post-evo: {parentName}')
 
-for line in combined_data: # Assign data through forms **********************
+for line in full_data: # Assign data through forms **********************
     if line[2] != '': # Only for forms
-        parentLine = combined_data[int(line[2])]
+        parentLine = full_data[int(line[2])]
         if line[12] == '':
             line[12] = parentLine[12]
             print('** Assigned parent passive to',line[5])
@@ -447,7 +445,7 @@ for line in combined_data: # Assign data through forms **********************
         line[34] = parentLine[34] # starterRow
         line[40] = parentLine[40] # Inherit biomes, even on exclusive forms
 print('Finished propagating data to evolutions and forms')
-for line in combined_data: # Check for empty properties in combined_data
+for line in full_data: # Check for empty properties in combined_data
     if line[12] == '':
         throwError(f'Missing Passives: {line[5]}')
     if line[24:28] == '':
@@ -463,7 +461,7 @@ for line in combined_data: # Check for empty properties in combined_data
         for evoLine in evolution_data:
             if evoLine[0] == line[5]:
                 for parentName in evoLine[1:]:
-                    for parentLine in combined_data:
+                    for parentLine in full_data:
                         # Make sure Meltan doesn't count as a baby
                         if parentName == parentLine[5] and parentLine[40] != []:
                             line[45] = 2 # Exclusive to baby
@@ -500,7 +498,7 @@ for line in combined_data: # Check for empty properties in combined_data
     
 # Add level up and TM moves to all the base species
 # src = -1:mushroom, 0:evo, 1-200:level, 201-203:egg&TM, 204:egg, 205-207:rare&TM, 208:rare, 209-211:TM
-for line in combined_data:
+for line in full_data:
     if line[2] == '': # Only for base species
         if line[5] in moveBySpecToCat:
             moveBySpecToCat[line[5]].append('done')
@@ -532,10 +530,10 @@ formLevelMoveData = [[[re.split(',', u) for u in arg] for arg in line] for line 
 for specInd,specLine in enumerate(formLevelMoveData):
     for formInd,formLine in enumerate(specLine):
         if formInd > 0: # The first form (base form) is always blank
-            for i in range(len(combined_data)):
+            for i in range(len(full_data)):
                 # Find the matching base species entry (it will have a blank parent index [2])
-                if combined_data[i][5] == formLevelSpecies[specInd] and combined_data[i][2] == '':
-                    thisEntry = combined_data[i+formInd+1]
+                if full_data[i][5] == formLevelSpecies[specInd] and full_data[i][2] == '':
+                    thisEntry = full_data[i+formInd+1]
                     # Forms with unique levelup may not have an entry yet
                     if thisEntry[5] not in moveBySpecToCat and len(formLine): 
                         moveBySpecToCat[thisEntry[5]] = [[],[],[]]
@@ -550,7 +548,7 @@ for specInd,specLine in enumerate(formLevelMoveData):
 # If the form doesn't have a unique moveset, inherit that from the base species
     # If it does, only inherit TM moves
 # Either way, add TM moves that are unique to forms (in addition to the inherited TM moves)
-for line in combined_data: 
+for line in full_data: 
     if line[2] != '': # Only for forms
         # Determine the name of the form, for lookup in moveBySpecToCat
         # TMs are only given from the base species (not from the 'normal' form) to their forms
@@ -558,7 +556,7 @@ for line in combined_data:
             formName = f'Normal {line[5]}' # Add 'Normal' to distinguish from base species, like Normal Calyrex
         else:
             formName = line[5]
-        parentName = combined_data[int(line[2])][5]
+        parentName = full_data[int(line[2])][5]
 
         if formName in moveBySpecToCat: # If that form has specific moves (either level or TM)
 
@@ -599,7 +597,7 @@ for line in combined_data:
 
         else: # If that form can't be looked up, it doesn't have unique level/TM moves
             # Copy all moves from parent (level, egg, TM)
-            line[28] = copy.deepcopy(combined_data[line[2]][28]) 
+            line[28] = copy.deepcopy(full_data[line[2]][28]) 
             
 # Check that every entry in moveBySpecToCat was assigned
 # A correct moveBySpecToCat[key] looks like [[[levelmove,src],[]], [[eggmove,src],[]], [[tmmove,src],[]], 'done']
@@ -610,7 +608,7 @@ for key, value in moveBySpecToCat.items():
         throwError(f'Failed to assign unique moves to form - Species: {key} - Moves: {value}')
 
 # Species specific manual overrides
-for line in combined_data:
+for line in full_data:
     if line[3] == '718': # 718 Zygarde override
         for text in ['10','50','Complete']:
             if text in line[5]:
@@ -620,19 +618,19 @@ for line in combined_data:
 # Convert combined_data into trimmed_data by removing base species and unobtainables
 trimmed_data = []
 print('\nTrimming base species and unobtainable pokemon...')
-for i in range(len(combined_data)-1):
+for i in range(len(full_data)-1):
     # Keep entries under two scenarios:
     #   If it IS A FORM: because we want to keep all forms
     #   If the next is NOT A FORM: this ensures we keep base species that do not have forms
     # The result is that any base species at the top of form lists get removed
-    if combined_data[i][2] != "" or combined_data[i+1][2] == "": # If it is a form, or next is not
-        if not combined_data[i][42]: 
-            trimmed_data.append(combined_data[i]) # Keep everything except for unobtainables
+    if full_data[i][2] != "" or full_data[i+1][2] == "": # If it is a form, or next is not
+        if not full_data[i][42]: 
+            trimmed_data.append(full_data[i]) # Keep everything except for unobtainables
         else:
-            print('Unobtainable:',combined_data[i][5]) # Should be 2: Unknown Arceus, Zenith Marshadow
-    elif combined_data[i][3] != combined_data[i+1][3]:
-        throwError(f"Ignored {combined_data[i][5]}") # Show error if removing unique species
-trimmed_data.append(combined_data[-1]) # Add the last entry
+            print('Unobtainable:',full_data[i][5]) # Should be 2: Unknown Arceus, Zenith Marshadow
+    elif full_data[i][3] != full_data[i+1][3]:
+        throwError(f"Ignored {full_data[i][5]}") # Show error if removing unique species
+trimmed_data.append(full_data[-1]) # Add the last entry
 
 # If the pokemon is from a region, find the original species, to calculate the regional dex number
 for line in trimmed_data:
@@ -786,7 +784,7 @@ if len(trimmed_data) != 1452:
 # Assemble lists of all filters of each category *****************************
 allTypes = ['Bug','Dark','Dragon','Electric','Fairy','Fighting','Fire','Flying','Ghost','Grass','Ground','Ice','Normal','Poison','Psychic','Rock','Steel','Water']
 allAbilities = []
-for line in combined_data:
+for line in full_data:
     for ab_slot in [9,10,11,12]:
         if line[ab_slot] != '' and line[ab_slot] not in allAbilities:
             allAbilities.append(line[ab_slot])
