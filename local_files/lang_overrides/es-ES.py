@@ -15,7 +15,7 @@ phrases = {
     'formBase': 'Base',
     'formMega': 'Mega',
     'formNewMega': 'Nuevo Mega',
-    'formGiga': 'Giga',
+    'formGiga': 'Gigamax',
     'formTransformed': 'Transformado',
     'lureAbility': 'Habilidad de Colonia',
     'ignoresAbilities': 'Ignora Habilidades',

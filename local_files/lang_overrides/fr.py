@@ -28,7 +28,7 @@ phrases = {
     'formBase': 'Base',
     'formMega': 'Méga',
     'formNewMega': 'Nouveau Méga',
-    'formGiga': 'Giga',
+    'formGiga': 'Gigamax',
     'formTransformed': 'Transformé',
     'lureAbility': 'Talent d’Appât',
     'ignoresAbilities': 'Ignore les Talents',
