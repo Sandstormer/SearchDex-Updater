@@ -2,7 +2,8 @@ headerNames = ['N°','Crom.','Nome','Tipo','Abilità','Mosse Uovo','Costo','Tot'
 altText = ['Mosse','Principale','Speciale','Passiva','Cerca','Pot','Prec','PP',
            'Aggiungi ai filtri','Memoria','Evoluzione','Mossa Uovo','Mossa Uovo Rara',
            'Comuni','Mega','Ultra','MT','L.','Evo','Uova']
-catToName = ['Tipo','Abilità','Mossa','Gen','Costo','Genere','Modalità','Uova','Varianti Cromatiche','Bioma','Evoluzioni','Etichetta']
+catToName = ['Tipo','Abilità','Mossa','Gen','Costo','Uova','Modalità',
+             'Evoluzione','Forma','Bioma','Relativo a','Varianti Cromatiche','Etichetta']
 infoText = [
     'Amicizia per Caramella', 'Passiva', 'Riduzione di Costo', 'Costi di un Uovo', 'Abilità Nascosta', 
     'Solo da Uovo', 'Solo Baby', 'Pokémon Paradosso', 'Cambio Forma', 'Biomi', 'Filtri',
@@ -23,6 +24,12 @@ phrases = {
     'new': 'Nuovo',
     'tag': 'Attributo',
     'theEnd': 'La Fine',
+    'fullyEvolved': 'Completamente evoluto',
+    'formBase': 'Base',
+    'formMega': 'Mega',
+    'formNewMega': 'Nuovo Mega',
+    'formGiga': 'Giga',
+    'formTransformed': 'Trasformato',
     'lureAbility': 'Abilità Esca',
     'ignoresAbilities': 'Ignora Abilità',
     'electricImmunity': 'Immunità Elettro',

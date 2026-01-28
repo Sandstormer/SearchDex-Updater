@@ -1,8 +1,11 @@
 
 headerNames = ['N°','Chrom.','Nom','Type','Talents','Capacités Œuf','Cout','Total','PV','Atq','Déf','ASp','DSp','Vit']
 altText = ['Capacités','Principaux','Caché','Passif','Chercher','Puis.','Préc.','PP','Ajouter aux filtres','Champi Mémoriel',
-           'Évolutions','Capacités Œuf','Rare Capac. Œuf','Commun','Super','Hyper','CT','N.','Évo','Œuf']
-catToName = ['Type','Talent','Capacité','Gen','Cout','Sexe','Mode','Œuf','Variantes Chromatique','Biome','Lié à','Étiquette']
+           'Évolution','Capacités Œuf','Rare Capac. Œuf','Commun','Super','Hyper','CT','N.','Évo','Œuf']
+catToName = ['Type','Talent','Capacité','Gen','Cout','Sexe','Mode',
+             'Œuf','Variantes Chromatique','Biome','Lié à','Étiquette']
+catToName = ['Type','Talent','Capacité','Gen','Cout','Œuf','Mode',
+             'Évolution','Forme','Biome','Lié à','Variantes Chromatique','Étiquette']
 infoText = ['Bonheur par Bonbon','Passif','Cout réduit','Acheter un Œuf','Talent Caché',
             'Exclusif aux Œufs','Exclusif aux Bébés','Pokémon Paradoxe','Changement de forme','Biomes','Filtres',
             'Réduit après ## œufs','par Niveau','par Œuf','par CT']
@@ -21,6 +24,12 @@ phrases = {
     'new': 'Nouvelle',
     'tag': 'Attribut',
     'theEnd': 'La Fin',
+    'fullyEvolved': 'Entièrement évolué',
+    'formBase': 'Base',
+    'formMega': 'Méga',
+    'formNewMega': 'Nouveau Méga',
+    'formGiga': 'Giga',
+    'formTransformed': 'Transformé',
     'lureAbility': 'Talent d’Appât',
     'ignoresAbilities': 'Ignore les Talents',
     'electricImmunity': 'Immunité Électrik',

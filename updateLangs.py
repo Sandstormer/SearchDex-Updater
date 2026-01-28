@@ -42,9 +42,7 @@ warnNameLength = 0
 # Functions for formatting the text
 def format_for_camel(arg): # Key format for official jsons
     arg = arg.title().replace(' ','')
-    return f'{arg[0].lower()}{arg[1:]}'  
-def is_numeric(value): # Function to determine if a value is numeric
-    return re.match(r'^-?\d+(\.\d+)?$', str(value)) is not None
+    return f'{arg[0].lower()}{arg[1:]}'
 def shortenText(text):
     if 'substitutions' in overrides[lang]:
         for line in overrides[lang]['substitutions']:
@@ -125,14 +123,20 @@ for lang in langs: # =========================================== Main loop for e
                 print('Long move found:',text)
     # Copy numeric values
     for index,filter in enumerate(allFilters):
-        # if is_numeric(filter[1]):
         if filter[0] == 'Gen' or filter[0] == 'Cost':
             # print('Copied',filter[1])
             locFilters[index] = filter[1]
-    # Translate female
+    # Translate egg tiers
     for index,filter in enumerate(allFilters):
-        if filter[0] == 'Gender':
-            text = tall['pokemon-form']['espurrFemale']
+        if filter[0] == 'Egg Tier':
+            text = ''
+            if filter[1] == 'Common':     text = 'defaultTier'
+            if filter[1] == 'Rare':       text = 'greatTier'
+            if filter[1] == 'Epic':       text = 'ultraTier'
+            if filter[1] == 'Legendary':  text = 'masterTier'
+            if text:                      text = tall['egg'][text] # standard egg tiers
+            if filter[1] == 'Manaphy':    text = tall['pokemon']['manaphy'] # manaphy egg tier
+            if filter[1] == 'Exclusive':  text = overrides[lang]['phrases']['exclusive'] # exclusive egg tier
             # print('Translated',filter[1],'to',text)
             locFilters[index] = text
     # Translate modes
@@ -149,32 +153,24 @@ for lang in langs: # =========================================== Main loop for e
                 if 'starter' in tall['filter-bar']:
                     text = tall['filter-bar']['starter']
             locFilters[index] = text
-    # Translate egg tiers
+    # Translate evolution filters
     for index,filter in enumerate(allFilters):
-        if filter[0] == 'Egg Tier':
-            text = ''
-            if filter[1] == 'Common':
-                text = 'defaultTier'
-            if filter[1] == 'Rare':
-                text = 'greatTier'
-            if filter[1] == 'Epic':
-                text = 'ultraTier'
-            if filter[1] == 'Legendary':
-                text = 'masterTier'
-            if text:
-                text = tall['egg'][text]
-                # print('Translated',filter[1],'to',text)
-                locFilters[index] = text
-    # Translate manaphy egg tier
-    for index,filter in enumerate(allFilters):
-        if filter[0] == 'Egg Tier' and filter[1] == 'Manaphy':
-            text = tall['pokemon']['manaphy']
+        if filter[0] == 'Evolution':
+            if filter[1] == 'Starter':        text = tall['filter-bar']['starter']
+            if filter[1] == 'Fully Evolved':  text = overrides[lang]['phrases']['fullyEvolved']
             # print('Translated',filter[1],'to',text)
             locFilters[index] = text
-    # Translate exclusive egg tier
+    # Translate form filters
     for index,filter in enumerate(allFilters):
-        if filter[0] == 'Egg Tier' and filter[1] == 'Exclusive':
-            locFilters[index] = overrides[lang]['phrases']['exclusive']
+        if filter[0] == 'Form':
+            if filter[1] == 'Base':         text = overrides[lang]['phrases']['formBase']
+            if filter[1] == 'Mega':         text = overrides[lang]['phrases']['formMega']
+            if filter[1] == 'New Mega':     text = overrides[lang]['phrases']['formNewMega']
+            if filter[1] == 'Giga':         text = overrides[lang]['phrases']['formGiga']
+            if filter[1] == 'Transformed':  text = overrides[lang]['phrases']['formTransformed']
+            if filter[1] == 'Female':       text = tall['pokemon-form']['espurrFemale']
+            # print('Translated',filter[1],'to',text)
+            locFilters[index] = text
     # Translate new variants filter
     for index,filter in enumerate(allFilters):
         if filter[0] == 'Shiny Variants':
@@ -217,7 +213,7 @@ for lang in langs: # =========================================== Main loop for e
             if 'Hisui' in filter[1]:
                 nameFormat = tall['pokemon-form']['appendForm']['hisui']
             if 'Paldea' in filter[1]:
-                nameFormat = tall['pokemon-form']['appendForm']['paldea'].replace('Galar','Paldea') # To-do: Remove later !!!!
+                nameFormat = tall['pokemon-form']['appendForm']['paldea'].replace('Galar','Paldea') # To-do: Remove later
             nameFormat = re.sub('{{pokemonName}}',justLocSpec,nameFormat)
             nameFormat = re.sub("'",'’',nameFormat) # Replace single quotes with unicode
             # print('Translated',specLine[0],'to',nameFormat)
@@ -325,7 +321,7 @@ for lang in langs: # =========================================== Main loop for e
         if 'Hisui' in specLine[2]:
             nameFormat = tall['pokemon-form']['appendForm']['hisui']
         if 'Paldea' in specLine[2]:
-            nameFormat = tall['pokemon-form']['appendForm']['paldea'].replace('Galar','Paldea') # Remove later !!!!
+            nameFormat = tall['pokemon-form']['appendForm']['paldea'].replace('Galar','Paldea') # To-do: Remove later
         if specLine[2] == 'Bloodmoon Ursaluna':
             nameFormat = tall['pokemon-form']['appendForm']['bloodmoon']
         if specLine[2] == 'Eternal Floette':
@@ -445,13 +441,14 @@ for lang in langs: # =========================================== Main loop for e
     locUI['catToName'][2] = re.sub(r'\s*:\s*','',tall['filter-text']['move1Field'])
     locUI['catToName'][3] = tall['filter-bar']['genFilter']
     locUI['catToName'][4] = tall['filter-bar']['sortByCost']
-    locUI['catToName'][5] = re.sub(r'\s*:\s*','',tall['pokedex-ui-handler']['cycleGender'])
+    locUI['catToName'][5] = tall['filter-bar']['egg']
     locUI['catToName'][6] = re.sub('[&nbsp\s]','',tall['run-history']['mode'])
-    locUI['catToName'][7] = tall['filter-bar']['egg']
-    locUI['catToName'][8] = f"{re.sub(r' *: *','',tall['pokedex-ui-handler']['cycleShiny'])} {re.sub(r' *: *','',tall['pokedex-ui-handler']['cycleVariant'])}"
+    locUI['catToName'][7] = tall['pokedex-ui-handler']['evolutions']
+    locUI['catToName'][8] = re.sub(r'\s*:\s*','',tall['pokedex-ui-handler']['cycleForm'])
     locUI['catToName'][9] = tall['filter-bar']['biomeFilter']
-    locUI['catToName'][10] = tall['pokedex-ui-handler']['evolutions']
-    # locUI['catToName'][11] = overrides[lang]['phrases']['tag']
+    locUI['catToName'][10] = tall['pokedex-ui-handler']['evolutions'] # "Related To" filters
+    locUI['catToName'][11] = f"{re.sub(r' *: *','',tall['pokedex-ui-handler']['cycleShiny'])} {re.sub(r' *: *','',tall['pokedex-ui-handler']['cycleVariant'])}"
+    # locUI['catToName'][12] = overrides[lang]['phrases']['tag']
 
     locUI['infoText'] = ['' for line in overrides['en']['infoText']]
     locUI['infoText'][0] = tall['pokemon-summary']['friendship']

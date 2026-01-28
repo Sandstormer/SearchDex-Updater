@@ -3,7 +3,8 @@ headerNames = ['Dex','Shiny','Species','Types','Abilities','Egg Moves','Cost', #
 altText = ['Moves','Main Only','Hidden Only','Passive Only','Search','Pow','Acc','PP', # [0-7]
     'Add to filters','Memory','Evolution','Egg Move','Rare Egg Move', # [8-12]
     'Common','Great','Ultra','TM','Lv.','Evo','Egg'] # [13-19]
-catToName = ['Type','Ability','Move','Gen','Cost','Gender','Mode','Egg Tier','Shiny Variants','Biome','Related To','Tag'] # [0-11]
+catToName = ['Type','Ability','Move','Gen','Cost','Egg Tier','Mode', # [0-6]
+             'Evolution','Form','Biome','Related To','Shiny Variants','Tag'] # [7-12]
 infoText = ['Friendship per Candy','Passive','Cost Reduction','Species Egg','Hidden Ability', # [0-4]
     'Egg Exclusive','Baby Exclusive','Paradox Pokemon','Form Change','Biomes','Filters', # [5-10]
     'Reduced after ## eggs','via Level','via Egg','via TM'] # [11-14]
@@ -22,6 +23,12 @@ phrases = { # Phrases to be used in the auto-translating of filters (do not tran
     'new': 'New',
     'tag': 'Tag', # A tag/attribute/property of a move
     'theEnd': 'The End', # The final biome/zone
+    'fullyEvolved': 'Fully Evolved',
+    'formBase': 'Base', # Referring to the base form of a pokemon (not mega, giga, etc.)
+    'formMega': 'Mega', # Shorthand for Mega evolution
+    'formNewMega': 'New Mega', # Shorthand for newly introduced Mega evolutions
+    'formGiga': 'Giga', # Shorthand for Gmax/Gigantamax
+    'formTransformed': 'Transformed', # Shorthand for other pokemon forms
     'lureAbility': 'Lure Ability',
     'ignoresAbilities': 'Ignores Abilities',
     'electricImmunity': 'Electric Immunity',

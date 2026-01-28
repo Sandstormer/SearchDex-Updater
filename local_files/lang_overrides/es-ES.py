@@ -1,6 +1,7 @@
 headerNames = ['Dex','Shiny','Especie','Tipos','Habilidades','Mov. Huevo','Coste','BST','PS','Atq','Def','AtE','DfE','Vel']
 altText = ['Movimientos','Solo Principal','Solo Oculta','Solo Pasiva','Buscar','Pot.','Prec.','PP','Añadir a filtros','Recuerdo','Evolución','Mov. Huevo','Mov. Huevo Raro','Común','Súper','Ultra','MT','Nv.','Evo','Huevo']
-catToName = ['Tipo','Habilidad','Movimiento','Gen','Coste','Género','Modo','Nivel de Huevo','Variantes Shiny','Bioma','Relacionado con','Etiqueta']
+catToName = ['Tipo','Habilidad','Movimiento','Gen','Coste','Nivel de Huevo','Modo',
+             'Evolución','Forma','Bioma','Relacionado con','Variantes Shiny','Etiqueta']
 infoText = ['Amistad por Caramelo','Pasiva','Reducción de Coste','Huevo de Especie','Habilidad Oculta',
             'Exclusivo de Huevo','Exclusivo de Cría','Pokémon Paradoja','Cambio de Forma','Biomas','Filtros',
             'Reducido después de ## huevos','por Nivel','por Huevo','por MT']
@@ -10,6 +11,12 @@ phrases = {
     'new': 'Nuevo',
     'tag': 'Atributo',
     'theEnd': 'El Final',
+    'fullyEvolved': 'Totalmente evolucionado',
+    'formBase': 'Base',
+    'formMega': 'Mega',
+    'formNewMega': 'Nuevo Mega',
+    'formGiga': 'Giga',
+    'formTransformed': 'Transformado',
     'lureAbility': 'Habilidad de Colonia',
     'ignoresAbilities': 'Ignora Habilidades',
     'electricImmunity': 'Inmunidad Eléctrica',
