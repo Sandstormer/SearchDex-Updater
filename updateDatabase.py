@@ -848,7 +848,7 @@ for j in ['Lure Ability','Ignores Abilities','Electric Immunity','Fire Immunity'
 
 # Process the biome data:
 # Structure of line[40] is like [ 'Caterpie', [ ['TOWN', 'COMMON', ['DAWN', 'DAY'], 23],[] ] ]
-# This step encodes that data as [Biome Name, fid, [code1,code2,...]]
+# This step encodes that data as [Biome Name, [code1,code2,...]]
 # Multiple encounters in the same biome are put into a list in that biome (instead of a separate line)
 # Will eventually be written to js file as fid:[code1,code2,...]
 # 'code' is the encoded rarity and time of day
@@ -881,27 +881,26 @@ for line in trimmed_data:
                     if all(not(i & (biomeLine[3]%20)) for i in speciesLine[1]):
                         abort = 1
             if not abort:
-                # Encoded the biome name as its FID *********************
-                # Multiple rarites in the same biome are grouped together
+                # Multiple rarites in the same biome will be grouped together
                 newFID = filterToFID[f'biome{format_for_attr(format_for_disp(biomeLine[0]))}']
                 for encLine in encoded:
-                    if encLine[1] == newFID: # If the biome already exists, add this encounter to the list
+                    if encLine[0] == biomeLine[0]: # If the biome already exists, add this encounter to the list
                         # In the encounter codes for that biome, check for an entry that matches the rarity
-                        for index,existingEncoding in enumerate(encLine[2]):
+                        for index,existingEncoding in enumerate(encLine[1]):
                             if biomeLine[3]//20 == existingEncoding//20:
                                 # Add the time of day together with bitwise OR
                                 # If no times are active, it counts as ALL times (15)
                                 # If the combination is ALL times, do mod 15 to not show any times
                                 timeOfDayEncoding = ( ( biomeLine[3]%20 or 15 ) | ( existingEncoding%20 or 15 ) ) % 15
-                                encLine[2][index] = timeOfDayEncoding + existingEncoding//20*20
+                                encLine[1][index] = timeOfDayEncoding + existingEncoding//20*20
                                 break
                         else: # Add the encounter code as a new rarity
-                            encLine[2].append(biomeLine[3])
+                            encLine[1].append(biomeLine[3])
                         break
                 else: # Create a new FID entry for the biome
-                    encoded.append([biomeLine[0], newFID, [biomeLine[3]]])
+                    encoded.append([biomeLine[0], [biomeLine[3]]])
         # for encLine in encoded:
-        #     if len(encLine[2]) > 2:
+        #     if len(encLine[1]) > 2:
         #         print('** More than 2 biome rarites in',line[5],encLine)
         # if len(encoded) > 3:
         #     print(f'** Many biomes ({len(encoded)}) in',line[5],line[40])
@@ -916,15 +915,15 @@ for line in trimmed_data:
     if isinstance(line[40],list):
         for biomeLine in line[40]:
             encoded = []
-            entry = min((x for x in biomeLine[2] if x-x%20 not in [60,100,140,180]), default=None)
+            entry = min((x for x in biomeLine[1] if x-x%20 not in [60,100,140,180]), default=None)
             if entry: encoded.append(entry)
-            entry = min((x for x in biomeLine[2] if x-x%20 in [60,100,140,180]), default=None)
+            entry = min((x for x in biomeLine[1] if x-x%20 in [60,100,140,180]), default=None)
             if entry: encoded.append(entry)
-            for entry in biomeLine[2]:
+            for entry in biomeLine[1]:
                 if entry not in encoded:
                     encoded.append(entry)
             # print('Changed',biomeLine[2],'to',encoded)
-            biomeLine[2] = encoded       
+            biomeLine[1] = encoded       
 
 # Find the threshold of types and abilities
 fidThresholds = []
@@ -1065,40 +1064,41 @@ jsdict = ['// pokedex_data.js\nconst items=[']
 for line in trimmed_data:
     text = '{' # Start the entry of that Pokemon
     # Write all the main attributes as {text}:{value}
-    for j in range(len(attributes)): 
-        if j not in omitAttr and line[j] != '':
-            if j in [7,8,9,10,11,12,24,25,26,27]:
+    for i in range(len(attributes)): 
+        if i not in omitAttr and line[i] != '':
+            if i in [7,8,9,10,11,12,24,25,26,27]:
                 # Types/Abilities/Moves are listed as Names in trimmed_data
                 # They are converted to filter ID (fid) before writing
-                innertext = f'{keyText[j]}{line[j]}'
-                text = f'{text}{attributes[j]}:{filterToFID[format_for_attr(innertext)]}'
-            elif j == 4:
-                text = f'{text}{attributes[j]}:"{format_for_attr(line[j])}"' # For img path
-            elif is_numeric(line[j]):
-                text = f'{text}{attributes[j]}:{line[j]}' # For numbers
+                fid = filterToFID[format_for_attr(f'{keyText[i]}{line[i]}')]
+                text = f'{text}{attributes[i]}:{fid}'
+            elif i == 4:
+                text = f'{text}{attributes[i]}:"{format_for_attr(line[i])}"' # For img path
+            elif is_numeric(line[i]):
+                text = f'{text}{attributes[i]}:{line[i]}' # For numbers
             else:
-                text = f'{text}{attributes[j]}:"{line[j]}"' # For all others
+                text = f'{text}{attributes[i]}:"{line[i]}"' # For all others
             text = f'{text},'
     # Write all moves as {fid}:{source}
     for key,value in line[28].items():
-        innertext = f'move{key}'
-        text = f'{text}{filterToFID[format_for_attr(innertext)]}:{value},'
+        fid = filterToFID[format_for_attr(f'move{key}')]
+        text = f'{text}{fid}:{value},'
     # Write types/abilities as {fid}:{source}
     # This is for faster lookups, and for the ability restriction filter to know which slot
     for i in range(7,13):
         if line[i] != '':
-            innertext = f'{keyText[i]}{line[i]}'
-            text = f'{text}{filterToFID[format_for_attr(innertext)]}:{300+i}'
+            fid = filterToFID[format_for_attr(f'{keyText[i]}{line[i]}')]
+            text = f'{text}{fid}:{300+i}'
             if i < 12:
                 text = f'{text},'
     # Write biome data as fid:'[code1,code2,...]'
-    # line[40] is like [Biome Name, fid, [code1,code2,...]]
+    # line[40] is like [Biome Name, [code1,code2,...]]
     if isinstance(line[40],list):
         for biomeLine in line[40]: # Biomes
-            text = f'{text},{biomeLine[1]}:['
-            for source in biomeLine[2]:
+            fid = filterToFID[f'biome{format_for_attr(format_for_disp(biomeLine[0]))}']
+            text = f'{text},{fid}:['
+            for source in biomeLine[1]:
                 text = f'{text}{source}'
-                if source != biomeLine[2][-1]:
+                if source != biomeLine[1][-1]:
                     text = f'{text},'
                 else:
                     text = f'{text}]'
