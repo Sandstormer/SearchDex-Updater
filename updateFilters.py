@@ -611,7 +611,7 @@ for synLine in synergyAbilities.values():
 # Write fid associated with each tag to filters_global.js
 lines.append('];\nconst tagToFID = {')
 for index, relatedFID in enumerate(tagToFID):
-    lines.append(f'{fidThreshold[10]+index}: [{",".join(relatedFID)}],')
+    lines.append(f'{fidThreshold[11]+index}: [{",".join(relatedFID)}],')
 
 # Format of orderedData: 
 #   Abilities: [fid[0], name[1], procs[2], tags[3]]

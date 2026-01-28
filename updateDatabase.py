@@ -230,17 +230,17 @@ for i,line in enumerate(raw_data):
     newLine.append(parentLine[5]) # specKey [37] used for "Related" filters, and translation lookup
     newLine.extend(['','','']) # familyFID [38], freshStart [39], biomes [40]
     
-    # Form exclusive [41] ('' = starter, 1 = mega, 2 = giga, 3 = transformed)
+    # Form exclusive [41] ('' = starter, 1 = mega, 2 = new mega, 3 = giga, 4 = transformed)
     name = newLine[5]
     formExclusive = '' # Startable by default, for base species and most forms
     # In the game data, argument 24 defaults to False (Forms are exclusive unless marked otherwise)
     # Check for mega, giga, or other transformed (Zacian, Mimikyu, etc.)
-    if line[2] != '' and (len(line) < 25 or 'True' not in line[24]): formExclusive = 3
+    if line[2] != '' and (len(line) < 25 or 'True' not in line[24]): formExclusive = 4
     if 'Mega ' in name: formExclusive = 1 # Mega (needs the space)
-    if 'Gigantamax' in name: formExclusive = 2 # Giga
+    if 'Gigantamax' in name: formExclusive = 3 # Giga
     # In-game, the form is chosen from getSpeciesFormIndex in src/battle-scene.ts
     # Some forms have the wrong isStarterSelectable in balance/pokemon-species.ts (error with the game code)
-    if 'Minior'   in name and 'Meteor' not in name: formExclusive = 3  # Force minior core to count as transformed
+    if 'Minior'   in name and 'Meteor' not in name: formExclusive = 4  # Force minior core to count as transformed
     if 'Maushold' in name or 'Dudunsparce' in name: formExclusive = '' # Force those forms to be not exclusive
     newLine.append(formExclusive)
 
@@ -253,7 +253,7 @@ for i,line in enumerate(raw_data):
 
     newLine.append('') # Newly added variants [43]
     newLine.append('') # Evo class [44] (1 = starter, 2 = fully evolved)
-    newLine.append('') # Exclusive class [45] (regular, eggExc, baby, paradox, eterna, starmobile)
+    newLine.append('') # Exclusive class [45] ('' = regular, 1 = eggExc, 2 = baby, 3 = paradox, 4 = eterna, 5 = starmobile)
     newLine.append(1)  # Fully Evolved [46] ('' = can evolve, 1 = fully evolved)
 print('Finished normalizing data')
 
@@ -825,13 +825,14 @@ for j in range(2,10):
     allFilters.append(['Cost',f'≤ {j}'])
 for j in range(2,10):
     allFilters.append(['Cost',f'≥ {j}'])
-allFilters.append(['Gender','Female'])
-for j in ['Starter Select','Fresh Start','Flipped Stats']:
-    allFilters.append(['Mode',j])
 for j in ['Common','Rare','Epic','Manaphy','Legendary','Exclusive']:
     allFilters.append(['Egg Tier',j])
-for j in ['New','All','None']:
-    allFilters.append(['Shiny Variants',j])
+for j in ['Starter Select','Fresh Start','Flipped Stats']:
+    allFilters.append(['Mode',j])
+for j in ['Starter','Fully Evolved']:
+    allFilters.append(['Evolution',j])
+for j in ['Base','Mega','New Mega','Giga','Transformed','Female']:
+    allFilters.append(['Form',j])
 for line in allBiomes:
     filterToFID[f'biome{format_for_attr(line)}'] = len(allFilters)
     allFilters.append(['Biome',line])
@@ -840,6 +841,8 @@ for starterIndex in familyList:
     for line in trimmed_data:
         if line[35] == starterIndex: # If starterIndex is equal to the one in starterList
             line[38] = len(allFilters)-1 # Set familyFID to this fid
+for j in ['New','All','None']:
+    allFilters.append(['Shiny Variants',j])
 for j in ['Lure Ability','Ignores Abilities','Electric Immunity','Fire Immunity','Water Immunity','Rain Ability','Sand Ability','Snow Ability','Sun Ability']:
     allFilters.append(['Tag',j])
 
@@ -1136,10 +1139,14 @@ print("Data writing complete")
 #             This is used for the "Related To" filters
 #             Contains the FID that corresponds to that family filter
 #     st: Value is 1 if the Pokemon is available from starter select (i.e. being the lowest evolution)
+#     ev: Value is 1 if the Pokemon is fully evolved (single stage pokemon have 'st' and 'ev')
 #     fs: Value is 1 if the Pokemon is available in fresh start (i.e. being a first partner pokemon)
 #     nv: Value is 1 if the Pokemon had new variants recently added
 #     fx: If the Pokemon is form exclusive
-#             Value is 1 for Mega, G-Max, item form changes, or temporary form changes
+#             Value is 1 for Mega
+#             Value is 2 for New mega
+#             Value is 3 for Giga
+#             Value is 4 for item form changes or temporary form changes
 #     ex: If the Pokemon is egg exclusive
 #             Value is 1 for traditional egg exclusives, like Arceus
 #             Value is 2 for baby Pokemon, like Pichu

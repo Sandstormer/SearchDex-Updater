@@ -4756,22 +4756,6 @@
         "\u2265 9"
     ],
     [
-        "Gender",
-        "Female"
-    ],
-    [
-        "Mode",
-        "Starter Select"
-    ],
-    [
-        "Mode",
-        "Fresh Start"
-    ],
-    [
-        "Mode",
-        "Flipped Stats"
-    ],
-    [
         "Egg Tier",
         "Common"
     ],
@@ -4796,16 +4780,48 @@
         "Exclusive"
     ],
     [
-        "Shiny Variants",
-        "New"
+        "Mode",
+        "Starter Select"
     ],
     [
-        "Shiny Variants",
-        "All"
+        "Mode",
+        "Fresh Start"
     ],
     [
-        "Shiny Variants",
-        "None"
+        "Mode",
+        "Flipped Stats"
+    ],
+    [
+        "Evolution",
+        "Starter"
+    ],
+    [
+        "Evolution",
+        "Fully Evolved"
+    ],
+    [
+        "Form",
+        "Base"
+    ],
+    [
+        "Form",
+        "Mega"
+    ],
+    [
+        "Form",
+        "New Mega"
+    ],
+    [
+        "Form",
+        "Giga"
+    ],
+    [
+        "Form",
+        "Transformed"
+    ],
+    [
+        "Form",
+        "Female"
     ],
     [
         "Biome",
@@ -7222,6 +7238,18 @@
     [
         "Related To",
         "Bloodmoon Ursaluna"
+    ],
+    [
+        "Shiny Variants",
+        "New"
+    ],
+    [
+        "Shiny Variants",
+        "All"
+    ],
+    [
+        "Shiny Variants",
+        "None"
     ],
     [
         "Tag",
