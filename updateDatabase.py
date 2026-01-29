@@ -836,6 +836,8 @@ for j in ['Base','Mega','New Mega','Giga','Transformed','Female']:
 for line in allBiomes:
     filterToFID[f'biome{format_for_attr(line)}'] = len(allFilters)
     allFilters.append(['Biome',line])
+for j in ['Mega','New Mega','Giga']:
+    allFilters.append(['Related To',j])
 for starterIndex in familyList:
     allFilters.append(['Related To',trimmed_data[starterIndex][37]])
     for line in trimmed_data:

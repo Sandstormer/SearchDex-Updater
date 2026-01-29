@@ -196,6 +196,9 @@ for lang in langs: # =========================================== Main loop for e
     # Translate names of family filters
     for index,filter in enumerate(allFilters):
         if filter[0] == 'Related To':
+            if format_for_camel(f'form {filter[1]}') in overrides[lang]['phrases']:
+                locFilters[index] = overrides[lang]['phrases'][format_for_camel(f'form {filter[1]}')]
+                continue
             text = format_for_camel(filter[1])
             if text in tall['pokemon']:
                 justLocForm = ''
