@@ -1,6 +1,6 @@
-headerNames = ['N°','Crom.','Nome','Tipo','Abilità','Mosse Uovo','Costo','Tot','PS','Att','Dif','ASp','DSp','Vel']
+headerNames = ['N°','Immagine','Nome','Tipo','Abilità','Mosse Uovo','Costo','Tot','PS','Att','Dif','ASp','DSp','Vel']
 altText = ['Mosse','Principale','Speciale','Passiva','Cerca','Pot','Prec','PP',
-           'Aggiungi ai filtri','Memoria','Evoluzione','Mossa Uovo','Mossa Uovo Rara',
+           'Aggiungi ai filtri','Memoria','Crom.','Mossa Uovo','Mossa Uovo Rara',
            'Comuni','Mega','Ultra','MT','L.','Evo','Uova']
 catToName = ['Tipo','Abilità','Mossa','Gen','Costo','Uova','Modalità',
              'Evoluzione','Forma','Bioma','Relativo a','Varianti Cromatiche','Etichetta']

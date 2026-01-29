@@ -1,9 +1,8 @@
 
-headerNames = ['N°','Chrom.','Nom','Type','Talents','Capacités Œuf','Cout','Total','PV','Atq','Déf','ASp','DSp','Vit']
-altText = ['Capacités','Principaux','Caché','Passif','Chercher','Puis.','Préc.','PP','Ajouter aux filtres','Champi Mémoriel',
-           'Évolution','Capacités Œuf','Rare Capac. Œuf','Commun','Super','Hyper','CT','N.','Évo','Œuf']
-catToName = ['Type','Talent','Capacité','Gen','Cout','Sexe','Mode',
-             'Œuf','Variantes Chromatique','Biome','Lié à','Étiquette']
+headerNames = ['N°','Image','Nom','Type','Talents','Capacités Œuf','Cout','Total','PV','Atq','Déf','ASp','DSp','Vit']
+altText = ['Capacités','Principaux','Caché','Passif','Chercher','Puis.','Préc.','PP',
+           'Ajouter aux filtres','Champi Mémoriel','Chrom.','Capacités Œuf','Rare Capac. Œuf',
+           'Commun','Super','Hyper','CT','N.','Évo','Œuf']
 catToName = ['Type','Talent','Capacité','Gen','Cout','Œuf','Mode',
              'Évolution','Forme','Biome','Lié à','Variantes Chromatique','Étiquette']
 infoText = ['Bonheur par Bonbon','Passif','Cout réduit','Acheter un Œuf','Talent Caché',

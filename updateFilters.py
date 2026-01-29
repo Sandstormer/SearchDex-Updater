@@ -241,13 +241,17 @@ for line in moveData:
             move2D[-1].append(format_for_attr(moveAttr[3])) # [7] accuracy
             move2D[-1].append(format_for_attr(moveAttr[4])) # [8] pp
             move2D[-1].append(format_for_attr(moveAttr[6])) # [9] priority  
-            procChance = int(format_for_attr(moveAttr[5]))                     
-            if 'SelfStatusMove' in line:                                    
+            # procChance is written to each proc in [2]
+            # Guaranteed effects can be either -1 or 100
+            # -1 is for detrimental effects, while 100 is for beneficial (sheer force) effects
+            # Sheer Force needs a procChance >= 1 (only beneficial moves, and some abilities)
+            procChance = int(format_for_attr(moveAttr[5]))  
+            if 'SelfStatusMove' in line:
                 move2D[-1][3].append(202)
     else:                                                            
         # General order of move descriptors: priority, targets, procs, all other tags
         # All the procs and tags are shared between abilities and moves
-        # Tags should be in sequential order as they will be displayed on my site
+        # Tags should be in sequential order as they will be displayed on the searchdex
         # They are not processed in sequential order here, due to string matching
         # My internally used tags start at 200 (for contact, reflectable, etc.)
         if len(move2D[-1]) > 2:

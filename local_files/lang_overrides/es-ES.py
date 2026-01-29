@@ -1,5 +1,7 @@
-headerNames = ['Dex','Shiny','Especie','Tipos','Habilidades','Mov. Huevo','Coste','BST','PS','Atq','Def','AtE','DfE','Vel']
-altText = ['Movimientos','Solo Principal','Solo Oculta','Solo Pasiva','Buscar','Pot.','Prec.','PP','Añadir a filtros','Recuerdo','Evolución','Mov. Huevo','Mov. Huevo Raro','Común','Súper','Ultra','MT','Nv.','Evo','Huevo']
+headerNames = ['Dex','Imagen','Especie','Tipos','Habilidades','Mov. Huevo','Coste','BST','PS','Atq','Def','AtE','DfE','Vel']
+altText = ['Movimientos','Solo Principal','Solo Oculta','Solo Pasiva','Buscar','Pot.','Prec.','PP',
+           'Añadir a filtros','Recuerdo','Variocolor','Mov. Huevo','Mov. Huevo Raro',
+           'Común','Súper','Ultra','MT','Nv.','Evo','Huevo']
 catToName = ['Tipo','Habilidad','Movimiento','Gen','Coste','Nivel de Huevo','Modo',
              'Evolución','Forma','Bioma','Relacionado con','Variantes Shiny','Etiqueta']
 infoText = ['Amistad por Caramelo','Pasiva','Reducción de Coste','Huevo de Especie','Habilidad Oculta',

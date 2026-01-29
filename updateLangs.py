@@ -163,12 +163,10 @@ for lang in langs: # =========================================== Main loop for e
     # Translate form filters
     for index,filter in enumerate(allFilters):
         if filter[0] == 'Form':
-            if filter[1] == 'Base':         text = overrides[lang]['phrases']['formBase']
-            if filter[1] == 'Mega':         text = overrides[lang]['phrases']['formMega']
-            if filter[1] == 'New Mega':     text = overrides[lang]['phrases']['formNewMega']
-            if filter[1] == 'Giga':         text = overrides[lang]['phrases']['formGiga']
-            if filter[1] == 'Transformed':  text = overrides[lang]['phrases']['formTransformed']
-            if filter[1] == 'Female':       text = tall['pokemon-form']['espurrFemale']
+            if format_for_camel(f'form {filter[1]}') in overrides[lang]['phrases']:
+                text = overrides[lang]['phrases'][format_for_camel(f'form {filter[1]}')]
+            if filter[1] == 'Female':
+                text = tall['pokemon-form']['espurrFemale']
             # print('Translated',filter[1],'to',text)
             locFilters[index] = text
     # Translate new variants filter
