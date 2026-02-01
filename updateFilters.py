@@ -39,9 +39,11 @@ for index,line in enumerate(abilityData):
         else:
             # print('Found ability:',abilityName)
             abilityFID = filterToFID[f'ability{abilityName}']
-            ability2D.append([abilityFID, abilityName, [], []]) # [fid[0], name[1], procs[2], tags[3]]
+            procList = []
+            tagList = []
+            ability2D.append([abilityFID, abilityName, procList, tagList]) # [fid[0], name[1], procs[2], tags[3]]
         if abilityName in ['magicguard', 'comatose', 'shieldsdown', 'fullmetalbody', 'shadowshield', 'prismarmor']:
-            ability2D[-1][3].append(50) # Abilities that "Can't be ignored"
+            tagList.append(50) # Abilities that "Can't be ignored"
     elif len(ability2D[-1]):
         # All the procs and tags are shared between abilities and moves
         # Tags should be in sequential order as they will be displayed on my site
@@ -61,11 +63,11 @@ for index,line in enumerate(abilityData):
                     entry = [-2,index,amount]
                     if abilityName in ['flowergift','victorystar']:
                         entry[1] += 7
-                    if entry not in ability2D[-1][2]:
-                        ability2D[-1][2].append(entry)
+                    if entry not in procList:
+                        procList.append(entry)
                     # print('Found ability stat boost:',abilityName,stat,amount)
         elif 'playerFaints' in line:
-            ability2D[-1][2].append([-3,26,10]) # supremeoverlord
+            procList.append([-3,26,10]) # supremeoverlord
         elif 'MovePowerBoostAbAttr' in line:
             for i in range(5): # Search for a number in the next 5 lines
                 if re.findall(r'(\d\.?\d?\d?)', abilityData[index+i]):
@@ -74,39 +76,39 @@ for index,line in enumerate(abilityData):
                         break # Once it finds the multiplier value, break
             else:
                 print(abilityName,line)
-            ability2D[-1][2].append([-2,26,amount])
+            procList.append([-2,26,amount])
             # print('Found ability power boost:',abilityName,amount)
         elif 'LowHpMoveTypePowerBoostAbAttr' in line:
-            ability2D[-1][2].append([-2,26,1.5])
+            procList.append([-2,26,1.5])
             # print('Found low hp type boost:',abilityName,1.5)
         elif 'UserFieldMoveTypePowerBoostAbAttr' in line: # Steely Spirit
-            ability2D[-1][2].append([-2,26,1.5])
+            procList.append([-2,26,1.5])
         elif 'FieldMoveTypePowerBoostAbAttr' in line: # Aura Break, Fairy/Dark Aura
             if abilityName == 'aurabreak':
                 amount = '0.75'
             else:
                 amount = '1.33'
-            if [-2,26,amount] not in ability2D[-1][2]:
-                ability2D[-1][2].append([-2,26,amount])
+            if [-2,26,amount] not in procList:
+                procList.append([-2,26,amount])
             # print('Found field type boost:',abilityName,amount)
         elif 'MoveTypePowerBoostAbAttr' in line: # Transistor, Rocky Payload, etc.
             if re.findall(r'(\d\.?\d?\d?)', line):
                 amount = re.findall(r'(\d\.?\d?\d?)', line)[-1]
             else:
                 amount = '1.5'
-            if [-2,26,amount] not in ability2D[-1][2]:
-                ability2D[-1][2].append([-2,26,amount])
+            if [-2,26,amount] not in procList:
+                procList.append([-2,26,amount])
                 # print('Found ability type power boost:',abilityName,amount)
         elif 'AllyMoveCategoryPowerBoostAbAttr' in line:
             amount = re.findall(r'(\d\.?\d?\d?)', line)[-1]
-            if [-2,26,amount] not in ability2D[-1][2]:
-                ability2D[-1][2].append([-2,26,amount])
+            if [-2,26,amount] not in procList:
+                procList.append([-2,26,amount])
                 # print('Found ally power boost:',abilityName,amount)
         elif 'ReceivedMoveDamageMultiplierAbAttr' in line or 'ReceivedTypeDamageMultiplierAbAttr' in line:
             if re.findall(r'(\d\.?\d?\d?)', line):
                 amount = re.findall(r'(\d\.?\d?\d?)', line)[-1]
-            if [-2,26,amount] not in ability2D[-1][2] and abilityName != 'punkrock':
-                ability2D[-1][2].append([-2,26,amount])
+            if [-2,26,amount] not in procList and abilityName != 'punkrock':
+                procList.append([-2,26,amount])
                 # print('Found damage taken mod:',abilityName,amount)
         elif 'FieldMultiplyStatAbAttr' in line:
             stat = format_for_attr(re.findall(r'Stat\.(.*?),', line)[0])
@@ -115,7 +117,7 @@ for index,line in enumerate(abilityData):
             for thisStat in ['atk','def','spatk','spdef','spd','acc','eva']:
                 index += 1
                 if stat == thisStat:
-                    ability2D[-1][2].append([-2,index+7,amount])
+                    procList.append([-2,index+7,amount])
                     # print('Found field stat boost:',abilityName,stat,amount)
         elif 'PostSummonStatStageChangeAbAttr' in line:
             stat = format_for_attr(re.findall(r'Stat\.(.*?)\s', line)[0])
@@ -125,7 +127,7 @@ for index,line in enumerate(abilityData):
             for thisStat in ['atk','def','spatk','spdef','spd','acc','eva']:
                 index += 1
                 if stat == thisStat:
-                    ability2D[-1][2].append([-1,index+(not self)*7,amount])
+                    procList.append([-1,index+(not self)*7,amount])
                     # print('Found summon stat boost:',abilityName,stat,amount)
         elif 'PostStatStageChangeStatStageChangeAbAttr' in line:
             stat = format_for_attr(re.findall(r'Stat\.(.*?)\s', line)[0])
@@ -135,54 +137,56 @@ for index,line in enumerate(abilityData):
             for thisStat in ['atk','def','spatk','spdef','spd','acc','eva']:
                 index += 1
                 if stat == thisStat:
-                    ability2D[-1][2].append([-1,index+(not self)*7,amount])
+                    procList.append([-1,index+(not self)*7,amount])
                     # print('Found defiant-like:',abilityName,stat,amount)
         elif 'ApplyStatusEffectAbAttr' in line:
             if 'StatusEffect.POISON' in line:
-                ability2D[-1][2].append([30,14,0])
+                procList.append([30,14,0])
             elif 'StatusEffect.TOXIC' in line:
-                ability2D[-1][2].append([30,15,0])
+                procList.append([30,15,0])
             elif 'StatusEffect.SLEEP' in line:
-                ability2D[-1][2].append([30,16,0])
+                procList.append([30,16,0])
             elif 'StatusEffect.FREEZE' in line:
-                ability2D[-1][2].append([30,17,0])
+                procList.append([30,17,0])
             elif 'StatusEffect.PARALYSIS' in line:
-                ability2D[-1][2].append([30,18,0])
+                procList.append([30,18,0])
             elif 'StatusEffect.BURN' in line:
-                ability2D[-1][2].append([30,19,0])
+                procList.append([30,19,0])
             else:
                 print('No status found',line)
             # print('Found status proc ability:',abilityName)
         elif 'MoveTypeChangeAbAttr' in line and abilityName != 'liquidvoice':
-            ability2D[-1][2].append([-2,26,1.2])
+            procList.append([-2,26,1.2])
             # print('Found aerilate-like:',abilityName,1.2)
         elif 'StabBoostAbAttr' in line:
-            ability2D[-1][2].append([-2,26,1.33])
+            procList.append([-2,26,1.33])
             # print('Found stab boost:',abilityName,1.33)
         elif 'PostAttackApplyBattlerTagAbAttr' in line:
-            ability2D[-1][2].append([10,21,0])
+            procList.append([10,21,0])
             # print('Found stench:',abilityName)
         elif 'SpeedBoostAbAttr' in line:
-            ability2D[-1][2].append([-1,4,1])
+            procList.append([-1,4,1])
             # print('Found speed boost:',abilityName,1)
         elif 'EffectSporeAbAttr' in line:
-            ability2D[-1][2].append([30,23,0])
+            procList.append([30,23,0])
         elif 'MultCritAbAttr' in line: # Sniper
-            ability2D[-1][2].append([-2,26,1.5])
+            procList.append([-2,26,1.5])
         elif '.unimplemented()' in line:
-            ability2D[-1][3].append(62)
-            # print('Found unimp ability',abilityName)
+            tagList.append(62)
+            # print('Found unimplemented ability',abilityName)
         elif '.partial()' in line:
-            ability2D[-1][3].append(61)
+            tagList.append(61)
             # print('Found partial ability',abilityName)
         elif '.unsuppressable()' in line:
-            ability2D[-1][3].append(48)
+            tagList.append(48)
         elif '.unreplaceable()' in line:
-            ability2D[-1][3].append(49)
+            tagList.append(49)
+        elif '.ignorable()' in line and 50 in tagList:
+            input(f'Mismatch for ignorability in {abilityName}')
         elif 'MoveAbilityBypassAbAttr' in line: # Ignores abilities (Mold Breaker, etc.)
-            ability2D[-1][3].append(37)         # "Can't be ignored" is 50, done in the previous section
+            tagList.append(37)         # "Can't be ignored" is 50, done in the previous section
         elif 'DoubleBattleChanceAbAttr' in line: # Lure abilities
-            ability2D[-1][3].append(59)
+            tagList.append(59)
         # elif 'ultipl' in line or 'oost' in line or 'pow' in line:
         #     # Check for keywords in the ability line like 'Multiply', 'Boost', or 'Power'
         #     # Print those lines to make sure I'm not missing anything important
@@ -207,47 +211,35 @@ for line in moveData:
             # They have to be added here so that attributes don't error, but I ignore these moves later
             move2D.append(['xxxxx',moveName]) 
         else:
-            moveFID = filterToFID[f'move{moveName}']
-            move2D.append([moveFID, moveName, [], []]) # [fid[0], name[1], procs[2], tags[3]]
-
-            # Append the fid of move type
-            moveType = re.findall(r'Type\.(.*?),', line)[0]
-            move2D[-1].append(filterToFID[f'type{format_for_attr(moveType)}']) # [4] type
-
-            # Append the move category (phys/spec/stat)
+            # Parse the attributes from move.ts
+            attrRaw = re.findall(r'Type\.(.*?)\)',line)[0].split(',')
+            attrRaw = [ format_for_attr(arg) for arg in attrRaw ]
             if re.findall(r'StatusMove\(Move', line) != []:
-                move2D[-1].append(2) # [5] category    
-                moveAttr = ['','']
-                moveAttr.extend(re.findall(r'Type\.(.*?)\)', line)[0].split(','))
+                # Status moves in move.ts: [type, accuracy, pp, chance, priority, gen]
+                [type, accuracy, pp, chance, priority, gen] = attrRaw
+                category = 2 # Status moves are category 2
+                power = -1
             else:
-                moveCat = re.findall(r'MoveCategory\.(.*?),', line)[0]
-                moveAttr = re.findall(r'Type\.(.*?)\)', line)[0].split(',')
-                if moveCat == 'PHYSICAL':
-                    move2D[-1].append(0) 
-                elif moveCat == 'SPECIAL':
-                    move2D[-1].append(1)
-                else:
-                    print(line)
-                    input()
+                # Attacking moves in move.ts: [type, category, power, accuracy, pp, chance, priority, gen]
+                [type, category, power, accuracy, pp, chance, priority, gen] = attrRaw
+                category = category.split('movecategory.')[1]
+                if category == 'physical':  category = 0
+                elif category == 'special': category = 1
+                elif category not in [0,1]: input(line)
+            type = filterToFID[f'type{format_for_attr(type)}']
 
-            # Indicies for line input from move.ts:
-            # [category, power, accuracy, pp, chance, priority, gen]
-            # (status moves lack cat and power)
-
-            if move2D[-1][5] == 2: # If status move
-                move2D[-1].append(-1) # [6] power
-            else:
-                move2D[-1].append(format_for_attr(moveAttr[2])) # [6] power
-            move2D[-1].append(format_for_attr(moveAttr[3])) # [7] accuracy
-            move2D[-1].append(format_for_attr(moveAttr[4])) # [8] pp
-            move2D[-1].append(format_for_attr(moveAttr[6])) # [9] priority  
-            # procChance is written to each proc in [2]
-            # Guaranteed effects can be either -1 or 100
+            moveFID = filterToFID[f'move{moveName}']
+            procList = [] # Procs and tags are mostly assembled in the next section
+            tagList = []
+            chance = int(format_for_attr(chance))  
+            if 'SelfStatusMove' in line:
+                tagList.append(202) # Note these for later when determining reflectable moves
+            # "chance" is written to the procList after parsing the move data
             # -1 is for detrimental effects, while 100 is for beneficial (sheer force) effects
             # Sheer Force needs a procChance >= 1 (only beneficial moves, and some abilities)
-            procChance = int(format_for_attr(moveAttr[5]))  
-            if 'SelfStatusMove' in line:
-                move2D[-1][3].append(202)
+
+            # fid[0], name[1], procs[2], tags[3], type[4], cat[5], pow[6], acc[7], pp[8], prio[9]
+            move2D.append([moveFID, moveName, procList, tagList, type, category, power, accuracy, pp, priority])
     else:                                                            
         # General order of move descriptors: priority, targets, procs, all other tags
         # All the procs and tags are shared between abilities and moves
@@ -256,105 +248,105 @@ for line in moveData:
         # My internally used tags start at 200 (for contact, reflectable, etc.)
         if len(move2D[-1]) > 2:
             if '.attr(HighCritAttr)' in line:
-                move2D[-1][3].append(3)
+                tagList.append(3)
             elif 'CritOnlyAttr' in line: # auto crit
-                move2D[-1][3].append(4)
+                tagList.append(4)
             elif 'CRIT_BOOST' in line and 'target' not in line: # focus energy, not dragon cheer
-                move2D[-1][3].append(5)
+                tagList.append(5)
             elif '.makesContact(false)' in line: # these contact values are overrides
-                move2D[-1][3].append(200)       # if it doesn't exist, look at move category
+                tagList.append(200)       # if it doesn't exist, look at move category
             elif '.makesContact(true)' in line:
-                move2D[-1][3].append(201)
+                tagList.append(201)
             elif '.makesContact()' in line:
-                move2D[-1][3].append(201)
+                tagList.append(201)
             elif '.powderMove()' in line: # Move archetypes for synergies/immunities
-                move2D[-1][3].append(23)
+                tagList.append(23)
             elif '.reflectable()' in line:
-                move2D[-1][3].append(203)
+                tagList.append(203)
             elif '.slicingMove()' in line:
-                move2D[-1][3].append(28)
+                tagList.append(28)
             elif '.punchingMove()' in line:
-                move2D[-1][3].append(29)
+                tagList.append(29)
             elif '.danceMove()' in line:
-                move2D[-1][3].append(26)
+                tagList.append(26)
             elif '.ballBombMove()' in line:
-                move2D[-1][3].append(33)
+                tagList.append(33)
             elif '.pulseMove()' in line:
-                move2D[-1][3].append(30)
+                tagList.append(30)
             elif '.bitingMove()' in line:
-                move2D[-1][3].append(31)
+                tagList.append(31)
             elif '.triageMove()' in line:
-                move2D[-1][3].append(25)
+                tagList.append(25)
             elif '.soundBased()' in line:
-                move2D[-1][3].append(35)
-                move2D[-1][3].append(36)
+                tagList.append(35)
+                tagList.append(36)
             elif '.windMove()' in line:
-                move2D[-1][3].append(27)
+                tagList.append(27)
             elif 'failIfDampCondition' in line:
-                move2D[-1][3].append(34)
+                tagList.append(34)
             elif '.ignoresProtect()' in line:
-                move2D[-1][3].append(38)
+                tagList.append(38)
             elif '.ignoresSubstitute()' in line:
-                move2D[-1][3].append(36)
+                tagList.append(36)
             elif 'hidesTarget()' in line: # roar
-                move2D[-1][3].append(40)
+                tagList.append(40)
             elif 'MoveTarget.RANDOM_NEAR_ENEMY' in line: # outrage
-                move2D[-1][3].append(0)
+                tagList.append(0)
             elif 'MoveTarget.ALL_NEAR_ENEMIES' in line: # eruption
-                move2D[-1][3].append(1)
+                tagList.append(1)
             elif 'MoveTarget.ALL_NEAR_OTHERS' in line: # earthquake
-                move2D[-1][3].append(2)
+                tagList.append(2)
             elif 'MoveTarget.USER_SIDE' in line or 'MoveTarget.USER_AND_ALLIES' in line:
-                move2D[-1][3].append(202) # Internal tag to ignore these for reflectable
+                tagList.append(202) # Internal tag to ignore these for reflectable
             elif 'ProtectAttr' in line or 'MoveTarget.BOTH_SIDES' in line or 'MoveTarget.NEAR_ALLY' in line:
-                move2D[-1][3].append(202) # Internal tag to ignore these for reflectable
+                tagList.append(202) # Internal tag to ignore these for reflectable
             elif 'MultiHitAttr' in line:
                 if 'MultiHitType._2' in line:
-                    move2D[-1][3].append(41)
+                    tagList.append(41)
                 elif 'MultiHitType._3' in line:
-                    move2D[-1][3].append(42)
+                    tagList.append(42)
                 elif 'MultiHitType._10' in line:
-                    move2D[-1][3].append(43)
+                    tagList.append(43)
                 else:
-                    move2D[-1][3].append(44)
+                    tagList.append(44)
             elif '.attr(FlinchAttr)' in line:
-                move2D[-1][2].append([procChance,21,0])
+                procList.append([chance,21,0])
             elif 'ConfuseAttr' in line:
-                move2D[-1][2].append([procChance,20,0])
+                procList.append([chance,20,0])
             elif 'GrowthStatStageChangeAttr' in line: # Growth
-                move2D[-1][2].append([-1,0,1])
-                move2D[-1][2].append([-1,2,1])
+                procList.append([-1,0,1])
+                procList.append([-1,2,1])
             elif '(HealStatusEffectAttr,' in line: # cleansing status effects
                 if 'HealStatusEffectAttr, true, [' in line:
-                    move2D[-1][3].append(19)
+                    tagList.append(19)
                 elif 'getNonVolatile' in line:
-                    move2D[-1][3].append(19)
+                    tagList.append(19)
                 elif 'StatusEffect.SLEEP' in line:
-                    move2D[-1][3].append(20)
+                    tagList.append(20)
                 elif 'StatusEffect.FREEZE' in line:
-                    move2D[-1][3].append(21)
+                    tagList.append(21)
                 elif 'StatusEffect.PARALYSIS' in line:
                     input('Unknown tag found: Para Heal')
                 elif 'StatusEffect.BURN' in line:
-                    move2D[-1][3].append(22)
+                    tagList.append(22)
             elif 'MultiStatusEffectAttr' in line: # dire claw and tri attack
                 if 'SLEEP' in line:
-                    move2D[-1][2].append([procChance,23,0]) # dire claw
+                    procList.append([chance,23,0]) # dire claw
                 else:
-                    move2D[-1][2].append([procChance,24,0]) # tri attack
+                    procList.append([chance,24,0]) # tri attack
             elif '(StatusEffectAttr,' in line: # applying status effects
                 if 'StatusEffect.POISON' in line:
-                    move2D[-1][2].append([procChance,14,0])
+                    procList.append([chance,14,0])
                 if 'StatusEffect.TOXIC' in line:
-                    move2D[-1][2].append([procChance,15,0])
+                    procList.append([chance,15,0])
                 if 'StatusEffect.SLEEP' in line:
-                    move2D[-1][2].append([procChance,16,0])
+                    procList.append([chance,16,0])
                 if 'StatusEffect.FREEZE' in line:
-                    move2D[-1][2].append([procChance,17,0])
+                    procList.append([chance,17,0])
                 if 'StatusEffect.PARALYSIS' in line:
-                    move2D[-1][2].append([procChance,18,0])
+                    procList.append([chance,18,0])
                 if 'StatusEffect.BURN' in line:
-                    move2D[-1][2].append([procChance,19,0])
+                    procList.append([chance,19,0])
             elif '(StatStageChangeAttr,' in line:
                 stats = re.findall(r'\[(.*?)\]', line)[0].split(',')
                 stats = [re.sub('stat.','',format_for_attr(stat)) for stat in stats]
@@ -362,109 +354,109 @@ for line in moveData:
                 isSelf = (', true' in line)
                 index = -1
                 if len(stats) == 5:
-                    move2D[-1][2].append([procChance,22,1]) # ancient power, silver wind, ominous wind, no retreat
+                    procList.append([chance,22,1]) # ancient power, silver wind, ominous wind, no retreat
                 elif moveName == 'terablast':
-                    move2D[-1][2].append([procChance,25,-1]) # tera blast
+                    procList.append([chance,25,-1]) # tera blast
                 else:
                     if 'effectChanceOverride' in line:
                         effChance = 50
                     else:
-                        effChance = procChance
+                        effChance = chance
                     for stat in ['atk','def','spatk','spdef','spd','acc','eva']:
                         index += 1
                         if stat in stats:
-                            move2D[-1][2].append([effChance,index+(not isSelf)*7,amount])
+                            procList.append([effChance,index+(not isSelf)*7,amount])
             elif 'recklessMove' in line: # reckless and recoil moves
-                move2D[-1][3].append(32)
+                tagList.append(32)
             elif 'RecoilAttr, true, 0.5' in line or 'HalfSacrificialAttr' in line:
-                move2D[-1][3].append(9)
+                tagList.append(9)
             elif 'CurseAttr' in line:
-                move2D[-1][3].append(8)
+                tagList.append(8)
             # elif 'RecoilAttr, true, 0.25' in line: # struggle
-            #     move2D[-1][3].append()
+            #     tagList.append()
             elif 'RecoilAttr, false, 0.33' in line:
-                move2D[-1][3].append(11)
+                tagList.append(11)
             elif 'RecoilAttr, false, 0.5' in line:
-                move2D[-1][3].append(10)
+                tagList.append(10)
             elif 'RecoilAttr' in line:
-                move2D[-1][3].append(12)
+                tagList.append(12)
             elif 'FrenzyAttr' in line: # outrage
-                move2D[-1][3].append(45)
+                tagList.append(45)
             elif 'HitHealAttr, 1' in line:
-                move2D[-1][3].append(15)
+                tagList.append(15)
             elif 'HitHealAttr, 0.75' in line:
-                move2D[-1][3].append(16)
+                tagList.append(16)
             elif 'HitHealAttr, null, Stat.ATK' in line:
-                move2D[-1][3].append(18)
+                tagList.append(18)
             elif 'HitHealAttr' in line:
-                move2D[-1][3].append(17)
+                tagList.append(17)
             elif 'OneHitKOAttr' in line:
-                move2D[-1][3].append(56)
-                move2D[-1][3].append(57)
+                tagList.append(56)
+                tagList.append(57)
             elif 'TrapAttr' in line:
                 if 'RemoveArenaTrapAttr' in line:
-                    move2D[-1][3].append(46) # rapid spin
+                    tagList.append(46) # rapid spin
                 else:
-                    move2D[-1][3].append(47) # binding moves
+                    tagList.append(47) # binding moves
             elif 'DoublePowerChanceAttr' in line: # fickle beam
-                move2D[-1][3].append(13)
+                tagList.append(13)
             elif 'BypassRedirectAttr' in line:
-                move2D[-1][3].append(51)
+                tagList.append(51)
             elif 'ThunderAccuracyAttr' in line:
-                move2D[-1][3].append(53)
+                tagList.append(53)
             elif 'StormAccuracyAttr' in line:
-                move2D[-1][3].append(53)
+                tagList.append(53)
             elif '(failOnBossCondition)' in line:
-                move2D[-1][3].append(58)
+                tagList.append(58)
             elif '.unimplemented()' in line:
-                move2D[-1][3].append(62)
+                tagList.append(62)
             elif '.partial()' in line:
-                move2D[-1][3].append(61)
+                tagList.append(61)
             elif 'ForceSwitchOutAttr, true' in line or 'ChillyReceptionAttr' in line: # u turn
-                move2D[-1][3].append(39)
+                tagList.append(39)
             elif '.ignoresAbilities()' in line: # moongeist beam
-                move2D[-1][3].append(37)
+                tagList.append(37)
             elif 'LeechSeedAttr' in line: # leech seed
-                move2D[-1][3].append(24)
+                tagList.append(24)
             # elif 'StealHeldItemChanceAttr' in line: # thief, covet
-            #     move2D[-1][3].append()
+            #     tagList.append()
             elif 'TrappedTag' in line: # no retreat
-                move2D[-1][3].append(54)
+                tagList.append(54)
             elif 'TRAPPED' in line: # mean look
-                move2D[-1][3].append(55)
+                tagList.append(55)
             elif 'JawLockAttr' in line: # jaw lock
-                move2D[-1][3].append(54)
-                move2D[-1][3].append(55)
+                tagList.append(54)
+                tagList.append(55)
             elif 'OCTOLOCK' in line: # octolock
-                move2D[-1][3].append(55)
-                move2D[-1][2].append([procChance,8,-1])
-                move2D[-1][2].append([procChance,10,-1])
+                tagList.append(55)
+                procList.append([chance,8,-1])
+                procList.append([chance,10,-1])
             elif 'CutHpStatStageBoostAttr' in line: # belly / clang / fillet
                 stats = re.findall(r'\[(.*?)\]', line)[0].split(',')
                 stats = [re.sub('stat.','',format_for_attr(stat)) for stat in stats]
                 amount = re.findall(r'\], (.*?),', line)[0]
                 index = -1
                 if len(stats) == 5:
-                    move2D[-1][2].append([procChance,22,1]) # ancient power, silver/ominous, no retreat, clang
+                    procList.append([chance,22,1]) # ancient power, silver/ominous, no retreat, clang
                 elif amount != '12':
                     for stat in ['atk','def','spatk','spdef','spd','acc','eva']:
                         index += 1
                         if stat in stats:
-                            move2D[-1][2].append([-1,index,amount])
+                            procList.append([-1,index,amount])
                 if len(stats) == 1: # belly
-                    move2D[-1][3].append(6)
-                    move2D[-1][3].append(8)
+                    tagList.append(6)
+                    tagList.append(8)
                 elif len(stats) == 3: # fillet
-                    move2D[-1][3].append(8)
+                    tagList.append(8)
                 elif len(stats) == 5: # clang
-                    move2D[-1][3].append(7)
+                    tagList.append(7)
                 else:
                     input('Unknown boosting move',line)
             # Unused tags below this line ================================
             # elif 'ProtectAttr' in line: # show different protect moves ????
-            #     move2D[-1][3].append()
+            #     tagList.append()
             # elif 'failIfLastCondition' in line:
-            #     move2D[-1][3].append()
+            #     tagList.append()
             elif 'crashDamageFunc' in line:
                 e = 'nothing'
             elif 'HealAttr' in line:
@@ -506,7 +498,7 @@ for fidLine in orderedData:
         # However, i think it's ugly to show something that obvious
         # I'd rather show CAN'T be reflected, to be in line with other tag wording
         if 203 in fidLine[3] and fidLine[5] != 2:
-            input('***** Reflectable attack',fidLine[1])
+            input(f'***** Reflectable attack: fidLine[1]')
         if 203 not in fidLine[3] and fidLine[5] == 2 and 202 not in fidLine[3]:
             # If it is a status move, not marked as reflectable, and not targeting self
             if 25 not in fidLine[3] and 6 not in fidLine[3]: # If not a healing move, and not belly drum
