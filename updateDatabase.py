@@ -1,17 +1,15 @@
-# ===== This reads all the balance files from the official github   =====
-# ===== It links all the data between evolutions and forms          =====
+# =====  This reads all the balance files from the official github  =====
+# =====    It links all the data between evolutions and forms       =====
 # ===== It saves the data in an optimized format as pokedex_data.js =====
-
+# After running, you should use git to compare changes made to pokedex_data.js
 # There are rules at the bottom of this file for how pokedex_data.js is structured
 
-import re, os, copy, json
 pathBal  = './game_files/src/data/balance' # File path to the balance files
 pathImg = './website/images' # Path to read processed images from updateImages.py
 
-# Function to determine if a value is numeric
-def is_numeric(value):
+import re, os, copy, json
+def is_numeric(value): # Function to determine if a value is numeric
     return re.match(r'^-?\d+(\.\d+)?$', str(value)) is not None
-# Functions to format arguments
 def format_for_disp(arg): # Remove spaces, and convert _ and - to spaces, then capitalize
     return arg.replace(' ','').replace('_',' ').replace('-',' ').title()
 def format_for_attr(arg): # Remove spaces, all lower case
@@ -189,8 +187,8 @@ for i,line in enumerate(raw_data):
         newLine.append(line[15]) # Ability 1 [9]
         newLine.append('' if line[16] == line[15] or line[16] == 'None' else line[16]) # Ability 2 [10]
         newLine.append('' if line[17] == line[15] or line[17] == 'None' else line[17]) # Hidden ability [11]
-        newLine.append('') # Blank passive full_data[12]
-        newLine.extend(line[18:26])
+        newLine.append('') # [12] Passive (filled in later)
+        newLine.extend(line[18:26]) # [13-19] Stats, [20] Catch rate
     else: # For forms
         newLine.append(line[0]) # row number [0]
         newLine.append(line[4]) # form key [1]
@@ -209,21 +207,22 @@ for i,line in enumerate(raw_data):
         newLine.append('' if line[6] == 'Null' else line[6]) # Type 2 [8]
         newLine.append(line[9]) # Ability 1 [9]
         newLine.append('' if line[10] == line[9] or line[10] == 'None' else line[10]) # Ability 2 [10]
-        newLine.append('' if line[11] == line[9] or line[11] == 'None' else line[11]) # [11] Hidden ability
+        newLine.append('' if line[11] == line[9] or line[11] == 'None' else line[11]) # Hidden ability [11]
         newLine.append('')          # [12] Passive (filled in later)
         newLine.extend(line[12:19]) # [13-19] Stats
         newLine.append(parentLine[25]) # [20] Catch rate
+        
     newLine.extend(parentLine[28:31])  # [21-23] growthRate, malePercent, femDiff
     newLine.extend(['','','','']) # Add 4 empty lines for egg moves [24-27]
     newLine.append({}) # Add dict for all moves [28]
     newLine.extend(['','','']) # Add cost [29], egg tier [30], shiny variants [31]
     newLine.append(line[6] if line[2] == '' else parentLine[6]) # Generation [32]
 
-    # isStartable [33] (if that species is available in starter select)(forms exclusives [41] are on top of that)
+    # isStartable [33] (if that species is available in starter select) (forms exclusives [41] are separate)
     isStartable = ''
-    if newLine[5] in moveBySpecToCat and newLine[2] == '': # Only for base species
+    if newLine[5] in moveBySpecToCat: # Anything with egg moves is startable, plus Pikachu
         if moveBySpecToCat[newLine[5]][1] or 'Pikachu' in newLine[5]:
-            isStartable = 1 # Anything with egg moves is startable, plus Pikachu
+            isStartable = 1
     newLine.append(isStartable)
 
     newLine.extend(['','','']) # starterRow [34], starterIndex [35], specIndex[36]
@@ -236,7 +235,7 @@ for i,line in enumerate(raw_data):
     # In the game data, argument 24 defaults to False (Forms are exclusive unless marked otherwise)
     # Check for mega, giga, or other transformed (Zacian, Mimikyu, etc.)
     if line[2] != '' and (len(line) < 25 or 'True' not in line[24]): formExclusive = 4
-    if 'Mega ' in name: formExclusive = 1 # Mega (needs the space)
+    if 'Mega '      in name: formExclusive = 1 # Mega (needs the space)
     if 'Gigantamax' in name: formExclusive = 3 # Giga
     # In-game, the form is chosen from getSpeciesFormIndex in src/battle-scene.ts
     # Some forms have the wrong isStarterSelectable in balance/pokemon-species.ts (error with the game code)

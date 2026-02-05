@@ -225,18 +225,18 @@ for line in moveData:
                 category = category.split('movecategory.')[1]
                 if category == 'physical':  category = 0
                 elif category == 'special': category = 1
-                elif category not in [0,1]: input(line)
+                elif category not in [0,1]: input(f'Move category parsing error: {line}')
             type = filterToFID[f'type{format_for_attr(type)}']
 
             moveFID = filterToFID[f'move{moveName}']
             procList = [] # Procs and tags are mostly assembled in the next section
             tagList = []
             chance = int(format_for_attr(chance))  
-            if 'SelfStatusMove' in line:
-                tagList.append(202) # Note these for later when determining reflectable moves
             # "chance" is written to the procList after parsing the move data
             # -1 is for detrimental effects, while 100 is for beneficial (sheer force) effects
-            # Sheer Force needs a procChance >= 1 (only beneficial moves, and some abilities)
+            # Sheer Force needs a "chance" >= 1 (only beneficial moves, and some abilities)
+            if 'SelfStatusMove' in line:
+                tagList.append(202) # Note these for later when determining reflectable moves
 
             # fid[0], name[1], procs[2], tags[3], type[4], cat[5], pow[6], acc[7], pp[8], prio[9]
             move2D.append([moveFID, moveName, procList, tagList, type, category, power, accuracy, pp, priority])
@@ -253,8 +253,8 @@ for line in moveData:
                 tagList.append(4)
             elif 'CRIT_BOOST' in line and 'target' not in line: # focus energy, not dragon cheer
                 tagList.append(5)
-            elif '.makesContact(false)' in line: # these contact values are overrides
-                tagList.append(200)       # if it doesn't exist, look at move category
+            elif '.makesContact(false)' in line: # those contact values are overrides
+                tagList.append(200)              # if it doesn't exist, look at move category
             elif '.makesContact(true)' in line:
                 tagList.append(201)
             elif '.makesContact()' in line:
@@ -477,7 +477,7 @@ for line in moveData:
                 e = 'nothing'
             else:
                 e = 'nothing'
-                # print('\n',move2D[-1][0],'\n',line)
+                # print('\n',moveName,'\n',line)
 
 # The data in ability2D/move2D is just ordered how the moves/abilities appear in the game code
 # This next step reorders them according to the fid list (which is alphabetical in english)
@@ -509,19 +509,11 @@ for fidLine in orderedData:
                 if not isBoosting:
                     # print('Non-reflectable status',fidLine)
                     fidLine[3].append(52) # I only show this for offensive status moves
-    elif len(fidLine) == 4: # For abilities
-        for procLine in fidLine[2]:
-            if procLine[0] == 0 and procLine[2] == 0:
-                print('Empty proc',fidLine[1],procLine)
-    # Check for moves with more than one proc (e.g. Fire Fang)            
-    procCount = 0
-    for procLine in fidLine[2]:
-        if procLine[0] == 0:
-            print('***** Zero chance proc found')
-        if procLine[0] > -1:
-            procCount += 1
-        if procCount > 1:
-            multiProcs.append(fidLine)
+    for procLine in fidLine[2]: # Check for improper procs
+        if procLine[0] == 0 or ( procLine[1] < 14 and procLine[2] == 0 ):
+            print('***** Empty proc found:',fidLine[1],procLine)
+    if sum([1 for line in fidLine[2] if line[0] > 1]) > 1: # Check for moves with multiple procs (e.g. Fire Fang)
+        multiProcs.append(fidLine)
 if len(multiProcs) != 4:
     print('There should be 4 attacks with multiple procs')
     for line in multiProcs:

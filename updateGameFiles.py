@@ -54,7 +54,7 @@ def clone_or_update(repo_url, repo_dest, branch_name=None, only_clone=False):
             cmd = ["git", "clone", "--depth", "1", repo_url, repo_dest]
         subprocess.run(cmd, check=True)
 
-# Main files
+# Update the entire repo from the selected branch
 clone_or_update(
     repo_url="https://github.com/pagefaultgames/pokerogue.git",
     repo_dest="game_files",
