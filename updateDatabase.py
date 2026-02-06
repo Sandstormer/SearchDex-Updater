@@ -715,11 +715,12 @@ for line in trimmed_data:
         else:
             line[23] = ''
         femlist = ['']
-    for fem in femlist: 
-        for shiny in range(line[31]+1):
-            # Check for existence of all images (all shiny, optionally female)
-            if not os.path.isfile(f'{pathImg}/{line[4]}_{shiny}{fem}.png'):
-                throwError(f"The file {pathImg}/{line[4]}_{shiny}{fem}.png does not exist.")
+    for back in ['','b']: 
+        for fem in femlist: 
+            for shiny in range(line[31]+1):
+                # Check for existence of all images (all shiny, all back, optionally female)
+                if not os.path.isfile(f'{pathImg}/{line[4]}_{shiny}{fem}{back}.png'):
+                    throwError(f"The file {pathImg}/{line[4]}_{shiny}{fem}{back}.png does not exist.")
 
 # Check that each Pokemon has level up moves, egg moves, and TM moves
 for line in trimmed_data:

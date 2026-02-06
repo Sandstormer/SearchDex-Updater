@@ -39,6 +39,7 @@ warnVariantDimensions = 1
 # By default, it chooses the most common frame of the animation 
 # However, you can override here to choose a specific frame
 overrideFrame = {
+    '4':-1,
     '12':0,
     '49':0,
     '68':0,
@@ -85,7 +86,8 @@ def getBestFrame(thisImgPath, altJsonPath=''):
     
     # If the pokemon has an override frame, only use that frame
     if thisImgPath.split('/')[-1] in overrideFrame:
-        indFrames = [indFrames[min(len(indFrames),overrideFrame[thisImgPath.split('/')[-1]])]]
+        if abs(overrideFrame[thisImgPath.split('/')[-1]]) <= len(indFrames):
+            indFrames = [indFrames[overrideFrame[thisImgPath.split('/')[-1]]]]
 
     # Count how many times each frame occurs
     frameCount = [sum([lineA==lineB for lineB in indFrames]) for lineA in indFrames]
@@ -201,31 +203,28 @@ def convert_to_exact_palette(img: Image.Image) -> Image.Image:
 
     return p_img
 
-def processImage(spriteIndex, shinyIndex, femIndex):
+def processImage(spriteIndex, shinyIndex, femIndex, backIndex):
+    # Priority in paths is variant > back > shiny > female
     thisPath = source_dir
-    varPath = f'{source_dir}/variant'
-    defPath = source_dir
-    simpleName = f'{spriteIndex}_{shinyIndex}'
-    if shinyIndex == 1:
-        thisPath = f'{thisPath}/shiny'
-    elif shinyIndex > 1:
-        thisPath = f'{thisPath}/variant'
-    if femIndex == 1:
-        thisPath = f'{thisPath}/female'
-        varPath = f'{varPath}/female'
-        defPath = f'{defPath}/female'
-        simpleName = f'{simpleName}f'
-    thisPath = f'{thisPath}/{spriteIndex}'
-    varPath = f'{varPath}/{spriteIndex}'
-    defPath = f'{defPath}/{spriteIndex}'
-    savePath = f'{dest_dir}/{simpleName}'
+    if shinyIndex > 1:  thisPath = f'{thisPath}/variant'
+    if backIndex == 1:  thisPath = f'{thisPath}/back'
+    if shinyIndex == 1: thisPath = f'{thisPath}/shiny'
+    femExt = '/female' if femIndex else ''
+    backExt = '/back' if backIndex else ''
+    thisPath = f'{thisPath}{femExt}/{spriteIndex}' # Standard image path
+    varPath = f'{source_dir}/variant{backExt}{femExt}/{spriteIndex}' # Palette swap image path
+    defPath = f'{source_dir}{backExt}{femExt}/{spriteIndex}' # Fallback image path
+    simpleName = f'{spriteIndex}_{shinyIndex}{femExt}{backExt}'.replace('/female','f').replace('/back','b')
+    savePath = f'{dest_dir}/{simpleName}' # Name for SearchDex
 
-    global masterList
+    kind = 0 # Read the master list, to know which kind of image to look for in the game files
+    masterListPart = masterList
+    if backIndex: masterListPart = masterListPart['back']
+    if femIndex:  masterListPart = masterListPart['female']
+    if shinyIndex and spriteIndex in masterListPart:
+        kind = masterListPart[spriteIndex][shinyIndex-1]
+
     sliced_img = None
-    kind = 0 # Which kind of image to look for in the game files
-    if shinyIndex and spriteIndex in masterList:
-        kind = masterList[spriteIndex][shinyIndex-1]
-
     if shinyIndex and os.path.isfile(f'{varPath}_{shinyIndex}.png') and kind == 2: # Check for custom shiny first
         sliced_img = getBestFrame(f'{varPath}_{shinyIndex}',defPath)
     elif shinyIndex and os.path.isfile(f'{varPath}.json') and kind == 1: # Check for palette swap (sometimes even T1)
@@ -235,63 +234,62 @@ def processImage(spriteIndex, shinyIndex, femIndex):
         sliced_img = palette_swap(sliced_img, f'{varPath}.json', shinyIndex)
     if not sliced_img and os.path.isfile(f'{thisPath}.png') and kind == 0: # If not custom, use official shiny
         sliced_img = getBestFrame(thisPath,defPath)
-
-    if sliced_img: # If there is an image available
-        if 'partner' in spriteIndex:
-            sliced_img = addPartnerHeart(sliced_img) # Add partner heart to pika and eevee
-
-        # Crop to a bounding box of solid pixels
-        pixels = np.array(sliced_img)
-        if sliced_img.mode == 'P':
-            for x in range(len(pixels)):
-                for y in range(len(pixels[x])):
-                    pixels[x][y] = (pixels[x][y] != sliced_img.info['transparency'])
-        sliced_img = sliced_img.crop(Image.fromarray(pixels, mode=sliced_img.mode).getbbox())
-
-        # Strip the color profile to save space (it is useless for pixel art)
-        sliced_img.info.pop('icc_profile', None)
-        
-        # Convert to palette mode, with exact colors
-        if sliced_img.mode != 'P':
-            sliced_img = convert_to_exact_palette(sliced_img)
-
-        # Check for differences with the previous image
-        if os.path.isfile(f"{savePath}.png"):
-            prev_img = Image.open(f"{savePath}.png")
-            arr_new = np.array(sliced_img.convert("RGBA"))
-            arr_old = np.array(prev_img.convert("RGBA"))
-            if arr_new.shape != arr_old.shape:
-                print('Updated image size changed in',simpleName)
-            else:
-                changed_mask = np.any(arr_new[:, :, :3] != arr_old[:, :, :3], axis=-1)  # Compare RGB only
-                alpha_mask = arr_new[:, :, 3] > 0  # Only count pixels that are not fully transparent
-                pixelsChanged = np.sum(changed_mask & alpha_mask)
-                if pixelsChanged: print(pixelsChanged,'pixels changed in',simpleName)
-
-        sliced_img.save(f"{savePath}.png", optimize=True, compress_level=9) # Save the image to the website folder
-        
-        global biggestH, biggestW, thisH, thisW 
-        # Update the largest dimensions among all images
-        biggestH = max(biggestH, sliced_img.height)
-        biggestW = max(biggestW, sliced_img.width)
-        # Check that the size is the same between variants
-        # It's okay if this shows for a few images, due to animation differences
-        if thisH == 0 and thisW == 0:
-            thisH = sliced_img.height
-            thisW = sliced_img.width
-        elif sliced_img.height != thisH or sliced_img.width != thisW:
-            if warnVariantDimensions:
-                print(f'Different variant dimensions for {simpleName}')
-
-    else: # There is no image
+    if not sliced_img:
         if shinyIndex < 2 and femIndex == 0: # If it should exist, show an error
-            print('Could not find any tier',shinyIndex,'shiny for',spriteIndex)
+            print('Could not find image for',simpleName)
+        return # Stop if there is no image
+
+    if 'partner' in spriteIndex:
+        sliced_img = addPartnerHeart(sliced_img) # Add partner heart to pika and eevee
+
+    # Crop to a bounding box of solid pixels
+    pixels = np.array(sliced_img)
+    if sliced_img.mode == 'P':
+        for x in range(len(pixels)):
+            for y in range(len(pixels[x])):
+                pixels[x][y] = (pixels[x][y] != sliced_img.info['transparency'])
+    sliced_img = sliced_img.crop(Image.fromarray(pixels, mode=sliced_img.mode).getbbox())
+
+    # Strip the color profile to save space (it is useless for pixel art)
+    sliced_img.info.pop('icc_profile', None)
+
+    # Convert to palette mode, with exact colors
+    if sliced_img.mode != 'P':
+        sliced_img = convert_to_exact_palette(sliced_img)
+
+    # Check for differences with the previous image
+    if os.path.isfile(f"{savePath}.png"):
+        prev_img = Image.open(f"{savePath}.png")
+        arr_new = np.array(sliced_img.convert("RGBA"))
+        arr_old = np.array(prev_img.convert("RGBA"))
+        if arr_new.shape != arr_old.shape:
+            print('Updated image size changed in',simpleName)
+        else:
+            changed_mask = np.any(arr_new[:, :, :3] != arr_old[:, :, :3], axis=-1)  # Compare RGB only
+            alpha_mask = arr_new[:, :, 3] > 0  # Only count pixels that are not fully transparent
+            pixelsChanged = np.sum(changed_mask & alpha_mask)
+            if pixelsChanged: print(pixelsChanged,'pixels changed in',simpleName)
+
+    sliced_img.save(f"{savePath}.png", optimize=True, compress_level=9) # Save the image to the website folder
+    
+    global biggestH, biggestW, thisH, thisW 
+    # Update the largest dimensions among all images
+    biggestH = max(biggestH, sliced_img.height)
+    biggestW = max(biggestW, sliced_img.width)
+    # Check that the size is the same between variants
+    # It's okay if this shows for a few images, due to animation differences
+    if thisH == 0 and thisW == 0:
+        thisH = sliced_img.height
+        thisW = sliced_img.width
+    elif sliced_img.height != thisH or sliced_img.width != thisW:
+        if warnVariantDimensions:
+            print(f'Different variant dimensions for {simpleName}')
 
 # ======================= Process all the pokemon images =======================
 
 os.makedirs(dest_dir, exist_ok=True) # Ensure the directory exists
 
-# Load the masterlist 
+# Load the masterlist, it also has 'back', 'female', and 'back''female'
 with open(f'game_files/assets/images/pokemon/variant/_masterlist.json', "r") as f:
     masterList = json.load(f)
 
@@ -309,10 +307,11 @@ else:
 progressCount = 0
 biggestW, biggestH = 0, 0
 for index, thisSpriteName in enumerate(spriteNames):
-    for thisFemIndex in [0,1]:
-        thisW, thisH = 0, 0
-        for thisShinyIndex in [0,1,2,3]:
-            processImage(thisSpriteName, thisShinyIndex, thisFemIndex)
+    for thisBackIndex in [0,1]:
+        for thisFemIndex in [0,1]:
+            thisW, thisH = 0, 0
+            for thisShinyIndex in [0,1,2,3]:
+                processImage(thisSpriteName, thisShinyIndex, thisFemIndex, thisBackIndex)
     if (index+1)/len(spriteNames) >= (progressCount+1)*0.05:
         progressCount = int((index+1)/len(spriteNames)*20)
         print(f'{progressCount*5}% complete...')
