@@ -1,5 +1,12 @@
-# Creates all the localized string files
-import re, os, json, importlib
+# =====   This script assembles all the translated text for the SearchDex   =====
+# ===== headerNames, altText, catToName, infoText, biomeText, biomeLongText =====
+# =====          warningText, procToDesc, tagToDesc, helpMenuText           =====
+# =====        It writes all that data to {lang}.js in website/lang         ===== 
+# Most filters (abilities/moves/pokemon) are auto-translated from the game files
+# Some filters (tags, etc.) must have manual translations
+# Initially, some UI elements are auto-translated from similar in-game phrases
+# However, all UI elements must have overrides in local_files/lang_overrides/{lang}.py
+
 pathLocales = './game_files/locales' # File path to the official localization files
 pathOverrides = "local_files/lang_overrides"
 allLangs = ['en','fr','ko','ja','zh-Hans','es-ES','it']
@@ -54,6 +61,7 @@ langs = allLangs
 if langsToDo != [''] and langsToDo != []:
     langs = langsToDo
 overrides = {}
+import re, os, json, importlib
 for lang in allLangs:
     spec = importlib.util.spec_from_file_location(f"{lang}_over", f'local_files/lang_overrides/{lang}.py')
     mod = importlib.util.module_from_spec(spec)
@@ -79,17 +87,17 @@ for lang in langs: # =========================================== Main loop for e
         allFilters = json.load(file) # These have to be reloaded for every lang, because they are overwritten in english
     locFilters = ['' for line in allFilters]
     # Translate types
-    for index,filter in enumerate(allFilters):
-        if filter[0] == 'Type':
-            text = tall['pokemon-info']['type'][filter[1].lower()]
+    for index,line in enumerate(allFilters):
+        if line[0] == 'Type':
+            text = tall['pokemon-info']['type'][line[1].lower()]
             text = shortenText(text)
             locFilters[index] = text
             if len(text) > 8 and warnNameLength:
                 print('Long type found:',text)
     # Translate abilities
-    for index,filter in enumerate(allFilters):
-        if filter[0] == 'Ability':
-            key = format_for_camel(filter[1])
+    for index,line in enumerate(allFilters):
+        if line[0] == 'Ability':
+            key = format_for_camel(line[1])
             if 'embody' in key: # Add variants of embody aspect, with stat names
                 if 'Teal' in key:
                     text = f"{tall['ability'][key]['name']} {tall['pokemon-info']['stat']['spd'].replace(' ','&nbsp')}"
@@ -113,93 +121,93 @@ for lang in langs: # =========================================== Main loop for e
             if len(text) > 15 and warnNameLength:
                 print('Long ability found:',text)
     # Translate moves
-    for index,filter in enumerate(allFilters):
-        if filter[0] == 'Move':
-            text = tall['move'][format_for_camel(filter[1])]['name']
+    for index,line in enumerate(allFilters):
+        if line[0] == 'Move':
+            text = tall['move'][format_for_camel(line[1])]['name']
             text = shortenText(text)
             locFilters[index] = text
             # print('Translated',filter[1],'to',text)
             if len(text) > 15 and warnNameLength:
                 print('Long move found:',text)
     # Copy numeric values
-    for index,filter in enumerate(allFilters):
-        if filter[0] == 'Gen' or filter[0] == 'Cost':
+    for index,line in enumerate(allFilters):
+        if line[0] == 'Gen' or line[0] == 'Cost':
             # print('Copied',filter[1])
-            locFilters[index] = filter[1]
+            locFilters[index] = line[1]
     # Translate egg tiers
-    for index,filter in enumerate(allFilters):
-        if filter[0] == 'Egg Tier':
+    for index,line in enumerate(allFilters):
+        if line[0] == 'Egg Tier':
             text = ''
-            if filter[1] == 'Common':     text = 'defaultTier'
-            if filter[1] == 'Rare':       text = 'greatTier'
-            if filter[1] == 'Epic':       text = 'ultraTier'
-            if filter[1] == 'Legendary':  text = 'masterTier'
+            if line[1] == 'Common':     text = 'defaultTier'
+            if line[1] == 'Rare':       text = 'greatTier'
+            if line[1] == 'Epic':       text = 'ultraTier'
+            if line[1] == 'Legendary':  text = 'masterTier'
             if text:                      text = tall['egg'][text] # standard egg tiers
-            if filter[1] == 'Manaphy':    text = tall['pokemon']['manaphy'] # manaphy egg tier
-            if filter[1] == 'Exclusive':  text = overrides[lang]['phrases']['exclusive'] # exclusive egg tier
+            if line[1] == 'Manaphy':    text = tall['pokemon']['manaphy'] # manaphy egg tier
+            if line[1] == 'Exclusive':  text = overrides[lang]['phrases']['exclusive'] # exclusive egg tier
             # print('Translated',filter[1],'to',text)
             locFilters[index] = text
     # Translate modes
-    for index,filter in enumerate(allFilters):
-        if filter[0] == 'Mode':
-            text = filter[1]
-            if 'Flip' in filter[1]:
+    for index,line in enumerate(allFilters):
+        if line[0] == 'Mode':
+            text = line[1]
+            if 'Flip' in line[1]:
                 if 'name' in tall['challenges']['flipStat']:
                     text = tall['challenges']['flipStat']['name']
-            if 'Fresh' in filter[1]:
+            if 'Fresh' in line[1]:
                 if 'name' in tall['challenges']['freshStart']:
                     text = tall['challenges']['freshStart']['name']
-            if 'Starter' in filter[1]:
+            if 'Starter' in line[1]:
                 if 'starter' in tall['filter-bar']:
                     text = tall['filter-bar']['starter']
             locFilters[index] = text
     # Translate evolution filters
-    for index,filter in enumerate(allFilters):
-        if filter[0] == 'Evolution':
-            if filter[1] == 'Starter':        text = tall['filter-bar']['starter']
-            if filter[1] == 'Fully Evolved':  text = overrides[lang]['phrases']['fullyEvolved']
+    for index,line in enumerate(allFilters):
+        if line[0] == 'Evolution':
+            if line[1] == 'Starter':        text = tall['filter-bar']['starter']
+            if line[1] == 'Fully Evolved':  text = overrides[lang]['phrases']['fullyEvolved']
             # print('Translated',filter[1],'to',text)
             locFilters[index] = text
     # Translate form filters
-    for index,filter in enumerate(allFilters):
-        if filter[0] == 'Form':
-            if format_for_camel(f'form {filter[1]}') in overrides[lang]['phrases']:
-                text = overrides[lang]['phrases'][format_for_camel(f'form {filter[1]}')]
-            if filter[1] == 'Female':
+    for index,line in enumerate(allFilters):
+        if line[0] == 'Form':
+            if format_for_camel(f'form {line[1]}') in overrides[lang]['phrases']:
+                text = overrides[lang]['phrases'][format_for_camel(f'form {line[1]}')]
+            if line[1] == 'Female':
                 text = tall['pokemon-form']['espurrFemale']
             # print('Translated',filter[1],'to',text)
             locFilters[index] = text
     # Translate new variants filter
-    for index,filter in enumerate(allFilters):
-        if filter[0] == 'Shiny Variants':
-            if filter[1] == 'New':
+    for index,line in enumerate(allFilters):
+        if line[0] == 'Shiny Variants':
+            if line[1] == 'New':
                 locFilters[index] = overrides[lang]['phrases']['new']
-            if filter[1] == 'All':
+            if line[1] == 'All':
                 locFilters[index] = tall['menu']['yes']
-            if filter[1] == 'None':
+            if line[1] == 'None':
                 locFilters[index] = tall['menu']['no']
     # Translate biome names
-    for index,filter in enumerate(allFilters):
-        if filter[0] == 'Biome':
-            text = tall['biomes'][format_for_camel(filter[1])]
+    for index,line in enumerate(allFilters):
+        if line[0] == 'Biome':
+            text = tall['biomes'][format_for_camel(line[1])]
             if text == "???":
                 text = overrides[lang]['phrases']['theEnd']
             if lang == 'en': # Get official names of biomes, even in english
-                filter[1] = text
+                line[1] = text
             locFilters[index] = shortenText(text)
     # Translate tag names
-    for index,filter in enumerate(allFilters):
-        if filter[0] == 'Tag':
+    for index,line in enumerate(allFilters):
+        if line[0] == 'Tag':
             for key, value in overrides['en']['phrases'].items():
-                if value == filter[1]:
+                if value == line[1]:
                     locFilters[index] = overrides[lang]['phrases'][key]
     # Translate names of family filters
-    for index,filter in enumerate(allFilters):
-        if filter[0] == 'Related To':
-            if format_for_camel(f'form {filter[1]}') in overrides[lang]['phrases']:
-                locFilters[index] = overrides[lang]['phrases'][format_for_camel(f'form {filter[1]}')]
+    for index,line in enumerate(allFilters):
+        if line[0] == 'Related To':
+            if format_for_camel(f'form {line[1]}') in overrides[lang]['phrases']:
+                locFilters[index] = overrides[lang]['phrases'][format_for_camel(f'form {line[1]}')]
                 continue
-            text = format_for_camel(filter[1])
+            text = format_for_camel(line[1])
             if text in tall['pokemon']:
                 justLocForm = ''
                 justLocSpec = tall['pokemon'][text]
@@ -207,13 +215,13 @@ for lang in langs: # =========================================== Main loop for e
                 input(f'***** Error: Could not find base species {text}')
             # Put the name in correct format
             nameFormat = '{{pokemonName}}'
-            if 'Alola' in filter[1]:
+            if 'Alola' in line[1]:
                 nameFormat = tall['pokemon-form']['appendForm']['alola']
-            if 'Galar' in filter[1]:
+            if 'Galar' in line[1]:
                 nameFormat = tall['pokemon-form']['appendForm']['galar']
-            if 'Hisui' in filter[1]:
+            if 'Hisui' in line[1]:
                 nameFormat = tall['pokemon-form']['appendForm']['hisui']
-            if 'Paldea' in filter[1]:
+            if 'Paldea' in line[1]:
                 nameFormat = tall['pokemon-form']['appendForm']['paldea'].replace('Galar','Paldea') # To-do: Remove later
             nameFormat = re.sub('{{pokemonName}}',justLocSpec,nameFormat)
             nameFormat = re.sub("'",'’',nameFormat) # Replace single quotes with unicode
@@ -368,23 +376,23 @@ for lang in langs: # =========================================== Main loop for e
     print('\nTranslating filter descriptions...')
     locDesc = ['' for line in allFilters if (line[0] == 'Move' or line[0] == 'Ability')]
     # Translate abilities
-    for index,filter in enumerate(allFilters):
-        if filter[0] == 'Ability':
-            key = format_for_camel(filter[1])
+    for index,line in enumerate(allFilters):
+        if line[0] == 'Ability':
+            key = format_for_camel(line[1])
             if 'description' in tall['ability'][key]:
                 text = tall['ability'][key]['description'].replace('\n','')
             else:
                 text = ''
-                print('No description for',filter[1],'in',lang)
+                print('No description for',line[1],'in',lang)
             locDesc[index-fidThreshold[0]] = text
     # Translate moves
-    for index,filter in enumerate(allFilters):
-        if filter[0] == 'Move':
-            if 'effect' in tall['move'][format_for_camel(filter[1])]:
-                text = tall['move'][format_for_camel(filter[1])]['effect'].replace('\n','')
+    for index,line in enumerate(allFilters):
+        if line[0] == 'Move':
+            if 'effect' in tall['move'][format_for_camel(line[1])]:
+                text = tall['move'][format_for_camel(line[1])]['effect'].replace('\n','')
             else:
                 text = ''
-                print('** No description for',filter[1],'in',lang)
+                print('** No description for',line[1],'in',lang)
             locDesc[index-fidThreshold[0]] = text
     print('Done translating ability/move descriptions')
     missingAmount = sum([1 for line in locDesc if not line])
@@ -534,7 +542,6 @@ for lang in langs: # =========================================== Main loop for e
 
     locUI['biomeLongText'] = ['' for line in overrides['en']['biomeLongText']]
     locUI['warningText'] = ['' for line in overrides['en']['warningText']]
-    locUI['helpMenuText'] = overrides['en']['helpMenuText']
 
     print('Done translating ui elements')
     allCatToCheck = ['headerNames','altText','catToName','biomeText','infoText']
@@ -549,7 +556,7 @@ for lang in langs: # =========================================== Main loop for e
         for overrideName in overrides['en'].keys():
             if overrideName in overrides[lang]:
                 locUI[overrideName] = overrides[lang][overrideName]
-            elif overrideName in ['procToDesc','tagToDesc','biomeLongText','warningText']:
+            elif overrideName in ['procToDesc','tagToDesc','biomeLongText','warningText','helpMenuText']:
                 locUI[overrideName] = overrides['en'][overrideName] # Fallback to english names
             else:
                 print('***** Missing override object',overrideName,'in',lang)
@@ -558,7 +565,7 @@ for lang in langs: # =========================================== Main loop for e
     for catToCheck in allCatToCheck:
         missingAmount += len(overrides['en'][catToCheck]) - sum([1 for line in locUI[catToCheck] if line])
     if missingAmount: print('\n***** Missing',missingAmount,'ui elements')
-
+    
     # Write all the translated text to lang/{lang}.js =========================
     # headerNames, altText, catToName, fidToDesc, speciesNames, fidToName
     print("\nWriting to website language files...")
@@ -603,17 +610,18 @@ for lang in langs: # =========================================== Main loop for e
     lines.append('\n];\n')
 
     lines.append('fidToName = [') # localized filter names
-    for filter in locFilters:
-        lines.append(f"\n'{filter}',")
-        if "'" in str(filter):
-            input('***** Error: Single quote found in',filter)
+    for line in locFilters:
+        lines.append(f"\n'{line}',")
+        if "'" in str(line):
+            input('***** Error: Single quote found in',line)
     lines[-1] = lines[-1][:-1]
     lines.append('\n];\n')
 
-    lines.append('helpMenuText = `') # help text
-    # This must be done last because it references other strings
-    lines.append(locUI['helpMenuText'])
-    lines.append('`;')
+    # helpMenuText must be done last because it references other strings
+    lines.append('helpMenuText = [') # help menu text
+    for line in locUI['helpMenuText']:
+        lines.append(f"\n`{line}`,")
+    lines.append('];')
 
     with open(f"website/lang/{lang}.js", "w", encoding="utf-8") as file:
         file.writelines(lines)
