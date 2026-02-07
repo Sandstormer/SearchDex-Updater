@@ -70,6 +70,7 @@ tagToDesc = [
     "Targets: Random Enemy",
     "Targets: All Enemies",
     "Targets: Entire Field",
+    "Affected by Sheer Force",
     "High Critical Ratio",
     "Guaranteed Critical Hit",
     "User Critical Rate +2",
@@ -81,7 +82,6 @@ tagToDesc = [
     "Recoil 33% of damage",
     "Recoil 25% of damage",
     "30% deal double damage",
-    "Unused", # This is not used for anything
     "Heals 100% damage dealt",
     "Heals 75% damage dealt",
     "Heals 50% damage dealt",

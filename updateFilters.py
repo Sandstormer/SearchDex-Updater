@@ -32,23 +32,26 @@ ability2D = []
 for index,line in enumerate(abilityData):
     if line[:3] == 'new':
         abilityName = format_for_attr(format_for_disp(re.findall(r'AbilityId\.(.*?),', line)[0]))
+
         if f'ability{abilityName}' not in filterToFID:
             if abilityName != 'none':
                 input(f'***** ${abilityName} does not exist')
-            ability2D.append(['xxxxx',abilityName])
-        else:
-            # print('Found ability:',abilityName)
-            abilityFID = filterToFID[f'ability{abilityName}']
-            procList = []
-            tagList = []
-            ability2D.append([abilityFID, abilityName, procList, tagList]) # [fid[0], name[1], procs[2], tags[3]]
+            continue
+
+        # print('Found ability:',abilityName)
+        abilityFID = filterToFID[f'ability{abilityName}']
+        procList = []
+        tagList = []
         if abilityName in ['magicguard', 'comatose', 'shieldsdown', 'fullmetalbody', 'shadowshield', 'prismarmor']:
             tagList.append(50) # Abilities that "Can't be ignored"
-    elif len(ability2D[-1]):
-        # All the procs and tags are shared between abilities and moves
-        # Tags should be in sequential order as they will be displayed on my site
-        # They are not processed in sequential order here, due to string matching
-        # My internally used tags start at 200 (for contact, reflectable, etc.)
+
+        ability2D.append([abilityFID, abilityName, procList, tagList]) # [fid[0], name[1], procs[2], tags[3]]
+        
+    # All the procs and tags are shared between abilities and moves
+    # Tags should be in sequential order as they will be displayed on my site
+    # They are not processed in sequential order here, due to string matching
+    # My internally used tags start at 200 (for contact, reflectable, etc.)
+    elif f'ability{abilityName}' in filterToFID:
         if 'StatMultiplierAbAttr' in line:
             stat = format_for_attr(re.findall(r'Stat\.(.*?),', line)[0])
             amount = re.findall(r'Stat\.\w\w\w\w?\w?,\s?(.*?)[,|)]', line)[0]
@@ -187,6 +190,8 @@ for index,line in enumerate(abilityData):
             tagList.append(37)         # "Can't be ignored" is 50, done in the previous section
         elif 'DoubleBattleChanceAbAttr' in line: # Lure abilities
             tagList.append(59)
+        elif 'sheerForceHitDisableAbCondition' in line: # Abilities prevented by sheer force
+            tagList.append(3)
         # elif 'ultipl' in line or 'oost' in line or 'pow' in line:
         #     # Check for keywords in the ability line like 'Multiply', 'Boost', or 'Power'
         #     # Print those lines to make sure I'm not missing anything important
@@ -205,279 +210,261 @@ move2D = []
 for line in moveData:
     if line[:3] == 'new':
         moveName = format_for_attr(format_for_disp(re.findall(r'MoveId\.(.*?),', line)[0]))
+
+        # There are moves that exist in the game code but are not obtainable by any pokemon
         if f'move{moveName}' not in filterToFID:
-            # There are moves that exist in the game code but are not obtainable by any pokemon
             print(moveName, 'does not exist')
-            # They have to be added here so that attributes don't error, but I ignore these moves later
-            move2D.append(['xxxxx',moveName]) 
+            continue
+
+        # Parse the attributes from move.ts
+        attrRaw = re.findall(r'Type\.(.*?)\)',line)[0].split(',')
+        attrRaw = [ format_for_attr(arg) for arg in attrRaw ]
+        if re.findall(r'StatusMove\(Move', line) != []:
+            # Status moves in move.ts: [type, accuracy, pp, chance, priority, gen]
+            [type, accuracy, pp, chance, priority, gen] = attrRaw
+            category = 2 # Status moves are category 2
+            power = -1
         else:
-            # Parse the attributes from move.ts
-            attrRaw = re.findall(r'Type\.(.*?)\)',line)[0].split(',')
-            attrRaw = [ format_for_attr(arg) for arg in attrRaw ]
-            if re.findall(r'StatusMove\(Move', line) != []:
-                # Status moves in move.ts: [type, accuracy, pp, chance, priority, gen]
-                [type, accuracy, pp, chance, priority, gen] = attrRaw
-                category = 2 # Status moves are category 2
-                power = -1
+            # Attacking moves in move.ts: [type, category, power, accuracy, pp, chance, priority, gen]
+            [type, category, power, accuracy, pp, chance, priority, gen] = attrRaw
+            category = category.split('movecategory.')[1]
+            if category == 'physical':  category = 0
+            elif category == 'special': category = 1
+            elif category not in [0,1]: input(f'Move category parsing error: {line}')
+
+        moveFID = filterToFID[f'move{moveName}']
+        type = filterToFID[f'type{format_for_attr(type)}']
+        procList = [] # Procs and tags are mostly assembled in the next section
+        tagList = []
+        # "chance" is written to the procList after parsing the move data
+        chance = int(format_for_attr(chance))  
+        # -1 is for detrimental guaranteed effects, while 100 is for beneficial guaranteed effects
+        if chance > 0: # Sheer Force needs a "chance" >= 1 (only beneficial moves, and some abilities)
+            tagList.append(3)
+        if 'SelfStatusMove' in line: # Status moves that target self
+            tagList.append(202) # These will not be considered reflectable moves
+
+        # fid[0], name[1], procs[2], tags[3], type[4], cat[5], pow[6], acc[7], pp[8], prio[9]
+        move2D.append([moveFID, moveName, procList, tagList, type, category, power, accuracy, pp, priority])
+
+    # General order of move descriptors: priority, targets, procs, all other tags
+    # All the procs and tags are shared between abilities and moves
+    # Tags should be in sequential order as they will be displayed on the searchdex
+    # They are not processed in sequential order here, due to string matching
+    # My internally used tags start at 200 (for contact, reflectable, etc.)
+    elif f'move{moveName}' in filterToFID:
+        if '.attr(HighCritAttr)' in line:
+            tagList.append(4)
+        elif 'CritOnlyAttr' in line: # auto crit
+            tagList.append(5)
+        elif 'CRIT_BOOST' in line and 'target' not in line: # focus energy, not dragon cheer
+            tagList.append(6)
+        elif '.makesContact(false)' in line: # those contact values are overrides
+            tagList.append(200)              # if it doesn't exist, look at move category
+        elif '.makesContact(true)' in line:
+            tagList.append(201)
+        elif '.makesContact()' in line:
+            tagList.append(201)
+        elif '.powderMove()' in line: # Move archetypes for synergies/immunities
+            tagList.append(23)
+        elif '.reflectable()' in line:
+            tagList.append(203)
+        elif '.slicingMove()' in line:
+            tagList.append(28)
+        elif '.punchingMove()' in line:
+            tagList.append(29)
+        elif '.danceMove()' in line:
+            tagList.append(26)
+        elif '.ballBombMove()' in line:
+            tagList.append(33)
+        elif '.pulseMove()' in line:
+            tagList.append(30)
+        elif '.bitingMove()' in line:
+            tagList.append(31)
+        elif '.triageMove()' in line:
+            tagList.append(25)
+        elif '.soundBased()' in line:
+            tagList.append(35)
+            tagList.append(36)
+        elif '.windMove()' in line:
+            tagList.append(27)
+        elif 'failIfDampCondition' in line:
+            tagList.append(34)
+        elif '.ignoresProtect()' in line:
+            tagList.append(38)
+        elif '.ignoresSubstitute()' in line:
+            tagList.append(36)
+        elif 'hidesTarget()' in line: # roar
+            tagList.append(40)
+        elif 'MoveTarget.RANDOM_NEAR_ENEMY' in line: # outrage
+            tagList.append(0)
+        elif 'MoveTarget.ALL_NEAR_ENEMIES' in line: # eruption
+            tagList.append(1)
+        elif 'MoveTarget.ALL_NEAR_OTHERS' in line: # earthquake
+            tagList.append(2)
+        elif 'MoveTarget.USER_SIDE' in line or 'MoveTarget.USER_AND_ALLIES' in line:
+            tagList.append(202) # Internal tag to ignore these for reflectable
+        elif 'ProtectAttr' in line or 'MoveTarget.BOTH_SIDES' in line or 'MoveTarget.NEAR_ALLY' in line:
+            tagList.append(202) # Internal tag to ignore these for reflectable
+        elif 'MultiHitAttr' in line:
+            if 'MultiHitType._2' in line:
+                tagList.append(41)
+            elif 'MultiHitType._3' in line:
+                tagList.append(42)
+            elif 'MultiHitType._10' in line:
+                tagList.append(43)
             else:
-                # Attacking moves in move.ts: [type, category, power, accuracy, pp, chance, priority, gen]
-                [type, category, power, accuracy, pp, chance, priority, gen] = attrRaw
-                category = category.split('movecategory.')[1]
-                if category == 'physical':  category = 0
-                elif category == 'special': category = 1
-                elif category not in [0,1]: input(f'Move category parsing error: {line}')
-            type = filterToFID[f'type{format_for_attr(type)}']
-
-            moveFID = filterToFID[f'move{moveName}']
-            procList = [] # Procs and tags are mostly assembled in the next section
-            tagList = []
-            chance = int(format_for_attr(chance))  
-            # "chance" is written to the procList after parsing the move data
-            # -1 is for detrimental effects, while 100 is for beneficial (sheer force) effects
-            # Sheer Force needs a "chance" >= 1 (only beneficial moves, and some abilities)
-            if 'SelfStatusMove' in line:
-                tagList.append(202) # Note these for later when determining reflectable moves
-
-            # fid[0], name[1], procs[2], tags[3], type[4], cat[5], pow[6], acc[7], pp[8], prio[9]
-            move2D.append([moveFID, moveName, procList, tagList, type, category, power, accuracy, pp, priority])
-    else:                                                            
-        # General order of move descriptors: priority, targets, procs, all other tags
-        # All the procs and tags are shared between abilities and moves
-        # Tags should be in sequential order as they will be displayed on the searchdex
-        # They are not processed in sequential order here, due to string matching
-        # My internally used tags start at 200 (for contact, reflectable, etc.)
-        if len(move2D[-1]) > 2:
-            if '.attr(HighCritAttr)' in line:
-                tagList.append(3)
-            elif 'CritOnlyAttr' in line: # auto crit
-                tagList.append(4)
-            elif 'CRIT_BOOST' in line and 'target' not in line: # focus energy, not dragon cheer
-                tagList.append(5)
-            elif '.makesContact(false)' in line: # those contact values are overrides
-                tagList.append(200)              # if it doesn't exist, look at move category
-            elif '.makesContact(true)' in line:
-                tagList.append(201)
-            elif '.makesContact()' in line:
-                tagList.append(201)
-            elif '.powderMove()' in line: # Move archetypes for synergies/immunities
-                tagList.append(23)
-            elif '.reflectable()' in line:
-                tagList.append(203)
-            elif '.slicingMove()' in line:
-                tagList.append(28)
-            elif '.punchingMove()' in line:
-                tagList.append(29)
-            elif '.danceMove()' in line:
-                tagList.append(26)
-            elif '.ballBombMove()' in line:
-                tagList.append(33)
-            elif '.pulseMove()' in line:
-                tagList.append(30)
-            elif '.bitingMove()' in line:
-                tagList.append(31)
-            elif '.triageMove()' in line:
-                tagList.append(25)
-            elif '.soundBased()' in line:
-                tagList.append(35)
-                tagList.append(36)
-            elif '.windMove()' in line:
-                tagList.append(27)
-            elif 'failIfDampCondition' in line:
-                tagList.append(34)
-            elif '.ignoresProtect()' in line:
-                tagList.append(38)
-            elif '.ignoresSubstitute()' in line:
-                tagList.append(36)
-            elif 'hidesTarget()' in line: # roar
-                tagList.append(40)
-            elif 'MoveTarget.RANDOM_NEAR_ENEMY' in line: # outrage
-                tagList.append(0)
-            elif 'MoveTarget.ALL_NEAR_ENEMIES' in line: # eruption
-                tagList.append(1)
-            elif 'MoveTarget.ALL_NEAR_OTHERS' in line: # earthquake
-                tagList.append(2)
-            elif 'MoveTarget.USER_SIDE' in line or 'MoveTarget.USER_AND_ALLIES' in line:
-                tagList.append(202) # Internal tag to ignore these for reflectable
-            elif 'ProtectAttr' in line or 'MoveTarget.BOTH_SIDES' in line or 'MoveTarget.NEAR_ALLY' in line:
-                tagList.append(202) # Internal tag to ignore these for reflectable
-            elif 'MultiHitAttr' in line:
-                if 'MultiHitType._2' in line:
-                    tagList.append(41)
-                elif 'MultiHitType._3' in line:
-                    tagList.append(42)
-                elif 'MultiHitType._10' in line:
-                    tagList.append(43)
+                tagList.append(44) # Standard two to five multihit
+        elif '.attr(FlinchAttr)' in line:
+            procList.append([chance,21,0])
+        elif 'ConfuseAttr' in line:
+            procList.append([chance,20,0])
+        elif 'GrowthStatStageChangeAttr' in line: # Growth
+            procList.append([-1,0,1])
+            procList.append([-1,2,1])
+        elif '(HealStatusEffectAttr,' in line: # cleansing status effects
+            if 'HealStatusEffectAttr, true, [' in line:
+                tagList.append(19)
+            elif 'getNonVolatile' in line:
+                tagList.append(19)
+            elif 'StatusEffect.SLEEP' in line:
+                tagList.append(20)
+            elif 'StatusEffect.FREEZE' in line:
+                tagList.append(21)
+            elif 'StatusEffect.PARALYSIS' in line:
+                input('Unknown tag found: Para Heal')
+            elif 'StatusEffect.BURN' in line:
+                tagList.append(22)
+        elif 'MultiStatusEffectAttr' in line: # dire claw and tri attack
+            if 'SLEEP' in line:
+                procList.append([chance,23,0]) # dire claw
+            else:
+                procList.append([chance,24,0]) # tri attack
+        elif '(StatusEffectAttr,' in line: # applying status effects
+            if 'StatusEffect.POISON' in line:
+                procList.append([chance,14,0])
+            if 'StatusEffect.TOXIC' in line:
+                procList.append([chance,15,0])
+            if 'StatusEffect.SLEEP' in line:
+                procList.append([chance,16,0])
+            if 'StatusEffect.FREEZE' in line:
+                procList.append([chance,17,0])
+            if 'StatusEffect.PARALYSIS' in line:
+                procList.append([chance,18,0])
+            if 'StatusEffect.BURN' in line:
+                procList.append([chance,19,0])
+        elif '(StatStageChangeAttr,' in line:
+            stats = re.findall(r'\[(.*?)\]', line)[0].split(',')
+            stats = [re.sub('stat.','',format_for_attr(stat)) for stat in stats]
+            amount = re.findall(r'\], (.*?)[,|)]', line)[0]
+            isSelf = (', true' in line)
+            index = -1
+            if len(stats) == 5:
+                procList.append([chance,22,1]) # ancient power, silver wind, ominous wind, no retreat
+            elif moveName == 'terablast':
+                procList.append([chance,25,-1]) # tera blast
+            else:
+                if 'effectChanceOverride' in line:
+                    effChance = 50
                 else:
-                    tagList.append(44)
-            elif '.attr(FlinchAttr)' in line:
-                procList.append([chance,21,0])
-            elif 'ConfuseAttr' in line:
-                procList.append([chance,20,0])
-            elif 'GrowthStatStageChangeAttr' in line: # Growth
-                procList.append([-1,0,1])
-                procList.append([-1,2,1])
-            elif '(HealStatusEffectAttr,' in line: # cleansing status effects
-                if 'HealStatusEffectAttr, true, [' in line:
-                    tagList.append(19)
-                elif 'getNonVolatile' in line:
-                    tagList.append(19)
-                elif 'StatusEffect.SLEEP' in line:
-                    tagList.append(20)
-                elif 'StatusEffect.FREEZE' in line:
-                    tagList.append(21)
-                elif 'StatusEffect.PARALYSIS' in line:
-                    input('Unknown tag found: Para Heal')
-                elif 'StatusEffect.BURN' in line:
-                    tagList.append(22)
-            elif 'MultiStatusEffectAttr' in line: # dire claw and tri attack
-                if 'SLEEP' in line:
-                    procList.append([chance,23,0]) # dire claw
-                else:
-                    procList.append([chance,24,0]) # tri attack
-            elif '(StatusEffectAttr,' in line: # applying status effects
-                if 'StatusEffect.POISON' in line:
-                    procList.append([chance,14,0])
-                if 'StatusEffect.TOXIC' in line:
-                    procList.append([chance,15,0])
-                if 'StatusEffect.SLEEP' in line:
-                    procList.append([chance,16,0])
-                if 'StatusEffect.FREEZE' in line:
-                    procList.append([chance,17,0])
-                if 'StatusEffect.PARALYSIS' in line:
-                    procList.append([chance,18,0])
-                if 'StatusEffect.BURN' in line:
-                    procList.append([chance,19,0])
-            elif '(StatStageChangeAttr,' in line:
-                stats = re.findall(r'\[(.*?)\]', line)[0].split(',')
-                stats = [re.sub('stat.','',format_for_attr(stat)) for stat in stats]
-                amount = re.findall(r'\], (.*?)[,|)]', line)[0]
-                isSelf = (', true' in line)
-                index = -1
-                if len(stats) == 5:
-                    procList.append([chance,22,1]) # ancient power, silver wind, ominous wind, no retreat
-                elif moveName == 'terablast':
-                    procList.append([chance,25,-1]) # tera blast
-                else:
-                    if 'effectChanceOverride' in line:
-                        effChance = 50
-                    else:
-                        effChance = chance
-                    for stat in ['atk','def','spatk','spdef','spd','acc','eva']:
-                        index += 1
-                        if stat in stats:
-                            procList.append([effChance,index+(not isSelf)*7,amount])
-            elif 'recklessMove' in line: # reckless and recoil moves
-                tagList.append(32)
-            elif 'RecoilAttr, true, 0.5' in line or 'HalfSacrificialAttr' in line:
+                    effChance = chance
+                for stat in ['atk','def','spatk','spdef','spd','acc','eva']:
+                    index += 1
+                    if stat in stats:
+                        procList.append([effChance,index+(not isSelf)*7,amount])
+        elif 'recklessMove' in line: # reckless and recoil moves
+            tagList.append(32)
+        elif 'RecoilAttr, true, 0.5' in line or 'HalfSacrificialAttr' in line:
+            tagList.append(10)
+        elif 'CurseAttr' in line:
+            tagList.append(9)
+        # elif 'RecoilAttr, true, 0.25' in line: # struggle
+        #     tagList.append()
+        elif 'RecoilAttr, false, 0.33' in line:
+            tagList.append(12)
+        elif 'RecoilAttr, false, 0.5' in line:
+            tagList.append(11)
+        elif 'RecoilAttr' in line:
+            tagList.append(13)
+        elif 'FrenzyAttr' in line: # outrage
+            tagList.append(45)
+        elif 'HitHealAttr, 1' in line:
+            tagList.append(15)
+        elif 'HitHealAttr, 0.75' in line:
+            tagList.append(16)
+        elif 'HitHealAttr, null, Stat.ATK' in line:
+            tagList.append(18)
+        elif 'HitHealAttr' in line:
+            tagList.append(17)
+        elif 'OneHitKOAttr' in line:
+            tagList.append(56)
+            tagList.append(57)
+        elif 'TrapAttr' in line:
+            if 'RemoveArenaTrapAttr' in line:
+                tagList.append(46) # rapid spin
+            else:
+                tagList.append(47) # binding moves
+        elif 'DoublePowerChanceAttr' in line: # fickle beam
+            tagList.append(14)
+        elif 'BypassRedirectAttr' in line:
+            tagList.append(51)
+        elif 'ThunderAccuracyAttr' in line:
+            tagList.append(53)
+        elif 'StormAccuracyAttr' in line:
+            tagList.append(53)
+        elif '(failOnBossCondition)' in line:
+            tagList.append(58)
+        elif '.unimplemented()' in line:
+            tagList.append(62)
+        elif '.partial()' in line:
+            tagList.append(61)
+        elif 'ForceSwitchOutAttr, true' in line or 'ChillyReceptionAttr' in line: # u turn
+            tagList.append(39)
+        elif '.ignoresAbilities()' in line: # moongeist beam
+            tagList.append(37)
+        elif 'LeechSeedAttr' in line: # leech seed
+            tagList.append(24)
+        elif 'TrappedTag' in line: # no retreat
+            tagList.append(54)
+        elif 'TRAPPED' in line: # mean look
+            tagList.append(55)
+        elif 'JawLockAttr' in line: # jaw lock
+            tagList.append(54)
+            tagList.append(55)
+        elif 'OCTOLOCK' in line: # octolock
+            tagList.append(55)
+            procList.append([chance,8,-1])
+            procList.append([chance,10,-1])
+        elif 'CutHpStatStageBoostAttr' in line: # belly / clang / fillet
+            stats = re.findall(r'\[(.*?)\]', line)[0].split(',')
+            stats = [re.sub('stat.','',format_for_attr(stat)) for stat in stats]
+            amount = re.findall(r'\], (.*?),', line)[0]
+            index = -1
+            if len(stats) == 5:
+                procList.append([chance,22,1]) # ancient power, silver/ominous, no retreat, clang
+            elif amount != '12':
+                for stat in ['atk','def','spatk','spdef','spd','acc','eva']:
+                    index += 1
+                    if stat in stats:
+                        procList.append([-1,index,amount])
+            if len(stats) == 1: # belly
+                tagList.append(7)
                 tagList.append(9)
-            elif 'CurseAttr' in line:
+            elif len(stats) == 3: # fillet
+                tagList.append(9)
+            elif len(stats) == 5: # clang
                 tagList.append(8)
-            # elif 'RecoilAttr, true, 0.25' in line: # struggle
-            #     tagList.append()
-            elif 'RecoilAttr, false, 0.33' in line:
-                tagList.append(11)
-            elif 'RecoilAttr, false, 0.5' in line:
-                tagList.append(10)
-            elif 'RecoilAttr' in line:
-                tagList.append(12)
-            elif 'FrenzyAttr' in line: # outrage
-                tagList.append(45)
-            elif 'HitHealAttr, 1' in line:
-                tagList.append(15)
-            elif 'HitHealAttr, 0.75' in line:
-                tagList.append(16)
-            elif 'HitHealAttr, null, Stat.ATK' in line:
-                tagList.append(18)
-            elif 'HitHealAttr' in line:
-                tagList.append(17)
-            elif 'OneHitKOAttr' in line:
-                tagList.append(56)
-                tagList.append(57)
-            elif 'TrapAttr' in line:
-                if 'RemoveArenaTrapAttr' in line:
-                    tagList.append(46) # rapid spin
-                else:
-                    tagList.append(47) # binding moves
-            elif 'DoublePowerChanceAttr' in line: # fickle beam
-                tagList.append(13)
-            elif 'BypassRedirectAttr' in line:
-                tagList.append(51)
-            elif 'ThunderAccuracyAttr' in line:
-                tagList.append(53)
-            elif 'StormAccuracyAttr' in line:
-                tagList.append(53)
-            elif '(failOnBossCondition)' in line:
-                tagList.append(58)
-            elif '.unimplemented()' in line:
-                tagList.append(62)
-            elif '.partial()' in line:
-                tagList.append(61)
-            elif 'ForceSwitchOutAttr, true' in line or 'ChillyReceptionAttr' in line: # u turn
-                tagList.append(39)
-            elif '.ignoresAbilities()' in line: # moongeist beam
-                tagList.append(37)
-            elif 'LeechSeedAttr' in line: # leech seed
-                tagList.append(24)
-            # elif 'StealHeldItemChanceAttr' in line: # thief, covet
-            #     tagList.append()
-            elif 'TrappedTag' in line: # no retreat
-                tagList.append(54)
-            elif 'TRAPPED' in line: # mean look
-                tagList.append(55)
-            elif 'JawLockAttr' in line: # jaw lock
-                tagList.append(54)
-                tagList.append(55)
-            elif 'OCTOLOCK' in line: # octolock
-                tagList.append(55)
-                procList.append([chance,8,-1])
-                procList.append([chance,10,-1])
-            elif 'CutHpStatStageBoostAttr' in line: # belly / clang / fillet
-                stats = re.findall(r'\[(.*?)\]', line)[0].split(',')
-                stats = [re.sub('stat.','',format_for_attr(stat)) for stat in stats]
-                amount = re.findall(r'\], (.*?),', line)[0]
-                index = -1
-                if len(stats) == 5:
-                    procList.append([chance,22,1]) # ancient power, silver/ominous, no retreat, clang
-                elif amount != '12':
-                    for stat in ['atk','def','spatk','spdef','spd','acc','eva']:
-                        index += 1
-                        if stat in stats:
-                            procList.append([-1,index,amount])
-                if len(stats) == 1: # belly
-                    tagList.append(6)
-                    tagList.append(8)
-                elif len(stats) == 3: # fillet
-                    tagList.append(8)
-                elif len(stats) == 5: # clang
-                    tagList.append(7)
-                else:
-                    input('Unknown boosting move',line)
-            # Unused tags below this line ================================
-            # elif 'ProtectAttr' in line: # show different protect moves ????
-            #     tagList.append()
-            # elif 'failIfLastCondition' in line:
-            #     tagList.append()
-            elif 'crashDamageFunc' in line:
-                e = 'nothing'
-            elif 'HealAttr' in line:
-                e = 'nothing'
-            elif 'UpperHandCondition' in line:
-                e = 'nothing'
-            elif 'Pledge' in line:
-                e = 'nothing'
-            elif 'doublePowerChanceMessageFunc' in line:
-                e = 'nothing'
-            elif 'TeraStarstormTypeAttr' in line:
-                e = 'nothing'
-            elif 'TeraMoveCategoryAttr' in line:
-                e = 'nothing'
-            elif format_for_attr(line) in ['',');','})','}),','}','}else{','return1;','.attr(','return(',')?2:1','//todo']:
-                e = 'nothing'
-            elif format_for_attr(line)[:2] == '//':
-                e = 'nothing'
             else:
-                e = 'nothing'
-                # print('\n',moveName,'\n',line)
+                input('Unknown boosting move',line)
+        # Unused tags below this line ================================
+        # else: # If nothing has been detected yet, show the game code
+        #     for phrase in ['ProtectAttr','failIfLastCondition','crashDamageFunc','HealAttr','UpperHandCondition','Pledge','doublePowerChanceMessageFunc','TeraStarstormTypeAttr','TeraMoveCategoryAttr']:
+        #         if phrase in line:
+        #             continue
+        #     if format_for_attr(line)[:2] == '//' or format_for_attr(line) in ['',');','})','}),','}','}else{','return1;','.attr(','return(',')?2:1','//todo']:
+        #         continue
+        #     else:
+        #         print('\n',moveName,'\n',line)
 
 # The data in ability2D/move2D is just ordered how the moves/abilities appear in the game code
 # This next step reorders them according to the fid list (which is alphabetical in english)
