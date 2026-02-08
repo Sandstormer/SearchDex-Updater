@@ -63,34 +63,10 @@ warningText = [
     'Cliquez pour voir les instructions.'
 ]
 procToDesc = [
-    "Atq du lanceur",
-    "Déf du lanceur",
-    "AtqSp du lanceur",
-    "DéfSp du lanceur",
-    "Vitesse du lanceur",
-    "Précison du lanceur",
-    "Esquive du lanceur",
-    "Atq",
-    "Déf",
-    "AtqSp",
-    "DéfSp",
-    "Vitesse",
-    "Précison",
-    "Esquive",
-    "Empoisonne",
-    "Empoisonne gravement",
-    "Endort",
-    "Gèle",
-    "Paralyse",
-    "Brule",
-    "Rend confus",
-    "Apeure",
-    "User Atq/Déf/AtS/DéS/Vit",
-    "Poison/Para/Sommeil",
-    "Brule/Para/Gel",
-    "Lanceur Stellaire Atq/AtqSp",
-    "Dégat",
-    "Priorité"
+    "Atq du lanceur", "Déf du lanceur", "AtqSp du lanceur", "DéfSp du lanceur", "Vitesse du lanceur", "Précison du lanceur", "Esquive du lanceur",
+    "Atq", "Déf", "AtqSp", "DéfSp", "Vitesse", "Précison", "Esquive",
+    "Empoisonne", "Empoisonne gravement", "Endort", "Gèle", "Paralyse", "Brule", "Rend confus",
+    "Apeure", "User Atq/Déf/ASp/DSp/Vit", "Poison/Para/Sommeil", "Brule/Para/Gel", "Lanceur Stellaire Atq/AtqSp", "Dégat", "Priorité"
 ]
 tagToDesc = [
     "Cible : Ennemi au hasard",

@@ -1,6 +1,6 @@
 # ===== This script parses all the ability/move attributes from the game =====
 # =====  fidToProc, typeColors, fidThreshold, upgradeCosts, gameVersion  =====
-# =====           It writes all that data to filters_global.js           ===== 
+# =====            It writes all that data to filter_data.js             ===== 
 # This is ONLY for numeric data; all localized text is written from updateLangs.py
 # This script also composites the layers of the biome images
 
@@ -583,7 +583,7 @@ synergyAbilities = {
 }
 for synLine in synergyAbilities.values():
     tagToFID.append([str(filterToFID[f'ability{abName}']) for abName in synLine])
-# Write fid associated with each tag to filters_global.js
+# Write fid associated with each tag to filter_data.js
 lines.append('];\nconst tagToFID = {')
 for index, relatedFID in enumerate(tagToFID):
     lines.append(f'{fidThreshold[11]+index}: [{",".join(relatedFID)}],')
@@ -614,7 +614,7 @@ for index, relatedFID in enumerate(tagToFID):
 # Moves: [ [procs[chance,stat,mag]], [tags], type, cat(phys/spec/stat), pow, acc, pp, prio]
 #             0                        1       2    3                    4    5    6    7
 
-# ======================= Write numeric filter data to filters_global.js =======================
+# ======================= Write numeric filter data to filter_data.js =======================
 # This is just numbers. Localized strings are written from updateLangs.py
 lines.append('};\nconst fidToProc = [') # Ability/move descriptions
 for fidLine in orderedData:
@@ -650,7 +650,7 @@ for fidLine in orderedData:
 
 lines.append('];')
 
-with open("website/filters_global.js", "w") as file:
+with open("website/filter_data.js", "w") as file:
     file.writelines(f"{line}\n" for line in lines)
 
 print("Done writing numeric filter data")

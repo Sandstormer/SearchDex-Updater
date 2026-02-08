@@ -524,6 +524,7 @@ for lang in langs: # =========================================== Main loop for e
     locUI['procToDesc'][27] = tall['modifier-type']['ModifierType']['QUICK_CLAW']['description']
 
     locUI['tagToDesc'] = ['' for line in overrides['en']['tagToDesc']]
+    locUI['tagToDesc'][4]  = tall['ability']['sheerForce']['name']
     locUI['tagToDesc'][23] = f"{tall['pokemon-info']['type']['grass']}/{tall['ability']['overcoat']['name']}"
     locUI['tagToDesc'][24] = tall['pokemon-info']['type']['grass']
     locUI['tagToDesc'][25] = tall['ability']['triage']['name']
@@ -542,6 +543,7 @@ for lang in langs: # =========================================== Main loop for e
 
     locUI['biomeLongText'] = ['' for line in overrides['en']['biomeLongText']]
     locUI['warningText'] = ['' for line in overrides['en']['warningText']]
+    locUI['helpMenuText'] = ['' for line in overrides['en']['helpMenuText']]
 
     print('Done translating ui elements')
     allCatToCheck = ['headerNames','altText','catToName','biomeText','infoText']

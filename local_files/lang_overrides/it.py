@@ -60,34 +60,10 @@ warningText = [
     'Clicca per visualizzare le istruzioni.',
 ]
 procToDesc = [
-    "Attacco Utilizzatore",
-    "Difesa Utilizzatore",
-    "Att. Sp. Utilizzatore",
-    "Dif. Sp. Utilizzatore",
-    "Velocità Utilizzatore",
-    "Precisione Utilizzatore",
-    "Elusione Utilizzatore",
-    "Attacco",
-    "Difesa",
-    "Att. Sp.",
-    "Dif. Sp.",
-    "Velocità",
-    "Precisione",
-    "Elusione",
-    "Avvelenamento",
-    "Iperavvelenamento",
-    "Sonno",
-    "Congelamento",
-    "Paralisi",
-    "Scottatura",
-    "Confusione",
-    "Tentennamento",
-    "Att/Dif/AttSp/DifSp/Vel Utilizzatore",
-    "Avvelenamento/Paralisi/Sonno",
-    "Scottatura/Paralisi/Congelamento",
-    "Att/AttSp Utilizzatore Astrale",
-    "Danno",
-    "Priorità"
+    "Attacco Utilizzatore", "Difesa Utilizzatore", "Att. Sp. Utilizzatore", "Dif. Sp. Utilizzatore", "Velocità Utilizzatore", "Precisione Utilizzatore", "Elusione Utilizzatore",
+    "Attacco", "Difesa", "Att. Sp.", "Dif. Sp.", "Velocità", "Precisione", "Elusione",
+    "Avvelenamento", "Iperavvelenamento", "Sonno", "Congelamento", "Paralisi", "Scottatura", "Confusione",
+    "Tentennamento", "Att/Dif/AttSp/DifSp/Vel Utilizzatore", "Avvelenamento/Paralisi/Sonno", "Scottatura/Paralisi/Congelamento", "Att/AttSp Utilizzatore Astrale", "Danno", "Priorità"
 ]
 tagToDesc = [
     "Bersagli: Nemico Casuale",
