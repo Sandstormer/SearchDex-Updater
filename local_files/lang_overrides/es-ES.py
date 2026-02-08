@@ -7,7 +7,7 @@ catToName = ['Tipo','Habilidad','Movimiento','Gen','Coste','Nivel de Huevo','Mod
              'Evolución','Forma','Bioma','Relacionado con','Variantes Variocolor','Etiqueta']
 infoText = ['Amistad por Caramelo','Pasiva','Reducción de Coste','Huevo de Especie','Habilidad Oculta',
             'Exclusivo de Huevo','Exclusivo de Cría','Pokémon Paradoja','Cambio de Forma','Biomas','Filtros',
-            'Reducido después de ## huevos','por Nivel','por Huevo','por MT']
+            'Reducido después de ## huevos','por Nivel','por Huevo','por MT','Movimientos','Info']
 biomeText = ['Común','Poco Común','Raro','Super Raro','Ultra Raro',
              'Jefe','Com.','PCom.','Raro','SR','UR','Amanecer','Día','Atardecer','Noche']
 phrases = {

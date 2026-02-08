@@ -5,11 +5,9 @@ altText = ['Mosse','Principale','Speciale','Passiva','Cerca','Pot','Prec','PP',
            'Comuni','Mega','Ultra','MT','L.','Evo','Uova']
 catToName = ['Tipo','Abilità','Mossa','Gen','Costo','Uova','Modalità',
              'Evoluzione','Forma','Bioma','Relativo a','Varianti Cromatiche','Etichetta']
-infoText = [
-    'Amicizia per Caramella', 'Passiva', 'Riduzione di Costo', 'Costi di un Uovo', 'Abilità Speciale', 
-    'Solo da Uovo', 'Solo Baby', 'Pokémon Paradosso', 'Cambio Forma', 'Biomi', 'Filtri',
-    'Ridotto dopo ## uova','per Livello','da Uovo','per MT'
-]
+infoText = ['Amicizia per Caramella', 'Passiva', 'Riduzione di Costo', 'Costi di un Uovo', 'Abilità Speciale', 
+            'Solo da Uovo', 'Solo Baby', 'Pokémon Paradosso', 'Cambio Forma', 'Biomi', 'Filtri',
+            'Ridotto dopo ## uova', 'per Livello', 'da Uovo', 'per MT', 'Set di mosse', 'Info']
 biomeText = ['Comune','Non Comune','Raro','Super Raro','Ultra Raro',
              'Boss','Com.','NC','Raro','SR','UR','Alba','Giorno','Tramonto','Notte']
 biomeLongText = [
