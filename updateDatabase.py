@@ -171,7 +171,7 @@ print('Finished reading TM moves')
 print('Finished reading all moves')
 
 # Currently, base species and forms have different formats in raw_data
-# This puts base species and forms into a consistent data format: full_data
+# full_data puts base species and forms into a consistent data format
 full_data = [] 
 for i,line in enumerate(raw_data):
     full_data.append([])
@@ -212,7 +212,7 @@ for i,line in enumerate(raw_data):
         newLine.extend(line[12:19]) # [13-19] Stats
         newLine.append(parentLine[25]) # [20] Catch rate
         
-    newLine.extend(parentLine[28:31])  # [21-23] growthRate, malePercent, femDiff
+    newLine.extend(parentLine[28:31])  # growthRate [21], malePercent [22], femDiff [23]
     newLine.extend(['','','','']) # Add 4 empty lines for egg moves [24-27]
     newLine.append({}) # Add dict for all moves [28]
     newLine.extend(['','','']) # Add cost [29], egg tier [30], shiny variants [31]
@@ -225,8 +225,11 @@ for i,line in enumerate(raw_data):
             isStartable = 1
     newLine.append(isStartable)
 
-    newLine.extend(['','','']) # starterRow [34], starterIndex [35], specIndex[36]
-    newLine.append(parentLine[5]) # specKey [37] used for "Related" filters, and translation lookup
+    newLine.append('') # starterRow [34] is the row of starter evo (similar to [2] being row of parent)
+    newLine.append('') # starterIndex [35] is the speciesID [36] of the starter evo
+    newLine.append('') # speciesID [36] is the number for lookup on the SearchDex
+    newLine.append(parentLine[5]) # specKey [37] is the text of just the Species (no form, except regionals)
+    # specKey is used for "Related" filters, and translation lookup of species
     newLine.extend(['','','']) # familyFID [38], freshStart [39], biomes [40]
     
     # Form exclusive [41] ('' = starter, 1 = mega, 2 = new mega, 3 = giga, 4 = transformed)
@@ -648,12 +651,12 @@ for line in trimmed_data:
             line[4] = line[3] # Replace img with new dex number
             if line[1] != "": line[4] = f'{line[3]}-{line[1]}' # If there is a formKey [1], add that to the image name
 
-# Reminder: isStartable [33], starterRow [34], starterIndex [35], specIndex [36]
+# Reminder: isStartable [33], starterRow [34], starterIndex [35], speciesID [36]
 for i, line in enumerate(trimmed_data): 
     if line[34] == '': # Check for invalid starter row
         throwError(f'Unassigned starter row for {line[5]}')
     # Trimmed data no longer has base species or unobtainable forms
-    # So now we rebase the row numbers as specIndex [36] to be sequential
+    # So now we rebase the row numbers as speciesID [36] to be sequential
     # This is the speciesID (SID) on the SearchDex, used to look up data for that species
     line[36] = i
     # Also rebase to sequential numbers for starterIndex [35]
@@ -845,7 +848,7 @@ for starterIndex in familyList:
             line[38] = len(allFilters)-1 # Set familyFID to this fid
 for j in ['New','All','None']:
     allFilters.append(['Shiny Variants',j])
-for j in ['Lure Ability','Ignores Abilities','Electric Immunity','Fire Immunity','Water Immunity','Rain Ability','Sand Ability','Snow Ability','Sun Ability']:
+for j in ['Lure Ability','Ignores Abilities',"Can't be suppressed","Can't be replaced","Can't be ignored",'Electric Immunity','Fire Immunity','Water Immunity','Rain Synergy','Creates Rain','Sand Synergy','Snow Synergy','Sun Synergy','Creates Sun']:
     allFilters.append(['Tag',j])
 
 # Process the biome data:

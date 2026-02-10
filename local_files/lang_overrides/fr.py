@@ -1,4 +1,3 @@
-
 headerNames = ['N°','Image','Nom','Type','Talents','Capacités Œuf','Cout',
                'Total','PV','Atq','Déf','ASp','DSp','Vit']
 altText = ['Capacités','Principaux','Caché','Passif','Chercher','Puis.','Préc.','PP',
@@ -35,10 +34,15 @@ phrases = {
     'electricImmunity': 'Immunité Électrik',
     'fireImmunity': 'Immunité Feu',
     'waterImmunity': 'Immunité Eau',
-    'rainAbility': 'Talent Pluie',
-    'sandAbility': 'Talent Tempête de Sable',
-    'snowAbility': 'Talent Neige',
-    'sunAbility': 'Talent Soleil',
+    'rainSynergy': 'Synergie Pluie',
+    'sandSynergy': 'Synergie Sable',
+    'snowSynergy': 'Synergie Neige',
+    'sunSynergy': 'Synergie Soleil',
+    'createsRain': 'Invoque la Pluie',
+    'createsSun': 'Invoque le Soleil',
+    'cantBeSuppressed': 'Ne peut pas être annulée',
+    'cantBeReplaced': 'Ne peut pas être remplacé',
+    'cantBeIgnored': 'Ne peut pas être ignoré',
     'targetSwitchesOut': 'Force le Changement',
     'spreadMoves': 'Attaques de Zone',
 }

@@ -46,8 +46,10 @@ warnNameLength = 0
 #   Use consistent translations for words that appear elsewhere (headers/tags/etc.)
 #   Make sure spacing is good, shorten UI phrases if needed
 
+import re, os, json, importlib
 # Functions for formatting the text
 def format_for_camel(arg): # Key format for official jsons
+    # arg = re.sub(r"[\s]",'',arg.title())
     arg = arg.title().replace(' ','')
     return f'{arg[0].lower()}{arg[1:]}'
 def shortenText(text):
@@ -61,7 +63,6 @@ langs = allLangs
 if langsToDo != [''] and langsToDo != []:
     langs = langsToDo
 overrides = {}
-import re, os, json, importlib
 for lang in allLangs:
     spec = importlib.util.spec_from_file_location(f"{lang}_over", f'local_files/lang_overrides/{lang}.py')
     mod = importlib.util.module_from_spec(spec)
@@ -441,7 +442,7 @@ for lang in langs: # =========================================== Main loop for e
     locUI['altText'][15] = re.sub(r'\s*:\s*','',tall['pokedex-ui-handler']['ultra'])
     locUI['altText'][16] = tall['pokedex-ui-handler']['menuTmMoves']
     locUI['altText'][17] = tall['pokemon-summary']['lv']
-    # locUI['altText'][18] = 'Evo'  # (a 3-char version of 'Evolution')
+    # locUI['altText'][18] = 'Evo' # (a 3-char version of 'Evolution')
     locUI['altText'][19] = tall['filter-bar']['egg']
 
     locUI['catToName'] = ['' for line in overrides['en']['catToName']]
@@ -598,24 +599,22 @@ for lang in langs: # =========================================== Main loop for e
 
     lines.append('fidToDesc = [') # filter descriptions
     for line in locDesc:
-        if "'" in line: 
-            # print('** Single quote found in',line)
-            line = line.replace("'","’")
+        line = line.replace("'","’")
         lines.append(f"\n'{line}',")
     lines[-1] = lines[-1][:-1]
     lines.append('\n];\n')
 
     lines.append('speciesNames = [') # species display names
     for line in locSpecies:
+        line = line.replace("'","’")
         lines.append(f"\n'{line}',")
     lines[-1] = lines[-1][:-1]
     lines.append('\n];\n')
 
     lines.append('fidToName = [') # localized filter names
     for line in locFilters:
+        line = line.replace("'","’")
         lines.append(f"\n'{line}',")
-        if "'" in str(line):
-            input('***** Error: Single quote found in',line)
     lines[-1] = lines[-1][:-1]
     lines.append('\n];\n')
 

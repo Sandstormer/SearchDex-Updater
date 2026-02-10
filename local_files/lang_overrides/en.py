@@ -34,10 +34,15 @@ phrases = { # Phrases to be used in the auto-translating of filters (do not tran
     'electricImmunity': 'Electric Immunity',
     'fireImmunity': 'Fire Immunity',
     'waterImmunity': 'Water Immunity',
-    'rainAbility': 'Rain Ability',
-    'sandAbility': 'Sand Ability',
-    'snowAbility': 'Snow Ability',
-    'sunAbility': 'Sun Ability',
+    'rainSynergy': 'Rain Synergy', # An ability that has synergy/interaction with rain weather
+    'sandSynergy': 'Sand Synergy', # An ability that has synergy/interaction with sandstorm weather
+    'snowSynergy': 'Snow Synergy', # An ability that has synergy/interaction with snow/hail weather
+    'sunSynergy': 'Sun Synergy',   # An ability that has synergy/interaction with sunny weather
+    'createsRain': 'Creates Rain',  # An ability that creates rain weather
+    'createsSun': 'Creates Sun',    # An ability that creates sunny weather
+    'cantBeSuppressed': "Can't be suppressed", # Can't be suppressed (Neut. Gas) or removed (Gastro Acid) 
+    'cantBeReplaced': "Can't be replaced", # Can't be replaced by another ability
+    'cantBeIgnored': "Can't be ignored", # Can't be ignored with Mold Breaker
     'targetSwitchesOut': 'Target Switches Out',
     'spreadMoves': 'Spread Moves',
 }

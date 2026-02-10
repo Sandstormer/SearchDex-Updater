@@ -7273,6 +7273,18 @@
     ],
     [
         "Tag",
+        "Can't be suppressed"
+    ],
+    [
+        "Tag",
+        "Can't be replaced"
+    ],
+    [
+        "Tag",
+        "Can't be ignored"
+    ],
+    [
+        "Tag",
         "Electric Immunity"
     ],
     [
@@ -7285,18 +7297,26 @@
     ],
     [
         "Tag",
-        "Rain Ability"
+        "Rain Synergy"
     ],
     [
         "Tag",
-        "Sand Ability"
+        "Creates Rain"
     ],
     [
         "Tag",
-        "Snow Ability"
+        "Sand Synergy"
     ],
     [
         "Tag",
-        "Sun Ability"
+        "Snow Synergy"
+    ],
+    [
+        "Tag",
+        "Sun Synergy"
+    ],
+    [
+        "Tag",
+        "Creates Sun"
     ]
 ]

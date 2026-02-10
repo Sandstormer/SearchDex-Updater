@@ -570,16 +570,21 @@ for index,costLine in enumerate(costParsed):
 tagToFID = [ # List of ability/move FIDs that match specific tag filters
     [ str(line[0]) for line in orderedData if 59 in line[3] ], # Lure ability
     [ str(line[0]) for line in orderedData if 37 in line[3] and line[0] < fidThreshold[1]], # Ignores abilities
-    # Possible things to add later: Switches out target, Spread moves, Healing, Setup, Priority
+    [ str(line[0]) for line in orderedData if 48 in line[3] ], # Can't be suppressed
+    [ str(line[0]) for line in orderedData if 49 in line[3] ], # Can't be replaced
+    [ str(line[0]) for line in orderedData if 50 in line[3] ], # Can't be ignored
+    # Possibly add move tags later: Switches out target, Spread moves, Healing, Setup, Priority
 ]
 synergyAbilities = {
     'electric':['lightningrod','motordrive','voltabsorb'],
     'fire':['flashfire','wellbakedbody'],
     'water':['dryskin','stormdrain','waterabsorb'],
     'rain':['drizzle','primordialsea','dryskin','hydration','raindish','swiftswim'],
+    'rainCreate':['drizzle','primordialsea'],
     'sand':['sandstream','sandforce','sandrush','sandveil'],
     'snow':['snowwarning','icebody','iceface','slushrush','snowcloak'],
     'sun':['drought','desolateland','orichalcumpulse','chlorophyll','flowergift','harvest','leafguard','protosynthesis','solarpower'],
+    'sunCreate':['drought','desolateland','orichalcumpulse'],
 }
 for synLine in synergyAbilities.values():
     tagToFID.append([str(filterToFID[f'ability{abName}']) for abName in synLine])
