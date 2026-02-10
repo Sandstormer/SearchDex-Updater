@@ -572,60 +572,44 @@ for lang in langs: # =========================================== Main loop for e
     # Write all the translated text to lang/{lang}.js =========================
     # headerNames, altText, catToName, fidToDesc, speciesNames, fidToName
     print("\nWriting to website language files...")
-    lines = []
+    jsText = []
     # Show a warning to not edit the javascript files directly
     # Changes must be done through the python override files
-    lines.append('// Do not edit these files directly\n')
-    lines.append('// They are changed automatically by the update script\n')
-    lines.append('// Changes must be made through the updater repository\n')
+    jsText.append('// Do not edit these files directly\n')
+    jsText.append('// They are changed automatically by the update script\n')
+    jsText.append('// Changes must be made through the updater repository\n')
+
+    def writeLines(addLines, toList):
+        newLine = "\n" if len(addLines) > 20 or len(addLines[0]) > 20 else ""
+        for line in addLines:
+            line = line.replace("'","’")
+            toList.append(f"{newLine}'{line}',")
+        toList[-1] = toList[-1][:-1] # Remove final comma
+        toList.append(f'{newLine}];\n')
+        return toList
+    
     for categoryName in overrides['en'].keys():
         if categoryName not in ['helpMenuText','phrases','substitutions']:
-            lines.append(f'{categoryName} = [') # Add each UI category
-            for line in locUI[categoryName]:
-                if categoryName in ['biomeLongText','warningText']:
-                    if "'" in line: 
-                        # print('** Single quote found in',line)
-                        line = line.replace("'","’")
-                    lines.append(f"\n'{line}',")
-                elif categoryName in ['procToDesc','tagToDesc']:
-                    lines.append(f'\n"{line}",')
-                else:
-                    if "'" in line: 
-                        print('** Single quote found in',line)
-                        line = line.replace("'","’")
-                    lines.append(f"'{line}',")
-            lines[-1] = lines[-1][:-1] # Remove comma
-            lines.append('];\n')
+            jsText.append(f'{categoryName} = [') # Add each UI category
+            jsText = writeLines(locUI[categoryName], jsText)
 
-    lines.append('fidToDesc = [') # filter descriptions
-    for line in locDesc:
-        line = line.replace("'","’")
-        lines.append(f"\n'{line}',")
-    lines[-1] = lines[-1][:-1]
-    lines.append('\n];\n')
+    jsText.append('fidToDesc = [') # filter descriptions
+    jsText = writeLines(locDesc, jsText)
 
-    lines.append('speciesNames = [') # species display names
-    for line in locSpecies:
-        line = line.replace("'","’")
-        lines.append(f"\n'{line}',")
-    lines[-1] = lines[-1][:-1]
-    lines.append('\n];\n')
+    jsText.append('speciesNames = [') # species display names
+    jsText = writeLines(locSpecies, jsText)
 
-    lines.append('fidToName = [') # localized filter names
-    for line in locFilters:
-        line = line.replace("'","’")
-        lines.append(f"\n'{line}',")
-    lines[-1] = lines[-1][:-1]
-    lines.append('\n];\n')
+    jsText.append('fidToName = [') # localized filter names
+    jsText = writeLines(locFilters, jsText)
 
     # helpMenuText must be done last because it references other strings
-    lines.append('helpMenuText = [') # help menu text
+    jsText.append('helpMenuText = [') # help menu text
     for line in locUI['helpMenuText']:
-        lines.append(f"\n`{line}`,")
-    lines.append('];')
+        jsText.append(f"\n`{line}`,")
+    jsText.append('];')
 
     with open(f"website/lang/{lang}.js", "w", encoding="utf-8") as file:
-        file.writelines(lines)
+        file.writelines(jsText)
     print("Filter writing complete")
 
 print("\n=========== ALL LANGUAGES DONE ===========\n")
