@@ -263,7 +263,7 @@ def processImage(spriteIndex, shinyIndex, femIndex, backIndex):
         arr_new = np.array(sliced_img.convert("RGBA"))
         arr_old = np.array(prev_img.convert("RGBA"))
         if arr_new.shape != arr_old.shape:
-            print('Updated image size changed in',simpleName)
+            print('Image size changed in',simpleName)
         else:
             changed_mask = np.any(arr_new[:, :, :3] != arr_old[:, :, :3], axis=-1)  # Compare RGB only
             alpha_mask = arr_new[:, :, 3] > 0  # Only count pixels that are not fully transparent

@@ -11,7 +11,7 @@
 # Step 7 is to manually test the functionality of the SearchDex.
 # Step 8 is to push the changes to the SearchDex GitHub.
 
-branchName="main" # Set this to "main" or "beta"
+branchName="beta" # Set this to "main" or "beta"
 # Using "beta" usually causes errors, due to PokeRogue developers rapidly changing the game's code
 # You should only do that temporarily, to apply an update before it hits live
 
@@ -21,7 +21,7 @@ import subprocess, os
 def clone_or_update(repo_url, repo_dest, branch_name=None, only_clone=False):
     if os.path.exists(repo_dest):
         if only_clone:
-            print(f"\nSearchDex files already exist at {repo_dest}")
+            print(f"\nSearchDex files already exist in {repo_dest} folder")
             print(f"SearchDex website files will not be updated...")
         else:
             if os.path.exists(os.path.join(repo_dest, ".git")):
