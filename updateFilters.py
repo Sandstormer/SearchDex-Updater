@@ -597,18 +597,20 @@ tagToFID = [ # List of ability/move FIDs that match specific tag filters
     [ str(line[0]) for line in orderedData if 50 in line[3] ], # Can't be ignored
     # Possibly add move tags later: Switches out target, Spread moves, Healing, Setup, Priority
 ]
-synergyAbilities = {
+tagToAbility = {
     'electric':['lightningrod','motordrive','voltabsorb'],
     'fire':['flashfire','wellbakedbody'],
+    'ground':['levitate','eartheater'],
     'water':['dryskin','stormdrain','waterabsorb'],
     'rain':['drizzle','primordialsea','dryskin','hydration','raindish','swiftswim'],
     'rainCreate':['drizzle','primordialsea'],
     'sand':['sandstream','sandforce','sandrush','sandveil'],
+    'sandCreate':['sandstream','sandspit'],
     'snow':['snowwarning','icebody','iceface','slushrush','snowcloak'],
     'sun':['drought','desolateland','orichalcumpulse','chlorophyll','flowergift','harvest','leafguard','protosynthesis','solarpower'],
     'sunCreate':['drought','desolateland','orichalcumpulse'],
 }
-for synLine in synergyAbilities.values():
+for synLine in tagToAbility.values():
     tagToFID.append([str(filterToFID[f'ability{abName}']) for abName in synLine])
 # Write fid associated with each tag to filter_data.js
 lines.append('];\nconst tagToFID = {')

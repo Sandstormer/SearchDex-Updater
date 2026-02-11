@@ -21,7 +21,7 @@ biomeLongText = [
 phrases = { # Phrases to be used in the auto-translating of filters (do not translate the left side of each line)
     'exclusive': 'Exclusive',
     'new': 'New',
-    'tag': 'Tag', # A tag/attribute/property of a move
+    'tag': 'Tag', # A tag/attribute/property of an ability
     'theEnd': 'The End', # The final biome/zone
     'fullyEvolved': 'Fully Evolved',
     'formBase': 'Base', # Referring to the base form of a pokemon (not mega, giga, etc.)
@@ -31,22 +31,21 @@ phrases = { # Phrases to be used in the auto-translating of filters (do not tran
     'formTransformed': 'Transformed', # Shorthand for other pokemon forms
     'lureAbility': 'Lure Ability',
     'ignoresAbilities': 'Ignores Abilities',
-    'electricImmunity': 'Electric Immunity',
-    'fireImmunity': 'Fire Immunity',
-    'waterImmunity': 'Water Immunity',
+    'typeImmunity': '{type} Immunity',
     'rainSynergy': 'Rain Synergy', # An ability that has synergy/interaction with rain weather
     'sandSynergy': 'Sand Synergy', # An ability that has synergy/interaction with sandstorm weather
     'snowSynergy': 'Snow Synergy', # An ability that has synergy/interaction with snow/hail weather
     'sunSynergy': 'Sun Synergy',   # An ability that has synergy/interaction with sunny weather
-    'createsRain': 'Creates Rain',  # An ability that creates rain weather
-    'createsSun': 'Creates Sun',    # An ability that creates sunny weather
+    'createsRain': 'Creates Rain', # An ability that creates rain weather
+    'createsSand': 'Creates Sand', # An ability that creates sandstorm weather
+    'createsSun': 'Creates Sun',   # An ability that creates sunny weather
     'cantBeSuppressed': "Can't be suppressed", # Can't be suppressed (Neut. Gas) or removed (Gastro Acid) 
     'cantBeReplaced': "Can't be replaced", # Can't be replaced by another ability
     'cantBeIgnored': "Can't be ignored", # Can't be ignored with Mold Breaker
     'targetSwitchesOut': 'Target Switches Out',
     'spreadMoves': 'Spread Moves',
 }
-substitutions = [ # Text shortenings to make it fit in the UI
+substitutions = [ # Text shortenings to make it fit in the UI (delete when making a new language)
     ["Nidoran F","Female Nidoran"],
     ["Nidoran M","Male Nidoran"],
     ["50 Zygarde","50% Zygarde"],

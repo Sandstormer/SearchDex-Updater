@@ -202,6 +202,10 @@ for lang in langs: # =========================================== Main loop for e
             for key, value in overrides['en']['phrases'].items():
                 if value == line[1]:
                     locFilters[index] = overrides[lang]['phrases'][key]
+            if 'Immunity' in line[1]:
+                text = line[1].split(' Immunity')[0] # Get the english type name
+                text = tall['pokemon-info']['type'][text.lower()] # Get the translated type name
+                locFilters[index] = overrides[lang]['phrases']['typeImmunity'].replace('{type}',text)
     # Translate names of family filters
     for index,line in enumerate(allFilters):
         if line[0] == 'Related To':
