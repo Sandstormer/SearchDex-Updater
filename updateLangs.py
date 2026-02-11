@@ -376,24 +376,30 @@ for lang in langs: # =========================================== Main loop for e
     # Translate the descriptions of abilities/moves =========================
     print('\nTranslating filter descriptions...')
     locDesc = ['' for line in allFilters if (line[0] == 'Move' or line[0] == 'Ability')]
-    # Translate abilities
+    bonusDesc = { # Add reminder text to things that generate weather/terrain
+        'sandstorm': ['sandStream','sandSpit'],
+        'sunnyDay': ['drought','orichalcumPulse'],
+        'rainDance': ['drizzle'],
+        'snowscape': ['snowWarning','chillyReception'],
+        'electricTerrain': ['electricSurge','hadronEngine'],
+        'grassyTerrain': ['grassySurge','seedSower'],
+        'mistyTerrain': ['mistySurge'],
+        'psychicTerrain': ['psychicSurge'],
+    }
     for index,line in enumerate(allFilters):
-        if line[0] == 'Ability':
+        if line[0] == 'Ability' or line[0] == 'Move':
             key = format_for_camel(line[1])
-            if 'description' in tall['ability'][key]:
-                text = tall['ability'][key]['description'].replace('\n','')
-            else:
-                text = ''
-                print('No description for',line[1],'in',lang)
-            locDesc[index-fidThreshold[0]] = text
-    # Translate moves
-    for index,line in enumerate(allFilters):
-        if line[0] == 'Move':
-            if 'effect' in tall['move'][format_for_camel(line[1])]:
-                text = tall['move'][format_for_camel(line[1])]['effect'].replace('\n','')
-            else:
-                text = ''
-                print('** No description for',line[1],'in',lang)
+            text = ''
+            if key in tall['ability'] and 'description' in tall['ability'][key]:
+                text = tall['ability'][key]['description'] # Translate abilities
+            if key in tall['move'] and 'effect' in tall['move'][key]:
+                text = tall['move'][key]['effect'] # Translate moves
+            if not text: print('** No description for',line[1],'in',lang)
+            for reminder, moveList in bonusDesc.items():
+                for move in moveList:
+                    if move == key:
+                        text += f'<br><br><span style="color:rgb(145, 145, 145);">{tall["move"][reminder]["effect"]}</span>'
+            text = text.replace('\n','')
             locDesc[index-fidThreshold[0]] = text
     print('Done translating ability/move descriptions')
     missingAmount = sum([1 for line in locDesc if not line])
