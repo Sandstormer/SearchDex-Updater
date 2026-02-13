@@ -931,25 +931,25 @@ for line in trimmed_data:
             biomeLine[1] = encoded       
 
 # Find the threshold of types and abilities
-fidThresholds = []
+fidThreshold = []
 catName = allFilters[0][0]
 for index,line in enumerate(allFilters):
     if line[0] != catName:
         catName = line[0]
-        fidThresholds.append(index)
-fidThresholds.append(len(allFilters))
-if fidThresholds[0] != 18: throwError('Wrong number of types')
-if fidThresholds[1] != 328: throwError('Wrong number of abilities')
-if allTypes[-1] != allFilters[fidThresholds[0]-1][1]: throwError('Name error with types')
-if allAbilities[-1] != allFilters[fidThresholds[1]-1][1]: throwError('Name error with abilities')
-if allMoves[-1] != allFilters[fidThresholds[2]-1][1]: throwError('Name error with moves')
+        fidThreshold.append(index)
+fidThreshold.append(len(allFilters))
+if fidThreshold[0] != 18: throwError('Wrong number of types')
+if fidThreshold[1] != 328: throwError('Wrong number of abilities')
+if allTypes[-1] != allFilters[fidThreshold[0]-1][1]: throwError('Name error with types')
+if allAbilities[-1] != allFilters[fidThreshold[1]-1][1]: throwError('Name error with abilities')
+if allMoves[-1] != allFilters[fidThreshold[2]-1][1]: throwError('Name error with moves')
 
 # Write some variables to files
 # These are read by my other scripts, and some are written to the website
 with open("local_files/my_json/allFilters.json", "w") as f:
     json.dump(allFilters, f, indent=4)
-with open("local_files/my_json/fidThresholds.json", "w") as f:
-    json.dump(fidThresholds, f, indent=4)
+with open("local_files/my_json/fidThreshold.json", "w") as f:
+    json.dump(fidThreshold, f, indent=4)
 with open("local_files/my_json/filterToFID.json", "w") as f:
     json.dump(filterToFID, f, indent=4)
 # Save all the names: [displayname/form/species] (regional is included in species)
@@ -959,7 +959,7 @@ with open("local_files/my_json/allSpecies.json", "w") as f:
 
 input('\nNo Major Errors Found\nContinue to patch review?')
 print('\n==============================\n')
-print("Reviewing patch changes...")
+print("Reviewing patch changes...\n")
 
 # Patch note creating **********************************************************************************
 # Write all the trimmed data to a json file
@@ -971,7 +971,7 @@ with open("local_files/trimmed_data_prev.json", "r", encoding="utf-8", errors="r
 with open("local_files/trimmed_data_prev_shvar.json", "r", encoding="utf-8", errors="replace") as fp: # Older version for purpose of new variants
     trimmed_data_shvar = json.load(fp)
 # Look for changes and report them in a patch notes format
-# Github may detect more changes because of how fid are assigned
+# Github may detect more changes in pokedex_data.js because of how fid are assigned
 attNames = ['rowno','form','parno','dexno','img','spec','desc','type1','type2','ab1','ab2','hab','Passive',
            #   0      1       2       3      4     5      6       7       8      9    10    11    12
             'bst','HP','Atk','Def','SpAtk','SpDef','Speed','catchrate','exp','mpc','fem','Egg Move 1','Egg Move 2','Egg Move 3','Rare Egg Move',
@@ -989,17 +989,18 @@ for i in range(len(soloAttr)):                              # You can use string
         soloAttr[i] = j+1
 attPatchCount = [0 for arg in attNames] # How many times each attribute was changed
 eggPatchCount = [0 for arg in trimmed_data] # How many times any egg move was changed
-patch_lines = ['patchNotes = `']
+patch_review = [] # Readable review of patch notes in the console
+patch_data = {} # Numerical patch data imported to the SearchDex
 for i,line in enumerate(trimmed_data):
-    patch_lines.append(f'<br>\n{line[5]}:')
     # Find where the species is, in _prev (the index may be different)
     for ii in range(i-10,min(i+10,len(trimmed_data_prev))):
         if line[5] == trimmed_data_prev[ii][5]:
+            prevLine = trimmed_data_prev[ii]
             break
     else:
         print('Could not find',line[5],'in previous data')
         continue
-    if line[5] == trimmed_data_prev[ii][5]: # Make sure species is the same
+    if line[5] == prevLine[5]: # Make sure species is the same
         # Find where the species is, in _prev_shvar (which may be different length from _prev)
         for iii in range(i-10,min(i+10,len(trimmed_data_shvar))):
             if line[5] == trimmed_data_shvar[iii][5]: 
@@ -1007,44 +1008,70 @@ for i,line in enumerate(trimmed_data):
                     line[43] = 1 # Mark as newly added shiny variants
                 break
         # Loop through all attributes for comparison
-        for j in range(0,min(len(line),len(trimmed_data_prev[ii]))):
+        for j in range(0,min(len(line),len(prevLine))):
             # For all the main values, they are only 'changed'
             if (not soloAttr and j not in omitAttr) or j in soloAttr: 
-                if line[j] != trimmed_data_prev[ii][j]:
-                    print(line[5],attNames[j],'changed from',trimmed_data_prev[ii][j],'to',line[j])
-                    patch_lines.append(f'{attNames[j]}: {trimmed_data_prev[ii][j]} > {line[j]}')
+                if line[j] != prevLine[j]:
+                    patch_review.append(f'{line[5]}: {attNames[j]} changed from {prevLine[j]} to {line[j]}')
+                    if j in [12,24,25,26,27,29,30]:
+                        if j == 12: # Passive
+                            preFID = filterToFID[f'ability{format_for_attr(prevLine[j])}']
+                            postFID = filterToFID[f'ability{format_for_attr(line[j])}']
+                        if j in [24,25,26,27]: # Egg moves
+                            preFID = filterToFID[f'move{format_for_attr(prevLine[j])}']
+                            postFID = filterToFID[f'move{format_for_attr(line[j])}']
+                        if j == 29: # Cost
+                            preFID = fidThreshold[3]-1+prevLine[j]
+                            postFID = fidThreshold[3]-1+line[j]
+                        if j == 30: # Egg tier
+                            preFID = fidThreshold[4]+prevLine[j]
+                            postFID = fidThreshold[4]+line[j]
+                        for specID,specLine in patch_data.items(): # Check patch data for redundant entries
+                            if trimmed_data[specID][38] == line[38]: # If same family
+                                if j in specLine and specLine[j][0] == preFID and specLine[j][1] == postFID:
+                                    break
+                        else:
+                            if i not in patch_data:
+                                patch_data[i] = {}
+                            patch_data[i][j] = [preFID, postFID]
                     attPatchCount[j] += 1
                     if j in [24,25,26,27]:
                         eggPatchCount[i] = 1
             elif j == 28: # For the move dict, they are either 'added' or 'removed'
                 # src = -1:mushroom, 0:evo, 1-200:level, 201-203:egg&TM, 204:egg, 205-207:rare&TM, 208:rare, 209-211:TM
                 for key,value in line[28].items():
-                    if 209 < value < 200:
-                        if key in trimmed_data_prev[ii][28]:
-                            if trimmed_data_prev[ii][28][key] != value:
-                                if line[33] == 1:
-                                    print(line[5],'move',key,'changed from',trimmed_data_prev[ii][28][key],'to',value)
-                                    patch_lines.append(f'{key}: {trimmed_data_prev[ii][28][key]} > {value}')
+                    if 209 < value < 200: # Ignore egg moves
+                        if key in prevLine[28]:
+                            if prevLine[28][key] != value:
+                                print(line[5],'move',key,'changed from',prevLine[28][key],'to',value)
+                                if line[33] and not [41]:
+                                    patch_review.append(f'{key}: {prevLine[28][key]} > {value}')
                         else:
                             print('Move',key,'added to',line[5])
-                            if line[33] == 1:
-                                patch_lines.append(f'{key}: Added ({value})')
-                for key,value in trimmed_data_prev[ii][28].items():
+                            if line[33] and not [41]:
+                                patch_review.append(f'{key}: Added ({value})')
+                for key,value in prevLine[28].items():
                     if key not in line[28] and 209 < value < 200:
                         print('Move',key,'removed from',line[5])
-                        if line[33] == 1:
-                            patch_lines.append(f'{key}: Removed ({value})')
-    if patch_lines[-1] == f'<br>\n{line[5]}:':
-        patch_lines.pop()
+                        if line[33] and not [41]:
+                            patch_review.append(f'{key}: Removed ({value})')
+print("\n".join(patch_review))
 print('\nSummary of patch notes:')
 for j in range(len(attNames)):
     if attPatchCount[j] > 0:
         print(f'{attNames[j]} changed: {attPatchCount[j]}')
 print('Total Egg Moves changed:',sum(eggPatchCount))
 # Format the patch notes and save to a file
-with open("local_files/patch_notes.js", "w") as file:
-    file.writelines(f"{line}<br>\n" for line in patch_lines)
-    file.writelines('`;')
+with open("local_files/patch_review.js", "w") as file:
+    file.writelines("\n".join(patch_review))
+with open("website/patch_data.js", "w") as file:
+    file.writelines("patchData = {")
+    for specID in patch_data.keys():
+        file.writelines(f"\n{specID}: {{")
+        textList = [f"{attID}:[{line[0]},{line[1]}]" for attID, line in patch_data[specID].items()]
+        file.writelines(",".join(textList))
+        file.writelines("},")
+    file.writelines('\n};')
 
 input('\nContinue to writing website database?')
 print('\n==============================\n')

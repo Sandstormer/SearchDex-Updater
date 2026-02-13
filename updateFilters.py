@@ -17,7 +17,7 @@ from datetime import date
 # Open and read the files *******************************
 with open("local_files/my_json/filterToFID.json", "r") as f:
     filterToFID = json.load(f)
-with open("local_files/my_json/fidThresholds.json", "r") as fp:
+with open("local_files/my_json/fidThreshold.json", "r") as fp:
     fidThreshold = json.load(fp)
 orderedData = [[] for _ in filterToFID][fidThreshold[0]:fidThreshold[2]]
          

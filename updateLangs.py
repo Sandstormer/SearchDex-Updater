@@ -243,7 +243,7 @@ for lang in langs: # =========================================== Main loop for e
         locFilters = [shortenText(line[1]) for line in allFilters]
     print('Done translating filter names')
     # Check for the shortest and longest translations of types/abilities/moves
-    with open("local_files/my_json/fidThresholds.json", "r") as fp:
+    with open("local_files/my_json/fidThreshold.json", "r") as fp:
         fidThreshold = json.load(fp)
     catNames = ['TYPE','ABILITY','MOVE']
     if warnNameLength:
