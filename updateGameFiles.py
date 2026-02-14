@@ -11,7 +11,7 @@
 # Step 7 is to manually test the functionality of the SearchDex.
 # Step 8 is to push the changes to the SearchDex GitHub.
 
-branchName="beta" # Set this to "main" or "beta"
+branchName="main" # Set this to "main" or "beta"
 # Using "beta" usually causes errors, due to PokeRogue developers rapidly changing the game's code
 # You should only do that temporarily, to apply an update before it hits live
 

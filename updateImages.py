@@ -289,7 +289,7 @@ def processImage(spriteIndex, shinyIndex, femIndex, backIndex):
 
 os.makedirs(dest_dir, exist_ok=True) # Ensure the directory exists
 
-# Load the masterlist, it also has 'back', 'female', and 'back''female'
+# Load the masterlist, it also has ['back'], ['female'], and ['back']['female']
 with open(f'game_files/assets/images/pokemon/variant/_masterlist.json', "r") as f:
     masterList = json.load(f)
 

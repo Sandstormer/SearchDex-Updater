@@ -37,9 +37,7 @@ Ho Oh: Rare Egg Move changed from Bolt Beak to Dragon Dance
 Taillow: Passive changed from Aerilate to Flare Boost
 Swellow: Passive changed from Aerilate to Flare Boost
 Makuhita: Egg Move 1 changed from Combat Torque to Hammer Arm
-Makuhita: newVariants changed from  to 1
 Hariyama: Egg Move 1 changed from Combat Torque to Hammer Arm
-Hariyama: newVariants changed from  to 1
 Clamperl: Passive changed from Overcoat to Comatose
 Beldum: Passive changed from Levitate to Rock Head
 Metang: Passive changed from Levitate to Iron Fist
@@ -136,9 +134,7 @@ Mudbray: Egg Move 3 changed from Shore Up to Heat Crash
 Mudbray: Rare Egg Move changed from Thousand Waves to Shore Up
 Mudsdale: Egg Move 3 changed from Shore Up to Heat Crash
 Mudsdale: Rare Egg Move changed from Thousand Waves to Shore Up
-Comfey: newVariants changed from  to 1
 Dhelmise: Egg Move 1 changed from Shadow Bone to Spirit Shackle
-Dhelmise: newVariants changed from  to 1
 Tapu Bulu: Egg Move 1 changed from Sappy Seed to Grassy Glide
 Tapu Bulu: Egg Move 3 changed from Magical Torque to Play Rough
 Guzzlord: Egg Move 3 changed from Slack Off to Dragon Hammer
@@ -174,6 +170,10 @@ Cufant: Egg Move 3 changed from Combat Torque to Hammer Arm
 Copperajah: Egg Move 3 changed from Combat Torque to Hammer Arm
 Gigantamax Copperajah: Egg Move 3 changed from Combat Torque to Hammer Arm
 Glastrier: Egg Move 2 changed from Slack Off to Recover
+Incarnate Enamorus: shvar changed from 1 to 3
+Incarnate Enamorus: newVariants changed from  to 1
+Therian Enamorus: shvar changed from 1 to 3
+Therian Enamorus: newVariants changed from  to 1
 Capsakid: Egg Move 2 changed from Apple Acid to Fire Lash
 Capsakid: Rare Egg Move changed from Torch Song to Apple Acid
 Scovillain: Egg Move 2 changed from Apple Acid to Fire Lash
@@ -184,6 +184,36 @@ Tinkatuff: Egg Move 1 changed from Magical Torque to Nuzzle
 Tinkatuff: Rare Egg Move changed from Shift Gear to Obstruct
 Tinkaton: Egg Move 1 changed from Magical Torque to Nuzzle
 Tinkaton: Rare Egg Move changed from Shift Gear to Obstruct
+Segin Starmobile Revavroom: bst changed from 600 to 580
+Segin Starmobile Revavroom: HP changed from 110 to 80
+Segin Starmobile Revavroom: Def changed from 100 to 120
+Segin Starmobile Revavroom: SpAtk changed from 77 to 69
+Segin Starmobile Revavroom: SpDef changed from 79 to 97
+Segin Starmobile Revavroom: Speed changed from 105 to 85
+Schedar Starmobile Revavroom: bst changed from 600 to 580
+Schedar Starmobile Revavroom: HP changed from 110 to 80
+Schedar Starmobile Revavroom: Def changed from 100 to 120
+Schedar Starmobile Revavroom: SpAtk changed from 77 to 69
+Schedar Starmobile Revavroom: SpDef changed from 79 to 97
+Schedar Starmobile Revavroom: Speed changed from 105 to 85
+Navi Starmobile Revavroom: bst changed from 600 to 580
+Navi Starmobile Revavroom: HP changed from 110 to 80
+Navi Starmobile Revavroom: Def changed from 100 to 120
+Navi Starmobile Revavroom: SpAtk changed from 77 to 69
+Navi Starmobile Revavroom: SpDef changed from 79 to 97
+Navi Starmobile Revavroom: Speed changed from 105 to 85
+Ruchbah Starmobile Revavroom: bst changed from 600 to 580
+Ruchbah Starmobile Revavroom: HP changed from 110 to 80
+Ruchbah Starmobile Revavroom: Def changed from 100 to 120
+Ruchbah Starmobile Revavroom: SpAtk changed from 77 to 69
+Ruchbah Starmobile Revavroom: SpDef changed from 79 to 97
+Ruchbah Starmobile Revavroom: Speed changed from 105 to 85
+Caph Starmobile Revavroom: bst changed from 600 to 580
+Caph Starmobile Revavroom: HP changed from 110 to 80
+Caph Starmobile Revavroom: Def changed from 100 to 120
+Caph Starmobile Revavroom: SpAtk changed from 77 to 69
+Caph Starmobile Revavroom: SpDef changed from 79 to 97
+Caph Starmobile Revavroom: Speed changed from 105 to 85
 Flamigo: Rare Egg Move changed from Victory Dance to Aqua Step
 Iron Thorns: Egg Move 1 changed from Diamond Storm to Plasma Fists
 Iron Thorns: Egg Move 2 changed from Shore Up to Icicle Crash
