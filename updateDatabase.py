@@ -218,7 +218,8 @@ for i,line in enumerate(raw_data):
     newLine.extend(['','','']) # Add cost [29], egg tier [30], shiny variants [31]
     newLine.append(line[6] if line[2] == '' else parentLine[6]) # Generation [32]
 
-    # isStartable [33] (if that species is available in starter select) (forms exclusives [41] are separate)
+    # isStartable [33] is if that species is available in starter select (i.e. has not evolved yet)
+    # This is separate from: form exclusives [41] and fully evolved [44]
     isStartable = ''
     if newLine[5] in moveBySpecToCat: # Anything with egg moves is startable, plus Pikachu
         if moveBySpecToCat[newLine[5]][1] or 'Pikachu' in newLine[5]:
@@ -254,9 +255,8 @@ for i,line in enumerate(raw_data):
     newLine.append(unobtainable) # Unobtainable [42]
 
     newLine.append('') # Newly added variants [43]
-    newLine.append('') # Evo class [44] (1 = starter, 2 = fully evolved)
+    newLine.append(1)  # Fully Evolved [44] ('' = can evolve, 1 = fully evolved)
     newLine.append('') # Exclusive class [45] ('' = regular, 1 = eggExc, 2 = baby, 3 = paradox, 4 = eterna, 5 = starmobile)
-    newLine.append(1)  # Fully Evolved [46] ('' = can evolve, 1 = fully evolved)
 print('Finished normalizing data')
 
 # Parse the data for starter costs ****************************
@@ -393,7 +393,7 @@ for stages in range(2): # Up to 2 evolutions
     for evoLine in evolution_data: # Assign data through evolution **********
         for childLine in full_data:
             if evoLine[0] == childLine[5]: # Find the childLine, break when matching
-                childLine[46] = '' # Set the child to not be fullyEvolved
+                childLine[44] = '' # Set the child to not be fullyEvolved
                 break
         else: # If the child search loop fails to break
             throwError(f'Failed to find pre-evo {evoLine[0]}')
@@ -445,7 +445,7 @@ for line in full_data: # Assign data through forms **********************
         line[33] = parentLine[33] # isStartable
         line[34] = parentLine[34] # starterRow
         line[40] = parentLine[40] # Inherit biomes, even on exclusive forms
-        line[46] = parentLine[46] # Inherit fullyEvolved
+        line[44] = parentLine[44] # Inherit fullyEvolved
 print('Finished propagating data to evolutions and forms')
 for line in full_data: # Check for empty properties in full_data
     if line[12] == '':
@@ -1085,10 +1085,10 @@ attributes = ['row','form','parno','dex','img','sp','desc','t1','t2','a1','a2','
              #  13   14    15    16    17    18    19       20       21    22   23   24   25   26   27      28
               'co','et','sh','ge','st','startRow','startInd','specInd','specKey','fa',
              # 29   30   31   32   33      34         35         36        37     38
-              'fs','biomes','fx','unobtainable','nv','evoClass','ex','ev']
-             # 39     40     41        42        43      44      45   46
+              'fs','biomes','fx','unobtainable','nv','ev','ex']
+             # 39     40     41        42        43   44   45
 # Some attributes are not written to the SearchDex database
-omitAttr = [0, 1, 2, 5, 6, 20, 21, 22, 28, 34, 35, 36, 37, 40, 42, 44] 
+omitAttr = [0, 1, 2, 5, 6, 20, 21, 22, 28, 34, 35, 36, 37, 40, 42]
 # Key text to convert type/ability/move to filterID (FID) via filterToFID
 keyText = {7:'type', 8:'type', 9:'ability', 10:'ability', 11:'ability', 12:'ability', 24:'move', 25:'move', 26:'move', 27:'move'}
 
