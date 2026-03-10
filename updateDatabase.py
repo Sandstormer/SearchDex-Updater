@@ -1102,38 +1102,33 @@ for line in trimmed_data:
                 # Types/Abilities/Moves are listed as Names in trimmed_data
                 # They are converted to filter ID (fid) before writing
                 fid = filterToFID[format_for_attr(f'{keyText[i]}{line[i]}')]
-                text = f'{text}{attributes[i]}:{fid}'
+                text = f'{text}{attributes[i]}:{fid},'
             elif i == 4:
-                text = f'{text}{attributes[i]}:"{format_for_attr(line[i])}"' # For img path
+                text = f'{text}{attributes[i]}:"{format_for_attr(line[i])}",' # For img path
             elif is_numeric(line[i]):
-                text = f'{text}{attributes[i]}:{line[i]}' # For numbers
+                text = f'{text}{attributes[i]}:{line[i]},' # For numbers
             else:
-                text = f'{text}{attributes[i]}:"{line[i]}"' # For all others
-            text = f'{text},'
+                throwError(f"***** Unknown attribute format: {i}")
     # Write all moves as {fid}:{source}
-    for key,value in line[28].items():
-        fid = filterToFID[format_for_attr(f'move{key}')]
-        text = f'{text}{fid}:{value},'
+    for moveName,moveSrc in line[28].items():
+        fid = filterToFID[format_for_attr(f'move{moveName}')]
+        text = f'{text}{fid}:{moveSrc},'
     # Write types/abilities as {fid}:{source}
     # This is for faster lookups, and for the ability restriction filter to know which slot
     for i in range(7,13):
         if line[i] != '':
             fid = filterToFID[format_for_attr(f'{keyText[i]}{line[i]}')]
-            text = f'{text}{fid}:{300+i}'
-            if i < 12:
-                text = f'{text},'
+            text = f'{text}{fid}:{300+i},'
     # Write biome data as fid:'[code1,code2,...]'
     # line[40] is like [Biome Name, [code1,code2,...]]
     if isinstance(line[40],list):
         for biomeLine in line[40]: # Biomes
             fid = filterToFID[f'biome{format_for_attr(format_for_disp(biomeLine[0]))}']
-            text = f'{text},{fid}:['
+            text = f'{text}{fid}:['
             for source in biomeLine[1]:
-                text = f'{text}{source}'
-                if source != biomeLine[1][-1]:
-                    text = f'{text},'
-                else:
-                    text = f'{text}]'
+                text = f'{text}{source},'
+            text = f'{text}],'
+    text = text.replace(',]',']').replace(',}','}') # Remove unnecessary commas
     text = f'{text}}},' # End the entry of that Pokemon
     jsdict.append(text)
 jsdict.append('];')
