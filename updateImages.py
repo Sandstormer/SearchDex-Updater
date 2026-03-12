@@ -12,7 +12,7 @@ dest_dir = "website/images"
 
 # =============================== Options ==================================
 
-overrideSpriteList = []
+overrideSpriteList = ['']
 # Specify a subset of images, rather than running the entire list
 # Each entry must be a string, like this: overrideSpriteList = ['692','3-mega']
 # Leave blank to run all the images that are found in source_dir
@@ -29,6 +29,14 @@ warnSimilarColors = 0
 
 warnPureBlackJson = 0
 # Warns if pure black is found on a json
+# Set to 0 to ignore this check
+
+closeToBlackThreshold = 16
+# Warns of colors that are less than x on all channels (R/G/B)
+# To ignore this check, set this to 0, or set warnPureBlackJson to 0
+
+warnIdenticalColors = 1
+# Warns if a color is listed more than once in the json
 # Set to 0 to ignore this check
 
 warnVariantDimensions = 1
@@ -54,12 +62,6 @@ import numpy as np
 from PIL import Image
 
 # Function to convert hex to RGBA
-def hex_to_rgba(hex_code):
-    hex_code = hex_code.lstrip("#") # Remove '#' if present
-    hex_code = hex_code[:6]
-    if len(hex_code) == 6:  # Format #RRGGBB
-        hex_code += "FF"    # Add full opacity if alpha is not specified
-    return tuple(int(hex_code[i:i+2], 16) for i in (0, 2, 4, 6))
 def hex_to_rgb(hex_code):
     hex_code = hex_code.lstrip("#") # Remove '#' if present
     hex_code = hex_code[:6]
@@ -109,14 +111,21 @@ def palette_swap(image, json_path, tier):
     # Check for similar color keys
     if warnSimilarColors or warnPureBlackJson:
         for index, color in enumerate(rgb2rgbDict.keys()):
-            if warnPureBlackJson and color == (0,0,0):
-                print("Pure black found in:", json_path.split('/')[-1])
+            if warnPureBlackJson:
+                if color == (0,0,0):
+                    print(f"Pure black found in: {json_path.split('/')[-1]}")
+                elif all(col <= closeToBlackThreshold for col in color):
+                    print(f"Near black color {color} found in: {json_path.split('/')[-1]}")
             if warnSimilarColors:
                 for index2, color2 in enumerate(rgb2rgbDict.keys()):
                     if color != color2 and index2 > index:
                         diff = [abs(color[i] - color2[i]) <= warnSimilarColors for i in [0,1,2]]
                         if all(diff):
                             print('Similar colors:', color, color2, 'in', json_path.split('/')[-1])
+            if warnIdenticalColors:
+                for index2, color2 in enumerate(rgb2rgbDict.keys()):
+                    if color == color2 and index2 > index:
+                        print('Identical colors:', color, color2, 'in', json_path.split('/')[-1])
 
     # Access the palette (returns a flat list of RGB triples)
     palette = image.getpalette() # length is 256*3 internally
@@ -258,17 +267,21 @@ def processImage(spriteIndex, shinyIndex, femIndex, backIndex):
         sliced_img = convert_to_exact_palette(sliced_img)
 
     # Check for differences with the previous image
+    global changedList
     if os.path.isfile(f"{savePath}.png"):
         prev_img = Image.open(f"{savePath}.png")
         arr_new = np.array(sliced_img.convert("RGBA"))
         arr_old = np.array(prev_img.convert("RGBA"))
         if arr_new.shape != arr_old.shape:
             print('Image size changed in',simpleName)
+            changedList.append(simpleName)
         else:
             changed_mask = np.any(arr_new[:, :, :3] != arr_old[:, :, :3], axis=-1)  # Compare RGB only
             alpha_mask = arr_new[:, :, 3] > 0  # Only count pixels that are not fully transparent
             pixelsChanged = np.sum(changed_mask & alpha_mask)
-            if pixelsChanged: print(pixelsChanged,'pixels changed in',simpleName)
+            if pixelsChanged: 
+                print(pixelsChanged,'pixels changed in',simpleName)
+                changedList.append(simpleName)
 
     sliced_img.save(f"{savePath}.png", optimize=True, compress_level=9) # Save the image to the website folder
     
@@ -296,7 +309,7 @@ with open(f'game_files/assets/images/pokemon/variant/_masterlist.json', "r") as 
 # Assemble the list of all images to be processed
 spriteNames = [file.replace('.png','') for file in os.listdir(source_dir) if '.png' in file and 'sub.png' not in file]
 # Use override list if applicable, instead of the full list
-if overrideSpriteList: 
+if overrideSpriteList != [] and overrideSpriteList != ['']: 
     spriteNames = [str(name) for name in overrideSpriteList]
     print('\n***** Running with override sprite list *****')
     print(f'\nProcessing {len(overrideSpriteList)} species...\n')
@@ -306,6 +319,7 @@ else:
 # Loop through each sprite in the list
 progressCount = 0
 biggestW, biggestH = 0, 0
+changedList = []
 for index, thisSpriteName in enumerate(spriteNames):
     for thisBackIndex in [0,1]:
         for thisFemIndex in [0,1]:
@@ -316,12 +330,15 @@ for index, thisSpriteName in enumerate(spriteNames):
         progressCount = int((index+1)/len(spriteNames)*20)
         print(f'{progressCount*5}% complete...')
 
-if overrideSpriteList: 
+if overrideSpriteList != [] and overrideSpriteList != ['']: 
     print(f'\nFinished processing {len(overrideSpriteList)} pokemon species')
 else:
     print('\nFinished processing all pokemon images')
 print('Largest width:' ,biggestW) # usually 115
 print('Largest height:',biggestH) # usually 119
+
+print('\nList of actually changed images:')
+print("\n".join(changedList))
 
 print('\n=========== ALL DONE ===========\n')
 
