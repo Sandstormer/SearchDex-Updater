@@ -1,0 +1,8 @@
+Incarnate Tornadus: newVariants changed from  to 1
+Therian Tornadus: newVariants changed from  to 1
+Incarnate Thundurus: newVariants changed from  to 1
+Therian Thundurus: newVariants changed from  to 1
+Incarnate Landorus: newVariants changed from  to 1
+Therian Landorus: newVariants changed from  to 1
+Incarnate Enamorus: newVariants changed from  to 1
+Therian Enamorus: newVariants changed from  to 1
