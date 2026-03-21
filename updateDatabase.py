@@ -101,7 +101,7 @@ for line in levelMoveData:
         # Level moves are added to [0] in moveBySpecToCat[species], along with their level
         moveBySpecToCat[line[0][0]][0].append([line[j][1], int(line[j][0])])
 print('Finished reading level moves')
-with open(f"{pathBal}/egg-moves.ts", "r", encoding="utf-8", errors="replace") as file: # Egg moves **************************
+with open(f"{pathBal}/moves/egg-moves.ts", "r", encoding="utf-8", errors="replace") as file: # Egg moves **************************
     content = file.read()
 # Use a regular expression to extract text between "speciesEggMoves = {" and "} satisfies"
 inputMoveData = re.findall(r'speciesEggMoves\s*=\s*{(.*?)}\ssatisfies', content, re.DOTALL)[0]
@@ -231,7 +231,7 @@ for i,line in enumerate(raw_data):
     newLine.append('') # speciesID [36] is the number for lookup on the SearchDex
     newLine.append(parentLine[5]) # specKey [37] is the text of just the Species (no form, except regionals)
     # specKey is used for "Related" filters, and translation lookup of species
-    newLine.extend(['','','']) # familyFID [38], freshStart [39], biomes [40]
+    newLine.extend(['','',[]]) # familyFID [38], freshStart [39], biomes [40]
     
     # Form exclusive [41] ('' = starter, 1 = mega, 2 = new mega, 3 = giga, 4 = transformed)
     name = newLine[5]
@@ -239,7 +239,9 @@ for i,line in enumerate(raw_data):
     # In the game data, argument 24 defaults to False (Forms are exclusive unless marked otherwise)
     # Check for mega, giga, or other transformed (Zacian, Mimikyu, etc.)
     if line[2] != '' and (len(line) < 25 or 'True' not in line[24]): formExclusive = 4
-    if 'Mega '      in name: formExclusive = 1 # Mega (needs the space)
+    megaList = ['Mega Clefable','Mega Victreebel','Mega Starmie','Mega Dragonite','Mega Meganium','Mega Feraligatr','Mega Skarmory','Mega Froslass','Mega Emboar','Mega Excadrill','Mega Scolipede','Mega Scrafty','Mega Eelektross','Mega Chandelure','Mega Chesnaught','Mega Delphox','Mega Greninja','Mega Pyroar','Mega Floette','Mega Malamar','Mega Barbaracle','Mega Dragalge','Mega Hawlucha','Mega Zygarde','Mega Drampa','Mega Falinks','Mega Raichu X','Mega Raichu Y','Mega Chimecho','Mega Baxcalibur']
+    if 'Mega ' in name:      formExclusive = 1 # Mega (needs the space)
+    if name in megaList:     formExclusive = 2 # New Mega
     if 'Gigantamax' in name: formExclusive = 3 # Giga
     # In-game, the form is chosen from getSpeciesFormIndex in src/battle-scene.ts
     # Some forms have the wrong isStarterSelectable in balance/pokemon-species.ts (error with the game code)
@@ -308,40 +310,34 @@ for i,tierLine in enumerate(tierSpecies):
 print('Finished assigning base egg tiers')
 
 # Open and read the biomes file ************************************
-with open(f"{pathBal}/init-biomes.ts", "r", encoding="utf-8", errors="replace") as file:
-    content = file.read()
-# Use a regular expression to extract text between "pokemonBiomes = [" and "const trainerBiomes"
-inputBiomeData = re.findall(r'pokemonBiomes = \[(.*?)const trainerBiomes', content, re.DOTALL)[0]
-inputBiomeData = re.findall(r'\[(SpeciesId.*?)    ]', inputBiomeData, re.DOTALL)
-inputBiomeLines = [re.split('\n', line) for line in inputBiomeData]
-biome_data = [[format_for_disp(re.findall(r'SpeciesId\.(.*?),',line[0])[0]), line[1:-1]] for line in inputBiomeLines]
-rarities = ['COMMON','UNCOMMON','BOSS','RARE','BOSS_RARE','SUPER_RARE','BOSS_SUPER_RARE','ULTRA_RARE','BOSS_ULTRA_RARE']
-for line in biome_data:
-    for index in range(len(line[1])):
-        line[1][index] = [
-            re.findall(r'BiomeId\.(.*?),',line[1][index])[0],
-            re.findall(r'BiomePoolTier\.(.*?)(?:,|\])',line[1][index])[0],
-            re.findall(r'TimeOfDay\.(.*?)(?:,|\])',line[1][index]),
-        ]
-        for i, rarity in enumerate(rarities): # Encode the rarity
-            if line[1][index][1] == rarity: 
-                code = (i+1)*20
-                break
-        else:
-            throwError(f'No biome rarity found: {line[1][index][1]}')
-        if line[1][index][2]: # Check for time restrictions
-            code += 1*('DAWN' in line[1][index][2])
-            code += 2*('DAY' in line[1][index][2])
-            code += 4*('DUSK' in line[1][index][2])
-            code += 8*('NIGHT' in line[1][index][2])
-            if code%20 == 15:
-                print('** Warning: All times of day fround in',line)
-        line[1][index].append(code)
-    for specLine in full_data:
-        if line[0] == specLine[5]: # Assign biome data to base species
-            specLine[40] = line[1]
-            break
-# Structure of line[40] is like [ 'Caterpie', [ ['TOWN', 'COMMON', ['DAWN', 'DAY'], 23],[] ] ]
+# Find the file of each biome in the biome folder, and parse the encounter data
+biomeData = {}
+allBiomes = [file.replace('.ts','') for file in os.listdir(f"{pathBal}/biomes") if '.ts' in file]
+allBiomes.sort()
+for biome in allBiomes:
+    with open(f"{pathBal}/biomes/{biome}.ts", "r", encoding="utf-8", errors="replace") as file:
+        content = file.read()
+    # Use a regular expression to extract text between "BiomePokemonPools = {" and "};"
+    inputBiomeData = re.findall(r'BiomePokemonPools = {(.*?)};', content, re.DOTALL)[0]
+    biomeData[biome] = { # biomeData[biome][tier][timeOfDay] = [speciesNames]
+        tierLine.split(']:')[0]: {
+            timeLine.split(']:')[0]: re.findall(r'SpeciesId.(.*?)[,\]]', timeLine.split(']:')[1], re.DOTALL)
+            for timeLine in tierLine.split('TimeOfDay.')[1:]
+        }
+        for tierLine in inputBiomeData.split('BiomePoolTier.')
+    }
+biomeTierValues = { 'COMMON':20, 'UNCOMMON':40, 'BOSS':60, 'RARE':80, 'BOSS_RARE':100, 'SUPER_RARE':120, 'BOSS_SUPER_RARE':140, 'ULTRA_RARE':160, 'BOSS_ULTRA_RARE':180 }
+biomeTimeValues = { 'ALL':0, 'DAWN':1, 'DAY':2, 'DUSK':4, 'NIGHT':8 }
+for biome, biomeLine in biomeData.items():
+    for tier, tierLine in biomeLine.items():
+        for time, timeLine in tierLine.items():
+            for species in timeLine:
+                tierCode = biomeTierValues[tier] + biomeTimeValues[time]
+                for specLine in full_data:
+                    if format_for_disp(species) == specLine[5]: # Assign biome data to base species
+                        specLine[40].append([biome, tierCode]) # New entry for that biome
+# Structure of line[40] is like [ ['abyss', 23], ['abyss', 41], ['beach', 160], [...] ]
+# Same tier at multiple times of day are combined in a later step
 print('Finished assigning base biomes')
 
 # Open and read the file of passives ***********************************
@@ -386,8 +382,6 @@ for line in full_data:
                     line[28][move[0]] = move[1] # Add the move to the dict
 print('Finished assigning egg moves')
 
-megaList = ['Mega Clefable','Mega Victreebel','Mega Starmie','Mega Dragonite','Mega Meganium','Mega Feraligatr','Mega Skarmory','Mega Froslass','Mega Emboar','Mega Excadrill','Mega Scolipede','Mega Scrafty','Mega Eelektross','Mega Chandelure','Mega Chesnaught','Mega Delphox','Mega Greninja','Mega Pyroar','Mega Floette','Mega Malamar','Mega Barbaracle','Mega Dragalge','Mega Hawlucha','Mega Zygarde','Mega Drampa','Mega Falinks','Mega Raichu X','Mega Raichu Y','Mega Chimecho','Mega Baxcalibur']
-
 # Propagate egg moves and other data via evolution **************************
 for stages in range(2): # Up to 2 evolutions
     for evoLine in evolution_data: # Assign data through evolution **********
@@ -413,7 +407,7 @@ for stages in range(2): # Up to 2 evolutions
 # The evolution stage is upgraded/downgraded by determineEnemySpecies in file:///\.\game_files\src\data\pokemon-species.ts
 # Biome propagation (line[40]) in my code must be done in a particular way: forward twice, then backward twice
 # That prevents split evolutions from influencing each other (e.g. Dustox/Beautifly)
-# Structure of line[40] is like [ 'Caterpie', [ ['TOWN', 'COMMON', ['DAWN', 'DAY'], 23],[] ] ]
+# Structure of line[40] is like [ ['abyss', 23], ['abyss', 41], ['beach', 160], [...] ]
 for stages in range(2): # Up to 2 evolutions
     for evoLine in evolution_data: # Assign biome data backwards
         for childLine in full_data:
@@ -472,7 +466,7 @@ for line in full_data: # Check for empty properties in full_data
             print('Egg Exclusive:',line[5])
         if line[45] == 2:
             print('Baby Egg Exclusive:',line[5])
-    elif line[40] != '' and line[40][0][0] == 'END':
+    elif line[40] != [] and line[40][0][0] == 'end':
         if 'Eternatus' in line[5]:
             # print('Eternatus:',line[5])
             line[45] = 4
@@ -486,7 +480,7 @@ for line in full_data: # Check for empty properties in full_data
         # print('Starmobile:',line[5])
     # if line[41] and line[45]:
     #     print('Double exclusive:',line[5],line[41],line[45])
-    if line[40] == '' and line[45] == -1:
+    if line[40] == [] and line[45] == -1:
         throwError(f'Missing Biomes: {line[5]}')
 
 # How assigning moves is done:
@@ -636,8 +630,8 @@ trimmed_data.append(full_data[-1]) # Add the last entry
 
 # If the pokemon is from a region, find the original species, to calculate the regional dex number
 for line in trimmed_data:
-    allRegionText = { "Alola":2000, "Eternal":2000, "Galar":4000, "Hisui":6000, "Paldea":8000, "Bloodmoon":8000 }
-    for regionText, regionValue in allRegionText.items():
+    allRegionValues = { "Alola":2000, "Eternal":2000, "Galar":4000, "Hisui":6000, "Paldea":8000, "Bloodmoon":8000 }
+    for regionText, regionValue in allRegionValues.items():
         if regionText in line[5]:
             # Look for a name [5] that matches the regional name with the region removed
             for parentLine in trimmed_data:
@@ -800,11 +794,7 @@ for specLine in moveBySpecToCat.values():
                 allMovesDict[moveLine[0]] = ''
 allMoves = [*allMovesDict] # Get a list of moves from the move dict
 allMoves.sort()
-allBiomes = []
-for line in biome_data:
-    for biomeLine in line[1]:
-        if biomeLine[0] != '' and format_for_disp(biomeLine[0]) not in allBiomes:
-            allBiomes.append(format_for_disp(biomeLine[0]))
+allBiomes = [format_for_disp(biome) for biome in allBiomes]
 allBiomes.sort()
 
 # Assign filter ID numbers (FID) to each filter *****************************
@@ -852,11 +842,10 @@ for j in ['Lure Ability','Ignores Abilities',"Can't be suppressed","Can't be rep
     allFilters.append(['Tag',j])
 
 # Process the biome data:
-# Structure of line[40] is like [ 'Caterpie', [ ['TOWN', 'COMMON', ['DAWN', 'DAY'], 23],[] ] ]
-# This step encodes that data as [Biome Name, [code1,code2,...]]
+# Structure of line[40] is like [ ['abyss', 23], ['abyss', 41], ['beach', 160], [...] ]
+# This step encodes that data as [ ['abyss', fid, [23,41]], ['beach', fid, [160]], [...] ]
 # Multiple encounters in the same biome are put into a list in that biome (instead of a separate line)
-# Will eventually be written to js file as fid:[code1,code2,...]
-# 'code' is the encoded rarity and time of day
+# fid is the numerical filter ID of the biome
 biomeForms = [ # manually updated from getSpeciesFormIndex in file:///\.\game_files\src\field\arena.ts
     ['Plant Burmy','Forest'],
     ['Sandy Burmy','Beach'],
@@ -872,7 +861,7 @@ biomeFormsTime = [ # manually updated from getSpeciesFormIndex in arena.ts
 ]   
 for line in trimmed_data:
     encoded = []
-    if isinstance(line[40],list): # If there are biomes
+    if line[40] != []: # If there are biomes
         for biomeLine in line[40]:
             abort = 0
             # If a species is limited by biome/time, it must pass a check before the biomes are written
@@ -883,32 +872,32 @@ for line in trimmed_data:
                         # print(line[5],biomeLine[0])
             for speciesLine in biomeFormsTime: # Enforce TIME OF DAY forms by checking remainder of encounter code
                 if line[5] == speciesLine[0]:  # Abort if none of the valid times are in the encounter code
-                    if all(not(i & (biomeLine[3]%20)) for i in speciesLine[1]):
+                    if all(not(i & (biomeLine[1]%20)) for i in speciesLine[1]):
                         abort = 1
             if not abort:
                 # Multiple rarites in the same biome will be grouped together
                 newFID = filterToFID[f'biome{format_for_attr(format_for_disp(biomeLine[0]))}']
                 for encLine in encoded:
-                    if encLine[0] == biomeLine[0]: # If the biome already exists, add this encounter to the list
+                    if encLine[1] == newFID: # If the biome already exists, add this encounter to the list
                         # In the encounter codes for that biome, check for an entry that matches the rarity
-                        for index,existingEncoding in enumerate(encLine[1]):
-                            if biomeLine[3]//20 == existingEncoding//20:
+                        for index,existingEncoding in enumerate(encLine[2]):
+                            if biomeLine[1]//20 == existingEncoding//20:
                                 # Add the time of day together with bitwise OR
                                 # If no times are active, it counts as ALL times (15)
                                 # If the combination is ALL times, do mod 15 to not show any times
-                                timeOfDayEncoding = ( ( biomeLine[3]%20 or 15 ) | ( existingEncoding%20 or 15 ) ) % 15
-                                encLine[1][index] = timeOfDayEncoding + existingEncoding//20*20
+                                timeOfDayEncoding = ( ( biomeLine[1]%20 or 15 ) | ( existingEncoding%20 or 15 ) ) % 15
+                                encLine[2][index] = timeOfDayEncoding + existingEncoding//20*20
                                 break
                         else: # Add the encounter code as a new rarity
-                            encLine[1].append(biomeLine[3])
+                            encLine[2].append(biomeLine[1])
                         break
                 else: # Create a new FID entry for the biome
-                    encoded.append([biomeLine[0], [biomeLine[3]]])
+                    encoded.append([biomeLine[0], newFID, [biomeLine[1]]])
         # for encLine in encoded:
         #     if len(encLine[1]) > 2:
-        #         print('** More than 2 biome rarites in',line[5],encLine)
+                # print('** More than 2 biome rarites in {line[5]}: {encLine}')
         # if len(encoded) > 3:
-        #     print(f'** Many biomes ({len(encoded)}) in',line[5],line[40])
+            # print(f'** Many biomes ({len(encoded)}) in {line[5]}: {line[40]}')
         line[40] = encoded
 # Sort each biome entry to be [norm, boss, rarerNorm, rarerBoss]
 # This is important for the website quickly sorting by biome rarity
@@ -920,15 +909,15 @@ for line in trimmed_data:
     if isinstance(line[40],list):
         for biomeLine in line[40]:
             encoded = []
-            entry = min((x for x in biomeLine[1] if x-x%20 not in [60,100,140,180]), default=None)
+            entry = min((x for x in biomeLine[2] if x-x%20 not in [60,100,140,180]), default=None)
             if entry: encoded.append(entry)
-            entry = min((x for x in biomeLine[1] if x-x%20 in [60,100,140,180]), default=None)
+            entry = min((x for x in biomeLine[2] if x-x%20 in [60,100,140,180]), default=None)
             if entry: encoded.append(entry)
-            for entry in biomeLine[1]:
+            for entry in biomeLine[2]:
                 if entry not in encoded:
                     encoded.append(entry)
-            # print('Changed',biomeLine[2],'to',encoded)
-            biomeLine[1] = encoded       
+            # print('Changed',biomeLine[1],'to',encoded)
+            biomeLine[2] = encoded       
 
 # Find the threshold of types and abilities
 fidThreshold = []
@@ -1062,7 +1051,7 @@ for j in range(len(attNames)):
         print(f'{attNames[j]} changed: {attPatchCount[j]}')
 print('Total Egg Moves changed:',sum(eggPatchCount))
 # Format the patch notes and save to a file
-with open("local_files/patch_review.js", "w") as file:
+with open("local_files/patch_review.txt", "w") as file:
     file.writelines("\n".join(patch_review))
 with open("website/patch_data.js", "w") as file:
     file.writelines("patchData = {")
@@ -1120,16 +1109,10 @@ for line in trimmed_data:
             fid = filterToFID[format_for_attr(f'{keyText[i]}{line[i]}')]
             text = f'{text}{fid}:{300+i},'
     # Write biome data as fid:'[code1,code2,...]'
-    # line[40] is like [Biome Name, [code1,code2,...]]
-    if isinstance(line[40],list):
-        for biomeLine in line[40]: # Biomes
-            fid = filterToFID[f'biome{format_for_attr(format_for_disp(biomeLine[0]))}']
-            text = f'{text}{fid}:['
-            for source in biomeLine[1]:
-                text = f'{text}{source},'
-            text = f'{text}],'
-    text = text.replace(',]',']').replace(',}','}') # Remove unnecessary commas
-    text = f'{text}}},' # End the entry of that Pokemon
+    for biomeLine in line[40]: # Biomes
+        text = f'{text}{biomeLine[1]}:[{",".join(str(b) for b in biomeLine[2])}],'
+    # End the entry of that Pokemon and remove unnecessary commas
+    text = f'{text}}},'.replace(',]',']').replace(',}','}')
     jsdict.append(text)
 jsdict.append('];')
 

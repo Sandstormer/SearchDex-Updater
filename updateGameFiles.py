@@ -7,11 +7,11 @@
 # Step 3 is to run updateDatabase.py
 # Step 4 is to run updateFilters.py
 # Step 5 is to run updateLangs.py
-# Step 6 is to use GitHub to review changes to the SearchDex website data.
+# Step 6 is to use GitHub Desktop to review changes to the SearchDex website data.
 # Step 7 is to manually test the functionality of the SearchDex.
 # Step 8 is to push the changes to the SearchDex GitHub.
 
-branchName="main" # Set this to "main" or "beta"
+branchName="beta" # Set this to "main" or "beta"
 # Using "beta" usually causes errors, due to PokeRogue developers rapidly changing the game's code
 # You should only do that temporarily, to apply an update before it hits live
 
