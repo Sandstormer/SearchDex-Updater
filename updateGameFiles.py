@@ -11,6 +11,12 @@
 # Step 7 is to manually test the functionality of the SearchDex.
 # Step 8 is to push the changes to the SearchDex GitHub.
 
+# There is a built-in patch comparison in updateDatabase.py and updateFilters.py
+# That makes it easy to see what has changed in the new data
+# The new data is compared to trimmed_data_prev.json and proc_data.json
+# To re-base the comparison, you must manually replace the "_prev" files with the current data
+# trimmed_data_prev_shvar.json should only be re-based right before adding new variants
+
 branchName="beta" # Set this to "main" or "beta"
 # Using "beta" usually causes errors, due to PokeRogue developers rapidly changing the game's code
 # You should only do that temporarily, to apply an update before it hits live

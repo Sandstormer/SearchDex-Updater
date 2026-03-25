@@ -951,14 +951,15 @@ print('\n==============================\n')
 print("Reviewing patch changes...\n")
 
 # Patch note creating **********************************************************************************
-# Write all the trimmed data to a json file
+# This makes it easy to see what has changed in the new data, by comparing to trimmed_data_prev.json
+# To re-base the comparison, you must manually replace trimmed_data_prev.json with data from trimmed_data.json
+# trimmed_data_prev_shvar.json should only be re-based right before adding new variants
 with open("local_files/trimmed_data.json", "w", encoding="utf-8") as f:
-    json.dump(trimmed_data, f, ensure_ascii=False, indent=4)
-# Load the previous trimmed data > You need to manually rename the old one to _prev
+    json.dump(trimmed_data, f, ensure_ascii=False, indent=4) # Write all the trimmed data to a json file
 with open("local_files/trimmed_data_prev.json", "r", encoding="utf-8", errors="replace") as fp:
-    trimmed_data_prev = json.load(fp)
-with open("local_files/trimmed_data_prev_shvar.json", "r", encoding="utf-8", errors="replace") as fp: # Older version for purpose of new variants
-    trimmed_data_shvar = json.load(fp)
+    trimmed_data_prev = json.load(fp) # Load the previous trimmed data for comparison
+with open("local_files/trimmed_data_prev_shvar.json", "r", encoding="utf-8", errors="replace") as fp:
+    trimmed_data_shvar = json.load(fp) # Older version for detecting new variants
 # Look for changes and report them in a patch notes format
 # Github may detect more changes in pokedex_data.js because of how fid are assigned
 attNames = ['rowno','form','parno','dexno','img','spec','desc','type1','type2','ab1','ab2','hab','Passive',
@@ -1044,7 +1045,8 @@ for i,line in enumerate(trimmed_data):
                         print('Move',key,'removed from',line[5])
                         if line[33] and not [41]:
                             patch_review.append(f'{key}: Removed ({value})')
-print("\n".join(patch_review))
+for line in patch_review:
+    print(line)
 print('\nSummary of patch notes:')
 for j in range(len(attNames)):
     if attPatchCount[j] > 0:

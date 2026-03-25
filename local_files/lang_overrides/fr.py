@@ -1,4 +1,4 @@
-headerNames = ['N°','Image','Nom','Type','Talents','Capacités Œuf','Cout',
+headerNames = ['N°','Image','Nom','Type','Talents','Capac. Œuf','Cout',
                'Total','PV','Atq','Déf','ASp','DSp','Vit']
 altText = ['Capacités','Principaux','Caché','Passif','Chercher','Puis.','Préc.','PP',
            'Ajouter aux filtres','Champi Mémoriel','Chrom.','Capacités Œuf','Rare Capac. Œuf',

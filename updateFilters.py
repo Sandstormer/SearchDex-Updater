@@ -575,7 +575,7 @@ print('Writing...')
 lines = []
 with open("game_files/package.json", "r") as fp:
     packageInfo = json.load(fp)
-    lines.append(f'const gameVersion = "{packageInfo["version"]}";') # Type colors
+    lines.append(f'const gameVersion = "{packageInfo["version"]}";') # Game version
 todayDate = date.today().strftime("%Y-%m-%d")
 lines.append(f'const latestDate = "{todayDate}";')
 lines.append('const typeColors = [') # Type colors
