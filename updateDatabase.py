@@ -254,6 +254,7 @@ for i,line in enumerate(raw_data):
     if line[2] != '' and len(line) > 25 and 'True' in line[25]: unobtainable = 1
     if 'Revavroom' in parentLine[5]: unobtainable = 0 # Keep Starmobiles
     if '10 Complete' in line[4]: unobtainable = 1 # Remove "Complete 10% Zygarde"
+    if 'Mega Starmie' in line[4]: unobtainable = 1 # Remove "Mega Starmie"
     newLine.append(unobtainable) # Unobtainable [42]
 
     newLine.append('') # Newly added variants [43]

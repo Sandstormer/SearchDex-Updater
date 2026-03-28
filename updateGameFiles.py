@@ -17,7 +17,7 @@
 # To re-base the comparison, you must manually replace the "_prev" files with the current data
 # trimmed_data_prev_shvar.json should only be re-based right before adding new variants
 
-branchName="beta" # Set this to "main" or "beta"
+branchName="main" # Set this to "main" or "beta"
 # Using "beta" usually causes errors, due to PokeRogue developers rapidly changing the game's code
 # You should only do that temporarily, to apply an update before it hits live
 
