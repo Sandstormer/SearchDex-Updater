@@ -46,6 +46,11 @@ phrases = { # Phrases to be used in the auto-translating of filters (do not tran
     'spreadMoves': 'Spread Moves',
 }
 substitutions = [ # Text shortenings to make it fit in the UI (delete when making a new language)
+    ["G-Max","Gigantamax"],
+    ["E-Max","Eternamax"],
+    ["Galarian","Galar"],
+    ["Form ",""],
+    ["Style ",""],
     ["Nidoran F","Female Nidoran"],
     ["Nidoran M","Male Nidoran"],
     ["50 Zygarde","50% Zygarde"],

@@ -56,6 +56,8 @@ def shortenText(text):
     if 'substitutions' in overrides[lang]:
         for line in overrides[lang]['substitutions']:
             text = str(text).replace(line[0],line[1])
+    if '♀' in text: text = text.replace('♀',f" {tall['pokemon-form']['espurrFemale']}")
+    if '♂' in text: text = text.replace('♂',f" {tall['pokemon-form']['espurrMale']}")
     return text
 
 # Load all the manual overrides from the lang_overrides folder, these are applied at the end
@@ -143,7 +145,7 @@ for lang in langs: # =========================================== Main loop for e
             if line[1] == 'Rare':       text = 'greatTier'
             if line[1] == 'Epic':       text = 'ultraTier'
             if line[1] == 'Legendary':  text = 'masterTier'
-            if text:                      text = tall['egg'][text] # standard egg tiers
+            if text:                    text = tall['egg'][text] # standard egg tiers
             if line[1] == 'Manaphy':    text = tall['pokemon']['manaphy'] # manaphy egg tier
             if line[1] == 'Exclusive':  text = overrides[lang]['phrases']['exclusive'] # exclusive egg tier
             # print('Translated',filter[1],'to',text)
@@ -227,19 +229,27 @@ for lang in langs: # =========================================== Main loop for e
             if 'Hisui' in line[1]:
                 nameFormat = tall['pokemon-form']['appendForm']['hisui']
             if 'Paldea' in line[1]:
-                nameFormat = tall['pokemon-form']['appendForm']['paldea'].replace('Galar','Paldea') # To-do: Remove later
-            nameFormat = re.sub('{{pokemonName}}',justLocSpec,nameFormat)
-            nameFormat = re.sub("'",'’',nameFormat) # Replace single quotes with unicode
-            # print('Translated',specLine[0],'to',nameFormat)
-            locFilters[index] = nameFormat
-            if len(nameFormat) > 20 and warnNameLength:
-                print('Long name found:',nameFormat)
-            if not nameFormat or '{' in nameFormat:
-                input(f'***** Error: Pokemon name failure\n{nameFormat}')
+                nameFormat = tall['pokemon-form']['appendForm']['paldea']
+            if line[1] == 'Bloodmoon Ursaluna':
+                nameFormat = tall['pokemon-form']['appendForm']['bloodmoon']
+            if line[1] == 'Eternal Floette':
+                nameFormat = tall['pokemon-form']['appendForm']['eternal']
+            thisName = nameFormat.replace('{{pokemonName}}',justLocSpec) # Fill in the species name
+            thisName = thisName.replace("'",'’') # Replace single quotes with unicode
+            if lang == 'en': # My original english names don't have punctuation because I just use the keys from the code
+                if any(char in thisName for char in ["’",":",".","-"]):
+                    line[1] = thisName # Only replace the custom names if there is punctuation
+            # print('Translated',specLine[0],'to',locName)
+            thisName = shortenText(thisName)
+            locFilters[index] = thisName
+            if len(thisName) > 20 and warnNameLength:
+                print('Long name found:',thisName)
+            if not thisName or '{' in thisName:
+                input(f'***** Error: Pokemon name failure\n{thisName}')
     for i in range(len(locFilters)):
         locFilters[i] = re.sub('-',' ',str(locFilters[i]))
     # Many of the english filters are custom from updateDatabase.py
-    if lang == 'en': # Only some are modified in this file (currently just biomes)
+    if lang == 'en': # Only some are modified in this file (currently just biomes and punctuated species)
         locFilters = [shortenText(line[1]) for line in allFilters]
     print('Done translating filter names')
     # Check for the shortest and longest translations of types/abilities/moves
@@ -335,14 +345,14 @@ for lang in langs: # =========================================== Main loop for e
         if 'Hisui' in specLine[2]:
             nameFormat = tall['pokemon-form']['appendForm']['hisui']
         if 'Paldea' in specLine[2]:
-            nameFormat = tall['pokemon-form']['appendForm']['paldea'].replace('Galar','Paldea') # To-do: Remove later
+            nameFormat = tall['pokemon-form']['appendForm']['paldea']
         if specLine[2] == 'Bloodmoon Ursaluna':
             nameFormat = tall['pokemon-form']['appendForm']['bloodmoon']
         if specLine[2] == 'Eternal Floette':
             nameFormat = tall['pokemon-form']['appendForm']['eternal']
         if tall['pokemon-form']['appendForm']['generic'] != '{{pokemonName}} ({{formName}})':
             input('***** Error: Odd format detected') # This is never used, but it's just to check the format
-        if specLine[1]: # If it is a form
+        if specLine[1]: # If it is a form, add the form name to the format
             if lang == 'fr':
                 nameFormat = f'{nameFormat} {justLocForm}' # French has form name after
                 if 'Méga' in justLocForm:
@@ -351,19 +361,19 @@ for lang in langs: # =========================================== Main loop for e
                 nameFormat = f'{justLocForm} {nameFormat}' # Other langs have form name first
 
         # Insert the species name, and remove most punctuation
-        nameFormat = re.sub('{{pokemonName}}',justLocSpec,nameFormat)
-        nameFormat = re.sub("'",'’',nameFormat) # Replace single quotes with unicode
-        # print('Translated',specLine[0],'to',nameFormat)
-        if lang == 'en': # Use my original english names, using form keys, not actual form names
-            nameFormat = specLine[0] # They don't have punctuation because I just use the keys from the code
-            # To-do: Farfetch'd, Sirfetch'd, Ho-oh, Porygon-Z, Porygon2, Type: Null, Mr. Mime, Mime Jr., Mr. Rime
-        nameFormat = shortenText(nameFormat)
-        locSpecies[index] = nameFormat
-        maxLengthSpecies = max(maxLengthSpecies, len(nameFormat))
-        if len(nameFormat) > maxLengthSpeciesEng and warnNameLength:
-            print('Name longer than',maxLengthSpeciesEng,'found:',nameFormat)
-        if not nameFormat or '{' in nameFormat:
-            input(f'***** Error: Pokemon name failure\n{nameFormat}\n{specLine}')
+        thisName = nameFormat.replace('{{pokemonName}}',justLocSpec) # Fill in the species name
+        thisName = thisName.replace("'",'’') # Replace single quotes with unicode
+        # print('Translated',specLine[0],'to',locName)
+        if lang == 'en': # My original english names don't have punctuation because I just use the keys from the code
+            if all(char not in thisName for char in ["’",":",".","-"]):
+                thisName = specLine[0] # Only use custom names if there isn't supposed to be punctuation
+        thisName = shortenText(thisName)
+        locSpecies[index] = thisName
+        maxLengthSpecies = max(maxLengthSpecies, len(thisName))
+        if len(thisName) > maxLengthSpeciesEng and warnNameLength:
+            print('Name longer than',maxLengthSpeciesEng,'found:',thisName)
+        if not thisName or '{' in thisName:
+            input(f'***** Error: Pokemon name failure\n{thisName}\n{specLine}')
     print('Done translating species names')
     if warnNameLength:
         maxLengthCat = max(locSpecies, key=len)
