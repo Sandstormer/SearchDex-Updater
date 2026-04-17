@@ -234,12 +234,12 @@ for i,line in enumerate(raw_data):
     newLine.extend(['','',[]]) # familyFID [38], freshStart [39], biomes [40]
     
     # Form exclusive [41] ('' = starter, 1 = mega, 2 = new mega, 3 = giga, 4 = transformed)
-    name = newLine[5]
     formExclusive = '' # Startable by default, for base species and most forms
-    # In the game data, argument 24 defaults to False (Forms are exclusive unless marked otherwise)
+    # In game, argument 24 (isStarterSelectable) defaults to False (Forms are exclusive unless marked otherwise)
     # Check for mega, giga, or other transformed (Zacian, Mimikyu, etc.)
     if line[2] != '' and (len(line) < 25 or 'True' not in line[24]): formExclusive = 4
     megaList = ['Mega Clefable','Mega Victreebel','Mega Starmie','Mega Dragonite','Mega Meganium','Mega Feraligatr','Mega Skarmory','Mega Froslass','Mega Emboar','Mega Excadrill','Mega Scolipede','Mega Scrafty','Mega Eelektross','Mega Chandelure','Mega Chesnaught','Mega Delphox','Mega Greninja','Mega Pyroar','Mega Floette','Mega Malamar','Mega Barbaracle','Mega Dragalge','Mega Hawlucha','Mega Zygarde','Mega Drampa','Mega Falinks','Mega Raichu X','Mega Raichu Y','Mega Chimecho','Mega Baxcalibur']
+    name = newLine[5]
     if 'Mega ' in name:      formExclusive = 1 # Mega (needs the space)
     if name in megaList:     formExclusive = 2 # New Mega
     if 'Gigantamax' in name: formExclusive = 3 # Giga
@@ -254,7 +254,6 @@ for i,line in enumerate(raw_data):
     if line[2] != '' and len(line) > 25 and 'True' in line[25]: unobtainable = 1
     if 'Revavroom' in parentLine[5]: unobtainable = 0 # Keep Starmobiles
     if '10 Complete' in line[4]: unobtainable = 1 # Remove "Complete 10% Zygarde"
-    if 'Mega Starmie' in line[4]: unobtainable = 1 # Remove "Mega Starmie" To-do: remove on official release
     newLine.append(unobtainable) # Unobtainable [42]
 
     newLine.append('') # Newly added variants [43]

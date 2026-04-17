@@ -281,9 +281,9 @@ for line in moveData:
             tagList.append(5)
         elif 'CRIT_BOOST' in line and 'target' not in line: # focus energy, not dragon cheer
             tagList.append(6)
-        elif '.makesContact(false)' in line: # those contact values are overrides
-            tagList.append(200)              # if it doesn't exist, look at move category
-        elif '.makesContact(true)' in line:
+        elif '.makesContact(false)' in line: # Used for physical moves that don't make contact
+            tagList.append(200)
+        elif '.makesContact(true)' in line: # Used for special moves that make contact
             tagList.append(201)
         elif '.makesContact()' in line:
             tagList.append(201)
@@ -659,8 +659,9 @@ for fidLine in orderedData:
     # Write tags =======
     text = f'{text}['
     if len(fidLine) > 4: # For moves
-        # Contact move tag is written to my data is true
-        # In the game data, it is only described for special contact moves, or physical moves that aren't contact
+        # Contact move tag is written to my data if it is true
+        # In the game data, it is only not if it is different from the category default
+        #   (i.e. for special moves that make contact, or physical moves that don't make contact)
         if 201 in fidLine[3] or (fidLine[5] == 0 and (200 not in fidLine[3])):
             text = f'{text}60,'
     for tag in fidLine[3]: # All other tags, for moves and abilities
@@ -670,7 +671,7 @@ for fidLine in orderedData:
 
     # Write properties =======
     if len(fidLine) > 4: # For moves
-        for i in range(4,10):
+        for i in range(4,10): # type, cat, pow, acc, pp, prio
             text = f'{text}{fidLine[i]},'
 
     text = f'{text}],'

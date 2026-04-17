@@ -40,7 +40,7 @@ phrases = { # Phrases to be used in the auto-translating of filters (do not tran
     'createsSand': 'Creates Sand', # An ability that creates sandstorm weather
     'createsSun': 'Creates Sun',   # An ability that creates sunny weather
     'cantBeSuppressed': "Can't be suppressed", # Can't be suppressed (Neut. Gas) or removed (Gastro Acid) 
-    'cantBeReplaced': "Can't be replaced", # Can't be replaced by another ability
+    'cantBeReplaced': "Can't be replaced", # Can't be changed (e.g. Worry Seed)
     'cantBeIgnored': "Can't be ignored", # Can't be ignored with Mold Breaker
     'targetSwitchesOut': 'Target Switches Out',
     'spreadMoves': 'Spread Moves',
