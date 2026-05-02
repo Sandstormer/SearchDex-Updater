@@ -7265,66 +7265,70 @@
     ],
     [
         "Tag",
-        "Lure Ability"
+        71
     ],
     [
         "Tag",
-        "Ignores Abilities"
+        37
     ],
     [
         "Tag",
-        "Can't be suppressed"
+        48
     ],
     [
         "Tag",
-        "Can't be replaced"
+        49
     ],
     [
         "Tag",
-        "Can't be ignored"
+        50
     ],
     [
         "Tag",
-        "Electric Immunity"
+        56
     ],
     [
         "Tag",
-        "Fire Immunity"
+        57
     ],
     [
         "Tag",
-        "Ground Immunity"
+        58
     ],
     [
         "Tag",
-        "Water Immunity"
+        59
     ],
     [
         "Tag",
-        "Rain Synergy"
+        60
     ],
     [
         "Tag",
-        "Creates Rain"
+        61
     ],
     [
         "Tag",
-        "Sand Synergy"
+        62
     ],
     [
         "Tag",
-        "Creates Sand"
+        63
     ],
     [
         "Tag",
-        "Snow Synergy"
+        64
     ],
     [
         "Tag",
-        "Sun Synergy"
+        65
     ],
     [
         "Tag",
-        "Creates Sun"
+        66
+    ],
+    [
+        "Tag",
+        67
     ]
 ]

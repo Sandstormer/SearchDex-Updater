@@ -838,7 +838,8 @@ for starterIndex in familyList:
             line[38] = len(allFilters)-1 # Set familyFID to this fid
 for j in ['New','All','None']:
     allFilters.append(['Shiny Variants',j])
-for j in ['Lure Ability','Ignores Abilities',"Can't be suppressed","Can't be replaced","Can't be ignored",'Electric Immunity','Fire Immunity','Ground Immunity','Water Immunity','Rain Synergy','Creates Rain','Sand Synergy','Creates Sand','Snow Synergy','Sun Synergy','Creates Sun']:
+# for j in ['Lure Ability','Ignores Abilities',"Can't be suppressed","Can't be replaced","Can't be ignored",'Electric Immunity','Fire Immunity','Ground Immunity','Water Immunity','Intimidate Immunity','Rain Synergy','Creates Rain','Sand Synergy','Creates Sand','Snow Synergy','Sun Synergy','Creates Sun']:
+for j in [71,37,48,49,50,56,57,58,59,60,61,62,63,64,65,66,67]:
     allFilters.append(['Tag',j])
 
 # Process the biome data:

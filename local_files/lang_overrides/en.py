@@ -29,19 +29,6 @@ phrases = { # Phrases to be used in the auto-translating of filters (do not tran
     'formNewMega': 'New Mega', # Shorthand for newly introduced Mega evolutions
     'formGiga': 'Giga', # Shorthand for Gmax/Gigantamax
     'formTransformed': 'Transformed', # Shorthand for other pokemon forms
-    'lureAbility': 'Lure Ability',
-    'ignoresAbilities': 'Ignores Abilities',
-    'typeImmunity': '{type} Immunity',
-    'rainSynergy': 'Rain Synergy', # An ability that has synergy/interaction with rain weather
-    'sandSynergy': 'Sand Synergy', # An ability that has synergy/interaction with sandstorm weather
-    'snowSynergy': 'Snow Synergy', # An ability that has synergy/interaction with snow/hail weather
-    'sunSynergy': 'Sun Synergy',   # An ability that has synergy/interaction with sunny weather
-    'createsRain': 'Creates Rain', # An ability that creates rain weather
-    'createsSand': 'Creates Sand', # An ability that creates sandstorm weather
-    'createsSun': 'Creates Sun',   # An ability that creates sunny weather
-    'cantBeSuppressed': "Can't be suppressed", # Can't be suppressed (Neut. Gas) or removed (Gastro Acid) 
-    'cantBeReplaced': "Can't be replaced", # Can't be changed (e.g. Worry Seed)
-    'cantBeIgnored': "Can't be ignored", # Can't be ignored with Mold Breaker
     'targetSwitchesOut': 'Target Switches Out',
     'spreadMoves': 'Spread Moves',
 }
@@ -76,69 +63,83 @@ procToDesc = ["User Atk","User Def","User SpAtk","User SpDef","User Speed","User
     "Applies Poison","Applies Toxic","Applies Sleep","Applies Freeze","Applies Paralysis","Applies Burn","Applies Confuse", # [14-20]
     "Flinch","User Atk/Def/SpA/SpD/Spe","Poison/Para/Sleep","Burn/Para/Freeze","Stellar User Atk/SpAtk","Damage","Priority"] # [21-27]
 tagToDesc = [
-    "Targets: Random Enemy",
+    "Targets: Random Enemy", # 0
     "Targets: All Enemies",
     "Targets: Entire Field",
     "Affected by Sheer Force",
     "High Critical Ratio",
-    "Guaranteed Critical Hit",
+    "Guaranteed Critical Hit", # 5
     "User Critical Rate +2",
     "User Atk maxed",
     "Costs 33% of HP",
     "Costs 50% of HP",
-    "Recoil 50% of HP",
+    "Recoil 50% of HP", # 10
     "Recoil 50% of damage",
     "Recoil 33% of damage",
     "Recoil 25% of damage",
     "30% deal double damage",
-    "Heals 100% damage dealt",
+    "Heals 100% damage dealt", # 15
     "Heals 75% damage dealt",
     "Heals 50% damage dealt",
     "Heals based on target's Atk",
     "Heals Status Effects",
-    "Heals Sleep",
+    "Heals Sleep", # 20
     "Heals Freeze",
     "Heals Burn",
     "No effect on Grass/Overcoat",
     "No seeding on Grass Types",
-    "Triggers Triage ability",
+    "Triggers Triage ability", # 25
     "Triggers Dancer ability",
     "Triggers Wind Rider ability",
     "Boosted by Sharpness",
     "Boosted by Iron Fist",
-    "Boosted by Mega Launcher",
+    "Boosted by Mega Launcher", # 30
     "Boosted by Strong Jaw",
     "Boosted by Reckless",
     "No effect on Bulletproof",
     "Prevented by Damp ability",
-    "Sound based move",
+    "Sound based move", # 35
     "Ignores Substitute",
     "Ignores Abilities",
     "Ignores Protect",
     "User switches out",
-    "Target switches out",
+    "Target switches out", # 40
     "Hits 2 times",
     "Hits 3 times",
     "Hits 10 times",
     "Hits 2 to 5 times",
-    "Repeats for 2 to 3 turns",
+    "Repeats for 2 to 3 turns", # 45
     "Removes hazards",
     "Traps and damages target",
-    "Can't be suppressed",
-    "Can't be replaced",
-    "Can't be ignored",
+    "Can't be suppressed", # Can't be suppressed (Neut. Gas) or removed (Gastro Acid) 
+    "Can't be replaced", # Can't be changed (e.g. Worry Seed)
+    "Can't be ignored", # Can't be ignored with Mold Breaker
     "Can't be redirected",
     "Can't be reflected",
     "Always hits in Rain",
     "User can't switch out",
-    "Target can't switch out",
+    "Target can't switch out", # 55
+    
+    "Electric Immunity",
+    "Fire Immunity",
+    "Ground Immunity",
+    "Water Immunity",
+    "Intimidate Immunity", # 60
+    "Rain Synergy", # An ability that has synergy/interaction with rain weather
+    "Creates Rain", # An ability that creates rain weather
+    "Sand Synergy", # An ability that has synergy/interaction with sandstorm weather
+    "Creates Sand", # An ability that creates sandstorm weather
+    "Snow Synergy", # An ability that has synergy/interaction with snow/hail weather
+    "Sun Synergy",  # An ability that has synergy/interaction with sunny weather
+    "Creates Sun",  # An ability that creates sunny weather
+
     "One Hit KO move",
     "Modified against Bosses",
-    "No effect on Bosses",
-    "Lure ability",
+    "No effect on Bosses", # 70
+    "Lure Ability",
     "Makes Contact",
     "Partially Implemented",
-    "Not Implemented",
+    "Not Implemented", # 74
 ]
 helpMenuText = [ # Do not translate anything that is inside <> or {}
 'This is a <span style="color:rgb(140, 130, 240);">fast and powerful search</span> for PokeRogue',

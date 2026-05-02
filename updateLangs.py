@@ -6,13 +6,13 @@
 # Some filters (tags, etc.) must have manual translations
 # Initially, some UI elements are auto-translated from similar in-game phrases
 # However, all UI elements must have overrides in local_files/lang_overrides/{lang}.py
-# All data is written to {lang}.js in website/lang
+# All data is written to {lang}.js in "/website/lang/"
 
 pathLocales = './game_files/locales' # File path to the official localization files
 pathOverrides = "local_files/lang_overrides"
 allLangs = ['en','fr','ko','ja','zh-Hans','es-ES','it']
 
-langsToDo = ['']
+langsToDo = []
 # Specify a subset of languages to process
 # Leave blank to process all languages
 
@@ -184,14 +184,9 @@ for lang in langs: # =========================================== Main loop for e
                 line[1] = text
             locFilters[index] = shortenText(text)
         # Translate tag names
-        if line[0] == 'Tag':
-            for key, value in overrides['en']['phrases'].items():
-                if value == line[1]:
-                    locFilters[index] = overrides[lang]['phrases'][key]
-            if 'Immunity' in line[1]:
-                text = line[1].split(' Immunity')[0] # Get the english type name
-                text = tall['pokemon-info']['type'][text.lower()] # Get the translated type name
-                locFilters[index] = overrides[lang]['phrases']['typeImmunity'].replace('{type}',text)
+        if line[0] == 'Tag': # line[1] for tags is the tagID, not the name
+            locFilters[index] = overrides[lang]['tagToDesc'][line[1]]
+            line[1] = overrides[lang]['tagToDesc'][line[1]]
         # Translate names of family filters
         if line[0] == 'Related To':
             # Translate special filters like "Related To: New Mega"
@@ -527,7 +522,8 @@ for lang in langs: # =========================================== Main loop for e
     locUI['tagToDesc'][34] = tall['ability']['damp']['name']
     locUI['tagToDesc'][36] = tall['move']['substitute']['name']
     locUI['tagToDesc'][38] = tall['move']['protect']['name']
-    locUI['tagToDesc'][59] = tall['modifier-type']['ModifierType']['LURE']['name']
+    locUI['tagToDesc'][60] = tall['ability']['intimidate']['name']
+    locUI['tagToDesc'][71] = tall['modifier-type']['ModifierType']['LURE']['name']
 
     locUI['biomeLongText'] = ['' for line in overrides['en']['biomeLongText']]
     locUI['warningText'] = ['' for line in overrides['en']['warningText']]

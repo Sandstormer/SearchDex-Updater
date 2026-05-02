@@ -29,7 +29,23 @@ abilityData = re.sub(r'\/\* Unused.*?End Unused \*\/', '', abilityData, flags=re
 abilityData = re.sub(r' +new ', 'new ', abilityData)
 abilityData = abilityData.split('\n')
 ability2D = []
-for index,line in enumerate(abilityData):
+# Manually link some tags to abilities. These MUST be in the order of tagToDesc, in the language files.
+tagToAbility = {
+    50:['magicguard','comatose','shieldsdown','fullmetalbody','shadowshield','prismarmor'],
+    56:['lightningrod','motordrive','voltabsorb'],
+    57:['flashfire','wellbakedbody'],
+    58:['levitate','eartheater'],
+    59:['dryskin','stormdrain','waterabsorb'],
+    60:['intimidate'],
+    61:['drizzle','primordialsea','dryskin','hydration','raindish','swiftswim'],
+    62:['drizzle','primordialsea'],
+    63:['sandstream','sandforce','sandrush','sandveil'],
+    64:['sandstream','sandspit'],
+    65:['snowwarning','icebody','iceface','slushrush','snowcloak'],
+    66:['drought','desolateland','orichalcumpulse','chlorophyll','flowergift','harvest','leafguard','protosynthesis','solarpower'],
+    67:['drought','desolateland','orichalcumpulse'],
+}
+for index,line in enumerate(abilityData): # Loop through all the ability lines from the game code
     if line[:3] == 'new':
         abilityName = format_for_attr(format_for_disp(re.findall(r'AbilityId\.(.*?),', line)[0]))
 
@@ -42,8 +58,9 @@ for index,line in enumerate(abilityData):
         abilityFID = filterToFID[f'ability{abilityName}']
         procList = []
         tagList = []
-        if abilityName in ['magicguard', 'comatose', 'shieldsdown', 'fullmetalbody', 'shadowshield', 'prismarmor']:
-            tagList.append(50) # Abilities that "Can't be ignored"
+        for tagID, tagAbilities in tagToAbility.items():
+            if abilityName.lower() in tagAbilities:
+                tagList.append(tagID)
 
         ability2D.append([abilityFID, abilityName, procList, tagList]) # [fid[0], name[1], procs[2], tags[3]]
         
@@ -72,9 +89,7 @@ for index,line in enumerate(abilityData):
                 input(f'***** Could not find stat multiplier for {abilityName} in {line}')
             if abilityName == 'quickfeet':
                 amount = 1.5
-            index = -1
-            for thisStat in ['atk','def','spatk','spdef','spd','acc','eva']:
-                index += 1
+            for index, thisStat in enumerate(['atk','def','spatk','spdef','spd','acc','eva']):
                 if stat == thisStat:
                     entry = [-2,index,amount]
                     if abilityName in ['flowergift','victorystar']:
@@ -130,17 +145,13 @@ for index,line in enumerate(abilityData):
                     break # Once it finds the stat, break
             else:
                 input(f'***** Could not damage multiplier for {abilityName} in {line}')
-            # if re.findall(r'(\d\.?\d?\d?)', line):
-            #     amount = re.findall(r'(\d\.?\d?\d?)', line)[-1]
             if [-2,26,amount] not in procList and abilityName != 'punkrock':
                 procList.append([-2,26,amount])
                 # print('Found damage taken mod:',abilityName,amount)
         elif 'FieldMultiplyStatAbAttr' in line:
             stat = format_for_attr(re.findall(r'Stat\.(.*?),', line)[0])
             amount = re.findall(r'Stat\.\w\w\w\w?\w?,\s?(.*?)[,|)]', line)[0]
-            index = -1
-            for thisStat in ['atk','def','spatk','spdef','spd','acc','eva']:
-                index += 1
+            for index, thisStat in enumerate(['atk','def','spatk','spdef','spd','acc','eva']):
                 if stat == thisStat:
                     procList.append([-2,index+7,amount])
                     # print('Found field stat boost:',abilityName,stat,amount)
@@ -148,9 +159,7 @@ for index,line in enumerate(abilityData):
             stat = format_for_attr(re.findall(r'\[Stat\.(.*?)\]', line)[0])
             amount = re.findall(r'\],\s?(.*?)[,|)]', line)[0]
             self = (re.findall(r'\d, true', line))
-            index = -1
-            for thisStat in ['atk','def','spatk','spdef','spd','acc','eva']:
-                index += 1
+            for index, thisStat in enumerate(['atk','def','spatk','spdef','spd','acc','eva']):
                 if stat == thisStat:
                     procList.append([-1,index+(not self)*7,amount])
                     # print('Found summon stat boost:',abilityName,stat,amount)
@@ -158,9 +167,7 @@ for index,line in enumerate(abilityData):
             stat = format_for_attr(re.findall(r'\[Stat\.(.*?)\]', line)[0])
             amount = re.findall(r'\],\s?(.*?)[,|)]', line)[0]
             self = (re.findall(r'\d, true', line))
-            index = -1
-            for thisStat in ['atk','def','spatk','spdef','spd','acc','eva']:
-                index += 1
+            for index, thisStat in enumerate(['atk','def','spatk','spdef','spd','acc','eva']):
                 if stat == thisStat:
                     procList.append([-1,index+(not self)*7,amount])
                     # print('Found defiant-like:',abilityName,stat,amount)
@@ -180,9 +187,6 @@ for index,line in enumerate(abilityData):
             else:
                 print('No status found',line)
             # print('Found status proc ability:',abilityName)
-        # elif 'MoveTypeChangeAbAttr' in line and abilityName != 'liquidvoice':
-        #     procList.append([-2,26,1.2])
-            # print('Found aerilate-like:',abilityName,1.2)
         elif 'StabBoostAbAttr' in line:
             procList.append([-2,26,1.33])
             # print('Found stab boost:',abilityName,1.33)
@@ -197,10 +201,10 @@ for index,line in enumerate(abilityData):
         elif 'MultCritAbAttr' in line: # Sniper
             procList.append([-2,26,1.5])
         elif '.unimplemented()' in line:
-            tagList.append(62)
+            tagList.append(74)
             # print('Found unimplemented ability',abilityName)
         elif '.partial()' in line:
-            tagList.append(61)
+            tagList.append(73)
             # print('Found partial ability',abilityName)
         elif '.unsuppressable()' in line:
             tagList.append(48)
@@ -209,9 +213,9 @@ for index,line in enumerate(abilityData):
         elif '.ignorable()' in line and 50 in tagList:
             input(f'Mismatch for ignorability in {abilityName}')
         elif 'MoveAbilityBypassAbAttr' in line: # Ignores abilities (Mold Breaker, etc.)
-            tagList.append(37)         # "Can't be ignored" is 50, done in the previous section
+            tagList.append(37)                  # "Can't be ignored" is 50, done in the previous section
         elif 'DoubleBattleChanceAbAttr' in line: # Lure abilities
-            tagList.append(59)
+            tagList.append(71)
         elif 'sheerForceHitDisableAbCondition' in line: # Abilities prevented by sheer force
             tagList.append(3)
         # elif 'ultipl' in line or 'oost' in line or 'pow' in line:
@@ -229,7 +233,7 @@ moveData = re.sub(r'LapseBattlerTagAttr,.*?true\)', '', moveData, flags=re.DOTAL
 moveData = re.sub(r' +new ', 'new ', moveData) # Remove leading spaces
 moveData = moveData.split('\n')
 move2D = []
-for line in moveData:
+for line in moveData: # Loop through all the move lines from the game code
     if line[:3] == 'new':
         moveName = format_for_attr(format_for_disp(re.findall(r'MoveId\.(.*?),', line)[0]))
 
@@ -277,9 +281,9 @@ for line in moveData:
     elif f'move{moveName}' in filterToFID:
         if '.attr(HighCritAttr)' in line:
             tagList.append(4)
-        elif 'CritOnlyAttr' in line: # auto crit
+        elif 'CritOnlyAttr' in line: # Auto-crit (Wicked Blow)
             tagList.append(5)
-        elif 'CRIT_BOOST' in line and 'target' not in line: # focus energy, not dragon cheer
+        elif 'CRIT_BOOST' in line and 'target' not in line: # Focus Energy, not Dragon Cheer
             tagList.append(6)
         elif '.makesContact(false)' in line: # Used for physical moves that don't make contact
             tagList.append(200)
@@ -306,8 +310,8 @@ for line in moveData:
         elif '.triageMove()' in line:
             tagList.append(25)
         elif '.soundBased()' in line:
-            tagList.append(35)
-            tagList.append(36)
+            tagList.append(35) # "Sound based move"
+            tagList.append(36) # "Ignores Substitute"
         elif '.windMove()' in line:
             tagList.append(27)
         elif 'failIfDampCondition' in line:
@@ -316,13 +320,13 @@ for line in moveData:
             tagList.append(38)
         elif '.ignoresSubstitute()' in line:
             tagList.append(36)
-        elif 'hidesTarget()' in line: # roar
+        elif 'hidesTarget()' in line: # Roar
             tagList.append(40)
-        elif 'MoveTarget.RANDOM_NEAR_ENEMY' in line: # outrage
+        elif 'MoveTarget.RANDOM_NEAR_ENEMY' in line: # Outrage
             tagList.append(0)
-        elif 'MoveTarget.ALL_NEAR_ENEMIES' in line: # eruption
+        elif 'MoveTarget.ALL_NEAR_ENEMIES' in line: # Eruption
             tagList.append(1)
-        elif 'MoveTarget.ALL_NEAR_OTHERS' in line: # earthquake
+        elif 'MoveTarget.ALL_NEAR_OTHERS' in line: # Earthquake
             tagList.append(2)
         elif 'MoveTarget.USER_SIDE' in line or 'MoveTarget.USER_AND_ALLIES' in line:
             tagList.append(202) # Internal tag to ignore these for reflectable
@@ -344,7 +348,7 @@ for line in moveData:
         elif 'GrowthStatStageChangeAttr' in line: # Growth
             procList.append([-1,0,1])
             procList.append([-1,2,1])
-        elif '(HealStatusEffectAttr,' in line: # cleansing status effects
+        elif '(HealStatusEffectAttr,' in line: # Cleansing status effects
             if 'HealStatusEffectAttr, true, [' in line:
                 tagList.append(19)
             elif 'getNonVolatile' in line:
@@ -357,12 +361,12 @@ for line in moveData:
                 input('Unknown tag found: Para Heal')
             elif 'StatusEffect.BURN' in line:
                 tagList.append(22)
-        elif 'MultiStatusEffectAttr' in line: # dire claw and tri attack
+        elif 'MultiStatusEffectAttr' in line: # Dire Claw and Tri Attack
             if 'SLEEP' in line:
-                procList.append([chance,23,0]) # dire claw
+                procList.append([chance,23,0]) # Dire Claw
             else:
-                procList.append([chance,24,0]) # tri attack
-        elif '(StatusEffectAttr,' in line: # applying status effects
+                procList.append([chance,24,0]) # Tri Attack
+        elif '(StatusEffectAttr,' in line: # Applying status effects
             if 'StatusEffect.POISON' in line:
                 procList.append([chance,14,0])
             if 'StatusEffect.TOXIC' in line:
@@ -380,7 +384,6 @@ for line in moveData:
             stats = [re.sub('stat.','',format_for_attr(stat)) for stat in stats]
             amount = re.findall(r'\], (.*?)[,|)]', line)[0]
             isSelf = (', true' in line)
-            index = -1
             if len(stats) == 5:
                 procList.append([chance,22,1]) # ancient power, silver wind, ominous wind, no retreat
             elif moveName == 'terablast':
@@ -390,9 +393,8 @@ for line in moveData:
                     effChance = 50
                 else:
                     effChance = chance
-                for stat in ['atk','def','spatk','spdef','spd','acc','eva']:
-                    index += 1
-                    if stat in stats:
+                for index, thisStat in enumerate(['atk','def','spatk','spdef','spd','acc','eva']):
+                    if thisStat in stats:
                         procList.append([effChance,index+(not isSelf)*7,amount])
         elif 'recklessMove' in line: # reckless and recoil moves
             tagList.append(32)
@@ -419,8 +421,8 @@ for line in moveData:
         elif 'HitHealAttr' in line:
             tagList.append(17)
         elif 'OneHitKOAttr' in line:
-            tagList.append(56)
-            tagList.append(57)
+            tagList.append(68)
+            tagList.append(69)
         elif 'TrapAttr' in line:
             if 'RemoveArenaTrapAttr' in line:
                 tagList.append(46) # rapid spin
@@ -435,11 +437,11 @@ for line in moveData:
         elif 'StormAccuracyAttr' in line:
             tagList.append(53)
         elif '(failOnBossCondition)' in line:
-            tagList.append(58)
+            tagList.append(70)
         elif '.unimplemented()' in line:
-            tagList.append(62)
+            tagList.append(74)
         elif '.partial()' in line:
-            tagList.append(61)
+            tagList.append(73)
         elif 'ForceSwitchOutAttr, true' in line or 'ChillyReceptionAttr' in line: # u turn
             tagList.append(39)
         elif '.ignoresAbilities()' in line: # moongeist beam
@@ -461,13 +463,11 @@ for line in moveData:
             stats = re.findall(r'\[(.*?)\]', line)[0].split(',')
             stats = [re.sub('stat.','',format_for_attr(stat)) for stat in stats]
             amount = re.findall(r'\], (.*?),', line)[0]
-            index = -1
             if len(stats) == 5:
                 procList.append([chance,22,1]) # ancient power, silver/ominous, no retreat, clang
             elif amount != '12':
-                for stat in ['atk','def','spatk','spdef','spd','acc','eva']:
-                    index += 1
-                    if stat in stats:
+                for index, thisStat in enumerate(['atk','def','spatk','spdef','spd','acc','eva']):
+                    if thisStat in stats:
                         procList.append([-1,index,amount])
             if len(stats) == 1: # belly
                 tagList.append(7)
@@ -478,15 +478,14 @@ for line in moveData:
                 tagList.append(8)
             else:
                 input('Unknown boosting move',line)
-        # Unused tags below this line ================================
-        # else: # If nothing has been detected yet, show the game code
-        #     for phrase in ['ProtectAttr','failIfLastCondition','crashDamageFunc','HealAttr','UpperHandCondition','Pledge','doublePowerChanceMessageFunc','TeraStarstormTypeAttr','TeraMoveCategoryAttr']:
-        #         if phrase in line:
-        #             continue
-        #     if format_for_attr(line)[:2] == '//' or format_for_attr(line) in ['',');','})','}),','}','}else{','return1;','.attr(','return(',')?2:1','//todo']:
-        #         continue
-        #     else:
-        #         print('\n',moveName,'\n',line)
+        else: # If nothing has been detected yet, show the game code
+            for phrase in ['ProtectAttr','failIfLastCondition','crashDamageFunc','HealAttr','UpperHandCondition','Pledge','doublePowerChanceMessageFunc','TeraStarstormTypeAttr','TeraMoveCategoryAttr']:
+                if phrase in line: # Exclude certain phrases
+                    continue
+            if format_for_attr(line)[:2] == '//' or format_for_attr(line) in ['',');','})','}),','}','}else{','return1;','.attr(','return(',')?2:1','//todo']:
+                continue # Exclude lines that are just formatting
+            # else:
+            #     print('\n',moveName,'\n',line) # Show the line to see if it's important
 
 # The data in ability2D/move2D is just ordered how the moves/abilities appear in the game code
 # This next step reorders them according to the fid list (which is alphabetical in english)
@@ -589,29 +588,16 @@ lines.append('];\nconst upgradeCosts = [') # upgrade costs
 for index,costLine in enumerate(costParsed):
     lines.append(f"[{passiveData[index]},{costLine[0]},{costLine[1]},{costLine[2]},{friendData[index]}],".replace(', ',','))
 
-tagToFID = [ # List of ability/move FIDs that match specific tag filters
-    [ str(line[0]) for line in orderedData if 59 in line[3] ], # Lure ability
-    [ str(line[0]) for line in orderedData if 37 in line[3] and line[0] < fidThreshold[1]], # Ignores abilities
-    [ str(line[0]) for line in orderedData if 48 in line[3] ], # Can't be suppressed
-    [ str(line[0]) for line in orderedData if 49 in line[3] ], # Can't be replaced
-    [ str(line[0]) for line in orderedData if 50 in line[3] ], # Can't be ignored
-    # Possibly add move tags later: Switches out target, Spread moves, Healing, Setup, Priority
+# Load the list of tag filter tagIDs from updateDatabase.py
+# The tagID is index of tagToDesc (in the language files), with the tag name
+with open("local_files/my_json/allFilters.json", "r") as file:
+    allFilters = json.load(file)
+# Find all the ability FIDs that match each of those tag filters
+# Possibly add move tags later: Switches out target, Spread moves, Healing, Setup, Priority
+tagToFID = [
+    [ str(line[0]) for line in orderedData if tagID in line[3] and line[0] < fidThreshold[1]] # Abilities with that tag
+    for tagID in [ line[1] for line in allFilters if line[0] == "Tag" ] # For the tagID of each filter
 ]
-tagToAbility = {
-    'electric':['lightningrod','motordrive','voltabsorb'],
-    'fire':['flashfire','wellbakedbody'],
-    'ground':['levitate','eartheater'],
-    'water':['dryskin','stormdrain','waterabsorb'],
-    'rain':['drizzle','primordialsea','dryskin','hydration','raindish','swiftswim'],
-    'rainCreate':['drizzle','primordialsea'],
-    'sand':['sandstream','sandforce','sandrush','sandveil'],
-    'sandCreate':['sandstream','sandspit'],
-    'snow':['snowwarning','icebody','iceface','slushrush','snowcloak'],
-    'sun':['drought','desolateland','orichalcumpulse','chlorophyll','flowergift','harvest','leafguard','protosynthesis','solarpower'],
-    'sunCreate':['drought','desolateland','orichalcumpulse'],
-}
-for synLine in tagToAbility.values():
-    tagToFID.append([str(filterToFID[f'ability{abName}']) for abName in synLine])
 # Write fid associated with each tag to filter_data.js
 lines.append('];\nconst tagToFID = {')
 for index, relatedFID in enumerate(tagToFID):
@@ -663,7 +649,7 @@ for fidLine in orderedData:
         # In the game data, it is only not if it is different from the category default
         #   (i.e. for special moves that make contact, or physical moves that don't make contact)
         if 201 in fidLine[3] or (fidLine[5] == 0 and (200 not in fidLine[3])):
-            text = f'{text}60,'
+            text = f'{text}72,'
     for tag in fidLine[3]: # All other tags, for moves and abilities
         if tag < 200: # Don't add internal tags (contact, etc.)
             text = f'{text}{tag},'
@@ -691,8 +677,6 @@ print('Creating biome images...')
 
 biome_src = "game_files/assets/images/arenas"
 biome_dest = "website/ui/biomes"
-with open("local_files/my_json/allFilters.json", "r") as file:
-    allFilters = json.load(file)
 biomeNames = [filter[1].lower().replace(' ','_') for filter in allFilters if filter[0] == 'Biome']
 thisFID = fidThreshold[8]-1
 
