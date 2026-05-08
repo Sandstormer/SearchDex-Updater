@@ -1,7 +1,7 @@
 # ======================== Image Updating Script ===========================
 # ========================= Written by Sandstorm ===========================
 # It assembles all the shiny pokemon, and warns of any palette swap issues
-# This script will take ~2 minutes to run all images (depending on your CPU)
+# This script will take ~20 seconds to run all images (depending on your CPU)
 
 source_dir = "game_files/assets/images/pokemon"
 # The official files from github must be in "game_files" folder, in same directory as this script
@@ -177,34 +177,27 @@ def convert_to_exact_palette(img: Image.Image) -> Image.Image:
     arr = np.array(img.convert("RGBA"))
     h, w, _ = arr.shape
     pixels = arr.reshape(-1, 4)
-    for i in range(len(pixels)): # Make transparent pixels actually zero
-        if pixels[i][3] == 0:
-            pixels[i][:3] = np.array([0,0,0])
+    mask = ( pixels[:, 3] == 0 ) # Create a boolean mask where alpha is 0
+    pixels[mask, :3] = 0 # Set RGB channels to 0 where mask is True
 
     # Collect unique colors
     unique_colors = np.unique(pixels, axis=0)
     if len(unique_colors) > 256:
         raise ValueError(f"Too many colors ({len(unique_colors)}). Cannot fit into P-mode (max 256).")
-    for col in unique_colors:
-        if col[3] == 0 and any(x != 0 for x in col):
-            print("Fully transparent color found other than (0,0,0)")
 
     # Build palette (R,G,B only)
     palette = [x for row in unique_colors for x in row[:3]]
-
-    # Pad palette to 256 entries (768 values) (doesn't affect file size)
-    while len(palette) < 768:
+    while len(palette) < 768: # Pad palette to 256 entries (768 values) (doesn't affect file size)
         palette.extend([0, 0, 0])
 
-    # Create P image
+    # Create a new image with that palette
     p_img = Image.new("P", (w, h))
     p_img.putpalette(palette)
 
     # Map colors to indices
-    color_to_index = {tuple(rgba): idx for idx, rgba in enumerate(unique_colors)}
+    color_to_index = {tuple(rgba): i for (i, rgba) in enumerate(unique_colors)}
     indices = np.array([color_to_index[tuple(rgba)] for rgba in pixels], dtype=np.uint8)
-    indices = indices.reshape(h, w)
-    p_img.putdata(indices.flatten())
+    p_img.putdata(indices)
 
     # Handle transparency
     if (0, 0, 0, 0) in color_to_index:
@@ -224,13 +217,13 @@ def processImage(spriteIndex, shinyIndex, femIndex, backIndex):
     varPath = f'{source_dir}/variant{backExt}{femExt}/{spriteIndex}' # Palette swap image path
     defPath = f'{source_dir}{backExt}{femExt}/{spriteIndex}' # Fallback image path
     simpleName = f'{spriteIndex}_{shinyIndex}{femExt}{backExt}'.replace('/female','f').replace('/back','b')
-    savePath = f'{dest_dir}/{simpleName}' # Name for SearchDex
+    savePath = f'{dest_dir}/{simpleName}' # Name of image file for SearchDex
 
     kind = 0 # Read the master list, to know which kind of image to look for in the game files
     masterListPart = masterList
     if backIndex: masterListPart = masterListPart['back']
     if femIndex:  masterListPart = masterListPart['female']
-    if shinyIndex and spriteIndex in masterListPart:
+    if shinyIndex > 0 and spriteIndex in masterListPart: # If shiny, and in the masterlist
         kind = masterListPart[spriteIndex][shinyIndex-1]
 
     sliced_img = None
@@ -245,29 +238,26 @@ def processImage(spriteIndex, shinyIndex, femIndex, backIndex):
         sliced_img = getBestFrame(thisPath,defPath)
     if not sliced_img:
         if shinyIndex < 2 and femIndex == 0: # If it should exist, show an error
-            print('Could not find image for',simpleName)
+            print('***** Could not find image for',simpleName)
         return # Stop if there is no image
 
     if 'partner' in spriteIndex:
         sliced_img = addPartnerHeart(sliced_img) # Add partner heart to pika and eevee
 
-    # Crop to a bounding box of solid pixels
-    pixels = np.array(sliced_img)
-    if sliced_img.mode == 'P':
-        for x in range(len(pixels)):
-            for y in range(len(pixels[x])):
-                pixels[x][y] = (pixels[x][y] != sliced_img.info['transparency'])
-    sliced_img = sliced_img.crop(Image.fromarray(pixels, mode=sliced_img.mode).getbbox())
-
-    # Strip the color profile to save space (it is useless for pixel art)
-    sliced_img.info.pop('icc_profile', None)
+    # Remove ALL metadata (Color Profile, EXIF, Time, Software, Comments)
+    for key in ['icc_profile', 'timestamp', 'software', 'comment', 'description']:
+        sliced_img.info.pop(key, None)
 
     # Convert to palette mode, with exact colors
     if sliced_img.mode != 'P':
         sliced_img = convert_to_exact_palette(sliced_img)
 
+    # Crop to a bounding box of solid pixels
+    pixels = ( np.array(sliced_img) != sliced_img.info['transparency'] )
+    sliced_img = sliced_img.crop(Image.fromarray(pixels).getbbox())
+
     # Check for differences with the previous image
-    global changedList
+    # global changedList
     if os.path.isfile(f"{savePath}.png"):
         prev_img = Image.open(f"{savePath}.png")
         arr_new = np.array(sliced_img.convert("RGBA"))
@@ -276,14 +266,12 @@ def processImage(spriteIndex, shinyIndex, femIndex, backIndex):
             print('Image size changed in',simpleName)
             changedList.append(simpleName)
         else:
-            changed_mask = np.any(arr_new[:, :, :3] != arr_old[:, :, :3], axis=-1)  # Compare RGB only
-            alpha_mask = arr_new[:, :, 3] > 0  # Only count pixels that are not fully transparent
-            pixelsChanged = np.sum(changed_mask & alpha_mask)
+            pixelsChanged = np.sum(np.any(arr_new != arr_old, axis=-1))
             if pixelsChanged: 
                 print(pixelsChanged,'pixels changed in',simpleName)
                 changedList.append(simpleName)
 
-    sliced_img.save(f"{savePath}.png", optimize=True, compress_level=9) # Save the image to the website folder
+    sliced_img.save(f"{savePath}.png", optimize=True, compress_level=9, pnginfo=None) # Save the image to the website folder
     
     global biggestH, biggestW, thisH, thisW 
     # Update the largest dimensions among all images
