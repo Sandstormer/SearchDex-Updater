@@ -22,6 +22,7 @@ with open("local_files/my_json/fidThreshold.json", "r") as fp:
 orderedData = [[] for _ in filterToFID][fidThreshold[0]:fidThreshold[2]]
          
 print('\n=========== Reading abilities ===========\n')
+#region Read Abilities
 with open(f'{pathData}/abilities/init-abilities.ts', "r", encoding="utf-8") as f:
     abilityData = f.read()
 abilityData = re.findall(r'Ability\[\]\)\.push\(\n(.*?)  \);\n}', abilityData, re.DOTALL)[0]
@@ -64,13 +65,13 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
 
         ability2D.append([abilityFID, abilityName, procList, tagList]) # [fid[0], name[1], procs[2], tags[3]]
         
-    # All the procs and tags are shared between abilities and moves
-    # Tags should be in sequential order as they will be displayed on my site
-    # They are not processed in sequential order here, due to string matching
+    # Structure of procs and tags are shared between abilities and moves
+    # Tags are numbered according to the SearchDex language files file:///\.\local_files\lang_overrides\en.py
+    # They do not need to be processed in sequential order in this script
     # My internally used tags start at 200 (for contact, reflectable, etc.)
     elif f'ability{abilityName}' in filterToFID:
         if 'StatMultiplierAbAttr' in line:
-            for i in range(5): # Search for a number in the next 5 lines
+            for i in range(5): # Search for the stat name in the next 5 lines
                 if re.findall(r'Stat\.(.*?),', abilityData[index+i]):
                     stat = format_for_attr(re.findall(r'Stat\.(.*?),', abilityData[index+i])[0])
                     break # Once it finds the stat, break
@@ -226,6 +227,7 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
         #     print(abilityName, line)
 
 # Read all the move attributes from the game data
+#region Read Moves
 print('\n=========== Reading moves ===========\n')
 with open(f'{pathData}/moves/move.ts', "r", encoding="utf-8", errors="replace") as f:
     moveData = f.read()
@@ -494,7 +496,8 @@ for line in moveData: # Loop through all the move lines from the game code
 
 # The data in ability2D/move2D is just ordered how the moves/abilities appear in the game code
 # This next step reorders them according to the fid list (which is alphabetical in english)
-# orderedData does not includes types => it starts at fidThreshold[0]
+# orderedData does not includes types. It starts at fidThreshold[0]
+#region Re-order Data
 for line in ability2D:
     if f'ability{line[1]}' in filterToFID:
         orderedData[line[0]-fidThreshold[0]] = line # Replace ability rows with assembled ability row
@@ -550,6 +553,7 @@ friendData.append(friendData[-1])
 friendData[-2] = friendData[-3]
 
 # Patch note creating **********************************************************************************
+#region Patch Notes
 print('\n==============================\n')
 input('Review patch changes?')
 print("Reviewing patch changes...")
@@ -607,6 +611,8 @@ tagToFID = [
 lines.append('];\nconst tagToFID = {')
 for index, relatedFID in enumerate(tagToFID):
     lines.append(f'{fidThreshold[11]+index}: [{",".join(relatedFID)}],')
+    
+#region Data Structure
 
 # Format of orderedData: 
 #   Abilities: [fid[0], name[1], procs[2], tags[3]]
@@ -635,6 +641,7 @@ for index, relatedFID in enumerate(tagToFID):
 #             0                        1       2    3                    4    5    6    7
 
 # ======================= Write numeric filter data to filter_data.js =======================
+#region Write Data
 # This is just numbers. Localized strings are written from updateLangs.py
 lines.append('};\nconst fidToProc = [') # Ability/move descriptions
 for fidLine in orderedData:
@@ -677,6 +684,7 @@ with open("website/filter_data.js", "w") as file:
 print("Done writing numeric filter data")
 
 # ======================= Composite all the biome images =======================
+#region Biome Images
 print('\n==============================\n')
 print('Creating biome images...')
 
