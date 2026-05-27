@@ -37,7 +37,6 @@ tagToAbility = {
     57:['flashfire','wellbakedbody'],
     58:['levitate','eartheater'],
     59:['dryskin','stormdrain','waterabsorb'],
-    60:['intimidate'],
     61:['drizzle','primordialsea','dryskin','hydration','raindish','swiftswim'],
     62:['drizzle','primordialsea'],
     63:['sandstream','sandforce','sandrush','sandveil'],
@@ -221,6 +220,8 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
             tagList.append(71)
         elif 'sheerForceHitDisableAbCondition' in line: # Abilities prevented by sheer force
             tagList.append(3)
+        elif 'IntimidateImmunityAbAttr' in line: # Intimidate Immunity
+            tagList.append(60)
         # elif 'ultipl' in line or 'oost' in line or 'pow' in line:
         #     # Check for keywords in the ability line like 'Multiply', 'Boost', or 'Power'
         #     # Print those lines to make sure I'm not missing anything important
