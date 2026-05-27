@@ -50,7 +50,7 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
         abilityName = format_for_attr(format_for_disp(re.findall(r'AbilityId\.(.*?),', line)[0]))
 
         if f'ability{abilityName}' not in filterToFID:
-            if abilityName != 'none':
+            if abilityName != 'none': # Show error if ability does not exist
                 input(f'***** ${abilityName} does not exist')
             continue
 
@@ -70,20 +70,19 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
     # My internally used tags start at 200 (for contact, reflectable, etc.)
     elif f'ability{abilityName}' in filterToFID:
         if 'StatMultiplierAbAttr' in line:
-            # stat = format_for_attr(re.findall(r'Stat\.(.*?),', line)[0])
             for i in range(5): # Search for a number in the next 5 lines
                 if re.findall(r'Stat\.(.*?),', abilityData[index+i]):
                     stat = format_for_attr(re.findall(r'Stat\.(.*?),', abilityData[index+i])[0])
                     break # Once it finds the stat, break
             else:
                 input(f'***** Could not find stat to boost for {abilityName} in {line}')
-            # amount = re.findall(r'Stat\.\w\w\w\w?\w?,\s?(.*?)[,|)]', line)[0]
             for i in range(5): # Search for a number in the next 5 lines
                 if '4 / 3' in abilityData[index+i]:
                     amount = 1.33
                     break
                 if re.findall(r'(\d\.?\d?\d?)[,\)]', abilityData[index+i]):
                     amount = re.findall(r'(\d\.?\d?\d?)[,\)]', abilityData[index+i])[0]
+                    amount = float(amount) if "." in amount else int(amount)
                     break # Once it finds the stat, break
             else:
                 input(f'***** Could not find stat multiplier for {abilityName} in {line}')
@@ -103,7 +102,8 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
             for i in range(10): # Search for a number in the next 5 lines
                 if re.findall(r'(\d\.?\d?\d?)', abilityData[index+i]):
                     amount = re.findall(r'(\d\.?\d?\d?)', abilityData[index+i])[-1] # Use the last value on that line
-                    if float(amount) < 60:
+                    amount = float(amount) if "." in amount else int(amount)
+                    if amount < 60:
                         break # Once it finds the multiplier value, break
             else:
                 input(f'***** Could not find power multiplier of {abilityName} in {line}')
@@ -116,9 +116,9 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
             procList.append([-2,26,1.5])
         elif 'FieldMoveTypePowerBoostAbAttr' in line: # Aura Break, Fairy/Dark Aura
             if abilityName == 'aurabreak':
-                amount = '0.75'
+                amount = 0.75
             else:
-                amount = '1.33'
+                amount = 1.33
             if [-2,26,amount] not in procList:
                 procList.append([-2,26,amount])
             # print('Found field type boost:',abilityName,amount)
@@ -126,12 +126,13 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
             if re.findall(r'(\d\.?\d?\d?)', line):
                 amount = re.findall(r'(\d\.?\d?\d?)', line)[-1]
             else:
-                amount = '1.5'
+                amount = "1.5"
+            amount = float(amount) if "." in amount else int(amount)
             if [-2,26,amount] not in procList:
                 procList.append([-2,26,amount])
                 # print('Found ability type power boost:',abilityName,amount)
         elif 'AllyMoveCategoryPowerBoostAbAttr' in line:
-            amount = re.findall(r'(\d\.?\d?\d?)', line)[-1]
+            amount = float(re.findall(r'(\d\.?\d?\d?)', line)[-1])
             if [-2,26,amount] not in procList:
                 procList.append([-2,26,amount])
                 # print('Found ally power boost:',abilityName,amount)
@@ -145,19 +146,20 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
                     break # Once it finds the stat, break
             else:
                 input(f'***** Could not damage multiplier for {abilityName} in {line}')
+            amount = float(amount) if "." in amount else int(amount)
             if [-2,26,amount] not in procList and abilityName != 'punkrock':
                 procList.append([-2,26,amount])
                 # print('Found damage taken mod:',abilityName,amount)
         elif 'FieldMultiplyStatAbAttr' in line:
             stat = format_for_attr(re.findall(r'Stat\.(.*?),', line)[0])
-            amount = re.findall(r'Stat\.\w\w\w\w?\w?,\s?(.*?)[,|)]', line)[0]
+            amount = float(re.findall(r'Stat\.\w\w\w\w?\w?,\s?(.*?)[,|)]', line)[0])
             for index, thisStat in enumerate(['atk','def','spatk','spdef','spd','acc','eva']):
                 if stat == thisStat:
                     procList.append([-2,index+7,amount])
                     # print('Found field stat boost:',abilityName,stat,amount)
         elif 'PostSummonStatStageChangeAbAttr' in line:
             stat = format_for_attr(re.findall(r'\[Stat\.(.*?)\]', line)[0])
-            amount = re.findall(r'\],\s?(.*?)[,|)]', line)[0]
+            amount = int(re.findall(r'\],\s?(.*?)[,|)]', line)[0])
             self = (re.findall(r'\d, true', line))
             for index, thisStat in enumerate(['atk','def','spatk','spdef','spd','acc','eva']):
                 if stat == thisStat:
@@ -165,7 +167,7 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
                     # print('Found summon stat boost:',abilityName,stat,amount)
         elif 'PostStatStageChangeStatStageChangeAbAttr' in line:
             stat = format_for_attr(re.findall(r'\[Stat\.(.*?)\]', line)[0])
-            amount = re.findall(r'\],\s?(.*?)[,|)]', line)[0]
+            amount = int(re.findall(r'\],\s?(.*?)[,|)]', line)[0])
             self = (re.findall(r'\d, true', line))
             for index, thisStat in enumerate(['atk','def','spatk','spdef','spd','acc','eva']):
                 if stat == thisStat:
@@ -269,9 +271,12 @@ for line in moveData: # Loop through all the move lines from the game code
             tagList.append(3)
         if 'SelfStatusMove' in line: # Status moves that target self
             tagList.append(202) # These will not be considered reflectable moves
+        if moveName == 'partingshot':
+            tagList.append(39) # User switches out
+            procList.extend([[-1, 7, -1],[-1, 9, -1]]) # Opponent Atk/SpAtk drop
 
         # fid[0], name[1], procs[2], tags[3], type[4], cat[5], pow[6], acc[7], pp[8], prio[9]
-        move2D.append([moveFID, moveName, procList, tagList, type, category, power, accuracy, pp, priority])
+        move2D.append([moveFID, moveName, procList, tagList, type, category, int(power), int(accuracy), int(pp), int(priority)])
 
     # General order of move descriptors: priority, targets, procs, all other tags
     # All the procs and tags are shared between abilities and moves
@@ -382,7 +387,7 @@ for line in moveData: # Loop through all the move lines from the game code
         elif '(StatStageChangeAttr,' in line:
             stats = re.findall(r'\[(.*?)\]', line)[0].split(',')
             stats = [re.sub('stat.','',format_for_attr(stat)) for stat in stats]
-            amount = re.findall(r'\], (.*?)[,|)]', line)[0]
+            amount = int(re.findall(r'\], (.*?)[,|)]', line)[0])
             isSelf = (', true' in line)
             if len(stats) == 5:
                 procList.append([chance,22,1]) # ancient power, silver wind, ominous wind, no retreat
@@ -462,20 +467,20 @@ for line in moveData: # Loop through all the move lines from the game code
         elif 'CutHpStatStageBoostAttr' in line: # belly / clang / fillet
             stats = re.findall(r'\[(.*?)\]', line)[0].split(',')
             stats = [re.sub('stat.','',format_for_attr(stat)) for stat in stats]
-            amount = re.findall(r'\], (.*?),', line)[0]
+            amount = int(re.findall(r'\], (.*?),', line)[0])
             if len(stats) == 5:
                 procList.append([chance,22,1]) # ancient power, silver/ominous, no retreat, clang
-            elif amount != '12':
+            elif amount != 12:
                 for index, thisStat in enumerate(['atk','def','spatk','spdef','spd','acc','eva']):
                     if thisStat in stats:
                         procList.append([-1,index,amount])
             if len(stats) == 1: # belly
-                tagList.append(7)
-                tagList.append(9)
+                tagList.append(7) # User Atk maxed
+                tagList.append(9) # Costs 50% HP
             elif len(stats) == 3: # fillet
-                tagList.append(9)
+                tagList.append(9) # Costs 50% HP
             elif len(stats) == 5: # clang
-                tagList.append(8)
+                tagList.append(8) # Costs 33% HP
             else:
                 input('Unknown boosting move',line)
         else: # If nothing has been detected yet, show the game code
