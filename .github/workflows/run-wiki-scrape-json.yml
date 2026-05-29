@@ -1,4 +1,4 @@
-name: Run Wiki Scrape
+name: Run Wiki Scrape Json
 
 on:
   workflow_dispatch:
