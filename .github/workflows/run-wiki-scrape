@@ -1,0 +1,40 @@
+name: Run Wiki Scrape
+
+on:
+  workflow_dispatch:
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone target repo
+        run: git clone --depth 1 -b wiki-scraper --shallow-submodules --recursive https://github.com/fabske0/pokerogue.git project
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: pnpm
+          cache-dependency-path: project/pnpm-lock.yaml
+          
+      - name: Test pnpm
+        working-directory: project
+        run: pnpm list
+        
+      - name: Install deps
+        working-directory: project
+        run: pnpm install
+
+      - name: Run script
+        working-directory: project
+        run: pnpm wiki-scrape
+
+      - name: Upload artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: output
+          path: project/scripts/wiki/output
