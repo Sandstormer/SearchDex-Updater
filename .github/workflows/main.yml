@@ -20,10 +20,14 @@ jobs:
           node-version: 20
           cache: pnpm
           cache-dependency-path: project/pnpm-lock.yaml
-
+          
+      - name: Test pnpm
+        working-directory: project
+        run: pnpm list
+        
       - name: Install deps
         working-directory: project
-        run: pnpm install --no-frozen-lockfile
+        run: pnpm install
 
       - name: Run script
         working-directory: project
