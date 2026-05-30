@@ -1,4 +1,5 @@
 .vscode/
+.tools/
 game_files/
 website/
 local_files/snapshots/
