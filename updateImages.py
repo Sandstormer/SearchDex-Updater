@@ -93,7 +93,7 @@ def getBestFrame(thisImgPath, altJsonPath=''):
 
     # Count how many times each frame occurs
     frameCount = [sum([lineA==lineB for lineB in indFrames]) for lineA in indFrames]
-    x,y,w,h = indFrames[np.argmax(frameCount)] # Choose the first most common frame
+    x,y,w,h = indFrames[np.argmax(frameCount)] # Choose the most common frame (ties are what comes first)
     return thisImage.crop((x, y, x+w, y+h))
 
 # Function to do palette swap

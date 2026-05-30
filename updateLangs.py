@@ -61,6 +61,7 @@ def shortenText(text):
     return text
 
 # Load all the manual overrides from the lang_overrides folder, these are applied at the end
+#region Load Overrides
 langs = allLangs
 if langsToDo != [''] and langsToDo != []:
     langs = langsToDo
@@ -77,6 +78,7 @@ for lang in langs: # =========================================== Main loop for e
     path = f'{pathLocales}/{lang}'
 
     # Load all the official translations for the current language
+    #region Load Official
     tall = {} # t(ranslations) all
     fileNames = [file for file in os.listdir(path) if file.lower().endswith('.json')]
     for fileName in fileNames:
@@ -85,6 +87,7 @@ for lang in langs: # =========================================== Main loop for e
             tall[keyName] = json.load(file)
 
     # Translate everything from allFilters =========================
+    #region Translate Filters
     # Structure of allFilters is like [ ['Category', 'Filter Name'], [ ], ...]
     print('\nTranslating filter names...')
     with open("local_files/my_json/allFilters.json", "r") as file:
@@ -216,8 +219,9 @@ for lang in langs: # =========================================== Main loop for e
     # Report any missing filter translations (these are mandatory)
     missingAmount = sum([1 for line in locFilters if not line])
     if missingAmount: input(f'***** Error: Missing {missingAmount} filter names')
-    
+
     # Translate speciesNames =========================
+    #region Translate Pokemon
     print('\nTranslating species names...')
     with open("local_files/my_json/allSpecies.json", "r") as file:
         allSpecies = json.load(file)
@@ -326,6 +330,7 @@ for lang in langs: # =========================================== Main loop for e
     if missingAmount: input(f'***** Missing {missingAmount} species names')
 
     # Translate the descriptions of abilities/moves =========================
+    #region Translate Descriptions
     print('\nTranslating filter descriptions...')
     locDesc = ['' for line in allFilters if (line[0] == 'Move' or line[0] == 'Ability')]
     bonusDesc = { # Add reminder text to things that generate weather/terrain
@@ -358,6 +363,7 @@ for lang in langs: # =========================================== Main loop for e
     if missingAmount: print('** Missing',missingAmount,'ability/move descriptions')
 
     # Translate the header names and other ui elements =========================
+    #region Translate UI Elements
     print('\nTranslating ui elements...')
     locUI = {} # Translated UI elements go into a dictionary, similar to overrides['en']
     if lang == 'en': 
@@ -513,6 +519,7 @@ for lang in langs: # =========================================== Main loop for e
             if missingAmount: print('Could not auto translate',missingAmount,'ui elements in',catToCheck)
 
     # Apply manual overrides from the lang_overrides folder =========================
+    #region Apply Overrides
     # These go directly onto the searchdex
     if lang not in ignoreOverrides and 'all' not in ignoreOverrides:
         for overrideName in overrides['en'].keys():
@@ -528,6 +535,7 @@ for lang in langs: # =========================================== Main loop for e
         missingAmount += len(overrides['en'][catToCheck]) - sum([1 for line in locUI[catToCheck] if line])
     if missingAmount: print('\n***** Missing',missingAmount,'ui elements')
     
+    #region Write Data
     # Write all the translated text to lang/{lang}.js =========================
     # headerNames, altText, catToName, infoText, biomeText, biomeLongText,
     # warningText, procTodesc, tagToDesc, fidToDesc, speciesNames, fidToName, helpMenuText
