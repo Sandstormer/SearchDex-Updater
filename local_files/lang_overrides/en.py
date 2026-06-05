@@ -43,9 +43,9 @@ substitutions = [ # Text shortenings to make it fit in the UI (delete when makin
     ["Form ",""],
     ["Style ",""],
     ["50 Zygarde","50% Zygarde"],
-    ["50 PC Zygarde","Power Construct 50% Zygarde"],
+    ["50 Pc Zygarde","Power Construct 50% Zygarde"],
     ["10 Zygarde","10% Zygarde"],
-    ["10 PC Zygarde","Power Construct 10% Zygarde"],
+    ["10 Pc Zygarde","Power Construct 10% Zygarde"],
     ["Lowkey Toxtricity","Low Key Toxtricity"],
 ]
 warningText = [

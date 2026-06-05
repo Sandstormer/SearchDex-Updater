@@ -20,9 +20,10 @@
 # If you are optimizing or making changes to the update scripts,
 # you should use Git to compare the output files, to make sure they are unchanged
 
-branchName="wiki-scraper" # Set this to "main" or "beta"
 # Using "beta" usually causes errors, due to PokeRogue developers rapidly changing the game's code
 # You should only do that temporarily, to apply an update before it hits live
+
+branchName="wiki-scraper" # Set this to "main" or "beta"
 
 import subprocess, os
 
@@ -53,7 +54,7 @@ def clone_or_update(repo_url, repo_dest, branch_name=None, only_clone=False):
     else:
         subprocess.run(["git", "-C", repo_dest, "reset", "--hard", "origin/HEAD"], check=True)
     # Clean any untracked files/directories
-    subprocess.run(["git", "-C", repo_dest, "clean", "-fd"], check=True)
+    subprocess.run(["git", "-C", repo_dest, "clean", "-fdx"], check=True)
     # Initialize and update submodules recursively, force any local changes to be discarded
     subprocess.run(["git", "-C", repo_dest, "submodule", "update", "--init", "--recursive", "--force", "--depth", "1"], check=True)
 
@@ -63,5 +64,9 @@ clone_or_update(repo_url="https://github.com/fabske0/pokerogue.git", repo_dest="
 
 # Get the SearchDex Website files ONLY if you don't have them (if you do, they will not be updated/replaced)
 clone_or_update(repo_url="https://github.com/Sandstormer/PokeRogue-Dex.git", repo_dest="website", only_clone=True)
+
+subprocess.run(["pnpm", "--version"], check=True)
+subprocess.run(["pnpm", "install"], cwd="game_files", check=True)
+subprocess.run(["pnpm", "wiki-scrape", "--json"], cwd="game_files", check=True)
 
 print('\n======= ALL DONE =======\n')

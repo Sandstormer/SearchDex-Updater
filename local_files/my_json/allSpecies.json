@@ -1,12 +1,12 @@
 [
     [
         "Bulbasaur",
-        "",
+        null,
         "Bulbasaur"
     ],
     [
         "Ivysaur",
-        "",
+        null,
         "Ivysaur"
     ],
     [
@@ -26,12 +26,12 @@
     ],
     [
         "Charmander",
-        "",
+        null,
         "Charmander"
     ],
     [
         "Charmeleon",
-        "",
+        null,
         "Charmeleon"
     ],
     [
@@ -56,12 +56,12 @@
     ],
     [
         "Squirtle",
-        "",
+        null,
         "Squirtle"
     ],
     [
         "Wartortle",
-        "",
+        null,
         "Wartortle"
     ],
     [
@@ -81,12 +81,12 @@
     ],
     [
         "Caterpie",
-        "",
+        null,
         "Caterpie"
     ],
     [
         "Metapod",
-        "",
+        null,
         "Metapod"
     ],
     [
@@ -101,12 +101,12 @@
     ],
     [
         "Weedle",
-        "",
+        null,
         "Weedle"
     ],
     [
         "Kakuna",
-        "",
+        null,
         "Kakuna"
     ],
     [
@@ -121,12 +121,12 @@
     ],
     [
         "Pidgey",
-        "",
+        null,
         "Pidgey"
     ],
     [
         "Pidgeotto",
-        "",
+        null,
         "Pidgeotto"
     ],
     [
@@ -141,32 +141,32 @@
     ],
     [
         "Rattata",
-        "",
+        null,
         "Rattata"
     ],
     [
         "Raticate",
-        "",
+        null,
         "Raticate"
     ],
     [
         "Spearow",
-        "",
+        null,
         "Spearow"
     ],
     [
         "Fearow",
-        "",
+        null,
         "Fearow"
     ],
     [
         "Ekans",
-        "",
+        null,
         "Ekans"
     ],
     [
         "Arbok",
-        "",
+        null,
         "Arbok"
     ],
     [
@@ -216,132 +216,132 @@
     ],
     [
         "Raichu",
-        "",
+        null,
         "Raichu"
     ],
     [
         "Sandshrew",
-        "",
+        null,
         "Sandshrew"
     ],
     [
         "Sandslash",
-        "",
+        null,
         "Sandslash"
     ],
     [
         "Nidoran F",
-        "",
+        null,
         "Nidoran F"
     ],
     [
         "Nidorina",
-        "",
+        null,
         "Nidorina"
     ],
     [
         "Nidoqueen",
-        "",
+        null,
         "Nidoqueen"
     ],
     [
         "Nidoran M",
-        "",
+        null,
         "Nidoran M"
     ],
     [
         "Nidorino",
-        "",
+        null,
         "Nidorino"
     ],
     [
         "Nidoking",
-        "",
+        null,
         "Nidoking"
     ],
     [
         "Clefairy",
-        "",
+        null,
         "Clefairy"
     ],
     [
         "Clefable",
-        "",
+        null,
         "Clefable"
     ],
     [
         "Vulpix",
-        "",
+        null,
         "Vulpix"
     ],
     [
         "Ninetales",
-        "",
+        null,
         "Ninetales"
     ],
     [
         "Jigglypuff",
-        "",
+        null,
         "Jigglypuff"
     ],
     [
         "Wigglytuff",
-        "",
+        null,
         "Wigglytuff"
     ],
     [
         "Zubat",
-        "",
+        null,
         "Zubat"
     ],
     [
         "Golbat",
-        "",
+        null,
         "Golbat"
     ],
     [
         "Oddish",
-        "",
+        null,
         "Oddish"
     ],
     [
         "Gloom",
-        "",
+        null,
         "Gloom"
     ],
     [
         "Vileplume",
-        "",
+        null,
         "Vileplume"
     ],
     [
         "Paras",
-        "",
+        null,
         "Paras"
     ],
     [
         "Parasect",
-        "",
+        null,
         "Parasect"
     ],
     [
         "Venonat",
-        "",
+        null,
         "Venonat"
     ],
     [
         "Venomoth",
-        "",
+        null,
         "Venomoth"
     ],
     [
         "Diglett",
-        "",
+        null,
         "Diglett"
     ],
     [
         "Dugtrio",
-        "",
+        null,
         "Dugtrio"
     ],
     [
@@ -356,62 +356,62 @@
     ],
     [
         "Persian",
-        "",
+        null,
         "Persian"
     ],
     [
         "Psyduck",
-        "",
+        null,
         "Psyduck"
     ],
     [
         "Golduck",
-        "",
+        null,
         "Golduck"
     ],
     [
         "Mankey",
-        "",
+        null,
         "Mankey"
     ],
     [
         "Primeape",
-        "",
+        null,
         "Primeape"
     ],
     [
         "Growlithe",
-        "",
+        null,
         "Growlithe"
     ],
     [
         "Arcanine",
-        "",
+        null,
         "Arcanine"
     ],
     [
         "Poliwag",
-        "",
+        null,
         "Poliwag"
     ],
     [
         "Poliwhirl",
-        "",
+        null,
         "Poliwhirl"
     ],
     [
         "Poliwrath",
-        "",
+        null,
         "Poliwrath"
     ],
     [
         "Abra",
-        "",
+        null,
         "Abra"
     ],
     [
         "Kadabra",
-        "",
+        null,
         "Kadabra"
     ],
     [
@@ -426,12 +426,12 @@
     ],
     [
         "Machop",
-        "",
+        null,
         "Machop"
     ],
     [
         "Machoke",
-        "",
+        null,
         "Machoke"
     ],
     [
@@ -446,57 +446,57 @@
     ],
     [
         "Bellsprout",
-        "",
+        null,
         "Bellsprout"
     ],
     [
         "Weepinbell",
-        "",
+        null,
         "Weepinbell"
     ],
     [
         "Victreebel",
-        "",
+        null,
         "Victreebel"
     ],
     [
         "Tentacool",
-        "",
+        null,
         "Tentacool"
     ],
     [
         "Tentacruel",
-        "",
+        null,
         "Tentacruel"
     ],
     [
         "Geodude",
-        "",
+        null,
         "Geodude"
     ],
     [
         "Graveler",
-        "",
+        null,
         "Graveler"
     ],
     [
         "Golem",
-        "",
+        null,
         "Golem"
     ],
     [
         "Ponyta",
-        "",
+        null,
         "Ponyta"
     ],
     [
         "Rapidash",
-        "",
+        null,
         "Rapidash"
     ],
     [
         "Slowpoke",
-        "",
+        null,
         "Slowpoke"
     ],
     [
@@ -511,67 +511,67 @@
     ],
     [
         "Magnemite",
-        "",
+        null,
         "Magnemite"
     ],
     [
         "Magneton",
-        "",
+        null,
         "Magneton"
     ],
     [
         "Farfetchd",
-        "",
+        null,
         "Farfetchd"
     ],
     [
         "Doduo",
-        "",
+        null,
         "Doduo"
     ],
     [
         "Dodrio",
-        "",
+        null,
         "Dodrio"
     ],
     [
         "Seel",
-        "",
+        null,
         "Seel"
     ],
     [
         "Dewgong",
-        "",
+        null,
         "Dewgong"
     ],
     [
         "Grimer",
-        "",
+        null,
         "Grimer"
     ],
     [
         "Muk",
-        "",
+        null,
         "Muk"
     ],
     [
         "Shellder",
-        "",
+        null,
         "Shellder"
     ],
     [
         "Cloyster",
-        "",
+        null,
         "Cloyster"
     ],
     [
         "Gastly",
-        "",
+        null,
         "Gastly"
     ],
     [
         "Haunter",
-        "",
+        null,
         "Haunter"
     ],
     [
@@ -591,22 +591,22 @@
     ],
     [
         "Onix",
-        "",
+        null,
         "Onix"
     ],
     [
         "Drowzee",
-        "",
+        null,
         "Drowzee"
     ],
     [
         "Hypno",
-        "",
+        null,
         "Hypno"
     ],
     [
         "Krabby",
-        "",
+        null,
         "Krabby"
     ],
     [
@@ -621,77 +621,77 @@
     ],
     [
         "Voltorb",
-        "",
+        null,
         "Voltorb"
     ],
     [
         "Electrode",
-        "",
+        null,
         "Electrode"
     ],
     [
         "Exeggcute",
-        "",
+        null,
         "Exeggcute"
     ],
     [
         "Exeggutor",
-        "",
+        null,
         "Exeggutor"
     ],
     [
         "Cubone",
-        "",
+        null,
         "Cubone"
     ],
     [
         "Marowak",
-        "",
+        null,
         "Marowak"
     ],
     [
         "Hitmonlee",
-        "",
+        null,
         "Hitmonlee"
     ],
     [
         "Hitmonchan",
-        "",
+        null,
         "Hitmonchan"
     ],
     [
         "Lickitung",
-        "",
+        null,
         "Lickitung"
     ],
     [
         "Koffing",
-        "",
+        null,
         "Koffing"
     ],
     [
         "Weezing",
-        "",
+        null,
         "Weezing"
     ],
     [
         "Rhyhorn",
-        "",
+        null,
         "Rhyhorn"
     ],
     [
         "Rhydon",
-        "",
+        null,
         "Rhydon"
     ],
     [
         "Chansey",
-        "",
+        null,
         "Chansey"
     ],
     [
         "Tangela",
-        "",
+        null,
         "Tangela"
     ],
     [
@@ -706,27 +706,27 @@
     ],
     [
         "Horsea",
-        "",
+        null,
         "Horsea"
     ],
     [
         "Seadra",
-        "",
+        null,
         "Seadra"
     ],
     [
         "Goldeen",
-        "",
+        null,
         "Goldeen"
     ],
     [
         "Seaking",
-        "",
+        null,
         "Seaking"
     ],
     [
         "Staryu",
-        "",
+        null,
         "Staryu"
     ],
     [
@@ -736,27 +736,27 @@
     ],
     [
         "Mr Mime",
-        "",
+        null,
         "Mr Mime"
     ],
     [
         "Scyther",
-        "",
+        null,
         "Scyther"
     ],
     [
         "Jynx",
-        "",
+        null,
         "Jynx"
     ],
     [
         "Electabuzz",
-        "",
+        null,
         "Electabuzz"
     ],
     [
         "Magmar",
-        "",
+        null,
         "Magmar"
     ],
     [
@@ -771,12 +771,12 @@
     ],
     [
         "Tauros",
-        "",
+        null,
         "Tauros"
     ],
     [
         "Magikarp",
-        "",
+        null,
         "Magikarp"
     ],
     [
@@ -801,7 +801,7 @@
     ],
     [
         "Ditto",
-        "",
+        null,
         "Ditto"
     ],
     [
@@ -821,42 +821,42 @@
     ],
     [
         "Vaporeon",
-        "",
+        null,
         "Vaporeon"
     ],
     [
         "Jolteon",
-        "",
+        null,
         "Jolteon"
     ],
     [
         "Flareon",
-        "",
+        null,
         "Flareon"
     ],
     [
         "Porygon",
-        "",
+        null,
         "Porygon"
     ],
     [
         "Omanyte",
-        "",
+        null,
         "Omanyte"
     ],
     [
         "Omastar",
-        "",
+        null,
         "Omastar"
     ],
     [
         "Kabuto",
-        "",
+        null,
         "Kabuto"
     ],
     [
         "Kabutops",
-        "",
+        null,
         "Kabutops"
     ],
     [
@@ -881,32 +881,32 @@
     ],
     [
         "Articuno",
-        "",
+        null,
         "Articuno"
     ],
     [
         "Zapdos",
-        "",
+        null,
         "Zapdos"
     ],
     [
         "Moltres",
-        "",
+        null,
         "Moltres"
     ],
     [
         "Dratini",
-        "",
+        null,
         "Dratini"
     ],
     [
         "Dragonair",
-        "",
+        null,
         "Dragonair"
     ],
     [
         "Dragonite",
-        "",
+        null,
         "Dragonite"
     ],
     [
@@ -926,107 +926,107 @@
     ],
     [
         "Mew",
-        "",
+        null,
         "Mew"
     ],
     [
         "Chikorita",
-        "",
+        null,
         "Chikorita"
     ],
     [
         "Bayleef",
-        "",
+        null,
         "Bayleef"
     ],
     [
         "Meganium",
-        "",
+        null,
         "Meganium"
     ],
     [
         "Cyndaquil",
-        "",
+        null,
         "Cyndaquil"
     ],
     [
         "Quilava",
-        "",
+        null,
         "Quilava"
     ],
     [
         "Typhlosion",
-        "",
+        null,
         "Typhlosion"
     ],
     [
         "Totodile",
-        "",
+        null,
         "Totodile"
     ],
     [
         "Croconaw",
-        "",
+        null,
         "Croconaw"
     ],
     [
         "Feraligatr",
-        "",
+        null,
         "Feraligatr"
     ],
     [
         "Sentret",
-        "",
+        null,
         "Sentret"
     ],
     [
         "Furret",
-        "",
+        null,
         "Furret"
     ],
     [
         "Hoothoot",
-        "",
+        null,
         "Hoothoot"
     ],
     [
         "Noctowl",
-        "",
+        null,
         "Noctowl"
     ],
     [
         "Ledyba",
-        "",
+        null,
         "Ledyba"
     ],
     [
         "Ledian",
-        "",
+        null,
         "Ledian"
     ],
     [
         "Spinarak",
-        "",
+        null,
         "Spinarak"
     ],
     [
         "Ariados",
-        "",
+        null,
         "Ariados"
     ],
     [
         "Crobat",
-        "",
+        null,
         "Crobat"
     ],
     [
         "Chinchou",
-        "",
+        null,
         "Chinchou"
     ],
     [
         "Lanturn",
-        "",
+        null,
         "Lanturn"
     ],
     [
@@ -1041,42 +1041,42 @@
     ],
     [
         "Cleffa",
-        "",
+        null,
         "Cleffa"
     ],
     [
         "Igglybuff",
-        "",
+        null,
         "Igglybuff"
     ],
     [
         "Togepi",
-        "",
+        null,
         "Togepi"
     ],
     [
         "Togetic",
-        "",
+        null,
         "Togetic"
     ],
     [
         "Natu",
-        "",
+        null,
         "Natu"
     ],
     [
         "Xatu",
-        "",
+        null,
         "Xatu"
     ],
     [
         "Mareep",
-        "",
+        null,
         "Mareep"
     ],
     [
         "Flaaffy",
-        "",
+        null,
         "Flaaffy"
     ],
     [
@@ -1091,97 +1091,97 @@
     ],
     [
         "Bellossom",
-        "",
+        null,
         "Bellossom"
     ],
     [
         "Marill",
-        "",
+        null,
         "Marill"
     ],
     [
         "Azumarill",
-        "",
+        null,
         "Azumarill"
     ],
     [
         "Sudowoodo",
-        "",
+        null,
         "Sudowoodo"
     ],
     [
         "Politoed",
-        "",
+        null,
         "Politoed"
     ],
     [
         "Hoppip",
-        "",
+        null,
         "Hoppip"
     ],
     [
         "Skiploom",
-        "",
+        null,
         "Skiploom"
     ],
     [
         "Jumpluff",
-        "",
+        null,
         "Jumpluff"
     ],
     [
         "Aipom",
-        "",
+        null,
         "Aipom"
     ],
     [
         "Sunkern",
-        "",
+        null,
         "Sunkern"
     ],
     [
         "Sunflora",
-        "",
+        null,
         "Sunflora"
     ],
     [
         "Yanma",
-        "",
+        null,
         "Yanma"
     ],
     [
         "Wooper",
-        "",
+        null,
         "Wooper"
     ],
     [
         "Quagsire",
-        "",
+        null,
         "Quagsire"
     ],
     [
         "Espeon",
-        "",
+        null,
         "Espeon"
     ],
     [
         "Umbreon",
-        "",
+        null,
         "Umbreon"
     ],
     [
         "Murkrow",
-        "",
+        null,
         "Murkrow"
     ],
     [
         "Slowking",
-        "",
+        null,
         "Slowking"
     ],
     [
         "Misdreavus",
-        "",
+        null,
         "Misdreavus"
     ],
     [
@@ -1326,32 +1326,32 @@
     ],
     [
         "Wobbuffet",
-        "",
+        null,
         "Wobbuffet"
     ],
     [
         "Girafarig",
-        "",
+        null,
         "Girafarig"
     ],
     [
         "Pineco",
-        "",
+        null,
         "Pineco"
     ],
     [
         "Forretress",
-        "",
+        null,
         "Forretress"
     ],
     [
         "Dunsparce",
-        "",
+        null,
         "Dunsparce"
     ],
     [
         "Gligar",
-        "",
+        null,
         "Gligar"
     ],
     [
@@ -1366,17 +1366,17 @@
     ],
     [
         "Snubbull",
-        "",
+        null,
         "Snubbull"
     ],
     [
         "Granbull",
-        "",
+        null,
         "Granbull"
     ],
     [
         "Qwilfish",
-        "",
+        null,
         "Qwilfish"
     ],
     [
@@ -1391,7 +1391,7 @@
     ],
     [
         "Shuckle",
-        "",
+        null,
         "Shuckle"
     ],
     [
@@ -1406,72 +1406,72 @@
     ],
     [
         "Sneasel",
-        "",
+        null,
         "Sneasel"
     ],
     [
         "Teddiursa",
-        "",
+        null,
         "Teddiursa"
     ],
     [
         "Ursaring",
-        "",
+        null,
         "Ursaring"
     ],
     [
         "Slugma",
-        "",
+        null,
         "Slugma"
     ],
     [
         "Magcargo",
-        "",
+        null,
         "Magcargo"
     ],
     [
         "Swinub",
-        "",
+        null,
         "Swinub"
     ],
     [
         "Piloswine",
-        "",
+        null,
         "Piloswine"
     ],
     [
         "Corsola",
-        "",
+        null,
         "Corsola"
     ],
     [
         "Remoraid",
-        "",
+        null,
         "Remoraid"
     ],
     [
         "Octillery",
-        "",
+        null,
         "Octillery"
     ],
     [
         "Delibird",
-        "",
+        null,
         "Delibird"
     ],
     [
         "Mantine",
-        "",
+        null,
         "Mantine"
     ],
     [
         "Skarmory",
-        "",
+        null,
         "Skarmory"
     ],
     [
         "Houndour",
-        "",
+        null,
         "Houndour"
     ],
     [
@@ -1486,92 +1486,92 @@
     ],
     [
         "Kingdra",
-        "",
+        null,
         "Kingdra"
     ],
     [
         "Phanpy",
-        "",
+        null,
         "Phanpy"
     ],
     [
         "Donphan",
-        "",
+        null,
         "Donphan"
     ],
     [
         "Porygon2",
-        "",
+        null,
         "Porygon2"
     ],
     [
         "Stantler",
-        "",
+        null,
         "Stantler"
     ],
     [
         "Smeargle",
-        "",
+        null,
         "Smeargle"
     ],
     [
         "Tyrogue",
-        "",
+        null,
         "Tyrogue"
     ],
     [
         "Hitmontop",
-        "",
+        null,
         "Hitmontop"
     ],
     [
         "Smoochum",
-        "",
+        null,
         "Smoochum"
     ],
     [
         "Elekid",
-        "",
+        null,
         "Elekid"
     ],
     [
         "Magby",
-        "",
+        null,
         "Magby"
     ],
     [
         "Miltank",
-        "",
+        null,
         "Miltank"
     ],
     [
         "Blissey",
-        "",
+        null,
         "Blissey"
     ],
     [
         "Raikou",
-        "",
+        null,
         "Raikou"
     ],
     [
         "Entei",
-        "",
+        null,
         "Entei"
     ],
     [
         "Suicune",
-        "",
+        null,
         "Suicune"
     ],
     [
         "Larvitar",
-        "",
+        null,
         "Larvitar"
     ],
     [
         "Pupitar",
-        "",
+        null,
         "Pupitar"
     ],
     [
@@ -1586,27 +1586,27 @@
     ],
     [
         "Lugia",
-        "",
+        null,
         "Lugia"
     ],
     [
         "Ho Oh",
-        "",
+        null,
         "Ho Oh"
     ],
     [
         "Celebi",
-        "",
+        null,
         "Celebi"
     ],
     [
         "Treecko",
-        "",
+        null,
         "Treecko"
     ],
     [
         "Grovyle",
-        "",
+        null,
         "Grovyle"
     ],
     [
@@ -1621,12 +1621,12 @@
     ],
     [
         "Torchic",
-        "",
+        null,
         "Torchic"
     ],
     [
         "Combusken",
-        "",
+        null,
         "Combusken"
     ],
     [
@@ -1641,12 +1641,12 @@
     ],
     [
         "Mudkip",
-        "",
+        null,
         "Mudkip"
     ],
     [
         "Marshtomp",
-        "",
+        null,
         "Marshtomp"
     ],
     [
@@ -1661,107 +1661,107 @@
     ],
     [
         "Poochyena",
-        "",
+        null,
         "Poochyena"
     ],
     [
         "Mightyena",
-        "",
+        null,
         "Mightyena"
     ],
     [
         "Zigzagoon",
-        "",
+        null,
         "Zigzagoon"
     ],
     [
         "Linoone",
-        "",
+        null,
         "Linoone"
     ],
     [
         "Wurmple",
-        "",
+        null,
         "Wurmple"
     ],
     [
         "Silcoon",
-        "",
+        null,
         "Silcoon"
     ],
     [
         "Beautifly",
-        "",
+        null,
         "Beautifly"
     ],
     [
         "Cascoon",
-        "",
+        null,
         "Cascoon"
     ],
     [
         "Dustox",
-        "",
+        null,
         "Dustox"
     ],
     [
         "Lotad",
-        "",
+        null,
         "Lotad"
     ],
     [
         "Lombre",
-        "",
+        null,
         "Lombre"
     ],
     [
         "Ludicolo",
-        "",
+        null,
         "Ludicolo"
     ],
     [
         "Seedot",
-        "",
+        null,
         "Seedot"
     ],
     [
         "Nuzleaf",
-        "",
+        null,
         "Nuzleaf"
     ],
     [
         "Shiftry",
-        "",
+        null,
         "Shiftry"
     ],
     [
         "Taillow",
-        "",
+        null,
         "Taillow"
     ],
     [
         "Swellow",
-        "",
+        null,
         "Swellow"
     ],
     [
         "Wingull",
-        "",
+        null,
         "Wingull"
     ],
     [
         "Pelipper",
-        "",
+        null,
         "Pelipper"
     ],
     [
         "Ralts",
-        "",
+        null,
         "Ralts"
     ],
     [
         "Kirlia",
-        "",
+        null,
         "Kirlia"
     ],
     [
@@ -1776,97 +1776,97 @@
     ],
     [
         "Surskit",
-        "",
+        null,
         "Surskit"
     ],
     [
         "Masquerain",
-        "",
+        null,
         "Masquerain"
     ],
     [
         "Shroomish",
-        "",
+        null,
         "Shroomish"
     ],
     [
         "Breloom",
-        "",
+        null,
         "Breloom"
     ],
     [
         "Slakoth",
-        "",
+        null,
         "Slakoth"
     ],
     [
         "Vigoroth",
-        "",
+        null,
         "Vigoroth"
     ],
     [
         "Slaking",
-        "",
+        null,
         "Slaking"
     ],
     [
         "Nincada",
-        "",
+        null,
         "Nincada"
     ],
     [
         "Ninjask",
-        "",
+        null,
         "Ninjask"
     ],
     [
         "Shedinja",
-        "",
+        null,
         "Shedinja"
     ],
     [
         "Whismur",
-        "",
+        null,
         "Whismur"
     ],
     [
         "Loudred",
-        "",
+        null,
         "Loudred"
     ],
     [
         "Exploud",
-        "",
+        null,
         "Exploud"
     ],
     [
         "Makuhita",
-        "",
+        null,
         "Makuhita"
     ],
     [
         "Hariyama",
-        "",
+        null,
         "Hariyama"
     ],
     [
         "Azurill",
-        "",
+        null,
         "Azurill"
     ],
     [
         "Nosepass",
-        "",
+        null,
         "Nosepass"
     ],
     [
         "Skitty",
-        "",
+        null,
         "Skitty"
     ],
     [
         "Delcatty",
-        "",
+        null,
         "Delcatty"
     ],
     [
@@ -1891,12 +1891,12 @@
     ],
     [
         "Aron",
-        "",
+        null,
         "Aron"
     ],
     [
         "Lairon",
-        "",
+        null,
         "Lairon"
     ],
     [
@@ -1911,7 +1911,7 @@
     ],
     [
         "Meditite",
-        "",
+        null,
         "Meditite"
     ],
     [
@@ -1926,7 +1926,7 @@
     ],
     [
         "Electrike",
-        "",
+        null,
         "Electrike"
     ],
     [
@@ -1941,42 +1941,42 @@
     ],
     [
         "Plusle",
-        "",
+        null,
         "Plusle"
     ],
     [
         "Minun",
-        "",
+        null,
         "Minun"
     ],
     [
         "Volbeat",
-        "",
+        null,
         "Volbeat"
     ],
     [
         "Illumise",
-        "",
+        null,
         "Illumise"
     ],
     [
         "Roselia",
-        "",
+        null,
         "Roselia"
     ],
     [
         "Gulpin",
-        "",
+        null,
         "Gulpin"
     ],
     [
         "Swalot",
-        "",
+        null,
         "Swalot"
     ],
     [
         "Carvanha",
-        "",
+        null,
         "Carvanha"
     ],
     [
@@ -1991,17 +1991,17 @@
     ],
     [
         "Wailmer",
-        "",
+        null,
         "Wailmer"
     ],
     [
         "Wailord",
-        "",
+        null,
         "Wailord"
     ],
     [
         "Numel",
-        "",
+        null,
         "Numel"
     ],
     [
@@ -2016,52 +2016,52 @@
     ],
     [
         "Torkoal",
-        "",
+        null,
         "Torkoal"
     ],
     [
         "Spoink",
-        "",
+        null,
         "Spoink"
     ],
     [
         "Grumpig",
-        "",
+        null,
         "Grumpig"
     ],
     [
         "Spinda",
-        "",
+        null,
         "Spinda"
     ],
     [
         "Trapinch",
-        "",
+        null,
         "Trapinch"
     ],
     [
         "Vibrava",
-        "",
+        null,
         "Vibrava"
     ],
     [
         "Flygon",
-        "",
+        null,
         "Flygon"
     ],
     [
         "Cacnea",
-        "",
+        null,
         "Cacnea"
     ],
     [
         "Cacturne",
-        "",
+        null,
         "Cacturne"
     ],
     [
         "Swablu",
-        "",
+        null,
         "Swablu"
     ],
     [
@@ -2076,82 +2076,82 @@
     ],
     [
         "Zangoose",
-        "",
+        null,
         "Zangoose"
     ],
     [
         "Seviper",
-        "",
+        null,
         "Seviper"
     ],
     [
         "Lunatone",
-        "",
+        null,
         "Lunatone"
     ],
     [
         "Solrock",
-        "",
+        null,
         "Solrock"
     ],
     [
         "Barboach",
-        "",
+        null,
         "Barboach"
     ],
     [
         "Whiscash",
-        "",
+        null,
         "Whiscash"
     ],
     [
         "Corphish",
-        "",
+        null,
         "Corphish"
     ],
     [
         "Crawdaunt",
-        "",
+        null,
         "Crawdaunt"
     ],
     [
         "Baltoy",
-        "",
+        null,
         "Baltoy"
     ],
     [
         "Claydol",
-        "",
+        null,
         "Claydol"
     ],
     [
         "Lileep",
-        "",
+        null,
         "Lileep"
     ],
     [
         "Cradily",
-        "",
+        null,
         "Cradily"
     ],
     [
         "Anorith",
-        "",
+        null,
         "Anorith"
     ],
     [
         "Armaldo",
-        "",
+        null,
         "Armaldo"
     ],
     [
         "Feebas",
-        "",
+        null,
         "Feebas"
     ],
     [
         "Milotic",
-        "",
+        null,
         "Milotic"
     ],
     [
@@ -2176,12 +2176,12 @@
     ],
     [
         "Kecleon",
-        "",
+        null,
         "Kecleon"
     ],
     [
         "Shuppet",
-        "",
+        null,
         "Shuppet"
     ],
     [
@@ -2196,22 +2196,22 @@
     ],
     [
         "Duskull",
-        "",
+        null,
         "Duskull"
     ],
     [
         "Dusclops",
-        "",
+        null,
         "Dusclops"
     ],
     [
         "Tropius",
-        "",
+        null,
         "Tropius"
     ],
     [
         "Chimecho",
-        "",
+        null,
         "Chimecho"
     ],
     [
@@ -2226,12 +2226,12 @@
     ],
     [
         "Wynaut",
-        "",
+        null,
         "Wynaut"
     ],
     [
         "Snorunt",
-        "",
+        null,
         "Snorunt"
     ],
     [
@@ -2246,52 +2246,52 @@
     ],
     [
         "Spheal",
-        "",
+        null,
         "Spheal"
     ],
     [
         "Sealeo",
-        "",
+        null,
         "Sealeo"
     ],
     [
         "Walrein",
-        "",
+        null,
         "Walrein"
     ],
     [
         "Clamperl",
-        "",
+        null,
         "Clamperl"
     ],
     [
         "Huntail",
-        "",
+        null,
         "Huntail"
     ],
     [
         "Gorebyss",
-        "",
+        null,
         "Gorebyss"
     ],
     [
         "Relicanth",
-        "",
+        null,
         "Relicanth"
     ],
     [
         "Luvdisc",
-        "",
+        null,
         "Luvdisc"
     ],
     [
         "Bagon",
-        "",
+        null,
         "Bagon"
     ],
     [
         "Shelgon",
-        "",
+        null,
         "Shelgon"
     ],
     [
@@ -2306,12 +2306,12 @@
     ],
     [
         "Beldum",
-        "",
+        null,
         "Beldum"
     ],
     [
         "Metang",
-        "",
+        null,
         "Metang"
     ],
     [
@@ -2326,17 +2326,17 @@
     ],
     [
         "Regirock",
-        "",
+        null,
         "Regirock"
     ],
     [
         "Regice",
-        "",
+        null,
         "Regice"
     ],
     [
         "Registeel",
-        "",
+        null,
         "Registeel"
     ],
     [
@@ -2391,7 +2391,7 @@
     ],
     [
         "Jirachi",
-        "",
+        null,
         "Jirachi"
     ],
     [
@@ -2416,127 +2416,127 @@
     ],
     [
         "Turtwig",
-        "",
+        null,
         "Turtwig"
     ],
     [
         "Grotle",
-        "",
+        null,
         "Grotle"
     ],
     [
         "Torterra",
-        "",
+        null,
         "Torterra"
     ],
     [
         "Chimchar",
-        "",
+        null,
         "Chimchar"
     ],
     [
         "Monferno",
-        "",
+        null,
         "Monferno"
     ],
     [
         "Infernape",
-        "",
+        null,
         "Infernape"
     ],
     [
         "Piplup",
-        "",
+        null,
         "Piplup"
     ],
     [
         "Prinplup",
-        "",
+        null,
         "Prinplup"
     ],
     [
         "Empoleon",
-        "",
+        null,
         "Empoleon"
     ],
     [
         "Starly",
-        "",
+        null,
         "Starly"
     ],
     [
         "Staravia",
-        "",
+        null,
         "Staravia"
     ],
     [
         "Staraptor",
-        "",
+        null,
         "Staraptor"
     ],
     [
         "Bidoof",
-        "",
+        null,
         "Bidoof"
     ],
     [
         "Bibarel",
-        "",
+        null,
         "Bibarel"
     ],
     [
         "Kricketot",
-        "",
+        null,
         "Kricketot"
     ],
     [
         "Kricketune",
-        "",
+        null,
         "Kricketune"
     ],
     [
         "Shinx",
-        "",
+        null,
         "Shinx"
     ],
     [
         "Luxio",
-        "",
+        null,
         "Luxio"
     ],
     [
         "Luxray",
-        "",
+        null,
         "Luxray"
     ],
     [
         "Budew",
-        "",
+        null,
         "Budew"
     ],
     [
         "Roserade",
-        "",
+        null,
         "Roserade"
     ],
     [
         "Cranidos",
-        "",
+        null,
         "Cranidos"
     ],
     [
         "Rampardos",
-        "",
+        null,
         "Rampardos"
     ],
     [
         "Shieldon",
-        "",
+        null,
         "Shieldon"
     ],
     [
         "Bastiodon",
-        "",
+        null,
         "Bastiodon"
     ],
     [
@@ -2571,37 +2571,37 @@
     ],
     [
         "Mothim",
-        "",
+        null,
         "Mothim"
     ],
     [
         "Combee",
-        "",
+        null,
         "Combee"
     ],
     [
         "Vespiquen",
-        "",
+        null,
         "Vespiquen"
     ],
     [
         "Pachirisu",
-        "",
+        null,
         "Pachirisu"
     ],
     [
         "Buizel",
-        "",
+        null,
         "Buizel"
     ],
     [
         "Floatzel",
-        "",
+        null,
         "Floatzel"
     ],
     [
         "Cherubi",
-        "",
+        null,
         "Cherubi"
     ],
     [
@@ -2636,22 +2636,22 @@
     ],
     [
         "Ambipom",
-        "",
+        null,
         "Ambipom"
     ],
     [
         "Drifloon",
-        "",
+        null,
         "Drifloon"
     ],
     [
         "Drifblim",
-        "",
+        null,
         "Drifblim"
     ],
     [
         "Buneary",
-        "",
+        null,
         "Buneary"
     ],
     [
@@ -2666,82 +2666,82 @@
     ],
     [
         "Mismagius",
-        "",
+        null,
         "Mismagius"
     ],
     [
         "Honchkrow",
-        "",
+        null,
         "Honchkrow"
     ],
     [
         "Glameow",
-        "",
+        null,
         "Glameow"
     ],
     [
         "Purugly",
-        "",
+        null,
         "Purugly"
     ],
     [
         "Chingling",
-        "",
+        null,
         "Chingling"
     ],
     [
         "Stunky",
-        "",
+        null,
         "Stunky"
     ],
     [
         "Skuntank",
-        "",
+        null,
         "Skuntank"
     ],
     [
         "Bronzor",
-        "",
+        null,
         "Bronzor"
     ],
     [
         "Bronzong",
-        "",
+        null,
         "Bronzong"
     ],
     [
         "Bonsly",
-        "",
+        null,
         "Bonsly"
     ],
     [
         "Mime Jr",
-        "",
+        null,
         "Mime Jr"
     ],
     [
         "Happiny",
-        "",
+        null,
         "Happiny"
     ],
     [
         "Chatot",
-        "",
+        null,
         "Chatot"
     ],
     [
         "Spiritomb",
-        "",
+        null,
         "Spiritomb"
     ],
     [
         "Gible",
-        "",
+        null,
         "Gible"
     ],
     [
         "Gabite",
-        "",
+        null,
         "Gabite"
     ],
     [
@@ -2756,12 +2756,12 @@
     ],
     [
         "Munchlax",
-        "",
+        null,
         "Munchlax"
     ],
     [
         "Riolu",
-        "",
+        null,
         "Riolu"
     ],
     [
@@ -2776,57 +2776,57 @@
     ],
     [
         "Hippopotas",
-        "",
+        null,
         "Hippopotas"
     ],
     [
         "Hippowdon",
-        "",
+        null,
         "Hippowdon"
     ],
     [
         "Skorupi",
-        "",
+        null,
         "Skorupi"
     ],
     [
         "Drapion",
-        "",
+        null,
         "Drapion"
     ],
     [
         "Croagunk",
-        "",
+        null,
         "Croagunk"
     ],
     [
         "Toxicroak",
-        "",
+        null,
         "Toxicroak"
     ],
     [
         "Carnivine",
-        "",
+        null,
         "Carnivine"
     ],
     [
         "Finneon",
-        "",
+        null,
         "Finneon"
     ],
     [
         "Lumineon",
-        "",
+        null,
         "Lumineon"
     ],
     [
         "Mantyke",
-        "",
+        null,
         "Mantyke"
     ],
     [
         "Snover",
-        "",
+        null,
         "Snover"
     ],
     [
@@ -2841,72 +2841,72 @@
     ],
     [
         "Weavile",
-        "",
+        null,
         "Weavile"
     ],
     [
         "Magnezone",
-        "",
+        null,
         "Magnezone"
     ],
     [
         "Lickilicky",
-        "",
+        null,
         "Lickilicky"
     ],
     [
         "Rhyperior",
-        "",
+        null,
         "Rhyperior"
     ],
     [
         "Tangrowth",
-        "",
+        null,
         "Tangrowth"
     ],
     [
         "Electivire",
-        "",
+        null,
         "Electivire"
     ],
     [
         "Magmortar",
-        "",
+        null,
         "Magmortar"
     ],
     [
         "Togekiss",
-        "",
+        null,
         "Togekiss"
     ],
     [
         "Yanmega",
-        "",
+        null,
         "Yanmega"
     ],
     [
         "Leafeon",
-        "",
+        null,
         "Leafeon"
     ],
     [
         "Glaceon",
-        "",
+        null,
         "Glaceon"
     ],
     [
         "Gliscor",
-        "",
+        null,
         "Gliscor"
     ],
     [
         "Mamoswine",
-        "",
+        null,
         "Mamoswine"
     ],
     [
         "Porygon Z",
-        "",
+        null,
         "Porygon Z"
     ],
     [
@@ -2921,17 +2921,17 @@
     ],
     [
         "Probopass",
-        "",
+        null,
         "Probopass"
     ],
     [
         "Dusknoir",
-        "",
+        null,
         "Dusknoir"
     ],
     [
         "Froslass",
-        "",
+        null,
         "Froslass"
     ],
     [
@@ -2966,17 +2966,17 @@
     ],
     [
         "Uxie",
-        "",
+        null,
         "Uxie"
     ],
     [
         "Mesprit",
-        "",
+        null,
         "Mesprit"
     ],
     [
         "Azelf",
-        "",
+        null,
         "Azelf"
     ],
     [
@@ -3001,12 +3001,12 @@
     ],
     [
         "Heatran",
-        "",
+        null,
         "Heatran"
     ],
     [
         "Regigigas",
-        "",
+        null,
         "Regigigas"
     ],
     [
@@ -3021,22 +3021,22 @@
     ],
     [
         "Cresselia",
-        "",
+        null,
         "Cresselia"
     ],
     [
         "Phione",
-        "",
+        null,
         "Phione"
     ],
     [
         "Manaphy",
-        "",
+        null,
         "Manaphy"
     ],
     [
         "Darkrai",
-        "",
+        null,
         "Darkrai"
     ],
     [
@@ -3141,187 +3141,187 @@
     ],
     [
         "Victini",
-        "",
+        null,
         "Victini"
     ],
     [
         "Snivy",
-        "",
+        null,
         "Snivy"
     ],
     [
         "Servine",
-        "",
+        null,
         "Servine"
     ],
     [
         "Serperior",
-        "",
+        null,
         "Serperior"
     ],
     [
         "Tepig",
-        "",
+        null,
         "Tepig"
     ],
     [
         "Pignite",
-        "",
+        null,
         "Pignite"
     ],
     [
         "Emboar",
-        "",
+        null,
         "Emboar"
     ],
     [
         "Oshawott",
-        "",
+        null,
         "Oshawott"
     ],
     [
         "Dewott",
-        "",
+        null,
         "Dewott"
     ],
     [
         "Samurott",
-        "",
+        null,
         "Samurott"
     ],
     [
         "Patrat",
-        "",
+        null,
         "Patrat"
     ],
     [
         "Watchog",
-        "",
+        null,
         "Watchog"
     ],
     [
         "Lillipup",
-        "",
+        null,
         "Lillipup"
     ],
     [
         "Herdier",
-        "",
+        null,
         "Herdier"
     ],
     [
         "Stoutland",
-        "",
+        null,
         "Stoutland"
     ],
     [
         "Purrloin",
-        "",
+        null,
         "Purrloin"
     ],
     [
         "Liepard",
-        "",
+        null,
         "Liepard"
     ],
     [
         "Pansage",
-        "",
+        null,
         "Pansage"
     ],
     [
         "Simisage",
-        "",
+        null,
         "Simisage"
     ],
     [
         "Pansear",
-        "",
+        null,
         "Pansear"
     ],
     [
         "Simisear",
-        "",
+        null,
         "Simisear"
     ],
     [
         "Panpour",
-        "",
+        null,
         "Panpour"
     ],
     [
         "Simipour",
-        "",
+        null,
         "Simipour"
     ],
     [
         "Munna",
-        "",
+        null,
         "Munna"
     ],
     [
         "Musharna",
-        "",
+        null,
         "Musharna"
     ],
     [
         "Pidove",
-        "",
+        null,
         "Pidove"
     ],
     [
         "Tranquill",
-        "",
+        null,
         "Tranquill"
     ],
     [
         "Unfezant",
-        "",
+        null,
         "Unfezant"
     ],
     [
         "Blitzle",
-        "",
+        null,
         "Blitzle"
     ],
     [
         "Zebstrika",
-        "",
+        null,
         "Zebstrika"
     ],
     [
         "Roggenrola",
-        "",
+        null,
         "Roggenrola"
     ],
     [
         "Boldore",
-        "",
+        null,
         "Boldore"
     ],
     [
         "Gigalith",
-        "",
+        null,
         "Gigalith"
     ],
     [
         "Woobat",
-        "",
+        null,
         "Woobat"
     ],
     [
         "Swoobat",
-        "",
+        null,
         "Swoobat"
     ],
     [
         "Drilbur",
-        "",
+        null,
         "Drilbur"
     ],
     [
         "Excadrill",
-        "",
+        null,
         "Excadrill"
     ],
     [
@@ -3336,92 +3336,92 @@
     ],
     [
         "Timburr",
-        "",
+        null,
         "Timburr"
     ],
     [
         "Gurdurr",
-        "",
+        null,
         "Gurdurr"
     ],
     [
         "Conkeldurr",
-        "",
+        null,
         "Conkeldurr"
     ],
     [
         "Tympole",
-        "",
+        null,
         "Tympole"
     ],
     [
         "Palpitoad",
-        "",
+        null,
         "Palpitoad"
     ],
     [
         "Seismitoad",
-        "",
+        null,
         "Seismitoad"
     ],
     [
         "Throh",
-        "",
+        null,
         "Throh"
     ],
     [
         "Sawk",
-        "",
+        null,
         "Sawk"
     ],
     [
         "Sewaddle",
-        "",
+        null,
         "Sewaddle"
     ],
     [
         "Swadloon",
-        "",
+        null,
         "Swadloon"
     ],
     [
         "Leavanny",
-        "",
+        null,
         "Leavanny"
     ],
     [
         "Venipede",
-        "",
+        null,
         "Venipede"
     ],
     [
         "Whirlipede",
-        "",
+        null,
         "Whirlipede"
     ],
     [
         "Scolipede",
-        "",
+        null,
         "Scolipede"
     ],
     [
         "Cottonee",
-        "",
+        null,
         "Cottonee"
     ],
     [
         "Whimsicott",
-        "",
+        null,
         "Whimsicott"
     ],
     [
         "Petilil",
-        "",
+        null,
         "Petilil"
     ],
     [
         "Lilligant",
-        "",
+        null,
         "Lilligant"
     ],
     [
@@ -3441,22 +3441,22 @@
     ],
     [
         "Sandile",
-        "",
+        null,
         "Sandile"
     ],
     [
         "Krokorok",
-        "",
+        null,
         "Krokorok"
     ],
     [
         "Krookodile",
-        "",
+        null,
         "Krookodile"
     ],
     [
         "Darumaka",
-        "",
+        null,
         "Darumaka"
     ],
     [
@@ -3471,67 +3471,67 @@
     ],
     [
         "Maractus",
-        "",
+        null,
         "Maractus"
     ],
     [
         "Dwebble",
-        "",
+        null,
         "Dwebble"
     ],
     [
         "Crustle",
-        "",
+        null,
         "Crustle"
     ],
     [
         "Scraggy",
-        "",
+        null,
         "Scraggy"
     ],
     [
         "Scrafty",
-        "",
+        null,
         "Scrafty"
     ],
     [
         "Sigilyph",
-        "",
+        null,
         "Sigilyph"
     ],
     [
         "Yamask",
-        "",
+        null,
         "Yamask"
     ],
     [
         "Cofagrigus",
-        "",
+        null,
         "Cofagrigus"
     ],
     [
         "Tirtouga",
-        "",
+        null,
         "Tirtouga"
     ],
     [
         "Carracosta",
-        "",
+        null,
         "Carracosta"
     ],
     [
         "Archen",
-        "",
+        null,
         "Archen"
     ],
     [
         "Archeops",
-        "",
+        null,
         "Archeops"
     ],
     [
         "Trubbish",
-        "",
+        null,
         "Trubbish"
     ],
     [
@@ -3546,77 +3546,77 @@
     ],
     [
         "Zorua",
-        "",
+        null,
         "Zorua"
     ],
     [
         "Zoroark",
-        "",
+        null,
         "Zoroark"
     ],
     [
         "Minccino",
-        "",
+        null,
         "Minccino"
     ],
     [
         "Cinccino",
-        "",
+        null,
         "Cinccino"
     ],
     [
         "Gothita",
-        "",
+        null,
         "Gothita"
     ],
     [
         "Gothorita",
-        "",
+        null,
         "Gothorita"
     ],
     [
         "Gothitelle",
-        "",
+        null,
         "Gothitelle"
     ],
     [
         "Solosis",
-        "",
+        null,
         "Solosis"
     ],
     [
         "Duosion",
-        "",
+        null,
         "Duosion"
     ],
     [
         "Reuniclus",
-        "",
+        null,
         "Reuniclus"
     ],
     [
         "Ducklett",
-        "",
+        null,
         "Ducklett"
     ],
     [
         "Swanna",
-        "",
+        null,
         "Swanna"
     ],
     [
         "Vanillite",
-        "",
+        null,
         "Vanillite"
     ],
     [
         "Vanillish",
-        "",
+        null,
         "Vanillish"
     ],
     [
         "Vanilluxe",
-        "",
+        null,
         "Vanilluxe"
     ],
     [
@@ -3661,272 +3661,272 @@
     ],
     [
         "Emolga",
-        "",
+        null,
         "Emolga"
     ],
     [
         "Karrablast",
-        "",
+        null,
         "Karrablast"
     ],
     [
         "Escavalier",
-        "",
+        null,
         "Escavalier"
     ],
     [
         "Foongus",
-        "",
+        null,
         "Foongus"
     ],
     [
         "Amoonguss",
-        "",
+        null,
         "Amoonguss"
     ],
     [
         "Frillish",
-        "",
+        null,
         "Frillish"
     ],
     [
         "Jellicent",
-        "",
+        null,
         "Jellicent"
     ],
     [
         "Alomomola",
-        "",
+        null,
         "Alomomola"
     ],
     [
         "Joltik",
-        "",
+        null,
         "Joltik"
     ],
     [
         "Galvantula",
-        "",
+        null,
         "Galvantula"
     ],
     [
         "Ferroseed",
-        "",
+        null,
         "Ferroseed"
     ],
     [
         "Ferrothorn",
-        "",
+        null,
         "Ferrothorn"
     ],
     [
         "Klink",
-        "",
+        null,
         "Klink"
     ],
     [
         "Klang",
-        "",
+        null,
         "Klang"
     ],
     [
         "Klinklang",
-        "",
+        null,
         "Klinklang"
     ],
     [
         "Tynamo",
-        "",
+        null,
         "Tynamo"
     ],
     [
         "Eelektrik",
-        "",
+        null,
         "Eelektrik"
     ],
     [
         "Eelektross",
-        "",
+        null,
         "Eelektross"
     ],
     [
         "Elgyem",
-        "",
+        null,
         "Elgyem"
     ],
     [
         "Beheeyem",
-        "",
+        null,
         "Beheeyem"
     ],
     [
         "Litwick",
-        "",
+        null,
         "Litwick"
     ],
     [
         "Lampent",
-        "",
+        null,
         "Lampent"
     ],
     [
         "Chandelure",
-        "",
+        null,
         "Chandelure"
     ],
     [
         "Axew",
-        "",
+        null,
         "Axew"
     ],
     [
         "Fraxure",
-        "",
+        null,
         "Fraxure"
     ],
     [
         "Haxorus",
-        "",
+        null,
         "Haxorus"
     ],
     [
         "Cubchoo",
-        "",
+        null,
         "Cubchoo"
     ],
     [
         "Beartic",
-        "",
+        null,
         "Beartic"
     ],
     [
         "Cryogonal",
-        "",
+        null,
         "Cryogonal"
     ],
     [
         "Shelmet",
-        "",
+        null,
         "Shelmet"
     ],
     [
         "Accelgor",
-        "",
+        null,
         "Accelgor"
     ],
     [
         "Stunfisk",
-        "",
+        null,
         "Stunfisk"
     ],
     [
         "Mienfoo",
-        "",
+        null,
         "Mienfoo"
     ],
     [
         "Mienshao",
-        "",
+        null,
         "Mienshao"
     ],
     [
         "Druddigon",
-        "",
+        null,
         "Druddigon"
     ],
     [
         "Golett",
-        "",
+        null,
         "Golett"
     ],
     [
         "Golurk",
-        "",
+        null,
         "Golurk"
     ],
     [
         "Pawniard",
-        "",
+        null,
         "Pawniard"
     ],
     [
         "Bisharp",
-        "",
+        null,
         "Bisharp"
     ],
     [
         "Bouffalant",
-        "",
+        null,
         "Bouffalant"
     ],
     [
         "Rufflet",
-        "",
+        null,
         "Rufflet"
     ],
     [
         "Braviary",
-        "",
+        null,
         "Braviary"
     ],
     [
         "Vullaby",
-        "",
+        null,
         "Vullaby"
     ],
     [
         "Mandibuzz",
-        "",
+        null,
         "Mandibuzz"
     ],
     [
         "Heatmor",
-        "",
+        null,
         "Heatmor"
     ],
     [
         "Durant",
-        "",
+        null,
         "Durant"
     ],
     [
         "Deino",
-        "",
+        null,
         "Deino"
     ],
     [
         "Zweilous",
-        "",
+        null,
         "Zweilous"
     ],
     [
         "Hydreigon",
-        "",
+        null,
         "Hydreigon"
     ],
     [
         "Larvesta",
-        "",
+        null,
         "Larvesta"
     ],
     [
         "Volcarona",
-        "",
+        null,
         "Volcarona"
     ],
     [
         "Cobalion",
-        "",
+        null,
         "Cobalion"
     ],
     [
         "Terrakion",
-        "",
+        null,
         "Terrakion"
     ],
     [
         "Virizion",
-        "",
+        null,
         "Virizion"
     ],
     [
@@ -3951,12 +3951,12 @@
     ],
     [
         "Reshiram",
-        "",
+        null,
         "Reshiram"
     ],
     [
         "Zekrom",
-        "",
+        null,
         "Zekrom"
     ],
     [
@@ -4031,32 +4031,32 @@
     ],
     [
         "Chespin",
-        "",
+        null,
         "Chespin"
     ],
     [
         "Quilladin",
-        "",
+        null,
         "Quilladin"
     ],
     [
         "Chesnaught",
-        "",
+        null,
         "Chesnaught"
     ],
     [
         "Fennekin",
-        "",
+        null,
         "Fennekin"
     ],
     [
         "Braixen",
-        "",
+        null,
         "Braixen"
     ],
     [
         "Delphox",
-        "",
+        null,
         "Delphox"
     ],
     [
@@ -4096,27 +4096,27 @@
     ],
     [
         "Bunnelby",
-        "",
+        null,
         "Bunnelby"
     ],
     [
         "Diggersby",
-        "",
+        null,
         "Diggersby"
     ],
     [
         "Fletchling",
-        "",
+        null,
         "Fletchling"
     ],
     [
         "Fletchinder",
-        "",
+        null,
         "Fletchinder"
     ],
     [
         "Talonflame",
-        "",
+        null,
         "Talonflame"
     ],
     [
@@ -4421,12 +4421,12 @@
     ],
     [
         "Litleo",
-        "",
+        null,
         "Litleo"
     ],
     [
         "Pyroar",
-        "",
+        null,
         "Pyroar"
     ],
     [
@@ -4506,22 +4506,22 @@
     ],
     [
         "Skiddo",
-        "",
+        null,
         "Skiddo"
     ],
     [
         "Gogoat",
-        "",
+        null,
         "Gogoat"
     ],
     [
         "Pancham",
-        "",
+        null,
         "Pancham"
     ],
     [
         "Pangoro",
-        "",
+        null,
         "Pangoro"
     ],
     [
@@ -4576,7 +4576,7 @@
     ],
     [
         "Espurr",
-        "",
+        null,
         "Espurr"
     ],
     [
@@ -4591,12 +4591,12 @@
     ],
     [
         "Honedge",
-        "",
+        null,
         "Honedge"
     ],
     [
         "Doublade",
-        "",
+        null,
         "Doublade"
     ],
     [
@@ -4611,142 +4611,142 @@
     ],
     [
         "Spritzee",
-        "",
+        null,
         "Spritzee"
     ],
     [
         "Aromatisse",
-        "",
+        null,
         "Aromatisse"
     ],
     [
         "Swirlix",
-        "",
+        null,
         "Swirlix"
     ],
     [
         "Slurpuff",
-        "",
+        null,
         "Slurpuff"
     ],
     [
         "Inkay",
-        "",
+        null,
         "Inkay"
     ],
     [
         "Malamar",
-        "",
+        null,
         "Malamar"
     ],
     [
         "Binacle",
-        "",
+        null,
         "Binacle"
     ],
     [
         "Barbaracle",
-        "",
+        null,
         "Barbaracle"
     ],
     [
         "Skrelp",
-        "",
+        null,
         "Skrelp"
     ],
     [
         "Dragalge",
-        "",
+        null,
         "Dragalge"
     ],
     [
         "Clauncher",
-        "",
+        null,
         "Clauncher"
     ],
     [
         "Clawitzer",
-        "",
+        null,
         "Clawitzer"
     ],
     [
         "Helioptile",
-        "",
+        null,
         "Helioptile"
     ],
     [
         "Heliolisk",
-        "",
+        null,
         "Heliolisk"
     ],
     [
         "Tyrunt",
-        "",
+        null,
         "Tyrunt"
     ],
     [
         "Tyrantrum",
-        "",
+        null,
         "Tyrantrum"
     ],
     [
         "Amaura",
-        "",
+        null,
         "Amaura"
     ],
     [
         "Aurorus",
-        "",
+        null,
         "Aurorus"
     ],
     [
         "Sylveon",
-        "",
+        null,
         "Sylveon"
     ],
     [
         "Hawlucha",
-        "",
+        null,
         "Hawlucha"
     ],
     [
         "Dedenne",
-        "",
+        null,
         "Dedenne"
     ],
     [
         "Carbink",
-        "",
+        null,
         "Carbink"
     ],
     [
         "Goomy",
-        "",
+        null,
         "Goomy"
     ],
     [
         "Sliggoo",
-        "",
+        null,
         "Sliggoo"
     ],
     [
         "Goodra",
-        "",
+        null,
         "Goodra"
     ],
     [
         "Klefki",
-        "",
+        null,
         "Klefki"
     ],
     [
         "Phantump",
-        "",
+        null,
         "Phantump"
     ],
     [
         "Trevenant",
-        "",
+        null,
         "Trevenant"
     ],
     [
@@ -4791,22 +4791,22 @@
     ],
     [
         "Bergmite",
-        "",
+        null,
         "Bergmite"
     ],
     [
         "Avalugg",
-        "",
+        null,
         "Avalugg"
     ],
     [
         "Noibat",
-        "",
+        null,
         "Noibat"
     ],
     [
         "Noivern",
-        "",
+        null,
         "Noivern"
     ],
     [
@@ -4821,7 +4821,7 @@
     ],
     [
         "Yveltal",
-        "",
+        null,
         "Yveltal"
     ],
     [
@@ -4835,12 +4835,12 @@
         "Zygarde"
     ],
     [
-        "50 PC Zygarde",
+        "50 Pc Zygarde",
         "50 Pc",
         "Zygarde"
     ],
     [
-        "10 PC Zygarde",
+        "10 Pc Zygarde",
         "10 Pc",
         "Zygarde"
     ],
@@ -4871,102 +4871,102 @@
     ],
     [
         "Volcanion",
-        "",
+        null,
         "Volcanion"
     ],
     [
         "Rowlet",
-        "",
+        null,
         "Rowlet"
     ],
     [
         "Dartrix",
-        "",
+        null,
         "Dartrix"
     ],
     [
         "Decidueye",
-        "",
+        null,
         "Decidueye"
     ],
     [
         "Litten",
-        "",
+        null,
         "Litten"
     ],
     [
         "Torracat",
-        "",
+        null,
         "Torracat"
     ],
     [
         "Incineroar",
-        "",
+        null,
         "Incineroar"
     ],
     [
         "Popplio",
-        "",
+        null,
         "Popplio"
     ],
     [
         "Brionne",
-        "",
+        null,
         "Brionne"
     ],
     [
         "Primarina",
-        "",
+        null,
         "Primarina"
     ],
     [
         "Pikipek",
-        "",
+        null,
         "Pikipek"
     ],
     [
         "Trumbeak",
-        "",
+        null,
         "Trumbeak"
     ],
     [
         "Toucannon",
-        "",
+        null,
         "Toucannon"
     ],
     [
         "Yungoos",
-        "",
+        null,
         "Yungoos"
     ],
     [
         "Gumshoos",
-        "",
+        null,
         "Gumshoos"
     ],
     [
         "Grubbin",
-        "",
+        null,
         "Grubbin"
     ],
     [
         "Charjabug",
-        "",
+        null,
         "Charjabug"
     ],
     [
         "Vikavolt",
-        "",
+        null,
         "Vikavolt"
     ],
     [
         "Crabrawler",
-        "",
+        null,
         "Crabrawler"
     ],
     [
         "Crabominable",
-        "",
+        null,
         "Crabominable"
     ],
     [
@@ -4991,12 +4991,12 @@
     ],
     [
         "Cutiefly",
-        "",
+        null,
         "Cutiefly"
     ],
     [
         "Ribombee",
-        "",
+        null,
         "Ribombee"
     ],
     [
@@ -5036,132 +5036,132 @@
     ],
     [
         "Mareanie",
-        "",
+        null,
         "Mareanie"
     ],
     [
         "Toxapex",
-        "",
+        null,
         "Toxapex"
     ],
     [
         "Mudbray",
-        "",
+        null,
         "Mudbray"
     ],
     [
         "Mudsdale",
-        "",
+        null,
         "Mudsdale"
     ],
     [
         "Dewpider",
-        "",
+        null,
         "Dewpider"
     ],
     [
         "Araquanid",
-        "",
+        null,
         "Araquanid"
     ],
     [
         "Fomantis",
-        "",
+        null,
         "Fomantis"
     ],
     [
         "Lurantis",
-        "",
+        null,
         "Lurantis"
     ],
     [
         "Morelull",
-        "",
+        null,
         "Morelull"
     ],
     [
         "Shiinotic",
-        "",
+        null,
         "Shiinotic"
     ],
     [
         "Salandit",
-        "",
+        null,
         "Salandit"
     ],
     [
         "Salazzle",
-        "",
+        null,
         "Salazzle"
     ],
     [
         "Stufful",
-        "",
+        null,
         "Stufful"
     ],
     [
         "Bewear",
-        "",
+        null,
         "Bewear"
     ],
     [
         "Bounsweet",
-        "",
+        null,
         "Bounsweet"
     ],
     [
         "Steenee",
-        "",
+        null,
         "Steenee"
     ],
     [
         "Tsareena",
-        "",
+        null,
         "Tsareena"
     ],
     [
         "Comfey",
-        "",
+        null,
         "Comfey"
     ],
     [
         "Oranguru",
-        "",
+        null,
         "Oranguru"
     ],
     [
         "Passimian",
-        "",
+        null,
         "Passimian"
     ],
     [
         "Wimpod",
-        "",
+        null,
         "Wimpod"
     ],
     [
         "Golisopod",
-        "",
+        null,
         "Golisopod"
     ],
     [
         "Sandygast",
-        "",
+        null,
         "Sandygast"
     ],
     [
         "Palossand",
-        "",
+        null,
         "Palossand"
     ],
     [
         "Pyukumuku",
-        "",
+        null,
         "Pyukumuku"
     ],
     [
         "Type Null",
-        "",
+        null,
         "Type Null"
     ],
     [
@@ -5326,17 +5326,17 @@
     ],
     [
         "Komala",
-        "",
+        null,
         "Komala"
     ],
     [
         "Turtonator",
-        "",
+        null,
         "Turtonator"
     ],
     [
         "Togedemaru",
-        "",
+        null,
         "Togedemaru"
     ],
     [
@@ -5351,107 +5351,107 @@
     ],
     [
         "Bruxish",
-        "",
+        null,
         "Bruxish"
     ],
     [
         "Drampa",
-        "",
+        null,
         "Drampa"
     ],
     [
         "Dhelmise",
-        "",
+        null,
         "Dhelmise"
     ],
     [
         "Jangmo O",
-        "",
+        null,
         "Jangmo O"
     ],
     [
         "Hakamo O",
-        "",
+        null,
         "Hakamo O"
     ],
     [
         "Kommo O",
-        "",
+        null,
         "Kommo O"
     ],
     [
         "Tapu Koko",
-        "",
+        null,
         "Tapu Koko"
     ],
     [
         "Tapu Lele",
-        "",
+        null,
         "Tapu Lele"
     ],
     [
         "Tapu Bulu",
-        "",
+        null,
         "Tapu Bulu"
     ],
     [
         "Tapu Fini",
-        "",
+        null,
         "Tapu Fini"
     ],
     [
         "Cosmog",
-        "",
+        null,
         "Cosmog"
     ],
     [
         "Cosmoem",
-        "",
+        null,
         "Cosmoem"
     ],
     [
         "Solgaleo",
-        "",
+        null,
         "Solgaleo"
     ],
     [
         "Lunala",
-        "",
+        null,
         "Lunala"
     ],
     [
         "Nihilego",
-        "",
+        null,
         "Nihilego"
     ],
     [
         "Buzzwole",
-        "",
+        null,
         "Buzzwole"
     ],
     [
         "Pheromosa",
-        "",
+        null,
         "Pheromosa"
     ],
     [
         "Xurkitree",
-        "",
+        null,
         "Xurkitree"
     ],
     [
         "Celesteela",
-        "",
+        null,
         "Celesteela"
     ],
     [
         "Kartana",
-        "",
+        null,
         "Kartana"
     ],
     [
         "Guzzlord",
-        "",
+        null,
         "Guzzlord"
     ],
     [
@@ -5491,32 +5491,32 @@
     ],
     [
         "Poipole",
-        "",
+        null,
         "Poipole"
     ],
     [
         "Naganadel",
-        "",
+        null,
         "Naganadel"
     ],
     [
         "Stakataka",
-        "",
+        null,
         "Stakataka"
     ],
     [
         "Blacephalon",
-        "",
+        null,
         "Blacephalon"
     ],
     [
         "Zeraora",
-        "",
+        null,
         "Zeraora"
     ],
     [
         "Meltan",
-        "",
+        null,
         "Meltan"
     ],
     [
@@ -5531,12 +5531,12 @@
     ],
     [
         "Grookey",
-        "",
+        null,
         "Grookey"
     ],
     [
         "Thwackey",
-        "",
+        null,
         "Thwackey"
     ],
     [
@@ -5551,12 +5551,12 @@
     ],
     [
         "Scorbunny",
-        "",
+        null,
         "Scorbunny"
     ],
     [
         "Raboot",
-        "",
+        null,
         "Raboot"
     ],
     [
@@ -5571,12 +5571,12 @@
     ],
     [
         "Sobble",
-        "",
+        null,
         "Sobble"
     ],
     [
         "Drizzile",
-        "",
+        null,
         "Drizzile"
     ],
     [
@@ -5591,22 +5591,22 @@
     ],
     [
         "Skwovet",
-        "",
+        null,
         "Skwovet"
     ],
     [
         "Greedent",
-        "",
+        null,
         "Greedent"
     ],
     [
         "Rookidee",
-        "",
+        null,
         "Rookidee"
     ],
     [
         "Corvisquire",
-        "",
+        null,
         "Corvisquire"
     ],
     [
@@ -5621,12 +5621,12 @@
     ],
     [
         "Blipbug",
-        "",
+        null,
         "Blipbug"
     ],
     [
         "Dottler",
-        "",
+        null,
         "Dottler"
     ],
     [
@@ -5641,37 +5641,37 @@
     ],
     [
         "Nickit",
-        "",
+        null,
         "Nickit"
     ],
     [
         "Thievul",
-        "",
+        null,
         "Thievul"
     ],
     [
         "Gossifleur",
-        "",
+        null,
         "Gossifleur"
     ],
     [
         "Eldegoss",
-        "",
+        null,
         "Eldegoss"
     ],
     [
         "Wooloo",
-        "",
+        null,
         "Wooloo"
     ],
     [
         "Dubwool",
-        "",
+        null,
         "Dubwool"
     ],
     [
         "Chewtle",
-        "",
+        null,
         "Chewtle"
     ],
     [
@@ -5686,22 +5686,22 @@
     ],
     [
         "Yamper",
-        "",
+        null,
         "Yamper"
     ],
     [
         "Boltund",
-        "",
+        null,
         "Boltund"
     ],
     [
         "Rolycoly",
-        "",
+        null,
         "Rolycoly"
     ],
     [
         "Carkol",
-        "",
+        null,
         "Carkol"
     ],
     [
@@ -5716,7 +5716,7 @@
     ],
     [
         "Applin",
-        "",
+        null,
         "Applin"
     ],
     [
@@ -5741,7 +5741,7 @@
     ],
     [
         "Silicobra",
-        "",
+        null,
         "Silicobra"
     ],
     [
@@ -5771,17 +5771,17 @@
     ],
     [
         "Arrokuda",
-        "",
+        null,
         "Arrokuda"
     ],
     [
         "Barraskewda",
-        "",
+        null,
         "Barraskewda"
     ],
     [
         "Toxel",
-        "",
+        null,
         "Toxel"
     ],
     [
@@ -5801,7 +5801,7 @@
     ],
     [
         "Sizzlipede",
-        "",
+        null,
         "Sizzlipede"
     ],
     [
@@ -5816,12 +5816,12 @@
     ],
     [
         "Clobbopus",
-        "",
+        null,
         "Clobbopus"
     ],
     [
         "Grapploct",
-        "",
+        null,
         "Grapploct"
     ],
     [
@@ -5846,12 +5846,12 @@
     ],
     [
         "Hatenna",
-        "",
+        null,
         "Hatenna"
     ],
     [
         "Hattrem",
-        "",
+        null,
         "Hattrem"
     ],
     [
@@ -5866,12 +5866,12 @@
     ],
     [
         "Impidimp",
-        "",
+        null,
         "Impidimp"
     ],
     [
         "Morgrem",
-        "",
+        null,
         "Morgrem"
     ],
     [
@@ -5886,37 +5886,37 @@
     ],
     [
         "Obstagoon",
-        "",
+        null,
         "Obstagoon"
     ],
     [
         "Perrserker",
-        "",
+        null,
         "Perrserker"
     ],
     [
         "Cursola",
-        "",
+        null,
         "Cursola"
     ],
     [
         "Sirfetchd",
-        "",
+        null,
         "Sirfetchd"
     ],
     [
         "Mr Rime",
-        "",
+        null,
         "Mr Rime"
     ],
     [
         "Runerigus",
-        "",
+        null,
         "Runerigus"
     ],
     [
         "Milcery",
-        "",
+        null,
         "Milcery"
     ],
     [
@@ -5971,27 +5971,27 @@
     ],
     [
         "Falinks",
-        "",
+        null,
         "Falinks"
     ],
     [
         "Pincurchin",
-        "",
+        null,
         "Pincurchin"
     ],
     [
         "Snom",
-        "",
+        null,
         "Snom"
     ],
     [
         "Frosmoth",
-        "",
+        null,
         "Frosmoth"
     ],
     [
         "Stonjourner",
-        "",
+        null,
         "Stonjourner"
     ],
     [
@@ -6026,7 +6026,7 @@
     ],
     [
         "Cufant",
-        "",
+        null,
         "Cufant"
     ],
     [
@@ -6041,22 +6041,22 @@
     ],
     [
         "Dracozolt",
-        "",
+        null,
         "Dracozolt"
     ],
     [
         "Arctozolt",
-        "",
+        null,
         "Arctozolt"
     ],
     [
         "Dracovish",
-        "",
+        null,
         "Dracovish"
     ],
     [
         "Arctovish",
-        "",
+        null,
         "Arctovish"
     ],
     [
@@ -6071,17 +6071,17 @@
     ],
     [
         "Dreepy",
-        "",
+        null,
         "Dreepy"
     ],
     [
         "Drakloak",
-        "",
+        null,
         "Drakloak"
     ],
     [
         "Dragapult",
-        "",
+        null,
         "Dragapult"
     ],
     [
@@ -6116,7 +6116,7 @@
     ],
     [
         "Kubfu",
-        "",
+        null,
         "Kubfu"
     ],
     [
@@ -6151,22 +6151,22 @@
     ],
     [
         "Regieleki",
-        "",
+        null,
         "Regieleki"
     ],
     [
         "Regidrago",
-        "",
+        null,
         "Regidrago"
     ],
     [
         "Glastrier",
-        "",
+        null,
         "Glastrier"
     ],
     [
         "Spectrier",
-        "",
+        null,
         "Spectrier"
     ],
     [
@@ -6186,17 +6186,17 @@
     ],
     [
         "Wyrdeer",
-        "",
+        null,
         "Wyrdeer"
     ],
     [
         "Kleavor",
-        "",
+        null,
         "Kleavor"
     ],
     [
         "Ursaluna",
-        "",
+        null,
         "Ursaluna"
     ],
     [
@@ -6211,12 +6211,12 @@
     ],
     [
         "Sneasler",
-        "",
+        null,
         "Sneasler"
     ],
     [
         "Overqwil",
-        "",
+        null,
         "Overqwil"
     ],
     [
@@ -6231,52 +6231,52 @@
     ],
     [
         "Sprigatito",
-        "",
+        null,
         "Sprigatito"
     ],
     [
         "Floragato",
-        "",
+        null,
         "Floragato"
     ],
     [
         "Meowscarada",
-        "",
+        null,
         "Meowscarada"
     ],
     [
         "Fuecoco",
-        "",
+        null,
         "Fuecoco"
     ],
     [
         "Crocalor",
-        "",
+        null,
         "Crocalor"
     ],
     [
         "Skeledirge",
-        "",
+        null,
         "Skeledirge"
     ],
     [
         "Quaxly",
-        "",
+        null,
         "Quaxly"
     ],
     [
         "Quaxwell",
-        "",
+        null,
         "Quaxwell"
     ],
     [
         "Quaquaval",
-        "",
+        null,
         "Quaquaval"
     ],
     [
         "Lechonk",
-        "",
+        null,
         "Lechonk"
     ],
     [
@@ -6291,42 +6291,42 @@
     ],
     [
         "Tarountula",
-        "",
+        null,
         "Tarountula"
     ],
     [
         "Spidops",
-        "",
+        null,
         "Spidops"
     ],
     [
         "Nymble",
-        "",
+        null,
         "Nymble"
     ],
     [
         "Lokix",
-        "",
+        null,
         "Lokix"
     ],
     [
         "Pawmi",
-        "",
+        null,
         "Pawmi"
     ],
     [
         "Pawmo",
-        "",
+        null,
         "Pawmo"
     ],
     [
         "Pawmot",
-        "",
+        null,
         "Pawmot"
     ],
     [
         "Tandemaus",
-        "",
+        null,
         "Tandemaus"
     ],
     [
@@ -6341,27 +6341,27 @@
     ],
     [
         "Fidough",
-        "",
+        null,
         "Fidough"
     ],
     [
         "Dachsbun",
-        "",
+        null,
         "Dachsbun"
     ],
     [
         "Smoliv",
-        "",
+        null,
         "Smoliv"
     ],
     [
         "Dolliv",
-        "",
+        null,
         "Dolliv"
     ],
     [
         "Arboliva",
-        "",
+        null,
         "Arboliva"
     ],
     [
@@ -6386,162 +6386,162 @@
     ],
     [
         "Nacli",
-        "",
+        null,
         "Nacli"
     ],
     [
         "Naclstack",
-        "",
+        null,
         "Naclstack"
     ],
     [
         "Garganacl",
-        "",
+        null,
         "Garganacl"
     ],
     [
         "Charcadet",
-        "",
+        null,
         "Charcadet"
     ],
     [
         "Armarouge",
-        "",
+        null,
         "Armarouge"
     ],
     [
         "Ceruledge",
-        "",
+        null,
         "Ceruledge"
     ],
     [
         "Tadbulb",
-        "",
+        null,
         "Tadbulb"
     ],
     [
         "Bellibolt",
-        "",
+        null,
         "Bellibolt"
     ],
     [
         "Wattrel",
-        "",
+        null,
         "Wattrel"
     ],
     [
         "Kilowattrel",
-        "",
+        null,
         "Kilowattrel"
     ],
     [
         "Maschiff",
-        "",
+        null,
         "Maschiff"
     ],
     [
         "Mabosstiff",
-        "",
+        null,
         "Mabosstiff"
     ],
     [
         "Shroodle",
-        "",
+        null,
         "Shroodle"
     ],
     [
         "Grafaiai",
-        "",
+        null,
         "Grafaiai"
     ],
     [
         "Bramblin",
-        "",
+        null,
         "Bramblin"
     ],
     [
         "Brambleghast",
-        "",
+        null,
         "Brambleghast"
     ],
     [
         "Toedscool",
-        "",
+        null,
         "Toedscool"
     ],
     [
         "Toedscruel",
-        "",
+        null,
         "Toedscruel"
     ],
     [
         "Klawf",
-        "",
+        null,
         "Klawf"
     ],
     [
         "Capsakid",
-        "",
+        null,
         "Capsakid"
     ],
     [
         "Scovillain",
-        "",
+        null,
         "Scovillain"
     ],
     [
         "Rellor",
-        "",
+        null,
         "Rellor"
     ],
     [
         "Rabsca",
-        "",
+        null,
         "Rabsca"
     ],
     [
         "Flittle",
-        "",
+        null,
         "Flittle"
     ],
     [
         "Espathra",
-        "",
+        null,
         "Espathra"
     ],
     [
         "Tinkatink",
-        "",
+        null,
         "Tinkatink"
     ],
     [
         "Tinkatuff",
-        "",
+        null,
         "Tinkatuff"
     ],
     [
         "Tinkaton",
-        "",
+        null,
         "Tinkaton"
     ],
     [
         "Wiglett",
-        "",
+        null,
         "Wiglett"
     ],
     [
         "Wugtrio",
-        "",
+        null,
         "Wugtrio"
     ],
     [
         "Bombirdier",
-        "",
+        null,
         "Bombirdier"
     ],
     [
         "Finizen",
-        "",
+        null,
         "Finizen"
     ],
     [
@@ -6556,7 +6556,7 @@
     ],
     [
         "Varoom",
-        "",
+        null,
         "Varoom"
     ],
     [
@@ -6591,57 +6591,57 @@
     ],
     [
         "Cyclizar",
-        "",
+        null,
         "Cyclizar"
     ],
     [
         "Orthworm",
-        "",
+        null,
         "Orthworm"
     ],
     [
         "Glimmet",
-        "",
+        null,
         "Glimmet"
     ],
     [
         "Glimmora",
-        "",
+        null,
         "Glimmora"
     ],
     [
         "Greavard",
-        "",
+        null,
         "Greavard"
     ],
     [
         "Houndstone",
-        "",
+        null,
         "Houndstone"
     ],
     [
         "Flamigo",
-        "",
+        null,
         "Flamigo"
     ],
     [
         "Cetoddle",
-        "",
+        null,
         "Cetoddle"
     ],
     [
         "Cetitan",
-        "",
+        null,
         "Cetitan"
     ],
     [
         "Veluza",
-        "",
+        null,
         "Veluza"
     ],
     [
         "Dondozo",
-        "",
+        null,
         "Dondozo"
     ],
     [
@@ -6661,17 +6661,17 @@
     ],
     [
         "Annihilape",
-        "",
+        null,
         "Annihilape"
     ],
     [
         "Clodsire",
-        "",
+        null,
         "Clodsire"
     ],
     [
         "Farigiraf",
-        "",
+        null,
         "Farigiraf"
     ],
     [
@@ -6686,82 +6686,82 @@
     ],
     [
         "Kingambit",
-        "",
+        null,
         "Kingambit"
     ],
     [
         "Great Tusk",
-        "",
+        null,
         "Great Tusk"
     ],
     [
         "Scream Tail",
-        "",
+        null,
         "Scream Tail"
     ],
     [
         "Brute Bonnet",
-        "",
+        null,
         "Brute Bonnet"
     ],
     [
         "Flutter Mane",
-        "",
+        null,
         "Flutter Mane"
     ],
     [
         "Slither Wing",
-        "",
+        null,
         "Slither Wing"
     ],
     [
         "Sandy Shocks",
-        "",
+        null,
         "Sandy Shocks"
     ],
     [
         "Iron Treads",
-        "",
+        null,
         "Iron Treads"
     ],
     [
         "Iron Bundle",
-        "",
+        null,
         "Iron Bundle"
     ],
     [
         "Iron Hands",
-        "",
+        null,
         "Iron Hands"
     ],
     [
         "Iron Jugulis",
-        "",
+        null,
         "Iron Jugulis"
     ],
     [
         "Iron Moth",
-        "",
+        null,
         "Iron Moth"
     ],
     [
         "Iron Thorns",
-        "",
+        null,
         "Iron Thorns"
     ],
     [
         "Frigibax",
-        "",
+        null,
         "Frigibax"
     ],
     [
         "Arctibax",
-        "",
+        null,
         "Arctibax"
     ],
     [
         "Baxcalibur",
-        "",
+        null,
         "Baxcalibur"
     ],
     [
@@ -6776,37 +6776,37 @@
     ],
     [
         "Gholdengo",
-        "",
+        null,
         "Gholdengo"
     ],
     [
         "Wo Chien",
-        "",
+        null,
         "Wo Chien"
     ],
     [
         "Chien Pao",
-        "",
+        null,
         "Chien Pao"
     ],
     [
         "Ting Lu",
-        "",
+        null,
         "Ting Lu"
     ],
     [
         "Chi Yu",
-        "",
+        null,
         "Chi Yu"
     ],
     [
         "Roaring Moon",
-        "",
+        null,
         "Roaring Moon"
     ],
     [
         "Iron Valiant",
-        "",
+        null,
         "Iron Valiant"
     ],
     [
@@ -6821,17 +6821,17 @@
     ],
     [
         "Walking Wake",
-        "",
+        null,
         "Walking Wake"
     ],
     [
         "Iron Leaves",
-        "",
+        null,
         "Iron Leaves"
     ],
     [
         "Dipplin",
-        "",
+        null,
         "Dipplin"
     ],
     [
@@ -6856,17 +6856,17 @@
     ],
     [
         "Okidogi",
-        "",
+        null,
         "Okidogi"
     ],
     [
         "Munkidori",
-        "",
+        null,
         "Munkidori"
     ],
     [
         "Fezandipiti",
-        "",
+        null,
         "Fezandipiti"
     ],
     [
@@ -6911,32 +6911,32 @@
     ],
     [
         "Archaludon",
-        "",
+        null,
         "Archaludon"
     ],
     [
         "Hydrapple",
-        "",
+        null,
         "Hydrapple"
     ],
     [
         "Gouging Fire",
-        "",
+        null,
         "Gouging Fire"
     ],
     [
         "Raging Bolt",
-        "",
+        null,
         "Raging Bolt"
     ],
     [
         "Iron Boulder",
-        "",
+        null,
         "Iron Boulder"
     ],
     [
         "Iron Crown",
-        "",
+        null,
         "Iron Crown"
     ],
     [
@@ -6956,182 +6956,182 @@
     ],
     [
         "Pecharunt",
-        "",
+        null,
         "Pecharunt"
     ],
     [
         "Alola Rattata",
-        "",
+        null,
         "Alola Rattata"
     ],
     [
         "Alola Raticate",
-        "",
+        null,
         "Alola Raticate"
     ],
     [
         "Alola Raichu",
-        "",
+        null,
         "Alola Raichu"
     ],
     [
         "Alola Sandshrew",
-        "",
+        null,
         "Alola Sandshrew"
     ],
     [
         "Alola Sandslash",
-        "",
+        null,
         "Alola Sandslash"
     ],
     [
         "Alola Vulpix",
-        "",
+        null,
         "Alola Vulpix"
     ],
     [
         "Alola Ninetales",
-        "",
+        null,
         "Alola Ninetales"
     ],
     [
         "Alola Diglett",
-        "",
+        null,
         "Alola Diglett"
     ],
     [
         "Alola Dugtrio",
-        "",
+        null,
         "Alola Dugtrio"
     ],
     [
         "Alola Meowth",
-        "",
+        null,
         "Alola Meowth"
     ],
     [
         "Alola Persian",
-        "",
+        null,
         "Alola Persian"
     ],
     [
         "Alola Geodude",
-        "",
+        null,
         "Alola Geodude"
     ],
     [
         "Alola Graveler",
-        "",
+        null,
         "Alola Graveler"
     ],
     [
         "Alola Golem",
-        "",
+        null,
         "Alola Golem"
     ],
     [
         "Alola Grimer",
-        "",
+        null,
         "Alola Grimer"
     ],
     [
         "Alola Muk",
-        "",
+        null,
         "Alola Muk"
     ],
     [
         "Alola Exeggutor",
-        "",
+        null,
         "Alola Exeggutor"
     ],
     [
         "Alola Marowak",
-        "",
+        null,
         "Alola Marowak"
     ],
     [
         "Eternal Floette",
-        "",
+        null,
         "Eternal Floette"
     ],
     [
         "Galar Meowth",
-        "",
+        null,
         "Galar Meowth"
     ],
     [
         "Galar Ponyta",
-        "",
+        null,
         "Galar Ponyta"
     ],
     [
         "Galar Rapidash",
-        "",
+        null,
         "Galar Rapidash"
     ],
     [
         "Galar Slowpoke",
-        "",
+        null,
         "Galar Slowpoke"
     ],
     [
         "Galar Slowbro",
-        "",
+        null,
         "Galar Slowbro"
     ],
     [
         "Galar Farfetchd",
-        "",
+        null,
         "Galar Farfetchd"
     ],
     [
         "Galar Weezing",
-        "",
+        null,
         "Galar Weezing"
     ],
     [
         "Galar Mr Mime",
-        "",
+        null,
         "Galar Mr Mime"
     ],
     [
         "Galar Articuno",
-        "",
+        null,
         "Galar Articuno"
     ],
     [
         "Galar Zapdos",
-        "",
+        null,
         "Galar Zapdos"
     ],
     [
         "Galar Moltres",
-        "",
+        null,
         "Galar Moltres"
     ],
     [
         "Galar Slowking",
-        "",
+        null,
         "Galar Slowking"
     ],
     [
         "Galar Corsola",
-        "",
+        null,
         "Galar Corsola"
     ],
     [
         "Galar Zigzagoon",
-        "",
+        null,
         "Galar Zigzagoon"
     ],
     [
         "Galar Linoone",
-        "",
+        null,
         "Galar Linoone"
     ],
     [
         "Galar Darumaka",
-        "",
+        null,
         "Galar Darumaka"
     ],
     [
@@ -7146,92 +7146,92 @@
     ],
     [
         "Galar Yamask",
-        "",
+        null,
         "Galar Yamask"
     ],
     [
         "Galar Stunfisk",
-        "",
+        null,
         "Galar Stunfisk"
     ],
     [
         "Hisui Growlithe",
-        "",
+        null,
         "Hisui Growlithe"
     ],
     [
         "Hisui Arcanine",
-        "",
+        null,
         "Hisui Arcanine"
     ],
     [
         "Hisui Voltorb",
-        "",
+        null,
         "Hisui Voltorb"
     ],
     [
         "Hisui Electrode",
-        "",
+        null,
         "Hisui Electrode"
     ],
     [
         "Hisui Typhlosion",
-        "",
+        null,
         "Hisui Typhlosion"
     ],
     [
         "Hisui Qwilfish",
-        "",
+        null,
         "Hisui Qwilfish"
     ],
     [
         "Hisui Sneasel",
-        "",
+        null,
         "Hisui Sneasel"
     ],
     [
         "Hisui Samurott",
-        "",
+        null,
         "Hisui Samurott"
     ],
     [
         "Hisui Lilligant",
-        "",
+        null,
         "Hisui Lilligant"
     ],
     [
         "Hisui Zorua",
-        "",
+        null,
         "Hisui Zorua"
     ],
     [
         "Hisui Zoroark",
-        "",
+        null,
         "Hisui Zoroark"
     ],
     [
         "Hisui Braviary",
-        "",
+        null,
         "Hisui Braviary"
     ],
     [
         "Hisui Sliggoo",
-        "",
+        null,
         "Hisui Sliggoo"
     ],
     [
         "Hisui Goodra",
-        "",
+        null,
         "Hisui Goodra"
     ],
     [
         "Hisui Avalugg",
-        "",
+        null,
         "Hisui Avalugg"
     ],
     [
         "Hisui Decidueye",
-        "",
+        null,
         "Hisui Decidueye"
     ],
     [
@@ -7251,12 +7251,12 @@
     ],
     [
         "Paldea Wooper",
-        "",
+        null,
         "Paldea Wooper"
     ],
     [
         "Bloodmoon Ursaluna",
-        "",
+        null,
         "Bloodmoon Ursaluna"
     ]
 ]
