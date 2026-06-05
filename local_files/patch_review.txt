@@ -1,4 +1,9 @@
+Poliwag: biomes changed from [[1230, 'sea', [40]], [1235, 'swamp', [20, 60, 120, 100]]] to [[1230, 'sea', [40]], [1235, 'swamp', [20, 60, 100, 120]]]
+Poliwhirl: biomes changed from [[1230, 'sea', [40]], [1235, 'swamp', [20, 60, 120, 100]]] to [[1230, 'sea', [40]], [1235, 'swamp', [20, 60, 100, 120]]]
+Slowpoke: biomes changed from [[1223, 'lake', [40, 60, 120, 100]], [1230, 'sea', [23, 52]], [1219, 'ice-cave', [40]]] to [[1223, 'lake', [40, 60, 100, 120]], [1230, 'sea', [23, 52]], [1219, 'ice-cave', [40]]]
 Gigantamax Eevee: newVariants changed from  to 1
+Tyrogue: biomes changed from [[1210, 'construction-site', [80]], [1212, 'dojo', [80, 60, 120, 100]]] to [[1210, 'construction-site', [80]], [1212, 'dojo', [80, 60, 100, 120]]]
+Amoonguss: biomes changed from [[1221, 'jungle', [32, 72, 103, 83]], [1217, 'grass', [40]]] to [[1221, 'jungle', [32, 72, 83, 103]], [1217, 'grass', [40]]]
 Incarnate Tornadus: newVariants changed from  to 1
 Therian Tornadus: newVariants changed from  to 1
 Incarnate Thundurus: newVariants changed from  to 1

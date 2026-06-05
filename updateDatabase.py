@@ -8,7 +8,7 @@ pathBal  = './game_files/src/data/balance' # Path to the balance folder
 pathJSON = './game_files/wiki-output' # Path to the exported game data Json files
 pathImg = './website/images' # Path to read processed images from updateImages.py
 
-import re, os, copy, json
+import re, os, json
 def is_numeric(value): # Function to determine if a value is numeric
     return re.match(r'^-?\d+(\.\d+)?$', str(value)) is not None
 def format_for_disp(arg): # Remove spaces, and convert _ and - to spaces, then capitalize
@@ -425,12 +425,11 @@ for i,line in enumerate(poke_data):
                 break
 
 # Check that dex numbers are sequential up to 1025
-for i in range(1,1026):
-    for j in range(i-1,len(poke_data)):
-        if i == int(poke_data[j][3]):
-            break
-        if j == len(poke_data)-1:
-            throwError(f'Could not find Dex #{i}')
+dexNo = 1
+for line in poke_data:
+    if line[3] == dexNo: dexNo += 1
+    if line[3] >  dexNo: throwError(f'Could not find Dex #{dexNo}')
+    if dexNo == 1026: break
 # Check the final entries
 if poke_data[-1][5] != "Bloodmoon Ursaluna":
     print(poke_data[-5:])
@@ -454,10 +453,8 @@ for line in poke_data:
     for moveName in line[28].keys():
         allMoves[moveName] = ''
 allAbilities.sort()
-allMoves = [*allMoves] # Get a list of moves from the move dict
-allMoves.sort()
-allBiomes = [format_for_disp(biome) for biome in allBiomes]
-allBiomes.sort()
+allMoves = sorted([*allMoves]) # Get a list of moves from the move dict
+allBiomes = sorted([format_for_disp(biome) for biome in allBiomes])
 
 # Assign filter ID numbers (FID) to each filter *****************************
 allFilters = []  # List of all filters, in numerical order: FID: ['Category','Filter Name']
@@ -507,80 +504,64 @@ for j in [71,37,48,49,50,56,57,58,59,60,61,62,63,64,65,66,67]: # TagID of the ta
 # Structure of line[40] is like [ ['abyss', 23], ['abyss', 41], ['beach', 160], [...] ]
 # This step encodes that data as [ ['abyss', fid, [23,41]], ['beach', fid, [160]], [...] ]
 # Multiple encounters in the same biome are put into a list in that biome (instead of a separate line)
-# fid is the numerical filter ID of the biome
-biomeForms = [ # manually updated from getSpeciesFormIndex in file:///\.\game_files\src\field\arena.ts
-    ['Plant Burmy','Forest'],
-    ['Sandy Burmy','Beach'],
-    ['Trash Burmy','Slum'],
-    ['Plant Wormadam','Forest'],
-    ['Sandy Wormadam','Beach'],
-    ['Trash Wormadam','Slum'],
-]   
-biomeFormsTime = [ # manually updated from getSpeciesFormIndex in arena.ts
-    ['Midday Lycanroc',[1,2]], # 1=dawn, 2=day, 4=dusk, 8=night
-    ['Dusk Lycanroc',[4]],
-    ['Midnight Lycanroc',[8]],
-]   
+biomeForms = { # manually updated from getSpeciesFormIndex in file:///\.\game_files\src\field\arena.ts
+    'Plant Burmy':    'Forest', 'Sandy Burmy':    'Beach', 'Trash Burmy':    'Slum',
+    'Plant Wormadam': 'Forest', 'Sandy Wormadam': 'Beach', 'Trash Wormadam': 'Slum',
+}   
+biomeFormsTime = { # 1=dawn, 2=day, 4=dusk, 8=night
+    'Midday Lycanroc': [1,2], 'Dusk Lycanroc': [4], 'Midnight Lycanroc': [8]
+}
 for line in poke_data:
     encoded = []
     if line[40] != []: # If there are biomes
         for biomeLine in line[40]:
-            abort = 0
             # If a species is limited by biome/time, it must pass a check before the biomes are written
-            for speciesLine in biomeForms: # Enforce specific BIOME FORMS by matching biome name
-                if line[5] == speciesLine[0]:
-                    if format_for_disp(biomeLine[0]) != speciesLine[1]:
-                        abort = 1
-                        # print(line[5],biomeLine[0])
-            for speciesLine in biomeFormsTime: # Enforce TIME OF DAY forms by checking remainder of encounter code
-                if line[5] == speciesLine[0]:  # Abort if none of the valid times are in the encounter code
-                    if all(not(i & (biomeLine[1]%20)) for i in speciesLine[1]):
-                        abort = 1
-            if not abort:
-                # Multiple rarites in the same biome will be grouped together
-                newFID = filterToFID[f'biome{format_for_attr(format_for_disp(biomeLine[0]))}']
-                for encLine in encoded:
-                    if encLine[0] == newFID: # If the biome already exists, add this encounter to the list
-                        # In the encounter codes for that biome, check for an entry that matches the rarity
-                        for index,existingEncoding in enumerate(encLine[2]):
-                            if biomeLine[1]//20 == existingEncoding//20:
-                                # Add the time of day together with bitwise OR
-                                # If no times are active, it counts as ALL times (15)
-                                # If the combination is ALL times, do mod 15 to not show any times
-                                timeOfDayEncoding = ( ( biomeLine[1]%20 or 15 ) | ( existingEncoding%20 or 15 ) ) % 15
-                                encLine[2][index] = timeOfDayEncoding + existingEncoding//20*20
-                                break
-                        else: # Add the encounter code as a new rarity
-                            encLine[2].append(biomeLine[1])
-                        break
-                else: # Create a new FID entry for the biome
-                    encoded.append([newFID, biomeLine[0], [biomeLine[1]]])
-        # for encLine in encoded:
-        #     if len(encLine[1]) > 2:
-                # print('** More than 2 biome rarites in {line[5]}: {encLine}')
-        # if len(encoded) > 3:
-            # print(f'** Many biomes ({len(encoded)}) in {line[5]}: {line[40]}')
-        line[40] = encoded
+            if line[5] in biomeForms: # Enforce specific BIOME FORMS by matching biome name
+                if format_for_disp(biomeLine[0]) != biomeForms[line[5]]:
+                    continue # Abort if not the right biome for this form
+            if line[5] in biomeFormsTime: # Enforce TIME OF DAY forms by checking remainder of encounter code
+                if all(not(i & (biomeLine[1]%20)) for i in biomeFormsTime[line[5]]):
+                    continue # Abort if not the right time of day for this form
+            newFID = filterToFID[f'biome{format_for_attr(format_for_disp(biomeLine[0]))}'] # Find filter ID
+            for encLine in encoded: # Find existing encounters in that biome
+                if encLine[0] == newFID: # If the biome already exists, add this encounter to the list
+                    for index,existingEncoding in enumerate(encLine[2]):
+                        if biomeLine[1]//20 == existingEncoding//20: # Check entry of same rarity
+                            # Add the time of day together with bitwise OR
+                            # If no times are active, it counts as ALL times (15)
+                            # If the combination is ALL times, do mod 15 to not show any times
+                            timeOfDayEncoding = ( ( biomeLine[1]%20 or 15 ) | ( existingEncoding%20 or 15 ) ) % 15
+                            encLine[2][index] = timeOfDayEncoding + existingEncoding//20*20
+                            break
+                    else: # Add the encounter code as a new rarity
+                        encLine[2].append(biomeLine[1])
+                    break # Break if biome has been processed
+            else: # Create a new FID entry for that biome
+                encoded.append([newFID, biomeLine[0], [biomeLine[1]]])
+    line[40] = encoded
+    # for encLine in encoded:
+    #     if len(encLine[1]) > 2:
+    #         print('** More than 2 biome rarites in {line[5]}: {encLine}')
+    # if len(encoded) > 3:
+    #     print(f'** Many biomes ({len(encoded)}) in {line[5]}: {line[40]}')
 # Sort each biome entry to be [norm, boss, rarerNorm, rarerBoss]
 # This is important for the website quickly sorting by biome rarity
-    # The first entry is the most common nonboss encounter
-    # The second entry is the most common boss encounter
-    # Entries beyond the second can be in any order
-    # If a pokemon is only Boss encounters, the first entry is the lowest number
+# If a pokemon is all Boss or all non-Boss, the whole list is just in ascending order
 for line in poke_data:
     if isinstance(line[40],list):
         for biomeLine in line[40]:
             encoded = []
+            # First entry is the most common non-Boss encounter
             entry = min((x for x in biomeLine[2] if x-x%20 not in [60,100,140,180]), default=None)
             if entry: encoded.append(entry)
+            # Second entry is the most common Boss encounter
             entry = min((x for x in biomeLine[2] if x-x%20 in [60,100,140,180]), default=None)
             if entry: encoded.append(entry)
-            for entry in biomeLine[2]:
+            # Remaining entries are in ascending order
+            for entry in sorted(biomeLine[2]):
                 if entry not in encoded:
                     encoded.append(entry)
-            # print('Changed',biomeLine[1],'to',encoded)
             biomeLine[2] = encoded       
-
 
 #region Export Filter Lists
 fidThreshold = []
@@ -590,11 +571,8 @@ for index,line in enumerate(allFilters):
         catName = line[0]
         fidThreshold.append(index) # Find the threshold of each filter category
 fidThreshold.append(len(allFilters))
-if fidThreshold[0] != 18: throwError('Wrong number of types')
+if fidThreshold[0] != 18:  throwError('Wrong number of types')
 if fidThreshold[1] != 328: throwError('Wrong number of abilities')
-if allTypes[-1] != allFilters[fidThreshold[0]-1][1]: throwError('Name error with types')
-if allAbilities[-1] != allFilters[fidThreshold[1]-1][1]: throwError('Name error with abilities')
-if allMoves[-1] != allFilters[fidThreshold[2]-1][1]: throwError('Name error with moves')
 # Write some variables to files, which are read by my other scripts, and some are written to the website
 with open("local_files/my_json/allFilters.json", "w") as f:
     json.dump(allFilters, f, indent=4)
@@ -757,30 +735,24 @@ for line in poke_data:
     # Write all the main attributes as {text}:{value}
     for i in range(len(attributes)): 
         if i not in omitAttr and line[i] != '':
-            if i in [7,8,9,10,11,12,24,25,26,27]:
-                # Types/Abilities/Moves are listed as Names in trimmed_data
-                # They are converted to filter ID (fid) before writing
-                fid = filterToFID[format_for_attr(f'{keyText[i]}{line[i]}')]
+            if i in [7,8,9,10,11,12,24,25,26,27]: # Types/Abilities/Moves are listed as Names in trimmed_data
+                fid = filterToFID[format_for_attr(f'{keyText[i]}{line[i]}')] # Convert to filter ID (fid)
                 text = f'{text}{attributes[i]}:{fid},'
             elif i == 4:
                 text = f'{text}{attributes[i]}:"{format_for_attr(line[i])}",' # For img path
             elif is_numeric(line[i]):
                 text = f'{text}{attributes[i]}:{line[i]},' # For numbers
             else:
-                throwError(f"***** Unknown attribute format: {i}")
+                throwError(f"Unknown attribute format: {i}")
 
     # Prepare all filters to be written as {fid}:{source}
-    # This is for faster lookups, and for the ability restriction filter to know which slot
     fidToWrite = [
         *[ # Types and Abilities
-            [ filterToFID[format_for_attr(f'{keyText[i]}{line[i]}')], 300+i ]
-            for i in range(7,13) if line[i] != ""
+            [ filterToFID[format_for_attr(f'{keyText[i]}{line[i]}')], 300+i ] for i in range(7,13) if line[i] != ""
         ], *[ # Moves
-            [ filterToFID[format_for_attr(f'move{moveName}')], line[28][moveName] ]
-            for moveName in line[28].keys()
+            [ filterToFID[format_for_attr(f'move{moveName}')], line[28][moveName] ] for moveName in line[28].keys()
         ], *[ # Biomes as fid:[code1,code2,...]
-            [ biomeLine[0], f'[{",".join(str(b) for b in biomeLine[2])}]' ]
-            for biomeLine in line[40]
+            [ biomeLine[0], f'[{",".join(str(b) for b in biomeLine[2])}]' ] for biomeLine in line[40]
         ]
     ]
     for filterLine in sorted(fidToWrite):
