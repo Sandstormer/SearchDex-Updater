@@ -15,6 +15,7 @@ def format_for_disp(arg): # Remove spaces, and convert _ and - to spaces, then c
     if arg == None: return None
     return arg.replace('_',' ').replace('-',' ').title()
 def format_for_attr(arg): # Remove spaces, all lower case
+    if arg == None: return None
     return arg.replace(' ','').lower()
 def throwError(text = ''):
     print(f'***** Major Error Found ¯\_(ツ)_/¯\n***** {text}')
@@ -108,8 +109,8 @@ for i, specLine in enumerate(species_data): # Function for reading from game dat
     outputLine = ['' for _ in range(47)] 
 
     outputLine[0] = i # row number [0]
-    outputLine[1] = format_for_disp(specLine["formKey"]) # form key [1]
-    outputLine[2] = 0 if outputLine[1] == None else 1 # parent row number [2] !!!!!!!!!!!!!!!!!!!!!!
+    outputLine[1] = format_for_disp(specLine["formKey"]) # Form Key [1] (used for actual name)
+    outputLine[2] = format_for_attr(specLine["form"]) # Form Name [2] (used for move lookup)
     outputLine[3] = specLine["dexNum"] # dex number [3]
     outputLine[4] = specLine["spriteKey"] # image filename [4]
     outputLine[5] = format_for_disp(specLine["id"]) # display name [5]
@@ -180,7 +181,7 @@ for i, specLine in enumerate(species_data): # Function for reading from game dat
 
     # Many attributes are given the default values of '', and filled in later, including:
     # Egg Moves [24-27], Shiny Variants [31], familyFID [38], freshStart [39], Newly Added Variants [43]
-    # starterRow [34] is the row of starter evo (similar to [2] being row of parent)
+    # starterRow [34] is the row of starter evo
     # starterIndex [35] is the speciesID [36] of the starter evo
     # speciesID [36] is the number for lookup on the SearchDex (row number of trimmed_data)
     # Exclusive class [45] ( '' = regular, 1 = eggExc, 2 = baby, 3 = paradox, 4 = eterna, 5 = starmobile )
@@ -199,21 +200,22 @@ for i, specLine in enumerate(species_data): # Function for reading from game dat
             if currentCode != None and currentCode < 200: return # Don't replace level moves with TM moves
         if code < 200 and currentCode != None: return # Don't replace egg moves with level moves
         outputLine[28][format_for_disp(moveName)] = code
-    # Import egg moves from the starter
+    # Import egg moves from the starter **********
     outputLine[24:28] = egg_move_data[outputLine[46]].keys() # Put egg moves in [24-27]
     for move in egg_move_data[outputLine[46]].keys(): # Add egg moves to the move dictionary [28]
         outputLine[28][move] = egg_move_data[outputLine[46]][move] # Add the egg move to the move dict
-    if outputLine[3] in level_move_data: # Add level moves, if species is listed
+    if outputLine[3] in level_move_data: # If species is listed, add level moves **********
         for moveName, moveCode in level_move_data[outputLine[3]][None]: # For all forms
             assignMoveCode(moveCode)
-        if specLine["formKey"] != None and specLine["formKey"] in level_move_data[outputLine[3]]:
+        if specLine["formKey"] != None and specLine["formKey"] in level_move_data[outputLine[3]]: # Uses form key
             for moveName, moveCode in level_move_data[outputLine[3]][specLine["formKey"]]: # For specific forms
                 assignMoveCode(moveCode)
-    if outputLine[3] in tm_move_data: # Add level moves, if species is listed
+    if outputLine[3] in tm_move_data: # If species is listed, add TM moves **********
         for moveName in tm_move_data[outputLine[3]][None]: # For all forms
             assignMoveCode(tm_tier_data[moveName])
-        if specLine["formKey"] != None and specLine["formKey"] in tm_move_data[outputLine[3]]:
-            for moveName in tm_move_data[outputLine[3]][specLine["formKey"]]: # For specific forms
+        tmKey = outputLine[2] if specLine["formKey"] == "" else specLine["formKey"] # Inconsistent !!!!!!!!!!!!!
+        if tmKey != None and tmKey in tm_move_data[outputLine[3]]:
+            for moveName in tm_move_data[outputLine[3]][tmKey]: # For specific forms
                 assignMoveCode(tm_tier_data[moveName])
 
     poke_data.append(outputLine)
