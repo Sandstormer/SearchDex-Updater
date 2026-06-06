@@ -621,6 +621,11 @@ attPatchCount = [0 for arg in attNames] # How many times each attribute was chan
 eggPatchCount = [0 for arg in poke_data] # How many times any egg move was changed
 patch_review = [] # Readable review of patch notes in the console
 patch_data = {} # Numerical patch data imported to the SearchDex
+def MoveSrcText(value):
+    if value == -1: return "mushroom"
+    if value == 0: return "evolution"
+    if value < 200: return f"level {value}"
+    return { 201:"Egg & Common TM", 202:"Egg & Great TM", 203:"Egg & Ultra TM", 204:"Egg Move", 205:"Rare Egg & Common TM", 206:"Rare Egg & Great TM", 207:"Rare Egg & Ultra TM", 208:"Rare Egg Move", 209:"Common TM", 210:"Great TM", 211:"Ultra TM" }[value]           
 for i,line in enumerate(poke_data):
     # Find where the species is, in _prev (the index may be different)
     for ii in range(i-10,min(i+10,len(trimmed_data_prev))):
@@ -646,26 +651,22 @@ for i,line in enumerate(poke_data):
             # For all the main values, they are only 'changed'
             if (not soloAttr and j not in omitAttr) or j in soloAttr: 
                 if j == 28: # For the move dict, they are either 'added' or 'removed'
-                    # src = -1:mushroom, 0:evo, 1-200:level, 201-203:egg&TM, 204:egg, 205-207:rare&TM, 208:rare, 209-211:TM
                     for key,value in line[28].items():
-                        if value < 200 or value > 208: # Ignore egg moves
-                            if key in prevLine[28]:
-                                if prevLine[28][key] != value:
-                                    print(line[5],'move',key,'changed from',prevLine[28][key],'to',value)
-                                    if line[33] and not [41]:
-                                        patch_review.append(f'{key}: {prevLine[28][key]} > {value}')
-                            else:
-                                moveCode = "Level" if value < 200 else "TM"
-                                print(moveCode,'Move',key,'added to',line[5])
-                                if line[33] and not [41]:
-                                    patch_review.append(f'{key}: Added ({value})')
+                        if value not in [204,208]: # Ignore egg moves
+                            if key in prevLine[28] and prevLine[28][key] not in [204,208]:
+                                valuePrev = prevLine[28][key]
+                                if valuePrev != value: # If move is different in new vs old data
+                                    patch_review.append(f'{line[5]}: {key} changed from {MoveSrcText(valuePrev)} to {MoveSrcText(value)}')
+                            else: # If new move is not in old data
+                                moveKind = "Level" if value < 200 else "TM"
+                                patch_review.append(f'{line[5]}: {key} added to {moveKind} moves')
                     for key,value in prevLine[28].items():
-                        if key not in line[28] and 208 < value < 200:
-                            print('Move',key,'removed from',line[5])
-                            if line[33] and not [41]:
-                                patch_review.append(f'{key}: Removed ({value})')
+                        if key not in line[28] and value not in [204,208]: # If old move missing from new data
+                            moveKind = "Level" if value < 200 else "TM"
+                            patch_review.append(f'{line[5]}: {key} removed from {moveKind} moves')
                 elif format_for_attr(str(line[j])) != format_for_attr(str(prevLine[j])): # Compare all other attributes
-                    patch_review.append(f'{line[5]}: {attNames[j]} changed from {prevLine[j]} to {line[j]}')
+                    if j not in [24,25,26,27] or ( line[33] and not line[41] ): # Don't show egg move changes on evolutions
+                        patch_review.append(f'{line[5]}: {attNames[j]} changed from {prevLine[j]} to {line[j]}')
                     if j in [12,24,25,26,27,29,30]:
                         if j == 12: # Passive
                             preFID = filterToFID[f'ability{format_for_attr(prevLine[j])}']
