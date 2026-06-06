@@ -23,6 +23,7 @@ def throwError(text = ''):
     print('***** Ignoring error...')
 
 #region Read Game Data
+print("\n=========== START OF MAIN SCRIPT ===========\n")
 with open(f"{pathJSON}/species.json", "r", encoding="utf-8", errors="replace") as f:
     species_data = json.load(f)
 with open(f"{pathJSON}/evolutions.json", "r", encoding="utf-8", errors="replace") as f:
@@ -105,6 +106,7 @@ print('Finished reading egg move data')
 
 poke_data = []
 #region Assign Pokemon Data
+print("\nStarting to assign pokemon data\n")
 for i, thisData in enumerate(species_data): # Function for reading from game data
     line = ['' for _ in range(47)] 
 
@@ -129,7 +131,7 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     line[8] = '' if typeTwo == line[7] or typeTwo == None else typeTwo # Type 2 [8]
     line[9] = format_for_disp(thisData["ability1"]) # Ability 1 [9]
     abilityTwo = format_for_disp(thisData["ability2"])
-    line[10] = '' if abilityTwo == line[9] or abilityTwo == "None" else abilityTwo # Ability 2 [10] !!!!!!!!!! remove none? and on 11
+    line[10] = '' if abilityTwo == line[9] or abilityTwo == "None" else abilityTwo # Ability 2 [10]
     abilityHidden = format_for_disp(thisData["hiddenAbility"])
     line[11] = '' if abilityHidden == line[9] or abilityHidden == "None" else abilityHidden # Hidden ability [11]
     line[12] = format_for_disp(thisData["passive"]) # Passive [12]
@@ -141,11 +143,8 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     line[32] = thisData["generation"] # Generation [32]
 
     eggTier = thisData["eggTier"] # Egg Tier [30]
-    eggTierValues = { 'COMMON':0, 'RARE':1, 'EPIC':2, 'LEGENDARY':4 }
-    if line[5] in ['Phione','Manaphy']:
-        line[30] = 3
-    elif eggTier != None:
-        line[30] = eggTierValues[eggTier]
+    eggTierValues = { None:'', 'COMMON':0, 'RARE':1, 'EPIC':2, 'LEGENDARY':4 }
+    line[30] = 3 if line[5] in ['Phione','Manaphy'] else eggTierValues[eggTier]
         
     # specKey [37] is the text of just the Species (no form, except regionals)
     line[37] = format_for_disp(thisData["id"]) # Used for "Related" filters, biome data, and translation lookup
@@ -173,7 +172,7 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     if speciesName in megaList:     formExclusive = 2 # New Mega
     if 'Gigantamax' in speciesName: formExclusive = 3 # Giga
     # In-game, the form is chosen from getSpeciesFormIndex in src/battle-scene.ts
-    # Some forms have the wrong isStarterSelectable in balance/pokemon-species.ts (error with the game code)
+    # Some forms have the wrong isStarterSelectable in the species definition (error with the game code)
     if 'Minior'   in speciesName and 'Meteor' not in speciesName: formExclusive = 4  # Force minior core to count as transformed
     if 'Maushold' in speciesName or 'Dudunsparce' in speciesName: formExclusive = '' # Force those forms to be not exclusive
     line[41] = formExclusive
@@ -182,7 +181,7 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     # Egg Moves [24-27], Shiny Variants [31], familyFID [38], freshStart [39], Newly Added Variants [43]
     # starterRow [34] is the row of starter evo
     # starterIndex [35] is the speciesID [36] of the starter evo
-    # speciesID [36] is the number for lookup on the SearchDex (row number of trimmed_data)
+    # speciesID [36] is the number for lookup on the SearchDex (row number of poke_data)
     # Exclusive class [45] ( '' = regular, 1 = eggExc, 2 = baby, 3 = paradox, 4 = eterna, 5 = starmobile )
 
     #region Assign Moves
@@ -207,6 +206,7 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
         for moveName, moveCode in level_move_data[line[3]][None]: # For all forms
             assignMoveCode(moveCode)
         if thisData["formKey"] != None and thisData["formKey"] in level_move_data[line[3]]: # Uses form key
+            print(f"Imported unique level moves for {line[5]}")
             for moveName, moveCode in level_move_data[line[3]][thisData["formKey"]]: # For specific forms
                 assignMoveCode(moveCode)
     if line[3] in tm_move_data: # If species is listed, add TM moves **********
@@ -214,10 +214,12 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
             assignMoveCode(tm_tier_data[moveName])
         tmKey = line[2] if thisData["formKey"] == "" else thisData["formKey"] # Inconsistent !!!!!!!!!!!!!
         if tmKey != None and tmKey in tm_move_data[line[3]]:
+            print(f"Imported unique TM moves for {line[5]}")
             for moveName in tm_move_data[line[3]][tmKey]: # For specific forms
                 assignMoveCode(tm_tier_data[moveName])
 
     poke_data.append(line)
+print("\nFinished assigning pokemon data\n")
 
 #region Propagate Cost & Egg
 for line in poke_data:
@@ -232,11 +234,9 @@ for evoLine in evolution_data: # Find pokemon that are not fully evolved
     for childLine in poke_data:
         if preEvo == childLine[37]:
             childLine[44] = '' # Set the child to not be fullyEvolved
-
-# Propagate data via evolution **************************
 #region Propagate Biomes
-for stages in range(2): # Up to 2 evolutions
-    for evoLine in evolution_data: # Assign data through evolution **********
+for stages in range(2): # Propagate biomes via up to 2 evolutions **************************
+    for evoLine in evolution_data:
         preEvo = format_for_disp(evoLine["id"])
         for childLine in poke_data:
             if preEvo == childLine[37]: # Find the childLine, break when matching
@@ -294,7 +294,7 @@ for line in poke_data: # Check for empty properties in full_data
                         line[45] = 2 # Exclusive to baby
                         break
         # if line[45] == 1: print('Egg Exclusive:',line[5])
-        if line[45] == 2: print('Baby Egg Exclusive:',line[5])
+        # if line[45] == 2: print('Baby Egg Exclusive:',line[5])
     elif line[40] != [] and line[40][0][0] == 'end':
         if 'Eternatus' in line[5]:
             # print('Eternatus:',line[5])
@@ -354,9 +354,9 @@ print('Checking for errors...')
 # Use the default image if unique form image does not exist
 for i in range(len(poke_data)):
     if not os.path.isfile(f'{pathImg}/{poke_data[i][4]}_0.png'): # Check if the given img does not exist
-        # print(f'{trimmed_data[i][5]}: Could not find {trimmed_data[i][4]}')
+        # print(f'{poke_data[i][5]}: Could not find {poke_data[i][4]}')
         if os.path.isfile(f'{pathImg}/{poke_data[i][3]}_0.png'): # Check if the base img exists
-            # print(f'{trimmed_data[i][5]}: Replaced {trimmed_data[i][4]} with base image')
+            # print(f'{poke_data[i][5]}: Replaced {poke_data[i][4]} with base image')
             poke_data[i][4] = f'{poke_data[i][3]}' # Get base image from dexno
         elif poke_data[i][3] == poke_data[i-1][3]: # If same species as one above
             poke_data[i][4] = poke_data[i-1][4] # Take image from form above
@@ -460,7 +460,7 @@ allBiomes = sorted([format_for_disp(biome) for biome in allBiomes])
 # Assign filter ID numbers (FID) to each filter *****************************
 allFilters = []  # List of all filters, in numerical order: FID: ['Category','Filter Name']
 filterToFID = {} # Get FID from name: e.g. filterToFID('typebug') = FID
-# All strings from trimmed_data are encoded as FID before writing to the website data
+# All strings from poke_data are encoded as FID before writing to the website data
 for type in allTypes:
     filterToFID[f'type{format_for_attr(type)}'] = len(allFilters)
     allFilters.append(['Type',type])
@@ -586,21 +586,21 @@ allSpecies = [[line[5],line[1],line[37]] for line in poke_data]
 with open("local_files/my_json/allSpecies.json", "w") as f:
     json.dump(allSpecies, f, indent=4)
 
-input('\nNo Major Errors Found\nContinue to patch review?')
+input('No Major Errors Found\n\nContinue to patch review?')
 print('\n==============================\n')
 print("Reviewing patch changes...\n")
 
 # Patch note creating **********************************************************************************
 # region Review Patch Notes
-# This makes it easy to see what has changed in the new data, by comparing to trimmed_data_prev.json
-# To re-base the comparison, you must manually replace trimmed_data_prev.json with data from trimmed_data.json
-# trimmed_data_prev_shvar.json should only be re-based right before adding new variants
-with open("local_files/trimmed_data.json", "w", encoding="utf-8") as f:
+# This makes it easy to see what has changed in the new data, by comparing to poke_data_prev.json
+# To re-base the comparison, you must manually replace poke_data_prev.json with data from poke_data.json
+# poke_data_prev_shvar.json should only be re-based right before adding new variants
+with open("local_files/poke_data.json", "w", encoding="utf-8") as f:
     json.dump(poke_data, f, ensure_ascii=False, indent=4) # Write all the trimmed data to a json file
-with open("local_files/trimmed_data_prev.json", "r", encoding="utf-8", errors="replace") as fp:
-    trimmed_data_prev = json.load(fp) # Load the previous trimmed data for comparison
-with open("local_files/trimmed_data_prev_shvar.json", "r", encoding="utf-8", errors="replace") as fp:
-    trimmed_data_shvar = json.load(fp) # Older version for detecting new variants
+with open("local_files/poke_data_prev.json", "r", encoding="utf-8", errors="replace") as fp:
+    poke_data_prev = json.load(fp) # Load the previous trimmed data for comparison
+with open("local_files/poke_data_prev_shvar.json", "r", encoding="utf-8", errors="replace") as fp:
+    poke_data_shvar = json.load(fp) # Older version for detecting new variants
 # Look for changes and report them in a patch notes format
 # Github may detect more changes in pokedex_data.js because of how fid are assigned
 attNames = ['rowno','form','parno','dexno','img','spec','desc','type1','type2','ab1','ab2','hab','Passive',
@@ -629,9 +629,9 @@ def MoveSrcText(value):
     return { 201:"Egg & Common TM", 202:"Egg & Great TM", 203:"Egg & Ultra TM", 204:"Egg Move", 205:"Rare Egg & Common TM", 206:"Rare Egg & Great TM", 207:"Rare Egg & Ultra TM", 208:"Rare Egg Move", 209:"Common TM", 210:"Great TM", 211:"Ultra TM" }[value]           
 for i,line in enumerate(poke_data):
     # Find where the species is, in _prev (the index may be different)
-    for ii in range(i-10,min(i+10,len(trimmed_data_prev))):
-        if line[5] == trimmed_data_prev[ii][5]:
-            prevLine = trimmed_data_prev[ii]
+    for ii in range(i-10,min(i+10,len(poke_data_prev))):
+        if line[5] == poke_data_prev[ii][5]:
+            prevLine = poke_data_prev[ii]
             prevLine[4] = format_for_attr(prevLine[4])
             prevLine[40] = [ [biomeLine[1], biomeLine[0], biomeLine[2]] for biomeLine in prevLine[40] ] # !!!!!!!!!!!!
             break
@@ -640,9 +640,9 @@ for i,line in enumerate(poke_data):
         continue
     if line[5] == prevLine[5]: # Make sure species is the same
         # Find where the species is, in _prev_shvar (which may be different length from _prev)
-        for iii in range(i-10,min(i+10,len(trimmed_data_shvar))):
-            if line[5] == trimmed_data_shvar[iii][5]: # Find matching name
-                if line[31] != trimmed_data_shvar[iii][31]: # If shvar has changed
+        for iii in range(i-10,min(i+10,len(poke_data_shvar))):
+            if line[5] == poke_data_shvar[iii][5]: # Find matching name
+                if line[31] != poke_data_shvar[iii][31]: # If shvar has changed
                     line[43] = 1 # Mark as newly added shiny variants
                 break
         else:
@@ -737,7 +737,7 @@ for line in poke_data:
     # Write all the main attributes as {text}:{value}
     for i in range(len(attributes)): 
         if i not in omitAttr and line[i] != '':
-            if i in [7,8,9,10,11,12,24,25,26,27]: # Types/Abilities/Moves are listed as Names in trimmed_data
+            if i in [7,8,9,10,11,12,24,25,26,27]: # Types/Abilities/Moves are listed as Names in poke_data
                 fid = filterToFID[format_for_attr(f'{keyText[i]}{line[i]}')] # Convert to filter ID (fid)
                 text = f'{text}{attributes[i]}:{fid},'
             elif i == 4:
