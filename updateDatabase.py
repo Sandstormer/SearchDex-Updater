@@ -105,71 +105,70 @@ print('Finished reading egg move data')
 
 poke_data = []
 #region Assign Pokemon Data
-for i, specLine in enumerate(species_data): # Function for reading from game data
-    outputLine = ['' for _ in range(47)] 
+for i, thisData in enumerate(species_data): # Function for reading from game data
+    line = ['' for _ in range(47)] 
 
-    outputLine[0] = i # row number [0]
-    outputLine[1] = format_for_disp(specLine["formKey"]) # Form Key [1] (used for actual name)
-    outputLine[2] = format_for_attr(specLine["form"]) # Form Name [2] (used for move lookup)
-    outputLine[3] = specLine["dexNum"] # dex number [3]
-    outputLine[4] = specLine["spriteKey"] # image filename [4]
-    outputLine[5] = format_for_disp(specLine["id"]) # display name [5]
-    if outputLine[1]: # If it is a named form
-        outputLine[5] = f'{outputLine[1]} {outputLine[5]}' # Add form to species name
-    outputLine[6] = format_for_disp(specLine["category"]) # Species description (unused) [6]
-    
-    # Unobtainable [42] (in the game data, "isUnobtainable" defaults to false)
-    unobtainable = specLine["isUnobtainable"] # Can be obtained, by default
-    if 'Revavroom' in outputLine[5]: unobtainable = 0 # Keep Starmobiles
-    if '10 Complete' in outputLine[5]: unobtainable = 1 # Remove "Complete 10% Zygarde"
-    outputLine[42] = unobtainable # Unobtainable [42] !!!!!!!!!!!!!! can remove
-    if unobtainable: continue # Skip unobtainable pokemon
+    line[0] = i # row number [0]
+    line[1] = format_for_disp(thisData["formKey"]) # Form Key [1] (used for actual name)
+    line[2] = format_for_attr(thisData["form"]) # Form Name [2] (used for move lookup)
+    line[3] = thisData["dexNum"] # dex number [3]
+    line[4] = thisData["spriteKey"] # image filename [4]
+    line[5] = format_for_disp(thisData["id"]) # display name [5]
+    if line[1]: # If it is a named form
+        line[5] = f'{line[1]} {line[5]}' # Add form to species name
+    line[6] = format_for_disp(thisData["category"]) # Species description (unused) [6]
 
-    outputLine[7] = format_for_disp(specLine["type1"]) # Type 1 [7]
-    typeTwo = format_for_disp(specLine["type2"])
-    outputLine[8] = '' if typeTwo == outputLine[7] or typeTwo == None else typeTwo # Type 2 [8]
-    outputLine[9] = format_for_disp(specLine["ability1"]) # Ability 1 [9]
-    abilityTwo = format_for_disp(specLine["ability2"])
-    outputLine[10] = '' if abilityTwo == outputLine[9] or abilityTwo == "None" else abilityTwo # Ability 2 [10] !!!!!!!!!! remove none? and on 11
-    abilityHidden = format_for_disp(specLine["hiddenAbility"])
-    outputLine[11] = '' if abilityHidden == outputLine[9] or abilityHidden == "None" else abilityHidden # Hidden ability [11]
-    outputLine[12] = format_for_disp(specLine["passive"]) # Passive [12]
+    # Remove unobtainable pokemon, and "Complete 10% Zygarde" > can remove [42]
+    if thisData["isUnobtainable"] or '10 Complete' in line[5]:
+        if 'Revavroom' not in line[5]: # Keep Starmobiles
+            print(f'Unobtainable {line[5]}')
+            continue # Skip the rest of parsing
+
+    line[7] = format_for_disp(thisData["type1"]) # Type 1 [7]
+    typeTwo = format_for_disp(thisData["type2"])
+    line[8] = '' if typeTwo == line[7] or typeTwo == None else typeTwo # Type 2 [8]
+    line[9] = format_for_disp(thisData["ability1"]) # Ability 1 [9]
+    abilityTwo = format_for_disp(thisData["ability2"])
+    line[10] = '' if abilityTwo == line[9] or abilityTwo == "None" else abilityTwo # Ability 2 [10] !!!!!!!!!! remove none? and on 11
+    abilityHidden = format_for_disp(thisData["hiddenAbility"])
+    line[11] = '' if abilityHidden == line[9] or abilityHidden == "None" else abilityHidden # Hidden ability [11]
+    line[12] = format_for_disp(thisData["passive"]) # Passive [12]
 
     stats = ['bst','hp','atk','def','spatk','spdef','spd','catchRate','growthRate','maleRatio','genderDiffs']
     for j, stat in enumerate(stats): # Stats [13-19], Catch rate [20], growthRate [21], malePercent [22], genderDiffs [23]
-        outputLine[13+j] = specLine[stat]
-    outputLine[29] = specLine["startercost"] # Cost [29]
-    outputLine[32] = specLine["generation"] # Generation [32]
+        line[13+j] = thisData[stat]
+    line[29] = thisData["startercost"] # Cost [29]
+    line[32] = thisData["generation"] # Generation [32]
 
-    eggTier = specLine["eggTier"] # Egg Tier [30]
+    eggTier = thisData["eggTier"] # Egg Tier [30]
     eggTierValues = { 'COMMON':0, 'RARE':1, 'EPIC':2, 'LEGENDARY':4 }
-    if outputLine[5] in ['Phione','Manaphy']:
-        outputLine[30] = 3
+    if line[5] in ['Phione','Manaphy']:
+        line[30] = 3
     elif eggTier != None:
-        outputLine[30] = eggTierValues[eggTier]
+        line[30] = eggTierValues[eggTier]
         
     # specKey [37] is the text of just the Species (no form, except regionals)
-    outputLine[37] = format_for_disp(specLine["id"]) # Used for "Related" filters, biome data, and translation lookup
-    outputLine[40] = [] # biomes [40]
-    if outputLine[37] in biome_data: # If specKey is listed in biome data
-        outputLine[40] = biome_data[outputLine[37]] # Take the full list of biomes
+    line[37] = format_for_disp(thisData["id"]) # Used for "Related" filters, biome data, and translation lookup
+    line[40] = [] # biomes [40]
+    if line[37] in biome_data: # If specKey is listed in biome data
+        line[40] = biome_data[line[37]] # Take the full list of biomes
     
     # isStartable [33] ( '' = species not available in starter select, 1 = available (i.e. has not evolved yet) )
     # A form is only selectable if it is ALSO not "form exclusive" [41]
-    outputLine[46] = format_for_disp(specLine["starter"]) # Starter Species [46]
-    if outputLine[46] == outputLine[37] or 'Pikachu' in outputLine[5]: # If starter species matches this species
-        outputLine[33] = 1 # isStartable [33]
-        outputLine[34] = outputLine[0] # starterRow [34]
-    outputLine[44] = 1 # Fully Evolved [44] ( '' = can evolve, 1 = fully evolved )
-    if outputLine[46] == 'Pikachu': outputLine[46] = 'Pichu'
+    line[46] = format_for_disp(thisData["starter"]) # Starter Species [46]
+    if line[46] == line[37] or 'Pikachu' in line[5]: # If starter species matches this species
+        line[33] = 1 # isStartable [33]
+        line[34] = line[0] # starterRow [34]
+    line[44] = 1 # Fully Evolved [44] ( '' = can evolve, 1 = fully evolved )
+    if line[46] == 'Pikachu': line[46] = 'Pichu'
 
     # Form exclusive [41] ( '' = starter, 1 = mega, 2 = new mega, 3 = giga, 4 = transformed )
     formExclusive = '' # Startable by default, for base species and most forms
     # In game, "isStarterSelectable" defaults to False (Forms are exclusive unless marked otherwise)
     # Check for mega, giga, or other transformed (Zacian, Mimikyu, etc.)
-    if not specLine["isStartSelectable"] and ( outputLine[1] != None ): formExclusive = 4
+    if not thisData["isStartSelectable"] and ( line[1] != None ): formExclusive = 4
     megaList = ['Mega Clefable','Mega Victreebel','Mega Starmie','Mega Dragonite','Mega Meganium','Mega Feraligatr','Mega Skarmory','Mega Froslass','Mega Emboar','Mega Excadrill','Mega Scolipede','Mega Scrafty','Mega Eelektross','Mega Chandelure','Mega Chesnaught','Mega Delphox','Mega Greninja','Mega Pyroar','Mega Floette','Mega Malamar','Mega Barbaracle','Mega Dragalge','Mega Hawlucha','Mega Zygarde','Mega Drampa','Mega Falinks','Mega Raichu X','Mega Raichu Y','Mega Chimecho','Mega Baxcalibur']
-    speciesName = outputLine[5]
+    speciesName = line[5]
     if 'Mega ' in speciesName:      formExclusive = 1 # Mega (needs the space)
     if speciesName in megaList:     formExclusive = 2 # New Mega
     if 'Gigantamax' in speciesName: formExclusive = 3 # Giga
@@ -177,7 +176,7 @@ for i, specLine in enumerate(species_data): # Function for reading from game dat
     # Some forms have the wrong isStarterSelectable in balance/pokemon-species.ts (error with the game code)
     if 'Minior'   in speciesName and 'Meteor' not in speciesName: formExclusive = 4  # Force minior core to count as transformed
     if 'Maushold' in speciesName or 'Dudunsparce' in speciesName: formExclusive = '' # Force those forms to be not exclusive
-    outputLine[41] = formExclusive
+    line[41] = formExclusive
 
     # Many attributes are given the default values of '', and filled in later, including:
     # Egg Moves [24-27], Shiny Variants [31], familyFID [38], freshStart [39], Newly Added Variants [43]
@@ -187,38 +186,38 @@ for i, specLine in enumerate(species_data): # Function for reading from game dat
     # Exclusive class [45] ( '' = regular, 1 = eggExc, 2 = baby, 3 = paradox, 4 = eterna, 5 = starmobile )
 
     #region Assign Moves
-    outputLine[28] = {} # Add dictionary for all moves [28] { 'Move Name':src, ... }
+    line[28] = {} # Add dictionary for all moves [28] { 'Move Name':src, ... }
     # src = -1:mushroom, 0:evo, 1-200:level, 201-203:egg&TM, 204:egg, 205-207:rare&TM, 208:rare, 209-211:comm/great/ultra TM
     def assignMoveCode(code):
         currentCode = None
-        if format_for_disp(moveName) in outputLine[28]: currentCode = outputLine[28][format_for_disp(moveName)]
+        if format_for_disp(moveName) in line[28]: currentCode = line[28][format_for_disp(moveName)]
         if code == 'EVOLVE_MOVE' : code = 0
         if code == 'RELEARN_MOVE': code = -1
-        if 100 < code < 200: throwError(f'High level move found in {outputLine[5]}: Level {code}')
+        if 100 < code < 200: throwError(f'High level move found in {line[5]}: Level {code}')
         if code > 208: # If a TM move
             if currentCode in [204,208]: code += currentCode - 212 # Combine egg moves and TM moves
             if currentCode != None and currentCode < 200: return # Don't replace level moves with TM moves
         if code < 200 and currentCode != None: return # Don't replace egg moves with level moves
-        outputLine[28][format_for_disp(moveName)] = code
+        line[28][format_for_disp(moveName)] = code
     # Import egg moves from the starter **********
-    outputLine[24:28] = egg_move_data[outputLine[46]].keys() # Put egg moves in [24-27]
-    for move in egg_move_data[outputLine[46]].keys(): # Add egg moves to the move dictionary [28]
-        outputLine[28][move] = egg_move_data[outputLine[46]][move] # Add the egg move to the move dict
-    if outputLine[3] in level_move_data: # If species is listed, add level moves **********
-        for moveName, moveCode in level_move_data[outputLine[3]][None]: # For all forms
+    line[24:28] = egg_move_data[line[46]].keys() # Put egg moves in [24-27]
+    for move in egg_move_data[line[46]].keys(): # Add egg moves to the move dictionary [28]
+        line[28][move] = egg_move_data[line[46]][move] # Add the egg move to the move dict
+    if line[3] in level_move_data: # If species is listed, add level moves **********
+        for moveName, moveCode in level_move_data[line[3]][None]: # For all forms
             assignMoveCode(moveCode)
-        if specLine["formKey"] != None and specLine["formKey"] in level_move_data[outputLine[3]]: # Uses form key
-            for moveName, moveCode in level_move_data[outputLine[3]][specLine["formKey"]]: # For specific forms
+        if thisData["formKey"] != None and thisData["formKey"] in level_move_data[line[3]]: # Uses form key
+            for moveName, moveCode in level_move_data[line[3]][thisData["formKey"]]: # For specific forms
                 assignMoveCode(moveCode)
-    if outputLine[3] in tm_move_data: # If species is listed, add TM moves **********
-        for moveName in tm_move_data[outputLine[3]][None]: # For all forms
+    if line[3] in tm_move_data: # If species is listed, add TM moves **********
+        for moveName in tm_move_data[line[3]][None]: # For all forms
             assignMoveCode(tm_tier_data[moveName])
-        tmKey = outputLine[2] if specLine["formKey"] == "" else specLine["formKey"] # Inconsistent !!!!!!!!!!!!!
-        if tmKey != None and tmKey in tm_move_data[outputLine[3]]:
-            for moveName in tm_move_data[outputLine[3]][tmKey]: # For specific forms
+        tmKey = line[2] if thisData["formKey"] == "" else thisData["formKey"] # Inconsistent !!!!!!!!!!!!!
+        if tmKey != None and tmKey in tm_move_data[line[3]]:
+            for moveName in tm_move_data[line[3]][tmKey]: # For specific forms
                 assignMoveCode(tm_tier_data[moveName])
 
-    poke_data.append(outputLine)
+    poke_data.append(line)
 
 #region Propagate Cost & Egg
 for line in poke_data:
@@ -307,7 +306,7 @@ for line in poke_data: # Check for empty properties in full_data
         line[40] = []
         line[41] = '' # Set form exclusive [41] to blank, not a "transformed" form
         line[45] = 5  # Set exclusive class [45] to unobtainable
-        print('Unobtainable:',line[5])
+        # print('Starmobile:',line[5])
     if line[40] == [] and line[45] not in [1,2,5]: # If no biomes, and not egg exclusive
         throwError(f'Missing Biomes: {line[5]}')
 
@@ -633,6 +632,8 @@ for i,line in enumerate(poke_data):
     for ii in range(i-10,min(i+10,len(trimmed_data_prev))):
         if line[5] == trimmed_data_prev[ii][5]:
             prevLine = trimmed_data_prev[ii]
+            prevLine[4] = format_for_attr(prevLine[4])
+            prevLine[40] = [ [biomeLine[1], biomeLine[0], biomeLine[2]] for biomeLine in prevLine[40] ] # !!!!!!!!!!!!
             break
     else:
         print('Could not find',line[5],'in previous data')
@@ -640,16 +641,14 @@ for i,line in enumerate(poke_data):
     if line[5] == prevLine[5]: # Make sure species is the same
         # Find where the species is, in _prev_shvar (which may be different length from _prev)
         for iii in range(i-10,min(i+10,len(trimmed_data_shvar))):
-            if line[5] == trimmed_data_shvar[iii][5]: 
-                if line[31] != trimmed_data_shvar[iii][31]:
+            if line[5] == trimmed_data_shvar[iii][5]: # Find matching name
+                if line[31] != trimmed_data_shvar[iii][31]: # If shvar has changed
                     line[43] = 1 # Mark as newly added shiny variants
                 break
         else:
             print(f'Could not find previous data for {line[5]}')
         # Loop through all attributes for comparison
         for j in range(0,min(len(line),len(prevLine))):
-            if j == 40:
-                prevLine[40] = [ [biomeLine[1], biomeLine[0], biomeLine[2]] for biomeLine in prevLine[40] ] # !!!!!!!!!!!!
             # For all the main values, they are only 'changed'
             if (not soloAttr and j not in omitAttr) or j in soloAttr: 
                 if j == 28: # For the move dict, they are either 'added' or 'removed'
@@ -666,8 +665,8 @@ for i,line in enumerate(poke_data):
                         if key not in line[28] and value not in [204,208]: # If old move missing from new data
                             moveKind = "Level" if value < 200 else "TM"
                             patch_review.append(f'{line[5]}: {key} removed from {moveKind} moves')
-                elif format_for_attr(str(line[j])) != format_for_attr(str(prevLine[j])): # Compare all other attributes
-                    if j not in [24,25,26,27] or ( line[33] and not line[41] ): # Don't show egg move changes on evolutions
+                elif str(line[j]) != str(prevLine[j]): # Compare all other attributes
+                    if j not in [24,25,26,27] or ( line[33] and not line[41] ): # Don't show egg moves, except on starter select mons
                         patch_review.append(f'{line[5]}: {attNames[j]} changed from {prevLine[j]} to {line[j]}')
                     if j in [12,24,25,26,27,29,30]:
                         if j == 12: # Passive
@@ -682,9 +681,9 @@ for i,line in enumerate(poke_data):
                         if j == 30: # Egg tier
                             preFID = fidThreshold[4]+prevLine[j]
                             postFID = fidThreshold[4]+line[j]
-                        for specID,specLine in patch_data.items(): # Check patch data for redundant entries
+                        for specID,thisData in patch_data.items(): # Check patch data for redundant entries
                             if poke_data[specID][38] == line[38]: # If same family
-                                if j in specLine and specLine[j][0] == preFID and specLine[j][1] == postFID:
+                                if j in thisData and thisData[j][0] == preFID and thisData[j][1] == postFID:
                                     break
                         else:
                             if i not in patch_data:
