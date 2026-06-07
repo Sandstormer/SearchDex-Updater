@@ -119,29 +119,28 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     line = ['' for _ in range(47)] 
 
     line[0] = i # row number [0]
-    line[1] = format_for_disp(thisData["formKey"]) # Form Key [1] (used for actual name)
-    line[2] = format_for_attr(thisData["form"]) # Form Name [2] (used for move lookup)
+    line[1] = format_for_disp(thisData["formKey"]) # Form Name [1] (used for actual name)
+    line[2] = format_for_disp(thisData["id"]) # Species Name [2] is the text of just the Species
+    # Species Name is used for "Related" filters, biome data, and translation lookup. Includes regional name, but not form name.
     line[3] = thisData["dexNum"] # dex number [3]
     line[4] = thisData["spriteKey"] # image filename [4]
-    line[5] = format_for_disp(thisData["id"]) # display name [5]
-    if line[1]: # If it is a named form
-        line[5] = f'{line[1]} {line[5]}' # Add form to species name
+    line[5] = f'{line[1]} {line[2]}' if line[1] else line[2] # Display Name [5]
     line[6] = format_for_disp(thisData["category"]) # Species description (unused) [6]
 
-    # Remove unobtainable pokemon, and "Complete 10% Zygarde" > can remove [42]
+    # Remove unobtainable pokemon, and "Complete 10% Zygarde"
     if thisData["isUnobtainable"] or '10 Complete' in line[5]:
         if 'Revavroom' not in line[5]: # Keep Starmobiles
             print(f'Unobtainable {line[5]}')
             continue # Skip the rest of parsing
 
     line[7] = format_for_disp(thisData["type1"]) # Type 1 [7]
-    typeTwo = format_for_disp(thisData["type2"])
-    line[8] = '' if typeTwo == line[7] or typeTwo == None else typeTwo # Type 2 [8]
-    line[9] = format_for_disp(thisData["ability1"]) # Ability 1 [9]
-    abilityTwo = format_for_disp(thisData["ability2"])
-    line[10] = '' if abilityTwo == line[9] or abilityTwo == "None" else abilityTwo # Ability 2 [10]
-    abilityHidden = format_for_disp(thisData["hiddenAbility"])
-    line[11] = '' if abilityHidden == line[9] or abilityHidden == "None" else abilityHidden # Hidden ability [11]
+    typeTwo = format_for_disp(thisData["type2"]) # Type 2 [8]
+    line[8] = '' if typeTwo == line[7] or typeTwo == None else typeTwo
+    line[9] = format_for_disp(thisData["ability1"])    # Ability 1 [9]
+    abilityTwo = format_for_disp(thisData["ability2"]) # Ability 2 [10]
+    line[10] = '' if abilityTwo == line[9] or abilityTwo == "None" else abilityTwo
+    abilityHidden = format_for_disp(thisData["hiddenAbility"]) # Hidden ability [11]
+    line[11] = '' if abilityHidden == line[9] or abilityHidden == "None" else abilityHidden
     line[12] = format_for_disp(thisData["passive"]) # Passive [12]
 
     stats = ['bst','hp','atk','def','spatk','spdef','spd','catchRate','growthRate','maleRatio','genderDiffs']
@@ -153,27 +152,22 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     eggTier = thisData["eggTier"] # Egg Tier [30]
     eggTierValues = { None:'', 'COMMON':0, 'RARE':1, 'EPIC':2, 'LEGENDARY':4 }
     line[30] = 3 if line[5] in ['Phione','Manaphy'] else eggTierValues[eggTier]
-        
-    # specKey [37] is the text of just the Species (no form, except regionals)
-    line[37] = format_for_disp(thisData["id"]) # Used for "Related" filters, biome data, and translation lookup
-    line[40] = [] # biomes [40]
-    if line[37] in biome_data: # If specKey is listed in biome data
-        line[40] = biome_data[line[37]] # Take the full list of biomes
     
-    # isStartable [33] ( '' = species not available in starter select, 1 = available (i.e. has not evolved yet) )
-    # A form is only selectable if it is ALSO not "form exclusive" [41]
-    line[46] = format_for_disp(thisData["starter"]) # Starter Species [46]
-    if line[46] == line[37] or 'Pikachu' in line[5]: # If starter species matches this species
-        line[33] = 1 # isStartable [33]
-        line[34] = line[0] # starterRow [34]
+    line[40] = [] # biomes [40]
+    if line[2] in biome_data: # If specKey is listed in biome data
+        line[40] = biome_data[line[2]] # Take the full list of biomes
+    
+    line[46] = format_for_disp(thisData["starter"]) # Starter Species Name [46]
+    if line[46] == line[2] or 'Pikachu' in line[5]: # If starter species matches this species
+        line[33] = 1 # isStartable [33] ( 1 = species available in starter select (i.e. has not evolved yet), '' = not available )
+        line[34] = len(poke_data) # starterRow [34] is the row of starter evo
     line[44] = 1 # Fully Evolved [44] ( '' = can evolve, 1 = fully evolved )
     if line[46] == 'Pikachu': line[46] = 'Pichu'
 
     # Form exclusive [41] ( '' = starter, 1 = mega, 2 = new mega, 3 = giga, 4 = transformed )
-    formExclusive = '' # Startable by default, for base species and most forms
-    # In game, "isStarterSelectable" defaults to False (Forms are exclusive unless marked otherwise)
+    formExclusive = '' # By default, the form is selectable in starter select
     # Check for mega, giga, or other transformed (Zacian, Mimikyu, etc.)
-    if not thisData["isStartSelectable"] and ( line[1] != None ): formExclusive = 4
+    if line[1] != None and not thisData["isStartSelectable"]: formExclusive = 4 # If form and not selectable
     megaList = ['Mega Clefable','Mega Victreebel','Mega Starmie','Mega Dragonite','Mega Meganium','Mega Feraligatr','Mega Skarmory','Mega Froslass','Mega Emboar','Mega Excadrill','Mega Scolipede','Mega Scrafty','Mega Eelektross','Mega Chandelure','Mega Chesnaught','Mega Delphox','Mega Greninja','Mega Pyroar','Mega Floette','Mega Malamar','Mega Barbaracle','Mega Dragalge','Mega Hawlucha','Mega Zygarde','Mega Drampa','Mega Falinks','Mega Raichu X','Mega Raichu Y','Mega Chimecho','Mega Baxcalibur']
     speciesName = line[5]
     if 'Mega ' in speciesName:      formExclusive = 1 # Mega (needs the space)
@@ -187,9 +181,6 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
 
     # Many attributes are given the default values of '', and filled in later, including:
     # Egg Moves [24-27], Shiny Variants [31], familyFID [38], freshStart [39], Newly Added Variants [43]
-    # starterRow [34] is the row of starter evo
-    # starterIndex [35] is the speciesID [36] of the starter evo
-    # speciesID [36] is the number for lookup on the SearchDex (row number of poke_data)
     # Exclusive class [45] ( '' = regular, 1 = eggExc, 2 = baby, 3 = paradox, 4 = eterna, 5 = starmobile )
 
     #region Assign Moves
@@ -206,26 +197,26 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
             if currentCode != None and currentCode < 200: return # Don't replace level moves with TM moves
         if code < 200 and currentCode != None: return # Don't replace egg moves with level moves
         line[28][format_for_disp(moveName)] = code
-    # Import egg moves from the starter **********
+    # Import egg moves from the starterName [46] **********
     line[24:28] = egg_move_data[line[46]].keys() # Put egg moves in [24-27]
     for move in egg_move_data[line[46]].keys(): # Add egg moves to the move dictionary [28]
         line[28][move] = egg_move_data[line[46]][move] # Add the egg move to the move dict
-    # If species is listed, add level moves **********
-    for moveName, moveCode in level_move_data[line[37]][None]: # For all forms
+    # Import level moves from the speciesName [2] **********
+    for moveName, moveCode in level_move_data[line[2]][None]: # For all forms
         assignMoveCode(moveCode)
-    if line[1] != None and line[1] in level_move_data[line[37]]: # Uses form key
-        for moveName, moveCode in level_move_data[line[37]][line[1]]: # For specific forms
+    if line[1] != None and line[1] in level_move_data[line[2]]: # Uses form key
+        for moveName, moveCode in level_move_data[line[2]][line[1]]: # For specific forms
             assignMoveCode(moveCode)
         print(f"Imported unique level moves for {line[5]}")
-        level_move_data[line[37]][line[1]] = []
-    if line[37] in tm_move_data: # If species is listed, add TM moves **********
-        for moveName in tm_move_data[line[37]][None]: # For all forms
+        level_move_data[line[2]][line[1]] = []
+    if line[2] in tm_move_data: # If species is listed, add TM moves **********
+        for moveName in tm_move_data[line[2]][None]: # For all forms
             assignMoveCode(tm_tier_data[moveName])
-        if line[1] != None and line[1] in tm_move_data[line[37]]:
-            for moveName in tm_move_data[line[37]][line[1]]: # For specific forms
+        if line[1] != None and line[1] in tm_move_data[line[2]]:
+            for moveName in tm_move_data[line[2]][line[1]]: # For specific forms
                 assignMoveCode(tm_tier_data[moveName])
             print(f"Imported unique TM moves for {line[5]}")
-            tm_move_data[line[37]][line[1]] = []
+            tm_move_data[line[2]][line[1]] = []
 
     poke_data.append(line)
 print("\nFinished assigning pokemon data\n")
@@ -234,27 +225,27 @@ print("\nFinished assigning pokemon data\n")
 for line in poke_data:
     if '' in line[29:31]: # If blank entry for cost or egg tier, inherit from starter
         for starterLine in poke_data:
-            if line[46] == starterLine[37]: # If starterName [46] equals starter's specKey [37]
+            if line[46] == starterLine[2]: # If starterName [46] equals starter's Species Name [2]
                 line[29:31] = starterLine[29:31] # Cost [29], egg tier [30]
                 line[34] = starterLine[34]       # Starter row [34]
                 break
 for evoLine in evolution_data: # Find pokemon that are not fully evolved
     preEvo = format_for_disp(evoLine["id"])
     for childLine in poke_data:
-        if preEvo == childLine[37]:
+        if preEvo == childLine[2]:
             childLine[44] = '' # Set the child to not be fullyEvolved
 #region Propagate Biomes
 for stages in range(2): # Propagate biomes via up to 2 evolutions **************************
     for evoLine in evolution_data:
         preEvo = format_for_disp(evoLine["id"])
         for childLine in poke_data:
-            if preEvo == childLine[37]: # Find the childLine, break when matching
+            if preEvo == childLine[2]: # Find the childLine, break when matching
                 break
         else: # If the child search loop fails to break
             throwError(f'Failed to find pre-evo: {preEvo}')
         parentName = format_for_disp(evoLine["evoId"])
         for parentLine in poke_data:
-            if parentName == parentLine[37]: # Copy properties from child to parent
+            if parentName == parentLine[2]: # Copy properties from child to parent
                 for biomeLine in childLine[40]:
                     parentLine[40].append(biomeLine)
 # The game usually only provides biome data to one species per evolution line
@@ -266,13 +257,13 @@ for stages in range(2): # Up to 2 evolutions
     for evoLine in evolution_data: # Assign biome data backwards
         parentName = format_for_disp(evoLine["evoId"])
         for parentLine in poke_data:
-            if parentName == parentLine[37]: # Find the parent line, to copy biomes from
+            if parentName == parentLine[2]: # Find the parent line, to copy biomes from
                 break
         else: # If the parent search loop fails to break
             throwError(f'Failed to find post-evo: {preEvo}')
         preEvo = format_for_disp(evoLine["id"])
         for childLine in poke_data:
-            if preEvo == childLine[37]: # Find the childLine, break when matching
+            if preEvo == childLine[2]: # Find the childLine, break when matching
                 for biomeLine in parentLine[40]:
                     childLine[40].append(biomeLine)
         # TODO: tyrogue,smoochum,elekid,magby,wynaut,toxel
@@ -290,16 +281,18 @@ for line in poke_data: # Check for empty properties in full_data
         throwError(f'Missing Cost: {line[5]}')
     if line[30] == '':
         throwError(f'Missing Egg Tier: {line[5]}')
+    if line[34] == '': # Check for invalid starter row
+        throwError(f'Unassigned starter row for {line[5]}')
     if line[40] == []:
         line[45] = 1 # Exclusive to egg
         if 'Pichu' in line[5]: # Manual override for spiky pichu bc it is missing evo hookup
             line[45] = 2 # Exclusive to baby
         for evoLine in evolution_data:
-            if format_for_disp(evoLine["id"]) == line[37]:
+            if format_for_disp(evoLine["id"]) == line[2]:
                 parentName = evoLine["evoId"]
                 for parentLine in poke_data:
                     # Make sure Meltan doesn't count as a baby
-                    if parentName == parentLine[37] and parentLine[40] != []: # Check if parent has biomes
+                    if parentName == parentLine[2] and parentLine[40] != []: # Check if parent has biomes
                         line[45] = 2 # Exclusive to baby
                         break
         # if line[45] == 1: print('Egg Exclusive:',line[5])
@@ -319,40 +312,17 @@ for line in poke_data: # Check for empty properties in full_data
     if line[40] == [] and line[45] not in [1,2,5]: # If no biomes, and not egg exclusive
         throwError(f'Missing Biomes: {line[5]}')
 
-# Mark pokemon as available for "Starter Select" and "Fresh Start"
-# Reminder: isStartable [33], starterRow [34], starterIndex [35], speciesID [36]
-#region Find Starters
-for i, line in enumerate(poke_data): 
-    if line[34] == '': # Check for invalid starter row
-        throwError(f'Unassigned starter row for {line[5]}')
-    # Trimmed data no longer has base species or unobtainable forms
-    # So now we rebase the row numbers as speciesID [36] to be sequential
-    # This is the speciesID (SID) on the SearchDex, used to look up data for that species
-    line[36] = i
-    # Also rebase to sequential numbers for starterIndex [35]
-    # This requires finding which row the child is in
-    if line[34] == line[0]: # If starterRow is this row, starterIndex is this index
-        line[35] = i
-    else: # Find which row the child is in
-        for j, childLine in enumerate(poke_data):
-            # If the child is a form, the base row will be gone
-            if line[34] == childLine[0] or line[34] == childLine[0]-1:
-                line[35] = j
-                break
-        else:
-            throwError(f'Could not find starter row {line[34]} for {line[5]}')
-familyList = sorted(list(set([ line[35] for line in poke_data ])))
-# Determine which pokemon are in Fresh Start
+# Determine which pokemon are available for "Fresh Start"
 gen, freshThisGen, freshStarterIndices = 1, 0, []
 for line in poke_data:
-    if int(line[32]) == gen and (line[35] not in freshStarterIndices) and freshThisGen < 3:
+    if int(line[32]) == gen and (line[34] not in freshStarterIndices) and freshThisGen < 3:
         if line[29] < 6: # Exclude Victini
-            freshStarterIndices.append(line[35]) # Add that starter line to the Fresh Start list
+            freshStarterIndices.append(line[34]) # Add that starter line to the Fresh Start list
             freshThisGen += 1
     if freshThisGen == 3: # Go to next gen after finding 3 starter lines
         gen = gen + 1 
         freshThisGen = 0
-    if line[35] in freshStarterIndices:
+    if line[34] in freshStarterIndices:
         line[39] = 1 # Set all pokemon in that starter line to be Fresh Start
 
 # Error checking **************************************************************************************
@@ -418,30 +388,20 @@ for line in poke_data:
         throwError(f'Missing level-up entries in {line[5]}')
     if check[1] != 4:
         throwError(f'Missing egg move entries in {line[5]}')
-    # if check[2] != 1 and int(line[3]) not in [132, 201, 202, 235, 360, 789, 790] and line[2] == '':
-    #     # If there is a base species that is supposed to have TM moves
-    #     throwError(f'Missing TM move entries in {line[5]}')
+    if check[2] != 1 and line[3] not in [132, 201, 202, 235, 360, 789, 790]:
+        throwError(f'Missing TM move entries in {line[5]}') # If a pokemon is supposed to have TM moves
     if int(line[32]) not in range(1,10):
         throwError(f'Generation Error in {line[5]}')
 
 # Check that every pokemon has at least one pickable form        
-dexNo = -1
-for i,line in enumerate(poke_data):
+dexNo, isStartable = 1, False
+for line in poke_data:
     if line[3] != dexNo:
-        dexNo = line[3]
-        familyNames = []
-        for j in range(i, len(poke_data)):
-            if poke_data[j][3] == dexNo:
-                familyNames.append(poke_data[j][5])
-                if not poke_data[j][41]: # If not form exclusive, it is startable
-                    break
-            else:
-                if line[5] in egg_move_data: 
-                    # Show error if a pokemon has egg moves, but no startable forms
-                    throwError(f'No startable forms found in {familyNames}')
-                else:
-                    print(f'No evolved startable forms in {familyNames}') # Not a problem
-                break
+        if not isStartable: # Show error if a pokemon has no startable forms
+            throwError(f'No startable forms found for {line[2]}')
+        dexNo, isStartable = line[3], False # Restart the search on the next dex number
+    if not line[41]: # If not form exclusive, it is startable
+        isStartable = True
 
 # Check that dex numbers are sequential up to 1025
 dexNo = 1
@@ -449,13 +409,8 @@ for line in poke_data:
     if line[3] == dexNo: dexNo += 1
     if line[3] >  dexNo: throwError(f'Could not find Dex #{dexNo}')
     if dexNo == 1026: break
-# Check the final entries
-if poke_data[-1][5] != "Bloodmoon Ursaluna":
-    print(poke_data[-5:])
-    throwError('Final dex entry is not correct')
-if len(poke_data) != 1452:
-    print(poke_data[-5:])
-    throwError('Total number of entries is not correct')
+if poke_data[-1][5] != "Bloodmoon Ursaluna": throwError('Final dex entry is not correct') # Check final pokemon
+if len(poke_data) != 1452: throwError('Total number of entries is not correct') # Check number of pokemon
 
 # Check that Normal Deoxys has Swift, Icy Wind, and Cosmic Power (and speed, speed, attack)
 # Check that Normal/Ice Calyrex has Body Press
@@ -509,10 +464,10 @@ for line in allBiomes:
     allFilters.append(['Biome',line])
 for j in ['Mega','New Mega','Giga']:
     allFilters.append(['Related To',j])
-for starterIndex in familyList:
-    allFilters.append(['Related To',poke_data[starterIndex][37]])
+for starterIndex in sorted(list(set([ line[34] for line in poke_data ]))):
+    allFilters.append(['Related To',poke_data[starterIndex][2]])
     for line in poke_data:
-        if line[35] == starterIndex: # If starterIndex is equal to the one in starterList
+        if line[34] == starterIndex: # If starterIndex is equal to the one in starterList
             line[38] = len(allFilters)-1 # Set familyFID to this fid
 for j in ['New','All','None']:
     allFilters.append(['Shiny Variants',j])
@@ -600,7 +555,7 @@ with open("local_files/my_json/fidThreshold.json", "w") as f:
 with open("local_files/my_json/filterToFID.json", "w") as f:
     json.dump(filterToFID, f, indent=4)
 # Save all the names: [displayname/formkey/species] (regional is included in species)
-allSpecies = [[line[5],line[1],line[37]] for line in poke_data]
+allSpecies = [[line[5],line[1],line[2]] for line in poke_data]
 with open("local_files/my_json/allSpecies.json", "w") as f:
     json.dump(allSpecies, f, indent=4)
 
@@ -621,8 +576,8 @@ with open("local_files/poke_data_prev_shvar.json", "r", encoding="utf-8", errors
     poke_data_shvar = json.load(fp) # Older version for detecting new variants
 # Look for changes and report them in a patch notes format
 # Github may detect more changes in pokedex_data.js because of how fid are assigned
-attNames = ['rowno','form','parno','dexno','img','spec','desc','type1','type2','ab1','ab2','hab','Passive',
-           #   0      1       2       3      4     5      6       7       8      9    10    11    12
+attNames = ['rowno','form','species','dexno','img','fullName','desc','type1','type2','ab1','ab2','hab','Passive',
+           #   0      1        2        3      4       5        6       7       8      9    10    11    12
             'bst','HP','Atk','Def','SpAtk','SpDef','Speed','catchrate','exp','mpc','fem','Egg Move 1','Egg Move 2','Egg Move 3','Rare Egg Move',
            # 13    14   15    16     17      18      19        20      21    22    23        24           25           26        27
             'movedict','cost','eggtier','shvar','gen','startable','startRow','startInd','specInd','specKey','famFID',
@@ -736,8 +691,8 @@ print("Writing to website database...")
 #region Write Website Data
 # Write all the main data to a Javascript file *********************************************
 # Names are short to reduce database file size
-attributes = ['row','form','parno','dex','img','sp','desc','t1','t2','a1','a2','ha','pa',
-             #  0     1       2      3     4    5     6     7    8    9    10   11   12    
+attributes = ['row','form','spec','dex','img','name','desc','t1','t2','a1','a2','ha','pa',
+             #  0     1      2      3     4     5      6     7    8    9    10   11   12    
               'bst','hp','atk','def','spa','spd','spe','catchrate','exp','mpc','fe','e1','e2','e3','e4','movedict',
              #  13   14    15    16    17    18    19       20       21    22   23   24   25   26   27      28
               'co','et','sh','ge','st','startRow','startInd','specInd','specKey','fa',
