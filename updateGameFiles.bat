@@ -25,8 +25,6 @@ echo.
 echo ======= ALL DONE =======
 echo.
 pause
-exit /b 0
-
 
 REM =========================================================
 REM FUNCTION: clone_or_update repoUrl repoDest branch onlyClone
@@ -39,9 +37,7 @@ set "branch=%~3"
 set "onlyClone=%~4"
 
 echo.
-echo ================================
 echo Processing %dest%
-echo ================================
 
 REM If folder doesn't exist -> clone
 if not exist "%dest%" (
