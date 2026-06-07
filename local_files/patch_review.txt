@@ -120,7 +120,6 @@ Battle Bond Greninja: Retaliate added to TM moves
 Ash Greninja: Retaliate added to TM moves
 Sliggoo: Poison Tail added to TM moves
 Golisopod: Metal Claw added to TM moves
-Dawn Wings Necrozma: Moongeist Beam removed from Level moves
 Naganadel: Covet added to TM moves
 Dottler: Infestation added to TM moves
 Orbeetle: Infestation added to TM moves

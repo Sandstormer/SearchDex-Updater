@@ -36,20 +36,28 @@ with open(f"{pathJSON}/level-moves.json", "r", encoding="utf-8", errors="replace
     level_data_raw = json.load(f)
 level_move_data = {} # Rearrange level moves data to [dexNum][form] = [ [move,level] , ... ]
 for moveLine in level_data_raw:
-    if moveLine["dexNum"] not in level_move_data:
-        level_move_data[moveLine["dexNum"]] = {}
-    if moveLine["form"] not in level_move_data[moveLine["dexNum"]]:
-        level_move_data[moveLine["dexNum"]][moveLine["form"]] = []
-    level_move_data[moveLine["dexNum"]][moveLine["form"]].append([moveLine["move"],moveLine["level"]])
+    speciesName = format_for_disp(moveLine["id"])
+    if speciesName not in level_move_data:
+        level_move_data[speciesName] = {}
+    formName = format_for_disp(moveLine["form"])
+    if formName == 'Dusk Wings' and speciesName == 'Necrozma':
+        formName = 'Dawn Wings' # !!!!!!!!!!!!!!!!!!!!!!
+    if formName not in level_move_data[speciesName]:
+        level_move_data[speciesName][formName] = []
+    level_move_data[speciesName][formName].append([moveLine["move"],moveLine["level"]])
 with open(f"{pathJSON}/tms.json", "r", encoding="utf-8", errors="replace") as f:
     tms_data_raw = json.load(f)
-tm_move_data = {} # Rearrange tm moves data to [dexNum][form] = [tms,...]
+tm_move_data = {} # Rearrange tm moves data to [id][form] = [tms,...]
 for moveLine in tms_data_raw:
-    if moveLine["dexNum"] not in tm_move_data:
-        tm_move_data[moveLine["dexNum"]] = {}
-    if moveLine["form"] not in tm_move_data[moveLine["dexNum"]]:
-        tm_move_data[moveLine["dexNum"]][moveLine["form"]] = []
-    tm_move_data[moveLine["dexNum"]][moveLine["form"]].append(moveLine["move"])
+    speciesName = format_for_disp(moveLine["id"])
+    if speciesName not in tm_move_data:
+        tm_move_data[speciesName] = {}
+    formName = format_for_disp(moveLine["form"])
+    if formName == 'Normal' and speciesName == 'Calyrex':
+        formName = '' # !!!!!!!!!!!!!!!!!!!!!!
+    if formName not in tm_move_data[speciesName]:
+        tm_move_data[speciesName][formName] = []
+    tm_move_data[speciesName][formName].append(moveLine["move"])
 print('Finished reading main data')
 
 # Open and read the biomes file ************************************
@@ -202,21 +210,22 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     line[24:28] = egg_move_data[line[46]].keys() # Put egg moves in [24-27]
     for move in egg_move_data[line[46]].keys(): # Add egg moves to the move dictionary [28]
         line[28][move] = egg_move_data[line[46]][move] # Add the egg move to the move dict
-    if line[3] in level_move_data: # If species is listed, add level moves **********
-        for moveName, moveCode in level_move_data[line[3]][None]: # For all forms
+    # If species is listed, add level moves **********
+    for moveName, moveCode in level_move_data[line[37]][None]: # For all forms
+        assignMoveCode(moveCode)
+    if line[1] != None and line[1] in level_move_data[line[37]]: # Uses form key
+        for moveName, moveCode in level_move_data[line[37]][line[1]]: # For specific forms
             assignMoveCode(moveCode)
-        if thisData["formKey"] != None and thisData["formKey"] in level_move_data[line[3]]: # Uses form key
-            print(f"Imported unique level moves for {line[5]}")
-            for moveName, moveCode in level_move_data[line[3]][thisData["formKey"]]: # For specific forms
-                assignMoveCode(moveCode)
-    if line[3] in tm_move_data: # If species is listed, add TM moves **********
-        for moveName in tm_move_data[line[3]][None]: # For all forms
+        print(f"Imported unique level moves for {line[5]}")
+        level_move_data[line[37]][line[1]] = []
+    if line[37] in tm_move_data: # If species is listed, add TM moves **********
+        for moveName in tm_move_data[line[37]][None]: # For all forms
             assignMoveCode(tm_tier_data[moveName])
-        tmKey = line[2] if thisData["formKey"] == "" else thisData["formKey"] # Inconsistent !!!!!!!!!!!!!
-        if tmKey != None and tmKey in tm_move_data[line[3]]:
-            print(f"Imported unique TM moves for {line[5]}")
-            for moveName in tm_move_data[line[3]][tmKey]: # For specific forms
+        if line[1] != None and line[1] in tm_move_data[line[37]]:
+            for moveName in tm_move_data[line[37]][line[1]]: # For specific forms
                 assignMoveCode(tm_tier_data[moveName])
+            print(f"Imported unique TM moves for {line[5]}")
+            tm_move_data[line[37]][line[1]] = []
 
     poke_data.append(line)
 print("\nFinished assigning pokemon data\n")
@@ -350,6 +359,15 @@ for line in poke_data:
 # region Error Checking
 print('\n==============================\n')
 print('Checking for errors...')
+
+for speciesName in level_move_data:
+    for formName in level_move_data[speciesName]:
+        if formName != None and level_move_data[speciesName][formName] != []:
+            print(f"** Failed to assign Level Moves for {formName} {speciesName}")
+for speciesName in tm_move_data:
+    for formName in tm_move_data[speciesName]:
+        if formName != None and tm_move_data[speciesName][formName] != []:
+            print(f"** Failed to assign TM Moves for {formName} {speciesName}")
 
 # Use the default image if unique form image does not exist
 for i in range(len(poke_data)):
@@ -613,11 +631,11 @@ attNames = ['rowno','form','parno','dexno','img','spec','desc','type1','type2','
            #    39          40           41             42             43           44            45             46
 omitAttr = [0, 1, 2, 6, 20, 21, 22, 34, 35, 36, 37, 38, 42]
 soloAttr = [] # Put an attribute here to only show changes to that, and ignores changes to others
-for i in range(len(soloAttr)):                              # You can use strings for ranges (inclusive)
-    if isinstance(soloAttr[i], str) and '-' in soloAttr[i]: # i.e. [1,'3-5',8] becomes [1,3,4,5,8]
-        for j in range(int(soloAttr[i].split('-')[0]),int(soloAttr[i].split('-')[1])):
+for i in soloAttr:                              # You can use strings for ranges (inclusive)
+    if isinstance(i, str) and '-' in i: # i.e. [1,'3-5',8] becomes [1,3,4,5,8]
+        for j in range(int(i.split('-')[0]),int(i.split('-')[1])):
             soloAttr.append(j)
-        soloAttr[i] = j+1
+        i = j+1
 attPatchCount = [0 for arg in attNames] # How many times each attribute was changed
 eggPatchCount = [0 for arg in poke_data] # How many times any egg move was changed
 patch_review = [] # Readable review of patch notes in the console
