@@ -74,13 +74,12 @@ for biome in allBiomes: # For each biome file in the biome folder, parse the enc
         tierLine.split(']:')[0]: {
             timeLine.split(']:')[0]: re.findall(r'SpeciesId.(.*?)[,\]]', timeLine.split(']:')[1], re.DOTALL)
             for timeLine in tierLine.split('TimeOfDay.')[1:]
-        }
-        for tierLine in inputBiomeData.split('BiomePoolTier.')
+        }   for tierLine in inputBiomeData.split('BiomePoolTier.')
     }
 biomeTierValues = { 'COMMON':20, 'UNCOMMON':40, 'BOSS':60, 'RARE':80, 'BOSS_RARE':100, 'SUPER_RARE':120, 'BOSS_SUPER_RARE':140, 'ULTRA_RARE':160, 'BOSS_ULTRA_RARE':180 }
 biomeTimeValues = { 'ALL':0, 'DAWN':1, 'DAY':2, 'DUSK':4, 'NIGHT':8 }
-biome_data = {} # All biome data [speciesName] = [ [biome,code], ... ]
-for biome, biomeLine in biome_data_raw.items():
+biome_data = {} # All biome data [speciesName] is like [ ['abyss', 23], ['abyss', 41], ['beach', 160], [...] ]
+for biome, biomeLine in biome_data_raw.items():                  # (Encounters are combined in a later step)
     for tier, tierLine in biomeLine.items():
         for time, timeLine in tierLine.items():
             for species in timeLine:
@@ -88,28 +87,21 @@ for biome, biomeLine in biome_data_raw.items():
                 if species not in biome_data:
                     biome_data[species] = []
                 tierCode = biomeTierValues[tier] + biomeTimeValues[time]
-                biome_data[species].append([biome, tierCode])           
-# Structure of biome_data[species] is like [ ['abyss', 23], ['abyss', 41], ['beach', 160], [...] ]
-# Same tier at multiple times of day are combined in a later step
+                biome_data[species].append([biome, tierCode])
+
 print('Finished reading biome data')
 
 #region Read Egg Moves
-egg_move_data = {}
+egg_move_data = {} # Egg moves are added to egg_move_data[species], encoded as 204(common) or 208(rare)
 with open(f"{pathBal}/moves/egg-moves.ts", "r", encoding="utf-8", errors="replace") as file: # Egg moves **************************
     content = file.read()
 # Use a regular expression to extract text between "speciesEggMoves = {" and "} satisfies"
-inputMoveData = re.findall(r'speciesEggMoves\s*=\s*{(.*?)}\ssatisfies', content, re.DOTALL)[0]
-inputMoveData = re.split(r',\n', inputMoveData)
-# Egg moves are added to egg_move_data[species], encoded as 204(common) or 208(rare)
+inputMoveData = re.findall(r'speciesEggMoves\s*=\s*{(.*?)}\ssatisfies', content, re.DOTALL)[0].split(',\n')
 for eggLine in inputMoveData:
     speciesName = format_for_disp(re.findall(r'SpeciesId\.(.*?)\]', eggLine)[0])
     eggMoves = [ format_for_disp(line) for line in re.findall(r'MoveId\.(.*?)\s?[\],]', eggLine) ]
-    if len(eggMoves) != 4:
-        print(f'Weird number of egg moves found in {speciesName}')
-    if speciesName not in egg_move_data:
-        egg_move_data[speciesName] = {}
-    for eggMove in eggMoves:
-        egg_move_data[speciesName][eggMove] = ( 208 if eggMove==eggMoves[-1] else 204 )
+    if len(eggMoves) != 4: print(f'Weird number of egg moves found in {speciesName}')
+    egg_move_data[speciesName] = { eggMoves[0]:204, eggMoves[1]:204, eggMoves[2]:204, eggMoves[3]:208 }
 print('Finished reading egg move data')
 
 poke_data = []
@@ -124,18 +116,18 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     # Species Name is used for "Related" filters, biome data, and translation lookup. Includes regional name, but not form name.
     line[3] = thisData["dexNum"] # dex number [3]
     line[4] = thisData["spriteKey"] # image filename [4]
-    line[5] = f'{line[1]} {line[2]}' if line[1] else line[2] # Display Name [5]
+    line[5] = f'{line[1]} {line[2]}' if line[1] else line[2] # Display Name [5] (Form + Species)
     line[6] = format_for_disp(thisData["category"]) # Species description (unused) [6]
 
     # Remove unobtainable pokemon, and "Complete 10% Zygarde"
     if thisData["isUnobtainable"] or '10 Complete' in line[5]:
         if 'Revavroom' not in line[5]: # Keep Starmobiles
-            print(f'Unobtainable {line[5]}')
+            print(f'Unobtainable: {line[5]}')
             continue # Skip the rest of parsing
 
     line[7] = format_for_disp(thisData["type1"]) # Type 1 [7]
     typeTwo = format_for_disp(thisData["type2"]) # Type 2 [8]
-    line[8] = '' if typeTwo == line[7] or typeTwo == None else typeTwo
+    line[8] = '' if typeTwo == None else typeTwo
     line[9] = format_for_disp(thisData["ability1"])    # Ability 1 [9]
     abilityTwo = format_for_disp(thisData["ability2"]) # Ability 2 [10]
     line[10] = '' if abilityTwo == line[9] or abilityTwo == "None" else abilityTwo
@@ -143,8 +135,8 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     line[11] = '' if abilityHidden == line[9] or abilityHidden == "None" else abilityHidden
     line[12] = format_for_disp(thisData["passive"]) # Passive [12]
 
-    stats = ['bst','hp','atk','def','spatk','spdef','spd','catchRate','growthRate','maleRatio','genderDiffs']
-    for j, stat in enumerate(stats): # Stats [13-19], Catch rate [20], growthRate [21], malePercent [22], genderDiffs [23]
+    stats = ['bst','hp','atk','def','spatk','spdef','spd','catchRate','growthRate','maleRatio']
+    for j, stat in enumerate(stats): # Stats [13-19], Catch rate [20], growthRate [21], malePercent [22]
         line[13+j] = thisData[stat]
     line[29] = thisData["startercost"] # Cost [29]
     line[32] = thisData["generation"] # Generation [32]
@@ -165,7 +157,7 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     if line[42] == 'Pikachu': line[42] = 'Pichu'
 
     # Form exclusive [37] ( '' = starter, 1 = mega, 2 = new mega, 3 = giga, 4 = transformed )
-    formExclusive = '' # By default, the form is selectable in starter select
+    formExclusive = '' # By default, a form is selectable in starter select
     # Check for mega, giga, or other transformed (Zacian, Mimikyu, etc.)
     if line[1] != None and not thisData["isStartSelectable"]: formExclusive = 4 # If form and not selectable
     megaList = ['Mega Clefable','Mega Victreebel','Mega Starmie','Mega Dragonite','Mega Meganium','Mega Feraligatr','Mega Skarmory','Mega Froslass','Mega Emboar','Mega Excadrill','Mega Scolipede','Mega Scrafty','Mega Eelektross','Mega Chandelure','Mega Chesnaught','Mega Delphox','Mega Greninja','Mega Pyroar','Mega Floette','Mega Malamar','Mega Barbaracle','Mega Dragalge','Mega Hawlucha','Mega Zygarde','Mega Drampa','Mega Falinks','Mega Raichu X','Mega Raichu Y','Mega Chimecho','Mega Baxcalibur']
@@ -180,7 +172,7 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     line[37] = formExclusive
 
     # Many attributes are given the default values of '', and filled in later, including:
-    # Egg Moves [24-27], Shiny Variants [31], familyFID [35], freshStart [36], Newly Added Variants [38]
+    # GenderDiffs [23], Egg Moves [24-27], Shiny Variants [31], familyFID [35], freshStart [36], New Variants [38]
     # Exclusive class [41] ( '' = regular, 1 = eggExc, 2 = baby, 3 = paradox, 4 = eterna, 5 = starmobile )
 
     #region Assign Moves
@@ -221,15 +213,15 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     poke_data.append(line)
 print("\nFinished assigning pokemon data\n")
 
-#region Propagate Cost & Egg
-for line in poke_data:
+#region Process Data
+for line in poke_data: # Propagate Cost & Egg Tier
     if '' in line[29:31]: # If blank entry for cost or egg tier, inherit from starter
         for starterLine in poke_data:
             if line[42] == starterLine[2]: # If starterName [42] equals starter's Species Name [2]
                 line[29:31] = starterLine[29:31] # Cost [29], egg tier [30]
                 line[34] = starterLine[34]       # Starter row [34]
                 break
-for evoLine in evolution_data: # Find pokemon that are not fully evolved
+for evoLine in evolution_data: # Find pokemon that are not fully evolved [39]
     preEvo = format_for_disp(evoLine["id"])
     for childLine in poke_data:
         if preEvo == childLine[2]:
@@ -283,6 +275,7 @@ for line in poke_data: # Check for empty properties in full_data
         throwError(f'Missing Egg Tier: {line[5]}')
     if line[34] == '': # Check for invalid starter row
         throwError(f'Unassigned starter row for {line[5]}')
+    # Assign exclusive class [41] ( '' = regular, 1 = eggExc, 2 = baby, 3 = paradox, 4 = eterna, 5 = starmobile )
     if line[40] == []:
         line[41] = 1 # Exclusive to egg
         if 'Pichu' in line[5]: # Manual override for spiky pichu bc it is missing evo hookup
@@ -298,15 +291,10 @@ for line in poke_data: # Check for empty properties in full_data
         # if line[41] == 1: print('Egg Exclusive:',line[5])
         # if line[41] == 2: print('Baby Egg Exclusive:',line[5])
     elif line[40] != [] and line[40][0][0] == 'end':
-        if 'Eternatus' in line[5]:
-            # print('Eternatus:',line[5])
-            line[41] = 4
-        else:
-            # print('Paradox:',line[5])
-            line[41] = 3
+        line[41] = 4 if 'Eternatus' in line[5] else 3
     if 'Starmobile' in line[5]:
-        line[40] = []
         line[37] = '' # Set form exclusive [37] to blank, not a "transformed" form
+        line[40] = []
         line[41] = 5  # Set exclusive class [41] to unobtainable
         # print('Starmobile:',line[5])
     if line[40] == [] and line[41] not in [1,2,5]: # If no biomes, and not egg exclusive
@@ -338,60 +326,33 @@ for speciesName in tm_move_data:
     for formName in tm_move_data[speciesName]:
         if formName != None and tm_move_data[speciesName][formName] != []:
             print(f"** Failed to assign TM Moves for {formName} {speciesName}")
-
-# Use the default image if unique form image does not exist
-for i in range(len(poke_data)):
-    if not os.path.isfile(f'{pathImg}/{poke_data[i][4]}_0.png'): # Check if the given img does not exist
-        # print(f'{poke_data[i][5]}: Could not find {poke_data[i][4]}')
-        if os.path.isfile(f'{pathImg}/{poke_data[i][3]}_0.png'): # Check if the base img exists
-            # print(f'{poke_data[i][5]}: Replaced {poke_data[i][4]} with base image')
-            poke_data[i][4] = f'{poke_data[i][3]}' # Get base image from dexno
-        elif poke_data[i][3] == poke_data[i-1][3]: # If same species as one above
-            poke_data[i][4] = poke_data[i-1][4] # Take image from form above
-            if int(poke_data[i][3]) not in [1012,1013]: # Report if not Sinistcha family
-                print(f'{poke_data[i][5]}: Replaced {poke_data[i][4]} with {poke_data[i-1][4]}')
-        else:
-            throwError(f'Could not find any image {poke_data[i][4]}_0.png for {poke_data[i][5]}')
-# Check for the existence of variant shinies
-for line in poke_data:
-    if os.path.isfile(f'{pathImg}/{line[4]}_3.png'): # Check if the tier 3 shiny exists
-        line[31] = 3 # Shiny variants [31]           # Need to run updateImages.py first *****
-    else:
-        line[31] = 1 # Shiny variants [31]
+    
+# Check for the existence of all images (all shiny, all back, optionally female)
+for line in poke_data:           # You must run updateImages.py first *****
+    line[31] = 3 if os.path.isfile(f'{pathImg}/{line[4]}_3.png') else 1 # Shiny variants [31]
     if os.path.isfile(f'{pathImg}/{line[4]}_0f.png'): # Check if the base female sprite exists
         line[23] = 1 # Mark as female sprite difference
-        femlist = ['','f']
-    else:
-        if 'Female' in line[5] or line[5] == 'Nidoran F':
-            line[23] = 2 # Mark as a distinct female form (Nidoran, Meowstic, etc.)
-        else:
-            line[23] = ''
-        femlist = ['']
+    elif 'Female' in line[5] or line[5] == 'Nidoran F':
+        line[23] = 2 # Mark as a distinct female form (Nidoran, Meowstic, etc.)
+    femlist = ['','f'] if line[23] == 1 else ['']
     for back in ['','b']: 
         for fem in femlist: 
             for shiny in range(line[31]+1):
-                # Check for existence of all images (all shiny, all back, optionally female)
                 if not os.path.isfile(f'{pathImg}/{line[4]}_{shiny}{fem}{back}.png'):
                     throwError(f"The file {pathImg}/{line[4]}_{shiny}{fem}{back}.png does not exist.")
 
 # Check that each Pokemon has level up moves, egg moves, and TM moves
 for line in poke_data:
-    check = [0,0,0]
-    for value in line[28].values():
-        if value < 100: # Level moves
-            check[0] = 1
-        if 200 < value < 209: # Egg moves (and Egg/TM moves)
-            check[1] += 1
-        if value > 208: # TM moves
-            check[2] = 1
-    if check[0] != 1:
+    if not any(value < 100 for value in line[28].values()): # Check for level moves
         throwError(f'Missing level-up entries in {line[5]}')
-    if check[1] != 4:
+    if sum(200 < value < 209 for value in line[28].values()) != 4: # Check for 4 egg moves
         throwError(f'Missing egg move entries in {line[5]}')
-    if check[2] != 1 and line[3] not in [132, 201, 202, 235, 360, 789, 790]:
-        throwError(f'Missing TM move entries in {line[5]}') # If a pokemon is supposed to have TM moves
+    if not any(value > 208 for value in line[28].values()) and line[3] not in [132, 201, 202, 235, 360, 789, 790]:
+        throwError(f'Missing TM move entries in {line[5]}') # Check for pokemon that should have TM moves
     if int(line[32]) not in range(1,10):
         throwError(f'Generation Error in {line[5]}')
+    if not os.path.isfile(f'{pathImg}/{line[4]}_0.png'): # Check if the given img does not exist
+        print(f'{line[5]}: Could not find {line[4]}.png')
 
 # Check that every pokemon has at least one pickable form        
 dexNo, isStartable = 1, False
@@ -586,83 +547,80 @@ attNames = ['rowno','form','species','dexno','img','fullName','desc','type1','ty
            #    39        40          41              42
 omitAttr = [0, 1, 2, 6, 20, 21, 22, 34, 35]
 soloAttr = [] # Put an attribute here to only show changes to that, and ignores changes to others
-for i in soloAttr:                              # You can use strings for ranges (inclusive)
+for i in soloAttr:                      # You can use strings for ranges (inclusive)
     if isinstance(i, str) and '-' in i: # i.e. [1,'3-5',8] becomes [1,3,4,5,8]
         for j in range(int(i.split('-')[0]),int(i.split('-')[1])):
             soloAttr.append(j)
         i = j+1
 attPatchCount = [0 for arg in attNames] # How many times each attribute was changed
-eggPatchCount = [0 for arg in poke_data] # How many times any egg move was changed
+eggPatchCount = [0 for line in poke_data] # Number of species with any egg move was changed
 patch_review = [] # Readable review of patch notes in the console
 patch_data = {} # Numerical patch data imported to the SearchDex
 def MoveSrcText(value):
-    if value == -1: return "mushroom"
-    if value == 0: return "evolution"
-    if value < 200: return f"level {value}"
-    return { 201:"Egg & Common TM", 202:"Egg & Great TM", 203:"Egg & Ultra TM", 204:"Egg Move", 205:"Rare Egg & Common TM", 206:"Rare Egg & Great TM", 207:"Rare Egg & Ultra TM", 208:"Rare Egg Move", 209:"Common TM", 210:"Great TM", 211:"Ultra TM" }[value]           
+    if 0 < value < 200: return f"Level {value}"
+    return { -1:"Mushroom", 0:"Evolution", 201:"Egg & Common TM", 202:"Egg & Great TM", 203:"Egg & Ultra TM", 204:"Egg Move", 205:"Rare Egg & Common TM", 206:"Rare Egg & Great TM", 207:"Rare Egg & Ultra TM", 208:"Rare Egg Move", 209:"Common TM", 210:"Great TM", 211:"Ultra TM" }[value]           
 for i,line in enumerate(poke_data):
     # Find where the species is, in _prev (the index may be different)
     for ii in range(i-10,min(i+10,len(poke_data_prev))):
-        if line[5] == poke_data_prev[ii][5]:
+        if line[5] == poke_data_prev[ii][5]: # Make matching display name
             prevLine = poke_data_prev[ii]
             break
     else:
-        print('Could not find',line[5],'in previous data')
+        print(f'Could not find previous data for {line[5]}')
         continue
-    if line[5] == prevLine[5]: # Make sure species is the same
-        # Find where the species is, in _prev_shvar (which may be different length from _prev)
-        for iii in range(i-10,min(i+10,len(poke_data_shvar))):
-            if line[5] == poke_data_shvar[iii][5]: # Find matching name
-                if line[31] != poke_data_shvar[iii][31]: # If shvar has changed
-                    line[38] = 1 # Mark as newly added shiny variants
-                break
-        else:
-            print(f'Could not find previous data for {line[5]}')
-        # Loop through all attributes for comparison
-        for j in range(0,min(len(line),len(prevLine))):
-            # For all the main values, they are only 'changed'
-            if (not soloAttr and j not in omitAttr) or j in soloAttr: 
-                if j == 28: # For the move dict, they are either 'added' or 'removed'
-                    for key,value in line[28].items():
-                        if value not in [204,208]: # Ignore egg moves
-                            if key in prevLine[28] and prevLine[28][key] not in [204,208]:
-                                valuePrev = prevLine[28][key]
-                                if valuePrev != value: # If move is different in new vs old data
-                                    patch_review.append(f'{line[5]}: {key} changed from {MoveSrcText(valuePrev)} to {MoveSrcText(value)}')
-                            else: # If new move is not in old data
-                                moveKind = "Level" if value < 200 else "TM"
-                                patch_review.append(f'{line[5]}: {key} added to {moveKind} moves')
-                    for key,value in prevLine[28].items():
-                        if key not in line[28] and value not in [204,208]: # If old move missing from new data
+    # Find where the species is, in _prev_shvar (which may be different length from _prev)
+    for iii in range(i-10,min(i+10,len(poke_data_shvar))):
+        if line[5] == poke_data_shvar[iii][5]: # Find matching display name
+            if line[31] != poke_data_shvar[iii][31]: # If shvar has changed
+                line[38] = 1 # Mark as newly added shiny variants
+            break
+    else:
+        print(f'Could not find previous shiny data for {line[5]}')
+    # Loop through all attributes for comparison
+    for j in range(0,min(len(line),len(prevLine))):
+        # For all the main values, they are only 'changed'
+        if (not soloAttr and j not in omitAttr) or j in soloAttr: 
+            if j == 28: # For the move dict, they are either 'added' or 'removed'
+                for key,value in line[28].items():
+                    if value not in [204,208]: # Ignore egg moves
+                        if key in prevLine[28] and prevLine[28][key] not in [204,208]:
+                            valuePrev = prevLine[28][key]
+                            if valuePrev != value: # If move is different in new vs old data
+                                patch_review.append(f'{line[5]}: {key} changed from {MoveSrcText(valuePrev)} to {MoveSrcText(value)}')
+                        else: # If new move is not in old data
                             moveKind = "Level" if value < 200 else "TM"
-                            patch_review.append(f'{line[5]}: {key} removed from {moveKind} moves')
-                elif str(line[j]) != str(prevLine[j]): # Compare all other attributes
-                    if j not in [24,25,26,27] or ( line[33] and not line[37] ): # Don't show egg moves, except on starter select mons
-                        patch_review.append(f'{line[5]}: {attNames[j]} changed from {prevLine[j]} to {line[j]}')
-                    if j in [12,24,25,26,27,29,30]:
-                        if j == 12: # Passive
-                            preFID = filterToFID[f'ability{format_for_attr(prevLine[j])}']
-                            postFID = filterToFID[f'ability{format_for_attr(line[j])}']
-                        if j in [24,25,26,27]: # Egg moves
-                            preFID = filterToFID[f'move{format_for_attr(prevLine[j])}']
-                            postFID = filterToFID[f'move{format_for_attr(line[j])}']
-                        if j == 29: # Cost
-                            preFID = fidThreshold[3]-1+prevLine[j]
-                            postFID = fidThreshold[3]-1+line[j]
-                        if j == 30: # Egg tier
-                            preFID = fidThreshold[4]+prevLine[j]
-                            postFID = fidThreshold[4]+line[j]
-                        for specID,thisData in patch_data.items(): # Check patch data for redundant entries
-                            if poke_data[specID][35] == line[35]: # If same family
-                                if j in thisData and thisData[j][0] == preFID and thisData[j][1] == postFID:
-                                    break
-                        else:
-                            if i not in patch_data:
-                                patch_data[i] = {}
-                            patch_data[i][j] = [preFID, postFID]
-                    attPatchCount[j] += 1
-                    if j in [24,25,26,27]:
-                        eggPatchCount[i] = 1
+                            patch_review.append(f'{line[5]}: {key} added to {moveKind} moves')
+                for key,value in prevLine[28].items():
+                    if key not in line[28] and value not in [204,208]: # If old move missing from new data
+                        moveKind = "Level" if value < 200 else "TM"
+                        patch_review.append(f'{line[5]}: {key} removed from {moveKind} moves')
+            elif str(line[j]) != str(prevLine[j]): # Compare all other attributes
+                if j not in [24,25,26,27] or ( line[33] and not line[37] ): # Don't show egg moves, except on starter select mons
+                    patch_review.append(f'{line[5]}: {attNames[j]} changed from {prevLine[j]} to {line[j]}')
+                if j in [12,24,25,26,27,29,30]:
+                    if j == 12: # Passive
+                        preFID = filterToFID[f'ability{format_for_attr(prevLine[j])}']
+                        postFID = filterToFID[f'ability{format_for_attr(line[j])}']
+                    if j in [24,25,26,27]: # Egg moves
+                        preFID = filterToFID[f'move{format_for_attr(prevLine[j])}']
+                        postFID = filterToFID[f'move{format_for_attr(line[j])}']
+                    if j == 29: # Cost
+                        preFID = fidThreshold[3]-1+prevLine[j]
+                        postFID = fidThreshold[3]-1+line[j]
+                    if j == 30: # Egg tier
+                        preFID = fidThreshold[4]+prevLine[j]
+                        postFID = fidThreshold[4]+line[j]
+                    for specID,thisData in patch_data.items(): # Check patch data for redundant entries
+                        if poke_data[specID][35] == line[35]: # If same family
+                            if j in thisData and thisData[j][0] == preFID and thisData[j][1] == postFID:
+                                break
+                    else:
+                        if i not in patch_data:
+                            patch_data[i] = {}
+                        patch_data[i][j] = [preFID, postFID]
+                attPatchCount[j] += 1
+                if j in [24,25,26,27]:
+                    eggPatchCount[i] = 1
 for line in patch_review:
     print(line)
 print('\nSummary of patch notes:')
@@ -687,20 +645,18 @@ print('\n==============================\n')
 print("Writing to website database...")
 
 #region Write Website Data
-# Write all the main data to a Javascript file *********************************************
-# Names are short to reduce database file size
+# Write all the main data to a Javascript file (names are short to reduce file size) *****************************
 attributes = ['row','form','spec','dex','img','name','desc','t1','t2','a1','a2','ha','pa',
-             #  0     1      2      3     4     5      6     7    8    9    10   11   12    
+             #  0     1      2      3     4     5      6     7    8    9    10   11   12
               'bst','hp','atk','def','spa','spd','spe','catchrate','exp','mpc','fe','e1','e2','e3','e4','movedict',
              #  13   14    15    16    17    18    19       20       21    22   23   24   25   26   27      28
               'co','et','sh','ge','st','startRow','fa','fs','fx','nv','ev','biomes','ex']
              # 29   30   31   32   33      34      35   36   37   38   39     40     41
-# Some attributes are not written to the SearchDex database
-omitAttr = [0, 1, 2, 5, 6, 20, 21, 22, 28, 34, 40]
+omitAttr = [0, 1, 2, 5, 6, 20, 21, 22, 28, 34, 40] # Some attributes are not written to the SearchDex database
 # Key text to convert type/ability/move to filterID (FID) via filterToFID
 keyText = {7:'type', 8:'type', 9:'ability', 10:'ability', 11:'ability', 12:'ability', 24:'move', 25:'move', 26:'move', 27:'move'}
 
-jsdict = ['// pokedex_data.js\nconst items=[']
+linesToWrite = ['// pokedex_data.js\nconst items=[']
 for line in poke_data:
     text = '{' # Start the entry of that Pokemon
     # Write all the main attributes as {text}:{value}
@@ -731,14 +687,12 @@ for line in poke_data:
 
     # End the entry of that Pokemon and remove unnecessary commas
     text = f'{text}}},'.replace(',]',']').replace(',}','}')
-    jsdict.append(text)
-jsdict.append('];')
+    linesToWrite.append(text)
+linesToWrite.append('];')
 
 # Open the file in write mode ('w') - this will overwrite the file if it exists
 with open("website/pokedex_data.js", "w") as file:
-    # Add a newline character to each string and write it to the file
-    file.writelines(f"{line}\n" for line in jsdict)
-print("Data writing complete")
+    file.writelines(f"{line}\n" for line in linesToWrite) # Add a newline character to each string and write it to the file
 
 # Here are the rules for how pokedex_data.js is structured:
 #     The data contains the full data on every Pokemon, and the structure allows for fast lookups of information.
@@ -819,4 +773,4 @@ print("Data writing complete")
 #                             This means it is in the Jungle (FID = 1201)
 #                             The rarities are Common (Dusk, Night), Boss Common (Dusk, Night), Rare (Dawn, Day), Boss Rare (Dawn, Day)
 
-print("Filter writing complete\n\n=========== ALL DONE ===========\n")
+print("Data writing complete\n\n=========== ALL DONE ===========\n")
