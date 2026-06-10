@@ -2,8 +2,8 @@
 setlocal enabledelayedexpansion
 
 REM ======= CONFIG =======
-set "branchName=wiki-scraper"
-set "repoUrl=https://github.com/fabske0/pokerogue.git"
+set "branchName=beta"
+set "repoUrl=https://github.com/pagefaultgames/pokerogue.git"
 set "repoDest=game_files"
 
 set "websiteUrl=https://github.com/Sandstormer/PokeRogue-Dex.git"
@@ -16,10 +16,10 @@ REM ======= CLONE WEBSITE (ONLY ONCE) =======
 call :clone_or_update "%websiteUrl%" "%websiteDest%" "" 1
 
 REM ======= PNPM STEPS =======
-cd /d "%repoDest%" || exit /b 1
-pnpm --version || exit /b 1
-pnpm install || exit /b 1
-pnpm wiki-scrape --json || exit /b 1
+cd /d "%repoDest%"
+call pnpm --version
+call pnpm install
+call pnpm species-data:export --json
 
 echo.
 echo ======= ALL DONE =======

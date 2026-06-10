@@ -5,7 +5,7 @@
 # There are rules at the bottom of this file for how pokedex_data.js is structured
 
 pathBal  = './game_files/src/data/balance' # Path to the balance folder
-pathJSON = './game_files/wiki-output' # Path to the exported game data Json files
+pathJSON = './game_files/species-output' # Path to the exported game data Json files
 pathImg = './website/images' # Path to read processed images from updateImages.py
 
 import re, os, json
@@ -662,7 +662,7 @@ for line in poke_data:
     # Write all the main attributes as {text}:{value}
     for i in range(len(attributes)): 
         if i not in omitAttr and line[i] != '':
-            if i in [7,8,9,10,11,12,24,25,26,27]: # Types/Abilities/Moves are listed as Names in poke_data
+            if i in keyText.keys(): # Types/Abilities/Moves are listed as Names in poke_data
                 fid = filterToFID[format_for_attr(f'{keyText[i]}{line[i]}')] # Convert to filter ID (fid)
                 text = f'{text}{attributes[i]}:{fid},'
             elif i == 4:
