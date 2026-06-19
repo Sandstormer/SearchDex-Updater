@@ -520,7 +520,7 @@ for lang in langs: # =========================================== Main loop for e
 
     # Apply manual overrides from the lang_overrides folder =========================
     #region Apply Overrides
-    # These go directly onto the searchdex
+    # These go directly onto the SearchDex
     if lang not in ignoreOverrides and 'all' not in ignoreOverrides:
         for overrideName in overrides['en'].keys():
             if overrideName in overrides[lang]:

@@ -283,7 +283,7 @@ for line in moveData: # Loop through all the move lines from the game code
 
     # General order of move descriptors: priority, targets, procs, all other tags
     # All the procs and tags are shared between abilities and moves
-    # Tags should be in sequential order as they will be displayed on the searchdex
+    # Tags should be in sequential order as they will be displayed on the SearchDex
     # They are not processed in sequential order here, due to string matching
     # My internally used tags start at 200 (for contact, reflectable, etc.)
     elif f'move{moveName}' in filterToFID:
