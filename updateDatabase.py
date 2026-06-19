@@ -226,7 +226,20 @@ for evoLine in evolution_data: # Find pokemon that are not fully evolved [39]
     for childLine in poke_data:
         if preEvo == childLine[2]:
             childLine[39] = '' # Set the child to not be fullyEvolved
-#region Propagate Biomes
+# Determine which pokemon are available for "Fresh Start"
+gen, freshThisGen, freshStarterIndices = 1, 0, []
+for line in poke_data:
+    if int(line[32]) == gen and (line[34] not in freshStarterIndices) and freshThisGen < 3:
+        if line[29] < 6: # Exclude Victini
+            freshStarterIndices.append(line[34]) # Add that starter line to the Fresh Start list
+            freshThisGen += 1
+    if freshThisGen == 3: # Go to next gen after finding 3 starter lines
+        gen = gen + 1 
+        freshThisGen = 0
+    if line[34] in freshStarterIndices:
+        line[36] = 1 # Set all pokemon in that starter line to be Fresh Start
+
+#region Assign Biomes
 for stages in range(2): # Propagate biomes via up to 2 evolutions **************************
     for evoLine in evolution_data:
         preEvo = format_for_disp(evoLine["id"])
@@ -261,20 +274,7 @@ for stages in range(2): # Up to 2 evolutions
         # TODO: tyrogue,smoochum,elekid,magby,wynaut,toxel
         # These babies can appear in the wild, because they are level evolutions
         # Friendship evolutions cannot devolve at low levels
-print('Finished propagating data to evolutions and forms')
-
-#region Empty Checks
-for line in poke_data: # Check for empty properties in full_data
-    if line[12] == '':
-        throwError(f'Missing Passives: {line[5]}')
-    if line[24:28] == '':
-        throwError(f'Missing Egg Moves: {line[5]}')
-    if line[29] == '' or line[29] == 0:
-        throwError(f'Missing Cost: {line[5]}')
-    if line[30] == '':
-        throwError(f'Missing Egg Tier: {line[5]}')
-    if line[34] == '': # Check for invalid starter row
-        throwError(f'Unassigned starter row for {line[5]}')
+for line in poke_data:
     # Assign exclusive class [41] ( '' = regular, 1 = eggExc, 2 = baby, 3 = paradox, 4 = eterna, 5 = starmobile )
     if line[40] == []:
         line[41] = 1 # Exclusive to egg
@@ -299,19 +299,7 @@ for line in poke_data: # Check for empty properties in full_data
         # print('Starmobile:',line[5])
     if line[40] == [] and line[41] not in [1,2,5]: # If no biomes, and not egg exclusive
         throwError(f'Missing Biomes: {line[5]}')
-
-# Determine which pokemon are available for "Fresh Start"
-gen, freshThisGen, freshStarterIndices = 1, 0, []
-for line in poke_data:
-    if int(line[32]) == gen and (line[34] not in freshStarterIndices) and freshThisGen < 3:
-        if line[29] < 6: # Exclude Victini
-            freshStarterIndices.append(line[34]) # Add that starter line to the Fresh Start list
-            freshThisGen += 1
-    if freshThisGen == 3: # Go to next gen after finding 3 starter lines
-        gen = gen + 1 
-        freshThisGen = 0
-    if line[34] in freshStarterIndices:
-        line[36] = 1 # Set all pokemon in that starter line to be Fresh Start
+print('Finished assigning biomes to evolutions and forms')
 
 # Error checking **************************************************************************************
 # region Error Checking
@@ -343,13 +331,23 @@ for line in poke_data:           # You must run updateImages.py first *****
 
 # Check that each Pokemon has level up moves, egg moves, and TM moves
 for line in poke_data:
+    if line[12] == '':
+        throwError(f'Missing Passives: {line[5]}')
+    if line[24:28] == '':
+        throwError(f'Missing Egg Moves: {line[5]}')
+    if line[29] == '' or line[29] == 0:
+        throwError(f'Missing Cost: {line[5]}')
+    if line[30] == '':
+        throwError(f'Missing Egg Tier: {line[5]}')
+    if line[34] == '': # Check for invalid starter row
+        throwError(f'Unassigned starter row for {line[5]}')
     if not any(value < 100 for value in line[28].values()): # Check for level moves
         throwError(f'Missing level-up entries in {line[5]}')
     if sum(200 < value < 209 for value in line[28].values()) != 4: # Check for 4 egg moves
         throwError(f'Missing egg move entries in {line[5]}')
     if not any(value > 208 for value in line[28].values()) and line[3] not in [132, 201, 202, 235, 360, 789, 790]:
         throwError(f'Missing TM move entries in {line[5]}') # Check for pokemon that should have TM moves
-    if int(line[32]) not in range(1,10):
+    if line[32] not in range(1,10):
         throwError(f'Generation Error in {line[5]}')
     if not os.path.isfile(f'{pathImg}/{line[4]}_0.png'): # Check if the given img does not exist
         print(f'{line[5]}: Could not find {line[4]}.png')
@@ -545,15 +543,13 @@ attNames = ['rowno','form','species','dexno','img','fullName','desc','type1','ty
            #    28       29      30       31     32       33          34        35         36             37             38
             'evoClass','biomes','exclusiveClass','starterName']
            #    39        40          41              42
-omitAttr = [0, 1, 2, 6, 20, 21, 22, 34, 35]
+omitAttr = [0, 1, 2, 6, 20, 21, 22, 34, 35] # Omit from patch comparison
 soloAttr = [] # Put an attribute here to only show changes to that, and ignores changes to others
-for i in soloAttr:                      # You can use strings for ranges (inclusive)
-    if isinstance(i, str) and '-' in i: # i.e. [1,'3-5',8] becomes [1,3,4,5,8]
-        for j in range(int(i.split('-')[0]),int(i.split('-')[1])):
-            soloAttr.append(j)
-        i = j+1
+# You can use strings for ranges, i.e. [1,'3-5',8] becomes [1,3,4,5,8]
+soloAttr = [ [*range(int(i.split('-')[0]),int(i.split('-')[1])+1)] if isinstance(i, str) else [i] for i in soloAttr ]
+soloAttr = [ j for i in soloAttr for j in i ]
 attPatchCount = [0 for arg in attNames] # How many times each attribute was changed
-eggPatchCount = [0 for line in poke_data] # Number of species with any egg move was changed
+eggPatchCount = [0 for line in poke_data] # Number of species where any egg move was changed
 patch_review = [] # Readable review of patch notes in the console
 patch_data = {} # Numerical patch data imported to the SearchDex
 def MoveSrcText(value):
@@ -588,14 +584,13 @@ for i,line in enumerate(poke_data):
                             if valuePrev != value: # If move is different in new vs old data
                                 patch_review.append(f'{line[5]}: {key} changed from {MoveSrcText(valuePrev)} to {MoveSrcText(value)}')
                         else: # If new move is not in old data
-                            moveKind = "Level" if value < 200 else "TM"
-                            patch_review.append(f'{line[5]}: {key} added to {moveKind} moves')
+                            patch_review.append(f'{line[5]}: {key} added to {MoveSrcText(valuePrev)}')
                 for key,value in prevLine[28].items():
                     if key not in line[28] and value not in [204,208]: # If old move missing from new data
-                        moveKind = "Level" if value < 200 else "TM"
-                        patch_review.append(f'{line[5]}: {key} removed from {moveKind} moves')
+                        patch_review.append(f'{line[5]}: {key} removed from {MoveSrcText(valuePrev)}')
             elif str(line[j]) != str(prevLine[j]): # Compare all other attributes
-                if j not in [24,25,26,27] or ( line[33] and not line[37] ): # Don't show egg moves, except on starter select mons
+                attPatchCount[j] += 1
+                if j not in [24,25,26,27] or ( line[33] and not line[37] ): # Don't show egg moves, except on starter mons
                     patch_review.append(f'{line[5]}: {attNames[j]} changed from {prevLine[j]} to {line[j]}')
                 if j in [12,24,25,26,27,29,30]:
                     if j == 12: # Passive
@@ -604,6 +599,7 @@ for i,line in enumerate(poke_data):
                     if j in [24,25,26,27]: # Egg moves
                         preFID = filterToFID[f'move{format_for_attr(prevLine[j])}']
                         postFID = filterToFID[f'move{format_for_attr(line[j])}']
+                        eggPatchCount[i] = 1
                     if j == 29: # Cost
                         preFID = fidThreshold[3]-1+prevLine[j]
                         postFID = fidThreshold[3]-1+line[j]
@@ -613,14 +609,11 @@ for i,line in enumerate(poke_data):
                     for specID,thisData in patch_data.items(): # Check patch data for redundant entries
                         if poke_data[specID][35] == line[35]: # If same family
                             if j in thisData and thisData[j][0] == preFID and thisData[j][1] == postFID:
-                                break
-                    else:
+                                break # Skip if family already lists that change
+                    else: # Add that patch change to this pokemon
                         if i not in patch_data:
                             patch_data[i] = {}
                         patch_data[i][j] = [preFID, postFID]
-                attPatchCount[j] += 1
-                if j in [24,25,26,27]:
-                    eggPatchCount[i] = 1
 for line in patch_review:
     print(line)
 print('\nSummary of patch notes:')
@@ -700,7 +693,7 @@ with open("website/pokedex_data.js", "w") as file:
 #     The entries for each pokemon can be in any order.
 #     dex:    Pokedex number
 #     img:    File name of the image
-#             Gets the actual image as "ui/{img}_0.png" for tier 0 (non-shiny)
+#             Website fetches the actual image as "images/{img}_0.png" for tier 0 (non-shiny)
 #     t1, t2, a1, a2, ha, pa: Types, Abilities, Hidden Ability, Passive
 #             Contains the Filter ID (FID) that corresponds to the type/ability described
 #             An entry is omitted if it does not apply to the pokemon
@@ -717,11 +710,10 @@ with open("website/pokedex_data.js", "w") as file:
 #     fe: If the Pokemon has a female form
 #             Value is 1 if they have traditional sprite differences, like Venusaur
 #             Value is 2 if they have named female forms, like Meowstic
-#     fa: Which family the pokemon is in
-#             This is used for the "Related To" filters
-#             Contains the FID that corresponds to that family filter
+#     fa: Contains the FID that corresponds to the family that pokemon is in
+#             Family FID is used for the "Related To" filters
 #     st: Value is 1 if the Pokemon is available from starter select (i.e. being the lowest evolution)
-#     ev: Value is 1 if the Pokemon is fully evolved (single stage pokemon have 'st' and 'ev')
+#     ev: Value is 1 if the Pokemon is fully evolved (single stage pokemon have both 'st:1' and 'ev:1')
 #     fs: Value is 1 if the Pokemon is available in fresh start (i.e. being a first partner pokemon)
 #     nv: Value is 1 if the Pokemon had new variants recently added
 #     fx: If the Pokemon is form exclusive
@@ -735,7 +727,7 @@ with open("website/pokedex_data.js", "w") as file:
 #             Value is 3 for paradox egg exclusives, like Scream Tail
 #             Value is 4 only for Eternatus
 #             Value is 5 only for Starmobile Revavroom
-#     numerical entries: These are like FID:value
+#     numerical entries: These are like "FID:value"
 #             FID is the Filter ID, which can be a type, ability, move, biome
 #             value is how that pokemon relates to that FID (this is different depending on the FID)
 #             Do not include entries that don't apply to that pokemon
@@ -749,11 +741,11 @@ with open("website/pokedex_data.js", "w") as file:
 #             For Types: (i.e. 9:307)
 #                     fidThreshold[0] <= FID < fidThreshold[1]
 #                     value shows which slot the pokemon has that type (307 = type1, 308 = type2)
-#                     This data is technically redundant but allows for faster lookups
+#                     This data is technically redundant, but for consistency with abilities/moves
 #             For Abilities: (i.e. 18:309)
 #                     fidThreshold[1] <= FID < fidThreshold[2]
 #                     value shows which slot the pokemon has that ability (309 = ab1, 310 = ab2, 311 = ha, 312 = pa)
-#                     This data is technically redundant but allows for faster lookups
+#                     This data allows for ability lookups that are restricted by ability slot
 #             For Biomes: (i.e. 1197:[80,100])
 #                     fidThreshold[8] <= FID < fidThreshold[9]
 #                     value is an array describing the encounter types in that biome
@@ -770,7 +762,7 @@ with open("website/pokedex_data.js", "w") as file:
 #                                     Entries beyond the second can be in any order
 #                                     If a pokemon is only Boss encounters, the first entry is the lowest number
 #                     For example, Amoonguss has 1201:[32,72,83,103]
-#                             This means it is in the Jungle (FID = 1201)
+#                             This means it is in the Jungle (FID = 1221)
 #                             The rarities are Common (Dusk, Night), Boss Common (Dusk, Night), Rare (Dawn, Day), Boss Rare (Dawn, Day)
 
 print("Data writing complete\n\n=========== ALL DONE ===========\n")
