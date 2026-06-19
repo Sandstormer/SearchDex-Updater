@@ -13,10 +13,17 @@ REM ======= CLONE / UPDATE GAME FILES =======
 call :clone_or_update "%repoUrl%" "%repoDest%" "%branchName%" 0
 
 REM ======= CLONE WEBSITE (ONLY ONCE) =======
-call :clone_or_update "%websiteUrl%" "%websiteDest%" "" 1
+REM If folder doesn't exist -> clone
+if exist "%websiteDest%" (
+    echo SearchDex website folder already exists. That won't be updated...
+) else (
+    echo Cloning SearchDex website files into %websiteDest%...
+    git clone --depth 1 %websiteUrl% %websiteDest%
+)
 
 REM ======= PNPM STEPS =======
 cd /d "%repoDest%"
+echo Running game export script
 call pnpm --version
 call pnpm install
 call pnpm species-data:export --json
@@ -67,18 +74,14 @@ if not exist "%dest%\.git" (
 )
 
 echo Resetting repository at %dest%...
-
-git -C "%dest%" fetch --depth 1 origin || exit /b 1
-
+git -C "%dest%" fetch --depth 1 origin
 if not "%branch%"=="" (
-    git -C "%dest%" fetch --depth 1 origin %branch% || exit /b 1
-    git -C "%dest%" checkout -B %branch% FETCH_HEAD || exit /b 1
+    git -C "%dest%" fetch --depth 1 origin %branch%
+    git -C "%dest%" checkout -B %branch% FETCH_HEAD
 ) else (
-    git -C "%dest%" reset --hard origin/HEAD || exit /b 1
+    git -C "%dest%" reset --hard origin/HEAD
 )
-
-git -C "%dest%" clean -fdx || exit /b 1
-
-git -C "%dest%" submodule update --init --recursive --force --depth 1 || exit /b 1
+git -C "%dest%" clean -fdx 
+git -C "%dest%" submodule update --init --recursive --force --depth 1
 
 exit /b 0
