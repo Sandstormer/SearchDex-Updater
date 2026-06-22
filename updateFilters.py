@@ -30,7 +30,7 @@ abilityData = re.sub(r'\/\* Unused.*?End Unused \*\/', '', abilityData, flags=re
 abilityData = re.sub(r' +new ', 'new ', abilityData)
 abilityData = abilityData.split('\n')
 ability2D = []
-# Manually link some tags to abilities. These MUST be in the order of tagToDesc, in the language files.
+# Manually link some tags to abilities. The number refers to the order of tagToDesc, in the language files.
 tagToAbility = {
     50:['magicguard','comatose','shieldsdown','fullmetalbody','shadowshield','prismarmor'],
     56:['lightningrod','motordrive','voltabsorb'],

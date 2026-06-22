@@ -108,7 +108,7 @@ poke_data = []
 #region Assign Pokemon Data
 print("\nStarting to assign pokemon data\n")
 for i, thisData in enumerate(species_data): # Function for reading from game data
-    line = ['' for _ in range(47)] 
+    line = ['' for _ in range(43)] 
 
     line[0] = i # row number [0]
     line[1] = format_for_disp(thisData["formKey"]) # Form Name [1] (used for actual name)
@@ -349,8 +349,6 @@ for line in poke_data:
         throwError(f'Missing TM move entries in {line[5]}') # Check for pokemon that should have TM moves
     if line[32] not in range(1,10):
         throwError(f'Generation Error in {line[5]}')
-    if not os.path.isfile(f'{pathImg}/{line[4]}_0.png'): # Check if the given img does not exist
-        print(f'{line[5]}: Could not find {line[4]}.png')
 
 # Check that every pokemon has at least one pickable form        
 dexNo, isStartable = 1, False
@@ -527,14 +525,13 @@ print("Reviewing patch changes...\n")
 # This makes it easy to see what has changed in the new data, by comparing to poke_data_prev.json
 # To re-base the comparison, you must manually replace poke_data_prev.json with data from poke_data.json
 # poke_data_prev_shvar.json should only be re-based right before adding new variants
+# Github may detect more changes in pokedex_data.js because of how fid are assigned
 with open("local_files/poke_data.json", "w", encoding="utf-8") as f:
     json.dump(poke_data, f, ensure_ascii=False, indent=4) # Write all the trimmed data to a json file
 with open("local_files/poke_data_prev.json", "r", encoding="utf-8", errors="replace") as fp:
     poke_data_prev = json.load(fp) # Load the previous trimmed data for comparison
 with open("local_files/poke_data_prev_shvar.json", "r", encoding="utf-8", errors="replace") as fp:
     poke_data_shvar = json.load(fp) # Older version for detecting new variants
-# Look for changes and report them in a patch notes format
-# Github may detect more changes in pokedex_data.js because of how fid are assigned
 attNames = ['rowno','form','species','dexno','img','fullName','desc','type1','type2','ab1','ab2','hab','Passive',
            #   0      1        2        3      4       5        6       7       8      9    10    11    12
             'bst','HP','Atk','Def','SpAtk','SpDef','Speed','catchrate','exp','mpc','fem','Egg Move 1','Egg Move 2','Egg Move 3','Rare Egg Move',
@@ -683,8 +680,7 @@ for line in poke_data:
     linesToWrite.append(text)
 linesToWrite.append('];')
 
-# Open the file in write mode ('w') - this will overwrite the file if it exists
-with open("website/pokedex_data.js", "w") as file:
+with open("website/pokedex_data.js", "w") as file: # Write mode ('w') overwrites the file if it exists
     file.writelines(f"{line}\n" for line in linesToWrite) # Add a newline character to each string and write it to the file
 
 # Here are the rules for how pokedex_data.js is structured:
