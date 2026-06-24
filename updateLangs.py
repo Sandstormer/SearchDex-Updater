@@ -242,7 +242,8 @@ for lang in langs: # =========================================== Main loop for e
         text = format_for_camel(specLine[2])
         if text in tall['pokemon']:
             justLocSpec = tall['pokemon'][text]
-            justLocForm = ''
+            justLocForm = '' # Standard form names
+            prependForm = '' # Mega/Giga prefixes
         else:
             input(f'***** Error: Could not find base species {text}')
 
@@ -275,18 +276,23 @@ for lang in langs: # =========================================== Main loop for e
             if effSpec == 'Dudunsparce': effSpec = 'Dunsparce'
             if effSpec == 'Sinistcha': effSpec = 'Poltchageist'
             if effSpec == 'Galar Darmanitan': effSpec = 'Galar Darumaka'
-            if specLine[2] == 'Battle Bond Greninja' and specLine[1] == 'Battle Bond': specLine[1] = ''
+            if specLine[2] == 'Battle Bond Greninja' and specLine[1] == 'Battle Bond':
+                specLine[1] = ''
+                justLocForm = tall['pokemon-form']['battleBondGreninja']
             if format_for_camel(specLine[1]) in tall['pokemon-form']['battleForm']: # For mega/giga/etc
-                justLocForm = tall['pokemon-form']['battleForm'][format_for_camel(specLine[1])]
-            elif effSpec == 'Arceus' or effSpec == 'Silvally':
-                justLocForm = tall['pokemon-info']['type'][specLine[1].lower()]
-            else:
+                prependForm = tall['pokemon-form']['battleForm'][format_for_camel(specLine[1])]
+                specLine[1] = '' # Remove 'Mega' from form names
+            if "Mega" in specLine[1]: # For mega combination forms
+                prependForm = tall['pokemon-form']['battleForm']['mega']
                 specLine[1] = specLine[1].replace('Mega ','') # Remove 'Mega' from form names
+            if specLine[1]: # If there is still a form to be translated
                 text = format_for_camel(f"{effSpec} {specLine[1]}")
                 if text in tall['pokemon-form']: # For regular forms
                     justLocForm = tall['pokemon-form'][text]
+                elif effSpec == 'Arceus' or effSpec == 'Silvally':
+                    justLocForm = tall['pokemon-info']['type'][specLine[1].lower()]
                 else:
-                    input(f'***** Error: Could not find form name for {specLine[0]}')
+                    input(f'***** Error: Could not find form name for {specLine}')
 
         # Put the name in correct format (for regionals or forms)
         nameFormat = '{{pokemonName}}'
@@ -296,13 +302,13 @@ for lang in langs: # =========================================== Main loop for e
                 nameFormat = tall['pokemon-form']['appendForm'][region.lower()]
         if tall['pokemon-form']['appendForm']['generic'] != '{{pokemonName}} ({{formName}})':
             input('***** Error: Odd format detected') # This is never used, but it's just to check the format
-        if justLocForm: # If it is a form, add the form name to the format
-            if lang == 'fr':
-                nameFormat = f'{nameFormat} {justLocForm}' # French has form name after
-                if 'Méga' in justLocForm:
-                    nameFormat = f'Méga-{nameFormat.replace(" Méga","")}'
-            else:
-                nameFormat = f'{justLocForm} {nameFormat}' # Other langs have form name first
+        if lang == 'fr':
+            if justLocForm: nameFormat = f'{nameFormat} {justLocForm}' # French has form name after
+            if prependForm: nameFormat = f'{nameFormat} {prependForm}'
+            if 'Méga' in nameFormat: nameFormat = f'Méga-{nameFormat.replace(" Méga","")}'
+        else: # If it is a form, add the form name to the format
+            if justLocForm: nameFormat = f'{justLocForm} {nameFormat}' # Most langs have form name first
+            if prependForm: nameFormat = f'{prependForm} {nameFormat}'
 
         # Insert the species name, and remove most punctuation
         thisName = nameFormat.replace('{{pokemonName}}',justLocSpec) # Fill in the species name
