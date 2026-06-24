@@ -257,19 +257,19 @@ def processImage(spriteIndex, shinyIndex, femIndex, backIndex):
     sliced_img = sliced_img.crop(Image.fromarray(pixels).getbbox())
 
     # Check for differences with the previous image
-    # global changedList
     if os.path.isfile(f"{savePath}.png"):
         prev_img = Image.open(f"{savePath}.png")
         arr_new = np.array(sliced_img.convert("RGBA"))
         arr_old = np.array(prev_img.convert("RGBA"))
         if arr_new.shape != arr_old.shape:
-            print('Image size changed in',simpleName)
-            changedList.append(simpleName)
+            changedList.append(f'{simpleName} - Image size/pose changed')
         else:
             pixelsChanged = np.sum(np.any(arr_new != arr_old, axis=-1))
-            if pixelsChanged: 
-                print(pixelsChanged,'pixels changed in',simpleName)
-                changedList.append(simpleName)
+            if not pixelsChanged:
+                return # If no pixels are changed, don't bother replacing the image
+            changedList.append(f'{simpleName} - Colors changed ({pixelsChanged} pixels)')
+    else:
+        changedList.append(f'{simpleName} - New variant')
 
     sliced_img.save(f"{savePath}.png", optimize=True, compress_level=9, pnginfo=None) # Save the image to the website folder
     
@@ -326,7 +326,10 @@ print('Largest width:' ,biggestW) # usually 115
 print('Largest height:',biggestH) # usually 119
 
 print('\nList of actually changed images:')
-print("\n".join(changedList))
+with open("local_files/image_review.txt", "w") as file:
+    for line in changedList:
+        file.writelines(f"{line}\n")
+        print(line)
 
 print('\n=========== ALL DONE ===========\n')
 
