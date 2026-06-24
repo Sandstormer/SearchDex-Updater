@@ -325,6 +325,9 @@ for speciesName in tm_move_data:
             print(f"** Failed to assign TM Moves for {formName} {speciesName}")
     
 # Check for the existence of all images (all shiny, all back, optionally female)
+with open("local_files/image_review.txt", "r") as file:
+    pixel_data = file.read().split('\n')[:-1] # Load the pixel change data
+    pixel_data = { line.split(' - ')[0]: line.split(' - ')[1] for line in pixel_data }
 for line in poke_data:           # You must run updateImages.py first *****
     line[31] = 3 if os.path.isfile(f'{pathImg}/{line[4]}_3.png') else 1 # Shiny variants [31]
     if os.path.isfile(f'{pathImg}/{line[4]}_0f.png'): # Check if the base female sprite exists
@@ -335,8 +338,15 @@ for line in poke_data:           # You must run updateImages.py first *****
     for back in ['','b']: 
         for fem in femlist: 
             for shiny in range(line[31]+1):
-                if not os.path.isfile(f'{pathImg}/{line[4]}_{shiny}{fem}{back}.png'):
-                    throwError(f"The file {pathImg}/{line[4]}_{shiny}{fem}{back}.png does not exist.")
+                thisImagePath = f'{line[4]}_{shiny}{fem}{back}'
+                if thisImagePath in pixel_data:
+                    if "New variant" in pixel_data[thisImagePath]:
+                        line[38] = 1 # Mark new species as new variants
+                    if "Colors changed" in pixel_data[thisImagePath]:
+                        if int(re.findall(r'\((.*?) pixels', pixel_data[thisImagePath])[0]) > 500:
+                            line[38] = 1 # Mark as new variants if more than 500 pixels changed
+                if not os.path.isfile(f'{pathImg}/{thisImagePath}.png'):
+                    throwError(f"The file {pathImg}/{thisImagePath}.png does not exist.")
 
 # Check that each Pokemon has level up moves, egg moves, and TM moves
 for line in poke_data:

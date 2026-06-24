@@ -567,6 +567,7 @@ Pikachu: Shock Wave changed from Great TM to Common TM
 Pikachu: Nasty Plot changed from Level 1 to Great TM
 Pikachu: Sweet Kiss removed from Great TM
 Pikachu: Pika Papow removed from Great TM
+Pikachu: newVariants changed from  to 1
 Pikachu: biomes changed from [[1225, 'metropolis', [40]], [1227, 'plains', [40]], [1228, 'power-plant', [20, 60]], [1238, 'town', [120]], [1220, 'island', [43, 63]]] to [[1248, 'metropolis', [40]], [1250, 'plains', [40]], [1251, 'power-plant', [20, 60]], [1261, 'town', [120]], [1243, 'island', [43, 63]]]
 Partner Pikachu: Egg Move 2 changed from Triple Axel to Wave Crash
 Partner Pikachu: Egg Move 3 changed from Fiery Dance to Bulk Up
@@ -596,6 +597,7 @@ Partner Pikachu: Charm changed from Level 1 to Common TM
 Partner Pikachu: Shock Wave changed from Great TM to Common TM
 Partner Pikachu: Nasty Plot changed from Level 1 to Great TM
 Partner Pikachu: Sweet Kiss removed from Great TM
+Partner Pikachu: newVariants changed from  to 1
 Partner Pikachu: biomes changed from [[1225, 'metropolis', [40]], [1227, 'plains', [40]], [1228, 'power-plant', [20, 60]], [1238, 'town', [120]], [1220, 'island', [43, 63]]] to [[1248, 'metropolis', [40]], [1250, 'plains', [40]], [1251, 'power-plant', [20, 60]], [1261, 'town', [120]], [1243, 'island', [43, 63]]]
 Cosplay Pikachu: Egg Move 2 changed from Triple Axel to Wave Crash
 Cosplay Pikachu: Egg Move 3 changed from Fiery Dance to Bulk Up
@@ -623,6 +625,7 @@ Cosplay Pikachu: Charm changed from Level 1 to Common TM
 Cosplay Pikachu: Shock Wave changed from Great TM to Common TM
 Cosplay Pikachu: Nasty Plot changed from Level 1 to Great TM
 Cosplay Pikachu: Sweet Kiss removed from Great TM
+Cosplay Pikachu: newVariants changed from  to 1
 Cosplay Pikachu: biomes changed from [[1225, 'metropolis', [40]], [1227, 'plains', [40]], [1228, 'power-plant', [20, 60]], [1238, 'town', [120]], [1220, 'island', [43, 63]]] to [[1248, 'metropolis', [40]], [1250, 'plains', [40]], [1251, 'power-plant', [20, 60]], [1261, 'town', [120]], [1243, 'island', [43, 63]]]
 Cool Cosplay Pikachu: Egg Move 2 changed from Triple Axel to Wave Crash
 Cool Cosplay Pikachu: Egg Move 3 changed from Fiery Dance to Bulk Up
@@ -650,6 +653,7 @@ Cool Cosplay Pikachu: Charm changed from Level 1 to Common TM
 Cool Cosplay Pikachu: Shock Wave changed from Great TM to Common TM
 Cool Cosplay Pikachu: Nasty Plot changed from Level 1 to Great TM
 Cool Cosplay Pikachu: Sweet Kiss removed from Great TM
+Cool Cosplay Pikachu: newVariants changed from  to 1
 Cool Cosplay Pikachu: biomes changed from [[1225, 'metropolis', [40]], [1227, 'plains', [40]], [1228, 'power-plant', [20, 60]], [1238, 'town', [120]], [1220, 'island', [43, 63]]] to [[1248, 'metropolis', [40]], [1250, 'plains', [40]], [1251, 'power-plant', [20, 60]], [1261, 'town', [120]], [1243, 'island', [43, 63]]]
 Beauty Cosplay Pikachu: Egg Move 2 changed from Triple Axel to Wave Crash
 Beauty Cosplay Pikachu: Egg Move 3 changed from Fiery Dance to Bulk Up
@@ -677,6 +681,7 @@ Beauty Cosplay Pikachu: Charm changed from Level 1 to Common TM
 Beauty Cosplay Pikachu: Shock Wave changed from Great TM to Common TM
 Beauty Cosplay Pikachu: Nasty Plot changed from Level 1 to Great TM
 Beauty Cosplay Pikachu: Sweet Kiss removed from Great TM
+Beauty Cosplay Pikachu: newVariants changed from  to 1
 Beauty Cosplay Pikachu: biomes changed from [[1225, 'metropolis', [40]], [1227, 'plains', [40]], [1228, 'power-plant', [20, 60]], [1238, 'town', [120]], [1220, 'island', [43, 63]]] to [[1248, 'metropolis', [40]], [1250, 'plains', [40]], [1251, 'power-plant', [20, 60]], [1261, 'town', [120]], [1243, 'island', [43, 63]]]
 Cute Cosplay Pikachu: Egg Move 2 changed from Triple Axel to Wave Crash
 Cute Cosplay Pikachu: Egg Move 3 changed from Fiery Dance to Bulk Up
@@ -704,6 +709,7 @@ Cute Cosplay Pikachu: Charm changed from Level 1 to Common TM
 Cute Cosplay Pikachu: Shock Wave changed from Great TM to Common TM
 Cute Cosplay Pikachu: Nasty Plot changed from Level 1 to Great TM
 Cute Cosplay Pikachu: Sweet Kiss removed from Great TM
+Cute Cosplay Pikachu: newVariants changed from  to 1
 Cute Cosplay Pikachu: biomes changed from [[1225, 'metropolis', [40]], [1227, 'plains', [40]], [1228, 'power-plant', [20, 60]], [1238, 'town', [120]], [1220, 'island', [43, 63]]] to [[1248, 'metropolis', [40]], [1250, 'plains', [40]], [1251, 'power-plant', [20, 60]], [1261, 'town', [120]], [1243, 'island', [43, 63]]]
 Smart Cosplay Pikachu: Egg Move 2 changed from Triple Axel to Wave Crash
 Smart Cosplay Pikachu: Egg Move 3 changed from Fiery Dance to Bulk Up
@@ -731,6 +737,7 @@ Smart Cosplay Pikachu: Charm changed from Level 1 to Common TM
 Smart Cosplay Pikachu: Shock Wave changed from Great TM to Common TM
 Smart Cosplay Pikachu: Nasty Plot changed from Level 1 to Great TM
 Smart Cosplay Pikachu: Sweet Kiss removed from Great TM
+Smart Cosplay Pikachu: newVariants changed from  to 1
 Smart Cosplay Pikachu: biomes changed from [[1225, 'metropolis', [40]], [1227, 'plains', [40]], [1228, 'power-plant', [20, 60]], [1238, 'town', [120]], [1220, 'island', [43, 63]]] to [[1248, 'metropolis', [40]], [1250, 'plains', [40]], [1251, 'power-plant', [20, 60]], [1261, 'town', [120]], [1243, 'island', [43, 63]]]
 Tough Cosplay Pikachu: Egg Move 2 changed from Triple Axel to Wave Crash
 Tough Cosplay Pikachu: Egg Move 3 changed from Fiery Dance to Bulk Up
@@ -758,6 +765,7 @@ Tough Cosplay Pikachu: Charm changed from Level 1 to Common TM
 Tough Cosplay Pikachu: Shock Wave changed from Great TM to Common TM
 Tough Cosplay Pikachu: Nasty Plot changed from Level 1 to Great TM
 Tough Cosplay Pikachu: Sweet Kiss removed from Great TM
+Tough Cosplay Pikachu: newVariants changed from  to 1
 Tough Cosplay Pikachu: biomes changed from [[1225, 'metropolis', [40]], [1227, 'plains', [40]], [1228, 'power-plant', [20, 60]], [1238, 'town', [120]], [1220, 'island', [43, 63]]] to [[1248, 'metropolis', [40]], [1250, 'plains', [40]], [1251, 'power-plant', [20, 60]], [1261, 'town', [120]], [1243, 'island', [43, 63]]]
 Gigantamax Pikachu: Growl changed from Level 1 to Level 4
 Gigantamax Pikachu: Play Nice changed from Level 1 to Level 7
@@ -784,6 +792,7 @@ Gigantamax Pikachu: Charm changed from Level 1 to Common TM
 Gigantamax Pikachu: Shock Wave changed from Great TM to Common TM
 Gigantamax Pikachu: Nasty Plot changed from Level 1 to Great TM
 Gigantamax Pikachu: Sweet Kiss removed from Great TM
+Gigantamax Pikachu: newVariants changed from  to 1
 Gigantamax Pikachu: biomes changed from [[1225, 'metropolis', [40]], [1227, 'plains', [40]], [1228, 'power-plant', [20, 60]], [1238, 'town', [120]], [1220, 'island', [43, 63]]] to [[1248, 'metropolis', [40]], [1250, 'plains', [40]], [1251, 'power-plant', [20, 60]], [1261, 'town', [120]], [1243, 'island', [43, 63]]]
 Raichu: Passive changed from Electric Surge to Transistor
 Raichu: Thunder Punch changed from Level 1 to Evolution
@@ -814,6 +823,7 @@ Raichu: Nasty Plot changed from Level 1 to Great TM
 Raichu: Zippy Zap removed from Great TM
 Raichu: Sweet Kiss removed from Great TM
 Raichu: Pika Papow removed from Great TM
+Raichu: newVariants changed from  to 1
 Raichu: biomes changed from [[1228, 'power-plant', [20, 60]], [1225, 'metropolis', [40]], [1227, 'plains', [40]], [1238, 'town', [120]]] to [[1251, 'power-plant', [20, 60]], [1248, 'metropolis', [40]], [1250, 'plains', [40]], [1261, 'town', [120]]]
 Sandshrew: Passive changed from Tough Claws to Sand Stream
 Sandshrew: Egg Move 1 changed from High Horsepower to U Turn
@@ -983,6 +993,7 @@ Clefairy: Shock Wave changed from Great TM to Common TM
 Clefairy: Splash removed from Great TM
 Clefairy: Sweet Kiss removed from Great TM
 Clefairy: Copycat removed from Great TM
+Clefairy: newVariants changed from  to 1
 Clefairy: biomes changed from [[1215, 'fairy-cave', [40]], [1234, 'space', [20, 60]], [1238, 'town', [80]]] to [[1238, 'fairy-cave', [40]], [1257, 'space', [20, 60]], [1261, 'town', [80]]]
 Clefable: Passive changed from Analytic to Neuroforce
 Clefable: Disarming Voice changed from Mushroom to Evolution
@@ -1018,6 +1029,7 @@ Clefable: Shock Wave changed from Great TM to Common TM
 Clefable: Splash removed from Great TM
 Clefable: Sweet Kiss removed from Great TM
 Clefable: Copycat removed from Great TM
+Clefable: newVariants changed from  to 1
 Clefable: biomes changed from [[1234, 'space', [20, 60]], [1215, 'fairy-cave', [40]], [1238, 'town', [80]]] to [[1257, 'space', [20, 60]], [1238, 'fairy-cave', [40]], [1261, 'town', [80]]]
 Vulpix: Roar changed from Common TM to Level 7
 Vulpix: Baby Doll Eyes added to Common TM
@@ -1621,6 +1633,7 @@ Bellsprout: Wring Out added to Level 47
 Bellsprout: Sludge Wave changed from Ultra TM to Level 54
 Bellsprout: Power Whip changed from Level 52 to Level 58
 Bellsprout: Magical Leaf changed from Great TM to Common TM
+Bellsprout: newVariants changed from  to 1
 Bellsprout: biomes changed from [[1216, 'forest', [23, 63]], [1238, 'town', [43]]] to [[1239, 'forest', [23, 63]], [1261, 'town', [43]]]
 Weepinbell: Growth changed from Level 1 to Level 7
 Weepinbell: Wrap changed from Level 1 to Level 11
@@ -1628,6 +1641,7 @@ Weepinbell: Wring Out added to Level 47
 Weepinbell: Sludge Wave changed from Ultra TM to Level 58
 Weepinbell: Power Whip changed from Level 58 to Level 64
 Weepinbell: Magical Leaf changed from Great TM to Common TM
+Weepinbell: newVariants changed from  to 1
 Weepinbell: biomes changed from [[1216, 'forest', [23, 63]], [1238, 'town', [43]]] to [[1239, 'forest', [23, 63]], [1261, 'town', [43]]]
 Victreebel: Swords Dance changed from Great TM to Mushroom
 Victreebel: Toxic Spikes added to Great TM
@@ -1650,6 +1664,7 @@ Victreebel: Slam changed from Mushroom to Level 54
 Victreebel: Sludge Wave changed from Ultra TM to Level 58
 Victreebel: Power Whip changed from Mushroom to Level 64
 Victreebel: Magical Leaf changed from Great TM to Common TM
+Victreebel: newVariants changed from  to 1
 Victreebel: biomes changed from [[1216, 'forest', [23, 63]], [1238, 'town', [43]]] to [[1239, 'forest', [23, 63]], [1261, 'town', [43]]]
 Tentacool: Barrier added to Great TM
 Tentacool: Supersonic changed from Level 12 to Level 4
@@ -2775,6 +2790,7 @@ Eevee: Copycat changed from Level 30 to Level 37
 Eevee: Double Edge changed from Level 50 to Level 41
 Eevee: Trump Card added to Level 50
 Eevee: Veevee Volley removed from Great TM
+Eevee: newVariants changed from  to 1
 Eevee: biomes changed from [[1224, 'meadow', [80, 100, 120]], [1225, 'metropolis', [120]], [1227, 'plains', [120]], [1238, 'town', [120]], [1229, 'ruins', [122, 102]], [1206, 'abyss', [120, 100]], [1223, 'lake', [120, 100]], [1228, 'power-plant', [120, 100]], [1239, 'volcano', [120, 100]], [1221, 'jungle', [100]], [1219, 'ice-cave', [100]]] to [[1247, 'meadow', [80, 100, 120]], [1248, 'metropolis', [120]], [1250, 'plains', [120]], [1261, 'town', [120]], [1252, 'ruins', [122, 102]], [1229, 'abyss', [120, 100]], [1246, 'lake', [120, 100]], [1251, 'power-plant', [120, 100]], [1262, 'volcano', [120, 100]], [1244, 'jungle', [100]], [1242, 'ice-cave', [100]]]
 Partner Eevee: Baby Doll Eyes changed from Level 15 to Level 9
 Partner Eevee: Quick Attack changed from Level 10 to Level 13
@@ -2795,6 +2811,7 @@ Partner Eevee: Sappy Seed changed from Level 43 to Level 41
 Partner Eevee: Freezy Frost changed from Level 43 to Level 41
 Partner Eevee: Sparkly Swirl changed from Level 53 to Level 45
 Partner Eevee: Veevee Volley changed from Level 40 to Level 50
+Partner Eevee: newVariants changed from  to 1
 Partner Eevee: biomes changed from [[1224, 'meadow', [80, 100, 120]], [1225, 'metropolis', [120]], [1227, 'plains', [120]], [1238, 'town', [120]], [1229, 'ruins', [122, 102]], [1206, 'abyss', [120, 100]], [1223, 'lake', [120, 100]], [1228, 'power-plant', [120, 100]], [1239, 'volcano', [120, 100]], [1221, 'jungle', [100]], [1219, 'ice-cave', [100]]] to [[1247, 'meadow', [80, 100, 120]], [1248, 'metropolis', [120]], [1250, 'plains', [120]], [1261, 'town', [120]], [1252, 'ruins', [122, 102]], [1229, 'abyss', [120, 100]], [1246, 'lake', [120, 100]], [1251, 'power-plant', [120, 100]], [1262, 'volcano', [120, 100]], [1244, 'jungle', [100]], [1242, 'ice-cave', [100]]]
 Gigantamax Eevee: Baby Doll Eyes changed from Level 15 to Level 9
 Gigantamax Eevee: Quick Attack changed from Level 10 to Level 13
@@ -2815,6 +2832,7 @@ Gigantamax Eevee: Sappy Seed changed from Level 43 to Level 41
 Gigantamax Eevee: Freezy Frost changed from Level 43 to Level 41
 Gigantamax Eevee: Sparkly Swirl changed from Level 53 to Level 45
 Gigantamax Eevee: Veevee Volley changed from Level 40 to Level 50
+Gigantamax Eevee: newVariants changed from  to 1
 Gigantamax Eevee: biomes changed from [[1224, 'meadow', [80, 100, 120]], [1225, 'metropolis', [120]], [1227, 'plains', [120]], [1238, 'town', [120]], [1229, 'ruins', [122, 102]], [1206, 'abyss', [120, 100]], [1223, 'lake', [120, 100]], [1228, 'power-plant', [120, 100]], [1239, 'volcano', [120, 100]], [1221, 'jungle', [100]], [1219, 'ice-cave', [100]]] to [[1247, 'meadow', [80, 100, 120]], [1248, 'metropolis', [120]], [1250, 'plains', [120]], [1261, 'town', [120]], [1252, 'ruins', [122, 102]], [1229, 'abyss', [120, 100]], [1246, 'lake', [120, 100]], [1251, 'power-plant', [120, 100]], [1262, 'volcano', [120, 100]], [1244, 'jungle', [100]], [1242, 'ice-cave', [100]]]
 Vaporeon: Water Gun changed from Level 10 to Evolution
 Vaporeon: Baby Doll Eyes changed from Level 20 to Level 9
@@ -2840,6 +2858,7 @@ Vaporeon: Covet changed from Level 1 to Great TM
 Vaporeon: Veevee Volley removed from Great TM
 Vaporeon: Growl removed from Great TM
 Vaporeon: Copycat removed from Great TM
+Vaporeon: newVariants changed from  to 1
 Vaporeon: biomes changed from [[1223, 'lake', [120, 100]], [1224, 'meadow', [80]], [1225, 'metropolis', [120]], [1227, 'plains', [120]], [1238, 'town', [120]]] to [[1246, 'lake', [120, 100]], [1247, 'meadow', [80]], [1248, 'metropolis', [120]], [1250, 'plains', [120]], [1261, 'town', [120]]]
 Jolteon: Thunder Shock changed from Level 10 to Evolution
 Jolteon: Baby Doll Eyes changed from Level 20 to Level 9
@@ -2868,6 +2887,7 @@ Jolteon: Veevee Volley removed from Great TM
 Jolteon: Bite removed from Great TM
 Jolteon: Growl removed from Great TM
 Jolteon: Copycat removed from Great TM
+Jolteon: newVariants changed from  to 1
 Jolteon: biomes changed from [[1228, 'power-plant', [120, 100]], [1224, 'meadow', [80]], [1225, 'metropolis', [120]], [1227, 'plains', [120]], [1238, 'town', [120]]] to [[1251, 'power-plant', [120, 100]], [1247, 'meadow', [80]], [1248, 'metropolis', [120]], [1250, 'plains', [120]], [1261, 'town', [120]]]
 Flareon: Ember changed from Level 10 to Evolution
 Flareon: Baby Doll Eyes changed from Level 20 to Level 9
@@ -2895,6 +2915,7 @@ Flareon: Covet changed from Level 1 to Great TM
 Flareon: Veevee Volley removed from Great TM
 Flareon: Growl removed from Great TM
 Flareon: Copycat removed from Great TM
+Flareon: newVariants changed from  to 1
 Flareon: biomes changed from [[1239, 'volcano', [120, 100]], [1224, 'meadow', [80]], [1225, 'metropolis', [120]], [1227, 'plains', [120]], [1238, 'town', [120]]] to [[1262, 'volcano', [120, 100]], [1247, 'meadow', [80]], [1248, 'metropolis', [120]], [1250, 'plains', [120]], [1261, 'town', [120]]]
 Porygon: Egg Move 1 changed from Thunderclap to Volt Switch
 Porygon: Sharpen added to Level 1
@@ -3162,6 +3183,7 @@ Articuno: Hurricane changed from Level 55 to Level 64
 Articuno: Blizzard changed from Level 65 to Level 71
 Articuno: Sheer Cold changed from Level 70 to Level 80
 Articuno: Ominous Wind added to Common TM
+Articuno: newVariants changed from  to 1
 Articuno: biomes changed from [[1219, 'ice-cave', [160, 140]]] to [[1242, 'ice-cave', [160, 140]]]
 Zapdos: Egg Move 1 changed from Bleakwind Storm to Earth Power
 Zapdos: Egg Move 3 changed from Sandsear Storm to Splishy Splash
@@ -3182,6 +3204,7 @@ Zapdos: Brave Bird changed from Ultra TM to Level 64
 Zapdos: Thunder changed from Level 55 to Level 71
 Zapdos: Zap Cannon changed from Level 70 to Level 80
 Zapdos: Ominous Wind added to Great TM
+Zapdos: newVariants changed from  to 1
 Zapdos: biomes changed from [[1228, 'power-plant', [160, 140]]] to [[1251, 'power-plant', [160, 140]]]
 Moltres: Egg Move 3 changed from Aeroblast to Springtide Storm
 Moltres: Rare Egg Move changed from Torch Song to Aeroblast
@@ -3203,6 +3226,7 @@ Moltres: Burn Up added to Ultra TM
 Moltres: Overheat changed from Level 65 to Level 75
 Moltres: Sky Attack changed from Level 70 to Level 80
 Moltres: Ominous Wind added to Common TM
+Moltres: newVariants changed from  to 1
 Moltres: biomes changed from [[1239, 'volcano', [160, 140]]] to [[1262, 'volcano', [160, 140]]]
 Dratini: Egg Move 2 changed from Crush Grip to Hyper Voice
 Dratini: Egg Move 3 changed from Fire Lash to Calm Mind
@@ -3213,6 +3237,7 @@ Dratini: Dragon Tail changed from Level 15 to Level 31
 Dratini: Aqua Tail changed from Level 31 to Level 33
 Dratini: Zap Cannon added to Common TM
 Dratini: Shock Wave changed from Great TM to Common TM
+Dratini: newVariants changed from  to 1
 Dratini: biomes changed from [[1240, 'wasteland', [80, 60]]] to [[1263, 'wasteland', [80, 60]]]
 Dragonair: Breaking Swipe changed from Great TM to Level 15
 Dragonair: Agility changed from Level 20 to Level 21
@@ -3220,6 +3245,7 @@ Dragonair: Dragon Rage added to Level 25
 Dragonair: Dragon Tail changed from Level 15 to Level 31
 Dragonair: Zap Cannon added to Common TM
 Dragonair: Shock Wave changed from Great TM to Common TM
+Dragonair: newVariants changed from  to 1
 Dragonair: biomes changed from [[1240, 'wasteland', [80, 60]]] to [[1263, 'wasteland', [80, 60]]]
 Dragonite: Fire Punch changed from Level 1 to Mushroom
 Dragonite: Thunder Punch changed from Level 1 to Mushroom
@@ -3237,6 +3263,7 @@ Dragonite: Hyper Beam changed from Level 80 to Level 75
 Dragonite: Ominous Wind added to Ultra TM
 Dragonite: Zap Cannon added to Common TM
 Dragonite: Shock Wave changed from Great TM to Common TM
+Dragonite: newVariants changed from  to 1
 Dragonite: biomes changed from [[1240, 'wasteland', [80, 60]]] to [[1263, 'wasteland', [80, 60]]]
 Mewtwo: Confuse Ray changed from Common TM to Mushroom
 Mewtwo: Teleport added to Level 1
@@ -3359,6 +3386,7 @@ Chikorita: Ancient Power added to Common TM
 Chikorita: Fake Tears added to Great TM
 Chikorita: Dazzling Gleam added to Common TM
 Chikorita: cost changed from 2 to 3
+Chikorita: newVariants changed from  to 1
 Chikorita: biomes changed from [[1236, 'tall-grass', [80, 100]]] to [[1259, 'tall-grass', [80, 100]]]
 Bayleef: Earth Power added to Great TM
 Bayleef: Magical Leaf changed from Level 22 to Evolution
@@ -3376,6 +3404,7 @@ Bayleef: Ancient Power added to Common TM
 Bayleef: Fake Tears added to Great TM
 Bayleef: Dazzling Gleam added to Common TM
 Bayleef: cost changed from 2 to 3
+Bayleef: newVariants changed from  to 1
 Bayleef: biomes changed from [[1236, 'tall-grass', [80, 100]]] to [[1259, 'tall-grass', [80, 100]]]
 Meganium: Earth Power added to Great TM
 Meganium: Petal Blizzard changed from Level 1 to Mushroom
@@ -3394,6 +3423,7 @@ Meganium: Charm added to Common TM
 Meganium: Ancient Power added to Common TM
 Meganium: Fake Tears added to Great TM
 Meganium: cost changed from 2 to 3
+Meganium: newVariants changed from  to 1
 Meganium: biomes changed from [[1236, 'tall-grass', [80, 100]]] to [[1259, 'tall-grass', [80, 100]]]
 Cyndaquil: Ember changed from Level 5 to Level 3
 Cyndaquil: Smokescreen changed from Level 10 to Level 6
@@ -3456,6 +3486,7 @@ Croconaw: Thrash changed from Level 42 to Level 44
 Croconaw: Outrage added to Level 55
 Croconaw: Take Down added to Great TM
 Croconaw: Ancient Power added to Common TM
+Croconaw: newVariants changed from  to 1
 Croconaw: biomes changed from [[1235, 'swamp', [80, 100]]] to [[1258, 'swamp', [80, 100]]]
 Feraligatr: Bubble Beam added to Egg & Great TM
 Feraligatr: Water Gun changed from Level 1 to Level 5
@@ -3470,6 +3501,7 @@ Feraligatr: Hydro Pump changed from Level 70 to Level 71
 Feraligatr: Outrage changed from Ultra TM to Level 76
 Feraligatr: Take Down added to Great TM
 Feraligatr: Ancient Power added to Common TM
+Feraligatr: newVariants changed from  to 1
 Feraligatr: biomes changed from [[1235, 'swamp', [80, 100]]] to [[1258, 'swamp', [80, 100]]]
 Sentret: Growl added to Level 1
 Sentret: Foresight added to Level 1
@@ -3618,6 +3650,7 @@ Spiky Pichu: Volt Tackle added to Level 20
 Spiky Pichu: Counter added to Ultra TM
 Spiky Pichu: Zap Cannon added to Common TM
 Spiky Pichu: Shock Wave changed from Great TM to Common TM
+Spiky Pichu: newVariants changed from  to 1
 Spiky Pichu: biomes changed from [[1238, 'town', [120]], [1225, 'metropolis', [40]], [1227, 'plains', [40]], [1228, 'power-plant', [20, 60]], [1220, 'island', [43, 63]]] to [[1261, 'town', [120]], [1248, 'metropolis', [40]], [1250, 'plains', [40]], [1251, 'power-plant', [20, 60]], [1243, 'island', [43, 63]]]
 Cleffa: Egg Move 3 changed from Lunar Blessing to Esper Wing
 Cleffa: Rare Egg Move changed from Light Of Ruin to Lunar Blessing
@@ -3942,6 +3975,7 @@ Espeon: Veevee Volley removed from Great TM
 Espeon: Bite removed from Great TM
 Espeon: Growl removed from Great TM
 Espeon: Copycat removed from Great TM
+Espeon: newVariants changed from  to 1
 Espeon: biomes changed from [[1229, 'ruins', [122, 102]], [1224, 'meadow', [80]], [1225, 'metropolis', [120]], [1227, 'plains', [120]], [1238, 'town', [120]]] to [[1252, 'ruins', [122, 102]], [1247, 'meadow', [80]], [1248, 'metropolis', [120]], [1250, 'plains', [120]], [1261, 'town', [120]]]
 Umbreon: Pursuit changed from Level 1 to Evolution
 Umbreon: Baby Doll Eyes changed from Level 20 to Level 9
@@ -3971,6 +4005,7 @@ Umbreon: Veevee Volley removed from Great TM
 Umbreon: Bite removed from Great TM
 Umbreon: Growl removed from Great TM
 Umbreon: Copycat removed from Great TM
+Umbreon: newVariants changed from  to 1
 Umbreon: biomes changed from [[1206, 'abyss', [120, 100]], [1224, 'meadow', [80]], [1225, 'metropolis', [120]], [1227, 'plains', [120]], [1238, 'town', [120]]] to [[1229, 'abyss', [120, 100]], [1247, 'meadow', [80]], [1248, 'metropolis', [120]], [1250, 'plains', [120]], [1261, 'town', [120]]]
 Murkrow: Gust changed from Level 5 to Level 1
 Murkrow: Pursuit added to Level 1
@@ -4700,6 +4735,7 @@ Raikou: Zap Cannon changed from Level 78 to Level 85
 Raikou: Take Down added to Great TM
 Raikou: Scary Face added to Common TM
 Raikou: Electroweb added to Great TM
+Raikou: newVariants changed from  to 1
 Raikou: biomes changed from [[1236, 'tall-grass', [160, 140]]] to [[1259, 'tall-grass', [160, 140]]]
 Entei: Egg Move 2 changed from Dragon Dance to Play Rough
 Entei: Rare Egg Move changed from Pyro Ball to Dragon Dance
@@ -4717,6 +4753,7 @@ Entei: Flamethrower changed from Ultra TM to Level 60
 Entei: Swagger changed from Level 60 to Level 66
 Entei: Sacred Fire changed from Mushroom to Level 85
 Entei: Take Down added to Great TM
+Entei: newVariants changed from  to 1
 Entei: biomes changed from [[1236, 'tall-grass', [160, 140]]] to [[1259, 'tall-grass', [160, 140]]]
 Suicune: Bubble Beam added to Level 1
 Suicune: Bite changed from Level 12 to Level 6
@@ -4735,6 +4772,7 @@ Suicune: Sheer Cold changed from Mushroom to Level 85
 Suicune: Take Down added to Great TM
 Suicune: Ominous Wind added to Great TM
 Suicune: Water Gun removed from Common TM
+Suicune: newVariants changed from  to 1
 Suicune: biomes changed from [[1223, 'lake', [160, 140]]] to [[1246, 'lake', [160, 140]]]
 Larvitar: Bite changed from Level 9 to Level 1
 Larvitar: Sandstorm changed from Level 39 to Level 6
@@ -4818,6 +4856,7 @@ Mega Tyranitar: Giga Impact changed from Level 59 to Level 75
 Mega Tyranitar: Shock Wave changed from Great TM to Common TM
 Mega Tyranitar: Incinerate added to Ultra TM
 Mega Tyranitar: Ancient Power added to Common TM
+Mega Tyranitar: newVariants changed from  to 1
 Mega Tyranitar: biomes changed from [[1240, 'wasteland', [32, 72]], [1226, 'mountain', [120]]] to [[1263, 'wasteland', [32, 72]], [1249, 'mountain', [120]]]
 Lugia: Ancient Power changed from Level 1 to Level 5
 Lugia: Swift changed from Common TM to Level 11
@@ -6733,6 +6772,7 @@ Absol: Phantom Force added to Level 50
 Absol: Perish Song changed from Level 55 to Level 65
 Absol: Shock Wave changed from Great TM to Common TM
 Absol: Ominous Wind added to Great TM
+Absol: newVariants changed from  to 1
 Absol: biomes changed from [[1206, 'abyss', [80]]] to [[1229, 'abyss', [80]]]
 Mega Absol: Passive changed from Sharpness to Shadow Shield
 Mega Absol: Confuse Ray added to Great TM
@@ -6761,6 +6801,7 @@ Mega Absol: Phantom Force added to Level 50
 Mega Absol: Perish Song changed from Level 55 to Level 65
 Mega Absol: Shock Wave changed from Great TM to Common TM
 Mega Absol: Ominous Wind added to Great TM
+Mega Absol: newVariants changed from  to 1
 Mega Absol: biomes changed from [[1206, 'abyss', [80]]] to [[1229, 'abyss', [80]]]
 Wynaut: Counter changed from Level 1 to Level 15
 Wynaut: Destiny Bond changed from Level 1 to Level 15
@@ -6780,6 +6821,7 @@ Snorunt: Frost Breath changed from Level 30 to Level 37
 Snorunt: Crunch changed from Level 55 to Level 41
 Snorunt: Snowscape changed from Level 45 to Level 46
 Snorunt: Ice Beam changed from Ultra TM to Level 55
+Snorunt: newVariants changed from  to 1
 Snorunt: biomes changed from [[1219, 'ice-cave', [20, 60]], [1233, 'snowy-forest', [20, 60]], [1206, 'abyss', [80, 60]]] to [[1242, 'ice-cave', [20, 60]], [1256, 'snowy-forest', [20, 60]], [1229, 'abyss', [80, 60]]]
 Glalie: Passive changed from Snow Warning to Intimidate
 Glalie: Ice Beam changed from Ultra TM to Mushroom
@@ -6797,6 +6839,7 @@ Glalie: Blizzard changed from Level 68 to Level 61
 Glalie: Sheer Cold changed from Level 1 to Level 68
 Glalie: Explosion changed from Great TM to Level 75
 Glalie: Ominous Wind added to Great TM
+Glalie: newVariants changed from  to 1
 Glalie: biomes changed from [[1219, 'ice-cave', [20, 60]], [1233, 'snowy-forest', [23, 63]]] to [[1242, 'ice-cave', [20, 60]], [1256, 'snowy-forest', [23, 63]]]
 Mega Glalie: Passive changed from Snow Warning to Moody
 Mega Glalie: Ice Beam changed from Ultra TM to Mushroom
@@ -6814,6 +6857,7 @@ Mega Glalie: Blizzard changed from Level 68 to Level 61
 Mega Glalie: Sheer Cold changed from Level 1 to Level 68
 Mega Glalie: Explosion changed from Great TM to Level 75
 Mega Glalie: Ominous Wind added to Great TM
+Mega Glalie: newVariants changed from  to 1
 Mega Glalie: biomes changed from [[1219, 'ice-cave', [20, 60]], [1233, 'snowy-forest', [23, 63]]] to [[1242, 'ice-cave', [20, 60]], [1256, 'snowy-forest', [23, 63]]]
 Spheal: Growl changed from Level 4 to Level 1
 Spheal: Water Gun changed from Level 8 to Level 1
@@ -7975,6 +8019,7 @@ Gible: Egg Move 1 changed from Meteor Mash to Dragon Hammer
 Gible: Dragon Rage added to Level 18
 Gible: Take Down changed from Level 54 to Level 48
 Gible: Sandstorm changed from Level 48 to Level 54
+Gible: newVariants changed from  to 1
 Gible: biomes changed from [[1211, 'desert', [120, 100]], [1226, 'mountain', [120]], [1240, 'wasteland', [20, 60]]] to [[1234, 'desert', [120, 100]], [1249, 'mountain', [120]], [1263, 'wasteland', [20, 60]]]
 Gabite: Dual Chop changed from Level 1 to Evolution
 Gabite: Sand Attack changed from Level 1 to Level 6
@@ -7982,6 +8027,7 @@ Gabite: Dragon Breath changed from Level 1 to Level 12
 Gabite: Dragon Rage added to Level 18
 Gabite: Take Down changed from Level 66 to Level 58
 Gabite: Sandstorm changed from Level 58 to Level 66
+Gabite: newVariants changed from  to 1
 Gabite: biomes changed from [[1211, 'desert', [120, 100]], [1226, 'mountain', [120]], [1240, 'wasteland', [20, 60]]] to [[1234, 'desert', [120, 100]], [1249, 'mountain', [120]], [1263, 'wasteland', [20, 60]]]
 Garchomp: Dragon Pulse changed from Great TM to Mushroom
 Garchomp: Fire Fang changed from Great TM to Mushroom
@@ -7993,6 +8039,7 @@ Garchomp: Dig changed from Level 52 to Level 50
 Garchomp: Take Down changed from Level 72 to Level 58
 Garchomp: Sandstorm changed from Level 62 to Level 66
 Garchomp: Dragon Rush changed from Level 82 to Level 75
+Garchomp: newVariants changed from  to 1
 Garchomp: biomes changed from [[1211, 'desert', [120, 100]], [1240, 'wasteland', [20, 60]], [1226, 'mountain', [120]]] to [[1234, 'desert', [120, 100]], [1263, 'wasteland', [20, 60]], [1249, 'mountain', [120]]]
 Mega Garchomp: Passive changed from Sand Rush to Mold Breaker
 Mega Garchomp: Dragon Pulse changed from Great TM to Mushroom
@@ -8005,6 +8052,7 @@ Mega Garchomp: Dig changed from Level 52 to Level 50
 Mega Garchomp: Take Down changed from Level 72 to Level 58
 Mega Garchomp: Sandstorm changed from Level 62 to Level 66
 Mega Garchomp: Dragon Rush changed from Level 82 to Level 75
+Mega Garchomp: newVariants changed from  to 1
 Mega Garchomp: biomes changed from [[1211, 'desert', [120, 100]], [1240, 'wasteland', [20, 60]], [1226, 'mountain', [120]]] to [[1234, 'desert', [120, 100]], [1263, 'wasteland', [20, 60]], [1249, 'mountain', [120]]]
 Munchlax: Metronome changed from Level 40 to Level 1
 Munchlax: Lick changed from Level 1 to Level 7
@@ -8045,6 +8093,7 @@ Riolu: Helping Hand changed from Level 44 to Level 42
 Riolu: Swords Dance changed from Level 40 to Level 47
 Riolu: Final Gambit changed from Level 52 to Level 55
 Riolu: Aura Sphere added to Common TM
+Riolu: newVariants changed from  to 1
 Riolu: biomes changed from [[1238, 'town', [120]], [1212, 'dojo', [80, 60]]] to [[1261, 'town', [120]], [1235, 'dojo', [80, 60]]]
 Lucario: Dark Pulse changed from Great TM to Mushroom
 Lucario: Foresight added to Level 1
@@ -8074,6 +8123,7 @@ Lucario: Rock Smash changed from Level 1 to Common TM
 Lucario: Helping Hand changed from Level 1 to Common TM
 Lucario: Copycat removed from Common TM
 Lucario: Final Gambit removed from Common TM
+Lucario: newVariants changed from  to 1
 Lucario: biomes changed from [[1212, 'dojo', [80, 60]], [1238, 'town', [120]]] to [[1235, 'dojo', [80, 60]], [1261, 'town', [120]]]
 Mega Lucario: Dark Pulse changed from Great TM to Mushroom
 Mega Lucario: Foresight added to Level 1
@@ -8103,6 +8153,7 @@ Mega Lucario: Rock Smash changed from Level 1 to Common TM
 Mega Lucario: Helping Hand changed from Level 1 to Common TM
 Mega Lucario: Copycat removed from Common TM
 Mega Lucario: Final Gambit removed from Common TM
+Mega Lucario: newVariants changed from  to 1
 Mega Lucario: biomes changed from [[1212, 'dojo', [80, 60]], [1238, 'town', [120]]] to [[1235, 'dojo', [80, 60]], [1261, 'town', [120]]]
 Hippopotas: biomes changed from [[1211, 'desert', [40, 60]]] to [[1234, 'desert', [40, 60]]]
 Hippowdon: Thunder Fang changed from Level 1 to Mushroom
@@ -8426,6 +8477,7 @@ Leafeon: Veevee Volley removed from Great TM
 Leafeon: Bite removed from Great TM
 Leafeon: Growl removed from Great TM
 Leafeon: Copycat removed from Great TM
+Leafeon: newVariants changed from  to 1
 Leafeon: biomes changed from [[1221, 'jungle', [100]], [1224, 'meadow', [80]], [1225, 'metropolis', [120]], [1227, 'plains', [120]], [1238, 'town', [120]]] to [[1244, 'jungle', [100]], [1247, 'meadow', [80]], [1248, 'metropolis', [120]], [1250, 'plains', [120]], [1261, 'town', [120]]]
 Glaceon: Icy Wind changed from Level 10 to Evolution
 Glaceon: Baby Doll Eyes changed from Level 20 to Level 9
@@ -8451,6 +8503,7 @@ Glaceon: Covet changed from Level 1 to Great TM
 Glaceon: Veevee Volley removed from Great TM
 Glaceon: Growl removed from Great TM
 Glaceon: Copycat removed from Great TM
+Glaceon: newVariants changed from  to 1
 Glaceon: biomes changed from [[1219, 'ice-cave', [100]], [1224, 'meadow', [80]], [1225, 'metropolis', [120]], [1227, 'plains', [120]], [1238, 'town', [120]]] to [[1242, 'ice-cave', [100]], [1247, 'meadow', [80]], [1248, 'metropolis', [120]], [1250, 'plains', [120]], [1261, 'town', [120]]]
 Gliscor: Thunder Fang changed from Level 1 to Mushroom
 Gliscor: Ice Fang changed from Level 1 to Mushroom
@@ -8636,6 +8689,7 @@ Froslass: Crunch changed from Level 1 to Great TM
 Froslass: Ice Fang changed from Level 1 to Great TM
 Froslass: Headbutt removed from Common TM
 Froslass: Bite removed from Common TM
+Froslass: newVariants changed from  to 1
 Froslass: biomes changed from [[1206, 'abyss', [80, 60]], [1219, 'ice-cave', [20, 60]], [1233, 'snowy-forest', [32, 72]]] to [[1229, 'abyss', [80, 60]], [1242, 'ice-cave', [20, 60]], [1256, 'snowy-forest', [32, 72]]]
 Rotom: Confuse Ray changed from Level 10 to Level 8
 Rotom: Shock Wave changed from Level 30 to Level 22
@@ -8786,6 +8840,7 @@ Heatran: Crunch changed from Level 36 to Level 24
 Heatran: Heat Crash changed from Great TM to Level 36
 Heatran: Flash Cannon changed from Great TM to Level 53
 Heatran: Earth Power changed from Level 54 to Level 57
+Heatran: newVariants changed from  to 1
 Heatran: biomes changed from [[1239, 'volcano', [160, 140]]] to [[1262, 'volcano', [160, 140]]]
 Regigigas: Fire Punch changed from Great TM to Mushroom
 Regigigas: Ice Punch changed from Great TM to Mushroom
@@ -8901,6 +8956,7 @@ Darkrai: Dream Eater changed from Level 84 to Level 93
 Darkrai: Scary Face added to Common TM
 Darkrai: Shock Wave changed from Great TM to Common TM
 Darkrai: Hex added to Common TM
+Darkrai: newVariants changed from  to 1
 Darkrai: biomes changed from [[1206, 'abyss', [160, 140]]] to [[1229, 'abyss', [160, 140]]]
 Land Shaymin: Defense Curl added to Level 1
 Land Shaymin: Sweet Scent changed from Level 37 to Level 1
@@ -9257,6 +9313,7 @@ Tepig: Rare Egg Move changed from Victory Dance to No Retreat
 Tepig: Odor Sleuth added to Level 5
 Tepig: Fire Punch added to Level 43
 Tepig: Mud Slap added to Common TM
+Tepig: newVariants changed from  to 1
 Tepig: biomes changed from [[1239, 'volcano', [80, 100]]] to [[1262, 'volcano', [80, 100]]]
 Pignite: Tail Whip changed from Level 1 to Level 3
 Pignite: Ember changed from Level 1 to Level 5
@@ -9268,6 +9325,7 @@ Pignite: Assurance changed from Level 36 to Level 34
 Pignite: Bulk Up changed from Great TM to Level 36
 Pignite: Scary Face added to Common TM
 Pignite: Mud Slap added to Common TM
+Pignite: newVariants changed from  to 1
 Pignite: biomes changed from [[1239, 'volcano', [80, 100]]] to [[1262, 'volcano', [80, 100]]]
 Emboar: Tail Whip changed from Level 1 to Level 3
 Emboar: Ember changed from Level 1 to Level 5
@@ -9281,6 +9339,7 @@ Emboar: Solar Blade added to Great TM
 Emboar: Scary Face added to Common TM
 Emboar: Mud Slap added to Common TM
 Emboar: Endure changed from Mushroom to Common TM
+Emboar: newVariants changed from  to 1
 Emboar: biomes changed from [[1239, 'volcano', [80, 100]]] to [[1262, 'volcano', [80, 100]]]
 Oshawott: Water Sport added to Level 5
 Oshawott: Revenge changed from Great TM to Level 25
@@ -9611,6 +9670,7 @@ Drilbur: Earthquake changed from Level 44 to Level 43
 Drilbur: Fissure changed from Level 48 to Level 47
 Drilbur: Take Down added to Great TM
 Drilbur: Stomping Tantrum added to Ultra TM
+Drilbur: newVariants changed from  to 1
 Drilbur: biomes changed from [[1207, 'badlands', [20, 60]], [1210, 'construction-site', [40]]] to [[1230, 'badlands', [20, 60]], [1233, 'construction-site', [40]]]
 Excadrill: Rototiller changed from Level 1 to Mushroom
 Excadrill: Rapid Spin changed from Level 1 to Level 5
@@ -9628,6 +9688,7 @@ Excadrill: Megahorn added to Level 52
 Excadrill: Fissure changed from Level 58 to Level 68
 Excadrill: Scary Face added to Ultra TM
 Excadrill: Take Down added to Great TM
+Excadrill: newVariants changed from  to 1
 Excadrill: biomes changed from [[1207, 'badlands', [20, 60]], [1210, 'construction-site', [40]]] to [[1230, 'badlands', [20, 60]], [1233, 'construction-site', [40]]]
 Audino: Growl changed from Level 16 to Level 1
 Audino: Helping Hand changed from Level 12 to Level 1
@@ -9764,6 +9825,7 @@ Venipede: Venom Drench changed from Level 40 to Level 38
 Venipede: Poison Jab changed from Great TM to Level 40
 Venipede: Rock Climb changed from Great TM to Level 43
 Venipede: Double Edge changed from Level 44 to Level 45
+Venipede: newVariants changed from  to 1
 Venipede: biomes changed from [[1216, 'forest', [32, 72]], [1217, 'grass', [20, 60]], [1238, 'town', [40]]] to [[1239, 'forest', [32, 72]], [1240, 'grass', [20, 60]], [1261, 'town', [40]]]
 Whirlipede: Poison Sting changed from Level 1 to Level 5
 Whirlipede: Screech changed from Level 16 to Level 8
@@ -9778,6 +9840,7 @@ Whirlipede: Venom Drench changed from Level 50 to Level 44
 Whirlipede: Poison Jab changed from Great TM to Level 46
 Whirlipede: Rock Climb changed from Great TM to Level 50
 Whirlipede: Double Edge changed from Level 56 to Level 55
+Whirlipede: newVariants changed from  to 1
 Whirlipede: biomes changed from [[1216, 'forest', [32, 72]], [1217, 'grass', [20, 60]], [1238, 'town', [40]]] to [[1239, 'forest', [32, 72]], [1240, 'grass', [20, 60]], [1261, 'town', [40]]]
 Scolipede: Leech Life added to Great TM
 Scolipede: Baton Pass changed from Level 1 to Evolution
@@ -9800,6 +9863,7 @@ Scolipede: Gunk Shot added to Great TM
 Scolipede: Acid Spray added to Great TM
 Scolipede: Pounce added to Great TM
 Scolipede: Trailblaze added to Great TM
+Scolipede: newVariants changed from  to 1
 Scolipede: biomes changed from [[1216, 'forest', [32, 72]], [1217, 'grass', [20, 60]], [1238, 'town', [40]]] to [[1239, 'forest', [32, 72]], [1240, 'grass', [20, 60]], [1261, 'town', [40]]]
 Cottonee: Growth changed from Level 18 to Level 1
 Cottonee: Fairy Wind changed from Level 3 to Level 1
@@ -10027,6 +10091,7 @@ Scraggy: Rock Climb changed from Great TM to Level 45
 Scraggy: Take Down added to Great TM
 Scraggy: Uproar added to Common TM
 Scraggy: Throat Chop added to Great TM
+Scraggy: newVariants changed from  to 1
 Scraggy: biomes changed from [[1210, 'construction-site', [40]], [1212, 'dojo', [40, 60]], [1232, 'slum', [20, 60]]] to [[1233, 'construction-site', [40]], [1235, 'dojo', [40, 60]], [1255, 'slum', [20, 60]]]
 Scrafty: Dragon Dance changed from Great TM to Egg & Great TM
 Scrafty: Protect changed from Level 20 to Mushroom
@@ -10048,6 +10113,7 @@ Scrafty: Head Smash changed from Level 60 to Level 65
 Scrafty: Metronome added to Ultra TM
 Scrafty: Take Down added to Great TM
 Scrafty: Uproar added to Common TM
+Scrafty: newVariants changed from  to 1
 Scrafty: biomes changed from [[1212, 'dojo', [40, 60]], [1232, 'slum', [20, 60]], [1210, 'construction-site', [40]]] to [[1235, 'dojo', [40, 60]], [1255, 'slum', [20, 60]], [1233, 'construction-site', [40]]]
 Sigilyph: Psywave added to Level 1
 Sigilyph: Miracle Eye added to Level 1
@@ -10188,6 +10254,7 @@ Gigantamax Garbodor: Poison Jab added to Level 24
 Gigantamax Garbodor: Ancient Power added to Great TM
 Gigantamax Garbodor: Take Down changed from Level 1 to Great TM
 Gigantamax Garbodor: Mud Shot added to Great TM
+Gigantamax Garbodor: newVariants changed from  to 1
 Gigantamax Garbodor: biomes changed from [[1232, 'slum', [20, 60]]] to [[1255, 'slum', [20, 60]]]
 Zorua: Pursuit added to Level 1
 Zorua: Fake Tears changed from Level 28 to Level 11
@@ -10543,6 +10610,7 @@ Foongus: Bide added to Level 4
 Foongus: Synthesis changed from Level 16 to Level 15
 Foongus: Feint Attack added to Level 16
 Foongus: Magical Leaf changed from Great TM to Common TM
+Foongus: newVariants changed from  to 1
 Foongus: biomes changed from [[1217, 'grass', [40]], [1221, 'jungle', [32, 72, 83, 103]]] to [[1240, 'grass', [40]], [1244, 'jungle', [32, 72, 83, 103]]]
 Amoonguss: Growth changed from Level 1 to Level 4
 Amoonguss: Bide changed from Level 1 to Level 6
@@ -10550,6 +10618,7 @@ Amoonguss: Stun Spore changed from Level 1 to Level 8
 Amoonguss: Synthesis changed from Level 16 to Level 15
 Amoonguss: Feint Attack added to Level 16
 Amoonguss: Magical Leaf changed from Great TM to Common TM
+Amoonguss: newVariants changed from  to 1
 Amoonguss: biomes changed from [[1221, 'jungle', [32, 72, 83, 103]], [1217, 'grass', [40]]] to [[1244, 'jungle', [32, 72, 83, 103]], [1240, 'grass', [40]]]
 Frillish: Bubble added to Level 1
 Frillish: Bubble Beam added to Level 8
@@ -10989,6 +11058,7 @@ Golett: Hammer Arm changed from Level 48 to Level 55
 Golett: Focus Punch changed from Great TM to Level 58
 Golett: Shock Wave changed from Great TM to Common TM
 Golett: Iron Head added to Great TM
+Golett: newVariants changed from  to 1
 Golett: biomes changed from [[1237, 'temple', [20, 60]]] to [[1260, 'temple', [20, 60]]]
 Golurk: Heavy Slam changed from Level 40 to Evolution
 Golurk: Mud Slap changed from Mushroom to Level 5
@@ -11572,6 +11642,7 @@ Chespin: Seed Bomb changed from Level 32 to Level 30
 Chespin: Bulk Up changed from Great TM to Level 36
 Chespin: Synthesis changed from Egg & Great TM to Great TM
 Chespin: Magical Leaf changed from Great TM to Common TM
+Chespin: newVariants changed from  to 1
 Chespin: biomes changed from [[1216, 'forest', [80, 100]]] to [[1239, 'forest', [80, 100]]]
 Quilladin: Passive changed from Dauntless Shield to Rough Skin
 Quilladin: Vine Whip changed from Level 1 to Level 5
@@ -11581,6 +11652,7 @@ Quilladin: Mud Shot changed from Level 34 to Level 24
 Quilladin: Seed Bomb changed from Level 20 to Level 34
 Quilladin: Synthesis changed from Egg & Great TM to Great TM
 Quilladin: Magical Leaf changed from Great TM to Common TM
+Quilladin: newVariants changed from  to 1
 Quilladin: biomes changed from [[1216, 'forest', [80, 100]]] to [[1239, 'forest', [80, 100]]]
 Chesnaught: Passive changed from Dauntless Shield to Rough Skin
 Chesnaught: Body Press changed from Ultra TM to Egg & Ultra TM
@@ -11595,6 +11667,7 @@ Chesnaught: Seed Bomb changed from Level 35 to Level 34
 Chesnaught: Feint changed from Level 1 to Level 41
 Chesnaught: Synthesis changed from Egg & Great TM to Great TM
 Chesnaught: Magical Leaf changed from Great TM to Common TM
+Chesnaught: newVariants changed from  to 1
 Chesnaught: biomes changed from [[1216, 'forest', [80, 100]]] to [[1239, 'forest', [80, 100]]]
 Fennekin: Passive changed from Fluffy to Neuroforce
 Fennekin: Egg Move 2 changed from Fiery Dance to Moonblast
@@ -11602,12 +11675,14 @@ Fennekin: Rare Egg Move changed from Sparkly Swirl to Fiery Dance
 Fennekin: Lucky Chant added to Level 20
 Fennekin: Light Screen changed from Level 25 to Level 27
 Fennekin: Magic Room changed from Common TM to Level 46
+Fennekin: newVariants changed from  to 1
 Fennekin: biomes changed from [[1239, 'volcano', [80, 100]]] to [[1238, 'fairy-cave', [80, 100]], [1262, 'volcano', [80, 100]]]
 Braixen: Passive changed from Psychic Surge to Neuroforce
 Braixen: Lucky Chant added to Level 22
 Braixen: Light Screen changed from Level 28 to Level 31
 Braixen: Silver Wind added to Common TM
 Braixen: Shock Wave changed from Great TM to Common TM
+Braixen: newVariants changed from  to 1
 Braixen: biomes changed from [[1239, 'volcano', [80, 100]]] to [[1238, 'fairy-cave', [80, 100]], [1262, 'volcano', [80, 100]]]
 Delphox: Passive changed from Psychic Surge to Neuroforce
 Delphox: Shadow Ball changed from Level 1 to Mushroom
@@ -11619,14 +11694,17 @@ Delphox: Light Screen changed from Level 28 to Level 31
 Delphox: Ominous Wind added to Great TM
 Delphox: Silver Wind added to Common TM
 Delphox: Shock Wave changed from Great TM to Common TM
+Delphox: newVariants changed from  to 1
 Delphox: biomes changed from [[1239, 'volcano', [80, 100]]] to [[1238, 'fairy-cave', [80, 100]], [1262, 'volcano', [80, 100]]]
 Froakie: Egg Move 3 changed from Fiery Wrath to Night Daze
 Froakie: Bubble added to Level 1
 Froakie: Water Gun removed from Common TM
+Froakie: newVariants changed from  to 1
 Froakie: biomes changed from [[1223, 'lake', [80, 100]]] to [[1246, 'lake', [80, 100]]]
 Frogadier: Bubble added to Level 1
 Frogadier: Flip Turn added to Ultra TM
 Frogadier: Water Gun removed from Common TM
+Frogadier: newVariants changed from  to 1
 Frogadier: biomes changed from [[1223, 'lake', [80, 100]]] to [[1246, 'lake', [80, 100]]]
 Greninja: Haze changed from Level 1 to Mushroom
 Greninja: Night Slash changed from Level 1 to Mushroom
@@ -12102,6 +12180,7 @@ Poke Ball Vivillon: biomes changed from [[1216, 'forest', [23]], [1236, 'tall-gr
 Litleo: Passive changed from Drought to Blaze
 Litleo: Roar changed from Common TM to Level 6
 Litleo: Snarl changed from Common TM to Level 18
+Litleo: newVariants changed from  to 1
 Litleo: biomes changed from [[1221, 'jungle', [40, 60]]] to [[1244, 'jungle', [40, 60]]]
 Pyroar: Passive changed from Drought to Beast Boost
 Pyroar: Hyper Beam changed from Level 1 to Mushroom
@@ -12110,6 +12189,7 @@ Pyroar: Roar changed from Common TM to Level 6
 Pyroar: Work Up changed from Level 1 to Level 8
 Pyroar: Snarl changed from Common TM to Level 18
 Pyroar: Scorching Sands added to Great TM
+Pyroar: newVariants changed from  to 1
 Pyroar: biomes changed from [[1221, 'jungle', [40, 60]]] to [[1244, 'jungle', [40, 60]]]
 Red Flabebe: Fairy Wind changed from Level 6 to Level 1
 Red Flabebe: Lucky Chant added to Level 6
@@ -12593,6 +12673,7 @@ Inkay: Light Screen changed from Common TM to Level 39
 Inkay: Reflect changed from Common TM to Level 39
 Inkay: Superpower changed from Level 39 to Level 42
 Inkay: Swift added to Common TM
+Inkay: newVariants changed from  to 1
 Inkay: biomes changed from [[1230, 'sea', [32, 72]]] to [[1253, 'sea', [32, 72]]]
 Malamar: Passive changed from Shadow Shield to Psychic Surge
 Malamar: Hypnosis changed from Level 1 to Level 3
@@ -12607,6 +12688,7 @@ Malamar: Switcheroo changed from Level 33 to Level 34
 Malamar: Light Screen changed from Common TM to Level 42
 Malamar: Reflect changed from Common TM to Level 42
 Malamar: Swift added to Common TM
+Malamar: newVariants changed from  to 1
 Malamar: biomes changed from [[1230, 'sea', [32, 72]]] to [[1253, 'sea', [32, 72]]]
 Binacle: Sand Attack added to Level 1
 Binacle: Withdraw changed from Level 4 to Level 1
@@ -12634,6 +12716,7 @@ Barbaracle: Skull Bash changed from Level 1 to Level 65
 Barbaracle: Close Combat added to Level 1
 Barbaracle: Chilling Water added to Great TM
 Barbaracle: Waterfall added to Common TM
+Barbaracle: newVariants changed from  to 1
 Barbaracle: biomes changed from [[1208, 'beach', [20, 60]]] to [[1231, 'beach', [20, 60]]]
 Skrelp: Egg Move 1 changed from Strength Sap to Bouncy Bubble
 Skrelp: Egg Move 2 changed from Trick Room to Aura Sphere
@@ -12674,6 +12757,7 @@ Dragalge: Dragon Tail changed from Great TM to Level 59
 Dragalge: Shock Wave changed from Great TM to Common TM
 Dragalge: Poison Jab added to Great TM
 Dragalge: Water Gun removed from Common TM
+Dragalge: newVariants changed from  to 1
 Dragalge: biomes changed from [[1231, 'seabed', [40, 60]]] to [[1254, 'seabed', [40, 60]]]
 Clauncher: Passive changed from Protean to Quick Draw
 Clauncher: Water Sport added to Level 1
@@ -12790,6 +12874,7 @@ Sylveon: Veevee Volley removed from Great TM
 Sylveon: Bite removed from Great TM
 Sylveon: Growl removed from Great TM
 Sylveon: Copycat removed from Great TM
+Sylveon: newVariants changed from  to 1
 Sylveon: biomes changed from [[1224, 'meadow', [80, 100, 120]], [1225, 'metropolis', [120]], [1227, 'plains', [120]], [1238, 'town', [120]]] to [[1247, 'meadow', [80, 100, 120]], [1248, 'metropolis', [120]], [1250, 'plains', [120]], [1261, 'town', [120]]]
 Hawlucha: Passive changed from Moxie to Stamina
 Hawlucha: Egg Move 1 changed from Thunderous Kick to Darkest Lariat
@@ -12811,6 +12896,7 @@ Hawlucha: Swords Dance changed from Level 40 to Level 48
 Hawlucha: High Jump Kick changed from Level 48 to Level 52
 Hawlucha: Endeavor changed from Level 52 to Level 56
 Hawlucha: Sky Attack changed from Level 56 to Level 60
+Hawlucha: newVariants changed from  to 1
 Hawlucha: biomes changed from [[1226, 'mountain', [80, 100]]] to [[1249, 'mountain', [80, 100]]]
 Dedenne: Thunder Shock changed from Level 15 to Level 7
 Dedenne: Charge changed from Level 10 to Level 11
@@ -13120,6 +13206,7 @@ Yveltal: biomes changed from [[1206, 'abyss', [180]]] to [[1229, 'abyss', [180]]
 50 Zygarde: Core Enforcer changed from Level 1 to Level 100
 50 Zygarde: Shock Wave changed from Great TM to Common TM
 50 Zygarde: cost changed from 8 to 9
+50 Zygarde: newVariants changed from  to 1
 50 Zygarde: biomes changed from [[1222, 'laboratory', [140]]] to [[1245, 'laboratory', [140]]]
 10 Zygarde: Egg Move 2 changed from V Create to Armor Cannon
 10 Zygarde: Camouflage added to Great TM
@@ -13137,6 +13224,7 @@ Yveltal: biomes changed from [[1206, 'abyss', [180]]] to [[1229, 'abyss', [180]]
 10 Zygarde: Core Enforcer changed from Level 1 to Level 100
 10 Zygarde: Shock Wave changed from Great TM to Common TM
 10 Zygarde: cost changed from 8 to 9
+10 Zygarde: newVariants changed from  to 1
 10 Zygarde: biomes changed from [[1222, 'laboratory', [140]]] to [[1245, 'laboratory', [140]]]
 50 Pc Zygarde: Egg Move 2 changed from V Create to Armor Cannon
 50 Pc Zygarde: Camouflage added to Great TM
@@ -13154,6 +13242,7 @@ Yveltal: biomes changed from [[1206, 'abyss', [180]]] to [[1229, 'abyss', [180]]
 50 Pc Zygarde: Core Enforcer changed from Level 1 to Level 100
 50 Pc Zygarde: Shock Wave changed from Great TM to Common TM
 50 Pc Zygarde: cost changed from 8 to 9
+50 Pc Zygarde: newVariants changed from  to 1
 50 Pc Zygarde: biomes changed from [[1222, 'laboratory', [140]]] to [[1245, 'laboratory', [140]]]
 10 Pc Zygarde: Egg Move 2 changed from V Create to Armor Cannon
 10 Pc Zygarde: Camouflage added to Great TM
@@ -13171,6 +13260,7 @@ Yveltal: biomes changed from [[1206, 'abyss', [180]]] to [[1229, 'abyss', [180]]
 10 Pc Zygarde: Core Enforcer changed from Level 1 to Level 100
 10 Pc Zygarde: Shock Wave changed from Great TM to Common TM
 10 Pc Zygarde: cost changed from 8 to 9
+10 Pc Zygarde: newVariants changed from  to 1
 10 Pc Zygarde: biomes changed from [[1222, 'laboratory', [140]]] to [[1245, 'laboratory', [140]]]
 Complete Zygarde: Camouflage added to Great TM
 Complete Zygarde: Safeguard changed from Level 24 to Level 1
@@ -13187,6 +13277,7 @@ Complete Zygarde: Outrage changed from Level 88 to Level 93
 Complete Zygarde: Core Enforcer changed from Level 1 to Level 100
 Complete Zygarde: Shock Wave changed from Great TM to Common TM
 Complete Zygarde: cost changed from 8 to 9
+Complete Zygarde: newVariants changed from  to 1
 Complete Zygarde: biomes changed from [[1222, 'laboratory', [140]]] to [[1245, 'laboratory', [140]]]
 Diancie: Smack Down changed from Level 14 to Level 1
 Diancie: Sharpen added to Level 14
@@ -13494,6 +13585,7 @@ Crabrawler: Power Up Punch changed from Great TM to Level 22
 Crabrawler: Dizzy Punch added to Great TM
 Crabrawler: Mach Punch added to Level 29
 Crabrawler: Brick Break changed from Level 22 to Level 40
+Crabrawler: newVariants changed from  to 1
 Crabrawler: biomes changed from [[1219, 'ice-cave', [20, 60]]] to [[1242, 'ice-cave', [20, 60]]]
 Crabominable: Passive changed from Water Bubble to Tough Claws
 Crabominable: Drain Punch changed from Great TM to Egg & Great TM
@@ -13509,6 +13601,7 @@ Crabominable: Brick Break changed from Level 22 to Level 40
 Crabominable: Icicle Spear added to Common TM
 Crabominable: Payback changed from Level 1 to Common TM
 Crabominable: Crabhammer removed from Common TM
+Crabominable: newVariants changed from  to 1
 Crabominable: biomes changed from [[1219, 'ice-cave', [20, 60]]] to [[1242, 'ice-cave', [20, 60]]]
 Baile Oricorio: Double Slap added to Level 16
 Baile Oricorio: Captivate added to Level 26
@@ -14702,6 +14795,7 @@ Zeraora: Plasma Fists changed from Level 88 to Level 72
 Zeraora: Close Combat changed from Level 96 to Level 80
 Zeraora: Shock Wave changed from Great TM to Common TM
 Zeraora: cost changed from 6 to 7
+Zeraora: newVariants changed from  to 1
 Zeraora: biomes changed from [[1228, 'power-plant', [160, 140]]] to [[1251, 'power-plant', [160, 140]]]
 Meltan: Tail Whip changed from Level 8 to Level 1
 Meltan: Magnet Bomb added to Level 1
@@ -16166,6 +16260,7 @@ Alola Raichu: Disarming Voice added to Great TM
 Alola Raichu: Zippy Zap removed from Great TM
 Alola Raichu: Sweet Kiss removed from Great TM
 Alola Raichu: Pika Papow removed from Great TM
+Alola Raichu: newVariants changed from  to 1
 Alola Raichu: biomes changed from [[1220, 'island', [43, 63]], [1225, 'metropolis', [40]], [1227, 'plains', [40]], [1228, 'power-plant', [20]], [1238, 'town', [120]]] to [[1243, 'island', [43, 63]], [1248, 'metropolis', [40]], [1250, 'plains', [40]], [1251, 'power-plant', [20]], [1261, 'town', [120]]]
 Alola Sandshrew: Rollout changed from Level 9 to Mushroom
 Alola Sandshrew: Bide added to Level 1
@@ -16439,6 +16534,7 @@ Eternal Floette: Hyper Beam added to Level 58
 Eternal Floette: Silver Wind added to Great TM
 Eternal Floette: Ominous Wind added to Great TM
 Eternal Floette: cost changed from 4 to 6
+Eternal Floette: newVariants changed from  to 1
 Eternal Floette: biomes changed from [[1215, 'fairy-cave', [120, 100]]] to [[1238, 'fairy-cave', [160, 140]]]
 Galar Meowth: Scratch changed from Level 8 to Level 1
 Galar Meowth: Hone Claws changed from Level 4 to Level 6
