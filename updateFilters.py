@@ -50,8 +50,9 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
         abilityName = format_for_attr(format_for_disp(re.findall(r'AbilityId\.(.*?),', line)[0]))
 
         if f'ability{abilityName}' not in filterToFID:
-            if abilityName != 'none': # Show error if ability does not exist
-                input(f'***** ${abilityName} does not exist')
+            if abilityName not in ['none','ability314','ability317']: # Show error if ability does not exist !!!!!!!!!!!
+                print(f'***** {abilityName} does not exist')
+                breakpoint()
             continue
 
         # print('Found ability:',abilityName)
@@ -75,7 +76,8 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
                     stat = format_for_attr(re.findall(r'Stat\.(.*?),', abilityData[index+i])[0])
                     break # Once it finds the stat, break
             else:
-                input(f'***** Could not find stat to boost for {abilityName} in {line}')
+                print(f'***** Could not find stat to boost for {abilityName} in {line}')
+                breakpoint()
             for i in range(5): # Search for a number in the next 5 lines
                 if '4 / 3' in abilityData[index+i]:
                     amount = 1.33
@@ -85,7 +87,8 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
                     amount = float(amount) if "." in amount else int(amount)
                     break # Once it finds the stat, break
             else:
-                input(f'***** Could not find stat multiplier for {abilityName} in {line}')
+                print(f'***** Could not find stat multiplier for {abilityName} in {line}')
+                breakpoint()
             if abilityName == 'quickfeet':
                 amount = 1.5
             for index, thisStat in enumerate(['atk','def','spatk','spdef','spd','acc','eva']):
@@ -106,7 +109,8 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
                     if amount < 60:
                         break # Once it finds the multiplier value, break
             else:
-                input(f'***** Could not find power multiplier of {abilityName} in {line}')
+                print(f'***** Could not find power multiplier of {abilityName} in {line}')
+                breakpoint()
             procList.append([-2,26,amount])
             # print('Found ability power boost:',abilityName,amount)
         elif 'LowHpMoveTypePowerBoostAbAttr' in line:
@@ -145,7 +149,8 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
                     amount = re.findall(r', (\d\.?\d?\d?)\)', abilityData[index+i])[-1]
                     break # Once it finds the stat, break
             else:
-                input(f'***** Could not damage multiplier for {abilityName} in {line}')
+                print(f'***** Could not damage multiplier for {abilityName} in {line}')
+                breakpoint()
             amount = float(amount) if "." in amount else int(amount)
             if [-2,26,amount] not in procList and abilityName != 'punkrock':
                 procList.append([-2,26,amount])
@@ -158,16 +163,22 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
                     procList.append([-2,index+7,amount])
                     # print('Found field stat boost:',abilityName,stat,amount)
         elif 'PostSummonStatStageChangeAbAttr' in line:
-            stat = format_for_attr(re.findall(r'\[Stat\.(.*?)\]', line)[0])
-            amount = int(re.findall(r'\],\s?(.*?)[,|)]', line)[0])
+            stat = format_for_attr(re.findall(r'Stat\.(.*?),', line)[0])
+            amount = int(re.findall(r'stages: (-?\d*?) }', line)[0])
             self = (re.findall(r'\d, true', line))
             for index, thisStat in enumerate(['atk','def','spatk','spdef','spd','acc','eva']):
                 if stat == thisStat:
                     procList.append([-1,index+(not self)*7,amount])
                     # print('Found summon stat boost:',abilityName,stat,amount)
         elif 'PostStatStageChangeStatStageChangeAbAttr' in line:
-            stat = format_for_attr(re.findall(r'\[Stat\.(.*?)\]', line)[0])
-            amount = int(re.findall(r'\],\s?(.*?)[,|)]', line)[0])
+            for i in range(5): # Search for a number in the next 5 lines
+                if re.findall(r'Stat\.(.*?),', abilityData[index+i]):
+                    stat = format_for_attr(re.findall(r'Stat\.(.*?),', abilityData[index+i])[0])
+                    break
+            for i in range(5): # Search for a number in the next 5 lines
+                if re.findall(r'stages: (-?\d*?) }', abilityData[index+i]):
+                    amount = int(re.findall(r'stages: (-?\d*?) }', abilityData[index+i])[0])
+                    break
             self = (re.findall(r'\d, true', line))
             for index, thisStat in enumerate(['atk','def','spatk','spdef','spd','acc','eva']):
                 if stat == thisStat:
@@ -213,7 +224,8 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
         elif '.unreplaceable()' in line:
             tagList.append(49)
         elif '.ignorable()' in line and 50 in tagList:
-            input(f'Mismatch for ignorability in {abilityName}')
+            print(f'Mismatch for ignorability in {abilityName}')
+            breakpoint()
         elif 'MoveAbilityBypassAbAttr' in line: # Ignores abilities (Mold Breaker, etc.)
             tagList.append(37)                  # "Can't be ignored" is 50, done in the previous section
         elif 'DoubleBattleChanceAbAttr' in line: # Lure abilities
@@ -261,7 +273,9 @@ for line in moveData: # Loop through all the move lines from the game code
             category = category.split('movecategory.')[1]
             if category == 'physical':  category = 0
             elif category == 'special': category = 1
-            elif category not in [0,1]: input(f'Move category parsing error: {line}')
+            elif category not in [0,1]:
+                print(f'Move category parsing error: {line}')
+                breakpoint()
 
         moveFID = filterToFID[f'move{moveName}']
         type = filterToFID[f'type{format_for_attr(type)}']
@@ -366,7 +380,9 @@ for line in moveData: # Loop through all the move lines from the game code
             elif 'StatusEffect.FREEZE' in line:
                 tagList.append(21)
             elif 'StatusEffect.PARALYSIS' in line:
-                input('Unknown tag found: Para Heal')
+                do = 'nothing' # !!!!!!!!!!!!!!!!!!!!!!!
+                print('Unknown tag found: Para Heal')
+                # breakpoint()
             elif 'StatusEffect.BURN' in line:
                 tagList.append(22)
         elif 'MultiStatusEffectAttr' in line: # Dire Claw and Tri Attack
@@ -485,7 +501,8 @@ for line in moveData: # Loop through all the move lines from the game code
             elif len(stats) == 5: # clang
                 tagList.append(8) # Costs 33% HP
             else:
-                input('Unknown boosting move',line)
+                print('Unknown boosting move',line)
+                breakpoint()
         else: # If nothing has been detected yet, show the game code
             for phrase in ['ProtectAttr','failIfLastCondition','crashDamageFunc','HealAttr','UpperHandCondition','Pledge','doublePowerChanceMessageFunc','TeraStarstormTypeAttr','TeraMoveCategoryAttr']:
                 if phrase in line: # Exclude certain phrases
@@ -515,7 +532,8 @@ for fidLine in orderedData:
         # However, i think it's ugly to show something that obvious
         # I'd rather show CAN'T be reflected, to be in line with other tag wording
         if 203 in fidLine[3] and fidLine[5] != 2:
-            input(f'***** Reflectable attack: fidLine[1]')
+            print(f'***** Reflectable attack: fidLine[1]')
+            breakpoint()
         if 203 not in fidLine[3] and fidLine[5] == 2 and 202 not in fidLine[3]:
             # If it is a status move, not marked as reflectable, and not targeting self
             if 25 not in fidLine[3] and 6 not in fidLine[3]: # If not a healing move, and not belly drum

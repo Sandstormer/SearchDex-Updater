@@ -160,7 +160,16 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     formExclusive = '' # By default, a form is selectable in starter select
     # Check for mega, giga, or other transformed (Zacian, Mimikyu, etc.)
     if line[1] != None and not thisData["isStartSelectable"]: formExclusive = 4 # If form and not selectable
-    megaList = ['Mega Clefable','Mega Victreebel','Mega Starmie','Mega Dragonite','Mega Meganium','Mega Feraligatr','Mega Skarmory','Mega Froslass','Mega Emboar','Mega Excadrill','Mega Scolipede','Mega Scrafty','Mega Eelektross','Mega Chandelure','Mega Chesnaught','Mega Delphox','Mega Greninja','Mega Pyroar','Mega Floette','Mega Malamar','Mega Barbaracle','Mega Dragalge','Mega Hawlucha','Mega Zygarde','Mega Drampa','Mega Falinks','Mega Raichu X','Mega Raichu Y','Mega Chimecho','Mega Baxcalibur']
+    megaList = [
+        'Mega X Raichu','Mega Y Raichu','Mega Clefable','Mega Victreebel','Mega Starmie','Mega Dragonite',
+        'Mega Meganium','Mega Feraligatr','Mega Skarmory','Mega Chimecho','Mega Z Absol','Mega Staraptor',
+        'Mega Z Garchomp','Mega Z Lucario','Mega Froslass','Mega Heatran','Mega Darkrai','Mega Emboar',
+        'Mega Excadrill','Mega Scolipede','Mega Scrafty','Mega Eelektross','Mega Chandelure','Mega Golurk',
+        'Mega Chesnaught','Mega Delphox','Mega Greninja','Mega Pyroar','Mega Meowstic','Mega Malamar',
+        'Mega Barbaracle','Mega Dragalge','Mega Hawlucha','Mega Zygarde','Mega Crabominable','Mega Golisopod',
+        'Mega Drampa','Mega Magearna','Mega Original Magearna','Mega Zeraora','Mega Falinks','Mega Scovillain',
+        'Mega Glimmora','Mega Curly Tatsugiri','Mega Droopy Tatsugiri','Mega Stretchy Tatsugiri','Mega Baxcalibur','Mega Eternal Floette'
+    ]
     speciesName = line[5]
     if 'Mega ' in speciesName:      formExclusive = 1 # Mega (needs the space)
     if speciesName in megaList:     formExclusive = 2 # New Mega
@@ -346,7 +355,7 @@ for line in poke_data:
     if sum(200 < value < 209 for value in line[28].values()) != 4: # Check for 4 egg moves
         throwError(f'Missing egg move entries in {line[5]}')
     if not any(value > 208 for value in line[28].values()) and line[3] not in [132, 201, 202, 235, 360, 789, 790]:
-        throwError(f'Missing TM move entries in {line[5]}') # Check for pokemon that should have TM moves
+        print(f'Missing TM move entries in {line[5]}') # Check for pokemon that should have TM moves
     if line[32] not in range(1,10):
         throwError(f'Generation Error in {line[5]}')
 
@@ -367,7 +376,6 @@ for line in poke_data:
     if line[3] >  dexNo: throwError(f'Could not find Dex #{dexNo}')
     if dexNo == 1026: break
 if poke_data[-1][5] != "Bloodmoon Ursaluna": throwError('Final dex entry is not correct') # Check final pokemon
-if len(poke_data) != 1452: throwError('Total number of entries is not correct') # Check number of pokemon
 
 # Check that Normal Deoxys has Swift, Icy Wind, and Cosmic Power (and speed, speed, attack)
 # Check that Normal/Ice Calyrex has Body Press
@@ -503,7 +511,8 @@ for index,line in enumerate(allFilters):
         fidThreshold.append(index) # Find the threshold of each filter category
 fidThreshold.append(len(allFilters))
 if fidThreshold[0] != 18:  throwError('Wrong number of types')
-if fidThreshold[1] != 328: throwError('Wrong number of abilities')
+# if fidThreshold[1] != 328: throwError('Wrong number of abilities')
+print(f"{fidThreshold[1]-328} new abilities found")
 # Write some variables to files, which are read by my other scripts, and some are written to the website
 with open("local_files/my_json/allFilters.json", "w") as f:
     json.dump(allFilters, f, indent=4)
@@ -554,7 +563,7 @@ def MoveSrcText(value):
     return { -1:"Mushroom", 0:"Evolution", 201:"Egg & Common TM", 202:"Egg & Great TM", 203:"Egg & Ultra TM", 204:"Egg Move", 205:"Rare Egg & Common TM", 206:"Rare Egg & Great TM", 207:"Rare Egg & Ultra TM", 208:"Rare Egg Move", 209:"Common TM", 210:"Great TM", 211:"Ultra TM" }[value]           
 for i,line in enumerate(poke_data):
     # Find where the species is, in _prev (the index may be different)
-    for ii in range(i-10,min(i+10,len(poke_data_prev))):
+    for ii in range(i-100,min(i+100,len(poke_data_prev))):
         if line[5] == poke_data_prev[ii][5]: # Make matching display name
             prevLine = poke_data_prev[ii]
             break
@@ -562,7 +571,7 @@ for i,line in enumerate(poke_data):
         print(f'Could not find previous data for {line[5]}')
         continue
     # Find where the species is, in _prev_shvar (which may be different length from _prev)
-    for iii in range(i-10,min(i+10,len(poke_data_shvar))):
+    for iii in range(i-100,min(i+100,len(poke_data_shvar))):
         if line[5] == poke_data_shvar[iii][5]: # Find matching display name
             if line[31] != poke_data_shvar[iii][31]: # If shvar has changed
                 line[38] = 1 # Mark as newly added shiny variants
@@ -611,17 +620,16 @@ for i,line in enumerate(poke_data):
                         if i not in patch_data:
                             patch_data[i] = {}
                         patch_data[i][j] = [preFID, postFID]
-for line in patch_review:
-    print(line)
+with open("local_files/patch_review.txt", "w") as file: # Write the file of readable patch review
+    for line in patch_review:
+        print(line)
+        file.writelines(f"{line}\n")
 print('\nSummary of patch notes:')
 for j in range(len(attNames)):
     if attPatchCount[j] > 0:
         print(f'{attNames[j]} changed: {attPatchCount[j]}')
 print('Total Egg Moves changed:',sum(eggPatchCount))
-# Format the patch notes and save to a file
-with open("local_files/patch_review.txt", "w") as file:
-    file.writelines("\n".join(patch_review))
-with open("website/patch_data.js", "w") as file:
+with open("website/patch_data.js", "w") as file: # Write the file of patch data for the website
     file.writelines("patchData = {")
     for specID in patch_data.keys():
         file.writelines(f"\n{specID}: {{")

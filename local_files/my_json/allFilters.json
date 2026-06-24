@@ -289,6 +289,10 @@
     ],
     [
         "Ability",
+        "Dragonize"
+    ],
+    [
+        "Ability",
         "Dragons Maw"
     ],
     [
@@ -310,6 +314,10 @@
     [
         "Ability",
         "Earth Eater"
+    ],
+    [
+        "Ability",
+        "Eelevate"
     ],
     [
         "Ability",
@@ -350,6 +358,10 @@
     [
         "Ability",
         "Filter"
+    ],
+    [
+        "Ability",
+        "Fire Mane"
     ],
     [
         "Ability",
@@ -637,6 +649,10 @@
     ],
     [
         "Ability",
+        "Mega Sol"
+    ],
+    [
+        "Ability",
         "Merciless"
     ],
     [
@@ -754,6 +770,10 @@
     [
         "Ability",
         "Pickup"
+    ],
+    [
+        "Ability",
+        "Piercing Drill"
     ],
     [
         "Ability",
@@ -1026,6 +1046,10 @@
     [
         "Ability",
         "Speed Boost"
+    ],
+    [
+        "Ability",
+        "Spicy Spray"
     ],
     [
         "Ability",
@@ -1529,6 +1553,10 @@
     ],
     [
         "Move",
+        "Bestow"
+    ],
+    [
+        "Move",
         "Bide"
     ],
     [
@@ -1809,10 +1837,6 @@
     ],
     [
         "Move",
-        "Conversion 2"
-    ],
-    [
-        "Move",
         "Copycat"
     ],
     [
@@ -1985,6 +2009,10 @@
     ],
     [
         "Move",
+        "Double Slap"
+    ],
+    [
+        "Move",
         "Double Team"
     ],
     [
@@ -2026,6 +2054,10 @@
     [
         "Move",
         "Dragon Pulse"
+    ],
+    [
+        "Move",
+        "Dragon Rage"
     ],
     [
         "Move",
@@ -2094,6 +2126,10 @@
     [
         "Move",
         "Eerie Spell"
+    ],
+    [
+        "Move",
+        "Egg Bomb"
     ],
     [
         "Move",
@@ -2645,6 +2681,10 @@
     ],
     [
         "Move",
+        "Hold Back"
+    ],
+    [
+        "Move",
         "Hone Claws"
     ],
     [
@@ -2981,11 +3021,19 @@
     ],
     [
         "Move",
+        "Magnet Bomb"
+    ],
+    [
+        "Move",
         "Magnet Rise"
     ],
     [
         "Move",
         "Magnetic Flux"
+    ],
+    [
+        "Move",
+        "Magnitude"
     ],
     [
         "Move",
@@ -3010,6 +3058,10 @@
     [
         "Move",
         "Mean Look"
+    ],
+    [
+        "Move",
+        "Meditate"
     ],
     [
         "Move",
@@ -3085,6 +3137,10 @@
     ],
     [
         "Move",
+        "Miracle Eye"
+    ],
+    [
+        "Move",
         "Mirror Coat"
     ],
     [
@@ -3134,6 +3190,10 @@
     [
         "Move",
         "Mountain Gale"
+    ],
+    [
+        "Move",
+        "Mud Bomb"
     ],
     [
         "Move",
@@ -3198,6 +3258,10 @@
     [
         "Move",
         "Nightmare"
+    ],
+    [
+        "Move",
+        "Nihil Light"
     ],
     [
         "Move",
@@ -3569,6 +3633,10 @@
     ],
     [
         "Move",
+        "Refresh"
+    ],
+    [
+        "Move",
         "Relic Song"
     ],
     [
@@ -3785,6 +3853,10 @@
     ],
     [
         "Move",
+        "Sharpen"
+    ],
+    [
+        "Move",
         "Shed Tail"
     ],
     [
@@ -3913,6 +3985,10 @@
     ],
     [
         "Move",
+        "Smelling Salts"
+    ],
+    [
+        "Move",
         "Smog"
     ],
     [
@@ -3958,6 +4034,10 @@
     [
         "Move",
         "Solar Blade"
+    ],
+    [
+        "Move",
+        "Sonic Boom"
     ],
     [
         "Move",
@@ -4050,6 +4130,10 @@
     [
         "Move",
         "Steam Eruption"
+    ],
+    [
+        "Move",
+        "Steamroller"
     ],
     [
         "Move",
@@ -4265,6 +4349,10 @@
     ],
     [
         "Move",
+        "Telekinesis"
+    ],
+    [
+        "Move",
         "Teleport"
     ],
     [
@@ -4414,6 +4502,10 @@
     [
         "Move",
         "Trop Kick"
+    ],
+    [
+        "Move",
+        "Trump Card"
     ],
     [
         "Move",
@@ -7169,6 +7261,10 @@
     ],
     [
         "Related To",
+        "Battle Bond Greninja"
+    ],
+    [
+        "Related To",
         "Eternal Floette"
     ],
     [
@@ -7234,6 +7330,10 @@
     [
         "Related To",
         "Hisui Sneasel"
+    ],
+    [
+        "Related To",
+        "Hisui Basculin"
     ],
     [
         "Related To",

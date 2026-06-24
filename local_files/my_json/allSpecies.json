@@ -216,7 +216,17 @@
     ],
     [
         "Raichu",
-        null,
+        "",
+        "Raichu"
+    ],
+    [
+        "Mega X Raichu",
+        "Mega X",
+        "Raichu"
+    ],
+    [
+        "Mega Y Raichu",
+        "Mega Y",
         "Raichu"
     ],
     [
@@ -266,7 +276,12 @@
     ],
     [
         "Clefable",
-        null,
+        "",
+        "Clefable"
+    ],
+    [
+        "Mega Clefable",
+        "Mega",
         "Clefable"
     ],
     [
@@ -456,7 +471,12 @@
     ],
     [
         "Victreebel",
-        null,
+        "",
+        "Victreebel"
+    ],
+    [
+        "Mega Victreebel",
+        "Mega",
         "Victreebel"
     ],
     [
@@ -735,6 +755,11 @@
         "Starmie"
     ],
     [
+        "Mega Starmie",
+        "Mega",
+        "Starmie"
+    ],
+    [
         "Mr Mime",
         null,
         "Mr Mime"
@@ -906,7 +931,12 @@
     ],
     [
         "Dragonite",
-        null,
+        "",
+        "Dragonite"
+    ],
+    [
+        "Mega Dragonite",
+        "Mega",
         "Dragonite"
     ],
     [
@@ -941,7 +971,12 @@
     ],
     [
         "Meganium",
-        null,
+        "",
+        "Meganium"
+    ],
+    [
+        "Mega Meganium",
+        "Mega",
         "Meganium"
     ],
     [
@@ -971,7 +1006,12 @@
     ],
     [
         "Feraligatr",
-        null,
+        "",
+        "Feraligatr"
+    ],
+    [
+        "Mega Feraligatr",
+        "Mega",
         "Feraligatr"
     ],
     [
@@ -1466,7 +1506,12 @@
     ],
     [
         "Skarmory",
-        null,
+        "",
+        "Skarmory"
+    ],
+    [
+        "Mega Skarmory",
+        "Mega",
         "Skarmory"
     ],
     [
@@ -2211,7 +2256,12 @@
     ],
     [
         "Chimecho",
-        null,
+        "",
+        "Chimecho"
+    ],
+    [
+        "Mega Chimecho",
+        "Mega",
         "Chimecho"
     ],
     [
@@ -2222,6 +2272,11 @@
     [
         "Mega Absol",
         "Mega",
+        "Absol"
+    ],
+    [
+        "Mega Z Absol",
+        "Mega Z",
         "Absol"
     ],
     [
@@ -2471,7 +2526,12 @@
     ],
     [
         "Staraptor",
-        null,
+        "",
+        "Staraptor"
+    ],
+    [
+        "Mega Staraptor",
+        "Mega",
         "Staraptor"
     ],
     [
@@ -2755,6 +2815,11 @@
         "Garchomp"
     ],
     [
+        "Mega Z Garchomp",
+        "Mega Z",
+        "Garchomp"
+    ],
+    [
         "Munchlax",
         null,
         "Munchlax"
@@ -2772,6 +2837,11 @@
     [
         "Mega Lucario",
         "Mega",
+        "Lucario"
+    ],
+    [
+        "Mega Z Lucario",
+        "Mega Z",
         "Lucario"
     ],
     [
@@ -2931,7 +3001,12 @@
     ],
     [
         "Froslass",
-        null,
+        "",
+        "Froslass"
+    ],
+    [
+        "Mega Froslass",
+        "Mega",
         "Froslass"
     ],
     [
@@ -3001,7 +3076,12 @@
     ],
     [
         "Heatran",
-        null,
+        "",
+        "Heatran"
+    ],
+    [
+        "Mega Heatran",
+        "Mega",
         "Heatran"
     ],
     [
@@ -3036,7 +3116,12 @@
     ],
     [
         "Darkrai",
-        null,
+        "",
+        "Darkrai"
+    ],
+    [
+        "Mega Darkrai",
+        "Mega",
         "Darkrai"
     ],
     [
@@ -3171,7 +3256,12 @@
     ],
     [
         "Emboar",
-        null,
+        "",
+        "Emboar"
+    ],
+    [
+        "Mega Emboar",
+        "Mega",
         "Emboar"
     ],
     [
@@ -3321,7 +3411,12 @@
     ],
     [
         "Excadrill",
-        null,
+        "",
+        "Excadrill"
+    ],
+    [
+        "Mega Excadrill",
+        "Mega",
         "Excadrill"
     ],
     [
@@ -3401,7 +3496,12 @@
     ],
     [
         "Scolipede",
-        null,
+        "",
+        "Scolipede"
+    ],
+    [
+        "Mega Scolipede",
+        "Mega",
         "Scolipede"
     ],
     [
@@ -3432,11 +3532,6 @@
     [
         "Blue Striped Basculin",
         "Blue Striped",
-        "Basculin"
-    ],
-    [
-        "White Striped Basculin",
-        "White Striped",
         "Basculin"
     ],
     [
@@ -3491,7 +3586,12 @@
     ],
     [
         "Scrafty",
-        null,
+        "",
+        "Scrafty"
+    ],
+    [
+        "Mega Scrafty",
+        "Mega",
         "Scrafty"
     ],
     [
@@ -3746,7 +3846,12 @@
     ],
     [
         "Eelektross",
-        null,
+        "",
+        "Eelektross"
+    ],
+    [
+        "Mega Eelektross",
+        "Mega",
         "Eelektross"
     ],
     [
@@ -3771,7 +3876,12 @@
     ],
     [
         "Chandelure",
-        null,
+        "",
+        "Chandelure"
+    ],
+    [
+        "Mega Chandelure",
+        "Mega",
         "Chandelure"
     ],
     [
@@ -3841,7 +3951,12 @@
     ],
     [
         "Golurk",
-        null,
+        "",
+        "Golurk"
+    ],
+    [
+        "Mega Golurk",
+        "Mega",
         "Golurk"
     ],
     [
@@ -4041,7 +4156,12 @@
     ],
     [
         "Chesnaught",
-        null,
+        "",
+        "Chesnaught"
+    ],
+    [
+        "Mega Chesnaught",
+        "Mega",
         "Chesnaught"
     ],
     [
@@ -4056,27 +4176,22 @@
     ],
     [
         "Delphox",
-        null,
+        "",
+        "Delphox"
+    ],
+    [
+        "Mega Delphox",
+        "Mega",
         "Delphox"
     ],
     [
         "Froakie",
-        "",
-        "Froakie"
-    ],
-    [
-        "Battle Bond Froakie",
-        "Battle Bond",
+        null,
         "Froakie"
     ],
     [
         "Frogadier",
-        "",
-        "Frogadier"
-    ],
-    [
-        "Battle Bond Frogadier",
-        "Battle Bond",
+        null,
         "Frogadier"
     ],
     [
@@ -4085,13 +4200,8 @@
         "Greninja"
     ],
     [
-        "Battle Bond Greninja",
-        "Battle Bond",
-        "Greninja"
-    ],
-    [
-        "Ash Greninja",
-        "Ash",
+        "Mega Greninja",
+        "Mega",
         "Greninja"
     ],
     [
@@ -4426,7 +4536,12 @@
     ],
     [
         "Pyroar",
-        null,
+        "",
+        "Pyroar"
+    ],
+    [
+        "Mega Pyroar",
+        "Mega",
         "Pyroar"
     ],
     [
@@ -4590,6 +4705,11 @@
         "Meowstic"
     ],
     [
+        "Mega Meowstic",
+        "Mega",
+        "Meowstic"
+    ],
+    [
         "Honedge",
         null,
         "Honedge"
@@ -4636,7 +4756,12 @@
     ],
     [
         "Malamar",
-        null,
+        "",
+        "Malamar"
+    ],
+    [
+        "Mega Malamar",
+        "Mega",
         "Malamar"
     ],
     [
@@ -4646,7 +4771,12 @@
     ],
     [
         "Barbaracle",
-        null,
+        "",
+        "Barbaracle"
+    ],
+    [
+        "Mega Barbaracle",
+        "Mega",
         "Barbaracle"
     ],
     [
@@ -4656,7 +4786,12 @@
     ],
     [
         "Dragalge",
-        null,
+        "",
+        "Dragalge"
+    ],
+    [
+        "Mega Dragalge",
+        "Mega",
         "Dragalge"
     ],
     [
@@ -4706,7 +4841,12 @@
     ],
     [
         "Hawlucha",
-        null,
+        "",
+        "Hawlucha"
+    ],
+    [
+        "Mega Hawlucha",
+        "Mega",
         "Hawlucha"
     ],
     [
@@ -4850,6 +4990,11 @@
         "Zygarde"
     ],
     [
+        "Mega Zygarde",
+        "Mega",
+        "Zygarde"
+    ],
+    [
         "Diancie",
         "",
         "Diancie"
@@ -4966,7 +5111,12 @@
     ],
     [
         "Crabominable",
-        null,
+        "",
+        "Crabominable"
+    ],
+    [
+        "Mega Crabominable",
+        "Mega",
         "Crabominable"
     ],
     [
@@ -5141,7 +5291,12 @@
     ],
     [
         "Golisopod",
-        null,
+        "",
+        "Golisopod"
+    ],
+    [
+        "Mega Golisopod",
+        "Mega",
         "Golisopod"
     ],
     [
@@ -5356,7 +5511,12 @@
     ],
     [
         "Drampa",
-        null,
+        "",
+        "Drampa"
+    ],
+    [
+        "Mega Drampa",
+        "Mega",
         "Drampa"
     ],
     [
@@ -5485,6 +5645,16 @@
         "Magearna"
     ],
     [
+        "Mega Magearna",
+        "Mega",
+        "Magearna"
+    ],
+    [
+        "Mega Original Magearna",
+        "Mega Original",
+        "Magearna"
+    ],
+    [
         "Marshadow",
         "",
         "Marshadow"
@@ -5511,7 +5681,12 @@
     ],
     [
         "Zeraora",
-        null,
+        "",
+        "Zeraora"
+    ],
+    [
+        "Mega Zeraora",
+        "Mega",
         "Zeraora"
     ],
     [
@@ -5971,7 +6146,12 @@
     ],
     [
         "Falinks",
-        null,
+        "",
+        "Falinks"
+    ],
+    [
+        "Mega Falinks",
+        "Mega",
         "Falinks"
     ],
     [
@@ -6486,7 +6666,12 @@
     ],
     [
         "Scovillain",
-        null,
+        "",
+        "Scovillain"
+    ],
+    [
+        "Mega Scovillain",
+        "Mega",
         "Scovillain"
     ],
     [
@@ -6606,7 +6791,12 @@
     ],
     [
         "Glimmora",
-        null,
+        "",
+        "Glimmora"
+    ],
+    [
+        "Mega Glimmora",
+        "Mega",
         "Glimmora"
     ],
     [
@@ -6657,6 +6847,21 @@
     [
         "Stretchy Tatsugiri",
         "Stretchy",
+        "Tatsugiri"
+    ],
+    [
+        "Mega Curly Tatsugiri",
+        "Mega Curly",
+        "Tatsugiri"
+    ],
+    [
+        "Mega Droopy Tatsugiri",
+        "Mega Droopy",
+        "Tatsugiri"
+    ],
+    [
+        "Mega Stretchy Tatsugiri",
+        "Mega Stretchy",
         "Tatsugiri"
     ],
     [
@@ -6761,7 +6966,12 @@
     ],
     [
         "Baxcalibur",
-        null,
+        "",
+        "Baxcalibur"
+    ],
+    [
+        "Mega Baxcalibur",
+        "Mega",
         "Baxcalibur"
     ],
     [
@@ -7050,8 +7260,23 @@
         "Alola Marowak"
     ],
     [
+        "Battle Bond Battle Bond Greninja",
+        "Battle Bond",
+        "Battle Bond Greninja"
+    ],
+    [
+        "Ash Battle Bond Greninja",
+        "Ash",
+        "Battle Bond Greninja"
+    ],
+    [
         "Eternal Floette",
-        null,
+        "",
+        "Eternal Floette"
+    ],
+    [
+        "Mega Eternal Floette",
+        "Mega",
         "Eternal Floette"
     ],
     [
@@ -7198,6 +7423,11 @@
         "Hisui Lilligant",
         null,
         "Hisui Lilligant"
+    ],
+    [
+        "Hisui Basculin",
+        null,
+        "Hisui Basculin"
     ],
     [
         "Hisui Zorua",

@@ -2,7 +2,7 @@
 setlocal enabledelayedexpansion
 
 REM ======= CONFIG =======
-set "branchName=beta"
+set "branchName=main"
 set "repoUrl=https://github.com/pagefaultgames/pokerogue.git"
 set "repoDest=game_files"
 
@@ -10,10 +10,11 @@ set "websiteUrl=https://github.com/Sandstormer/PokeRogue-Dex.git"
 set "websiteDest=website"
 
 REM ======= CLONE / UPDATE GAME FILES =======
+del "game_files/node_modules"
 call :clone_or_update "%repoUrl%" "%repoDest%" "%branchName%" 0
 
 REM ======= CLONE WEBSITE (ONLY ONCE) =======
-REM If folder doesn't exist -> clone
+REM If folder doesn't exist, clone
 if exist "%websiteDest%" (
     echo SearchDex website folder already exists. That won't be updated...
 ) else (
@@ -46,7 +47,7 @@ set "onlyClone=%~4"
 echo.
 echo Processing %dest%
 
-REM If folder doesn't exist -> clone
+REM If folder doesn't exist, clone
 if not exist "%dest%" (
     echo Cloning repository into %dest%...
 
