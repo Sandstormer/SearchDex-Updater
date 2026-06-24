@@ -51,6 +51,7 @@ import re, os, json, importlib
 # Functions for formatting the text
 def format_for_camel(arg): # Key format for official jsons
     arg = arg.title().replace(' ','')
+    if arg == '': return ''
     return f'{arg[0].lower()}{arg[1:]}'
 def shortenText(text):
     if 'substitutions' in overrides[lang]:
@@ -187,6 +188,8 @@ for lang in langs: # =========================================== Main loop for e
                 if region in line[1]:
                     nameFormat = tall['pokemon-form']['appendForm'][region.lower()]
             justLocSpec = tall['pokemon'][format_for_camel(line[1])] # Look up species name
+            if line[1] == 'Battle Bond Greninja':
+                justLocSpec = f"{tall['pokemon-form']['battleBondGreninja']} {justLocSpec}"
             thisName = nameFormat.replace('{{pokemonName}}',justLocSpec) # Fill in the actual species name
             thisName = thisName.replace("'",'’') # Replace single quotes with unicode
             text = shortenText(thisName)
@@ -235,7 +238,7 @@ for lang in langs: # =========================================== Main loop for e
         if specLine[2] == 'Koraidon' or specLine[2] == 'Miraidon' or 'Hero Of Many Battles' in specLine[0]:
             specLine[0:2] = [specLine[2],''] # Remove form key of those pokemon
 
-        # Translate just the base species name
+        # Translate just the base species name [2]
         text = format_for_camel(specLine[2])
         if text in tall['pokemon']:
             justLocSpec = tall['pokemon'][text]
@@ -243,18 +246,16 @@ for lang in langs: # =========================================== Main loop for e
         else:
             input(f'***** Error: Could not find base species {text}')
 
-        # Translate the form name
+        # Translate the form name [1]
         if specLine[1]: # If it is a form
-            effSpec = specLine[2]
             # The game only lists form keys for the first stage of evolution
             # If a form pokemon evolves, it needs to be manually linked here
+            effSpec = specLine[2]
             if effSpec == 'Wormadam': effSpec = 'Burmy'
             if effSpec == 'Cherrim': effSpec = 'Cherubi'
             if effSpec == 'Gastrodon': effSpec = 'Shellos'
             if effSpec == 'Darmanitan': effSpec = 'Darumaka'
             if effSpec == 'Sawsbuck': effSpec = 'Deerling'
-            if effSpec == 'Frogadier': effSpec = 'Froakie'
-            if effSpec == 'Greninja': effSpec = 'Froakie'
             if effSpec == 'Spewpa': effSpec = 'Scatterbug'
             if effSpec == 'Vivillon': effSpec = 'Scatterbug'
             if effSpec == 'Floette': effSpec = 'Flabebe'
@@ -274,16 +275,18 @@ for lang in langs: # =========================================== Main loop for e
             if effSpec == 'Dudunsparce': effSpec = 'Dunsparce'
             if effSpec == 'Sinistcha': effSpec = 'Poltchageist'
             if effSpec == 'Galar Darmanitan': effSpec = 'Galar Darumaka'
-            text = format_for_camel(f'{effSpec} {specLine[1]}')
-            if text in tall['pokemon-form']: # For regular forms
-                justLocForm = tall['pokemon-form'][text]
-                # print('Translated',specLine[0],'to',justLocForm,justLocSpec)
-            elif format_for_camel(specLine[1]) in tall['pokemon-form']['battleForm']: # For mega/giga/etc
+            if specLine[2] == 'Battle Bond Greninja' and specLine[1] == 'Battle Bond': specLine[1] = ''
+            if format_for_camel(specLine[1]) in tall['pokemon-form']['battleForm']: # For mega/giga/etc
                 justLocForm = tall['pokemon-form']['battleForm'][format_for_camel(specLine[1])]
             elif effSpec == 'Arceus' or effSpec == 'Silvally':
                 justLocForm = tall['pokemon-info']['type'][specLine[1].lower()]
             else:
-                input(f'***** Error: Could not find form name {text}')
+                specLine[1] = specLine[1].replace('Mega ','') # Remove 'Mega' from form names
+                text = format_for_camel(f"{effSpec} {specLine[1]}")
+                if text in tall['pokemon-form']: # For regular forms
+                    justLocForm = tall['pokemon-form'][text]
+                else:
+                    input(f'***** Error: Could not find form name for {specLine[0]}')
 
         # Put the name in correct format (for regionals or forms)
         nameFormat = '{{pokemonName}}'

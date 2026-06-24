@@ -47,6 +47,7 @@ substitutions = [ # Text shortenings to make it fit in the UI (delete when makin
     ["10 Zygarde","10% Zygarde"],
     ["10 Pc Zygarde","Power Construct 10% Zygarde"],
     ["Lowkey Toxtricity","Low Key Toxtricity"],
+    ["Battle Bond Battle Bond","Battle Bond"],
 ]
 warningText = [
     'Restricted to Pokemon that have shiny variants.',
