@@ -257,8 +257,8 @@ def processImage(spriteIndex, shinyIndex, femIndex, backIndex):
     sliced_img = sliced_img.crop(Image.fromarray(pixels).getbbox())
 
     # Check for differences with the previous image
-    if os.path.isfile(f"{savePath}.png"):
-        prev_img = Image.open(f"{savePath}.png") # Load previous image
+    if os.path.isfile(f"local_files/images_prev/{simpleName}.png"):
+        prev_img = Image.open(f"local_files/images_prev/{simpleName}.png") # Load previous image
         arr_new = np.array(sliced_img.convert("RGBA"))
         arr_old = np.array(prev_img.convert("RGBA"))
         colors_new = set(map(tuple, arr_new.reshape(-1, 4))) # Collect unique colors
