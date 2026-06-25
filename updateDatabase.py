@@ -340,7 +340,7 @@ for line in poke_data:           # You must run updateImages.py first *****
             for shiny in range(line[31]+1):
                 thisImagePath = f'{line[4]}_{shiny}{fem}{back}'
                 if thisImagePath in pixel_data:
-                    if "New variant" in pixel_data[thisImagePath]:
+                    if "New variant" in pixel_data[thisImagePath] and shiny > 1:
                         line[38] = 1 # Mark new species as new variants
                     if "Colors changed" in pixel_data[thisImagePath]:
                         if int(re.findall(r'\((.*?) pixels', pixel_data[thisImagePath])[0]) > 500:
