@@ -11642,7 +11642,6 @@ Chespin: Seed Bomb changed from Level 32 to Level 30
 Chespin: Bulk Up changed from Great TM to Level 36
 Chespin: Synthesis changed from Egg & Great TM to Great TM
 Chespin: Magical Leaf changed from Great TM to Common TM
-Chespin: newVariants changed from  to 1
 Chespin: biomes changed from [[1216, 'forest', [80, 100]]] to [[1239, 'forest', [80, 100]]]
 Quilladin: Passive changed from Dauntless Shield to Rough Skin
 Quilladin: Vine Whip changed from Level 1 to Level 5
@@ -11652,7 +11651,6 @@ Quilladin: Mud Shot changed from Level 34 to Level 24
 Quilladin: Seed Bomb changed from Level 20 to Level 34
 Quilladin: Synthesis changed from Egg & Great TM to Great TM
 Quilladin: Magical Leaf changed from Great TM to Common TM
-Quilladin: newVariants changed from  to 1
 Quilladin: biomes changed from [[1216, 'forest', [80, 100]]] to [[1239, 'forest', [80, 100]]]
 Chesnaught: Passive changed from Dauntless Shield to Rough Skin
 Chesnaught: Body Press changed from Ultra TM to Egg & Ultra TM
@@ -11667,7 +11665,6 @@ Chesnaught: Seed Bomb changed from Level 35 to Level 34
 Chesnaught: Feint changed from Level 1 to Level 41
 Chesnaught: Synthesis changed from Egg & Great TM to Great TM
 Chesnaught: Magical Leaf changed from Great TM to Common TM
-Chesnaught: newVariants changed from  to 1
 Chesnaught: biomes changed from [[1216, 'forest', [80, 100]]] to [[1239, 'forest', [80, 100]]]
 Fennekin: Passive changed from Fluffy to Neuroforce
 Fennekin: Egg Move 2 changed from Fiery Dance to Moonblast
@@ -12180,7 +12177,6 @@ Poke Ball Vivillon: biomes changed from [[1216, 'forest', [23]], [1236, 'tall-gr
 Litleo: Passive changed from Drought to Blaze
 Litleo: Roar changed from Common TM to Level 6
 Litleo: Snarl changed from Common TM to Level 18
-Litleo: newVariants changed from  to 1
 Litleo: biomes changed from [[1221, 'jungle', [40, 60]]] to [[1244, 'jungle', [40, 60]]]
 Pyroar: Passive changed from Drought to Beast Boost
 Pyroar: Hyper Beam changed from Level 1 to Mushroom
@@ -12189,7 +12185,6 @@ Pyroar: Roar changed from Common TM to Level 6
 Pyroar: Work Up changed from Level 1 to Level 8
 Pyroar: Snarl changed from Common TM to Level 18
 Pyroar: Scorching Sands added to Great TM
-Pyroar: newVariants changed from  to 1
 Pyroar: biomes changed from [[1221, 'jungle', [40, 60]]] to [[1244, 'jungle', [40, 60]]]
 Red Flabebe: Fairy Wind changed from Level 6 to Level 1
 Red Flabebe: Lucky Chant added to Level 6
@@ -12673,7 +12668,6 @@ Inkay: Light Screen changed from Common TM to Level 39
 Inkay: Reflect changed from Common TM to Level 39
 Inkay: Superpower changed from Level 39 to Level 42
 Inkay: Swift added to Common TM
-Inkay: newVariants changed from  to 1
 Inkay: biomes changed from [[1230, 'sea', [32, 72]]] to [[1253, 'sea', [32, 72]]]
 Malamar: Passive changed from Shadow Shield to Psychic Surge
 Malamar: Hypnosis changed from Level 1 to Level 3
@@ -12688,7 +12682,6 @@ Malamar: Switcheroo changed from Level 33 to Level 34
 Malamar: Light Screen changed from Common TM to Level 42
 Malamar: Reflect changed from Common TM to Level 42
 Malamar: Swift added to Common TM
-Malamar: newVariants changed from  to 1
 Malamar: biomes changed from [[1230, 'sea', [32, 72]]] to [[1253, 'sea', [32, 72]]]
 Binacle: Sand Attack added to Level 1
 Binacle: Withdraw changed from Level 4 to Level 1
@@ -12716,7 +12709,6 @@ Barbaracle: Skull Bash changed from Level 1 to Level 65
 Barbaracle: Close Combat added to Level 1
 Barbaracle: Chilling Water added to Great TM
 Barbaracle: Waterfall added to Common TM
-Barbaracle: newVariants changed from  to 1
 Barbaracle: biomes changed from [[1208, 'beach', [20, 60]]] to [[1231, 'beach', [20, 60]]]
 Skrelp: Egg Move 1 changed from Strength Sap to Bouncy Bubble
 Skrelp: Egg Move 2 changed from Trick Room to Aura Sphere
@@ -12896,7 +12888,6 @@ Hawlucha: Swords Dance changed from Level 40 to Level 48
 Hawlucha: High Jump Kick changed from Level 48 to Level 52
 Hawlucha: Endeavor changed from Level 52 to Level 56
 Hawlucha: Sky Attack changed from Level 56 to Level 60
-Hawlucha: newVariants changed from  to 1
 Hawlucha: biomes changed from [[1226, 'mountain', [80, 100]]] to [[1249, 'mountain', [80, 100]]]
 Dedenne: Thunder Shock changed from Level 15 to Level 7
 Dedenne: Charge changed from Level 10 to Level 11
@@ -13206,7 +13197,6 @@ Yveltal: biomes changed from [[1206, 'abyss', [180]]] to [[1229, 'abyss', [180]]
 50 Zygarde: Core Enforcer changed from Level 1 to Level 100
 50 Zygarde: Shock Wave changed from Great TM to Common TM
 50 Zygarde: cost changed from 8 to 9
-50 Zygarde: newVariants changed from  to 1
 50 Zygarde: biomes changed from [[1222, 'laboratory', [140]]] to [[1245, 'laboratory', [140]]]
 10 Zygarde: Egg Move 2 changed from V Create to Armor Cannon
 10 Zygarde: Camouflage added to Great TM
@@ -13224,7 +13214,6 @@ Yveltal: biomes changed from [[1206, 'abyss', [180]]] to [[1229, 'abyss', [180]]
 10 Zygarde: Core Enforcer changed from Level 1 to Level 100
 10 Zygarde: Shock Wave changed from Great TM to Common TM
 10 Zygarde: cost changed from 8 to 9
-10 Zygarde: newVariants changed from  to 1
 10 Zygarde: biomes changed from [[1222, 'laboratory', [140]]] to [[1245, 'laboratory', [140]]]
 50 Pc Zygarde: Egg Move 2 changed from V Create to Armor Cannon
 50 Pc Zygarde: Camouflage added to Great TM
@@ -13242,7 +13231,6 @@ Yveltal: biomes changed from [[1206, 'abyss', [180]]] to [[1229, 'abyss', [180]]
 50 Pc Zygarde: Core Enforcer changed from Level 1 to Level 100
 50 Pc Zygarde: Shock Wave changed from Great TM to Common TM
 50 Pc Zygarde: cost changed from 8 to 9
-50 Pc Zygarde: newVariants changed from  to 1
 50 Pc Zygarde: biomes changed from [[1222, 'laboratory', [140]]] to [[1245, 'laboratory', [140]]]
 10 Pc Zygarde: Egg Move 2 changed from V Create to Armor Cannon
 10 Pc Zygarde: Camouflage added to Great TM
@@ -13260,7 +13248,6 @@ Yveltal: biomes changed from [[1206, 'abyss', [180]]] to [[1229, 'abyss', [180]]
 10 Pc Zygarde: Core Enforcer changed from Level 1 to Level 100
 10 Pc Zygarde: Shock Wave changed from Great TM to Common TM
 10 Pc Zygarde: cost changed from 8 to 9
-10 Pc Zygarde: newVariants changed from  to 1
 10 Pc Zygarde: biomes changed from [[1222, 'laboratory', [140]]] to [[1245, 'laboratory', [140]]]
 Complete Zygarde: Camouflage added to Great TM
 Complete Zygarde: Safeguard changed from Level 24 to Level 1
@@ -13277,7 +13264,6 @@ Complete Zygarde: Outrage changed from Level 88 to Level 93
 Complete Zygarde: Core Enforcer changed from Level 1 to Level 100
 Complete Zygarde: Shock Wave changed from Great TM to Common TM
 Complete Zygarde: cost changed from 8 to 9
-Complete Zygarde: newVariants changed from  to 1
 Complete Zygarde: biomes changed from [[1222, 'laboratory', [140]]] to [[1245, 'laboratory', [140]]]
 Diancie: Smack Down changed from Level 14 to Level 1
 Diancie: Sharpen added to Level 14
@@ -13585,7 +13571,6 @@ Crabrawler: Power Up Punch changed from Great TM to Level 22
 Crabrawler: Dizzy Punch added to Great TM
 Crabrawler: Mach Punch added to Level 29
 Crabrawler: Brick Break changed from Level 22 to Level 40
-Crabrawler: newVariants changed from  to 1
 Crabrawler: biomes changed from [[1219, 'ice-cave', [20, 60]]] to [[1242, 'ice-cave', [20, 60]]]
 Crabominable: Passive changed from Water Bubble to Tough Claws
 Crabominable: Drain Punch changed from Great TM to Egg & Great TM
@@ -13601,7 +13586,6 @@ Crabominable: Brick Break changed from Level 22 to Level 40
 Crabominable: Icicle Spear added to Common TM
 Crabominable: Payback changed from Level 1 to Common TM
 Crabominable: Crabhammer removed from Common TM
-Crabominable: newVariants changed from  to 1
 Crabominable: biomes changed from [[1219, 'ice-cave', [20, 60]]] to [[1242, 'ice-cave', [20, 60]]]
 Baile Oricorio: Double Slap added to Level 16
 Baile Oricorio: Captivate added to Level 26
