@@ -603,7 +603,7 @@ for i,line in enumerate(poke_data):
                             patch_review.append(f'{line[5]}: {key} added to {MoveSrcText(valuePrev)}')
                 for key,value in prevLine[28].items():
                     if key not in line[28] and value not in [204,208]: # If old move missing from new data
-                        patch_review.append(f'{line[5]}: {key} removed from {MoveSrcText(valuePrev)}')
+                        patch_review.append(f'{line[5]}: {key} removed from {MoveSrcText(value)}')
             elif str(line[j]) != str(prevLine[j]): # Compare all other attributes
                 attPatchCount[j] += 1
                 if j not in [24,25,26,27] or ( line[33] and not line[37] ): # Don't show egg moves, except on starter mons
