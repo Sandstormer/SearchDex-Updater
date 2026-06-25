@@ -342,9 +342,9 @@ for line in poke_data:           # You must run updateImages.py first *****
                 if thisImagePath in pixel_data:
                     if "New variant" in pixel_data[thisImagePath] and shiny > 1:
                         line[38] = 1 # Mark new species as new variants
-                    if "Colors changed" in pixel_data[thisImagePath] and shiny > 1:
-                        if int(re.findall(r'\((.*?) pixels', pixel_data[thisImagePath])[0]) > 500:
-                            line[38] = 1 # Mark as new variants if more than 500 pixels changed
+                    if "colors changed" in pixel_data[thisImagePath] and shiny > 1:
+                        if int(re.findall(r'(.*?) colors', pixel_data[thisImagePath])[0]) > 16:
+                            line[38] = 1 # Mark as new variants if more than 16 colors changed
                 if not os.path.isfile(f'{pathImg}/{thisImagePath}.png'):
                     throwError(f"The file {pathImg}/{thisImagePath}.png does not exist.")
 

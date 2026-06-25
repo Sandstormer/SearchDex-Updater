@@ -3486,7 +3486,6 @@ Croconaw: Thrash changed from Level 42 to Level 44
 Croconaw: Outrage added to Level 55
 Croconaw: Take Down added to Great TM
 Croconaw: Ancient Power added to Common TM
-Croconaw: newVariants changed from  to 1
 Croconaw: biomes changed from [[1235, 'swamp', [80, 100]]] to [[1258, 'swamp', [80, 100]]]
 Feraligatr: Bubble Beam added to Egg & Great TM
 Feraligatr: Water Gun changed from Level 1 to Level 5
@@ -3501,7 +3500,6 @@ Feraligatr: Hydro Pump changed from Level 70 to Level 71
 Feraligatr: Outrage changed from Ultra TM to Level 76
 Feraligatr: Take Down added to Great TM
 Feraligatr: Ancient Power added to Common TM
-Feraligatr: newVariants changed from  to 1
 Feraligatr: biomes changed from [[1235, 'swamp', [80, 100]]] to [[1258, 'swamp', [80, 100]]]
 Sentret: Growl added to Level 1
 Sentret: Foresight added to Level 1
@@ -3638,6 +3636,7 @@ Pichu: Volt Tackle added to Level 20
 Pichu: Counter added to Ultra TM
 Pichu: Zap Cannon added to Common TM
 Pichu: Shock Wave changed from Great TM to Common TM
+Pichu: newVariants changed from  to 1
 Pichu: biomes changed from [[1238, 'town', [120]], [1225, 'metropolis', [40]], [1227, 'plains', [40]], [1228, 'power-plant', [20, 60]], [1220, 'island', [43, 63]]] to [[1261, 'town', [120]], [1248, 'metropolis', [40]], [1250, 'plains', [40]], [1251, 'power-plant', [20, 60]], [1243, 'island', [43, 63]]]
 Spiky Pichu: Egg Move 2 changed from Triple Axel to Wave Crash
 Spiky Pichu: Egg Move 3 changed from Fiery Dance to Bulk Up
@@ -3664,6 +3663,7 @@ Cleffa: Bubble Beam added to Great TM
 Cleffa: Counter added to Common TM
 Cleffa: Zap Cannon added to Common TM
 Cleffa: Shock Wave changed from Great TM to Common TM
+Cleffa: newVariants changed from  to 1
 Cleffa: biomes changed from [[1234, 'space', [20, 60]], [1238, 'town', [80]], [1215, 'fairy-cave', [40]]] to [[1257, 'space', [20, 60]], [1261, 'town', [80]], [1238, 'fairy-cave', [40]]]
 Igglybuff: Charm changed from Level 20 to Level 1
 Igglybuff: Disarming Voice changed from Level 12 to Level 1
@@ -4488,6 +4488,7 @@ Skarmory: Drill Run changed from Great TM to Level 54
 Skarmory: Brave Bird changed from Level 52 to Level 57
 Skarmory: Take Down added to Great TM
 Skarmory: Ominous Wind added to Common TM
+Skarmory: newVariants changed from  to 1
 Skarmory: biomes changed from [[1226, 'mountain', [80, 60]]] to [[1249, 'mountain', [80, 60]]]
 Houndour: Egg Move 1 changed from Fiery Wrath to Earth Power
 Houndour: Rare Egg Move changed from Armor Cannon to Fiery Wrath
@@ -4856,7 +4857,6 @@ Mega Tyranitar: Giga Impact changed from Level 59 to Level 75
 Mega Tyranitar: Shock Wave changed from Great TM to Common TM
 Mega Tyranitar: Incinerate added to Ultra TM
 Mega Tyranitar: Ancient Power added to Common TM
-Mega Tyranitar: newVariants changed from  to 1
 Mega Tyranitar: biomes changed from [[1240, 'wasteland', [32, 72]], [1226, 'mountain', [120]]] to [[1263, 'wasteland', [32, 72]], [1249, 'mountain', [120]]]
 Lugia: Ancient Power changed from Level 1 to Level 5
 Lugia: Swift changed from Common TM to Level 11
@@ -10254,7 +10254,6 @@ Gigantamax Garbodor: Poison Jab added to Level 24
 Gigantamax Garbodor: Ancient Power added to Great TM
 Gigantamax Garbodor: Take Down changed from Level 1 to Great TM
 Gigantamax Garbodor: Mud Shot added to Great TM
-Gigantamax Garbodor: newVariants changed from  to 1
 Gigantamax Garbodor: biomes changed from [[1232, 'slum', [20, 60]]] to [[1255, 'slum', [20, 60]]]
 Zorua: Pursuit added to Level 1
 Zorua: Fake Tears changed from Level 28 to Level 11
@@ -11077,6 +11076,7 @@ Golurk: Focus Punch changed from Mushroom to Level 68
 Golurk: Headlong Rush added to Mushroom
 Golurk: Shock Wave changed from Great TM to Common TM
 Golurk: Iron Head added to Great TM
+Golurk: newVariants changed from  to 1
 Golurk: biomes changed from [[1237, 'temple', [20, 60]]] to [[1260, 'temple', [20, 60]]]
 Pawniard: Fury Cutter changed from Level 5 to Level 6
 Pawniard: Torment changed from Level 15 to Level 14
@@ -11710,6 +11710,7 @@ Greninja: Quick Attack changed from Level 1 to Level 8
 Greninja: Feint Attack added to Level 33
 Greninja: Flip Turn added to Ultra TM
 Greninja: Water Gun removed from Level 1
+Greninja: newVariants changed from  to 1
 Greninja: biomes changed from [[1223, 'lake', [80, 100]]] to [[1246, 'lake', [80, 100]]]
 Bunnelby: Tackle changed from Level 3 to Level 1
 Bunnelby: Agility changed from Great TM to Level 4
@@ -12694,6 +12695,7 @@ Binacle: Clamp added to Level 12
 Binacle: Night Slash added to Level 40
 Binacle: Cross Chop changed from Level 44 to Level 49
 Binacle: Waterfall added to Common TM
+Binacle: newVariants changed from  to 1
 Binacle: biomes changed from [[1208, 'beach', [20, 60]]] to [[1231, 'beach', [20, 60]]]
 Barbaracle: Sand Attack added to Level 1
 Barbaracle: Water Gun changed from Level 1 to Level 4
@@ -12728,6 +12730,7 @@ Skrelp: Dragon Pulse changed from Level 40 to Level 49
 Skrelp: Shock Wave changed from Great TM to Common TM
 Skrelp: Poison Jab added to Great TM
 Skrelp: Water Gun removed from Level 10
+Skrelp: newVariants changed from  to 1
 Skrelp: biomes changed from [[1231, 'seabed', [40, 60]]] to [[1254, 'seabed', [40, 60]]]
 Dragalge: Passive changed from Regenerator to Toxic Chain
 Dragalge: Twister added to Common TM
@@ -13909,6 +13912,7 @@ Passimian: Bestow added to Level 25
 Passimian: Shock Wave changed from Great TM to Common TM
 Passimian: biomes changed from [[1221, 'jungle', [83]]] to [[1244, 'jungle', [83]]]
 Wimpod: Egg Move 1 changed from Triple Axel to Bullet Punch
+Wimpod: newVariants changed from  to 1
 Wimpod: biomes changed from [[1209, 'cave', [40, 60]]] to [[1232, 'cave', [40, 60]]]
 Golisopod: Spite changed from Level 1 to Level 20
 Golisopod: Slash changed from Level 28 to Level 24
@@ -13922,6 +13926,7 @@ Golisopod: Iron Head changed from Great TM to Level 53
 Golisopod: Leech Life changed from Ultra TM to Level 57
 Golisopod: Pain Split added to Common TM
 Golisopod: Endeavor added to Ultra TM
+Golisopod: newVariants changed from  to 1
 Golisopod: biomes changed from [[1209, 'cave', [40, 60]]] to [[1232, 'cave', [40, 60]]]
 Sandygast: Astonish changed from Level 5 to Level 1
 Sandygast: Sand Attack changed from Level 20 to Level 5
@@ -15814,6 +15819,7 @@ Capsakid: Egg Move 3 changed from Frost Breath to Fickle Beam
 Capsakid: Rare Egg Move changed from Apple Acid to Strength Sap
 Capsakid: Magical Leaf changed from Great TM to Level 26
 Capsakid: Super Fang changed from Common TM to Level 31
+Capsakid: newVariants changed from  to 1
 Capsakid: biomes changed from [[1207, 'badlands', [43, 63]]] to [[1230, 'badlands', [43, 63]]]
 Scovillain: Magical Leaf changed from Great TM to Level 26
 Scovillain: Super Fang changed from Common TM to Level 31
@@ -15821,6 +15827,7 @@ Scovillain: Fire Spin added to Ultra TM
 Scovillain: Swagger added to Great TM
 Scovillain: Flare Blitz added to Common TM
 Scovillain: Thunder Fang added to Ultra TM
+Scovillain: newVariants changed from  to 1
 Scovillain: biomes changed from [[1207, 'badlands', [43, 63]]] to [[1230, 'badlands', [43, 63]]]
 Rellor: biomes changed from [[1211, 'desert', [20]]] to [[1234, 'desert', [20]]]
 Rabsca: Dig changed from Level 1 to Great TM
@@ -15852,7 +15859,9 @@ Varoom: biomes changed from [[1225, 'metropolis', [80, 100]], [1232, 'slum', [80
 Revavroom: biomes changed from [[1225, 'metropolis', [80, 100]], [1232, 'slum', [80, 100]]] to [[1248, 'metropolis', [80, 100]], [1255, 'slum', [80, 100]]]
 Cyclizar: biomes changed from [[1240, 'wasteland', [40]]] to [[1263, 'wasteland', [40]]]
 Orthworm: biomes changed from [[1211, 'desert', [40]]] to [[1234, 'desert', [40]]]
+Glimmet: newVariants changed from  to 1
 Glimmet: biomes changed from [[1209, 'cave', [80, 100]]] to [[1232, 'cave', [80, 100]]]
+Glimmora: newVariants changed from  to 1
 Glimmora: biomes changed from [[1209, 'cave', [80, 100]]] to [[1232, 'cave', [80, 100]]]
 Greavard: Swagger added to Common TM
 Greavard: Zen Headbutt added to Great TM
@@ -15880,6 +15889,7 @@ Curly Tatsugiri: Whirlpool changed from Common TM to Level 25
 Curly Tatsugiri: Mud Shot added to Level 28
 Curly Tatsugiri: Mimic added to Level 34
 Curly Tatsugiri: Ancient Power added to Common TM
+Curly Tatsugiri: newVariants changed from  to 1
 Curly Tatsugiri: biomes changed from [[1208, 'beach', [80]]] to [[1231, 'beach', [80]]]
 Droopy Tatsugiri: Passive changed from Fluffy to Friend Guard
 Droopy Tatsugiri: Egg Move 2 changed from Fillet Away to Decorate
@@ -15889,6 +15899,7 @@ Droopy Tatsugiri: Whirlpool changed from Common TM to Level 25
 Droopy Tatsugiri: Mud Shot added to Level 28
 Droopy Tatsugiri: Mimic added to Level 34
 Droopy Tatsugiri: Ancient Power added to Common TM
+Droopy Tatsugiri: newVariants changed from  to 1
 Droopy Tatsugiri: biomes changed from [[1208, 'beach', [80]]] to [[1231, 'beach', [80]]]
 Stretchy Tatsugiri: Passive changed from Fluffy to Friend Guard
 Stretchy Tatsugiri: Egg Move 2 changed from Fillet Away to Decorate
@@ -15898,6 +15909,7 @@ Stretchy Tatsugiri: Whirlpool changed from Common TM to Level 25
 Stretchy Tatsugiri: Mud Shot added to Level 28
 Stretchy Tatsugiri: Mimic added to Level 34
 Stretchy Tatsugiri: Ancient Power added to Common TM
+Stretchy Tatsugiri: newVariants changed from  to 1
 Stretchy Tatsugiri: biomes changed from [[1208, 'beach', [80]]] to [[1231, 'beach', [80]]]
 Annihilape: Rage added to Level 1
 Annihilape: Fury Swipes changed from Level 5 to Level 4
@@ -16075,11 +16087,14 @@ Iron Thorns: biomes changed from [[1213, 'end', [20]]] to [[1236, 'end', [20]]]
 Frigibax: Passive changed from Intimidate to Heatproof
 Frigibax: Egg Move 3 changed from Mountain Gale to Sacred Sword
 Frigibax: Rare Egg Move changed from Precipice Blades to Mountain Gale
+Frigibax: newVariants changed from  to 1
 Frigibax: biomes changed from [[1240, 'wasteland', [80, 60]]] to [[1263, 'wasteland', [80, 60]]]
 Arctibax: Passive changed from Intimidate to Heatproof
+Arctibax: newVariants changed from  to 1
 Arctibax: biomes changed from [[1240, 'wasteland', [80, 60]]] to [[1263, 'wasteland', [80, 60]]]
 Baxcalibur: Passive changed from Intimidate to Heatproof
 Baxcalibur: Ice Hammer added to Level 62
+Baxcalibur: newVariants changed from  to 1
 Baxcalibur: biomes changed from [[1240, 'wasteland', [80, 60]]] to [[1263, 'wasteland', [80, 60]]]
 Chest Gimmighoul: biomes changed from [[1237, 'temple', [80, 100]]] to [[1260, 'temple', [80, 100]]]
 Roaming Gimmighoul: biomes changed from [[1237, 'temple', [80, 100]]] to [[1260, 'temple', [80, 100]]]

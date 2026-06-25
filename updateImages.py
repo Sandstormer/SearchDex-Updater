@@ -258,16 +258,21 @@ def processImage(spriteIndex, shinyIndex, femIndex, backIndex):
 
     # Check for differences with the previous image
     if os.path.isfile(f"{savePath}.png"):
-        prev_img = Image.open(f"{savePath}.png")
+        prev_img = Image.open(f"{savePath}.png") # Load previous image
         arr_new = np.array(sliced_img.convert("RGBA"))
         arr_old = np.array(prev_img.convert("RGBA"))
+        colors_new = set(map(tuple, arr_new.reshape(-1, 4))) # Collect unique colors
+        colors_old = set(map(tuple, arr_old.reshape(-1, 4)))
+        added_colors = colors_new - colors_old # Find set of added colors
+        removed_colors = colors_old - colors_new # Find set of removed colors
+        changed_colors_num = len(added_colors) + len(removed_colors)
         if arr_new.shape != arr_old.shape:
-            changedList.append(f'{simpleName} - Image size/pose changed')
+            changedList.append(f'{simpleName} - {changed_colors_num} colors changed (+{len(added_colors)} -{len(removed_colors)}) (size/pose changed)')
         else:
             pixelsChanged = np.sum(np.any(arr_new != arr_old, axis=-1))
             if not pixelsChanged:
                 return # If no pixels are changed, don't bother replacing the image
-            changedList.append(f'{simpleName} - Colors changed ({pixelsChanged} pixels)')
+            changedList.append(f'{simpleName} - {changed_colors_num} colors changed (+{len(added_colors)} -{len(removed_colors)}) ({pixelsChanged} pixels)')
     else:
         changedList.append(f'{simpleName} - New variant')
 
