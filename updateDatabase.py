@@ -600,7 +600,7 @@ for i,line in enumerate(poke_data):
                             if valuePrev != value: # If move is different in new vs old data
                                 patch_review.append(f'{line[5]}: {key} changed from {MoveSrcText(valuePrev)} to {MoveSrcText(value)}')
                         else: # If new move is not in old data
-                            patch_review.append(f'{line[5]}: {key} added to {MoveSrcText(valuePrev)}')
+                            patch_review.append(f'{line[5]}: {key} added to {MoveSrcText(value)}')
                 for key,value in prevLine[28].items():
                     if key not in line[28] and value not in [204,208]: # If old move missing from new data
                         patch_review.append(f'{line[5]}: {key} removed from {MoveSrcText(value)}')
