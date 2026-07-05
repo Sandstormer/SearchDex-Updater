@@ -102,7 +102,7 @@
 149_2b - 23 colors changed (+13 -10) (2590 pixels)
 149_3b - 23 colors changed (+13 -10) (2590 pixels)
 15-mega_0 - 15 colors changed (+10 -5) (823 pixels)
-15-mega_1 - 27 colors changed (+16 -11) (2581 pixels)
+15-mega_1 - 27 colors changed (+16 -11) (1376 pixels)
 15-mega_2 - New variant
 15-mega_3 - New variant
 15-mega_0b - 15 colors changed (+10 -5) (1131 pixels)
@@ -201,7 +201,7 @@
 2051_1 - 3 colors changed (+3 -0) (size/pose changed)
 2051_2 - New variant
 2051_3 - New variant
-2051_0b - 1 colors changed (+1 -0) (157 pixels)
+2051_0b - 3 colors changed (+2 -1) (242 pixels)
 2051_1b - 3 colors changed (+2 -1) (250 pixels)
 2051_2b - New variant
 2051_3b - New variant
@@ -808,10 +808,26 @@
 604-mega_1 - New variant
 604-mega_0b - New variant
 604-mega_1b - New variant
+607_2 - 16 colors changed (+8 -8) (838 pixels)
+607_3 - 24 colors changed (+12 -12) (999 pixels)
+607_2b - 12 colors changed (+6 -6) (876 pixels)
+607_3b - 20 colors changed (+10 -10) (1036 pixels)
+608_2 - 24 colors changed (+12 -12) (2450 pixels)
+608_3 - 24 colors changed (+12 -12) (2450 pixels)
+608_2b - 18 colors changed (+9 -9) (2450 pixels)
+608_3b - 18 colors changed (+9 -9) (2450 pixels)
 609-mega_0 - New variant
 609-mega_1 - New variant
+609-mega_2 - New variant
+609-mega_3 - New variant
 609-mega_0b - New variant
 609-mega_1b - New variant
+609-mega_2b - New variant
+609-mega_3b - New variant
+609_2 - 8 colors changed (+4 -4) (711 pixels)
+609_3 - 18 colors changed (+9 -9) (1380 pixels)
+609_2b - 8 colors changed (+4 -4) (651 pixels)
+609_3b - 16 colors changed (+8 -8) (1379 pixels)
 622_0 - 2 colors changed (+1 -1) (223 pixels)
 622_1 - 2 colors changed (+1 -1) (223 pixels)
 622_2 - 26 colors changed (+13 -13) (1863 pixels)
@@ -899,8 +915,8 @@
 657_3 - 21 colors changed (+10 -11) (size/pose changed)
 657_0b - 4 colors changed (+2 -2) (467 pixels)
 657_1b - 18 colors changed (+9 -9) (size/pose changed)
-657_2b - 18 colors changed (+9 -9) (1162 pixels)
-657_3b - 18 colors changed (+9 -9) (1162 pixels)
+657_2b - 8 colors changed (+4 -4) (623 pixels)
+657_3b - 12 colors changed (+6 -6) (936 pixels)
 658-mega_0 - New variant
 658-mega_1 - New variant
 658-mega_2 - New variant

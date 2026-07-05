@@ -31,7 +31,7 @@ with open(f"{pathJSON}/evolutions.json", "r", encoding="utf-8", errors="replace"
 with open(f"{pathJSON}/tm-tiers.json", "r", encoding="utf-8", errors="replace") as f:
     tm_tier_data_raw = json.load(f)
 tmTierValues = { "COMMON":209, "GREAT":210, "ULTRA":211 }
-tm_tier_data = { line["move"]: tmTierValues[line["tier"]] for line in tm_tier_data_raw }
+tm_tier_data = { format_for_disp(line["move"]): tmTierValues[line["tier"]] for line in tm_tier_data_raw }
 with open(f"{pathJSON}/level-moves.json", "r", encoding="utf-8", errors="replace") as f:
     level_data_raw = json.load(f)
 level_move_data = {} # Rearrange level moves data to [dexNum][form] = [ [move,level] , ... ]
@@ -44,7 +44,7 @@ for moveLine in level_data_raw:
         formName = 'Dawn Wings' # !!!!!!!!!!!!!!!!!!!!!!
     if formName not in level_move_data[speciesName]:
         level_move_data[speciesName][formName] = []
-    level_move_data[speciesName][formName].append([moveLine["move"],moveLine["level"]])
+    level_move_data[speciesName][formName].append([format_for_disp(moveLine["move"]),moveLine["level"]])
 with open(f"{pathJSON}/tms.json", "r", encoding="utf-8", errors="replace") as f:
     tms_data_raw = json.load(f)
 tm_move_data = {} # Rearrange tm moves data to [id][form] = [tms,...]
@@ -57,7 +57,7 @@ for moveLine in tms_data_raw:
         formName = '' # !!!!!!!!!!!!!!!!!!!!!!
     if formName not in tm_move_data[speciesName]:
         tm_move_data[speciesName][formName] = []
-    tm_move_data[speciesName][formName].append(moveLine["move"])
+    tm_move_data[speciesName][formName].append(format_for_disp(moveLine["move"]))
 print('Finished reading main data')
 
 # Open and read the biomes file ************************************
@@ -187,35 +187,38 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     #region Assign Moves
     line[28] = {} # Add dictionary for all moves [28] { 'Move Name':src, ... }
     # src = -1:mushroom, 0:evo, 1-200:level, 201-203:egg&TM, 204:egg, 205-207:rare&TM, 208:rare, 209-211:comm/great/ultra TM
-    def assignMoveCode(code):
+    def assignMoveCode(moveName, newCode, pokeLine):
         currentCode = None
-        if format_for_disp(moveName) in line[28]: currentCode = line[28][format_for_disp(moveName)]
-        if code == 'EVOLVE_MOVE' : code = 0
-        if code == 'RELEARN_MOVE': code = -1
-        if 100 < code < 200: throwError(f'High level move found in {line[5]}: Level {code}')
-        if code > 208: # If a TM move
-            if currentCode in [204,208]: code += currentCode - 212 # Combine egg moves and TM moves
-            if currentCode != None and currentCode < 200: return # Don't replace level moves with TM moves
-        if code < 200 and currentCode != None: return # Don't replace egg moves with level moves
-        line[28][format_for_disp(moveName)] = code
+        if moveName in pokeLine[28]: currentCode = pokeLine[28][moveName]
+        if newCode == 'EVOLVE_MOVE' : newCode = 0
+        if newCode == 'RELEARN_MOVE': newCode = -1
+        if 100 < newCode < 200: throwError(f'High level move found in {pokeLine[5]}: Level {newCode}')
+        if newCode > 208: # If a TM move
+            if currentCode in [204,208]: # If move already exists as an egg move
+                newCode += currentCode - 212 # Combine egg moves and TM moves
+            elif currentCode != None and currentCode < 208:
+                return # Don't replace level moves, or egg&TM combos
+        if newCode < 200 and currentCode != None: return # Don't replace egg moves with level moves
+        pokeLine[28][moveName] = newCode
     # Import egg moves from the starterName [42] **********
     line[24:28] = egg_move_data[line[42]].keys() # Put egg moves in [24-27]
     for move in egg_move_data[line[42]].keys(): # Add egg moves to the move dictionary [28]
         line[28][move] = egg_move_data[line[42]][move] # Add the egg move to the move dict
-    # Import level moves from the speciesName [2] **********
+    # Import level moves from the Species Name [2] **********
     for moveName, moveCode in level_move_data[line[2]][None]: # For all forms
-        assignMoveCode(moveCode)
+        if moveName != "Conversion 2": # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+            assignMoveCode(moveName, moveCode, line)
     if line[1] != None and line[1] in level_move_data[line[2]]: # Uses form key
         for moveName, moveCode in level_move_data[line[2]][line[1]]: # For specific forms
-            assignMoveCode(moveCode)
+            assignMoveCode(moveName, moveCode, line)
         print(f"Imported unique level moves for {line[5]}")
         level_move_data[line[2]][line[1]] = []
     if line[2] in tm_move_data: # If species is listed, add TM moves **********
         for moveName in tm_move_data[line[2]][None]: # For all forms
-            assignMoveCode(tm_tier_data[moveName])
+            assignMoveCode(moveName, tm_tier_data[moveName], line)
         if line[1] != None and line[1] in tm_move_data[line[2]]:
             for moveName in tm_move_data[line[2]][line[1]]: # For specific forms
-                assignMoveCode(tm_tier_data[moveName])
+                assignMoveCode(moveName, tm_tier_data[moveName], line)
             print(f"Imported unique TM moves for {line[5]}")
             tm_move_data[line[2]][line[1]] = []
 
@@ -363,6 +366,7 @@ for line in poke_data:
     if not any(value < 100 for value in line[28].values()): # Check for level moves
         throwError(f'Missing level-up entries in {line[5]}')
     if sum(200 < value < 209 for value in line[28].values()) != 4: # Check for 4 egg moves
+        print(line)
         throwError(f'Missing egg move entries in {line[5]}')
     if not any(value > 208 for value in line[28].values()) and line[3] not in [132, 201, 202, 235, 360, 789, 790]:
         print(f'Missing TM move entries in {line[5]}') # Check for pokemon that should have TM moves
@@ -584,14 +588,14 @@ for i,line in enumerate(poke_data):
     for iii in range(i-100,min(i+100,len(poke_data_shvar))):
         if line[5] == poke_data_shvar[iii][5]: # Find matching display name
             if line[31] != poke_data_shvar[iii][31]: # If shvar has changed
-                line[38] = 1 # Mark as newly added shiny variants
+                line[38] = 1 # Mark as newly added shiny variants !!!!!!!!!!!!!!!!!!!!!!! can remove?
             break
     else:
         print(f'Could not find previous shiny data for {line[5]}')
     # Loop through all attributes for comparison
     for j in range(0,min(len(line),len(prevLine))):
         # For all the main values, they are only 'changed'
-        if (not soloAttr and j not in omitAttr) or j in soloAttr: 
+        if (not soloAttr and j not in omitAttr) or j in soloAttr:
             if j == 28: # For the move dict, they are either 'added' or 'removed'
                 for key,value in line[28].items():
                     if value not in [204,208]: # Ignore egg moves
