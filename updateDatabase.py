@@ -542,14 +542,11 @@ print("Reviewing patch changes...\n")
 # region Review Patch Notes
 # This makes it easy to see what has changed in the new data, by comparing to poke_data_prev.json
 # To re-base the comparison, you must manually replace poke_data_prev.json with data from poke_data.json
-# poke_data_prev_shvar.json should only be re-based right before adding new variants
 # Github may detect more changes in pokedex_data.js because of how fid are assigned
 with open("local_files/poke_data.json", "w", encoding="utf-8") as f:
     json.dump(poke_data, f, ensure_ascii=False, indent=4) # Write all the trimmed data to a json file
 with open("local_files/poke_data_prev.json", "r", encoding="utf-8", errors="replace") as fp:
     poke_data_prev = json.load(fp) # Load the previous trimmed data for comparison
-with open("local_files/poke_data_prev_shvar.json", "r", encoding="utf-8", errors="replace") as fp:
-    poke_data_shvar = json.load(fp) # Older version for detecting new variants
 attNames = ['rowno','form','species','dexno','img','fullName','desc','type1','type2','ab1','ab2','hab','Passive',
            #   0      1        2        3      4       5        6       7       8      9    10    11    12
             'bst','HP','Atk','Def','SpAtk','SpDef','Speed','catchrate','exp','mpc','fem','Egg Move 1','Egg Move 2','Egg Move 3','Rare Egg Move',

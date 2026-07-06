@@ -242,7 +242,7 @@ def processImage(spriteIndex, shinyIndex, femIndex, backIndex):
         return # Stop if there is no image
 
     if 'partner' in spriteIndex:
-        sliced_img = addPartnerHeart(sliced_img) # Add partner heart to pika and eevee
+        sliced_img = addPartnerHeart(sliced_img) # Add partner heart to Pikachu and Eevee
 
     # Remove ALL metadata (Color Profile, EXIF, Time, Software, Comments)
     for key in ['icc_profile', 'timestamp', 'software', 'comment', 'description']:
@@ -266,15 +266,15 @@ def processImage(spriteIndex, shinyIndex, femIndex, backIndex):
         added_colors = colors_new - colors_old # Find set of added colors
         removed_colors = colors_old - colors_new # Find set of removed colors
         changed_colors_num = len(added_colors) + len(removed_colors)
-        if arr_new.shape != arr_old.shape:
+        if arr_new.shape != arr_old.shape: # If size is different, report that, and how many colors changed
             changedList.append(f'{simpleName} - {changed_colors_num} colors changed (+{len(added_colors)} -{len(removed_colors)}) (size/pose changed)')
-        else:
+        else: # If size is same, report how many colors and pixels were changed
             pixelsChanged = np.sum(np.any(arr_new != arr_old, axis=-1))
             if not pixelsChanged:
                 return # If no pixels are changed, don't bother replacing the image
             changedList.append(f'{simpleName} - {changed_colors_num} colors changed (+{len(added_colors)} -{len(removed_colors)}) ({pixelsChanged} pixels)')
-    else:
-        changedList.append(f'{simpleName} - New variant')
+    else: # If there is no previous image
+        changedList.append(f'{simpleName} - New variant') # Mark as "New variant" to be read by updateDatabase.py
 
     sliced_img.save(f"{savePath}.png", optimize=True, compress_level=9, pnginfo=None) # Save the image to the website folder
     
