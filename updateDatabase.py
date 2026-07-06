@@ -40,8 +40,6 @@ for moveLine in level_data_raw:
     if speciesName not in level_move_data:
         level_move_data[speciesName] = {}
     formName = format_for_disp(moveLine["form"])
-    if formName == 'Dusk Wings' and speciesName == 'Necrozma':
-        formName = 'Dawn Wings' # !!!!!!!!!!!!!!!!!!!!!!
     if formName not in level_move_data[speciesName]:
         level_move_data[speciesName][formName] = []
     level_move_data[speciesName][formName].append([format_for_disp(moveLine["move"]),moveLine["level"]])
@@ -53,8 +51,6 @@ for moveLine in tms_data_raw:
     if speciesName not in tm_move_data:
         tm_move_data[speciesName] = {}
     formName = format_for_disp(moveLine["form"])
-    if formName == 'Normal' and speciesName == 'Calyrex':
-        formName = '' # !!!!!!!!!!!!!!!!!!!!!!
     if formName not in tm_move_data[speciesName]:
         tm_move_data[speciesName][formName] = []
     tm_move_data[speciesName][formName].append(format_for_disp(moveLine["move"]))
@@ -206,8 +202,7 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
         line[28][move] = egg_move_data[line[42]][move] # Add the egg move to the move dict
     # Import level moves from the Species Name [2] **********
     for moveName, moveCode in level_move_data[line[2]][None]: # For all forms
-        if moveName != "Conversion 2": # !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-            assignMoveCode(moveName, moveCode, line)
+        assignMoveCode(moveName, moveCode, line)
     if line[1] != None and line[1] in level_move_data[line[2]]: # Uses form key
         for moveName, moveCode in level_move_data[line[2]][line[1]]: # For specific forms
             assignMoveCode(moveName, moveCode, line)
@@ -576,22 +571,14 @@ def MoveSrcText(value):
     if 0 < value < 200: return f"Level {value}"
     return { -1:"Mushroom", 0:"Evolution", 201:"Egg & Common TM", 202:"Egg & Great TM", 203:"Egg & Ultra TM", 204:"Egg Move", 205:"Rare Egg & Common TM", 206:"Rare Egg & Great TM", 207:"Rare Egg & Ultra TM", 208:"Rare Egg Move", 209:"Common TM", 210:"Great TM", 211:"Ultra TM" }[value]           
 for i,line in enumerate(poke_data):
-    # Find where the species is, in _prev (the index may be different)
+    # Find where the species is in "_prev" (the index may be different)
     for ii in range(i-100,min(i+100,len(poke_data_prev))):
         if line[5] == poke_data_prev[ii][5]: # Make matching display name
             prevLine = poke_data_prev[ii]
             break
     else:
-        print(f'Could not find previous data for {line[5]}')
+        print(f'** Could not find previous data for {line[5]}')
         continue
-    # Find where the species is, in _prev_shvar (which may be different length from _prev)
-    for iii in range(i-100,min(i+100,len(poke_data_shvar))):
-        if line[5] == poke_data_shvar[iii][5]: # Find matching display name
-            if line[31] != poke_data_shvar[iii][31]: # If shvar has changed
-                line[38] = 1 # Mark as newly added shiny variants !!!!!!!!!!!!!!!!!!!!!!! can remove?
-            break
-    else:
-        print(f'Could not find previous shiny data for {line[5]}')
     # Loop through all attributes for comparison
     for j in range(0,min(len(line),len(prevLine))):
         # For all the main values, they are only 'changed'
