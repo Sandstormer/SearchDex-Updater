@@ -35,7 +35,7 @@ tagToAbility = {
     50:['magicguard','comatose','shieldsdown','fullmetalbody','shadowshield','prismarmor'],
     56:['lightningrod','motordrive','voltabsorb'],
     57:['flashfire','wellbakedbody'],
-    58:['levitate','eartheater'],
+    58:['levitate','eartheater','eelevate'],
     59:['dryskin','stormdrain','waterabsorb'],
     61:['drizzle','primordialsea','dryskin','hydration','raindish','swiftswim'],
     62:['drizzle','primordialsea'],
@@ -185,18 +185,19 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
                     procList.append([-1,index+(not self)*7,amount])
                     # print('Found defiant-like:',abilityName,stat,amount)
         elif 'ApplyStatusEffectAbAttr' in line:
+            chance = 100 if "100," in line else 30
             if 'StatusEffect.POISON' in line:
-                procList.append([30,14,0])
+                procList.append([chance,14,0])
             elif 'StatusEffect.TOXIC' in line:
-                procList.append([30,15,0])
+                procList.append([chance,15,0])
             elif 'StatusEffect.SLEEP' in line:
-                procList.append([30,16,0])
+                procList.append([chance,16,0])
             elif 'StatusEffect.FREEZE' in line:
-                procList.append([30,17,0])
+                procList.append([chance,17,0])
             elif 'StatusEffect.PARALYSIS' in line:
-                procList.append([30,18,0])
+                procList.append([chance,18,0])
             elif 'StatusEffect.BURN' in line:
-                procList.append([30,19,0])
+                procList.append([chance,19,0])
             else:
                 print('No status found',line)
             # print('Found status proc ability:',abilityName)
@@ -534,9 +535,9 @@ for fidLine in orderedData:
         if 203 in fidLine[3] and fidLine[5] != 2:
             print(f'***** Reflectable attack: fidLine[1]')
             breakpoint()
-        if 203 not in fidLine[3] and fidLine[5] == 2 and 202 not in fidLine[3]:
+        if fidLine[5] == 2 and 203 not in fidLine[3] and 202 not in fidLine[3]:
             # If it is a status move, not marked as reflectable, and not targeting self
-            if 25 not in fidLine[3] and 6 not in fidLine[3]: # If not a healing move, and not belly drum
+            if 25 not in fidLine[3]: # If not a healing move
                 isBoosting = 0
                 for procLine in fidLine[2]:
                     if procLine[1] < 7 or procLine[1] == 22:
@@ -617,11 +618,11 @@ for index,costLine in enumerate(costParsed):
     lines.append(f"[{passiveData[index]},{costLine[0]},{costLine[1]},{costLine[2]},{friendData[index]}],".replace(', ',','))
 
 # Load the list of tag filter tagIDs from updateDatabase.py
-# The tagID is index of tagToDesc (in the language files), with the tag name
+# The tagID is index of tagToDesc (in the language files), to look up the tag name
 with open("local_files/my_json/allFilters.json", "r") as file:
     allFilters = json.load(file)
 # Find all the ability FIDs that match each of those tag filters
-# Possibly add move tags later: Switches out target, Spread moves, Healing, Setup, Priority
+# Possibly add move tags later: Spread moves, Healing, Switches out target, Setup, Priority
 tagToFID = [
     [ str(line[0]) for line in orderedData if tagID in line[3] and line[0] < fidThreshold[1]] # Abilities with that tag
     for tagID in [ line[1] for line in allFilters if line[0] == "Tag" ] # For the tagID of each filter
