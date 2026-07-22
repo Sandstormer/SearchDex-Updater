@@ -300,8 +300,6 @@ for lang in langs: # =========================================== Main loop for e
         for region in regions:
             if region in specLine[2]:
                 nameFormat = tall['pokemon-form']['appendForm'][region.lower()]
-        if tall['pokemon-form']['appendForm']['generic'] != '{{pokemonName}} ({{formName}})':
-            input('***** Error: Odd format detected') # This is never used, but it's just to check the format
         if lang == 'fr':
             if justLocForm: nameFormat = f'{nameFormat} {justLocForm}' # French has form name after
             if prependForm: nameFormat = f'{nameFormat} {prependForm}'

@@ -10,7 +10,7 @@ set "websiteUrl=https://github.com/Sandstormer/PokeRogue-Dex.git"
 set "websiteDest=website"
 
 REM ======= CLONE / UPDATE GAME FILES =======
-del "game_files/node_modules"
+del "game_files/node_modules" /Q
 call :clone_or_update "%repoUrl%" "%repoDest%" "%branchName%" 0
 
 REM ======= CLONE WEBSITE (ONLY ONCE) =======

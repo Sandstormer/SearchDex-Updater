@@ -33,7 +33,7 @@ procToDesc = [
     "Atq. Usario", "Def. Usario", "At. Esp. Usario", "Def. Esp. Usario", "Vel. Usario", "Prec. Usario", "Evas. Usario",
     "Ataque", "Defensa", "At. Esp.", "Def. Esp.", "Velocidad", "Precisión", "Evasión",
     "Aplica Envenenamiento", "Aplica Envenenamiento grave", "Aplica Sueño", "Aplica Congelación", "Aplica Parálisis", "Aplica Quemadura", "Aplica Confusión",
-    "Retroceso", "Atq/Def/AtE/DfE/Vel", "Veneno/Parálisis/Sueño", "Quemadura/Parálisis/Congelación", "Atq./At.Esp. del Astral usuario", "Daño", "Prioridad"
+    "Retroceder", "Atq/Def/AtE/DfE/Vel", "Veneno/Parálisis/Sueño", "Quemadura/Parálisis/Congelación", "Atq./At.Esp. del Astral usuario", "Daño", "Prioridad"
 ]
 tagToDesc = [
     "Objetivos: Enemigo aleatorio",
