@@ -165,7 +165,7 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
         elif 'PostSummonStatStageChangeAbAttr' in line:
             stat = format_for_attr(re.findall(r'Stat\.(.*?),', line)[0])
             amount = int(re.findall(r'stages: (-?\d*?) }', line)[0])
-            self = (re.findall(r'\d, true', line))
+            self = (re.findall(r'}\], true', line))
             for index, thisStat in enumerate(['atk','def','spatk','spdef','spd','acc','eva']):
                 if stat == thisStat:
                     procList.append([-1,index+(not self)*7,amount])
@@ -176,10 +176,10 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
                     stat = format_for_attr(re.findall(r'Stat\.(.*?),', abilityData[index+i])[0])
                     break
             for i in range(5): # Search for a number in the next 5 lines
-                if re.findall(r'stages: (-?\d*?) }', abilityData[index+i]):
-                    amount = int(re.findall(r'stages: (-?\d*?) }', abilityData[index+i])[0])
+                if re.findall(r'\? (\d) \*', abilityData[index+i]):
+                    amount = int(re.findall(r'\? (\d) \*', abilityData[index+i])[0])
                     break
-            self = (re.findall(r'\d, true', line))
+            self = False
             for index, thisStat in enumerate(['atk','def','spatk','spdef','spd','acc','eva']):
                 if stat == thisStat:
                     procList.append([-1,index+(not self)*7,amount])
@@ -237,6 +237,7 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
             tagList.append(60)
         # elif 'ultipl' in line or 'oost' in line or 'pow' in line:
         #     # Check for keywords in the ability line like 'Multiply', 'Boost', or 'Power'
+        #     # Possibly do PostDefendStatStageChangeAbAttr ?
         #     # Print those lines to make sure I'm not missing anything important
         #     print(abilityName, line)
 
