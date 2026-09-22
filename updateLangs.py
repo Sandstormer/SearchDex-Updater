@@ -361,7 +361,7 @@ for lang in langs: # =========================================== Main loop for e
             if not text: print('** No description for',line[1],'in',lang)
             for reminder, moveList in bonusDesc.items():
                 for move in moveList:
-                    if move == key:
+                    if move == key and "effect" in tall["move"][reminder]:
                         text += f'<br><br><span style="color:rgb(145, 145, 145);">{tall["move"][reminder]["effect"]}</span>'
             text = text.replace('\n','')
             locDesc[index-fidThreshold[0]] = text
