@@ -114,7 +114,7 @@ tagToDesc = [
     "Repeats for 2 to 3 turns", # 45
     "Removes hazards",
     "Traps and damages target",
-    "Can't be suppressed", # Can't be suppressed (Neut. Gas) or removed (Gastro Acid) 
+    "Can't be suppressed", # Can't be suppressed (Neut. Gas) or removed (Gastro Acid)
     "Can't be replaced", # Can't be changed (e.g. Worry Seed)
     "Can't be ignored", # Can't be ignored with Mold Breaker
     "Can't be redirected",

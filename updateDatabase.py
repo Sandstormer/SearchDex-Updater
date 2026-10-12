@@ -103,7 +103,7 @@ poke_data = []
 #region Assign Pokemon Data
 print("\nStarting to assign pokemon data\n")
 for i, thisData in enumerate(species_data): # Function for reading from game data
-    line = ['' for _ in range(43)] 
+    line = ['' for _ in range(43)]
 
     line[0] = i # row number [0]
     line[1] = format_for_disp(thisData["formKey"]) # Form Name [1] (used for actual name)
@@ -139,11 +139,11 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     eggTier = thisData["eggTier"] # Egg Tier [30]
     eggTierValues = { None:'', 'COMMON':0, 'RARE':1, 'EPIC':2, 'LEGENDARY':4 }
     line[30] = 3 if line[5] in ['Phione','Manaphy'] else eggTierValues[eggTier]
-    
+
     line[40] = [] # biomes [40]
     if line[2] in biome_data: # If specKey is listed in biome data
         line[40] = biome_data[line[2]] # Take the full list of biomes
-    
+
     line[42] = format_for_disp(thisData["starter"]) # Starter Species Name [42]
     if line[42] == line[2] or 'Pikachu' in line[5]: # If starter species matches this species
         line[33] = 1 # isStartable [33] ( 1 = species available in starter select (i.e. has not evolved yet), '' = not available )
@@ -240,7 +240,7 @@ for line in poke_data:
             freshStarterIndices.append(line[34]) # Add that starter line to the Fresh Start list
             freshThisGen += 1
     if freshThisGen == 3: # Go to next gen after finding 3 starter lines
-        gen = gen + 1 
+        gen = gen + 1
         freshThisGen = 0
     if line[34] in freshStarterIndices:
         line[36] = 1 # Set all pokemon in that starter line to be Fresh Start
@@ -317,7 +317,7 @@ for speciesName in tm_move_data:
     for formName in tm_move_data[speciesName]:
         if formName != None and tm_move_data[speciesName][formName] != []:
             print(f"** Failed to assign TM Moves for {formName} {speciesName}")
-    
+
 # Check for the existence of all images (all shiny, all back, optionally female)
 with open("local_files/image_review.txt", "r") as file:
     pixel_data = file.read().split('\n')[:-1] # Load the pixel change data
@@ -329,8 +329,8 @@ for line in poke_data:           # You must run updateImages.py first *****
     elif 'Female' in line[5] or line[5] == 'Nidoran F':
         line[23] = 2 # Mark as a distinct female form (Nidoran, Meowstic, etc.)
     femlist = ['','f'] if line[23] == 1 else ['']
-    for back in ['','b']: 
-        for fem in femlist: 
+    for back in ['','b']:
+        for fem in femlist:
             for shiny in range(line[31]+1):
                 thisImagePath = f'{line[4]}_{shiny}{fem}{back}'
                 if thisImagePath in pixel_data:
@@ -363,7 +363,7 @@ for line in poke_data:
     if line[32] not in range(1,10):
         throwError(f'Generation Error in {line[5]}')
 
-# Check that every pokemon has at least one pickable form        
+# Check that every pokemon has at least one pickable form
 dexNo, isStartable = 1, False
 for line in poke_data:
     if line[3] != dexNo:
@@ -450,7 +450,7 @@ for j in [71,37,48,49,50,56,57,58,59,60,61,62,63,64,65,66,67]: # TagID of the ta
 biomeForms = { # manually updated from getSpeciesFormIndex in file:///\.\game_files\src\field\arena.ts
     'Plant Burmy':    'Forest', 'Sandy Burmy':    'Beach', 'Trash Burmy':    'Slum',
     'Plant Wormadam': 'Forest', 'Sandy Wormadam': 'Beach', 'Trash Wormadam': 'Slum',
-}   
+}
 biomeFormsTime = { # 1=dawn, 2=day, 4=dusk, 8=night
     'Midday Lycanroc': [1,2], 'Dusk Lycanroc': [4], 'Midnight Lycanroc': [8]
 }
@@ -504,7 +504,7 @@ for line in poke_data:
             for entry in sorted(biomeLine[2]):
                 if entry not in encoded:
                     encoded.append(entry)
-            biomeLine[2] = encoded       
+            biomeLine[2] = encoded
 
 #region Export Filter Lists
 fidThreshold = []
@@ -515,8 +515,7 @@ for index,line in enumerate(allFilters):
         fidThreshold.append(index) # Find the threshold of each filter category
 fidThreshold.append(len(allFilters))
 if fidThreshold[0] != 18:  throwError('Wrong number of types')
-# if fidThreshold[1] != 328: throwError('Wrong number of abilities')
-print(f"{fidThreshold[1]-328} new abilities found")
+if fidThreshold[1] != 334: throwError('Wrong number of abilities')
 # Write some variables to files, which are read by my other scripts, and some are written to the website
 with open("local_files/my_json/allFilters.json", "w") as f:
     json.dump(allFilters, f, indent=4)
@@ -561,7 +560,7 @@ patch_review = [] # Readable review of patch notes in the console
 patch_data = {} # Numerical patch data imported to the SearchDex
 def MoveSrcText(value):
     if 0 < value < 200: return f"Level {value}"
-    return { -1:"Mushroom", 0:"Evolution", 201:"Egg & Common TM", 202:"Egg & Great TM", 203:"Egg & Ultra TM", 204:"Egg Move", 205:"Rare Egg & Common TM", 206:"Rare Egg & Great TM", 207:"Rare Egg & Ultra TM", 208:"Rare Egg Move", 209:"Common TM", 210:"Great TM", 211:"Ultra TM" }[value]           
+    return { -1:"Mushroom", 0:"Evolution", 201:"Egg & Common TM", 202:"Egg & Great TM", 203:"Egg & Ultra TM", 204:"Egg Move", 205:"Rare Egg & Common TM", 206:"Rare Egg & Great TM", 207:"Rare Egg & Ultra TM", 208:"Rare Egg Move", 209:"Common TM", 210:"Great TM", 211:"Ultra TM" }[value]
 for i,line in enumerate(poke_data):
     # Find where the species is in "_prev" (the index may be different)
     for ii in range(i-100,min(i+100,len(poke_data_prev))):
@@ -651,7 +650,7 @@ linesToWrite = ['// pokedex_data.js\nconst items=[']
 for line in poke_data:
     text = '{' # Start the entry of that Pokemon
     # Write all the main attributes as {text}:{value}
-    for i in range(len(attributes)): 
+    for i in range(len(attributes)):
         if i not in omitAttr and line[i] != '':
             if i in keyText.keys(): # Types/Abilities/Moves are listed as Names in poke_data
                 fid = filterToFID[format_for_attr(f'{keyText[i]}{line[i]}')] # Convert to filter ID (fid)
@@ -698,7 +697,7 @@ with open("website/pokedex_data.js", "w") as file: # Write mode ('w') overwrites
 #     e1, e2, e3, e4: Egg moves
 #             Contains the Filter ID (FID) of the corresponding move
 #     co: Base cost of the pokemon
-#     et: Egg tier      
+#     et: Egg tier
 #             0 = common, 1 = rare, 2 = epic, 3 = manaphy, 4 = legendary
 #     sh: Number of shiny variants the Pokemon has
 #             Either 1 (no variants), or 3 (all variants)
@@ -731,7 +730,7 @@ with open("website/pokedex_data.js", "w") as file: # Write mode ('w') overwrites
 #             For Moves: (i.e. 876:204, 328:1, 1125:209, or anything like that)
 #                     fidThreshold[1] <= FID < fidThreshold[2]
 #                     value shows how the pokemon learns the move
-#                             -1:mushroom, 0:evo, 1-200:level, 
+#                             -1:mushroom, 0:evo, 1-200:level,
 #                             201:egg&commonTM, 202:egg&greatTM, 203:egg&ultraTM, 204:egg,
 #                             205:rareEgg&commonTM, 206:rareEgg&greatTM, 205:rareEgg&ultraTM, 208:rareEgg,
 #                             209:commonTM, 210:greatTM, 211: ultraTM

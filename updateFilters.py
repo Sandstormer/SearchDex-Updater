@@ -1,6 +1,6 @@
 # ===== This script parses all the ability/move attributes from the game =====
 # =====  fidToProc, typeColors, fidThreshold, upgradeCosts, gameVersion  =====
-# =====            It writes all that data to filter_data.js             ===== 
+# =====            It writes all that data to filter_data.js             =====
 # This is ONLY for numeric data; all localized text is written from updateLangs.py
 # This script also composites the layers of the biome images
 
@@ -8,9 +8,9 @@ pathLoc = "game_files/locales/en" # File path to the official localization files
 pathData = "game_files/src/data"  # File path for game data
 
 def format_for_disp(arg): # Remove spaces, and convert _ and - to spaces, then capitalize
-    return arg.replace(' ','').replace('_',' ').replace('-',' ').title()   
+    return arg.replace(' ','').replace('_',' ').replace('-',' ').title()
 def format_for_attr(arg): # Remove spaces
-    return arg.replace(' ','').lower() 
+    return arg.replace(' ','').lower()
 
 import re, json
 from datetime import date
@@ -20,7 +20,7 @@ with open("local_files/my_json/filterToFID.json", "r") as f:
 with open("local_files/my_json/fidThreshold.json", "r") as fp:
     fidThreshold = json.load(fp)
 orderedData = [[] for _ in filterToFID][fidThreshold[0]:fidThreshold[2]]
-         
+
 print('\n=========== Reading abilities ===========\n')
 #region Read Abilities
 with open(f'{pathData}/abilities/init-abilities.ts', "r", encoding="utf-8") as f:
@@ -64,7 +64,7 @@ for index,line in enumerate(abilityData): # Loop through all the ability lines f
                 tagList.append(tagID)
 
         ability2D.append([abilityFID, abilityName, procList, tagList]) # [fid[0], name[1], procs[2], tags[3]]
-        
+
     # Structure of procs and tags are shared between abilities and moves
     # Tags are numbered according to the SearchDex language files file:///\.\local_files\lang_overrides\en.py
     # They do not need to be processed in sequential order in this script
@@ -284,7 +284,7 @@ for line in moveData: # Loop through all the move lines from the game code
         procList = [] # Procs and tags are mostly assembled in the next section
         tagList = []
         # "chance" is written to the procList after parsing the move data
-        chance = int(format_for_attr(chance))  
+        chance = int(format_for_attr(chance))
         # -1 is for detrimental guaranteed effects, while 100 is for beneficial guaranteed effects
         if chance > 0: # Sheer Force needs a "chance" >= 1 (only beneficial moves, and some abilities)
             tagList.append(3)
@@ -632,10 +632,10 @@ tagToFID = [
 lines.append('];\nconst tagToFID = {')
 for index, relatedFID in enumerate(tagToFID):
     lines.append(f'{fidThreshold[11]+index}: [{",".join(relatedFID)}],')
-    
+
 #region Data Structure
 
-# Format of orderedData: 
+# Format of orderedData:
 #   Abilities: [fid[0], name[1], procs[2], tags[3]]
 #   Moves: [fid, name, [procs[chance,stat,mag]], [tags], type, cat, pow, acc, pp, prio]
 #            0     1      2                        3      4    5    6    7    8    9

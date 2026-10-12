@@ -16,12 +16,12 @@ langsToDo = []
 # Specify a subset of languages to process
 # Leave blank to process all languages
 
-ignoreOverrides = [''] 
+ignoreOverrides = ['']
 # Put a language in here to ignore the .py override file
 # Can put 'all' to ignore for every language
 # This lets you see what the script can auto-translate
 
-warnNameLength = 0 
+warnNameLength = 0
 # Set to 1 to warn of names that may be too long for the UI
 # Set to 0 to ignore this check
 
@@ -202,7 +202,7 @@ for lang in langs: # =========================================== Main loop for e
             locFilters[index] = line[1] # Use original english filters names from updateDatabase.py
         # print(f'Translated "{line[0]}:{line[1]}" to: "{locFilters[index]}"')
     print('Done translating filter names')
-    
+
     # Check for the shortest and longest translations of types/abilities/moves
     with open("local_files/my_json/fidThreshold.json", "r") as fp:
         fidThreshold = json.load(fp)
@@ -234,7 +234,7 @@ for lang in langs: # =========================================== Main loop for e
     locSpecies = ['' for line in allSpecies]
     maxLengthSpecies = 0
     for index,specLine in enumerate(allSpecies): # specLine is [full name, form name, species name]
-        
+
         if specLine[2] == 'Koraidon' or specLine[2] == 'Miraidon' or 'Hero Of Many Battles' in specLine[0]:
             specLine[0:2] = [specLine[2],''] # Remove form key of those pokemon
 
@@ -373,11 +373,11 @@ for lang in langs: # =========================================== Main loop for e
     #region Translate UI Elements
     print('\nTranslating ui elements...')
     locUI = {} # Translated UI elements go into a dictionary, similar to overrides['en']
-    if lang == 'en': 
-        print('Index of tags:')       
+    if lang == 'en':
+        print('Index of tags:')
         for index,desc in enumerate(overrides['en']['tagToDesc']):
             print(index, desc)
-    
+
     locUI['headerNames'] = ['' for line in overrides['en']['headerNames']]
     locUI['headerNames'][0] = tall['filter-bar']['sortByNumber']
     locUI['headerNames'][1] = re.sub(r'\s*:\s*','',tall['pokedex-ui-handler']['cycleShiny'])
@@ -541,7 +541,7 @@ for lang in langs: # =========================================== Main loop for e
     for catToCheck in allCatToCheck:
         missingAmount += len(overrides['en'][catToCheck]) - sum([1 for line in locUI[catToCheck] if line])
     if missingAmount: print('\n***** Missing',missingAmount,'ui elements')
-    
+
     #region Write Data
     # Write all the translated text to lang/{lang}.js =========================
     # headerNames, altText, catToName, infoText, biomeText, biomeLongText,
@@ -563,7 +563,7 @@ for lang in langs: # =========================================== Main loop for e
             jsText.append(f"{newLine}{quotes}{content}{quotes},")
         jsText[-1] = jsText[-1][:-1] # Remove final comma
         jsText.append(f'{newLine}];')
-    
+
     # Add all the manually translated things from the override file
     for categoryName in overrides['en'].keys():
         if categoryName not in ['helpMenuText','phrases','substitutions']:
@@ -573,7 +573,7 @@ for lang in langs: # =========================================== Main loop for e
     addLines('fidToDesc', locDesc)       # filter descriptions
     addLines('speciesNames', locSpecies) # species display names
     addLines('fidToName', locFilters)    # localized filter names
-    
+
     # helpMenuText must be done last because it references other strings
     addLines('helpMenuText', locUI['helpMenuText']) # help menu text
 

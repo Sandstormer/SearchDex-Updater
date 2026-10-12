@@ -124,7 +124,7 @@ helpMenuText = [
 '<b>${headerNames[5]}</b> aparecen como <b>${fidToName[fidThreshold[4]]}</b> y <span style="color:rgb(240, 230, 140); font-weight: bold;">${fidToName[fidThreshold[4]+1]}</span>',
 'Haz clic en el encabezado para cambiar a <b>${infoText[9]}</b>',
 'Esa columna también mostrará <b>${altText[0]}/${infoText[9]} filtrado</b>',
-'Columna <b>${catToName[4]}</b> muestra el color de <b>${catToName[5]}</b>:', 
+'Columna <b>${catToName[4]}</b> muestra el color de <b>${catToName[5]}</b>:',
 'Haz clic en una entrada para ver los detalles de:',
 'Haz clic en un <b>${headerNames[2]}</b> para ver su conjunto completo de movimientos.',
 'El color de <b>${altText[5]}</b> indica daño <span style="color:${col.or}; font-weight: bold;">Físico</span> o <span style="color:${col.bl}; font-weight: bold;">Especial</span>',

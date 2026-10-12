@@ -44,7 +44,7 @@ warnVariantDimensions = 1
 # This usually happens if the animations are packed differently, not a big problem
 
 # Since there is no official static frame, one must be chosen
-# By default, it chooses the most common frame of the animation 
+# By default, it chooses the most common frame of the animation
 # However, you can override here to choose a specific frame
 overrideFrame = {
     '4':-1,
@@ -81,11 +81,11 @@ def getBestFrame(thisImgPath, altJsonPath=''):
     else:
         allFrames = jsonLoad['frames']
 
-    if (isinstance(allFrames, list)):    
+    if (isinstance(allFrames, list)):
         indFrames = [list(line['frame'].values()) for line in allFrames] # Each frame [x,y,w,h]
     else:
         indFrames = [list(line['frame'].values()) for line in allFrames.values()] # Each frame [x,y,w,h]
-    
+
     # If the pokemon has an override frame, only use that frame
     if thisImgPath.split('/')[-1] in overrideFrame:
         if abs(overrideFrame[thisImgPath.split('/')[-1]]) <= len(indFrames):
@@ -137,7 +137,7 @@ def palette_swap(image, json_path, tier):
         if key in rgb2rgbDict:
             palette[i:i+3] = rgb2rgbDict[key]
             usedColors[key] = True
-    
+
     # Check for colors in the JSON that are not in the image
     if warnMissingColors:
         missingColorReport = []
@@ -154,7 +154,7 @@ def palette_swap(image, json_path, tier):
 
 def addPartnerHeart(img): # Adds a heart image onto the partner pokemon image
     # Expand the original image width, more for eevee
-    widthAdd = 5+10*(img.width < 40) 
+    widthAdd = 5+10*(img.width < 40)
     new_size = (img.width + widthAdd, img.height)
     expanded_image = Image.new("RGBA", new_size, (0, 0, 0, 0))
     expanded_image.paste(img, (0, 0))
@@ -277,8 +277,8 @@ def processImage(spriteIndex, shinyIndex, femIndex, backIndex):
         changedList.append(f'{simpleName} - New variant') # Mark as "New variant" to be read by updateDatabase.py
 
     sliced_img.save(f"{savePath}.png", optimize=True, compress_level=9, pnginfo=None) # Save the image to the website folder
-    
-    global biggestH, biggestW, thisH, thisW 
+
+    global biggestH, biggestW, thisH, thisW
     # Update the largest dimensions among all images
     biggestH = max(biggestH, sliced_img.height)
     biggestW = max(biggestW, sliced_img.width)
@@ -302,7 +302,7 @@ with open(f'game_files/assets/images/pokemon/variant/_masterlist.json', "r") as 
 # Assemble the list of all images to be processed
 spriteNames = [file.replace('.png','') for file in os.listdir(source_dir) if '.png' in file and 'sub.png' not in file]
 # Use override list if applicable, instead of the full list
-if overrideSpriteList != [] and overrideSpriteList != ['']: 
+if overrideSpriteList != [] and overrideSpriteList != ['']:
     spriteNames = [str(name) for name in overrideSpriteList]
     print('\n***** Running with override sprite list *****')
     print(f'\nProcessing {len(overrideSpriteList)} species...\n')
@@ -323,7 +323,7 @@ for index, thisSpriteName in enumerate(spriteNames):
         progressCount = int((index+1)/len(spriteNames)*20)
         print(f'{progressCount*5}% complete...')
 
-if overrideSpriteList != [] and overrideSpriteList != ['']: 
+if overrideSpriteList != [] and overrideSpriteList != ['']:
     print(f'\nFinished processing {len(overrideSpriteList)} pokemon species')
 else:
     print('\nFinished processing all pokemon images')
@@ -339,7 +339,7 @@ with open("local_files/image_review.txt", "w") as file:
 print('\n=========== ALL DONE ===========\n')
 
 # ********* Reminder for what colors and indices are used
-# color     yellow      blue        red   
+# color     yellow      blue        red
 # hex       0xf8c020    0x20f8f0    0xe81048
 # rgb       (248,192,32)(32,248,240)(232,16,72)
 # tier      1           2           3
