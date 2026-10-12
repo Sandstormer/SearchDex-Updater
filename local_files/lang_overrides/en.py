@@ -122,7 +122,6 @@ tagToDesc = [
     "Always hits in Rain",
     "User can't switch out",
     "Target can't switch out", # 55
-    
     "Electric Immunity",
     "Fire Immunity",
     "Ground Immunity",
@@ -135,7 +134,6 @@ tagToDesc = [
     "Snow Synergy", # An ability that has synergy/interaction with snow/hail weather
     "Sun Synergy",  # An ability that has synergy/interaction with sunny weather
     "Creates Sun",  # An ability that creates sunny weather
-
     "One Hit KO move",
     "Modified against Bosses",
     "No effect on Bosses", # 70

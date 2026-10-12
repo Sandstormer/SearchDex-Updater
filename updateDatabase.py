@@ -84,7 +84,6 @@ for biome, biomeLine in biome_data_raw.items():                  # (Encounters a
                     biome_data[species] = []
                 tierCode = biomeTierValues[tier] + biomeTimeValues[time]
                 biome_data[species].append([biome, tierCode])
-
 print('Finished reading biome data')
 
 #region Read Egg Moves
@@ -119,7 +118,7 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     if thisData["isUnobtainable"] or '10 Complete' in line[5]:
         if 'Revavroom' not in line[5]: # Keep Starmobiles
             print(f'Unobtainable: {line[5]}')
-            continue # Skip the rest of parsing
+            continue # Skip the rest of parsing, and discard the entry
 
     line[7] = format_for_disp(thisData["type1"]) # Type 1 [7]
     typeTwo = format_for_disp(thisData["type2"]) # Type 2 [8]
@@ -156,7 +155,7 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     formExclusive = '' # By default, a form is selectable in starter select
     # Check for mega, giga, or other transformed (Zacian, Mimikyu, etc.)
     if line[1] != None and not thisData["isStartSelectable"]: formExclusive = 4 # If form and not selectable
-    megaList = [
+    newMegaList = [
         'Mega X Raichu','Mega Y Raichu','Mega Clefable','Mega Victreebel','Mega Starmie','Mega Dragonite',
         'Mega Meganium','Mega Feraligatr','Mega Skarmory','Mega Chimecho','Mega Z Absol','Mega Staraptor',
         'Mega Z Garchomp','Mega Z Lucario','Mega Froslass','Mega Heatran','Mega Darkrai','Mega Emboar',
@@ -168,7 +167,7 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     ]
     speciesName = line[5]
     if 'Mega ' in speciesName:      formExclusive = 1 # Mega (needs the space)
-    if speciesName in megaList:     formExclusive = 2 # New Mega
+    if speciesName in newMegaList:     formExclusive = 2 # New Mega
     if 'Gigantamax' in speciesName: formExclusive = 3 # Giga
     # In-game, the form is chosen from getSpeciesFormIndex in src/battle-scene.ts
     # Some forms have the wrong isStarterSelectable in the species definition (error with the game code)
@@ -257,7 +256,7 @@ for stages in range(2): # Propagate biomes via up to 2 evolutions **************
             throwError(f'Failed to find pre-evo: {preEvo}')
         parentName = format_for_disp(evoLine["evoId"])
         for parentLine in poke_data:
-            if parentName == parentLine[2]: # Copy properties from child to parent
+            if parentName == parentLine[2]: # Copy biomes from child to parent
                 for biomeLine in childLine[40]:
                     parentLine[40].append(biomeLine)
 # The game usually only provides biome data to one species per evolution line
@@ -275,7 +274,7 @@ for stages in range(2): # Up to 2 evolutions
             throwError(f'Failed to find post-evo: {preEvo}')
         preEvo = format_for_disp(evoLine["id"])
         for childLine in poke_data:
-            if preEvo == childLine[2]: # Find the childLine, break when matching
+            if preEvo == childLine[2]: # Copy biomes from parent to child
                 for biomeLine in parentLine[40]:
                     childLine[40].append(biomeLine)
         # TODO: tyrogue,smoochum,elekid,magby,wynaut,toxel
@@ -301,11 +300,8 @@ for line in poke_data:
         line[41] = 4 if 'Eternatus' in line[5] else 3
     if 'Starmobile' in line[5]:
         line[37] = '' # Set form exclusive [37] to blank, not a "transformed" form
-        line[40] = []
+        line[40] = [] # Set biomes [40] to none
         line[41] = 5  # Set exclusive class [41] to unobtainable
-        # print('Starmobile:',line[5])
-    if line[40] == [] and line[41] not in [1,2,5]: # If no biomes, and not egg exclusive
-        throwError(f'Missing Biomes: {line[5]}')
 print('Finished assigning biomes to evolutions and forms')
 
 # Error checking **************************************************************************************
@@ -361,8 +357,7 @@ for line in poke_data:
     if not any(value < 100 for value in line[28].values()): # Check for level moves
         throwError(f'Missing level-up entries in {line[5]}')
     if sum(200 < value < 209 for value in line[28].values()) != 4: # Check for 4 egg moves
-        print(line)
-        throwError(f'Missing egg move entries in {line[5]}')
+        throwError(f'Missing egg move entries in {line[5]}:\n{line}')
     if not any(value > 208 for value in line[28].values()) and line[3] not in [132, 201, 202, 235, 360, 789, 790]:
         print(f'Missing TM move entries in {line[5]}') # Check for pokemon that should have TM moves
     if line[32] not in range(1,10):
