@@ -3,62 +3,64 @@ setlocal enabledelayedexpansion
 
 REM ======= CONFIG =======
 set "gameUrl=https://github.com/pagefaultgames/pokerogue.git"
-set "gameBranch=main"
-set "gameDest=game_files"
-
+set "gameSrcBranch=main"
+set "gameSrcDest=game_files"
+set "gameDataBranch=game-data"
+set "gameDataDest=game_files/data_output"
 set "websiteUrl=https://github.com/Sandstormer/PokeRogue-Dex.git"
 set "websiteDest=website"
-
+echo.
 REM ======= CLONE / UPDATE GAME FILES =======
-del "game_files/node_modules" /Q
-echo Processing %gameDest%
-
-if not exist "%gameDest%" (
+if not exist "%gameSrcDest%" (
     REM If game folder doesn't exist, clone
-    echo Cloning repository into %gameDest%...
-    if not "%gameBranch%"=="" (
-        git clone --depth 1 -b %gameBranch% --shallow-submodules --recursive %gameUrl% %gameDest%
+    echo Cloning repository into %gameSrcDest%...
+    if not "%gameSrcBranch%"=="" (
+        git clone --depth 1 -b %gameSrcBranch% --shallow-submodules --recursive %gameUrl% %gameSrcDest%
     ) else (
-        git clone --depth 1 %gameUrl% %gameDest%
+        git clone --depth 1 %gameUrl% %gameSrcDest%
     )
 ) else (
-    if not exist "%gameDest%\.git" (
+    if not exist "%gameSrcDest%\.git" (
         REM If game folder exists but is NOT a git repo
-        echo Folder exists at %gameDest% but is not a git repository.
-        echo Delete it manually to continue.
+        echo Folder exists at %gameSrcDest% but is not a git repository. Delete it manually to continue.
         pause
         exit /b 1
     ) else (
         REM If game folder repo exists, update it
-        echo Resetting repository at %gameDest%...
-        git -C "%gameDest%" fetch --depth 1 origin
-        if not "%gameBranch%"=="" (
-            git -C "%gameDest%" fetch --depth 1 origin %gameBranch%
-            git -C "%gameDest%" checkout -B %gameBranch% FETCH_HEAD
+        echo Resetting repository at %gameSrcDest%...
+        git -C "%gameSrcDest%" fetch --depth 1 origin
+        if not "%gameSrcBranch%"=="" (
+            git -C "%gameSrcDest%" fetch --depth 1 origin %gameSrcBranch%
+            git -C "%gameSrcDest%" checkout -B %gameSrcBranch% FETCH_HEAD
         ) else (
-            git -C "%gameDest%" reset --hard origin/HEAD
+            git -C "%gameSrcDest%" reset --hard origin/HEAD
         )
-        git -C "%gameDest%" clean -fdx 
-        git -C "%gameDest%" submodule update --init --recursive --force --depth 1
+        git -C "%gameSrcDest%" clean -fdx
+        git -C "%gameSrcDest%" submodule update --init --recursive --force --depth 1
     )
 )
-
+echo.
 REM ======= CLONE WEBSITE (ONLY ONCE) =======
 REM If folder doesn't exist, clone
 if exist "%websiteDest%" (
-    echo SearchDex website folder already exists. That won't be updated...
+    echo SearchDex website folder already exists, so won't be updated...
 ) else (
     echo Cloning SearchDex website files into %websiteDest%...
     git clone --depth 1 %websiteUrl% %websiteDest%
 )
-
+echo.
 REM ======= PNPM STEPS =======
-cd /d "%gameDest%"
-echo Running game export script
-call pnpm --version
-call pnpm install
-call pnpm species-data:export --json
-
+if not exist "%gameDataDest%" (
+    REM If data export folder doesn't exist, clone
+    echo Cloning data export files into %gameDataDest%...
+    git clone --depth 1 -b %gameDataBranch% %gameUrl% %gameDataDest%
+) else (
+    REM If data export folder repo exists, update it
+    echo Updating export files in %gameDataDest%...
+    git -C "%gameDataDest%" fetch --depth 1 origin %gameDataBranch%
+    git -C "%gameDataDest%" checkout -B %gameDataBranch% FETCH_HEAD
+    git -C "%gameDataDest%" clean -fdx
+)
 echo.
 echo ======= ALL DONE =======
 echo.

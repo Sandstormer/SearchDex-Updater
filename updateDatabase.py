@@ -5,7 +5,7 @@
 # There are rules at the bottom of this file for how pokedex_data.js is structured
 
 pathBal  = './game_files/src/data/balance' # Path to the balance folder
-pathJSON = './game_files/species-output' # Path to the exported game data Json files
+pathJSON = './game_files/data_output/main/json' # Path to the exported game data Json files
 pathImg = './website/images' # Path to read processed images from updateImages.py
 
 import re, os, json
