@@ -336,7 +336,7 @@ with open("local_files/image_review.txt", "w") as file:
         file.writelines(f"{line}\n")
         print(line)
 
-print('\n=========== ALL DONE ===========\n')
+print('\n=========== END OF updateImages.py ===========\n')
 
 # ********* Reminder for what colors and indices are used
 # color     yellow      blue        red

@@ -12,7 +12,7 @@ def format_for_disp(arg): # Remove spaces, and convert _ and - to spaces, then c
 def format_for_attr(arg): # Remove spaces
     return arg.replace(' ','').lower()
 
-import re, json
+import re, json, sys
 from datetime import date
 # Open and read the files *******************************
 with open("local_files/my_json/filterToFID.json", "r") as f:
@@ -576,7 +576,7 @@ friendData[-2] = friendData[-3]
 # Patch note creating **********************************************************************************
 #region Patch Notes
 print('\n==============================\n')
-input('Review patch changes?')
+if "--skip-prompts" not in sys.argv: input('Review patch changes?')
 print("Reviewing patch changes...")
 attNames = ['fid','name','procs list','tags list','type','category','power','accuracy','pp','priority']
 # Write all the trimmed data to a json file
@@ -597,7 +597,7 @@ for line in orderedData:
         else:
             print('Could not find old entry for',line[1])
 print('\n==============================\n')
-input('Continue to writing website database?')
+if "--skip-prompts" not in sys.argv: input('Continue to writing website database?')
 print('Writing...')
 
 # Load the numeric data from the main script
@@ -761,4 +761,4 @@ for thisBiome in biomeNames:
     print(f"Composite biome image saved as: {output_filename}")
 print('Done processing all biome images')
 
-print('\n=========== ALL DONE ===========\n')
+print('\n=========== END OF updateFilters.py ===========\n')

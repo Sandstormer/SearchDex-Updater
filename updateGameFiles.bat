@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 
 REM ======= CONFIG =======
 set "gameUrl=https://github.com/pagefaultgames/pokerogue.git"
-set "gameSrcBranch=main"
+set "gameSrcBranch=beta"
 set "gameSrcDest=game_files"
 set "gameDataBranch=game-data"
 set "gameDataDest=game_files/data_output"
@@ -24,7 +24,7 @@ if not exist "%gameSrcDest%" (
         REM If game folder exists but is NOT a git repo
         echo Folder exists at %gameSrcDest% but is not a git repository. Delete it manually to continue.
         pause
-        exit /b 1
+        exit
     ) else (
         REM If game folder repo exists, update it
         echo Resetting repository at %gameSrcDest%...
@@ -40,7 +40,7 @@ if not exist "%gameSrcDest%" (
     )
 )
 echo.
-REM ======= CLONE WEBSITE (ONLY ONCE) =======
+REM ======= CLONE WEBSITE (DOES NOT OVERWRITE) =======
 REM If folder doesn't exist, clone
 if exist "%websiteDest%" (
     echo SearchDex website folder already exists, so won't be updated...
@@ -49,7 +49,7 @@ if exist "%websiteDest%" (
     git clone --depth 1 %websiteUrl% %websiteDest%
 )
 echo.
-REM ======= PNPM STEPS =======
+REM ======= CLONE FROM GAME DATA BRANCH =======
 if not exist "%gameDataDest%" (
     REM If data export folder doesn't exist, clone
     echo Cloning data export files into %gameDataDest%...
@@ -62,6 +62,5 @@ if not exist "%gameDataDest%" (
     git -C "%gameDataDest%" clean -fdx
 )
 echo.
-echo ======= ALL DONE =======
+echo ======= END OF updateGameFiles.bat =======
 echo.
-pause

@@ -8,7 +8,7 @@ pathBal  = './game_files/src/data/balance' # Path to the balance folder
 pathJSON = './game_files/data_output/main/json' # Path to the exported game data Json files
 pathImg = './website/images' # Path to read processed images from updateImages.py
 
-import re, os, json
+import re, os, json, sys
 def is_numeric(value): # Function to determine if a value is numeric
     return re.match(r'^-?\d+(\.\d+)?$', str(value)) is not None
 def format_for_disp(arg): # Remove spaces, and convert _ and - to spaces, then capitalize
@@ -58,32 +58,32 @@ print('Finished reading main data')
 
 # Open and read the biomes file ************************************
 #region Read Biomes
-biome_data_raw = {}
+rawBiomeData = {}
 allBiomes = [file.replace('.ts','') for file in os.listdir(f"{pathBal}/biomes") if '.ts' in file]
 allBiomes.sort()
 for biome in allBiomes: # For each biome file in the biome folder, parse the encounter data
     with open(f"{pathBal}/biomes/{biome}.ts", "r", encoding="utf-8", errors="replace") as file:
         content = file.read()
     # Use a regular expression to extract text between "BiomePokemonPools = {" and "};"
-    inputBiomeData = re.findall(r'BiomePokemonPools = {(.*?)};', content, re.DOTALL)[0]
-    biome_data_raw[biome] = { # biome_data_raw[biome][tier][timeOfDay] = [speciesNames]
+    thisBiomeText = re.findall(r'BiomePokemonPools = {(.*?)};', content, re.DOTALL)[0]
+    rawBiomeData[biome] = { # rawBiomeData[biome][tier][timeOfDay] = [speciesNames]
         tierLine.split(']:')[0]: {
             timeLine.split(']:')[0]: re.findall(r'SpeciesId.(.*?)[,\]]', timeLine.split(']:')[1], re.DOTALL)
             for timeLine in tierLine.split('TimeOfDay.')[1:]
-        }   for tierLine in inputBiomeData.split('BiomePoolTier.')
+        }   for tierLine in thisBiomeText.split('BiomePoolTier.')
     }
 biomeTierValues = { 'COMMON':20, 'UNCOMMON':40, 'BOSS':60, 'RARE':80, 'BOSS_RARE':100, 'SUPER_RARE':120, 'BOSS_SUPER_RARE':140, 'ULTRA_RARE':160, 'BOSS_ULTRA_RARE':180 }
 biomeTimeValues = { 'ALL':0, 'DAWN':1, 'DAY':2, 'DUSK':4, 'NIGHT':8 }
-biome_data = {} # All biome data [speciesName] is like [ ['abyss', 23], ['abyss', 41], ['beach', 160], [...] ]
-for biome, biomeLine in biome_data_raw.items():                  # (Encounters are combined in a later step)
+biomeData = {} # biomeData[speciesName] is like [ ['abyss', 23], ['abyss', 41], ['beach', 160], [...] ]
+for biome, biomeLine in rawBiomeData.items():               # (Encounters are combined in a later step)
     for tier, tierLine in biomeLine.items():
         for time, timeLine in tierLine.items():
             for species in timeLine:
                 species = format_for_disp(species)
-                if species not in biome_data:
-                    biome_data[species] = []
+                if species not in biomeData:
+                    biomeData[species] = []
                 tierCode = biomeTierValues[tier] + biomeTimeValues[time]
-                biome_data[species].append([biome, tierCode])
+                biomeData[species].append([biome, tierCode])
 print('Finished reading biome data')
 
 #region Read Egg Moves
@@ -92,7 +92,7 @@ with open(f"{pathBal}/moves/egg-moves.ts", "r", encoding="utf-8", errors="replac
     content = file.read()
 # Use a regular expression to extract text between "speciesEggMoves = {" and "} satisfies"
 inputMoveData = re.findall(r'speciesEggMoves\s*=\s*{(.*?)}\ssatisfies', content, re.DOTALL)[0].split(',\n')
-for eggLine in inputMoveData:
+for eggLine in rawEggMoveData:
     speciesName = format_for_disp(re.findall(r'SpeciesId\.(.*?)\]', eggLine)[0])
     eggMoves = [ format_for_disp(line) for line in re.findall(r'MoveId\.(.*?)\s?[\],]', eggLine) ]
     if len(eggMoves) != 4: print(f'Weird number of egg moves found in {speciesName}')
@@ -141,8 +141,8 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     line[30] = 3 if line[5] in ['Phione','Manaphy'] else eggTierValues[eggTier]
 
     line[40] = [] # biomes [40]
-    if line[2] in biome_data: # If specKey is listed in biome data
-        line[40] = biome_data[line[2]] # Take the full list of biomes
+    if line[2] in biomeData: # If specKey is listed in biome data
+        line[40] = biomeData[line[2]] # Take the full list of biomes
 
     line[42] = format_for_disp(thisData["starter"]) # Starter Species Name [42]
     if line[42] == line[2] or 'Pikachu' in line[5]: # If starter species matches this species
@@ -528,7 +528,7 @@ allSpecies = [[line[5],line[1],line[2]] for line in poke_data]
 with open("local_files/my_json/allSpecies.json", "w") as f:
     json.dump(allSpecies, f, indent=4)
 
-input('No Major Errors Found\n\nContinue to patch review?')
+if "--skip-prompts" not in sys.argv: input('No Major Errors Found\n\nContinue to patch review?')
 print('\n==============================\n')
 print("Reviewing patch changes...\n")
 
@@ -630,7 +630,7 @@ with open("website/patch_data.js", "w") as file: # Write the file of patch data 
         file.writelines("},")
     file.writelines('\n};')
 
-input('\nContinue to writing website database?')
+if "--skip-prompts" not in sys.argv: input('\nContinue to writing website database?')
 print('\n==============================\n')
 print("Writing to website database...")
 
@@ -761,4 +761,4 @@ with open("website/pokedex_data.js", "w") as file: # Write mode ('w') overwrites
 #                             This means it is in the Jungle (FID = 1221)
 #                             The rarities are Common (Dusk, Night), Boss Common (Dusk, Night), Rare (Dawn, Day), Boss Rare (Dawn, Day)
 
-print("Data writing complete\n\n=========== ALL DONE ===========\n")
+print("Data writing complete\n\n=========== END OF updateDatabase.py ===========\n")

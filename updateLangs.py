@@ -581,4 +581,4 @@ for lang in langs: # =========================================== Main loop for e
         file.writelines(jsText)
     print(f"Finished writing language file: {lang}.js")
 
-print("\n=========== ALL LANGUAGES DONE ===========\n")
+print("\n=========== END OF updateLangs.py ===========\n")
