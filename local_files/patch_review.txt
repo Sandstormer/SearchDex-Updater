@@ -377,7 +377,6 @@ Qwilfish: biomes changed from [[1255, 'seabed', [80, 60]]] to [[1256, 'seabed', 
 Scizor: Dual Chop added to Great TM
 Scizor: biomes changed from [[1245, 'jungle', [80, 100]], [1240, 'forest', [92]], [1260, 'tall-grass', [120, 100]]] to [[1246, 'jungle', [80, 100]], [1241, 'forest', [92]], [1261, 'tall-grass', [120, 100]]]
 Mega Scizor: Dual Chop added to Great TM
-Mega Scizor: newVariants changed from  to 1
 Mega Scizor: biomes changed from [[1245, 'jungle', [80, 100]], [1240, 'forest', [92]], [1260, 'tall-grass', [120, 100]]] to [[1246, 'jungle', [80, 100]], [1241, 'forest', [92]], [1261, 'tall-grass', [120, 100]]]
 Shuckle: biomes changed from [[1233, 'cave', [120, 100]]] to [[1234, 'cave', [120, 100]]]
 Heracross: biomes changed from [[1240, 'forest', [80, 100]]] to [[1241, 'forest', [80, 100]]]

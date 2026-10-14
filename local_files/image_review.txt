@@ -18,7 +18,6 @@
 200_1b - 14 colors changed (+7 -7) (730 pixels)
 212-mega_1 - 18 colors changed (+9 -9) (1890 pixels)
 212-mega_1b - 16 colors changed (+8 -8) (1649 pixels)
-212-mega_2b - 18 colors changed (+9 -9) (1924 pixels)
 212_1 - 18 colors changed (+9 -9) (1586 pixels)
 212_1f - 18 colors changed (+9 -9) (1614 pixels)
 212_1b - 18 colors changed (+9 -9) (1489 pixels)
