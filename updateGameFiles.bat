@@ -61,6 +61,9 @@ if not exist "%gameDataDest%" (
     git -C "%gameDataDest%" checkout -B %gameDataBranch% FETCH_HEAD
     git -C "%gameDataDest%" clean -fdx
 )
+REM Copy exported data from the selected branch into its own folder
+REM This is so you don't have to specify the branch again in updateDatabase.py
+robocopy "%gameDataDest%\%gameSrcBranch%" "%gameDataDest%\selected" /E
 echo.
 echo ======= END OF updateGameFiles.bat =======
 echo.
