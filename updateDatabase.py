@@ -5,7 +5,7 @@
 # There are rules at the bottom of this file for how pokedex_data.js is structured
 
 pathBal  = './game_files/src/data/balance' # Path to the balance folder
-pathJSON = './game_files/data_output/main/json' # Path to the exported game data Json files
+pathJSON = './game_files/data_output/beta/json' # Path to the exported game data Json files
 pathImg = './website/images' # Path to read processed images from updateImages.py
 
 import re, os, json, sys
@@ -43,7 +43,7 @@ for moveLine in level_data_raw:
     if formName not in level_move_data[speciesName]:
         level_move_data[speciesName][formName] = []
     level_move_data[speciesName][formName].append([format_for_disp(moveLine["move"]),moveLine["level"]])
-with open(f"{pathJSON}/tms.json", "r", encoding="utf-8", errors="replace") as f:
+with open(f"{pathJSON}/species-tms.json", "r", encoding="utf-8", errors="replace") as f:
     tms_data_raw = json.load(f)
 tm_move_data = {} # Rearrange tm moves data to [id][form] = [tms,...]
 for moveLine in tms_data_raw:
@@ -90,8 +90,8 @@ print('Finished reading biome data')
 egg_move_data = {} # Egg moves are added to egg_move_data[species], encoded as 204(common) or 208(rare)
 with open(f"{pathBal}/moves/egg-moves.ts", "r", encoding="utf-8", errors="replace") as file: # Egg moves **************************
     content = file.read()
-# Use a regular expression to extract text between "speciesEggMoves = {" and "} satisfies"
-inputMoveData = re.findall(r'speciesEggMoves\s*=\s*{(.*?)}\ssatisfies', content, re.DOTALL)[0].split(',\n')
+# Use a regular expression to extract text between "speciesEggMoves = {" and "} as const"
+rawEggMoveData = re.findall(r'speciesEggMoves\s*=\s*{(.*?)\n} as const', content, re.DOTALL)[0].split(',\n')
 for eggLine in rawEggMoveData:
     speciesName = format_for_disp(re.findall(r'SpeciesId\.(.*?)\]', eggLine)[0])
     eggMoves = [ format_for_disp(line) for line in re.findall(r'MoveId\.(.*?)\s?[\],]', eggLine) ]
@@ -515,7 +515,7 @@ for index,line in enumerate(allFilters):
         fidThreshold.append(index) # Find the threshold of each filter category
 fidThreshold.append(len(allFilters))
 if fidThreshold[0] != 18:  throwError('Wrong number of types')
-if fidThreshold[1] != 334: throwError('Wrong number of abilities')
+if fidThreshold[1] != 335: throwError('Wrong number of abilities')
 # Write some variables to files, which are read by my other scripts, and some are written to the website
 with open("local_files/my_json/allFilters.json", "w") as f:
     json.dump(allFilters, f, indent=4)
