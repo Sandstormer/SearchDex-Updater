@@ -18,9 +18,13 @@ Caterpie: biomes changed from [[1262, 'town', [23]], [1240, 'forest', [23]]] to 
 Metapod: biomes changed from [[1262, 'town', [23]], [1240, 'forest', [23]]] to [[1263, 'town', [23]], [1241, 'forest', [23]]]
 Butterfree: biomes changed from [[1240, 'forest', [23]], [1262, 'town', [23]]] to [[1241, 'forest', [23]], [1263, 'town', [23]]]
 Gigantamax Butterfree: biomes changed from [[1240, 'forest', [23]], [1262, 'town', [23]]] to [[1241, 'forest', [23]], [1263, 'town', [23]]]
+Weedle: newVariants changed from 1 to 
 Weedle: biomes changed from [[1262, 'town', [32]], [1240, 'forest', [32]]] to [[1263, 'town', [32]], [1241, 'forest', [32]]]
+Kakuna: newVariants changed from 1 to 
 Kakuna: biomes changed from [[1262, 'town', [32]], [1240, 'forest', [32]]] to [[1263, 'town', [32]], [1241, 'forest', [32]]]
+Beedrill: newVariants changed from 1 to 
 Beedrill: biomes changed from [[1240, 'forest', [32]], [1262, 'town', [32]]] to [[1241, 'forest', [32]], [1263, 'town', [32]]]
+Mega Beedrill: newVariants changed from 1 to 
 Mega Beedrill: biomes changed from [[1240, 'forest', [32]], [1262, 'town', [32]]] to [[1241, 'forest', [32]], [1263, 'town', [32]]]
 Pidgey: biomes changed from [[1250, 'mountain', [20, 60]], [1251, 'plains', [40]], [1262, 'town', [20]]] to [[1251, 'mountain', [20, 60]], [1252, 'plains', [40]], [1263, 'town', [20]]]
 Pidgeotto: biomes changed from [[1250, 'mountain', [20, 60]], [1251, 'plains', [40]], [1262, 'town', [20]]] to [[1251, 'mountain', [20, 60]], [1252, 'plains', [40]], [1263, 'town', [20]]]
@@ -32,17 +36,29 @@ Spearow: biomes changed from [[1250, 'mountain', [20, 60]], [1251, 'plains', [40
 Fearow: biomes changed from [[1250, 'mountain', [20, 60]], [1251, 'plains', [40]], [1262, 'town', [20]]] to [[1251, 'mountain', [20, 60]], [1252, 'plains', [40]], [1263, 'town', [20]]]
 Ekans: biomes changed from [[1240, 'forest', [40]], [1259, 'swamp', [32, 72, 43]], [1262, 'town', [52]]] to [[1241, 'forest', [40]], [1260, 'swamp', [32, 72, 43]], [1263, 'town', [52]]]
 Arbok: biomes changed from [[1259, 'swamp', [32, 72, 43]], [1240, 'forest', [40]], [1262, 'town', [52]]] to [[1260, 'swamp', [32, 72, 43]], [1241, 'forest', [40]], [1263, 'town', [52]]]
+Pikachu: newVariants changed from 1 to 
 Pikachu: biomes changed from [[1249, 'metropolis', [40]], [1251, 'plains', [40]], [1252, 'power-plant', [20, 60]], [1262, 'town', [120]], [1244, 'island', [43, 63]]] to [[1250, 'metropolis', [40]], [1252, 'plains', [40]], [1253, 'power-plant', [20, 60]], [1263, 'town', [120]], [1245, 'island', [43, 63]]]
+Partner Pikachu: newVariants changed from 1 to 
 Partner Pikachu: biomes changed from [[1249, 'metropolis', [40]], [1251, 'plains', [40]], [1252, 'power-plant', [20, 60]], [1262, 'town', [120]], [1244, 'island', [43, 63]]] to [[1250, 'metropolis', [40]], [1252, 'plains', [40]], [1253, 'power-plant', [20, 60]], [1263, 'town', [120]], [1245, 'island', [43, 63]]]
+Cosplay Pikachu: newVariants changed from 1 to 
 Cosplay Pikachu: biomes changed from [[1249, 'metropolis', [40]], [1251, 'plains', [40]], [1252, 'power-plant', [20, 60]], [1262, 'town', [120]], [1244, 'island', [43, 63]]] to [[1250, 'metropolis', [40]], [1252, 'plains', [40]], [1253, 'power-plant', [20, 60]], [1263, 'town', [120]], [1245, 'island', [43, 63]]]
+Cool Cosplay Pikachu: newVariants changed from 1 to 
 Cool Cosplay Pikachu: biomes changed from [[1249, 'metropolis', [40]], [1251, 'plains', [40]], [1252, 'power-plant', [20, 60]], [1262, 'town', [120]], [1244, 'island', [43, 63]]] to [[1250, 'metropolis', [40]], [1252, 'plains', [40]], [1253, 'power-plant', [20, 60]], [1263, 'town', [120]], [1245, 'island', [43, 63]]]
+Beauty Cosplay Pikachu: newVariants changed from 1 to 
 Beauty Cosplay Pikachu: biomes changed from [[1249, 'metropolis', [40]], [1251, 'plains', [40]], [1252, 'power-plant', [20, 60]], [1262, 'town', [120]], [1244, 'island', [43, 63]]] to [[1250, 'metropolis', [40]], [1252, 'plains', [40]], [1253, 'power-plant', [20, 60]], [1263, 'town', [120]], [1245, 'island', [43, 63]]]
+Cute Cosplay Pikachu: newVariants changed from 1 to 
 Cute Cosplay Pikachu: biomes changed from [[1249, 'metropolis', [40]], [1251, 'plains', [40]], [1252, 'power-plant', [20, 60]], [1262, 'town', [120]], [1244, 'island', [43, 63]]] to [[1250, 'metropolis', [40]], [1252, 'plains', [40]], [1253, 'power-plant', [20, 60]], [1263, 'town', [120]], [1245, 'island', [43, 63]]]
+Smart Cosplay Pikachu: newVariants changed from 1 to 
 Smart Cosplay Pikachu: biomes changed from [[1249, 'metropolis', [40]], [1251, 'plains', [40]], [1252, 'power-plant', [20, 60]], [1262, 'town', [120]], [1244, 'island', [43, 63]]] to [[1250, 'metropolis', [40]], [1252, 'plains', [40]], [1253, 'power-plant', [20, 60]], [1263, 'town', [120]], [1245, 'island', [43, 63]]]
+Tough Cosplay Pikachu: newVariants changed from 1 to 
 Tough Cosplay Pikachu: biomes changed from [[1249, 'metropolis', [40]], [1251, 'plains', [40]], [1252, 'power-plant', [20, 60]], [1262, 'town', [120]], [1244, 'island', [43, 63]]] to [[1250, 'metropolis', [40]], [1252, 'plains', [40]], [1253, 'power-plant', [20, 60]], [1263, 'town', [120]], [1245, 'island', [43, 63]]]
+Gigantamax Pikachu: newVariants changed from 1 to 
 Gigantamax Pikachu: biomes changed from [[1249, 'metropolis', [40]], [1251, 'plains', [40]], [1252, 'power-plant', [20, 60]], [1262, 'town', [120]], [1244, 'island', [43, 63]]] to [[1250, 'metropolis', [40]], [1252, 'plains', [40]], [1253, 'power-plant', [20, 60]], [1263, 'town', [120]], [1245, 'island', [43, 63]]]
+Raichu: newVariants changed from 1 to 
 Raichu: biomes changed from [[1252, 'power-plant', [20, 60]], [1249, 'metropolis', [40]], [1251, 'plains', [40]], [1262, 'town', [120]]] to [[1253, 'power-plant', [20, 60]], [1250, 'metropolis', [40]], [1252, 'plains', [40]], [1263, 'town', [120]]]
+Mega X Raichu: newVariants changed from 1 to 
 Mega X Raichu: biomes changed from [[1252, 'power-plant', [20, 60]], [1249, 'metropolis', [40]], [1251, 'plains', [40]], [1262, 'town', [120]]] to [[1253, 'power-plant', [20, 60]], [1250, 'metropolis', [40]], [1252, 'plains', [40]], [1263, 'town', [120]]]
+Mega Y Raichu: newVariants changed from 1 to 
 Mega Y Raichu: biomes changed from [[1252, 'power-plant', [20, 60]], [1249, 'metropolis', [40]], [1251, 'plains', [40]], [1262, 'town', [120]]] to [[1253, 'power-plant', [20, 60]], [1250, 'metropolis', [40]], [1252, 'plains', [40]], [1263, 'town', [120]]]
 Sandshrew: Night Slash added to Great TM
 Sandshrew: biomes changed from [[1231, 'badlands', [40]], [1235, 'desert', [20, 60]]] to [[1232, 'badlands', [40]], [1236, 'desert', [20, 60]]]
@@ -54,10 +70,13 @@ Nidoqueen: biomes changed from [[1260, 'tall-grass', [23, 63]], [1262, 'town', [
 Nidoran M: biomes changed from [[1260, 'tall-grass', [23, 63]], [1262, 'town', [43]]] to [[1261, 'tall-grass', [23, 63]], [1263, 'town', [43]]]
 Nidorino: biomes changed from [[1260, 'tall-grass', [23, 63]], [1262, 'town', [43]]] to [[1261, 'tall-grass', [23, 63]], [1263, 'town', [43]]]
 Nidoking: biomes changed from [[1260, 'tall-grass', [23, 63]], [1262, 'town', [43]]] to [[1261, 'tall-grass', [23, 63]], [1263, 'town', [43]]]
+Clefairy: newVariants changed from 1 to 
 Clefairy: biomes changed from [[1239, 'fairy-cave', [40]], [1258, 'space', [20, 60]], [1262, 'town', [80]]] to [[1240, 'fairy-cave', [40]], [1259, 'space', [20, 60]], [1263, 'town', [80]]]
 Clefable: Disarming Voice changed from Evolution to Level 1
+Clefable: newVariants changed from 1 to 
 Clefable: biomes changed from [[1258, 'space', [20, 60]], [1239, 'fairy-cave', [40]], [1262, 'town', [80]]] to [[1259, 'space', [20, 60]], [1240, 'fairy-cave', [40]], [1263, 'town', [80]]]
 Mega Clefable: Disarming Voice changed from Evolution to Level 1
+Mega Clefable: newVariants changed from 1 to 
 Mega Clefable: biomes changed from [[1258, 'space', [20, 60]], [1239, 'fairy-cave', [40]], [1262, 'town', [80]]] to [[1259, 'space', [20, 60]], [1240, 'fairy-cave', [40]], [1263, 'town', [80]]]
 Vulpix: biomes changed from [[1260, 'tall-grass', [40]], [1263, 'volcano', [20, 60]]] to [[1261, 'tall-grass', [40]], [1264, 'volcano', [20, 60]]]
 Ninetales: biomes changed from [[1263, 'volcano', [20, 60]], [1260, 'tall-grass', [40]]] to [[1264, 'volcano', [20, 60]], [1261, 'tall-grass', [40]]]
@@ -70,7 +89,9 @@ Gloom: biomes changed from [[1260, 'tall-grass', [32, 72, 103]], [1262, 'town', 
 Vileplume: biomes changed from [[1260, 'tall-grass', [32, 72]], [1262, 'town', [52]]] to [[1261, 'tall-grass', [32, 72]], [1263, 'town', [52]]]
 Paras: biomes changed from [[1230, 'abyss', [20]], [1233, 'cave', [20, 60]], [1260, 'tall-grass', [20]], [1262, 'town', [52]]] to [[1231, 'abyss', [20]], [1234, 'cave', [20, 60]], [1261, 'tall-grass', [20]], [1263, 'town', [52]]]
 Parasect: biomes changed from [[1233, 'cave', [20, 60]], [1230, 'abyss', [20]], [1260, 'tall-grass', [20]], [1262, 'town', [52]]] to [[1234, 'cave', [20, 60]], [1231, 'abyss', [20]], [1261, 'tall-grass', [20]], [1263, 'town', [52]]]
+Venonat: newVariants changed from 1 to 
 Venonat: biomes changed from [[1240, 'forest', [28, 68]], [1260, 'tall-grass', [40]], [1262, 'town', [52]]] to [[1241, 'forest', [28, 68]], [1261, 'tall-grass', [40]], [1263, 'town', [52]]]
+Venomoth: newVariants changed from 1 to 
 Venomoth: biomes changed from [[1240, 'forest', [28, 68]], [1260, 'tall-grass', [40]], [1262, 'town', [52]]] to [[1241, 'forest', [28, 68]], [1261, 'tall-grass', [40]], [1263, 'town', [52]]]
 Diglett: Mud Bomb changed from Level 25 to Level 23
 Diglett: Slash changed from Level 23 to Level 25
@@ -99,13 +120,21 @@ Abra: biomes changed from [[1251, 'plains', [80]], [1253, 'ruins', [40, 60]], [1
 Kadabra: biomes changed from [[1251, 'plains', [80]], [1253, 'ruins', [40, 60]], [1262, 'town', [80]]] to [[1252, 'plains', [80]], [1254, 'ruins', [40, 60]], [1263, 'town', [80]]]
 Alakazam: biomes changed from [[1253, 'ruins', [40, 60]], [1251, 'plains', [80]], [1262, 'town', [80]]] to [[1254, 'ruins', [40, 60]], [1252, 'plains', [80]], [1263, 'town', [80]]]
 Mega Alakazam: biomes changed from [[1253, 'ruins', [40, 60]], [1251, 'plains', [80]], [1262, 'town', [80]]] to [[1254, 'ruins', [40, 60]], [1252, 'plains', [80]], [1263, 'town', [80]]]
+Machop: newVariants changed from 1 to 
 Machop: biomes changed from [[1234, 'construction-site', [20, 60]], [1238, 'factory', [20]], [1250, 'mountain', [40]]] to [[1235, 'construction-site', [20, 60]], [1239, 'factory', [20]], [1251, 'mountain', [40]]]
+Machoke: newVariants changed from 1 to 
 Machoke: biomes changed from [[1234, 'construction-site', [20, 60]], [1238, 'factory', [20]], [1250, 'mountain', [40]]] to [[1235, 'construction-site', [20, 60]], [1239, 'factory', [20]], [1251, 'mountain', [40]]]
+Machamp: newVariants changed from 1 to 
 Machamp: biomes changed from [[1234, 'construction-site', [20, 60]], [1238, 'factory', [20]], [1250, 'mountain', [40]]] to [[1235, 'construction-site', [20, 60]], [1239, 'factory', [20]], [1251, 'mountain', [40]]]
+Gigantamax Machamp: newVariants changed from 1 to 
 Gigantamax Machamp: biomes changed from [[1234, 'construction-site', [20, 60]], [1238, 'factory', [20]], [1250, 'mountain', [40]]] to [[1235, 'construction-site', [20, 60]], [1239, 'factory', [20]], [1251, 'mountain', [40]]]
+Bellsprout: newVariants changed from 1 to 
 Bellsprout: biomes changed from [[1240, 'forest', [23, 63]], [1262, 'town', [43]]] to [[1241, 'forest', [23, 63]], [1263, 'town', [43]]]
+Weepinbell: newVariants changed from 1 to 
 Weepinbell: biomes changed from [[1240, 'forest', [23, 63]], [1262, 'town', [43]]] to [[1241, 'forest', [23, 63]], [1263, 'town', [43]]]
+Victreebel: newVariants changed from 1 to 
 Victreebel: biomes changed from [[1240, 'forest', [23, 63]], [1262, 'town', [43]]] to [[1241, 'forest', [23, 63]], [1263, 'town', [43]]]
+Mega Victreebel: newVariants changed from 1 to 
 Mega Victreebel: biomes changed from [[1240, 'forest', [23, 63]], [1262, 'town', [43]]] to [[1241, 'forest', [23, 63]], [1263, 'town', [43]]]
 Tentacool: biomes changed from [[1254, 'sea', [20, 60]], [1255, 'seabed', [40]]] to [[1255, 'sea', [20, 60]], [1256, 'seabed', [40]]]
 Tentacruel: biomes changed from [[1254, 'sea', [20, 60]], [1255, 'seabed', [40]]] to [[1255, 'sea', [20, 60]], [1256, 'seabed', [40]]]
@@ -195,11 +224,17 @@ Mega Gyarados: biomes changed from [[1247, 'lake', [40, 100]], [1254, 'sea', [40
 Lapras: biomes changed from [[1243, 'ice-cave', [80, 100]], [1254, 'sea', [80]]] to [[1244, 'ice-cave', [80, 100]], [1255, 'sea', [80]]]
 Gigantamax Lapras: biomes changed from [[1243, 'ice-cave', [80, 100]], [1254, 'sea', [80]]] to [[1244, 'ice-cave', [80, 100]], [1255, 'sea', [80]]]
 Ditto: biomes changed from [[1234, 'construction-site', [120]], [1246, 'laboratory', [80]], [1249, 'metropolis', [120]], [1251, 'plains', [160]], [1262, 'town', [160]]] to [[1235, 'construction-site', [120]], [1247, 'laboratory', [80]], [1250, 'metropolis', [120]], [1252, 'plains', [160]], [1263, 'town', [160]]]
+Eevee: newVariants changed from 1 to 
 Eevee: biomes changed from [[1248, 'meadow', [80, 100, 120]], [1249, 'metropolis', [120]], [1251, 'plains', [120]], [1262, 'town', [120]], [1253, 'ruins', [122, 102]], [1230, 'abyss', [120, 100]], [1247, 'lake', [120, 100]], [1252, 'power-plant', [120, 100]], [1263, 'volcano', [120, 100]], [1245, 'jungle', [100]], [1243, 'ice-cave', [100]]] to [[1249, 'meadow', [80, 100, 120]], [1250, 'metropolis', [120]], [1252, 'plains', [120]], [1263, 'town', [120]], [1254, 'ruins', [122, 102]], [1231, 'abyss', [120, 100]], [1248, 'lake', [120, 100]], [1253, 'power-plant', [120, 100]], [1264, 'volcano', [120, 100]], [1246, 'jungle', [100]], [1244, 'ice-cave', [100]]]
+Partner Eevee: newVariants changed from 1 to 
 Partner Eevee: biomes changed from [[1248, 'meadow', [80, 100, 120]], [1249, 'metropolis', [120]], [1251, 'plains', [120]], [1262, 'town', [120]], [1253, 'ruins', [122, 102]], [1230, 'abyss', [120, 100]], [1247, 'lake', [120, 100]], [1252, 'power-plant', [120, 100]], [1263, 'volcano', [120, 100]], [1245, 'jungle', [100]], [1243, 'ice-cave', [100]]] to [[1249, 'meadow', [80, 100, 120]], [1250, 'metropolis', [120]], [1252, 'plains', [120]], [1263, 'town', [120]], [1254, 'ruins', [122, 102]], [1231, 'abyss', [120, 100]], [1248, 'lake', [120, 100]], [1253, 'power-plant', [120, 100]], [1264, 'volcano', [120, 100]], [1246, 'jungle', [100]], [1244, 'ice-cave', [100]]]
+Gigantamax Eevee: newVariants changed from 1 to 
 Gigantamax Eevee: biomes changed from [[1248, 'meadow', [80, 100, 120]], [1249, 'metropolis', [120]], [1251, 'plains', [120]], [1262, 'town', [120]], [1253, 'ruins', [122, 102]], [1230, 'abyss', [120, 100]], [1247, 'lake', [120, 100]], [1252, 'power-plant', [120, 100]], [1263, 'volcano', [120, 100]], [1245, 'jungle', [100]], [1243, 'ice-cave', [100]]] to [[1249, 'meadow', [80, 100, 120]], [1250, 'metropolis', [120]], [1252, 'plains', [120]], [1263, 'town', [120]], [1254, 'ruins', [122, 102]], [1231, 'abyss', [120, 100]], [1248, 'lake', [120, 100]], [1253, 'power-plant', [120, 100]], [1264, 'volcano', [120, 100]], [1246, 'jungle', [100]], [1244, 'ice-cave', [100]]]
+Vaporeon: newVariants changed from 1 to 
 Vaporeon: biomes changed from [[1247, 'lake', [120, 100]], [1248, 'meadow', [80]], [1249, 'metropolis', [120]], [1251, 'plains', [120]], [1262, 'town', [120]]] to [[1248, 'lake', [120, 100]], [1249, 'meadow', [80]], [1250, 'metropolis', [120]], [1252, 'plains', [120]], [1263, 'town', [120]]]
+Jolteon: newVariants changed from 1 to 
 Jolteon: biomes changed from [[1252, 'power-plant', [120, 100]], [1248, 'meadow', [80]], [1249, 'metropolis', [120]], [1251, 'plains', [120]], [1262, 'town', [120]]] to [[1253, 'power-plant', [120, 100]], [1249, 'meadow', [80]], [1250, 'metropolis', [120]], [1252, 'plains', [120]], [1263, 'town', [120]]]
+Flareon: newVariants changed from 1 to 
 Flareon: biomes changed from [[1263, 'volcano', [120, 100]], [1248, 'meadow', [80]], [1249, 'metropolis', [120]], [1251, 'plains', [120]], [1262, 'town', [120]]] to [[1264, 'volcano', [120, 100]], [1249, 'meadow', [80]], [1250, 'metropolis', [120]], [1252, 'plains', [120]], [1263, 'town', [120]]]
 Porygon: biomes changed from [[1238, 'factory', [80]], [1246, 'laboratory', [80, 100]], [1258, 'space', [120, 100]]] to [[1239, 'factory', [80]], [1247, 'laboratory', [80, 100]], [1259, 'space', [120, 100]]]
 Omanyte: biomes changed from [[1255, 'seabed', [120, 100]]] to [[1256, 'seabed', [120, 100]]]
@@ -211,20 +246,31 @@ Aerodactyl: biomes changed from [[1264, 'wasteland', [120, 100]]] to [[1265, 'wa
 Mega Aerodactyl: biomes changed from [[1264, 'wasteland', [120, 100]]] to [[1265, 'wasteland', [120, 100]]]
 Snorlax: biomes changed from [[1251, 'plains', [120, 100]], [1262, 'town', [160]]] to [[1252, 'plains', [120, 100]], [1263, 'town', [160]]]
 Gigantamax Snorlax: biomes changed from [[1251, 'plains', [120, 100]], [1262, 'town', [160]]] to [[1252, 'plains', [120, 100]], [1263, 'town', [160]]]
+Articuno: newVariants changed from 1 to 
 Articuno: biomes changed from [[1243, 'ice-cave', [160, 140]]] to [[1244, 'ice-cave', [160, 140]]]
+Zapdos: newVariants changed from 1 to 
 Zapdos: biomes changed from [[1252, 'power-plant', [160, 140]]] to [[1253, 'power-plant', [160, 140]]]
+Moltres: newVariants changed from 1 to 
 Moltres: biomes changed from [[1263, 'volcano', [160, 140]]] to [[1264, 'volcano', [160, 140]]]
+Dratini: newVariants changed from 1 to 
 Dratini: biomes changed from [[1264, 'wasteland', [80, 60]]] to [[1265, 'wasteland', [80, 60]]]
+Dragonair: newVariants changed from 1 to 
 Dragonair: biomes changed from [[1264, 'wasteland', [80, 60]]] to [[1265, 'wasteland', [80, 60]]]
+Dragonite: newVariants changed from 1 to 
 Dragonite: biomes changed from [[1264, 'wasteland', [80, 60]]] to [[1265, 'wasteland', [80, 60]]]
+Mega Dragonite: newVariants changed from 1 to 
 Mega Dragonite: biomes changed from [[1264, 'wasteland', [80, 60]]] to [[1265, 'wasteland', [80, 60]]]
 Mewtwo: biomes changed from [[1246, 'laboratory', [180]]] to [[1247, 'laboratory', [180]]]
 Mega X Mewtwo: biomes changed from [[1246, 'laboratory', [180]]] to [[1247, 'laboratory', [180]]]
 Mega Y Mewtwo: biomes changed from [[1246, 'laboratory', [180]]] to [[1247, 'laboratory', [180]]]
 Mew: Dual Chop added to Great TM
+Chikorita: newVariants changed from 1 to 
 Chikorita: biomes changed from [[1260, 'tall-grass', [80, 100]]] to [[1261, 'tall-grass', [80, 100]]]
+Bayleef: newVariants changed from 1 to 
 Bayleef: biomes changed from [[1260, 'tall-grass', [80, 100]]] to [[1261, 'tall-grass', [80, 100]]]
+Meganium: newVariants changed from 1 to 
 Meganium: biomes changed from [[1260, 'tall-grass', [80, 100]]] to [[1261, 'tall-grass', [80, 100]]]
+Mega Meganium: newVariants changed from 1 to 
 Mega Meganium: biomes changed from [[1260, 'tall-grass', [80, 100]]] to [[1261, 'tall-grass', [80, 100]]]
 Cyndaquil: biomes changed from [[1263, 'volcano', [80, 100]], [1242, 'graveyard', [100]]] to [[1264, 'volcano', [80, 100]], [1243, 'graveyard', [100]]]
 Quilava: biomes changed from [[1263, 'volcano', [80, 100]], [1242, 'graveyard', [100]]] to [[1264, 'volcano', [80, 100]], [1243, 'graveyard', [100]]]
@@ -232,6 +278,7 @@ Typhlosion: biomes changed from [[1263, 'volcano', [80, 100]]] to [[1264, 'volca
 Totodile: biomes changed from [[1259, 'swamp', [80, 100]]] to [[1260, 'swamp', [80, 100]]]
 Croconaw: biomes changed from [[1259, 'swamp', [80, 100]]] to [[1260, 'swamp', [80, 100]]]
 Feraligatr: biomes changed from [[1259, 'swamp', [80, 100]]] to [[1260, 'swamp', [80, 100]]]
+Mega Feraligatr: newVariants changed from 1 to 
 Mega Feraligatr: biomes changed from [[1259, 'swamp', [80, 100]]] to [[1260, 'swamp', [80, 100]]]
 Sentret: biomes changed from [[1251, 'plains', [23, 63]], [1257, 'snowy-forest', [20]], [1262, 'town', [23]]] to [[1252, 'plains', [23, 63]], [1258, 'snowy-forest', [20]], [1263, 'town', [23]]]
 Furret: biomes changed from [[1251, 'plains', [23, 63]], [1257, 'snowy-forest', [20]], [1262, 'town', [23]]] to [[1252, 'plains', [23, 63]], [1258, 'snowy-forest', [20]], [1263, 'town', [23]]]
@@ -248,8 +295,11 @@ Crobat: Night Slash added to Great TM
 Crobat: biomes changed from [[1230, 'abyss', [20, 60]], [1233, 'cave', [20, 60]], [1251, 'plains', [32]]] to [[1231, 'abyss', [20, 60]], [1234, 'cave', [20, 60]], [1252, 'plains', [32]]]
 Chinchou: biomes changed from [[1254, 'sea', [48]], [1255, 'seabed', [20, 60]]] to [[1255, 'sea', [48]], [1256, 'seabed', [20, 60]]]
 Lanturn: biomes changed from [[1255, 'seabed', [20, 60]], [1254, 'sea', [48]]] to [[1256, 'seabed', [20, 60]], [1255, 'sea', [48]]]
+Pichu: newVariants changed from 1 to 
 Pichu: biomes changed from [[1262, 'town', [120]], [1249, 'metropolis', [40]], [1251, 'plains', [40]], [1252, 'power-plant', [20, 60]], [1244, 'island', [43, 63]]] to [[1263, 'town', [120]], [1250, 'metropolis', [40]], [1252, 'plains', [40]], [1253, 'power-plant', [20, 60]], [1245, 'island', [43, 63]]]
+Spiky Pichu: newVariants changed from 1 to 
 Spiky Pichu: biomes changed from [[1262, 'town', [120]], [1249, 'metropolis', [40]], [1251, 'plains', [40]], [1252, 'power-plant', [20, 60]], [1244, 'island', [43, 63]]] to [[1263, 'town', [120]], [1250, 'metropolis', [40]], [1252, 'plains', [40]], [1253, 'power-plant', [20, 60]], [1245, 'island', [43, 63]]]
+Cleffa: newVariants changed from 1 to 
 Cleffa: biomes changed from [[1258, 'space', [20, 60]], [1262, 'town', [80]], [1239, 'fairy-cave', [40]]] to [[1259, 'space', [20, 60]], [1263, 'town', [80]], [1240, 'fairy-cave', [40]]]
 Igglybuff: biomes changed from [[1262, 'town', [80]], [1239, 'fairy-cave', [20, 60]], [1248, 'meadow', [40]]] to [[1263, 'town', [80]], [1240, 'fairy-cave', [20, 60]], [1249, 'meadow', [40]]]
 Togepi: biomes changed from [[1262, 'town', [120]], [1239, 'fairy-cave', [40, 60]]] to [[1263, 'town', [120]], [1240, 'fairy-cave', [40, 60]]]
@@ -276,7 +326,9 @@ Sunflora: biomes changed from [[1241, 'grass', [43]], [1262, 'town', [23]]] to [
 Yanma: biomes changed from [[1245, 'jungle', [80, 60]]] to [[1246, 'jungle', [80, 60]]]
 Wooper: biomes changed from [[1247, 'lake', [20]], [1259, 'swamp', [23, 63]]] to [[1248, 'lake', [20]], [1260, 'swamp', [23, 63]]]
 Quagsire: biomes changed from [[1259, 'swamp', [23, 63]], [1247, 'lake', [20]]] to [[1260, 'swamp', [23, 63]], [1248, 'lake', [20]]]
+Espeon: newVariants changed from 1 to 
 Espeon: biomes changed from [[1253, 'ruins', [122, 102]], [1248, 'meadow', [80]], [1249, 'metropolis', [120]], [1251, 'plains', [120]], [1262, 'town', [120]]] to [[1254, 'ruins', [122, 102]], [1249, 'meadow', [80]], [1250, 'metropolis', [120]], [1252, 'plains', [120]], [1263, 'town', [120]]]
+Umbreon: newVariants changed from 1 to 
 Umbreon: biomes changed from [[1230, 'abyss', [120, 100]], [1248, 'meadow', [80]], [1249, 'metropolis', [120]], [1251, 'plains', [120]], [1262, 'town', [120]]] to [[1231, 'abyss', [120, 100]], [1249, 'meadow', [80]], [1250, 'metropolis', [120]], [1252, 'plains', [120]], [1263, 'town', [120]]]
 Murkrow: Night Slash added to Great TM
 Murkrow: biomes changed from [[1250, 'mountain', [88]], [1256, 'slum', [20]]] to [[1251, 'mountain', [88]], [1257, 'slum', [20]]]
@@ -353,7 +405,9 @@ Remoraid: biomes changed from [[1255, 'seabed', [20, 60, 80]]] to [[1256, 'seabe
 Octillery: biomes changed from [[1255, 'seabed', [20, 60, 80]]] to [[1256, 'seabed', [20, 60, 80]]]
 Delibird: biomes changed from [[1243, 'ice-cave', [80]], [1257, 'snowy-forest', [80]]] to [[1244, 'ice-cave', [80]], [1258, 'snowy-forest', [80]]]
 Mantine: biomes changed from [[1255, 'seabed', [80, 60]]] to [[1256, 'seabed', [80, 60]]]
+Skarmory: newVariants changed from 1 to 
 Skarmory: biomes changed from [[1250, 'mountain', [80, 60]]] to [[1251, 'mountain', [80, 60]]]
+Mega Skarmory: newVariants changed from 1 to 
 Mega Skarmory: biomes changed from [[1250, 'mountain', [80, 60]]] to [[1251, 'mountain', [80, 60]]]
 Houndour: biomes changed from [[1230, 'abyss', [40, 60]], [1249, 'metropolis', [32]], [1256, 'slum', [40]]] to [[1231, 'abyss', [40, 60]], [1250, 'metropolis', [32]], [1257, 'slum', [40]]]
 Houndoom: biomes changed from [[1230, 'abyss', [40, 60]], [1249, 'metropolis', [32]], [1256, 'slum', [40]]] to [[1231, 'abyss', [40, 60]], [1250, 'metropolis', [32]], [1257, 'slum', [40]]]
@@ -373,8 +427,11 @@ Magby: Dual Chop added to Great TM
 Magby: biomes changed from [[1238, 'factory', [40, 60]], [1263, 'volcano', [40, 60]]] to [[1239, 'factory', [40, 60]], [1264, 'volcano', [40, 60]]]
 Miltank: biomes changed from [[1241, 'grass', [40, 60]], [1248, 'meadow', [80, 60]]] to [[1242, 'grass', [40, 60]], [1249, 'meadow', [80, 60]]]
 Blissey: biomes changed from [[1248, 'meadow', [120, 100]], [1251, 'plains', [120]], [1262, 'town', [80]]] to [[1249, 'meadow', [120, 100]], [1252, 'plains', [120]], [1263, 'town', [80]]]
+Raikou: newVariants changed from 1 to 
 Raikou: biomes changed from [[1260, 'tall-grass', [160, 140]]] to [[1261, 'tall-grass', [160, 140]]]
+Entei: newVariants changed from 1 to 
 Entei: biomes changed from [[1260, 'tall-grass', [160, 140]]] to [[1261, 'tall-grass', [160, 140]]]
+Suicune: newVariants changed from 1 to 
 Suicune: biomes changed from [[1247, 'lake', [160, 140]]] to [[1248, 'lake', [160, 140]]]
 Larvitar: biomes changed from [[1250, 'mountain', [120]], [1264, 'wasteland', [32, 72]]] to [[1251, 'mountain', [120]], [1265, 'wasteland', [32, 72]]]
 Pupitar: biomes changed from [[1250, 'mountain', [120]], [1264, 'wasteland', [32, 72]]] to [[1251, 'mountain', [120]], [1265, 'wasteland', [32, 72]]]
@@ -435,12 +492,15 @@ Masquerain: biomes changed from [[1247, 'lake', [20, 60]], [1262, 'town', [80]]]
 Shroomish: biomes changed from [[1240, 'forest', [32, 72]], [1241, 'grass', [20]], [1245, 'jungle', [32, 72]], [1262, 'town', [52]]] to [[1241, 'forest', [32, 72]], [1242, 'grass', [20]], [1246, 'jungle', [32, 72]], [1263, 'town', [52]]]
 Breloom: biomes changed from [[1240, 'forest', [32, 72]], [1245, 'jungle', [32, 72]], [1241, 'grass', [20]], [1262, 'town', [52]]] to [[1241, 'forest', [32, 72]], [1246, 'jungle', [32, 72]], [1242, 'grass', [20]], [1263, 'town', [52]]]
 Slakoth: Night Slash added to Great TM
+Slakoth: newVariants changed from 1 to 
 Slakoth: biomes changed from [[1245, 'jungle', [80, 100]]] to [[1246, 'jungle', [80, 100]]]
 Vigoroth: Chip Away changed from Level 27 to Level 23
 Vigoroth: Slash changed from Level 23 to Level 27
 Vigoroth: Night Slash added to Great TM
+Vigoroth: newVariants changed from 1 to 
 Vigoroth: biomes changed from [[1245, 'jungle', [80, 100]]] to [[1246, 'jungle', [80, 100]]]
 Slaking: Night Slash added to Great TM
+Slaking: newVariants changed from 1 to 
 Slaking: biomes changed from [[1245, 'jungle', [80, 100]]] to [[1246, 'jungle', [80, 100]]]
 Nincada: Night Slash added to Great TM
 Nincada: biomes changed from [[1260, 'tall-grass', [40, 60, 120]], [1262, 'town', [120]]] to [[1261, 'tall-grass', [40, 60, 120]], [1263, 'town', [120]]]
@@ -489,6 +549,7 @@ Wailord: biomes changed from [[1255, 'seabed', [40, 60]], [1254, 'sea', [20]]] t
 Numel: biomes changed from [[1231, 'badlands', [40]], [1235, 'desert', [40]], [1263, 'volcano', [20, 60]]] to [[1232, 'badlands', [40]], [1236, 'desert', [40]], [1264, 'volcano', [20, 60]]]
 Camerupt: biomes changed from [[1263, 'volcano', [20, 60]], [1231, 'badlands', [40]], [1235, 'desert', [40]]] to [[1264, 'volcano', [20, 60]], [1232, 'badlands', [40]], [1236, 'desert', [40]]]
 Mega Camerupt: biomes changed from [[1263, 'volcano', [20, 60]], [1231, 'badlands', [40]], [1235, 'desert', [40]]] to [[1264, 'volcano', [20, 60]], [1232, 'badlands', [40]], [1236, 'desert', [40]]]
+Torkoal: newVariants changed from 1 to 
 Torkoal: biomes changed from [[1263, 'volcano', [40, 60]]] to [[1264, 'volcano', [40, 60]]]
 Spoink: biomes changed from [[1250, 'mountain', [80]], [1253, 'ruins', [20, 60]], [1263, 'volcano', [20]]] to [[1251, 'mountain', [80]], [1254, 'ruins', [20, 60]], [1264, 'volcano', [20]]]
 Grumpig: biomes changed from [[1253, 'ruins', [20, 60]], [1250, 'mountain', [80]], [1263, 'volcano', [20]]] to [[1254, 'ruins', [20, 60]], [1251, 'mountain', [80]], [1264, 'volcano', [20]]]
@@ -516,7 +577,9 @@ Baltoy: biomes changed from [[1253, 'ruins', [20, 60]], [1258, 'space', [40]], [
 Claydol: biomes changed from [[1253, 'ruins', [20, 60]], [1258, 'space', [40]], [1261, 'temple', [40]]] to [[1254, 'ruins', [20, 60]], [1259, 'space', [40]], [1262, 'temple', [40]]]
 Lileep: biomes changed from [[1235, 'desert', [120, 100]]] to [[1236, 'desert', [120, 100]]]
 Cradily: biomes changed from [[1235, 'desert', [120, 100]]] to [[1236, 'desert', [120, 100]]]
+Anorith: newVariants changed from 1 to 
 Anorith: biomes changed from [[1235, 'desert', [120, 100]]] to [[1236, 'desert', [120, 100]]]
+Armaldo: newVariants changed from 1 to 
 Armaldo: biomes changed from [[1235, 'desert', [120, 100]]] to [[1236, 'desert', [120, 100]]]
 Feebas: biomes changed from [[1255, 'seabed', [80, 100]]] to [[1256, 'seabed', [80, 100]]]
 Milotic: biomes changed from [[1255, 'seabed', [80, 100]]] to [[1256, 'seabed', [80, 100]]]
@@ -533,23 +596,33 @@ Duskull: biomes changed from [[1242, 'graveyard', [20, 60]], [1261, 'temple', [2
 Dusclops: biomes changed from [[1242, 'graveyard', [20, 60]], [1261, 'temple', [20]]] to [[1243, 'graveyard', [20, 60]], [1262, 'temple', [20]]]
 Tropius: biomes changed from [[1240, 'forest', [80]], [1245, 'jungle', [43, 63]], [1260, 'tall-grass', [80]]] to [[1241, 'forest', [80]], [1246, 'jungle', [43, 63]], [1261, 'tall-grass', [80]]]
 Chimecho: biomes changed from [[1261, 'temple', [40, 60]]] to [[1262, 'temple', [40, 60]]]
+Mega Chimecho: newVariants changed from 1 to 
 Mega Chimecho: biomes changed from [[1261, 'temple', [40, 60]]] to [[1262, 'temple', [40, 60]]]
 Absol: Egg Move 1 changed from Kowtow Cleave to Spirit Break
 Absol: Egg Move 2 changed from Sacred Sword to First Impression
 Absol: Egg Move 3 changed from Psyblade to Cross Poison
+Absol: newVariants changed from 1 to 
 Absol: biomes changed from [[1230, 'abyss', [80]]] to [[1231, 'abyss', [80]]]
+Mega Absol: newVariants changed from 1 to 
 Mega Absol: biomes changed from [[1230, 'abyss', [80]]] to [[1231, 'abyss', [80]]]
 Mega Z Absol: ab1 changed from Super Luck to Sharpness
 Mega Z Absol: Passive changed from Sharpness to Super Luck
+Mega Z Absol: newVariants changed from 1 to 
 Mega Z Absol: biomes changed from [[1230, 'abyss', [80]]] to [[1231, 'abyss', [80]]]
 Wynaut: biomes changed from [[1253, 'ruins', [80, 100]]] to [[1254, 'ruins', [80, 100]]]
+Snorunt: newVariants changed from 1 to 
 Snorunt: biomes changed from [[1243, 'ice-cave', [20, 60]], [1257, 'snowy-forest', [20, 60]], [1230, 'abyss', [80, 60]]] to [[1244, 'ice-cave', [20, 60]], [1258, 'snowy-forest', [20, 60]], [1231, 'abyss', [80, 60]]]
 Glalie: Ice Ball removed from Level 1
+Glalie: newVariants changed from 1 to 
 Glalie: biomes changed from [[1243, 'ice-cave', [20, 60]], [1257, 'snowy-forest', [23, 63]]] to [[1244, 'ice-cave', [20, 60]], [1258, 'snowy-forest', [23, 63]]]
 Mega Glalie: Ice Ball removed from Level 1
+Mega Glalie: newVariants changed from 1 to 
 Mega Glalie: biomes changed from [[1243, 'ice-cave', [20, 60]], [1257, 'snowy-forest', [23, 63]]] to [[1244, 'ice-cave', [20, 60]], [1258, 'snowy-forest', [23, 63]]]
+Spheal: newVariants changed from 1 to 
 Spheal: biomes changed from [[1243, 'ice-cave', [40, 60]]] to [[1244, 'ice-cave', [40, 60]]]
+Sealeo: newVariants changed from 1 to 
 Sealeo: biomes changed from [[1243, 'ice-cave', [40, 60]]] to [[1244, 'ice-cave', [40, 60]]]
+Walrein: newVariants changed from 1 to 
 Walrein: biomes changed from [[1243, 'ice-cave', [40, 60]]] to [[1244, 'ice-cave', [40, 60]]]
 Clamperl: biomes changed from [[1255, 'seabed', [20, 60]]] to [[1256, 'seabed', [20, 60]]]
 Huntail: biomes changed from [[1255, 'seabed', [20, 60]]] to [[1256, 'seabed', [20, 60]]]
@@ -593,6 +666,7 @@ Empoleon: biomes changed from [[1254, 'sea', [80, 100]]] to [[1255, 'sea', [80, 
 Starly: biomes changed from [[1250, 'mountain', [23, 63]], [1251, 'plains', [43]], [1262, 'town', [23]]] to [[1251, 'mountain', [23, 63]], [1252, 'plains', [43]], [1263, 'town', [23]]]
 Staravia: biomes changed from [[1250, 'mountain', [23, 63]], [1251, 'plains', [43]], [1262, 'town', [23]]] to [[1251, 'mountain', [23, 63]], [1252, 'plains', [43]], [1263, 'town', [23]]]
 Staraptor: biomes changed from [[1250, 'mountain', [23, 63]], [1251, 'plains', [43]], [1262, 'town', [23]]] to [[1251, 'mountain', [23, 63]], [1252, 'plains', [43]], [1263, 'town', [23]]]
+Mega Staraptor: newVariants changed from 1 to 
 Mega Staraptor: biomes changed from [[1250, 'mountain', [23, 63]], [1251, 'plains', [43]], [1262, 'town', [23]]] to [[1251, 'mountain', [23, 63]], [1252, 'plains', [43]], [1263, 'town', [23]]]
 Bidoof: biomes changed from [[1251, 'plains', [20, 60]], [1262, 'town', [20]]] to [[1252, 'plains', [20, 60]], [1263, 'town', [20]]]
 Bibarel: Water Pulse changed from Common TM to Level 25
@@ -644,7 +718,9 @@ Glameow: biomes changed from [[1248, 'meadow', [40, 60]], [1249, 'metropolis', [
 Purugly: Night Slash added to Great TM
 Purugly: biomes changed from [[1248, 'meadow', [40, 60]], [1249, 'metropolis', [40]], [1256, 'slum', [20]]] to [[1249, 'meadow', [40, 60]], [1250, 'metropolis', [40]], [1257, 'slum', [20]]]
 Chingling: biomes changed from [[1261, 'temple', [40, 60]]] to [[1262, 'temple', [40, 60]]]
+Stunky: newVariants changed from 1 to 
 Stunky: biomes changed from [[1256, 'slum', [40, 60]]] to [[1257, 'slum', [40, 60]]]
+Skuntank: newVariants changed from 1 to 
 Skuntank: biomes changed from [[1256, 'slum', [40, 60]]] to [[1257, 'slum', [40, 60]]]
 Bronzor: biomes changed from [[1238, 'factory', [20, 60]], [1246, 'laboratory', [20, 60]], [1258, 'space', [20, 60]]] to [[1239, 'factory', [20, 60]], [1247, 'laboratory', [20, 60]], [1259, 'space', [20, 60]]]
 Bronzong: biomes changed from [[1238, 'factory', [20, 60]], [1246, 'laboratory', [20, 60]], [1258, 'space', [20, 60]]] to [[1239, 'factory', [20, 60]], [1247, 'laboratory', [20, 60]], [1259, 'space', [20, 60]]]
@@ -656,19 +732,23 @@ Spiritomb: biomes changed from [[1230, 'abyss', [80, 100]], [1242, 'graveyard', 
 Gible: Egg Move 1 changed from Dragon Hammer to Nasty Plot
 Gible: Sandstorm changed from Level 54 to Level 48
 Gible: Take Down changed from Level 48 to Level 54
+Gible: newVariants changed from 1 to 
 Gible: biomes changed from [[1235, 'desert', [120, 100]], [1250, 'mountain', [120]], [1264, 'wasteland', [20, 60]]] to [[1236, 'desert', [120, 100]], [1251, 'mountain', [120]], [1265, 'wasteland', [20, 60]]]
 Gabite: Sandstorm changed from Level 66 to Level 58
 Gabite: Take Down changed from Level 58 to Level 66
+Gabite: newVariants changed from 1 to 
 Gabite: biomes changed from [[1235, 'desert', [120, 100]], [1250, 'mountain', [120]], [1264, 'wasteland', [20, 60]]] to [[1236, 'desert', [120, 100]], [1251, 'mountain', [120]], [1265, 'wasteland', [20, 60]]]
 Garchomp: Sandstorm changed from Level 66 to Level 58
 Garchomp: Take Down changed from Level 58 to Level 66
 Garchomp: Earth Power changed from Ultra TM to Level 72
 Garchomp: Dragon Rush changed from Level 75 to Level 82
+Garchomp: newVariants changed from 1 to 
 Garchomp: biomes changed from [[1235, 'desert', [120, 100]], [1264, 'wasteland', [20, 60]], [1250, 'mountain', [120]]] to [[1236, 'desert', [120, 100]], [1265, 'wasteland', [20, 60]], [1251, 'mountain', [120]]]
 Mega Garchomp: Sandstorm changed from Level 66 to Level 58
 Mega Garchomp: Take Down changed from Level 58 to Level 66
 Mega Garchomp: Earth Power changed from Ultra TM to Level 72
 Mega Garchomp: Dragon Rush changed from Level 75 to Level 82
+Mega Garchomp: newVariants changed from 1 to 
 Mega Garchomp: biomes changed from [[1235, 'desert', [120, 100]], [1264, 'wasteland', [20, 60]], [1250, 'mountain', [120]]] to [[1236, 'desert', [120, 100]], [1265, 'wasteland', [20, 60]], [1251, 'mountain', [120]]]
 Mega Z Garchomp: ab1 changed from Rough Skin to Levitate
 Mega Z Garchomp: Passive changed from Levitate to Intimidate
@@ -676,17 +756,22 @@ Mega Z Garchomp: Sandstorm changed from Level 66 to Level 58
 Mega Z Garchomp: Take Down changed from Level 58 to Level 66
 Mega Z Garchomp: Earth Power changed from Ultra TM to Level 72
 Mega Z Garchomp: Dragon Rush changed from Level 75 to Level 82
+Mega Z Garchomp: newVariants changed from 1 to 
 Mega Z Garchomp: biomes changed from [[1235, 'desert', [120, 100]], [1264, 'wasteland', [20, 60]], [1250, 'mountain', [120]]] to [[1236, 'desert', [120, 100]], [1265, 'wasteland', [20, 60]], [1251, 'mountain', [120]]]
 Munchlax: biomes changed from [[1262, 'town', [160]], [1251, 'plains', [120, 100]]] to [[1263, 'town', [160]], [1252, 'plains', [120, 100]]]
 Riolu: Dual Chop added to Great TM
+Riolu: newVariants changed from 1 to 
 Riolu: biomes changed from [[1262, 'town', [120]], [1236, 'dojo', [80, 60]]] to [[1263, 'town', [120]], [1237, 'dojo', [80, 60]]]
 Lucario: Dual Chop added to Great TM
+Lucario: newVariants changed from 1 to 
 Lucario: biomes changed from [[1236, 'dojo', [80, 60]], [1262, 'town', [120]]] to [[1237, 'dojo', [80, 60]], [1263, 'town', [120]]]
 Mega Lucario: Dual Chop added to Great TM
+Mega Lucario: newVariants changed from 1 to 
 Mega Lucario: biomes changed from [[1236, 'dojo', [80, 60]], [1262, 'town', [120]]] to [[1237, 'dojo', [80, 60]], [1263, 'town', [120]]]
 Mega Z Lucario: ab1 changed from Inner Focus to Aura Guard
 Mega Z Lucario: Passive changed from Mega Launcher to Neuroforce
 Mega Z Lucario: Dual Chop added to Great TM
+Mega Z Lucario: newVariants changed from 1 to 
 Mega Z Lucario: biomes changed from [[1236, 'dojo', [80, 60]], [1262, 'town', [120]]] to [[1237, 'dojo', [80, 60]], [1263, 'town', [120]]]
 Hippopotas: biomes changed from [[1235, 'desert', [40, 60]]] to [[1236, 'desert', [40, 60]]]
 Hippowdon: biomes changed from [[1235, 'desert', [40, 60]]] to [[1236, 'desert', [40, 60]]]
@@ -715,7 +800,9 @@ Magmortar: Dual Chop added to Great TM
 Magmortar: biomes changed from [[1238, 'factory', [40, 60]], [1263, 'volcano', [40, 60]]] to [[1239, 'factory', [40, 60]], [1264, 'volcano', [40, 60]]]
 Togekiss: biomes changed from [[1239, 'fairy-cave', [40, 60]], [1262, 'town', [120]]] to [[1240, 'fairy-cave', [40, 60]], [1263, 'town', [120]]]
 Yanmega: biomes changed from [[1245, 'jungle', [80, 60]]] to [[1246, 'jungle', [80, 60]]]
+Leafeon: newVariants changed from 1 to 
 Leafeon: biomes changed from [[1245, 'jungle', [100]], [1248, 'meadow', [80]], [1249, 'metropolis', [120]], [1251, 'plains', [120]], [1262, 'town', [120]]] to [[1246, 'jungle', [100]], [1249, 'meadow', [80]], [1250, 'metropolis', [120]], [1252, 'plains', [120]], [1263, 'town', [120]]]
+Glaceon: newVariants changed from 1 to 
 Glaceon: biomes changed from [[1243, 'ice-cave', [100]], [1248, 'meadow', [80]], [1249, 'metropolis', [120]], [1251, 'plains', [120]], [1262, 'town', [120]]] to [[1244, 'ice-cave', [100]], [1249, 'meadow', [80]], [1250, 'metropolis', [120]], [1252, 'plains', [120]], [1263, 'town', [120]]]
 Gliscor: biomes changed from [[1231, 'badlands', [80, 60]], [1235, 'desert', [52, 72]]] to [[1232, 'badlands', [80, 60]], [1236, 'desert', [52, 72]]]
 Mamoswine: biomes changed from [[1243, 'ice-cave', [20, 60]], [1257, 'snowy-forest', [20, 60]]] to [[1244, 'ice-cave', [20, 60]], [1258, 'snowy-forest', [20, 60]]]
@@ -726,7 +813,9 @@ Mega Gallade: Dual Chop added to Great TM
 Mega Gallade: biomes changed from [[1236, 'dojo', [120, 100]], [1239, 'fairy-cave', [40]], [1248, 'meadow', [40]], [1262, 'town', [120]]] to [[1237, 'dojo', [120, 100]], [1240, 'fairy-cave', [40]], [1249, 'meadow', [40]], [1263, 'town', [120]]]
 Probopass: biomes changed from [[1233, 'cave', [40, 60]], [1234, 'construction-site', [20, 60]]] to [[1234, 'cave', [40, 60]], [1235, 'construction-site', [20, 60]]]
 Dusknoir: biomes changed from [[1242, 'graveyard', [20, 60]], [1261, 'temple', [20]]] to [[1243, 'graveyard', [20, 60]], [1262, 'temple', [20]]]
+Froslass: newVariants changed from 1 to 
 Froslass: biomes changed from [[1230, 'abyss', [80, 60]], [1243, 'ice-cave', [20, 60]], [1257, 'snowy-forest', [32, 72]]] to [[1231, 'abyss', [80, 60]], [1244, 'ice-cave', [20, 60]], [1258, 'snowy-forest', [32, 72]]]
+Mega Froslass: newVariants changed from 1 to 
 Mega Froslass: biomes changed from [[1230, 'abyss', [80, 60]], [1243, 'ice-cave', [20, 60]], [1257, 'snowy-forest', [32, 72]]] to [[1231, 'abyss', [80, 60]], [1244, 'ice-cave', [20, 60]], [1258, 'snowy-forest', [32, 72]]]
 Rotom: biomes changed from [[1246, 'laboratory', [80, 100]], [1252, 'power-plant', [80]]] to [[1247, 'laboratory', [80, 100]], [1253, 'power-plant', [80]]]
 Heat Rotom: biomes changed from [[1246, 'laboratory', [80, 100]], [1252, 'power-plant', [80]]] to [[1247, 'laboratory', [80, 100]], [1253, 'power-plant', [80]]]
@@ -742,25 +831,33 @@ Origin Dialga: biomes changed from [[1264, 'wasteland', [180]]] to [[1265, 'wast
 Palkia: biomes changed from [[1230, 'abyss', [180]]] to [[1231, 'abyss', [180]]]
 Origin Palkia: biomes changed from [[1230, 'abyss', [180]]] to [[1231, 'abyss', [180]]]
 Heatran: First Impression added to Ultra TM
+Heatran: newVariants changed from 1 to 
 Heatran: biomes changed from [[1263, 'volcano', [160, 140]]] to [[1264, 'volcano', [160, 140]]]
 Mega Heatran: First Impression added to Ultra TM
+Mega Heatran: newVariants changed from 1 to 
 Mega Heatran: biomes changed from [[1263, 'volcano', [160, 140]]] to [[1264, 'volcano', [160, 140]]]
 Regigigas: biomes changed from [[1261, 'temple', [180]]] to [[1262, 'temple', [180]]]
 Altered Giratina: biomes changed from [[1242, 'graveyard', [180]]] to [[1243, 'graveyard', [180]]]
 Origin Giratina: biomes changed from [[1242, 'graveyard', [180]]] to [[1243, 'graveyard', [180]]]
 Cresselia: biomes changed from [[1232, 'beach', [160, 140]]] to [[1233, 'beach', [160, 140]]]
+Darkrai: newVariants changed from 1 to 
 Darkrai: biomes changed from [[1230, 'abyss', [160, 140]]] to [[1231, 'abyss', [160, 140]]]
+Mega Darkrai: newVariants changed from 1 to 
 Mega Darkrai: biomes changed from [[1230, 'abyss', [160, 140]]] to [[1231, 'abyss', [160, 140]]]
 Land Shaymin: biomes changed from [[1248, 'meadow', [160, 140]]] to [[1249, 'meadow', [160, 140]]]
 Sky Shaymin: biomes changed from [[1248, 'meadow', [160, 140]]] to [[1249, 'meadow', [160, 140]]]
 Snivy: biomes changed from [[1245, 'jungle', [80, 100]]] to [[1246, 'jungle', [80, 100]]]
 Servine: biomes changed from [[1245, 'jungle', [80, 100]]] to [[1246, 'jungle', [80, 100]]]
 Serperior: biomes changed from [[1245, 'jungle', [80, 100]]] to [[1246, 'jungle', [80, 100]]]
+Tepig: newVariants changed from 1 to 
 Tepig: biomes changed from [[1263, 'volcano', [80, 100]]] to [[1264, 'volcano', [80, 100]]]
+Pignite: newVariants changed from 1 to 
 Pignite: biomes changed from [[1263, 'volcano', [80, 100]]] to [[1264, 'volcano', [80, 100]]]
 Emboar: Dual Chop added to Great TM
+Emboar: newVariants changed from 1 to 
 Emboar: biomes changed from [[1263, 'volcano', [80, 100]]] to [[1264, 'volcano', [80, 100]]]
 Mega Emboar: Dual Chop added to Great TM
+Mega Emboar: newVariants changed from 1 to 
 Mega Emboar: biomes changed from [[1263, 'volcano', [80, 100]]] to [[1264, 'volcano', [80, 100]]]
 Oshawott: Night Slash added to Great TM
 Oshawott: biomes changed from [[1247, 'lake', [80, 100]]] to [[1248, 'lake', [80, 100]]]
@@ -768,7 +865,9 @@ Dewott: Night Slash added to Great TM
 Dewott: biomes changed from [[1247, 'lake', [80, 100]]] to [[1248, 'lake', [80, 100]]]
 Samurott: Night Slash added to Great TM
 Samurott: biomes changed from [[1247, 'lake', [80, 100]]] to [[1248, 'lake', [80, 100]]]
+Patrat: newVariants changed from 1 to 
 Patrat: biomes changed from [[1249, 'metropolis', [20]], [1262, 'town', [20]]] to [[1250, 'metropolis', [20]], [1263, 'town', [20]]]
+Watchog: newVariants changed from 1 to 
 Watchog: biomes changed from [[1249, 'metropolis', [20]], [1262, 'town', [20]]] to [[1250, 'metropolis', [20]], [1263, 'town', [20]]]
 Lillipup: biomes changed from [[1249, 'metropolis', [20, 60]], [1262, 'town', [20]]] to [[1250, 'metropolis', [20, 60]], [1263, 'town', [20]]]
 Herdier: biomes changed from [[1249, 'metropolis', [20, 60]], [1262, 'town', [20]]] to [[1250, 'metropolis', [20, 60]], [1263, 'town', [20]]]
@@ -796,8 +895,11 @@ Boldore: biomes changed from [[1231, 'badlands', [40]], [1233, 'cave', [20, 60]]
 Gigalith: biomes changed from [[1233, 'cave', [20, 60]], [1231, 'badlands', [40]], [1250, 'mountain', [32, 43]]] to [[1234, 'cave', [20, 60]], [1232, 'badlands', [40]], [1251, 'mountain', [32, 43]]]
 Woobat: biomes changed from [[1230, 'abyss', [20]], [1233, 'cave', [20, 60]]] to [[1231, 'abyss', [20]], [1234, 'cave', [20, 60]]]
 Swoobat: biomes changed from [[1233, 'cave', [20, 60]], [1230, 'abyss', [20]]] to [[1234, 'cave', [20, 60]], [1231, 'abyss', [20]]]
+Drilbur: newVariants changed from 1 to 
 Drilbur: biomes changed from [[1231, 'badlands', [20, 60]], [1234, 'construction-site', [40]]] to [[1232, 'badlands', [20, 60]], [1235, 'construction-site', [40]]]
+Excadrill: newVariants changed from 1 to 
 Excadrill: biomes changed from [[1231, 'badlands', [20, 60]], [1234, 'construction-site', [40]]] to [[1232, 'badlands', [20, 60]], [1235, 'construction-site', [40]]]
+Mega Excadrill: newVariants changed from 1 to 
 Mega Excadrill: biomes changed from [[1231, 'badlands', [20, 60]], [1234, 'construction-site', [40]]] to [[1232, 'badlands', [20, 60]], [1235, 'construction-site', [40]]]
 Audino: biomes changed from [[1239, 'fairy-cave', [80, 60]], [1260, 'tall-grass', [80]]] to [[1240, 'fairy-cave', [80, 60]], [1261, 'tall-grass', [80]]]
 Mega Audino: biomes changed from [[1239, 'fairy-cave', [80, 60]], [1260, 'tall-grass', [80]]] to [[1240, 'fairy-cave', [80, 60]], [1261, 'tall-grass', [80]]]
@@ -813,9 +915,13 @@ Sawk: biomes changed from [[1236, 'dojo', [80, 60]]] to [[1237, 'dojo', [80, 60]
 Sewaddle: biomes changed from [[1240, 'forest', [43]], [1245, 'jungle', [23, 63]]] to [[1241, 'forest', [43]], [1246, 'jungle', [23, 63]]]
 Swadloon: biomes changed from [[1240, 'forest', [43]], [1245, 'jungle', [23, 63]]] to [[1241, 'forest', [43]], [1246, 'jungle', [23, 63]]]
 Leavanny: biomes changed from [[1245, 'jungle', [23, 63]], [1240, 'forest', [43]]] to [[1246, 'jungle', [23, 63]], [1241, 'forest', [43]]]
+Venipede: newVariants changed from 1 to 
 Venipede: biomes changed from [[1240, 'forest', [32, 72]], [1241, 'grass', [20, 60]], [1262, 'town', [40]]] to [[1241, 'forest', [32, 72]], [1242, 'grass', [20, 60]], [1263, 'town', [40]]]
+Whirlipede: newVariants changed from 1 to 
 Whirlipede: biomes changed from [[1240, 'forest', [32, 72]], [1241, 'grass', [20, 60]], [1262, 'town', [40]]] to [[1241, 'forest', [32, 72]], [1242, 'grass', [20, 60]], [1263, 'town', [40]]]
+Scolipede: newVariants changed from 1 to 
 Scolipede: biomes changed from [[1240, 'forest', [32, 72]], [1241, 'grass', [20, 60]], [1262, 'town', [40]]] to [[1241, 'forest', [32, 72]], [1242, 'grass', [20, 60]], [1263, 'town', [40]]]
+Mega Scolipede: newVariants changed from 1 to 
 Mega Scolipede: biomes changed from [[1240, 'forest', [32, 72]], [1241, 'grass', [20, 60]], [1262, 'town', [40]]] to [[1241, 'forest', [32, 72]], [1242, 'grass', [20, 60]], [1263, 'town', [40]]]
 Cottonee: biomes changed from [[1241, 'grass', [20, 60]], [1248, 'meadow', [23]], [1262, 'town', [23]]] to [[1242, 'grass', [20, 60]], [1249, 'meadow', [23]], [1263, 'town', [23]]]
 Whimsicott: biomes changed from [[1241, 'grass', [20, 60]], [1248, 'meadow', [23]], [1262, 'town', [23]]] to [[1242, 'grass', [20, 60]], [1249, 'meadow', [23]], [1263, 'town', [23]]]
@@ -835,10 +941,13 @@ Dwebble: biomes changed from [[1232, 'beach', [20, 60]]] to [[1233, 'beach', [20
 Crustle: Night Slash added to Great TM
 Crustle: biomes changed from [[1232, 'beach', [20, 60]]] to [[1233, 'beach', [20, 60]]]
 Scraggy: Dual Chop added to Great TM
+Scraggy: newVariants changed from 1 to 
 Scraggy: biomes changed from [[1234, 'construction-site', [40]], [1236, 'dojo', [40, 60]], [1256, 'slum', [20, 60]]] to [[1235, 'construction-site', [40]], [1237, 'dojo', [40, 60]], [1257, 'slum', [20, 60]]]
 Scrafty: Dual Chop added to Great TM
+Scrafty: newVariants changed from 1 to 
 Scrafty: biomes changed from [[1236, 'dojo', [40, 60]], [1256, 'slum', [20, 60]], [1234, 'construction-site', [40]]] to [[1237, 'dojo', [40, 60]], [1257, 'slum', [20, 60]], [1235, 'construction-site', [40]]]
 Mega Scrafty: Dual Chop added to Great TM
+Mega Scrafty: newVariants changed from 1 to 
 Mega Scrafty: biomes changed from [[1236, 'dojo', [40, 60]], [1256, 'slum', [20, 60]], [1234, 'construction-site', [40]]] to [[1237, 'dojo', [40, 60]], [1257, 'slum', [20, 60]], [1235, 'construction-site', [40]]]
 Sigilyph: biomes changed from [[1235, 'desert', [80, 100]], [1253, 'ruins', [40, 60]], [1258, 'space', [80]]] to [[1236, 'desert', [80, 100]], [1254, 'ruins', [40, 60]], [1259, 'space', [80]]]
 Yamask: biomes changed from [[1235, 'desert', [52, 72]], [1242, 'graveyard', [40]], [1261, 'temple', [20, 60]]] to [[1236, 'desert', [52, 72]], [1243, 'graveyard', [40]], [1262, 'temple', [20, 60]]]
@@ -879,8 +988,10 @@ Karrablast: biomes changed from [[1240, 'forest', [80, 100]]] to [[1241, 'forest
 Escavalier: Night Slash added to Great TM
 Escavalier: biomes changed from [[1240, 'forest', [80, 100]]] to [[1241, 'forest', [80, 100]]]
 Foongus: First Impression added to Ultra TM
+Foongus: newVariants changed from 1 to 
 Foongus: biomes changed from [[1241, 'grass', [40]], [1245, 'jungle', [32, 72, 83, 103]]] to [[1242, 'grass', [40]], [1246, 'jungle', [32, 72, 83, 103]]]
 Amoonguss: First Impression added to Ultra TM
+Amoonguss: newVariants changed from 1 to 
 Amoonguss: biomes changed from [[1245, 'jungle', [32, 72, 83, 103]], [1241, 'grass', [40]]] to [[1246, 'jungle', [32, 72, 83, 103]], [1242, 'grass', [40]]]
 Frillish: biomes changed from [[1255, 'seabed', [20, 60]]] to [[1256, 'seabed', [20, 60]]]
 Jellicent: biomes changed from [[1255, 'seabed', [20, 60]]] to [[1256, 'seabed', [20, 60]]]
@@ -898,9 +1009,13 @@ Eelektross: biomes changed from [[1255, 'seabed', [80, 100]]] to [[1256, 'seabed
 Mega Eelektross: biomes changed from [[1255, 'seabed', [80, 100]]] to [[1256, 'seabed', [80, 100]]]
 Elgyem: biomes changed from [[1253, 'ruins', [20, 60]], [1258, 'space', [40]]] to [[1254, 'ruins', [20, 60]], [1259, 'space', [40]]]
 Beheeyem: biomes changed from [[1253, 'ruins', [20, 60]], [1258, 'space', [40]]] to [[1254, 'ruins', [20, 60]], [1259, 'space', [40]]]
+Litwick: newVariants changed from 1 to 
 Litwick: biomes changed from [[1242, 'graveyard', [20, 60]], [1261, 'temple', [40]]] to [[1243, 'graveyard', [20, 60]], [1262, 'temple', [40]]]
+Lampent: newVariants changed from 1 to 
 Lampent: biomes changed from [[1242, 'graveyard', [20, 60]], [1261, 'temple', [40]]] to [[1243, 'graveyard', [20, 60]], [1262, 'temple', [40]]]
+Chandelure: newVariants changed from 1 to 
 Chandelure: biomes changed from [[1242, 'graveyard', [20, 60]], [1261, 'temple', [40]]] to [[1243, 'graveyard', [20, 60]], [1262, 'temple', [40]]]
+Mega Chandelure: newVariants changed from 1 to 
 Mega Chandelure: biomes changed from [[1242, 'graveyard', [20, 60]], [1261, 'temple', [40]]] to [[1243, 'graveyard', [20, 60]], [1262, 'temple', [40]]]
 Axew: First Impression added to Egg & Ultra TM
 Axew: Dual Chop changed from Level 18 to Level 15
@@ -935,8 +1050,11 @@ Mienshao: biomes changed from [[1236, 'dojo', [40, 60]]] to [[1237, 'dojo', [40,
 Druddigon: Chip Away changed from Level 31 to Level 21
 Druddigon: Slash changed from Level 21 to Level 31
 Druddigon: biomes changed from [[1264, 'wasteland', [120, 100]]] to [[1265, 'wasteland', [120, 100]]]
+Golett: newVariants changed from 1 to 
 Golett: biomes changed from [[1261, 'temple', [20, 60]]] to [[1262, 'temple', [20, 60]]]
+Golurk: newVariants changed from 1 to 
 Golurk: biomes changed from [[1261, 'temple', [20, 60]]] to [[1262, 'temple', [20, 60]]]
+Mega Golurk: newVariants changed from 1 to 
 Mega Golurk: biomes changed from [[1261, 'temple', [20, 60]]] to [[1262, 'temple', [20, 60]]]
 Pawniard: Dual Chop added to Great TM
 Pawniard: biomes changed from [[1256, 'slum', [80]], [1260, 'tall-grass', [80, 100]]] to [[1257, 'slum', [80]], [1261, 'tall-grass', [80, 100]]]
@@ -992,15 +1110,23 @@ Chesnaught: Dual Chop added to Great TM
 Chesnaught: biomes changed from [[1240, 'forest', [80, 100]]] to [[1241, 'forest', [80, 100]]]
 Mega Chesnaught: Dual Chop added to Great TM
 Mega Chesnaught: biomes changed from [[1240, 'forest', [80, 100]]] to [[1241, 'forest', [80, 100]]]
+Fennekin: newVariants changed from 1 to 
 Fennekin: biomes changed from [[1239, 'fairy-cave', [80, 100]], [1263, 'volcano', [80, 100]]] to [[1240, 'fairy-cave', [80, 100]], [1264, 'volcano', [80, 100]]]
+Braixen: newVariants changed from 1 to 
 Braixen: biomes changed from [[1239, 'fairy-cave', [80, 100]], [1263, 'volcano', [80, 100]]] to [[1240, 'fairy-cave', [80, 100]], [1264, 'volcano', [80, 100]]]
+Delphox: newVariants changed from 1 to 
 Delphox: biomes changed from [[1239, 'fairy-cave', [80, 100]], [1263, 'volcano', [80, 100]]] to [[1240, 'fairy-cave', [80, 100]], [1264, 'volcano', [80, 100]]]
+Mega Delphox: newVariants changed from 1 to 
 Mega Delphox: biomes changed from [[1239, 'fairy-cave', [80, 100]], [1263, 'volcano', [80, 100]]] to [[1240, 'fairy-cave', [80, 100]], [1264, 'volcano', [80, 100]]]
 Froakie: Night Slash added to Great TM
+Froakie: newVariants changed from 1 to 
 Froakie: biomes changed from [[1247, 'lake', [80, 100]]] to [[1248, 'lake', [80, 100]]]
 Frogadier: Night Slash added to Great TM
+Frogadier: newVariants changed from 1 to 
 Frogadier: biomes changed from [[1247, 'lake', [80, 100]]] to [[1248, 'lake', [80, 100]]]
+Greninja: newVariants changed from 1 to 
 Greninja: biomes changed from [[1247, 'lake', [80, 100]]] to [[1248, 'lake', [80, 100]]]
+Mega Greninja: newVariants changed from 1 to 
 Mega Greninja: biomes changed from [[1247, 'lake', [80, 100]]] to [[1248, 'lake', [80, 100]]]
 Bunnelby: biomes changed from [[1233, 'cave', [20, 60]]] to [[1234, 'cave', [20, 60]]]
 Diggersby: biomes changed from [[1233, 'cave', [20, 60]]] to [[1234, 'cave', [20, 60]]]
@@ -1105,6 +1231,7 @@ Pharaoh Furfrou: biomes changed from [[1249, 'metropolis', [40, 60]]] to [[1250,
 Espurr: biomes changed from [[1249, 'metropolis', [52, 72]]] to [[1250, 'metropolis', [52, 72]]]
 Male Meowstic: biomes changed from [[1249, 'metropolis', [52, 72]]] to [[1250, 'metropolis', [52, 72]]]
 Female Meowstic: biomes changed from [[1249, 'metropolis', [52, 72]]] to [[1250, 'metropolis', [52, 72]]]
+Mega Meowstic: newVariants changed from 1 to 
 Mega Meowstic: biomes changed from [[1249, 'metropolis', [52, 72]]] to [[1250, 'metropolis', [52, 72]]]
 Honedge: Retaliate changed from Level 27 to Level 20
 Honedge: Slash changed from Level 20 to Level 27
@@ -1129,13 +1256,18 @@ Inkay: biomes changed from [[1254, 'sea', [32, 72]]] to [[1255, 'sea', [32, 72]]
 Malamar: biomes changed from [[1254, 'sea', [32, 72]]] to [[1255, 'sea', [32, 72]]]
 Mega Malamar: biomes changed from [[1254, 'sea', [32, 72]]] to [[1255, 'sea', [32, 72]]]
 Binacle: Dual Chop added to Great TM
+Binacle: newVariants changed from 1 to 
 Binacle: biomes changed from [[1232, 'beach', [20, 60]]] to [[1233, 'beach', [20, 60]]]
 Barbaracle: Dual Chop added to Great TM
 Barbaracle: biomes changed from [[1232, 'beach', [20, 60]]] to [[1233, 'beach', [20, 60]]]
 Mega Barbaracle: Dual Chop added to Great TM
+Mega Barbaracle: newVariants changed from 1 to 
 Mega Barbaracle: biomes changed from [[1232, 'beach', [20, 60]]] to [[1233, 'beach', [20, 60]]]
+Skrelp: newVariants changed from 1 to 
 Skrelp: biomes changed from [[1255, 'seabed', [40, 60]]] to [[1256, 'seabed', [40, 60]]]
+Dragalge: newVariants changed from 1 to 
 Dragalge: biomes changed from [[1255, 'seabed', [40, 60]]] to [[1256, 'seabed', [40, 60]]]
+Mega Dragalge: newVariants changed from 1 to 
 Mega Dragalge: biomes changed from [[1255, 'seabed', [40, 60]]] to [[1256, 'seabed', [40, 60]]]
 Clauncher: biomes changed from [[1232, 'beach', [40, 60]]] to [[1233, 'beach', [40, 60]]]
 Clawitzer: biomes changed from [[1232, 'beach', [40, 60]]] to [[1233, 'beach', [40, 60]]]
@@ -1145,6 +1277,7 @@ Tyrunt: biomes changed from [[1264, 'wasteland', [120, 100]]] to [[1265, 'wastel
 Tyrantrum: biomes changed from [[1264, 'wasteland', [120, 100]]] to [[1265, 'wasteland', [120, 100]]]
 Amaura: biomes changed from [[1243, 'ice-cave', [120, 100]]] to [[1244, 'ice-cave', [120, 100]]]
 Aurorus: biomes changed from [[1243, 'ice-cave', [120, 100]]] to [[1244, 'ice-cave', [120, 100]]]
+Sylveon: newVariants changed from 1 to 
 Sylveon: biomes changed from [[1248, 'meadow', [80, 100, 120]], [1249, 'metropolis', [120]], [1251, 'plains', [120]], [1262, 'town', [120]]] to [[1249, 'meadow', [80, 100, 120]], [1250, 'metropolis', [120]], [1252, 'plains', [120]], [1263, 'town', [120]]]
 Hawlucha: Dual Chop added to Great TM
 Hawlucha: biomes changed from [[1250, 'mountain', [80, 100]]] to [[1251, 'mountain', [80, 100]]]
@@ -1249,6 +1382,7 @@ Tsareena: biomes changed from [[1260, 'tall-grass', [23, 63]]] to [[1261, 'tall-
 Comfey: biomes changed from [[1239, 'fairy-cave', [40, 60]]] to [[1240, 'fairy-cave', [40, 60]]]
 Oranguru: biomes changed from [[1245, 'jungle', [92]]] to [[1246, 'jungle', [92]]]
 Passimian: biomes changed from [[1245, 'jungle', [83]]] to [[1246, 'jungle', [83]]]
+Wimpod: newVariants changed from 1 to 
 Wimpod: biomes changed from [[1233, 'cave', [40, 60]]] to [[1234, 'cave', [40, 60]]]
 Golisopod: Dual Chop added to Great TM
 Golisopod: Agility added to Great TM
@@ -1257,6 +1391,7 @@ Golisopod: Gunk Shot added to Ultra TM
 Golisopod: Pounce added to Common TM
 Golisopod: U Turn added to Great TM
 Golisopod: Night Slash added to Great TM
+Golisopod: newVariants changed from 1 to 
 Golisopod: biomes changed from [[1233, 'cave', [40, 60]]] to [[1234, 'cave', [40, 60]]]
 Mega Golisopod: ab1 changed from Shell Armor to Tough Claws
 Mega Golisopod: Dual Chop added to Great TM
@@ -1266,6 +1401,7 @@ Mega Golisopod: Gunk Shot added to Ultra TM
 Mega Golisopod: Pounce added to Common TM
 Mega Golisopod: U Turn added to Great TM
 Mega Golisopod: Night Slash added to Great TM
+Mega Golisopod: newVariants changed from 1 to 
 Mega Golisopod: biomes changed from [[1233, 'cave', [40, 60]]] to [[1234, 'cave', [40, 60]]]
 Sandygast: biomes changed from [[1232, 'beach', [40, 60]]] to [[1233, 'beach', [40, 60]]]
 Palossand: biomes changed from [[1232, 'beach', [40, 60]]] to [[1233, 'beach', [40, 60]]]
@@ -1312,6 +1448,7 @@ Busted Mimikyu: Night Slash added to Great TM
 Busted Mimikyu: biomes changed from [[1242, 'graveyard', [80, 60]]] to [[1243, 'graveyard', [80, 60]]]
 Bruxish: biomes changed from [[1244, 'island', [40, 60]]] to [[1245, 'island', [40, 60]]]
 Drampa: biomes changed from [[1264, 'wasteland', [40, 60]]] to [[1265, 'wasteland', [40, 60]]]
+Mega Drampa: newVariants changed from 1 to 
 Mega Drampa: biomes changed from [[1264, 'wasteland', [40, 60]]] to [[1265, 'wasteland', [40, 60]]]
 Dhelmise: biomes changed from [[1255, 'seabed', [80, 100]]] to [[1256, 'seabed', [80, 100]]]
 Jangmo O: Dual Chop added to Great TM
@@ -1353,8 +1490,10 @@ Naganadel: biomes changed from [[1259, 'swamp', [160, 140]]] to [[1260, 'swamp',
 Stakataka: biomes changed from [[1234, 'construction-site', [160, 140]]] to [[1235, 'construction-site', [160, 140]]]
 Blacephalon: biomes changed from [[1244, 'island', [160, 140]]] to [[1245, 'island', [160, 140]]]
 Zeraora: Dual Chop added to Great TM
+Zeraora: newVariants changed from 1 to 
 Zeraora: biomes changed from [[1252, 'power-plant', [160, 140]]] to [[1253, 'power-plant', [160, 140]]]
 Mega Zeraora: Dual Chop added to Great TM
+Mega Zeraora: newVariants changed from 1 to 
 Mega Zeraora: biomes changed from [[1252, 'power-plant', [160, 140]]] to [[1253, 'power-plant', [160, 140]]]
 Grookey: biomes changed from [[1245, 'jungle', [80, 100]]] to [[1246, 'jungle', [80, 100]]]
 Thwackey: biomes changed from [[1245, 'jungle', [80, 100]]] to [[1246, 'jungle', [80, 100]]]
@@ -1612,8 +1751,11 @@ Brambleghast: biomes changed from [[1235, 'desert', [20, 60]]] to [[1236, 'deser
 Toedscool: biomes changed from [[1240, 'forest', [80, 100]]] to [[1241, 'forest', [80, 100]]]
 Toedscruel: biomes changed from [[1240, 'forest', [80, 100]]] to [[1241, 'forest', [80, 100]]]
 Klawf: biomes changed from [[1231, 'badlands', [80]]] to [[1232, 'badlands', [80]]]
+Capsakid: newVariants changed from 1 to 
 Capsakid: biomes changed from [[1231, 'badlands', [43, 63]]] to [[1232, 'badlands', [43, 63]]]
+Scovillain: newVariants changed from 1 to 
 Scovillain: biomes changed from [[1231, 'badlands', [43, 63]]] to [[1232, 'badlands', [43, 63]]]
+Mega Scovillain: newVariants changed from 1 to 
 Mega Scovillain: biomes changed from [[1231, 'badlands', [43, 63]]] to [[1232, 'badlands', [43, 63]]]
 Rellor: biomes changed from [[1235, 'desert', [20]]] to [[1236, 'desert', [20]]]
 Rabsca: biomes changed from [[1235, 'desert', [20]]] to [[1236, 'desert', [20]]]
@@ -1634,10 +1776,13 @@ Cyclizar: biomes changed from [[1264, 'wasteland', [40]]] to [[1265, 'wasteland'
 Orthworm: biomes changed from [[1235, 'desert', [40]]] to [[1236, 'desert', [40]]]
 Glimmet: Egg Move 1 changed from Calm Mind to Earth Power
 Glimmet: Egg Move 3 changed from Fiery Dance to Mystical Fire
+Glimmet: newVariants changed from 1 to 
 Glimmet: biomes changed from [[1233, 'cave', [80, 100]]] to [[1234, 'cave', [80, 100]]]
 Glimmora: Earth Power changed from Ultra TM to Egg & Ultra TM
+Glimmora: newVariants changed from 1 to 
 Glimmora: biomes changed from [[1233, 'cave', [80, 100]]] to [[1234, 'cave', [80, 100]]]
 Mega Glimmora: Earth Power changed from Ultra TM to Egg & Ultra TM
+Mega Glimmora: newVariants changed from 1 to 
 Mega Glimmora: biomes changed from [[1233, 'cave', [80, 100]]] to [[1234, 'cave', [80, 100]]]
 Greavard: biomes changed from [[1242, 'graveyard', [20, 60]]] to [[1243, 'graveyard', [20, 60]]]
 Houndstone: biomes changed from [[1242, 'graveyard', [20, 60]]] to [[1243, 'graveyard', [20, 60]]]
@@ -1646,11 +1791,17 @@ Cetoddle: biomes changed from [[1243, 'ice-cave', [40, 60]]] to [[1244, 'ice-cav
 Cetitan: biomes changed from [[1243, 'ice-cave', [40, 60]]] to [[1244, 'ice-cave', [40, 60]]]
 Veluza: biomes changed from [[1255, 'seabed', [20]]] to [[1256, 'seabed', [20]]]
 Dondozo: biomes changed from [[1255, 'seabed', [40, 60]]] to [[1256, 'seabed', [40, 60]]]
+Curly Tatsugiri: newVariants changed from 1 to 
 Curly Tatsugiri: biomes changed from [[1232, 'beach', [80]]] to [[1233, 'beach', [80]]]
+Droopy Tatsugiri: newVariants changed from 1 to 
 Droopy Tatsugiri: biomes changed from [[1232, 'beach', [80]]] to [[1233, 'beach', [80]]]
+Stretchy Tatsugiri: newVariants changed from 1 to 
 Stretchy Tatsugiri: biomes changed from [[1232, 'beach', [80]]] to [[1233, 'beach', [80]]]
+Mega Curly Tatsugiri: newVariants changed from 1 to 
 Mega Curly Tatsugiri: biomes changed from [[1232, 'beach', [80]]] to [[1233, 'beach', [80]]]
+Mega Droopy Tatsugiri: newVariants changed from 1 to 
 Mega Droopy Tatsugiri: biomes changed from [[1232, 'beach', [80]]] to [[1233, 'beach', [80]]]
+Mega Stretchy Tatsugiri: newVariants changed from 1 to 
 Mega Stretchy Tatsugiri: biomes changed from [[1232, 'beach', [80]]] to [[1233, 'beach', [80]]]
 Annihilape: Dual Chop added to Great TM
 Annihilape: Night Slash added to Great TM
@@ -1669,17 +1820,22 @@ Slither Wing: biomes changed from [[1237, 'end', [20]]] to [[1238, 'end', [20]]]
 Sandy Shocks: biomes changed from [[1237, 'end', [20]]] to [[1238, 'end', [20]]]
 Iron Treads: biomes changed from [[1237, 'end', [20]]] to [[1238, 'end', [20]]]
 Iron Bundle: biomes changed from [[1237, 'end', [20]]] to [[1238, 'end', [20]]]
+Iron Hands: newVariants changed from 1 to 
 Iron Hands: biomes changed from [[1237, 'end', [20]]] to [[1238, 'end', [20]]]
 Iron Jugulis: biomes changed from [[1237, 'end', [20]]] to [[1238, 'end', [20]]]
 Iron Moth: biomes changed from [[1237, 'end', [20]]] to [[1238, 'end', [20]]]
 Iron Thorns: biomes changed from [[1237, 'end', [20]]] to [[1238, 'end', [20]]]
+Frigibax: newVariants changed from 1 to 
 Frigibax: biomes changed from [[1264, 'wasteland', [80, 60]]] to [[1265, 'wasteland', [80, 60]]]
+Arctibax: newVariants changed from 1 to 
 Arctibax: biomes changed from [[1264, 'wasteland', [80, 60]]] to [[1265, 'wasteland', [80, 60]]]
 Baxcalibur: Frost Breath added to Great TM
 Baxcalibur: Ice Hammer removed from Level 70
+Baxcalibur: newVariants changed from 1 to 
 Baxcalibur: biomes changed from [[1264, 'wasteland', [80, 60]]] to [[1265, 'wasteland', [80, 60]]]
 Mega Baxcalibur: Frost Breath added to Great TM
 Mega Baxcalibur: Ice Hammer removed from Level 70
+Mega Baxcalibur: newVariants changed from 1 to 
 Mega Baxcalibur: biomes changed from [[1264, 'wasteland', [80, 60]]] to [[1265, 'wasteland', [80, 60]]]
 Chest Gimmighoul: biomes changed from [[1261, 'temple', [80, 100]]] to [[1262, 'temple', [80, 100]]]
 Roaming Gimmighoul: biomes changed from [[1261, 'temple', [80, 100]]] to [[1262, 'temple', [80, 100]]]
@@ -1722,6 +1878,7 @@ Terastal Terapagos: biomes changed from [[1233, 'cave', [180]]] to [[1234, 'cave
 Stellar Terapagos: biomes changed from [[1233, 'cave', [180]]] to [[1234, 'cave', [180]]]
 Alola Rattata: biomes changed from [[1244, 'island', [32, 72]], [1256, 'slum', [40, 60]]] to [[1245, 'island', [32, 72]], [1257, 'slum', [40, 60]]]
 Alola Raticate: biomes changed from [[1244, 'island', [32, 72]], [1256, 'slum', [40, 60]]] to [[1245, 'island', [32, 72]], [1257, 'slum', [40, 60]]]
+Alola Raichu: newVariants changed from 1 to 
 Alola Raichu: biomes changed from [[1244, 'island', [43, 63]], [1249, 'metropolis', [40]], [1251, 'plains', [40]], [1252, 'power-plant', [20]], [1262, 'town', [120]]] to [[1245, 'island', [43, 63]], [1250, 'metropolis', [40]], [1252, 'plains', [40]], [1253, 'power-plant', [20]], [1263, 'town', [120]]]
 Alola Sandshrew: Night Slash added to Great TM
 Alola Sandshrew: biomes changed from [[1244, 'island', [20, 60]], [1257, 'snowy-forest', [80, 100]]] to [[1245, 'island', [20, 60]], [1258, 'snowy-forest', [80, 100]]]
@@ -1729,7 +1886,9 @@ Alola Sandslash: Night Slash added to Great TM
 Alola Sandslash: biomes changed from [[1244, 'island', [20, 60]], [1257, 'snowy-forest', [80, 100]]] to [[1245, 'island', [20, 60]], [1258, 'snowy-forest', [80, 100]]]
 Alola Vulpix: biomes changed from [[1244, 'island', [20, 60]], [1257, 'snowy-forest', [80, 100]]] to [[1245, 'island', [20, 60]], [1258, 'snowy-forest', [80, 100]]]
 Alola Ninetales: biomes changed from [[1244, 'island', [20, 60]], [1257, 'snowy-forest', [80, 100]]] to [[1245, 'island', [20, 60]], [1258, 'snowy-forest', [80, 100]]]
+Alola Diglett: newVariants changed from 1 to 
 Alola Diglett: biomes changed from [[1244, 'island', [20, 60]], [1263, 'volcano', [40, 60]]] to [[1245, 'island', [20, 60]], [1264, 'volcano', [40, 60]]]
+Alola Dugtrio: newVariants changed from 1 to 
 Alola Dugtrio: biomes changed from [[1244, 'island', [20, 60]], [1263, 'volcano', [40, 60]]] to [[1245, 'island', [20, 60]], [1264, 'volcano', [40, 60]]]
 Alola Meowth: biomes changed from [[1244, 'island', [32, 72]]] to [[1245, 'island', [32, 72]]]
 Alola Persian: biomes changed from [[1244, 'island', [32, 72]]] to [[1245, 'island', [32, 72]]]
@@ -1740,9 +1899,13 @@ Alola Grimer: biomes changed from [[1244, 'island', [20, 60]]] to [[1245, 'islan
 Alola Muk: biomes changed from [[1244, 'island', [20, 60]]] to [[1245, 'island', [20, 60]]]
 Alola Exeggutor: biomes changed from [[1244, 'island', [43, 63]], [1240, 'forest', [83]], [1245, 'jungle', [43]]] to [[1245, 'island', [43, 63]], [1241, 'forest', [83]], [1246, 'jungle', [43]]]
 Alola Marowak: biomes changed from [[1244, 'island', [52, 72]], [1231, 'badlands', [28]], [1242, 'graveyard', [40]], [1261, 'temple', [40]]] to [[1245, 'island', [52, 72]], [1232, 'badlands', [28]], [1243, 'graveyard', [40]], [1262, 'temple', [40]]]
+Battle Bond Battle Bond Greninja: newVariants changed from 1 to 
 Battle Bond Battle Bond Greninja: biomes changed from [[1247, 'lake', [120, 100]]] to [[1248, 'lake', [120, 100]]]
+Ash Battle Bond Greninja: newVariants changed from 1 to 
 Ash Battle Bond Greninja: biomes changed from [[1247, 'lake', [120, 100]]] to [[1248, 'lake', [120, 100]]]
+Eternal Floette: newVariants changed from 1 to 
 Eternal Floette: biomes changed from [[1239, 'fairy-cave', [160, 140]]] to [[1240, 'fairy-cave', [160, 140]]]
+Mega Eternal Floette: newVariants changed from 1 to 
 Mega Eternal Floette: biomes changed from [[1239, 'fairy-cave', [160, 140]]] to [[1240, 'fairy-cave', [160, 140]]]
 Galar Meowth: Bite added to Level 22
 Galar Meowth: Feint Attack removed from Level 22
