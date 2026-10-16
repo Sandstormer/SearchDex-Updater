@@ -3,7 +3,7 @@ setlocal enabledelayedexpansion
 
 REM ======= CONFIG =======
 set "gameUrl=https://github.com/pagefaultgames/pokerogue.git"
-set "gameSrcBranch=beta"
+set "gameSrcBranch=main"
 set "gameSrcDest=game_files"
 set "gameDataBranch=game-data"
 set "gameDataDest=game_files/data_output"

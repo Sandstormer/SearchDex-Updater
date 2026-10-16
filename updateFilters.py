@@ -331,7 +331,7 @@ for line in moveData: # Loop through all the move lines from the game code
             tagList.append(30)
         elif '.bitingMove()' in line:
             tagList.append(31)
-        elif '.triageMove()' in line:
+        elif '.healingMove()' in line:
             tagList.append(25)
         elif '.soundBased()' in line:
             tagList.append(35) # "Sound based move"
@@ -436,7 +436,7 @@ for line in moveData: # Loop through all the move lines from the game code
             tagList.append(11)
         elif 'RecoilAttr' in line:
             tagList.append(13)
-        elif 'FrenzyAttr' in line: # outrage
+        elif 'BattlerTagType.FRENZY' in line: # outrage
             tagList.append(45)
         elif 'HitHealAttr, 1' in line:
             tagList.append(15)

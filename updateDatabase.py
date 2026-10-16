@@ -28,7 +28,7 @@ with open(f"{pathJSON}/species.json", "r", encoding="utf-8", errors="replace") a
     species_data = json.load(f)
 with open(f"{pathJSON}/evolutions.json", "r", encoding="utf-8", errors="replace") as f:
     evolution_data = json.load(f)
-with open(f"{pathJSON}/tm-tiers.json", "r", encoding="utf-8", errors="replace") as f:
+with open(f"{pathJSON}/tms.json", "r", encoding="utf-8", errors="replace") as f:
     tm_tier_data_raw = json.load(f)
 tmTierValues = { "COMMON":209, "GREAT":210, "ULTRA":211 }
 tm_tier_data = { format_for_disp(line["move"]): tmTierValues[line["tier"]] for line in tm_tier_data_raw }
@@ -586,6 +586,10 @@ for i,line in enumerate(poke_data):
                 for key,value in prevLine[28].items():
                     if key not in line[28] and value not in [204,208]: # If old move missing from new data
                         patch_review.append(f'{line[5]}: {key} removed from {MoveSrcText(value)}')
+            elif j == 40:
+                if len(line[40]) != len(prevLine[40]) or any(line[40][i][1] != prevLine[40][i][1] for i in range(len(line[40]))):
+                    attPatchCount[j] += 1
+                    patch_review.append(f'{line[5]}: {attNames[j]} changed from {prevLine[j]} to {line[j]}')
             elif str(line[j]) != str(prevLine[j]): # Compare all other attributes
                 attPatchCount[j] += 1
                 if j not in [24,25,26,27] or ( line[33] and not line[37] ): # Don't show egg moves, except on starter mons
