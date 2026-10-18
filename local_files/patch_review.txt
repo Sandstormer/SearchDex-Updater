@@ -90,6 +90,7 @@ Spiky Pichu: newVariants changed from 1 to
 Cleffa: newVariants changed from 1 to 
 Ampharos: Dual Chop added to Great TM
 Mega Ampharos: Dual Chop added to Great TM
+Espeon: Safeguard changed from Common TM to Level 23
 Espeon: newVariants changed from 1 to 
 Umbreon: newVariants changed from 1 to 
 Murkrow: Night Slash added to Great TM
@@ -223,7 +224,9 @@ Mega Z Lucario: ab1 changed from Inner Focus to Aura Guard
 Mega Z Lucario: Passive changed from Mega Launcher to Neuroforce
 Mega Z Lucario: Dual Chop added to Great TM
 Mega Z Lucario: newVariants changed from 1 to 
+Croagunk: Close Combat added to Level 52
 Croagunk: Dual Chop added to Great TM
+Toxicroak: Close Combat changed from Ultra TM to Level 60
 Toxicroak: Dual Chop added to Great TM
 Lumineon: Hydro Pump changed from Ultra TM to Level 66
 Electivire: Dual Chop added to Great TM
@@ -232,6 +235,7 @@ Leafeon: newVariants changed from 1 to
 Glaceon: newVariants changed from 1 to 
 Gallade: Dual Chop added to Great TM
 Mega Gallade: Dual Chop added to Great TM
+Probopass: Flash Cannon changed from Great TM to Mushroom
 Froslass: newVariants changed from 1 to 
 Mega Froslass: newVariants changed from 1 to 
 Uxie: Passive changed from Magic Bounce to Aura Guard
@@ -335,7 +339,8 @@ Frogadier: Night Slash added to Great TM
 Frogadier: newVariants changed from 1 to 
 Greninja: newVariants changed from 1 to 
 Mega Greninja: newVariants changed from 1 to 
-Gogoat: Megahorn added to Ultra TM
+Skiddo: Megahorn added to Level 54
+Gogoat: Megahorn added to Level 65
 Pancham: Dual Chop added to Great TM
 Pangoro: Dual Chop added to Great TM
 Mega Meowstic: newVariants changed from 1 to 
@@ -405,8 +410,9 @@ Zeraora: Dual Chop added to Great TM
 Zeraora: newVariants changed from 1 to 
 Mega Zeraora: Dual Chop added to Great TM
 Mega Zeraora: newVariants changed from 1 to 
+Nickit: Roar added to Level 10
 Nickit: First Impression added to Ultra TM
-Thievul: Roar added to Common TM
+Thievul: Roar added to Level 10
 Thievul: Trailblaze added to Great TM
 Thievul: First Impression added to Ultra TM
 Arrokuda: Night Slash added to Great TM
@@ -485,6 +491,7 @@ Mabosstiff: Bounce removed from Level 41
 Mabosstiff: Lunge removed from Level 51
 Grafaiai: First Impression added to Ultra TM
 Toedscool: Passive changed from Run Away to Water Absorb
+Toedscool: Egg Move 2 changed from Topsy Turvy to Muddy Water
 Toedscruel: Passive changed from Prankster to Water Absorb
 Capsakid: newVariants changed from 1 to 
 Scovillain: newVariants changed from 1 to 
