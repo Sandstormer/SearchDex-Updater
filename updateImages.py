@@ -177,8 +177,8 @@ def convert_to_exact_palette(img: Image.Image) -> Image.Image:
     arr = np.array(img.convert("RGBA"))
     h, w, _ = arr.shape
     pixels = arr.reshape(-1, 4)
-    mask = ( pixels[:, 3] == 0 ) # Create a boolean mask where alpha is 0
-    pixels[mask, :3] = 0 # Set RGB channels to 0 where mask is True
+    alpha_mask = ( pixels[:, 3] == 0 ) # Create a boolean mask where alpha is 0
+    pixels[alpha_mask, :3] = 0 # Set RGB channels to 0 where mask is True
 
     # Collect unique colors
     unique_colors = np.unique(pixels, axis=0)
@@ -252,9 +252,8 @@ def processImage(spriteIndex, shinyIndex, femIndex, backIndex):
     if sliced_img.mode != 'P':
         sliced_img = convert_to_exact_palette(sliced_img)
 
-    # Crop to a bounding box of solid pixels
-    pixels = ( np.array(sliced_img) != sliced_img.info['transparency'] )
-    sliced_img = sliced_img.crop(Image.fromarray(pixels).getbbox())
+    alpha_mask = np.asarray(sliced_img.convert('RGBA'))[:, :, 3] # Get an alpha mask of the image
+    sliced_img = sliced_img.crop(Image.fromarray(alpha_mask).getbbox()) # Crop to a bounding box of solid pixels
 
     # Check for differences with the previous image
     if os.path.isfile(f"local_files/images_prev/{simpleName}.png"):
