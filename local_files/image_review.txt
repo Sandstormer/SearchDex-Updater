@@ -1,7 +1,57 @@
-1000_1 - 28 colors changed (+14 -14) (1444 pixels)
-1000_1b - 23 colors changed (+13 -10) (1426 pixels)
+1000_0 - 33 colors changed (+18 -15) (size/pose changed)
+1000_1 - 33 colors changed (+18 -15) (size/pose changed)
+1000_2 - 33 colors changed (+18 -15) (size/pose changed)
+1000_3 - 33 colors changed (+18 -15) (size/pose changed)
+1000_0b - 28 colors changed (+15 -13) (size/pose changed)
+1000_1b - 27 colors changed (+15 -12) (size/pose changed)
+1000_2b - 28 colors changed (+15 -13) (size/pose changed)
+1000_3b - 28 colors changed (+15 -13) (size/pose changed)
+1002_0 - 28 colors changed (+15 -13) (size/pose changed)
+1002_1 - 29 colors changed (+16 -13) (size/pose changed)
+1002_0b - 24 colors changed (+13 -11) (size/pose changed)
+1002_1b - 24 colors changed (+13 -11) (size/pose changed)
+1005_0 - 37 colors changed (+22 -15) (size/pose changed)
+1005_1 - 38 colors changed (+22 -16) (size/pose changed)
+1005_2 - New variant
+1005_3 - New variant
+1005_0b - 27 colors changed (+14 -13) (size/pose changed)
+1005_1b - 32 colors changed (+17 -15) (size/pose changed)
+1005_2b - New variant
+1005_3b - New variant
 1008-ultimate-mode_1 - 10 colors changed (+5 -5) (1470 pixels)
 1008-ultimate-mode_1b - 10 colors changed (+5 -5) (1090 pixels)
+1011_0 - 37 colors changed (+20 -17) (size/pose changed)
+1011_1 - 40 colors changed (+20 -20) (size/pose changed)
+1011_2 - 29 colors changed (+17 -12) (size/pose changed)
+1011_3 - 36 colors changed (+20 -16) (size/pose changed)
+1011_0b - 31 colors changed (+17 -14) (size/pose changed)
+1011_1b - 34 colors changed (+17 -17) (size/pose changed)
+1011_2b - 27 colors changed (+16 -11) (size/pose changed)
+1011_3b - 30 colors changed (+16 -14) (size/pose changed)
+1014_0 - 27 colors changed (+14 -13) (size/pose changed)
+1014_1 - 27 colors changed (+14 -13) (size/pose changed)
+1014_0b - 18 colors changed (+9 -9) (size/pose changed)
+1014_1b - 18 colors changed (+9 -9) (size/pose changed)
+1015_0 - 27 colors changed (+15 -12) (size/pose changed)
+1015_1 - 27 colors changed (+15 -12) (size/pose changed)
+1015_0b - 21 colors changed (+11 -10) (size/pose changed)
+1015_1b - 21 colors changed (+11 -10) (size/pose changed)
+1016_0 - 31 colors changed (+19 -12) (size/pose changed)
+1016_1 - 31 colors changed (+19 -12) (size/pose changed)
+1016_0b - 28 colors changed (+15 -13) (size/pose changed)
+1016_1b - 28 colors changed (+15 -13) (size/pose changed)
+1019_0 - 49 colors changed (+27 -22) (size/pose changed)
+1019_1 - 47 colors changed (+28 -19) (size/pose changed)
+1019_2 - 47 colors changed (+26 -21) (size/pose changed)
+1019_3 - 49 colors changed (+27 -22) (size/pose changed)
+1019_0b - 49 colors changed (+28 -21) (size/pose changed)
+1019_1b - 43 colors changed (+28 -15) (size/pose changed)
+1019_2b - 46 colors changed (+27 -19) (size/pose changed)
+1019_3b - 48 colors changed (+28 -20) (size/pose changed)
+1025_0 - 34 colors changed (+17 -17) (size/pose changed)
+1025_1 - 34 colors changed (+17 -17) (size/pose changed)
+1025_0b - 24 colors changed (+12 -12) (size/pose changed)
+1025_1b - 24 colors changed (+12 -12) (size/pose changed)
 123_1 - 20 colors changed (+11 -9) (1112 pixels)
 123_1f - 20 colors changed (+11 -9) (1116 pixels)
 123_1b - 20 colors changed (+12 -8) (1389 pixels)
@@ -14,6 +64,28 @@
 148_0 - 1 colors changed (+0 -1) (size/pose changed)
 148_2 - 1 colors changed (+0 -1) (size/pose changed)
 148_3 - 1 colors changed (+0 -1) (size/pose changed)
+155_0 - 1 colors changed (+1 -0) (2 pixels)
+155_1 - 9 colors changed (+5 -4) (243 pixels)
+155_2 - New variant
+155_3 - New variant
+155_0b - 1 colors changed (+1 -0) (2 pixels)
+155_1b - 9 colors changed (+5 -4) (159 pixels)
+155_2b - New variant
+155_3b - New variant
+156_0 - 2 colors changed (+2 -0) (8 pixels)
+156_1 - 10 colors changed (+6 -4) (380 pixels)
+156_2 - New variant
+156_3 - New variant
+156_0b - 1 colors changed (+1 -0) (8 pixels)
+156_1b - 9 colors changed (+5 -4) (322 pixels)
+156_2b - New variant
+156_3b - New variant
+157_0 - 1 colors changed (+1 -0) (4 pixels)
+157_1 - 9 colors changed (+5 -4) (1251 pixels)
+157_2 - New variant
+157_3 - New variant
+157_2b - New variant
+157_3b - New variant
 175_1 - 20 colors changed (+10 -10) (281 pixels)
 175_1b - 18 colors changed (+9 -9) (297 pixels)
 176_1 - 16 colors changed (+8 -8) (604 pixels)
@@ -22,6 +94,56 @@
 199_1b - 17 colors changed (+8 -9) (1344 pixels)
 200_1 - 24 colors changed (+12 -12) (877 pixels)
 200_1b - 14 colors changed (+7 -7) (730 pixels)
+2037_0 - 6 colors changed (+5 -1) (1221 pixels)
+2037_1 - 18 colors changed (+11 -7) (753 pixels)
+2037_2 - 24 colors changed (+14 -10) (2530 pixels)
+2037_3 - 16 colors changed (+10 -6) (1835 pixels)
+2037_0b - 3 colors changed (+3 -0) (71 pixels)
+2037_1b - 13 colors changed (+8 -5) (1267 pixels)
+2037_2b - 17 colors changed (+10 -7) (1640 pixels)
+2037_3b - 9 colors changed (+6 -3) (1302 pixels)
+2038_0 - 1 colors changed (+1 -0) (15 pixels)
+2038_1 - 2 colors changed (+2 -0) (16 pixels)
+2038_2 - 11 colors changed (+6 -5) (381 pixels)
+2038_3 - 13 colors changed (+7 -6) (1166 pixels)
+2038_0b - 3 colors changed (+3 -0) (91 pixels)
+2038_1b - 2 colors changed (+2 -0) (35 pixels)
+2038_2b - 7 colors changed (+5 -2) (99 pixels)
+2038_3b - 11 colors changed (+7 -4) (1551 pixels)
+208-mega_0 - 4 colors changed (+4 -0) (20 pixels)
+208-mega_1 - 4 colors changed (+4 -0) (20 pixels)
+208-mega_2 - New variant
+208-mega_3 - New variant
+208-mega_0b - 16 colors changed (+10 -6) (size/pose changed)
+208-mega_1b - 20 colors changed (+12 -8) (size/pose changed)
+208-mega_2b - New variant
+208-mega_3b - New variant
+208_0 - 4 colors changed (+4 -0) (20 pixels)
+208_1 - 4 colors changed (+4 -0) (20 pixels)
+208_2 - New variant
+208_3 - New variant
+208_0f - 4 colors changed (+4 -0) (20 pixels)
+208_2f - New variant
+208_3f - New variant
+208_0b - 3 colors changed (+3 -0) (6 pixels)
+208_1b - 3 colors changed (+3 -0) (6 pixels)
+208_2b - New variant
+208_3b - New variant
+208_0fb - 3 colors changed (+3 -0) (6 pixels)
+208_2fb - New variant
+208_3fb - New variant
+209_0 - 3 colors changed (+3 -0) (10 pixels)
+209_1 - 18 colors changed (+10 -8) (441 pixels)
+209_2 - New variant
+209_3 - New variant
+209_0b - 1 colors changed (+1 -0) (1 pixels)
+209_1b - 16 colors changed (+8 -8) (685 pixels)
+209_2b - New variant
+209_3b - New variant
+210_2 - New variant
+210_3 - New variant
+210_2b - New variant
+210_3b - New variant
 212-mega_1 - 18 colors changed (+9 -9) (1890 pixels)
 212-mega_1b - 16 colors changed (+8 -8) (1649 pixels)
 212_1 - 18 colors changed (+9 -9) (1586 pixels)
@@ -40,6 +162,20 @@
 22_0b - 1 colors changed (+0 -1) (size/pose changed)
 22_2b - 1 colors changed (+0 -1) (size/pose changed)
 22_3b - 1 colors changed (+0 -1) (size/pose changed)
+223_0 - 3 colors changed (+3 -0) (30 pixels)
+223_2 - New variant
+223_3 - New variant
+223_0b - 4 colors changed (+4 -0) (70 pixels)
+223_2b - New variant
+223_3b - New variant
+224_2 - New variant
+224_3 - New variant
+224_2f - New variant
+224_3f - New variant
+224_2b - New variant
+224_3b - New variant
+224_2fb - New variant
+224_3fb - New variant
 227_0 - 0 colors changed (+0 -0) (size/pose changed)
 227_2 - 0 colors changed (+0 -0) (size/pose changed)
 227_3 - 0 colors changed (+0 -0) (size/pose changed)
@@ -60,10 +196,111 @@
 245_3 - 2 colors changed (+1 -1) (2364 pixels)
 245_0b - 2 colors changed (+1 -1) (2733 pixels)
 245_3b - 2 colors changed (+1 -1) (2733 pixels)
+249_0 - 2 colors changed (+2 -0) (9 pixels)
+249_1 - 2 colors changed (+2 -0) (9 pixels)
+249_2 - 1 colors changed (+1 -0) (2 pixels)
+249_3 - 1 colors changed (+1 -0) (2 pixels)
+252_1 - 2 colors changed (+1 -1) (113 pixels)
+252_2 - New variant
+252_3 - New variant
+252_1b - 2 colors changed (+1 -1) (101 pixels)
+252_2b - New variant
+252_3b - New variant
+253_0 - 2 colors changed (+1 -1) (4 pixels)
+253_1 - 4 colors changed (+2 -2) (211 pixels)
+253_2 - New variant
+253_3 - New variant
+253_0b - 1 colors changed (+1 -0) (136 pixels)
+253_1b - 3 colors changed (+2 -1) (48 pixels)
+253_2b - New variant
+253_3b - New variant
+254-mega_0 - 5 colors changed (+5 -0) (679 pixels)
+254-mega_1 - 9 colors changed (+7 -2) (1329 pixels)
+254-mega_2 - New variant
+254-mega_3 - New variant
+254-mega_0b - 4 colors changed (+4 -0) (1046 pixels)
+254-mega_1b - 20 colors changed (+12 -8) (1540 pixels)
+254-mega_2b - New variant
+254-mega_3b - New variant
+254_0 - 0 colors changed (+0 -0) (3 pixels)
+254_1 - 4 colors changed (+4 -0) (477 pixels)
+254_2 - New variant
+254_3 - New variant
+254_0b - 1 colors changed (+1 -0) (46 pixels)
+254_1b - 5 colors changed (+5 -0) (846 pixels)
+254_2b - New variant
+254_3b - New variant
 256_1 - 21 colors changed (+10 -11) (1163 pixels)
 256_1f - 23 colors changed (+12 -11) (911 pixels)
 256_1b - 12 colors changed (+6 -6) (1034 pixels)
 256_1fb - 13 colors changed (+7 -6) (1000 pixels)
+258_0 - 1 colors changed (+1 -0) (3 pixels)
+258_2 - New variant
+258_3 - New variant
+258_2b - New variant
+258_3b - New variant
+259_2 - New variant
+259_3 - New variant
+259_2b - New variant
+259_3b - New variant
+260-mega_2 - New variant
+260-mega_3 - New variant
+260-mega_2b - New variant
+260-mega_3b - New variant
+260_2 - New variant
+260_3 - New variant
+260_2b - New variant
+260_3b - New variant
+27_2 - New variant
+27_3 - New variant
+27_2b - New variant
+27_3b - New variant
+270_0 - 1 colors changed (+1 -0) (4 pixels)
+270_1 - 1 colors changed (+1 -0) (4 pixels)
+270_2 - New variant
+270_3 - New variant
+270_2b - New variant
+270_3b - New variant
+271_2 - New variant
+271_3 - New variant
+271_2b - New variant
+271_3b - New variant
+272_0 - 4 colors changed (+4 -0) (158 pixels)
+272_1 - 4 colors changed (+4 -0) (158 pixels)
+272_2 - New variant
+272_3 - New variant
+272_0f - 4 colors changed (+4 -0) (158 pixels)
+272_1f - 5 colors changed (+5 -0) (158 pixels)
+272_2f - New variant
+272_3f - New variant
+272_0b - 1 colors changed (+1 -0) (67 pixels)
+272_1b - 1 colors changed (+1 -0) (67 pixels)
+272_2b - New variant
+272_3b - New variant
+272_0fb - 1 colors changed (+1 -0) (67 pixels)
+272_1fb - 1 colors changed (+1 -0) (67 pixels)
+272_2fb - New variant
+272_3fb - New variant
+28_0 - 9 colors changed (+8 -1) (209 pixels)
+28_1 - 20 colors changed (+12 -8) (1111 pixels)
+28_2 - New variant
+28_3 - New variant
+28_0b - 7 colors changed (+6 -1) (107 pixels)
+28_1b - 20 colors changed (+11 -9) (1267 pixels)
+28_2b - New variant
+28_3b - New variant
+283_2 - New variant
+283_3 - New variant
+283_2b - New variant
+283_3b - New variant
+284_0 - 6 colors changed (+6 -0) (65 pixels)
+284_1 - 4 colors changed (+4 -0) (65 pixels)
+284_2 - New variant
+284_3 - New variant
+284_0b - 4 colors changed (+4 -0) (28 pixels)
+284_1b - 2 colors changed (+2 -0) (115 pixels)
+284_2b - New variant
+284_3b - New variant
 290_1 - 30 colors changed (+15 -15) (701 pixels)
 290_1b - 29 colors changed (+15 -14) (777 pixels)
 291_1 - 34 colors changed (+14 -20) (983 pixels)
@@ -102,6 +339,14 @@
 324_1b - 7 colors changed (+7 -0) (837 pixels)
 324_2b - 7 colors changed (+7 -0) (837 pixels)
 324_3b - 7 colors changed (+7 -0) (837 pixels)
+325_2 - 0 colors changed (+0 -0) (149 pixels)
+325_2b - 2 colors changed (+1 -1) (354 pixels)
+326_2 - 10 colors changed (+5 -5) (310 pixels)
+326_3 - 14 colors changed (+7 -7) (626 pixels)
+326_2b - 6 colors changed (+3 -3) (203 pixels)
+326_3b - 12 colors changed (+6 -6) (765 pixels)
+344_0 - 2 colors changed (+2 -0) (195 pixels)
+344_0b - 2 colors changed (+2 -0) (187 pixels)
 351-rainy_1 - 24 colors changed (+12 -12) (902 pixels)
 351-rainy_1b - 22 colors changed (+11 -11) (909 pixels)
 351-snowy_1 - 22 colors changed (+11 -11) (1319 pixels)
@@ -110,6 +355,21 @@
 351-sunny_1b - 10 colors changed (+5 -5) (509 pixels)
 352_1 - 24 colors changed (+12 -12) (1226 pixels)
 352_1b - 22 colors changed (+11 -11) (1372 pixels)
+355_0 - 4 colors changed (+2 -2) (36 pixels)
+355_1 - 16 colors changed (+8 -8) (740 pixels)
+355_2 - New variant
+355_3 - New variant
+355_0b - 5 colors changed (+4 -1) (20 pixels)
+355_1b - 15 colors changed (+9 -6) (890 pixels)
+355_2b - New variant
+355_3b - New variant
+356_0 - 1 colors changed (+1 -0) (26 pixels)
+356_1 - 5 colors changed (+3 -2) (395 pixels)
+356_2 - New variant
+356_3 - New variant
+356_1b - 2 colors changed (+1 -1) (244 pixels)
+356_2b - New variant
+356_3b - New variant
 358_0 - 0 colors changed (+0 -0) (size/pose changed)
 358_2 - 0 colors changed (+0 -0) (size/pose changed)
 358_3 - 0 colors changed (+0 -0) (size/pose changed)
@@ -166,6 +426,22 @@
 423-west_1b - 15 colors changed (+9 -6) (1202 pixels)
 429_1 - 22 colors changed (+11 -11) (1824 pixels)
 429_1b - 18 colors changed (+9 -9) (1578 pixels)
+431_0 - 7 colors changed (+5 -2) (183 pixels)
+431_1 - 27 colors changed (+15 -12) (805 pixels)
+431_2 - New variant
+431_3 - New variant
+431_0b - 5 colors changed (+4 -1) (335 pixels)
+431_1b - 23 colors changed (+13 -10) (442 pixels)
+431_2b - New variant
+431_3b - New variant
+432_0 - 3 colors changed (+3 -0) (139 pixels)
+432_1 - 8 colors changed (+5 -3) (532 pixels)
+432_2 - New variant
+432_3 - New variant
+432_0b - 5 colors changed (+5 -0) (163 pixels)
+432_1b - 7 colors changed (+6 -1) (429 pixels)
+432_2b - New variant
+432_3b - New variant
 434_0b - 0 colors changed (+0 -0) (size/pose changed)
 434_2b - 0 colors changed (+0 -0) (size/pose changed)
 434_3b - 0 colors changed (+0 -0) (size/pose changed)
@@ -180,6 +456,14 @@
 466_1b - 16 colors changed (+8 -8) (2660 pixels)
 468_1 - 20 colors changed (+10 -10) (1462 pixels)
 468_1b - 20 colors changed (+10 -10) (1565 pixels)
+477_0 - 2 colors changed (+0 -2) (44 pixels)
+477_1 - 24 colors changed (+11 -13) (1873 pixels)
+477_2 - New variant
+477_3 - New variant
+477_0b - 0 colors changed (+0 -0) (1 pixels)
+477_1b - 18 colors changed (+9 -9) (1965 pixels)
+477_2b - New variant
+477_3b - New variant
 485_1 - 0 colors changed (+0 -0) (size/pose changed)
 485_1b - 1 colors changed (+0 -1) (size/pose changed)
 491_1 - 0 colors changed (+0 -0) (size/pose changed)
@@ -199,11 +483,41 @@
 536_0b - 0 colors changed (+0 -0) (size/pose changed)
 536_2b - 0 colors changed (+0 -0) (size/pose changed)
 536_3b - 0 colors changed (+0 -0) (size/pose changed)
+540_0 - 4 colors changed (+4 -0) (41 pixels)
+540_1 - 4 colors changed (+4 -0) (41 pixels)
+540_2 - 24 colors changed (+14 -10) (542 pixels)
+540_3 - 23 colors changed (+14 -9) (542 pixels)
+540_2b - 12 colors changed (+6 -6) (537 pixels)
+540_3b - 12 colors changed (+6 -6) (537 pixels)
+541_2 - 20 colors changed (+10 -10) (839 pixels)
+541_3 - 21 colors changed (+11 -10) (845 pixels)
+541_2b - 12 colors changed (+6 -6) (938 pixels)
+541_3b - 12 colors changed (+6 -6) (938 pixels)
+542_2 - 24 colors changed (+12 -12) (943 pixels)
+542_3 - 22 colors changed (+12 -10) (943 pixels)
+542_2b - 18 colors changed (+9 -9) (923 pixels)
+542_3b - 18 colors changed (+9 -9) (923 pixels)
 543_0 - 1 colors changed (+0 -1) (size/pose changed)
 543_2 - 1 colors changed (+0 -1) (size/pose changed)
 543_3 - 1 colors changed (+0 -1) (size/pose changed)
 548_1 - 16 colors changed (+8 -8) (536 pixels)
 548_1b - 14 colors changed (+7 -7) (609 pixels)
+550-blue-striped_0 - 0 colors changed (+0 -0) (4 pixels)
+550-blue-striped_1 - 0 colors changed (+0 -0) (4 pixels)
+550-blue-striped_2 - New variant
+550-blue-striped_3 - New variant
+550-blue-striped_0b - 1 colors changed (+1 -0) (10 pixels)
+550-blue-striped_1b - 1 colors changed (+1 -0) (7 pixels)
+550-blue-striped_2b - New variant
+550-blue-striped_3b - New variant
+550-red-striped_0 - 1 colors changed (+1 -0) (8 pixels)
+550-red-striped_1 - 1 colors changed (+1 -0) (8 pixels)
+550-red-striped_2 - New variant
+550-red-striped_3 - New variant
+550-red-striped_0b - 2 colors changed (+2 -0) (11 pixels)
+550-red-striped_1b - 3 colors changed (+3 -0) (13 pixels)
+550-red-striped_2b - New variant
+550-red-striped_3b - New variant
 56_1 - 16 colors changed (+8 -8) (963 pixels)
 56_1b - 16 colors changed (+8 -8) (1034 pixels)
 57_1 - 22 colors changed (+10 -12) (1568 pixels)
@@ -214,10 +528,38 @@
 578_1b - 14 colors changed (+7 -7) (1274 pixels)
 579_1 - 10 colors changed (+5 -5) (593 pixels)
 579_1b - 6 colors changed (+3 -3) (636 pixels)
+580_0 - 4 colors changed (+4 -0) (105 pixels)
+580_1 - 3 colors changed (+3 -0) (103 pixels)
+580_2 - New variant
+580_3 - New variant
+580_0b - 2 colors changed (+2 -0) (71 pixels)
+580_1b - 3 colors changed (+2 -1) (100 pixels)
+580_2b - New variant
+580_3b - New variant
+581_0 - 3 colors changed (+3 -0) (751 pixels)
+581_1 - 2 colors changed (+2 -0) (731 pixels)
+581_2 - New variant
+581_3 - New variant
+581_0b - 3 colors changed (+2 -1) (57 pixels)
+581_1b - 1 colors changed (+1 -0) (30 pixels)
+581_2b - New variant
+581_3b - New variant
 592_1f - 14 colors changed (+7 -7) (1274 pixels)
 592_1fb - 10 colors changed (+5 -5) (1302 pixels)
 593_1f - 13 colors changed (+7 -6) (2467 pixels)
 593_1fb - 10 colors changed (+5 -5) (2473 pixels)
+6157_2 - New variant
+6157_3 - New variant
+6157_2b - New variant
+6157_3b - New variant
+6211_0 - 21 colors changed (+11 -10) (731 pixels)
+6211_1 - 21 colors changed (+11 -10) (731 pixels)
+6211_2 - New variant
+6211_3 - New variant
+6211_0b - 19 colors changed (+10 -9) (760 pixels)
+6211_1b - 19 colors changed (+10 -9) (760 pixels)
+6211_2b - New variant
+6211_3b - New variant
 623_0 - 0 colors changed (+0 -0) (size/pose changed)
 623_1 - 0 colors changed (+0 -0) (size/pose changed)
 623_2 - 0 colors changed (+0 -0) (size/pose changed)
@@ -229,21 +571,168 @@
 646-black_0b - 0 colors changed (+0 -0) (size/pose changed)
 646-black_2b - 0 colors changed (+0 -0) (size/pose changed)
 646-black_3b - 0 colors changed (+0 -0) (size/pose changed)
-650_0 - 1 colors changed (+0 -1) (size/pose changed)
-650_1 - 1 colors changed (+0 -1) (size/pose changed)
-694_1 - 0 colors changed (+0 -0) (12 pixels)
+650_0 - 2 colors changed (+1 -1) (size/pose changed)
+650_1 - 8 colors changed (+4 -4) (size/pose changed)
+650_2 - New variant
+650_3 - New variant
+650_0b - 2 colors changed (+1 -1) (8 pixels)
+650_1b - 4 colors changed (+2 -2) (93 pixels)
+650_2b - New variant
+650_3b - New variant
+651_0 - 3 colors changed (+3 -0) (28 pixels)
+651_1 - 4 colors changed (+3 -1) (133 pixels)
+651_2 - New variant
+651_3 - New variant
+651_1b - 2 colors changed (+1 -1) (140 pixels)
+651_2b - New variant
+651_3b - New variant
+652-mega_0 - 0 colors changed (+0 -0) (1 pixels)
+652-mega_1 - 0 colors changed (+0 -0) (1 pixels)
+652-mega_2 - New variant
+652-mega_3 - New variant
+652-mega_2b - New variant
+652-mega_3b - New variant
+652_2 - New variant
+652_3 - New variant
+652_2b - New variant
+652_3b - New variant
+6550_0 - 1 colors changed (+1 -0) (13 pixels)
+6550_1 - 3 colors changed (+2 -1) (476 pixels)
+6550_2 - New variant
+6550_3 - New variant
+6550_0b - 3 colors changed (+3 -0) (21 pixels)
+6550_1b - 3 colors changed (+3 -0) (21 pixels)
+6550_2b - New variant
+6550_3b - New variant
+659_0 - 2 colors changed (+2 -0) (6 pixels)
+659_1 - 2 colors changed (+2 -0) (6 pixels)
+659_2 - New variant
+659_3 - New variant
+659_2b - New variant
+659_3b - New variant
+660_0 - 5 colors changed (+5 -0) (49 pixels)
+660_1 - 5 colors changed (+5 -0) (49 pixels)
+660_2 - New variant
+660_3 - New variant
+660_0b - 10 colors changed (+5 -5) (1159 pixels)
+660_1b - 4 colors changed (+2 -2) (255 pixels)
+660_2b - New variant
+660_3b - New variant
+694_1 - 2 colors changed (+1 -1) (62 pixels)
+694_2 - New variant
+694_3 - New variant
+694_2b - New variant
+694_3b - New variant
+695_0 - 14 colors changed (+7 -7) (737 pixels)
+695_1 - 6 colors changed (+3 -3) (78 pixels)
+695_2 - New variant
+695_3 - New variant
+695_0b - 12 colors changed (+6 -6) (225 pixels)
+695_1b - 4 colors changed (+2 -2) (105 pixels)
+695_2b - New variant
+695_3b - New variant
 70_0 - 0 colors changed (+0 -0) (size/pose changed)
 70_2 - 0 colors changed (+0 -0) (size/pose changed)
 70_3 - 0 colors changed (+0 -0) (size/pose changed)
+701-mega_1b - 6 colors changed (+3 -3) (1344 pixels)
+708_0 - 4 colors changed (+2 -2) (98 pixels)
+708_1 - 6 colors changed (+3 -3) (196 pixels)
+708_2 - 18 colors changed (+9 -9) (703 pixels)
+708_3 - 18 colors changed (+9 -9) (703 pixels)
+708_0b - 2 colors changed (+1 -1) (124 pixels)
+708_1b - 4 colors changed (+2 -2) (137 pixels)
+708_2b - 14 colors changed (+7 -7) (695 pixels)
+708_3b - 14 colors changed (+7 -7) (695 pixels)
+709_0 - 6 colors changed (+3 -3) (100 pixels)
+709_1 - 8 colors changed (+4 -4) (338 pixels)
+709_2 - 20 colors changed (+10 -10) (2619 pixels)
+709_3 - 20 colors changed (+10 -10) (2619 pixels)
+709_0b - 16 colors changed (+8 -8) (size/pose changed)
+709_1b - 6 colors changed (+3 -3) (size/pose changed)
+709_2b - 16 colors changed (+8 -8) (size/pose changed)
+709_3b - 16 colors changed (+8 -8) (size/pose changed)
 71_0 - 0 colors changed (+0 -0) (size/pose changed)
 71_2 - 0 colors changed (+0 -0) (size/pose changed)
 71_3 - 0 colors changed (+0 -0) (size/pose changed)
-711_1 - 18 colors changed (+9 -9) (1813 pixels)
-711_1b - 20 colors changed (+10 -10) (1673 pixels)
+710-jumbo_0 - New variant
+710-jumbo_1 - New variant
+710-jumbo_2 - New variant
+710-jumbo_3 - New variant
+710-jumbo_0b - New variant
+710-jumbo_1b - New variant
+710-jumbo_2b - New variant
+710-jumbo_3b - New variant
+710-large_0 - New variant
+710-large_1 - New variant
+710-large_2 - New variant
+710-large_3 - New variant
+710-large_0b - New variant
+710-large_1b - New variant
+710-large_2b - New variant
+710-large_3b - New variant
+710-small_0 - New variant
+710-small_1 - New variant
+710-small_2 - New variant
+710-small_3 - New variant
+710-small_0b - New variant
+710-small_1b - New variant
+710-small_2b - New variant
+710-small_3b - New variant
+710_0 - 20 colors changed (+11 -9) (size/pose changed)
+710_1 - 18 colors changed (+10 -8) (size/pose changed)
+710_2 - 20 colors changed (+11 -9) (size/pose changed)
+710_3 - 20 colors changed (+11 -9) (size/pose changed)
+710_0b - 12 colors changed (+6 -6) (size/pose changed)
+710_1b - 12 colors changed (+6 -6) (size/pose changed)
+710_2b - 12 colors changed (+6 -6) (size/pose changed)
+710_3b - 12 colors changed (+6 -6) (size/pose changed)
+711-jumbo_0 - New variant
+711-jumbo_1 - New variant
+711-jumbo_2 - New variant
+711-jumbo_3 - New variant
+711-jumbo_0b - New variant
+711-jumbo_1b - New variant
+711-jumbo_2b - New variant
+711-jumbo_3b - New variant
+711-large_0 - New variant
+711-large_1 - New variant
+711-large_2 - New variant
+711-large_3 - New variant
+711-large_0b - New variant
+711-large_1b - New variant
+711-large_2b - New variant
+711-large_3b - New variant
+711-small_0 - New variant
+711-small_1 - New variant
+711-small_2 - New variant
+711-small_3 - New variant
+711-small_0b - New variant
+711-small_1b - New variant
+711-small_2b - New variant
+711-small_3b - New variant
+711_0 - 6 colors changed (+3 -3) (807 pixels)
+711_1 - 26 colors changed (+13 -13) (1980 pixels)
+711_2 - 26 colors changed (+13 -13) (1980 pixels)
+711_3 - 26 colors changed (+13 -13) (1980 pixels)
+711_0b - 21 colors changed (+10 -11) (size/pose changed)
+711_1b - 21 colors changed (+10 -11) (size/pose changed)
+711_2b - 21 colors changed (+10 -11) (size/pose changed)
+711_3b - 21 colors changed (+10 -11) (size/pose changed)
+72_2 - New variant
+72_3 - New variant
+72_2b - New variant
+72_3b - New variant
 720-unbound_1 - 24 colors changed (+12 -12) (3958 pixels)
 720-unbound_1b - 22 colors changed (+11 -11) (2885 pixels)
 720_1 - 24 colors changed (+12 -12) (1117 pixels)
 720_1b - 22 colors changed (+11 -11) (1063 pixels)
+73_0 - 1 colors changed (+1 -0) (20 pixels)
+73_1 - 1 colors changed (+1 -0) (44 pixels)
+73_2 - New variant
+73_3 - New variant
+73_1b - 2 colors changed (+1 -1) (30 pixels)
+73_2b - New variant
+73_3b - New variant
 782_1b - 1 colors changed (+1 -0) (8 pixels)
 789_1 - 20 colors changed (+10 -10) (1719 pixels)
 789_1b - 18 colors changed (+9 -9) (703 pixels)
@@ -251,12 +740,126 @@
 79_1b - 12 colors changed (+6 -6) (1284 pixels)
 791_1 - 26 colors changed (+12 -14) (3807 pixels)
 791_1b - 22 colors changed (+12 -10) (4397 pixels)
-802_1 - 14 colors changed (+7 -7) (1116 pixels)
-802_1b - 12 colors changed (+6 -6) (778 pixels)
+794_0 - 2 colors changed (+1 -1) (size/pose changed)
+794_1 - 0 colors changed (+0 -0) (size/pose changed)
+794_2 - New variant
+794_3 - New variant
+794_2b - New variant
+794_3b - New variant
+795_0 - 4 colors changed (+3 -1) (3357 pixels)
+795_1 - 1 colors changed (+1 -0) (152 pixels)
+795_2 - New variant
+795_3 - New variant
+795_0b - 0 colors changed (+0 -0) (27 pixels)
+795_1b - 0 colors changed (+0 -0) (27 pixels)
+795_2b - New variant
+795_3b - New variant
+802_0 - 13 colors changed (+5 -8) (1016 pixels)
+802_1 - 15 colors changed (+6 -9) (1142 pixels)
+802_2 - 17 colors changed (+7 -10) (1146 pixels)
+802_3 - 17 colors changed (+7 -10) (1146 pixels)
+802_0b - 7 colors changed (+2 -5) (659 pixels)
+802_1b - 9 colors changed (+3 -6) (778 pixels)
+802_2b - 9 colors changed (+3 -6) (778 pixels)
+802_3b - 9 colors changed (+3 -6) (778 pixels)
+806_0 - 24 colors changed (+1 -23) (3373 pixels)
+806_1 - 2 colors changed (+1 -1) (215 pixels)
+806_2 - New variant
+806_3 - New variant
+806_2b - New variant
+806_3b - New variant
+827_0 - 2 colors changed (+2 -0) (53 pixels)
+827_1 - 1 colors changed (+1 -0) (18 pixels)
+827_2 - New variant
+827_3 - New variant
+827_0b - 1 colors changed (+1 -0) (8 pixels)
+827_1b - 1 colors changed (+1 -0) (9 pixels)
+827_2b - New variant
+827_3b - New variant
+828_0 - 1 colors changed (+1 -0) (13 pixels)
+828_1 - 2 colors changed (+2 -0) (16 pixels)
+828_2 - New variant
+828_3 - New variant
+828_0b - 1 colors changed (+1 -0) (15 pixels)
+828_1b - 1 colors changed (+1 -0) (15 pixels)
+828_2b - New variant
+828_3b - New variant
 84_1 - 16 colors changed (+8 -8) (790 pixels)
 84_1f - 16 colors changed (+8 -8) (832 pixels)
 84_1b - 16 colors changed (+8 -8) (827 pixels)
 84_1fb - 16 colors changed (+8 -8) (892 pixels)
+840_0 - 29 colors changed (+13 -16) (size/pose changed)
+840_1 - 28 colors changed (+15 -13) (size/pose changed)
+840_2 - 23 colors changed (+10 -13) (size/pose changed)
+840_3 - 27 colors changed (+12 -15) (size/pose changed)
+840_0b - 24 colors changed (+11 -13) (size/pose changed)
+840_1b - 24 colors changed (+11 -13) (size/pose changed)
+840_2b - 18 colors changed (+8 -10) (size/pose changed)
+840_3b - 24 colors changed (+11 -13) (size/pose changed)
+841-gigantamax_0 - 19 colors changed (+10 -9) (1476 pixels)
+841-gigantamax_1 - 22 colors changed (+16 -6) (2588 pixels)
+841-gigantamax_2 - 40 colors changed (+20 -20) (3218 pixels)
+841-gigantamax_3 - 42 colors changed (+21 -21) (3218 pixels)
+841-gigantamax_0b - 13 colors changed (+7 -6) (1583 pixels)
+841-gigantamax_1b - 18 colors changed (+11 -7) (2310 pixels)
+841-gigantamax_2b - 31 colors changed (+16 -15) (3197 pixels)
+841-gigantamax_3b - 33 colors changed (+17 -16) (3197 pixels)
+841_0 - 35 colors changed (+17 -18) (size/pose changed)
+841_1 - 32 colors changed (+17 -15) (size/pose changed)
+841_2 - 33 colors changed (+16 -17) (size/pose changed)
+841_3 - 33 colors changed (+16 -17) (size/pose changed)
+841_0b - 29 colors changed (+14 -15) (size/pose changed)
+841_1b - 26 colors changed (+14 -12) (size/pose changed)
+841_2b - 27 colors changed (+13 -14) (size/pose changed)
+841_3b - 28 colors changed (+14 -14) (size/pose changed)
+842-gigantamax_0 - 19 colors changed (+10 -9) (1476 pixels)
+842-gigantamax_1 - 22 colors changed (+16 -6) (2588 pixels)
+842-gigantamax_2 - 40 colors changed (+20 -20) (3218 pixels)
+842-gigantamax_3 - 42 colors changed (+21 -21) (3218 pixels)
+842-gigantamax_0b - 13 colors changed (+7 -6) (1583 pixels)
+842-gigantamax_1b - 18 colors changed (+11 -7) (2310 pixels)
+842-gigantamax_2b - 31 colors changed (+16 -15) (3197 pixels)
+842-gigantamax_3b - 33 colors changed (+17 -16) (3197 pixels)
+842_0 - 36 colors changed (+19 -17) (size/pose changed)
+842_1 - 33 colors changed (+19 -14) (size/pose changed)
+842_2 - 28 colors changed (+15 -13) (size/pose changed)
+842_3 - 35 colors changed (+19 -16) (size/pose changed)
+842_0b - 33 colors changed (+17 -16) (size/pose changed)
+842_1b - 30 colors changed (+17 -13) (size/pose changed)
+842_2b - 31 colors changed (+16 -15) (size/pose changed)
+842_3b - 33 colors changed (+17 -16) (size/pose changed)
+848_0 - 20 colors changed (+10 -10) (size/pose changed)
+848_1 - 20 colors changed (+10 -10) (size/pose changed)
+848_2 - New variant
+848_3 - New variant
+848_0b - 14 colors changed (+7 -7) (size/pose changed)
+848_1b - 14 colors changed (+7 -7) (size/pose changed)
+848_2b - New variant
+848_3b - New variant
+849-gigantamax_0 - 7 colors changed (+4 -3) (1486 pixels)
+849-gigantamax_1 - 7 colors changed (+4 -3) (1486 pixels)
+849-gigantamax_2 - New variant
+849-gigantamax_3 - New variant
+849-gigantamax_0b - 7 colors changed (+4 -3) (1311 pixels)
+849-gigantamax_1b - 13 colors changed (+7 -6) (2776 pixels)
+849-gigantamax_2b - New variant
+849-gigantamax_3b - New variant
+849-lowkey_0 - 15 colors changed (+10 -5) (1539 pixels)
+849-lowkey_1 - 15 colors changed (+10 -5) (1539 pixels)
+849-lowkey_2 - New variant
+849-lowkey_3 - New variant
+849-lowkey_0b - 14 colors changed (+9 -5) (1411 pixels)
+849-lowkey_1b - 14 colors changed (+9 -5) (1411 pixels)
+849-lowkey_2b - New variant
+849-lowkey_3b - New variant
+849_0 - 17 colors changed (+11 -6) (1781 pixels)
+849_1 - 17 colors changed (+11 -6) (1781 pixels)
+849_2 - New variant
+849_3 - New variant
+849_0b - 14 colors changed (+9 -5) (1459 pixels)
+849_1b - 14 colors changed (+9 -5) (1459 pixels)
+849_2b - New variant
+849_3b - New variant
 85_1 - 20 colors changed (+10 -10) (1105 pixels)
 85_1f - 20 colors changed (+10 -10) (1235 pixels)
 85_1b - 18 colors changed (+9 -9) (1297 pixels)
@@ -272,6 +875,31 @@
 872_1b - 12 colors changed (+6 -6) (478 pixels)
 873_1 - 24 colors changed (+12 -12) (2529 pixels)
 873_1b - 10 colors changed (+5 -5) (2642 pixels)
+875-no-ice_0 - 2 colors changed (+2 -0) (71 pixels)
+875-no-ice_1 - 4 colors changed (+3 -1) (size/pose changed)
+875-no-ice_2 - New variant
+875-no-ice_3 - New variant
+875-no-ice_0b - 3 colors changed (+3 -0) (14 pixels)
+875-no-ice_1b - 5 colors changed (+4 -1) (size/pose changed)
+875-no-ice_2b - New variant
+875-no-ice_3b - New variant
+875_0 - 8 colors changed (+6 -2) (1497 pixels)
+875_1 - 12 colors changed (+8 -4) (size/pose changed)
+875_2 - New variant
+875_3 - New variant
+875_0b - 10 colors changed (+6 -4) (1526 pixels)
+875_1b - 13 colors changed (+7 -6) (size/pose changed)
+875_2b - New variant
+875_3b - New variant
+890-eternamax_1 - 0 colors changed (+0 -0) (353 pixels)
+890-eternamax_2 - 20 colors changed (+10 -10) (2919 pixels)
+890-eternamax_3 - 14 colors changed (+7 -7) (1639 pixels)
+890-eternamax_2b - 22 colors changed (+11 -11) (2687 pixels)
+890-eternamax_3b - 20 colors changed (+10 -10) (2402 pixels)
+890_2 - 24 colors changed (+12 -12) (1888 pixels)
+890_3 - 26 colors changed (+13 -13) (2509 pixels)
+890_2b - 20 colors changed (+10 -10) (2279 pixels)
+890_3b - 24 colors changed (+12 -12) (2685 pixels)
 8901_1 - 6 colors changed (+3 -3) (1247 pixels)
 8901_1b - 6 colors changed (+3 -3) (1567 pixels)
 891_1 - 6 colors changed (+3 -3) (607 pixels)
@@ -294,45 +922,327 @@
 898-shadow_1b - 16 colors changed (+8 -8) (874 pixels)
 898_1 - 22 colors changed (+11 -11) (2055 pixels)
 898_1b - 20 colors changed (+10 -10) (2151 pixels)
+90_2 - New variant
+90_3 - New variant
+90_2b - New variant
+90_3b - New variant
+902-female_0 - 4 colors changed (+4 -0) (21 pixels)
+902-female_1 - 4 colors changed (+4 -0) (21 pixels)
+902-female_2 - New variant
+902-female_3 - New variant
+902-female_0b - 4 colors changed (+4 -0) (18 pixels)
+902-female_1b - 4 colors changed (+4 -0) (18 pixels)
+902-female_2b - New variant
+902-female_3b - New variant
+902_0 - 4 colors changed (+4 -0) (23 pixels)
+902_1 - 5 colors changed (+5 -0) (24 pixels)
+902_2 - New variant
+902_3 - New variant
+902_0b - 4 colors changed (+4 -0) (20 pixels)
+902_1b - 4 colors changed (+4 -0) (20 pixels)
+902_2b - New variant
+902_3b - New variant
+904_0 - 5 colors changed (+4 -1) (788 pixels)
+904_1 - 25 colors changed (+14 -11) (1987 pixels)
+904_2 - New variant
+904_3 - New variant
+904_0b - 4 colors changed (+3 -1) (1112 pixels)
+904_1b - 22 colors changed (+12 -10) (1858 pixels)
+904_2b - New variant
+904_3b - New variant
+906_0 - 29 colors changed (+11 -18) (size/pose changed)
+906_1 - 29 colors changed (+11 -18) (size/pose changed)
+906_2 - New variant
+906_3 - New variant
+906_0b - 16 colors changed (+8 -8) (size/pose changed)
+906_1b - 16 colors changed (+8 -8) (size/pose changed)
+906_2b - New variant
+906_3b - New variant
+907_0 - 31 colors changed (+19 -12) (size/pose changed)
+907_1 - 32 colors changed (+19 -13) (size/pose changed)
+907_2 - New variant
+907_3 - New variant
+907_0b - 18 colors changed (+9 -9) (size/pose changed)
+907_1b - 18 colors changed (+9 -9) (size/pose changed)
+907_2b - New variant
+907_3b - New variant
+908_0 - 34 colors changed (+19 -15) (size/pose changed)
+908_1 - 34 colors changed (+19 -15) (size/pose changed)
+908_2 - New variant
+908_3 - New variant
+908_0b - 24 colors changed (+11 -13) (size/pose changed)
+908_1b - 24 colors changed (+11 -13) (size/pose changed)
+908_2b - New variant
+908_3b - New variant
+91_0 - 4 colors changed (+4 -0) (239 pixels)
+91_1 - 10 colors changed (+7 -3) (1300 pixels)
+91_2 - New variant
+91_3 - New variant
+91_2b - New variant
+91_3b - New variant
+915_0 - 30 colors changed (+17 -13) (size/pose changed)
+915_1 - 30 colors changed (+17 -13) (size/pose changed)
+915_0b - 17 colors changed (+7 -10) (size/pose changed)
+915_1b - 17 colors changed (+7 -10) (size/pose changed)
+916-female_0 - 36 colors changed (+22 -14) (size/pose changed)
+916-female_1 - 36 colors changed (+22 -14) (size/pose changed)
+916-female_0b - 25 colors changed (+13 -12) (size/pose changed)
+916-female_1b - 25 colors changed (+13 -12) (size/pose changed)
+916_0 - 31 colors changed (+17 -14) (size/pose changed)
+916_1 - 33 colors changed (+18 -15) (size/pose changed)
+916_0b - 21 colors changed (+10 -11) (size/pose changed)
+916_1b - 23 colors changed (+11 -12) (size/pose changed)
+917_0 - 27 colors changed (+14 -13) (size/pose changed)
+917_1 - 24 colors changed (+12 -12) (size/pose changed)
+917_2 - New variant
+917_3 - New variant
+917_0b - 19 colors changed (+8 -11) (size/pose changed)
+917_1b - 15 colors changed (+6 -9) (size/pose changed)
+917_2b - New variant
+917_3b - New variant
+918_0 - 27 colors changed (+13 -14) (size/pose changed)
+918_1 - 28 colors changed (+14 -14) (size/pose changed)
+918_2 - New variant
+918_3 - New variant
+918_0b - 23 colors changed (+11 -12) (size/pose changed)
+918_1b - 23 colors changed (+11 -12) (size/pose changed)
+918_2b - New variant
+918_3b - New variant
 919_1 - 28 colors changed (+14 -14) (709 pixels)
 919_1b - 24 colors changed (+13 -11) (579 pixels)
-92_1 - 10 colors changed (+5 -5) (303 pixels)
-92_1b - 8 colors changed (+4 -4) (402 pixels)
+92_0 - 5 colors changed (+3 -2) (279 pixels)
+92_1 - 16 colors changed (+8 -8) (1543 pixels)
+92_2 - 12 colors changed (+6 -6) (901 pixels)
+92_3 - 12 colors changed (+6 -6) (1180 pixels)
+92_0b - 5 colors changed (+3 -2) (394 pixels)
+92_1b - 14 colors changed (+7 -7) (1588 pixels)
+92_2b - 10 colors changed (+5 -5) (995 pixels)
+92_3b - 10 colors changed (+5 -5) (1303 pixels)
 920_1 - 23 colors changed (+12 -11) (1148 pixels)
 920_1b - 20 colors changed (+10 -10) (1342 pixels)
+921_0 - 29 colors changed (+15 -14) (size/pose changed)
+921_1 - 29 colors changed (+15 -14) (size/pose changed)
+921_0b - 16 colors changed (+7 -9) (size/pose changed)
+921_1b - 16 colors changed (+7 -9) (size/pose changed)
+922_0 - 27 colors changed (+14 -13) (size/pose changed)
+922_1 - 27 colors changed (+14 -13) (size/pose changed)
+922_0b - 16 colors changed (+7 -9) (size/pose changed)
+922_1b - 16 colors changed (+7 -9) (size/pose changed)
+923_0 - 25 colors changed (+12 -13) (size/pose changed)
+923_1 - 25 colors changed (+12 -13) (size/pose changed)
+923_0b - 13 colors changed (+6 -7) (size/pose changed)
+923_1b - 13 colors changed (+6 -7) (size/pose changed)
 924_1 - 16 colors changed (+8 -8) (1634 pixels)
 924_1b - 16 colors changed (+8 -8) (1838 pixels)
 925-four_1 - 18 colors changed (+9 -9) (1885 pixels)
 925-four_1b - 16 colors changed (+8 -8) (2072 pixels)
 925-three_1 - 20 colors changed (+10 -10) (1954 pixels)
 925-three_1b - 16 colors changed (+8 -8) (1842 pixels)
-93_1 - 6 colors changed (+3 -3) (1063 pixels)
-93_1b - 6 colors changed (+3 -3) (1277 pixels)
-935_1 - 17 colors changed (+8 -9) (530 pixels)
+926_0 - 24 colors changed (+10 -14) (size/pose changed)
+926_1 - 24 colors changed (+10 -14) (size/pose changed)
+926_0b - 17 colors changed (+7 -10) (size/pose changed)
+926_1b - 17 colors changed (+7 -10) (size/pose changed)
+927_0 - 32 colors changed (+17 -15) (size/pose changed)
+927_1 - 33 colors changed (+17 -16) (size/pose changed)
+927_0b - 23 colors changed (+13 -10) (size/pose changed)
+927_1b - 23 colors changed (+13 -10) (size/pose changed)
+93_1 - 14 colors changed (+7 -7) (1483 pixels)
+93_2 - 16 colors changed (+8 -8) (1583 pixels)
+93_3 - 16 colors changed (+8 -8) (1583 pixels)
+93_1b - 12 colors changed (+6 -6) (1634 pixels)
+93_2b - 14 colors changed (+7 -7) (1684 pixels)
+93_3b - 14 colors changed (+7 -7) (1684 pixels)
+935_1 - 19 colors changed (+10 -9) (530 pixels)
 935_1b - 16 colors changed (+8 -8) (666 pixels)
-936_1 - 27 colors changed (+13 -14) (1647 pixels)
+936_1 - 28 colors changed (+14 -14) (1647 pixels)
 936_1b - 20 colors changed (+10 -10) (1495 pixels)
-937_1 - 25 colors changed (+13 -12) (1763 pixels)
+937_1 - 26 colors changed (+14 -12) (1763 pixels)
 937_1b - 20 colors changed (+11 -9) (1500 pixels)
-94-gigantamax_1 - 10 colors changed (+5 -5) (2106 pixels)
-94-gigantamax_1b - 2 colors changed (+1 -1) (548 pixels)
-94-mega_1 - 13 colors changed (+6 -7) (774 pixels)
-94-mega_1b - 14 colors changed (+7 -7) (2286 pixels)
-94_1 - 18 colors changed (+9 -9) (1715 pixels)
+94-gigantamax_0 - 6 colors changed (+5 -1) (304 pixels)
+94-gigantamax_1 - 19 colors changed (+11 -8) (4174 pixels)
+94-gigantamax_2 - 36 colors changed (+18 -18) (5245 pixels)
+94-gigantamax_3 - 40 colors changed (+18 -22) (5245 pixels)
+94-gigantamax_0b - 1 colors changed (+1 -0) (13 pixels)
+94-gigantamax_1b - 5 colors changed (+3 -2) (913 pixels)
+94-gigantamax_2b - 12 colors changed (+7 -5) (5095 pixels)
+94-gigantamax_3b - 12 colors changed (+7 -5) (5095 pixels)
+94-mega_0 - 9 colors changed (+6 -3) (514 pixels)
+94-mega_1 - 24 colors changed (+13 -11) (1493 pixels)
+94-mega_2 - 33 colors changed (+17 -16) (2115 pixels)
+94-mega_3 - 33 colors changed (+17 -16) (2115 pixels)
+94-mega_0b - 2 colors changed (+1 -1) (479 pixels)
+94-mega_1b - 12 colors changed (+6 -6) (2112 pixels)
+94-mega_2b - 16 colors changed (+8 -8) (2359 pixels)
+94-mega_3b - 16 colors changed (+8 -8) (2359 pixels)
+94_1 - 18 colors changed (+9 -9) (1758 pixels)
+94_2 - 22 colors changed (+11 -11) (1778 pixels)
+94_3 - 22 colors changed (+11 -11) (1778 pixels)
 94_1b - 10 colors changed (+5 -5) (1847 pixels)
-957_1 - 14 colors changed (+7 -7) (405 pixels)
-957_1b - 12 colors changed (+6 -6) (444 pixels)
-958_1 - 15 colors changed (+7 -8) (522 pixels)
-958_1b - 14 colors changed (+7 -7) (455 pixels)
-959_1 - 20 colors changed (+10 -10) (949 pixels)
-959_1b - 20 colors changed (+10 -10) (1107 pixels)
+94_2b - 10 colors changed (+5 -5) (1847 pixels)
+94_3b - 9 colors changed (+5 -4) (1847 pixels)
+946_0 - 25 colors changed (+14 -11) (size/pose changed)
+946_1 - 25 colors changed (+14 -11) (size/pose changed)
+946_0b - 21 colors changed (+10 -11) (size/pose changed)
+946_1b - 21 colors changed (+10 -11) (size/pose changed)
+947_0 - 30 colors changed (+17 -13) (size/pose changed)
+947_1 - 30 colors changed (+17 -13) (size/pose changed)
+947_0b - 23 colors changed (+10 -13) (size/pose changed)
+947_1b - 23 colors changed (+10 -13) (size/pose changed)
+95_1 - 4 colors changed (+2 -2) (1137 pixels)
+95_2 - New variant
+95_3 - New variant
+95_1b - 4 colors changed (+2 -2) (1705 pixels)
+95_2b - New variant
+95_3b - New variant
+950_0 - 29 colors changed (+15 -14) (size/pose changed)
+950_1 - 29 colors changed (+15 -14) (size/pose changed)
+950_2 - New variant
+950_3 - New variant
+950_0b - 25 colors changed (+13 -12) (size/pose changed)
+950_1b - 24 colors changed (+13 -11) (size/pose changed)
+950_2b - New variant
+950_3b - New variant
+953_0 - 38 colors changed (+23 -15) (size/pose changed)
+953_1 - 28 colors changed (+17 -11) (size/pose changed)
+953_2 - 30 colors changed (+19 -11) (size/pose changed)
+953_3 - 32 colors changed (+20 -12) (size/pose changed)
+953_0b - 26 colors changed (+16 -10) (size/pose changed)
+953_1b - 20 colors changed (+12 -8) (size/pose changed)
+953_2b - 20 colors changed (+13 -7) (size/pose changed)
+953_3b - 22 colors changed (+14 -8) (size/pose changed)
+954_0 - 41 colors changed (+27 -14) (size/pose changed)
+954_1 - 40 colors changed (+26 -14) (size/pose changed)
+954_2 - 26 colors changed (+19 -7) (size/pose changed)
+954_3 - 24 colors changed (+18 -6) (size/pose changed)
+954_0b - 35 colors changed (+21 -14) (size/pose changed)
+954_1b - 34 colors changed (+20 -14) (size/pose changed)
+954_2b - 21 colors changed (+14 -7) (size/pose changed)
+954_3b - 21 colors changed (+14 -7) (size/pose changed)
+955_0 - 33 colors changed (+18 -15) (size/pose changed)
+955_1 - 33 colors changed (+18 -15) (size/pose changed)
+955_0b - 26 colors changed (+14 -12) (size/pose changed)
+955_1b - 25 colors changed (+13 -12) (size/pose changed)
+956_0 - 35 colors changed (+20 -15) (size/pose changed)
+956_1 - 35 colors changed (+20 -15) (size/pose changed)
+956_0b - 24 colors changed (+12 -12) (size/pose changed)
+956_1b - 24 colors changed (+12 -12) (size/pose changed)
+957_0 - 34 colors changed (+19 -15) (size/pose changed)
+957_1 - 34 colors changed (+19 -15) (size/pose changed)
+957_2 - 26 colors changed (+15 -11) (size/pose changed)
+957_3 - 35 colors changed (+19 -16) (size/pose changed)
+957_0b - 26 colors changed (+16 -10) (size/pose changed)
+957_1b - 26 colors changed (+16 -10) (size/pose changed)
+957_2b - 20 colors changed (+13 -7) (size/pose changed)
+957_3b - 26 colors changed (+16 -10) (size/pose changed)
+958_0 - 34 colors changed (+19 -15) (size/pose changed)
+958_1 - 35 colors changed (+19 -16) (size/pose changed)
+958_2 - 25 colors changed (+14 -11) (size/pose changed)
+958_3 - 34 colors changed (+19 -15) (size/pose changed)
+958_0b - 28 colors changed (+15 -13) (size/pose changed)
+958_1b - 28 colors changed (+15 -13) (size/pose changed)
+958_2b - 20 colors changed (+11 -9) (size/pose changed)
+958_3b - 28 colors changed (+15 -13) (size/pose changed)
+959_0 - 49 colors changed (+25 -24) (size/pose changed)
+959_1 - 49 colors changed (+25 -24) (size/pose changed)
+959_2 - 37 colors changed (+20 -17) (size/pose changed)
+959_3 - 48 colors changed (+25 -23) (size/pose changed)
+959_0b - 40 colors changed (+19 -21) (size/pose changed)
+959_1b - 40 colors changed (+19 -21) (size/pose changed)
+959_2b - 33 colors changed (+16 -17) (size/pose changed)
+959_3b - 39 colors changed (+19 -20) (size/pose changed)
+96_0 - 2 colors changed (+1 -1) (52 pixels)
+96_1 - 2 colors changed (+1 -1) (52 pixels)
+96_2 - New variant
+96_3 - New variant
+96_0b - 1 colors changed (+1 -0) (19 pixels)
+96_1b - 1 colors changed (+1 -0) (19 pixels)
+96_2b - New variant
+96_3b - New variant
+960_0 - 25 colors changed (+11 -14) (size/pose changed)
+960_1 - 12 colors changed (+5 -7) (size/pose changed)
+960_0b - 18 colors changed (+7 -11) (size/pose changed)
+960_1b - 12 colors changed (+4 -8) (size/pose changed)
+961_0 - 24 colors changed (+11 -13) (size/pose changed)
+961_1 - 14 colors changed (+6 -8) (size/pose changed)
+961_0b - 18 colors changed (+6 -12) (size/pose changed)
+961_1b - 12 colors changed (+3 -9) (size/pose changed)
 962_1 - 26 colors changed (+13 -13) (1682 pixels)
 962_1b - 26 colors changed (+13 -13) (1803 pixels)
+97_0 - 6 colors changed (+4 -2) (67 pixels)
+97_1 - 10 colors changed (+6 -4) (218 pixels)
+97_2 - New variant
+97_3 - New variant
+97_0f - 6 colors changed (+4 -2) (67 pixels)
+97_1f - 10 colors changed (+6 -4) (217 pixels)
+97_2f - New variant
+97_3f - New variant
+97_0b - 2 colors changed (+0 -2) (23 pixels)
+97_1b - 6 colors changed (+2 -4) (192 pixels)
+97_2b - New variant
+97_3b - New variant
+97_0fb - 2 colors changed (+0 -2) (23 pixels)
+97_1fb - 6 colors changed (+2 -4) (190 pixels)
+97_2fb - New variant
+97_3fb - New variant
 973_1 - 21 colors changed (+10 -11) (642 pixels)
 973_1b - 18 colors changed (+9 -9) (626 pixels)
+976_0 - 32 colors changed (+19 -13) (size/pose changed)
+976_1 - 32 colors changed (+19 -13) (size/pose changed)
+976_2 - New variant
+976_3 - New variant
+976_0b - 23 colors changed (+14 -9) (size/pose changed)
+976_1b - 23 colors changed (+14 -9) (size/pose changed)
+976_2b - New variant
+976_3b - New variant
 979_1 - 11 colors changed (+5 -6) (1598 pixels)
 979_1b - 18 colors changed (+9 -9) (2325 pixels)
+984_0 - 39 colors changed (+25 -14) (size/pose changed)
+984_1 - 39 colors changed (+25 -14) (size/pose changed)
+984_2 - New variant
+984_3 - New variant
+984_0b - 33 colors changed (+19 -14) (size/pose changed)
+984_1b - 33 colors changed (+19 -14) (size/pose changed)
+984_2b - New variant
+984_3b - New variant
+985_0 - 28 colors changed (+16 -12) (size/pose changed)
+985_1 - 28 colors changed (+16 -12) (size/pose changed)
+985_2 - New variant
+985_3 - New variant
+985_0b - 16 colors changed (+8 -8) (size/pose changed)
+985_1b - 16 colors changed (+8 -8) (size/pose changed)
+985_2b - New variant
+985_3b - New variant
+986_0 - 34 colors changed (+19 -15) (size/pose changed)
+986_1 - 34 colors changed (+19 -15) (size/pose changed)
+986_2 - New variant
+986_3 - New variant
+986_0b - 24 colors changed (+12 -12) (size/pose changed)
+986_1b - 24 colors changed (+12 -12) (size/pose changed)
+986_2b - New variant
+986_3b - New variant
 987_1 - 26 colors changed (+13 -13) (1600 pixels)
 987_1b - 20 colors changed (+10 -10) (1089 pixels)
-999_1 - 28 colors changed (+14 -14) (2401 pixels)
-999_1b - 24 colors changed (+12 -12) (2022 pixels)
+990_0 - 28 colors changed (+16 -12) (size/pose changed)
+990_1 - 28 colors changed (+16 -12) (size/pose changed)
+990_2 - New variant
+990_3 - New variant
+990_0b - 26 colors changed (+13 -13) (size/pose changed)
+990_1b - 25 colors changed (+13 -12) (size/pose changed)
+990_2b - New variant
+990_3b - New variant
+999-roaming_0 - 20 colors changed (+10 -10) (size/pose changed)
+999-roaming_1 - 20 colors changed (+10 -10) (size/pose changed)
+999-roaming_2 - New variant
+999-roaming_3 - New variant
+999-roaming_0b - 19 colors changed (+9 -10) (size/pose changed)
+999-roaming_1b - 18 colors changed (+9 -9) (size/pose changed)
+999-roaming_2b - New variant
+999-roaming_3b - New variant
+999_0 - 39 colors changed (+24 -15) (size/pose changed)
+999_1 - 39 colors changed (+24 -15) (size/pose changed)
+999_2 - 39 colors changed (+24 -15) (size/pose changed)
+999_3 - 39 colors changed (+24 -15) (size/pose changed)
+999_0b - 27 colors changed (+14 -13) (size/pose changed)
+999_1b - 27 colors changed (+14 -13) (size/pose changed)
+999_2b - 27 colors changed (+14 -13) (size/pose changed)
+999_3b - 27 colors changed (+14 -13) (size/pose changed)

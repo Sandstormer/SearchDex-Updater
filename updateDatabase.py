@@ -112,7 +112,7 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     line[3] = thisData["dexNum"] # dex number [3]
     line[4] = thisData["spriteKey"] # image filename [4]
     line[5] = f'{line[1]} {line[2]}' if line[1] else line[2] # Display Name [5] (Form + Species)
-    line[6] = format_for_disp(thisData["category"]) # Species description (unused) [6]
+    # Species description (unused) [6]
 
     # Remove unobtainable pokemon, and "Complete 10% Zygarde"
     if thisData["isUnobtainable"] or '10 Complete' in line[5]:
@@ -200,16 +200,18 @@ for i, thisData in enumerate(species_data): # Function for reading from game dat
     for move in egg_move_data[line[42]].keys(): # Add egg moves to the move dictionary [28]
         line[28][move] = egg_move_data[line[42]][move] # Add the egg move to the move dict
     # Import level moves from the Species Name [2] **********
-    for moveName, moveCode in level_move_data[line[2]][None]: # For all forms
-        assignMoveCode(moveName, moveCode, line)
+    if None in level_move_data[line[2]]:
+        for moveName, moveCode in level_move_data[line[2]][None]: # For all forms
+            assignMoveCode(moveName, moveCode, line)
     if line[1] != None and line[1] in level_move_data[line[2]]: # Uses form key
         for moveName, moveCode in level_move_data[line[2]][line[1]]: # For specific forms
             assignMoveCode(moveName, moveCode, line)
         print(f"Imported unique level moves for {line[5]}")
         level_move_data[line[2]][line[1]] = []
     if line[2] in tm_move_data: # If species is listed, add TM moves **********
-        for moveName in tm_move_data[line[2]][None]: # For all forms
-            assignMoveCode(moveName, tm_tier_data[moveName], line)
+        if None in tm_move_data[line[2]]:
+            for moveName in tm_move_data[line[2]][None]: # For all forms
+                assignMoveCode(moveName, tm_tier_data[moveName], line)
         if line[1] != None and line[1] in tm_move_data[line[2]]:
             for moveName in tm_move_data[line[2]][line[1]]: # For specific forms
                 assignMoveCode(moveName, tm_tier_data[moveName], line)

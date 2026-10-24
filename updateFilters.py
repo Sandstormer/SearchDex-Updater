@@ -563,11 +563,10 @@ costData = re.findall(r'StarterCandyCosts\[\] = \[\n(.*?)\];\n', costDataRaw, re
 costData = costData.split('\n')[:-1]
 passiveData = [re.findall(r'passive: (.*?),', line)[0] for line in costData]
 costParsed = [[
-    re.findall(r'\[(.*?)\]', line)[0].split(', '), # costReduction
-    re.findall(r'\[(.*?)\]', line)[1].split(', '), # eggCosts
-    re.findall(r'\[(.*?)\]', line)[2].split(', '), # eggCostReductionThresholds
+    *re.findall(r'costReduction: \[(.*?)\]', line)[0].split(', '), # costReduction
+    re.findall(r'eggCost: (.*?) }', line)[0], # eggCost
 ] for line in costData]
-costParsed = [[[int(arg) for arg in line] for line in cost] for cost in costParsed]
+costParsed = [[int(line) for line in cost] for cost in costParsed]
 friendData = re.findall(r'getStarterValueFriendshipCap(.*?)}\n}', costDataRaw, re.DOTALL)[0]
 friendData = re.findall(r'return (.*?);', friendData, re.DOTALL)
 friendData.append(friendData[-1])

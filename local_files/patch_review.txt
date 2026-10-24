@@ -1,27 +1,112 @@
+Metapod: Harden changed from Evolution to Level 1
+Metapod: Tackle added to Level 1
+Metapod: String Shot added to Level 1
+Metapod: Bug Bite changed from Great TM to Level 9
+Butterfree: Harden added to Evolution
+Butterfree: Bug Bite changed from Great TM to Level 9
+Gigantamax Butterfree: Harden added to Evolution
+Gigantamax Butterfree: Bug Bite changed from Great TM to Level 9
 Weedle: newVariants changed from 1 to 
+Kakuna: Harden changed from Evolution to Level 1
+Kakuna: Poison Sting added to Level 1
+Kakuna: String Shot added to Level 1
+Kakuna: Bug Bite changed from Great TM to Level 9
 Kakuna: newVariants changed from 1 to 
+Beedrill: Harden added to Evolution
+Beedrill: Bug Bite changed from Great TM to Level 9
 Beedrill: newVariants changed from 1 to 
+Mega Beedrill: Harden added to Evolution
+Mega Beedrill: Bug Bite changed from Great TM to Level 9
 Mega Beedrill: newVariants changed from 1 to 
+Pidgeot: Hurricane changed from Mushroom to Level 56
+Mega Pidgeot: Hurricane changed from Mushroom to Level 56
+Arbok: Toxic changed from Mushroom to Level 62
+Pikachu: Sweet Kiss added to Level 7
+Pikachu: Nasty Plot changed from Great TM to Level 13
+Pikachu: Charm changed from Common TM to Level 20
 Pikachu: newVariants changed from 1 to 
+Partner Pikachu: Sweet Kiss added to Level 7
+Partner Pikachu: Nasty Plot changed from Great TM to Level 13
+Partner Pikachu: Charm changed from Common TM to Level 20
 Partner Pikachu: newVariants changed from 1 to 
+Cosplay Pikachu: Sweet Kiss added to Level 7
+Cosplay Pikachu: Nasty Plot changed from Great TM to Level 13
+Cosplay Pikachu: Charm changed from Common TM to Level 20
 Cosplay Pikachu: newVariants changed from 1 to 
+Cool Cosplay Pikachu: Sweet Kiss added to Level 7
+Cool Cosplay Pikachu: Nasty Plot changed from Great TM to Level 13
+Cool Cosplay Pikachu: Charm changed from Common TM to Level 20
 Cool Cosplay Pikachu: newVariants changed from 1 to 
+Beauty Cosplay Pikachu: Sweet Kiss added to Level 7
+Beauty Cosplay Pikachu: Nasty Plot changed from Great TM to Level 13
+Beauty Cosplay Pikachu: Charm changed from Common TM to Level 20
 Beauty Cosplay Pikachu: newVariants changed from 1 to 
+Cute Cosplay Pikachu: Sweet Kiss added to Level 7
+Cute Cosplay Pikachu: Nasty Plot changed from Great TM to Level 13
+Cute Cosplay Pikachu: Charm changed from Common TM to Level 20
 Cute Cosplay Pikachu: newVariants changed from 1 to 
+Smart Cosplay Pikachu: Sweet Kiss added to Level 7
+Smart Cosplay Pikachu: Nasty Plot changed from Great TM to Level 13
+Smart Cosplay Pikachu: Charm changed from Common TM to Level 20
 Smart Cosplay Pikachu: newVariants changed from 1 to 
+Tough Cosplay Pikachu: Sweet Kiss added to Level 7
+Tough Cosplay Pikachu: Nasty Plot changed from Great TM to Level 13
+Tough Cosplay Pikachu: Charm changed from Common TM to Level 20
 Tough Cosplay Pikachu: newVariants changed from 1 to 
+Gigantamax Pikachu: Sweet Kiss added to Level 7
+Gigantamax Pikachu: Nasty Plot changed from Great TM to Level 13
+Gigantamax Pikachu: Charm changed from Common TM to Level 20
 Gigantamax Pikachu: newVariants changed from 1 to 
+Raichu: Sweet Kiss added to Level 7
+Raichu: Nasty Plot changed from Great TM to Level 13
+Raichu: Charm changed from Common TM to Level 20
 Raichu: newVariants changed from 1 to 
+Mega X Raichu: Sweet Kiss added to Level 7
+Mega X Raichu: Nasty Plot changed from Great TM to Level 13
+Mega X Raichu: Charm changed from Common TM to Level 20
 Mega X Raichu: newVariants changed from 1 to 
+Mega Y Raichu: Sweet Kiss added to Level 7
+Mega Y Raichu: Nasty Plot changed from Great TM to Level 13
+Mega Y Raichu: Charm changed from Common TM to Level 20
 Mega Y Raichu: newVariants changed from 1 to 
 Sandshrew: Night Slash added to Great TM
+Sandshrew: shvar changed from 1 to 3
+Sandshrew: newVariants changed from  to 1
+Sandslash: Agility changed from Great TM to Level 28
 Sandslash: Night Slash added to Great TM
+Sandslash: shvar changed from 1 to 3
+Sandslash: newVariants changed from  to 1
+Clefairy: Splash added to Level 1
+Clefairy: Charm changed from Common TM to Level 1
+Clefairy: Sweet Kiss added to Level 10
+Clefairy: Copycat added to Level 14
+Clefairy: Magical Leaf changed from Common TM to Level 16
+Clefairy: Bubble Beam added to Level 18
 Clefairy: newVariants changed from 1 to 
 Clefable: Disarming Voice changed from Evolution to Level 1
+Clefable: Splash added to Level 1
+Clefable: Charm changed from Common TM to Level 1
+Clefable: Sweet Kiss added to Level 10
+Clefable: Copycat added to Level 14
+Clefable: Magical Leaf changed from Common TM to Level 16
+Clefable: Bubble Beam added to Level 18
 Clefable: newVariants changed from 1 to 
 Mega Clefable: Disarming Voice changed from Evolution to Level 1
+Mega Clefable: Splash added to Level 1
+Mega Clefable: Charm changed from Common TM to Level 1
+Mega Clefable: Sweet Kiss added to Level 10
+Mega Clefable: Copycat added to Level 14
+Mega Clefable: Magical Leaf changed from Common TM to Level 16
+Mega Clefable: Bubble Beam added to Level 18
 Mega Clefable: newVariants changed from 1 to 
+Jigglypuff: Charm changed from Common TM to Level 1
+Jigglypuff: Sweet Kiss added to Level 9
+Jigglypuff: Copycat added to Level 11
+Wigglytuff: Charm changed from Common TM to Level 1
+Wigglytuff: Sweet Kiss added to Level 9
+Wigglytuff: Copycat added to Level 11
 Venonat: newVariants changed from 1 to 
+Venomoth: Quiver Dance changed from Mushroom to Level 59
 Venomoth: newVariants changed from 1 to 
 Diglett: Mud Bomb changed from Level 25 to Level 23
 Diglett: Slash changed from Level 23 to Level 25
@@ -31,6 +116,7 @@ Mankey: Dual Chop added to Great TM
 Mankey: Night Slash added to Great TM
 Primeape: Dual Chop added to Great TM
 Primeape: Night Slash added to Great TM
+Poliwrath: Mud Bomb added to Level 21
 Poliwrath: Dual Chop added to Great TM
 Abra: Egg Move 2 changed from Baddy Bad to Thunderbolt
 Machop: newVariants changed from 1 to 
@@ -41,16 +127,52 @@ Bellsprout: newVariants changed from 1 to
 Weepinbell: newVariants changed from 1 to 
 Victreebel: newVariants changed from 1 to 
 Mega Victreebel: newVariants changed from 1 to 
+Tentacool: shvar changed from 1 to 3
+Tentacool: newVariants changed from  to 1
+Tentacruel: shvar changed from 1 to 3
+Tentacruel: newVariants changed from  to 1
+Rapidash: Megahorn changed from Mushroom to Level 56
 Farfetchd: Trailblaze added to Great TM
 Farfetchd: First Impression added to Ultra TM
 Seel: Egg Move 2 changed from Bouncy Bubble to Splishy Splash
 Seel: Rare Egg Move changed from Steam Eruption to Bouncy Bubble
+Dewgong: Water Sport added to Level 3
+Dewgong: Water Gun added to Level 5
+Dewgong: Charm changed from Common TM to Level 7
+Shellder: shvar changed from 1 to 3
+Shellder: newVariants changed from  to 1
+Cloyster: shvar changed from 1 to 3
+Cloyster: newVariants changed from  to 1
+Gengar: newVariants changed from  to 1
+Mega Gengar: newVariants changed from  to 1
+Gigantamax Gengar: newVariants changed from  to 1
+Onix: shvar changed from 1 to 3
+Onix: newVariants changed from  to 1
+Drowzee: shvar changed from 1 to 3
+Drowzee: newVariants changed from  to 1
+Hypno: shvar changed from 1 to 3
+Hypno: newVariants changed from  to 1
 Krabby: Night Slash added to Great TM
 Kingler: Night Slash added to Great TM
 Gigantamax Kingler: Night Slash added to Great TM
+Hitmonlee: Mach Punch added to Level 10
+Hitmonlee: Rapid Spin added to Level 10
+Hitmonchan: Rapid Spin added to Level 10
+Hitmonchan: Low Sweep changed from Great TM to Level 10
+Chansey: Copycat added to Level 1
+Chansey: Sweet Kiss added to Level 8
+Chansey: Disarming Voice changed from Common TM to Level 12
+Chansey: Covet changed from Great TM to Level 16
+Chansey: Charm changed from Common TM to Level 20
+Tangela: Ingrain changed from Mushroom to Level 36
 Kangaskhan: Dual Chop added to Great TM
 Mega Kangaskhan: Dual Chop added to Great TM
+Mr Mime: Tickle added to Level 1
 Scyther: Dual Chop added to Great TM
+Jynx: Sweet Kiss added to Level 8
+Jynx: Sing added to Level 18
+Jynx: Lucky Chant added to Level 31
+Jynx: Copycat added to Level 41
 Electabuzz: Dual Chop added to Great TM
 Magmar: Dual Chop added to Great TM
 Pinsir: Slash added to Level 46
@@ -61,13 +183,59 @@ Mega Pinsir: Slash added to Level 46
 Mega Pinsir: Thrash changed from Level 47 to Level 49
 Mega Pinsir: Superpower changed from Level 50 to Level 52
 Mega Pinsir: Guillotine changed from Level 54 to Level 55
+Gyarados: Splash added to Level 1
+Gyarados: Tackle added to Level 15
+Gyarados: Flail added to Level 25
+Mega Gyarados: Splash added to Level 1
+Mega Gyarados: Tackle added to Level 15
+Mega Gyarados: Flail added to Level 25
 Eevee: newVariants changed from 1 to 
 Partner Eevee: newVariants changed from 1 to 
+Gigantamax Eevee: Covet changed from Mushroom to Level 1
 Gigantamax Eevee: newVariants changed from 1 to 
+Vaporeon: Growl added to Level 1
+Vaporeon: Swift changed from Common TM to Level 17
+Vaporeon: Covet changed from Great TM to Level 20
+Vaporeon: Refresh added to Level 23
+Vaporeon: Take Down changed from Great TM to Level 25
+Vaporeon: Charm changed from Common TM to Level 29
+Vaporeon: Baton Pass changed from Common TM to Level 33
+Vaporeon: Copycat added to Level 37
+Vaporeon: Double Edge changed from Ultra TM to Level 41
+Vaporeon: Trump Card added to Level 49
 Vaporeon: newVariants changed from 1 to 
+Jolteon: Growl added to Level 1
+Jolteon: Bite added to Level 17
+Jolteon: Swift changed from Common TM to Level 17
+Jolteon: Covet changed from Great TM to Level 20
+Jolteon: Refresh added to Level 23
+Jolteon: Take Down changed from Great TM to Level 25
+Jolteon: Charm changed from Common TM to Level 29
+Jolteon: Baton Pass changed from Common TM to Level 33
+Jolteon: Copycat added to Level 37
+Jolteon: Double Edge changed from Ultra TM to Level 41
+Jolteon: Trump Card added to Level 49
 Jolteon: newVariants changed from 1 to 
+Flareon: Growl added to Level 1
+Flareon: Swift changed from Common TM to Level 17
+Flareon: Covet changed from Great TM to Level 20
+Flareon: Refresh added to Level 23
+Flareon: Take Down changed from Great TM to Level 25
+Flareon: Charm changed from Common TM to Level 29
+Flareon: Baton Pass changed from Common TM to Level 33
+Flareon: Copycat added to Level 37
+Flareon: Double Edge changed from Ultra TM to Level 41
+Flareon: Trump Card added to Level 49
 Flareon: newVariants changed from 1 to 
 Kabuto: Night Slash added to Great TM
+Snorlax: Metronome changed from Common TM to Level 1
+Snorlax: Odor Sleuth added to Level 1
+Snorlax: Screech changed from Great TM to Level 20
+Snorlax: Flail added to Level 39
+Gigantamax Snorlax: Metronome changed from Common TM to Level 1
+Gigantamax Snorlax: Odor Sleuth added to Level 1
+Gigantamax Snorlax: Screech changed from Great TM to Level 20
+Gigantamax Snorlax: Flail added to Level 39
 Articuno: newVariants changed from 1 to 
 Zapdos: newVariants changed from 1 to 
 Moltres: newVariants changed from 1 to 
@@ -78,47 +246,153 @@ Mega Dragonite: newVariants changed from 1 to
 Mew: Dual Chop added to Great TM
 Chikorita: newVariants changed from 1 to 
 Bayleef: newVariants changed from 1 to 
+Meganium: Petal Blizzard changed from Mushroom to Level 70
 Meganium: newVariants changed from 1 to 
+Mega Meganium: Petal Blizzard changed from Mushroom to Level 70
 Mega Meganium: newVariants changed from 1 to 
+Cyndaquil: shvar changed from 1 to 3
+Cyndaquil: newVariants changed from  to 1
+Quilava: shvar changed from 1 to 3
+Quilava: newVariants changed from  to 1
+Typhlosion: shvar changed from 1 to 3
+Typhlosion: newVariants changed from  to 1
 Mega Feraligatr: newVariants changed from 1 to 
+Noctowl: Sky Attack changed from Mushroom to Level 63
 Spinarak: Night Slash added to Great TM
 Ariados: First Impression added to Ultra TM
 Ariados: Night Slash added to Great TM
+Crobat: Tailwind changed from Mushroom to Level 56
+Crobat: Toxic changed from Mushroom to Level 62
 Crobat: Night Slash added to Great TM
 Pichu: newVariants changed from 1 to 
 Spiky Pichu: newVariants changed from 1 to 
 Cleffa: newVariants changed from 1 to 
+Ampharos: Zap Cannon changed from Mushroom to Level 71
 Ampharos: Dual Chop added to Great TM
+Mega Ampharos: Zap Cannon changed from Mushroom to Level 71
 Mega Ampharos: Dual Chop added to Great TM
+Bellossom: Poison Powder added to Level 14
+Bellossom: Toxic changed from Great TM to Level 24
+Marill: Splash added to Level 1
+Azumarill: Splash added to Level 1
+Politoed: Low Kick changed from Great TM to Level 27
+Politoed: Double Edge changed from Ultra TM to Level 54
+Politoed: Hyper Voice changed from Mushroom to Level 66
+Sunflora: Endeavor changed from Common TM to Level 25
+Sunflora: Synthesis changed from Great TM to Level 28
+Sunflora: Seed Bomb changed from Great TM to Level 43
+Espeon: Growl added to Level 1
+Espeon: Bite added to Level 17
+Espeon: Covet changed from Great TM to Level 20
 Espeon: Safeguard changed from Common TM to Level 23
+Espeon: Refresh added to Level 23
+Espeon: Take Down changed from Great TM to Level 25
+Espeon: Charm changed from Common TM to Level 29
+Espeon: Baton Pass changed from Common TM to Level 33
+Espeon: Copycat added to Level 37
+Espeon: Double Edge changed from Ultra TM to Level 41
+Espeon: Trump Card added to Level 49
 Espeon: newVariants changed from 1 to 
+Umbreon: Growl added to Level 1
+Umbreon: Bite added to Level 17
+Umbreon: Swift changed from Common TM to Level 17
+Umbreon: Covet changed from Great TM to Level 20
+Umbreon: Refresh added to Level 23
+Umbreon: Take Down changed from Great TM to Level 25
+Umbreon: Charm changed from Common TM to Level 29
+Umbreon: Baton Pass changed from Common TM to Level 33
+Umbreon: Copycat added to Level 37
+Umbreon: Double Edge changed from Ultra TM to Level 41
+Umbreon: Trump Card added to Level 49
 Umbreon: newVariants changed from 1 to 
 Murkrow: Night Slash added to Great TM
+Wobbuffet: Amnesia changed from Great TM to Level 1
+Wobbuffet: Splash added to Level 1
+Wobbuffet: Charm changed from Common TM to Level 1
+Wobbuffet: Encore changed from Common TM to Level 1
 Gligar: Night Slash added to Great TM
+Steelix: Rock Polish changed from Great TM to Level 19
+Steelix: Sand Tomb changed from Common TM to Level 37
+Steelix: shvar changed from 1 to 3
+Steelix: newVariants changed from  to 1
+Mega Steelix: Rock Polish changed from Great TM to Level 19
+Mega Steelix: Sand Tomb changed from Common TM to Level 37
+Mega Steelix: shvar changed from 1 to 3
+Mega Steelix: newVariants changed from  to 1
+Snubbull: shvar changed from 1 to 3
+Snubbull: newVariants changed from  to 1
+Granbull: shvar changed from 1 to 3
+Granbull: newVariants changed from  to 1
+Scizor: Vacuum Wave changed from Common TM to Level 1
+Scizor: Wing Attack added to Level 20
+Scizor: Double Team changed from Common TM to Level 36
+Scizor: Air Slash changed from Great TM to Level 49
 Scizor: Dual Chop added to Great TM
+Mega Scizor: Vacuum Wave changed from Common TM to Level 1
+Mega Scizor: Wing Attack added to Level 20
+Mega Scizor: Double Team changed from Common TM to Level 36
+Mega Scizor: Air Slash changed from Great TM to Level 49
 Mega Scizor: Dual Chop added to Great TM
 Teddiursa: Play Nice changed from Level 25 to Level 1
+Teddiursa: Covet changed from Mushroom to Level 15
 Teddiursa: Feint Attack changed from Level 15 to Level 18
 Teddiursa: Sweet Scent changed from Level 18 to Level 22
 Teddiursa: Slash changed from Level 22 to Level 25
 Teddiursa: Night Slash added to Great TM
+Ursaring: Baby Doll Eyes added to Level 1
+Ursaring: Play Nice changed from Level 25 to Level 1
 Ursaring: Covet changed from Level 1 to Level 15
 Ursaring: Feint Attack changed from Level 15 to Level 18
 Ursaring: Sweet Scent changed from Level 18 to Level 22
 Ursaring: Slash changed from Level 22 to Level 25
+Ursaring: Charm changed from Common TM to Level 33
+Ursaring: Fling changed from Common TM to Level 45
 Ursaring: Night Slash added to Great TM
-Ursaring: Play Nice removed from Level 25
+Magcargo: Earth Power changed from Mushroom to Level 58
 Corsola: Egg Move 3 changed from Strength Sap to Salt Cure
 Corsola: Rare Egg Move changed from Salt Cure to Strength Sap
+Remoraid: shvar changed from 1 to 3
+Remoraid: newVariants changed from  to 1
+Octillery: Lock On added to Level 4
+Octillery: shvar changed from 1 to 3
+Octillery: newVariants changed from  to 1
 Skarmory: newVariants changed from 1 to 
 Mega Skarmory: newVariants changed from 1 to 
+Houndoom: Nasty Plot changed from Mushroom to Level 60
+Mega Houndoom: Nasty Plot changed from Mushroom to Level 60
+Donphan: Tackle added to Level 1
+Donphan: Odor Sleuth added to Level 1
+Donphan: Flail added to Level 6
+Donphan: Endure changed from Common TM to Level 19
+Donphan: Natural Gift added to Level 19
+Donphan: Take Down changed from Great TM to Level 28
+Donphan: Charm changed from Common TM to Level 33
+Donphan: Last Resort added to Level 37
+Donphan: Double Edge changed from Ultra TM to Level 42
+Hitmontop: Mach Punch added to Level 10
+Hitmontop: Low Sweep changed from Great TM to Level 10
 Elekid: Dual Chop added to Great TM
 Magby: Dual Chop added to Great TM
+Blissey: Copycat added to Level 1
+Blissey: Sweet Kiss added to Level 8
+Blissey: Disarming Voice changed from Common TM to Level 12
+Blissey: Covet changed from Great TM to Level 16
+Blissey: Charm changed from Common TM to Level 20
 Raikou: newVariants changed from 1 to 
 Entei: newVariants changed from 1 to 
 Suicune: newVariants changed from 1 to 
 Treecko: Night Slash added to Great TM
+Treecko: shvar changed from 1 to 3
+Treecko: newVariants changed from  to 1
 Grovyle: Night Slash added to Great TM
+Grovyle: shvar changed from 1 to 3
+Grovyle: newVariants changed from  to 1
+Sceptile: Dual Chop changed from Mushroom to Level 51
+Sceptile: shvar changed from 1 to 3
+Sceptile: newVariants changed from  to 1
+Mega Sceptile: Dual Chop changed from Mushroom to Level 51
+Mega Sceptile: shvar changed from 1 to 3
+Mega Sceptile: newVariants changed from  to 1
 Torchic: Egg Move 2 changed from Zing Zap to Supercell Slam
 Torchic: Night Slash added to Great TM
 Combusken: Dual Chop added to Great TM
@@ -127,34 +401,171 @@ Blaziken: Dual Chop added to Great TM
 Blaziken: Night Slash added to Great TM
 Mega Blaziken: Dual Chop added to Great TM
 Mega Blaziken: Night Slash added to Great TM
+Mudkip: shvar changed from 1 to 3
+Mudkip: newVariants changed from  to 1
+Marshtomp: shvar changed from 1 to 3
+Marshtomp: newVariants changed from  to 1
+Swampert: shvar changed from 1 to 3
+Swampert: newVariants changed from  to 1
 Mega Swampert: Passive changed from Drizzle to Regenerator
+Mega Swampert: shvar changed from 1 to 3
+Mega Swampert: newVariants changed from  to 1
+Silcoon: Harden changed from Evolution to Level 1
+Silcoon: Tackle added to Level 1
+Silcoon: String Shot added to Level 1
+Silcoon: Poison Sting added to Level 5
+Silcoon: Bug Bite changed from Great TM to Level 15
+Beautifly: Harden added to Evolution
+Beautifly: Gust changed from Evolution to Level 1
+Beautifly: Tackle added to Level 1
+Beautifly: String Shot added to Level 1
+Beautifly: Poison Sting added to Level 5
+Beautifly: Bug Bite changed from Great TM to Level 15
+Cascoon: Harden changed from Evolution to Level 1
+Cascoon: Tackle added to Level 1
+Cascoon: String Shot added to Level 1
+Cascoon: Poison Sting added to Level 5
+Cascoon: Bug Bite changed from Great TM to Level 15
+Dustox: Harden added to Evolution
+Dustox: Gust changed from Evolution to Level 1
+Dustox: Tackle added to Level 1
+Dustox: String Shot added to Level 1
+Dustox: Poison Sting added to Level 5
+Dustox: Bug Bite changed from Great TM to Level 15
+Lotad: shvar changed from 1 to 3
+Lotad: newVariants changed from  to 1
+Lombre: Mist added to Level 9
+Lombre: Natural Gift added to Level 12
+Lombre: Flail added to Level 18
+Lombre: shvar changed from 1 to 3
+Lombre: newVariants changed from  to 1
+Ludicolo: Mist added to Level 9
+Ludicolo: Natural Gift added to Level 12
+Ludicolo: Flail added to Level 18
+Ludicolo: shvar changed from 1 to 3
+Ludicolo: newVariants changed from  to 1
 Seedot: Night Slash added to Great TM
+Nuzleaf: Tackle added to Level 1
+Nuzleaf: Bide added to Level 1
+Nuzleaf: Astonish added to Level 6
+Nuzleaf: Rollout added to Level 11
+Nuzleaf: Headbutt added to Level 24
+Nuzleaf: Explosion changed from Great TM to Level 33
 Nuzleaf: Night Slash added to Great TM
+Shiftry: Tackle added to Level 1
+Shiftry: Bide added to Level 1
+Shiftry: Astonish added to Level 6
+Shiftry: Rollout added to Level 11
+Shiftry: Headbutt added to Level 24
+Shiftry: Explosion changed from Great TM to Level 33
 Shiftry: Night Slash added to Great TM
+Pelipper: Quick Attack added to Level 19
+Pelipper: Air Cutter changed from Common TM to Level 22
+Pelipper: Pursuit added to Level 26
+Pelipper: Aerial Ace changed from Great TM to Level 29
+Pelipper: Agility changed from Great TM to Level 36
+Pelipper: Air Slash changed from Great TM to Level 40
+Gardevoir: Lucky Chant added to Level 19
+Gardevoir: Charm changed from Common TM to Level 34
+Mega Gardevoir: Lucky Chant added to Level 19
+Mega Gardevoir: Charm changed from Common TM to Level 34
+Surskit: shvar changed from 1 to 3
+Surskit: newVariants changed from  to 1
+Masquerain: Bubble Beam added to Level 17
+Masquerain: Agility changed from Great TM to Level 22
+Masquerain: Mist added to Level 25
+Masquerain: Haze changed from Common TM to Level 25
+Masquerain: Aqua Jet added to Level 30
+Masquerain: Baton Pass changed from Common TM to Level 35
+Masquerain: Sticky Web added to Level 38
+Masquerain: shvar changed from 1 to 3
+Masquerain: newVariants changed from  to 1
+Breloom: Poison Powder added to Level 19
+Breloom: Worry Seed changed from Common TM to Level 22
+Breloom: Giga Drain changed from Ultra TM to Level 26
+Breloom: Growth added to Level 29
+Breloom: Toxic changed from Great TM to Level 33
+Breloom: Spore added to Level 40
 Slakoth: Night Slash added to Great TM
 Slakoth: newVariants changed from 1 to 
+Vigoroth: Yawn added to Level 1
+Vigoroth: Slack Off added to Level 9
+Vigoroth: Feint Attack added to Level 11
+Vigoroth: Amnesia changed from Great TM to Level 17
+Vigoroth: Rest changed from Common TM to Level 19
+Vigoroth: Covet changed from Great TM to Level 22
 Vigoroth: Chip Away changed from Level 27 to Level 23
 Vigoroth: Slash changed from Level 23 to Level 27
+Vigoroth: Flail added to Level 33
 Vigoroth: Night Slash added to Great TM
 Vigoroth: newVariants changed from 1 to 
+Slaking: Play Rough changed from Great TM to Mushroom
+Slaking: Fury Swipes added to Evolution
+Slaking: Focus Energy changed from Common TM to Level 1
+Slaking: Uproar changed from Great TM to Level 9
+Slaking: Endure changed from Common TM to Level 17
+Slaking: Slash added to Level 27
+Slaking: Focus Punch changed from Great TM to Level 37
+Slaking: Reversal changed from Common TM to Level 43
 Slaking: Night Slash added to Great TM
 Slaking: newVariants changed from 1 to 
 Nincada: Night Slash added to Great TM
+Ninjask: Mud Slap changed from Common TM to Level 17
+Ninjask: Metal Claw changed from Common TM to Level 21
+Ninjask: Bide added to Level 29
+Ninjask: False Swipe changed from Common TM to Level 33
+Ninjask: Dig changed from Great TM to Level 37
 Ninjask: Night Slash added to Great TM
+Shedinja: Mud Slap changed from Common TM to Level 17
+Shedinja: Metal Claw changed from Common TM to Level 21
+Shedinja: Bide added to Level 29
+Shedinja: False Swipe changed from Common TM to Level 33
+Shedinja: Dig changed from Great TM to Level 37
 Shedinja: Night Slash added to Great TM
 Minun: Passive changed from Power Spot to Friend Guard
+Roselia: Water Sport added to Level 7
+Swalot: Pain Split changed from Common TM to Level 44
 Swalot: Corrosive Gas added to Common TM
 Swalot: Skitter Smack added to Great TM
 Torkoal: newVariants changed from 1 to 
 Trapinch: First Impression added to Ultra TM
+Vibrava: Astonish added to Level 1
+Vibrava: Feint added to Level 1
+Vibrava: Bite added to Level 8
+Vibrava: Dig changed from Great TM to Level 26
+Vibrava: Crunch changed from Great TM to Level 29
+Vibrava: Superpower changed from Ultra TM to Level 49
+Vibrava: Fissure added to Level 61
 Vibrava: First Impression added to Ultra TM
+Flygon: Astonish added to Level 1
+Flygon: Feint added to Level 1
+Flygon: Bite added to Level 8
+Flygon: Dig changed from Great TM to Level 26
+Flygon: Crunch changed from Great TM to Level 29
+Flygon: Superpower changed from Ultra TM to Level 49
+Flygon: Fissure added to Level 61
 Flygon: First Impression added to Ultra TM
 Zangoose: Egg Move 2 changed from High Horsepower to Headlong Rush
 Zangoose: Egg Move 3 changed from Extreme Speed to Dire Claw
 Zangoose: Rare Egg Move changed from Tidy Up to Extreme Speed
 Anorith: newVariants changed from 1 to 
 Armaldo: newVariants changed from 1 to 
+Milotic: Splash added to Level 1
+Milotic: Tackle added to Level 15
+Milotic: Flail added to Level 25
 Kecleon: First Impression added to Ultra TM
+Duskull: shvar changed from 1 to 3
+Duskull: newVariants changed from  to 1
+Dusclops: shvar changed from 1 to 3
+Dusclops: newVariants changed from  to 1
+Chimecho: Last Resort added to Level 16
+Chimecho: Entrainment added to Level 19
+Chimecho: Synchronoise changed from Mushroom to Level 54
+Chimecho: Healing Wish changed from Mushroom to Level 57
+Mega Chimecho: Last Resort added to Level 16
+Mega Chimecho: Entrainment added to Level 19
+Mega Chimecho: Synchronoise changed from Mushroom to Level 54
+Mega Chimecho: Healing Wish changed from Mushroom to Level 57
 Mega Chimecho: newVariants changed from 1 to 
 Absol: Egg Move 1 changed from Kowtow Cleave to Spirit Break
 Absol: Egg Move 3 changed from Psyblade to Cross Poison
@@ -171,24 +582,62 @@ Mega Glalie: newVariants changed from 1 to
 Spheal: newVariants changed from 1 to 
 Sealeo: newVariants changed from 1 to 
 Walrein: newVariants changed from 1 to 
+Huntail: Water Gun added to Level 1
+Huntail: Clamp added to Level 1
+Huntail: Iron Defense changed from Great TM to Level 1
+Huntail: Shell Smash added to Level 50
+Gorebyss: Water Gun added to Level 1
+Gorebyss: Clamp added to Level 1
+Gorebyss: Iron Defense changed from Great TM to Level 1
+Gorebyss: Shell Smash added to Level 50
 Salamence: Slash added to Level 1
 Mega Salamence: Slash added to Level 1
 Latias: Egg Move 3 changed from Sparkly Swirl to Take Heart
 Latias: Rare Egg Move changed from Mystical Power to Sparkly Swirl
 Latios: Egg Move 3 changed from Nasty Plot to Take Heart
+Torterra: Wood Hammer changed from Mushroom to Level 70
+Monferno: Nasty Plot changed from Great TM to Level 17
+Monferno: Facade changed from Great TM to Level 31
+Monferno: Flamethrower changed from Ultra TM to Level 47
 Monferno: Dual Chop added to Great TM
+Infernape: Nasty Plot changed from Great TM to Level 17
+Infernape: Torment changed from Common TM to Level 25
+Infernape: Facade changed from Great TM to Level 31
+Infernape: Flamethrower changed from Ultra TM to Level 47
 Infernape: Dual Chop added to Great TM
+Prinplup: Charm changed from Common TM to Level 11
+Empoleon: Water Sport added to Level 8
+Empoleon: Charm changed from Common TM to Level 11
+Empoleon: Bide added to Level 20
 Mega Staraptor: newVariants changed from 1 to 
 Bibarel: Water Pulse changed from Common TM to Level 25
 Bibarel: Aqua Tail changed from Great TM to Level 45
+Kricketune: Struggle Bug changed from Common TM to Level 6
+Kricketune: Bug Bite changed from Great TM to Level 16
 Shinx: Night Slash added to Great TM
+Luxio: Baby Doll Eyes added to Level 11
 Luxio: Night Slash added to Great TM
+Luxray: Baby Doll Eyes added to Level 11
+Luxray: Electric Terrain changed from Mushroom to Level 67
 Luxray: Night Slash added to Great TM
+Roserade: Water Sport added to Level 7
+Vespiquen: Bug Bite changed from Great TM to Level 1
+Vespiquen: Struggle Bug changed from Common TM to Level 1
+Vespiquen: Bug Buzz changed from Great TM to Level 29
+Lopunny: Frustration added to Level 13
 Mega Lopunny: Passive changed from Super Luck to Long Reach
+Mega Lopunny: Frustration added to Level 13
 Glameow: Night Slash added to Great TM
+Glameow: shvar changed from 1 to 3
+Glameow: newVariants changed from  to 1
+Purugly: Sucker Punch added to Level 41
+Purugly: Play Rough changed from Great TM to Level 50
 Purugly: Night Slash added to Great TM
+Purugly: shvar changed from 1 to 3
+Purugly: newVariants changed from  to 1
 Stunky: newVariants changed from 1 to 
 Skuntank: newVariants changed from 1 to 
+Bronzong: Rain Dance changed from Mushroom to Level 62
 Happiny: Egg Move 3 changed from Sizzly Slide to Lovely Kiss
 Gible: Egg Move 2 changed from Bitter Blade to Nasty Plot
 Gible: Sandstorm changed from Level 54 to Level 48
@@ -216,12 +665,36 @@ Mega Z Garchomp: Dragon Rush changed from Level 75 to Level 82
 Mega Z Garchomp: newVariants changed from 1 to 
 Riolu: Dual Chop added to Great TM
 Riolu: newVariants changed from 1 to 
+Lucario: Endure changed from Common TM to Level 1
+Lucario: Rock Smash changed from Common TM to Level 15
+Lucario: Copycat added to Level 19
+Lucario: Screech changed from Great TM to Level 24
+Lucario: Reversal changed from Common TM to Level 29
+Lucario: Nasty Plot changed from Great TM to Level 37
+Lucario: Helping Hand changed from Common TM to Level 42
+Lucario: Final Gambit added to Level 55
 Lucario: Dual Chop added to Great TM
 Lucario: newVariants changed from 1 to 
+Mega Lucario: Endure changed from Common TM to Level 1
+Mega Lucario: Rock Smash changed from Common TM to Level 15
+Mega Lucario: Copycat added to Level 19
+Mega Lucario: Screech changed from Great TM to Level 24
+Mega Lucario: Reversal changed from Common TM to Level 29
+Mega Lucario: Nasty Plot changed from Great TM to Level 37
+Mega Lucario: Helping Hand changed from Common TM to Level 42
+Mega Lucario: Final Gambit added to Level 55
 Mega Lucario: Dual Chop added to Great TM
 Mega Lucario: newVariants changed from 1 to 
 Mega Z Lucario: ab1 changed from Inner Focus to Aura Guard
 Mega Z Lucario: Passive changed from Mega Launcher to Neuroforce
+Mega Z Lucario: Endure changed from Common TM to Level 1
+Mega Z Lucario: Rock Smash changed from Common TM to Level 15
+Mega Z Lucario: Copycat added to Level 19
+Mega Z Lucario: Screech changed from Great TM to Level 24
+Mega Z Lucario: Reversal changed from Common TM to Level 29
+Mega Z Lucario: Nasty Plot changed from Great TM to Level 37
+Mega Z Lucario: Helping Hand changed from Common TM to Level 42
+Mega Z Lucario: Final Gambit added to Level 55
 Mega Z Lucario: Dual Chop added to Great TM
 Mega Z Lucario: newVariants changed from 1 to 
 Croagunk: Close Combat added to Level 52
@@ -229,14 +702,77 @@ Croagunk: Dual Chop added to Great TM
 Toxicroak: Close Combat changed from Ultra TM to Level 60
 Toxicroak: Dual Chop added to Great TM
 Lumineon: Hydro Pump changed from Ultra TM to Level 66
+Tangrowth: Ingrain changed from Mushroom to Level 36
 Electivire: Dual Chop added to Great TM
 Magmortar: Dual Chop added to Great TM
+Yanmega: Hypnosis added to Level 38
+Leafeon: Growl added to Level 1
+Leafeon: Bite added to Level 17
+Leafeon: Swift changed from Common TM to Level 17
+Leafeon: Covet changed from Great TM to Level 20
+Leafeon: Refresh added to Level 23
+Leafeon: Take Down changed from Great TM to Level 25
+Leafeon: Charm changed from Common TM to Level 29
+Leafeon: Baton Pass changed from Common TM to Level 33
+Leafeon: Copycat added to Level 37
+Leafeon: Double Edge changed from Ultra TM to Level 41
+Leafeon: Trump Card added to Level 49
 Leafeon: newVariants changed from 1 to 
+Glaceon: Growl added to Level 1
+Glaceon: Swift changed from Common TM to Level 17
+Glaceon: Covet changed from Great TM to Level 20
+Glaceon: Refresh added to Level 23
+Glaceon: Take Down changed from Great TM to Level 25
+Glaceon: Charm changed from Common TM to Level 29
+Glaceon: Baton Pass changed from Common TM to Level 33
+Glaceon: Copycat added to Level 37
+Glaceon: Double Edge changed from Ultra TM to Level 41
+Glaceon: Trump Card added to Level 49
 Glaceon: newVariants changed from 1 to 
+Gliscor: Poison Sting added to Level 1
+Gliscor: Poison Tail changed from Common TM to Level 19
+Gliscor: Slash added to Level 27
+Mamoswine: Flail added to Mushroom
+Mamoswine: Amnesia changed from Great TM to Level 49
+Porygon Z: Recycle changed from Common TM to Level 36
+Gallade: Disarming Voice changed from Common TM to Level 6
+Gallade: Draining Kiss changed from Great TM to Level 14
+Gallade: Magical Leaf changed from Common TM to Level 17
+Gallade: Lucky Chant added to Level 19
+Gallade: Calm Mind changed from Great TM to Level 25
+Gallade: Psychic changed from Ultra TM to Level 27
+Gallade: Imprison changed from Common TM to Level 29
+Gallade: Charm changed from Common TM to Level 34
+Gallade: Future Sight changed from Great TM to Level 37
+Gallade: Dream Eater changed from Great TM to Level 39
 Gallade: Dual Chop added to Great TM
+Mega Gallade: Disarming Voice changed from Common TM to Level 6
+Mega Gallade: Draining Kiss changed from Great TM to Level 14
+Mega Gallade: Magical Leaf changed from Common TM to Level 17
+Mega Gallade: Lucky Chant added to Level 19
+Mega Gallade: Calm Mind changed from Great TM to Level 25
+Mega Gallade: Psychic changed from Ultra TM to Level 27
+Mega Gallade: Imprison changed from Common TM to Level 29
+Mega Gallade: Charm changed from Common TM to Level 34
+Mega Gallade: Future Sight changed from Great TM to Level 37
+Mega Gallade: Dream Eater changed from Great TM to Level 39
 Mega Gallade: Dual Chop added to Great TM
 Probopass: Flash Cannon changed from Great TM to Mushroom
+Probopass: Harden added to Level 4
+Probopass: Rock Throw added to Level 10
+Dusknoir: shvar changed from 1 to 3
+Dusknoir: newVariants changed from  to 1
+Froslass: Bite added to Level 19
+Froslass: Ice Fang changed from Great TM to Level 23
+Froslass: Headbutt added to Level 28
+Froslass: Protect changed from Common TM to Level 32
+Froslass: Crunch changed from Great TM to Level 41
 Froslass: newVariants changed from 1 to 
+Mega Froslass: Bite added to Level 19
+Mega Froslass: Ice Fang changed from Great TM to Level 23
+Mega Froslass: Headbutt added to Level 28
+Mega Froslass: Protect changed from Common TM to Level 32
+Mega Froslass: Crunch changed from Great TM to Level 41
 Mega Froslass: newVariants changed from 1 to 
 Uxie: Passive changed from Magic Bounce to Aura Guard
 Heatran: First Impression added to Ultra TM
@@ -251,15 +787,21 @@ Darkrai: newVariants changed from 1 to
 Mega Darkrai: newVariants changed from 1 to 
 Tepig: newVariants changed from 1 to 
 Pignite: newVariants changed from 1 to 
+Emboar: Endure changed from Common TM to Level 9
+Emboar: Hammer Arm changed from Mushroom to Level 70
 Emboar: Dual Chop added to Great TM
 Emboar: newVariants changed from 1 to 
+Mega Emboar: Endure changed from Common TM to Level 9
+Mega Emboar: Hammer Arm changed from Mushroom to Level 70
 Mega Emboar: Dual Chop added to Great TM
 Mega Emboar: newVariants changed from 1 to 
 Oshawott: Night Slash added to Great TM
 Dewott: Night Slash added to Great TM
+Samurott: Megahorn changed from Mushroom to Level 70
 Samurott: Night Slash added to Great TM
 Patrat: newVariants changed from 1 to 
 Watchog: newVariants changed from 1 to 
+Liepard: Captivate added to Level 33
 Pidove: Night Slash added to Great TM
 Tranquill: Night Slash added to Great TM
 Unfezant: Night Slash added to Great TM
@@ -270,10 +812,24 @@ Sawk: Dual Chop added to Great TM
 Sewaddle: Egg Move 1 changed from Stone Axe to Mighty Cleave
 Sewaddle: Egg Move 3 changed from Bitter Blade to Tidy Up
 Sewaddle: Rare Egg Move changed from Victory Dance to Bitter Blade
+Sewaddle: newVariants changed from  to 1
+Swadloon: newVariants changed from  to 1
+Leavanny: Protect changed from Common TM to Evolution
+Leavanny: Grass Whistle added to Level 1
+Leavanny: Endure changed from Common TM to Level 29
+Leavanny: Sticky Web added to Level 31
+Leavanny: Bug Buzz changed from Great TM to Level 36
+Leavanny: Flail added to Level 43
+Leavanny: newVariants changed from  to 1
 Venipede: newVariants changed from 1 to 
 Whirlipede: newVariants changed from 1 to 
 Scolipede: newVariants changed from 1 to 
 Mega Scolipede: newVariants changed from 1 to 
+Red Striped Basculin: shvar changed from 1 to 3
+Red Striped Basculin: newVariants changed from  to 1
+Blue Striped Basculin: shvar changed from 1 to 3
+Blue Striped Basculin: newVariants changed from  to 1
+Maractus: After You changed from Mushroom to Level 60
 Dwebble: Night Slash added to Great TM
 Crustle: Night Slash added to Great TM
 Scraggy: Dual Chop added to Great TM
@@ -282,12 +838,41 @@ Scrafty: Dual Chop added to Great TM
 Scrafty: newVariants changed from 1 to 
 Mega Scrafty: Dual Chop added to Great TM
 Mega Scrafty: newVariants changed from 1 to 
+Garbodor: Take Down changed from Great TM to Level 23
+Gigantamax Garbodor: Take Down changed from Great TM to Level 23
+Cinccino: Tail Slap changed from Evolution to Level 25
+Ducklett: shvar changed from 1 to 3
+Ducklett: newVariants changed from  to 1
+Swanna: shvar changed from 1 to 3
+Swanna: newVariants changed from  to 1
 Karrablast: Night Slash added to Great TM
+Escavalier: Fury Cutter added to Level 4
+Escavalier: Endure changed from Common TM to Level 8
+Escavalier: Flail added to Level 24
+Escavalier: Scary Face changed from Great TM to Level 27
+Escavalier: Take Down changed from Great TM to Level 40
+Escavalier: Double Edge changed from Ultra TM to Level 48
+Escavalier: Fell Stinger changed from Mushroom to Level 60
 Escavalier: Night Slash added to Great TM
 Foongus: First Impression added to Ultra TM
 Foongus: newVariants changed from 1 to 
 Amoonguss: First Impression added to Ultra TM
 Amoonguss: newVariants changed from 1 to 
+Eelektrik: Tackle added to Level 1
+Eelektross: Thunder Wave changed from Common TM to Level 1
+Eelektross: Spark added to Level 1
+Eelektross: Charge Beam changed from Great TM to Level 1
+Eelektross: Tackle added to Level 1
+Eelektross: Bind added to Level 9
+Eelektross: Thunderbolt changed from Ultra TM to Level 44
+Eelektross: Acid Spray changed from Common TM to Level 49
+Mega Eelektross: Thunder Wave changed from Common TM to Level 1
+Mega Eelektross: Spark added to Level 1
+Mega Eelektross: Charge Beam changed from Great TM to Level 1
+Mega Eelektross: Tackle added to Level 1
+Mega Eelektross: Bind added to Level 9
+Mega Eelektross: Thunderbolt changed from Ultra TM to Level 44
+Mega Eelektross: Acid Spray changed from Common TM to Level 49
 Litwick: newVariants changed from 1 to 
 Lampent: newVariants changed from 1 to 
 Chandelure: newVariants changed from 1 to 
@@ -308,8 +893,19 @@ Haxorus: Scary Face changed from Level 21 to Level 18
 Haxorus: Slash changed from Level 15 to Level 21
 Haxorus: Night Slash added to Great TM
 Cubchoo: Night Slash added to Great TM
+Beartic: Charm changed from Common TM to Level 27
 Beartic: Night Slash added to Great TM
+Accelgor: Protect changed from Common TM to Level 1
+Accelgor: Acid added to Level 4
+Accelgor: Bide added to Level 8
+Accelgor: Curse changed from Great TM to Level 11
+Accelgor: Yawn added to Level 20
+Accelgor: Acid Armor added to Level 24
+Accelgor: Guard Swap changed from Common TM to Level 33
+Accelgor: Body Slam changed from Great TM to Level 36
+Accelgor: Me First changed from Mushroom to Level 60
 Mienfoo: Dual Chop added to Great TM
+Mienshao: Quick Guard added to Level 45
 Mienshao: Dual Chop added to Great TM
 Druddigon: Chip Away changed from Level 31 to Level 21
 Druddigon: Slash changed from Level 21 to Level 31
@@ -318,28 +914,241 @@ Golurk: newVariants changed from 1 to
 Mega Golurk: newVariants changed from 1 to 
 Pawniard: Dual Chop added to Great TM
 Bisharp: Dual Chop added to Great TM
+Braviary: Sky Attack changed from Mushroom to Level 76
 Heatmor: Night Slash added to Great TM
 Durant: First Impression added to Egg & Ultra TM
+Volcarona: Flame Charge changed from Great TM to Level 6
+Volcarona: Flame Wheel added to Level 18
+Volcarona: Bug Bite changed from Great TM to Level 24
+Volcarona: Take Down changed from Great TM to Level 48
+Volcarona: Double Edge changed from Ultra TM to Level 60
+Volcarona: Thrash added to Level 66
+Volcarona: Hurricane changed from Mushroom to Level 70
+Volcarona: Flare Blitz changed from Ultra TM to Level 72
+Volcarona: Rage Powder changed from Mushroom to Level 90
+Volcarona: Fiery Dance changed from Mushroom to Level 100
 Kyurem: Icicle Spear changed from Great TM to Mushroom
 Black Kyurem: Icicle Spear changed from Great TM to Mushroom
 White Kyurem: Icicle Spear changed from Great TM to Mushroom
 Aria Meloetta: Dual Chop added to Great TM
 Pirouette Meloetta: Dual Chop added to Great TM
 Chespin: Dual Chop added to Great TM
+Chespin: shvar changed from 1 to 3
+Chespin: newVariants changed from  to 1
 Quilladin: Dual Chop added to Great TM
+Quilladin: shvar changed from 1 to 3
+Quilladin: newVariants changed from  to 1
+Chesnaught: Hammer Arm changed from Mushroom to Level 72
 Chesnaught: Dual Chop added to Great TM
+Chesnaught: shvar changed from 1 to 3
+Chesnaught: newVariants changed from  to 1
+Mega Chesnaught: Hammer Arm changed from Mushroom to Level 72
 Mega Chesnaught: Dual Chop added to Great TM
+Mega Chesnaught: shvar changed from 1 to 3
+Mega Chesnaught: newVariants changed from  to 1
 Fennekin: newVariants changed from 1 to 
 Braixen: newVariants changed from 1 to 
+Delphox: Future Sight changed from Mushroom to Level 80
 Delphox: newVariants changed from 1 to 
+Mega Delphox: Future Sight changed from Mushroom to Level 80
 Mega Delphox: newVariants changed from 1 to 
 Froakie: Night Slash added to Great TM
 Froakie: newVariants changed from 1 to 
 Frogadier: Night Slash added to Great TM
 Frogadier: newVariants changed from 1 to 
+Greninja: Haze changed from Mushroom to Level 70
+Greninja: Night Slash changed from Mushroom to Level 77
 Greninja: newVariants changed from 1 to 
+Mega Greninja: Haze changed from Mushroom to Level 70
+Mega Greninja: Night Slash changed from Mushroom to Level 77
 Mega Greninja: newVariants changed from 1 to 
+Bunnelby: shvar changed from 1 to 3
+Bunnelby: newVariants changed from  to 1
+Diggersby: shvar changed from 1 to 3
+Diggersby: newVariants changed from  to 1
+Talonflame: Flare Blitz changed from Mushroom to Level 83
+Meadow Spewpa: Tackle added to Level 1
+Meadow Spewpa: String Shot added to Level 1
+Meadow Spewpa: Stun Spore added to Level 6
+Meadow Spewpa: Bug Bite changed from Great TM to Level 15
+Icy Snow Spewpa: Tackle added to Level 1
+Icy Snow Spewpa: String Shot added to Level 1
+Icy Snow Spewpa: Stun Spore added to Level 6
+Icy Snow Spewpa: Bug Bite changed from Great TM to Level 15
+Polar Spewpa: Tackle added to Level 1
+Polar Spewpa: String Shot added to Level 1
+Polar Spewpa: Stun Spore added to Level 6
+Polar Spewpa: Bug Bite changed from Great TM to Level 15
+Tundra Spewpa: Tackle added to Level 1
+Tundra Spewpa: String Shot added to Level 1
+Tundra Spewpa: Stun Spore added to Level 6
+Tundra Spewpa: Bug Bite changed from Great TM to Level 15
+Continental Spewpa: Tackle added to Level 1
+Continental Spewpa: String Shot added to Level 1
+Continental Spewpa: Stun Spore added to Level 6
+Continental Spewpa: Bug Bite changed from Great TM to Level 15
+Garden Spewpa: Tackle added to Level 1
+Garden Spewpa: String Shot added to Level 1
+Garden Spewpa: Stun Spore added to Level 6
+Garden Spewpa: Bug Bite changed from Great TM to Level 15
+Elegant Spewpa: Tackle added to Level 1
+Elegant Spewpa: String Shot added to Level 1
+Elegant Spewpa: Stun Spore added to Level 6
+Elegant Spewpa: Bug Bite changed from Great TM to Level 15
+Modern Spewpa: Tackle added to Level 1
+Modern Spewpa: String Shot added to Level 1
+Modern Spewpa: Stun Spore added to Level 6
+Modern Spewpa: Bug Bite changed from Great TM to Level 15
+Marine Spewpa: Tackle added to Level 1
+Marine Spewpa: String Shot added to Level 1
+Marine Spewpa: Stun Spore added to Level 6
+Marine Spewpa: Bug Bite changed from Great TM to Level 15
+Archipelago Spewpa: Tackle added to Level 1
+Archipelago Spewpa: String Shot added to Level 1
+Archipelago Spewpa: Stun Spore added to Level 6
+Archipelago Spewpa: Bug Bite changed from Great TM to Level 15
+High Plains Spewpa: Tackle added to Level 1
+High Plains Spewpa: String Shot added to Level 1
+High Plains Spewpa: Stun Spore added to Level 6
+High Plains Spewpa: Bug Bite changed from Great TM to Level 15
+Sandstorm Spewpa: Tackle added to Level 1
+Sandstorm Spewpa: String Shot added to Level 1
+Sandstorm Spewpa: Stun Spore added to Level 6
+Sandstorm Spewpa: Bug Bite changed from Great TM to Level 15
+River Spewpa: Tackle added to Level 1
+River Spewpa: String Shot added to Level 1
+River Spewpa: Stun Spore added to Level 6
+River Spewpa: Bug Bite changed from Great TM to Level 15
+Monsoon Spewpa: Tackle added to Level 1
+Monsoon Spewpa: String Shot added to Level 1
+Monsoon Spewpa: Stun Spore added to Level 6
+Monsoon Spewpa: Bug Bite changed from Great TM to Level 15
+Savanna Spewpa: Tackle added to Level 1
+Savanna Spewpa: String Shot added to Level 1
+Savanna Spewpa: Stun Spore added to Level 6
+Savanna Spewpa: Bug Bite changed from Great TM to Level 15
+Sun Spewpa: Tackle added to Level 1
+Sun Spewpa: String Shot added to Level 1
+Sun Spewpa: Stun Spore added to Level 6
+Sun Spewpa: Bug Bite changed from Great TM to Level 15
+Ocean Spewpa: Tackle added to Level 1
+Ocean Spewpa: String Shot added to Level 1
+Ocean Spewpa: Stun Spore added to Level 6
+Ocean Spewpa: Bug Bite changed from Great TM to Level 15
+Jungle Spewpa: Tackle added to Level 1
+Jungle Spewpa: String Shot added to Level 1
+Jungle Spewpa: Stun Spore added to Level 6
+Jungle Spewpa: Bug Bite changed from Great TM to Level 15
+Fancy Spewpa: Tackle added to Level 1
+Fancy Spewpa: String Shot added to Level 1
+Fancy Spewpa: Stun Spore added to Level 6
+Fancy Spewpa: Bug Bite changed from Great TM to Level 15
+Poke Ball Spewpa: Tackle added to Level 1
+Poke Ball Spewpa: String Shot added to Level 1
+Poke Ball Spewpa: Stun Spore added to Level 6
+Poke Ball Spewpa: Bug Bite changed from Great TM to Level 15
+Meadow Vivillon: Protect changed from Common TM to Evolution
+Meadow Vivillon: Harden added to Level 1
+Meadow Vivillon: Tackle added to Level 1
+Meadow Vivillon: String Shot added to Level 1
+Meadow Vivillon: Bug Bite changed from Great TM to Level 15
+Icy Snow Vivillon: Protect changed from Common TM to Evolution
+Icy Snow Vivillon: Harden added to Level 1
+Icy Snow Vivillon: Tackle added to Level 1
+Icy Snow Vivillon: String Shot added to Level 1
+Icy Snow Vivillon: Bug Bite changed from Great TM to Level 15
+Polar Vivillon: Protect changed from Common TM to Evolution
+Polar Vivillon: Harden added to Level 1
+Polar Vivillon: Tackle added to Level 1
+Polar Vivillon: String Shot added to Level 1
+Polar Vivillon: Bug Bite changed from Great TM to Level 15
+Tundra Vivillon: Protect changed from Common TM to Evolution
+Tundra Vivillon: Harden added to Level 1
+Tundra Vivillon: Tackle added to Level 1
+Tundra Vivillon: String Shot added to Level 1
+Tundra Vivillon: Bug Bite changed from Great TM to Level 15
+Continental Vivillon: Protect changed from Common TM to Evolution
+Continental Vivillon: Harden added to Level 1
+Continental Vivillon: Tackle added to Level 1
+Continental Vivillon: String Shot added to Level 1
+Continental Vivillon: Bug Bite changed from Great TM to Level 15
+Garden Vivillon: Protect changed from Common TM to Evolution
+Garden Vivillon: Harden added to Level 1
+Garden Vivillon: Tackle added to Level 1
+Garden Vivillon: String Shot added to Level 1
+Garden Vivillon: Bug Bite changed from Great TM to Level 15
+Elegant Vivillon: Protect changed from Common TM to Evolution
+Elegant Vivillon: Harden added to Level 1
+Elegant Vivillon: Tackle added to Level 1
+Elegant Vivillon: String Shot added to Level 1
+Elegant Vivillon: Bug Bite changed from Great TM to Level 15
+Modern Vivillon: Protect changed from Common TM to Evolution
+Modern Vivillon: Harden added to Level 1
+Modern Vivillon: Tackle added to Level 1
+Modern Vivillon: String Shot added to Level 1
+Modern Vivillon: Bug Bite changed from Great TM to Level 15
+Marine Vivillon: Protect changed from Common TM to Evolution
+Marine Vivillon: Harden added to Level 1
+Marine Vivillon: Tackle added to Level 1
+Marine Vivillon: String Shot added to Level 1
+Marine Vivillon: Bug Bite changed from Great TM to Level 15
+Archipelago Vivillon: Protect changed from Common TM to Evolution
+Archipelago Vivillon: Harden added to Level 1
+Archipelago Vivillon: Tackle added to Level 1
+Archipelago Vivillon: String Shot added to Level 1
+Archipelago Vivillon: Bug Bite changed from Great TM to Level 15
+High Plains Vivillon: Protect changed from Common TM to Evolution
+High Plains Vivillon: Harden added to Level 1
+High Plains Vivillon: Tackle added to Level 1
+High Plains Vivillon: String Shot added to Level 1
+High Plains Vivillon: Bug Bite changed from Great TM to Level 15
+Sandstorm Vivillon: Protect changed from Common TM to Evolution
+Sandstorm Vivillon: Harden added to Level 1
+Sandstorm Vivillon: Tackle added to Level 1
+Sandstorm Vivillon: String Shot added to Level 1
+Sandstorm Vivillon: Bug Bite changed from Great TM to Level 15
+River Vivillon: Protect changed from Common TM to Evolution
+River Vivillon: Harden added to Level 1
+River Vivillon: Tackle added to Level 1
+River Vivillon: String Shot added to Level 1
+River Vivillon: Bug Bite changed from Great TM to Level 15
+Monsoon Vivillon: Protect changed from Common TM to Evolution
+Monsoon Vivillon: Harden added to Level 1
+Monsoon Vivillon: Tackle added to Level 1
+Monsoon Vivillon: String Shot added to Level 1
+Monsoon Vivillon: Bug Bite changed from Great TM to Level 15
+Savanna Vivillon: Protect changed from Common TM to Evolution
+Savanna Vivillon: Harden added to Level 1
+Savanna Vivillon: Tackle added to Level 1
+Savanna Vivillon: String Shot added to Level 1
+Savanna Vivillon: Bug Bite changed from Great TM to Level 15
+Sun Vivillon: Protect changed from Common TM to Evolution
+Sun Vivillon: Harden added to Level 1
+Sun Vivillon: Tackle added to Level 1
+Sun Vivillon: String Shot added to Level 1
+Sun Vivillon: Bug Bite changed from Great TM to Level 15
+Ocean Vivillon: Protect changed from Common TM to Evolution
+Ocean Vivillon: Harden added to Level 1
+Ocean Vivillon: Tackle added to Level 1
+Ocean Vivillon: String Shot added to Level 1
+Ocean Vivillon: Bug Bite changed from Great TM to Level 15
+Jungle Vivillon: Protect changed from Common TM to Evolution
+Jungle Vivillon: Harden added to Level 1
+Jungle Vivillon: Tackle added to Level 1
+Jungle Vivillon: String Shot added to Level 1
+Jungle Vivillon: Bug Bite changed from Great TM to Level 15
+Fancy Vivillon: Protect changed from Common TM to Evolution
+Fancy Vivillon: Harden added to Level 1
+Fancy Vivillon: Tackle added to Level 1
+Fancy Vivillon: String Shot added to Level 1
+Fancy Vivillon: Bug Bite changed from Great TM to Level 15
+Poke Ball Vivillon: Protect changed from Common TM to Evolution
+Poke Ball Vivillon: Harden added to Level 1
+Poke Ball Vivillon: Tackle added to Level 1
+Poke Ball Vivillon: String Shot added to Level 1
+Poke Ball Vivillon: Bug Bite changed from Great TM to Level 15
 Skiddo: Megahorn added to Level 54
+Gogoat: Earthquake changed from Mushroom to Level 60
 Gogoat: Megahorn added to Level 65
 Pancham: Dual Chop added to Great TM
 Pangoro: Dual Chop added to Great TM
@@ -363,21 +1172,77 @@ Mega Barbaracle: newVariants changed from 1 to
 Skrelp: newVariants changed from 1 to 
 Dragalge: newVariants changed from 1 to 
 Mega Dragalge: newVariants changed from 1 to 
+Clawitzer: Dragon Pulse changed from Mushroom to Level 51
+Helioptile: shvar changed from 1 to 3
+Helioptile: newVariants changed from  to 1
+Heliolisk: shvar changed from 1 to 3
+Heliolisk: newVariants changed from  to 1
+Sylveon: Growl added to Level 1
+Sylveon: Bite added to Level 17
+Sylveon: Covet changed from Great TM to Level 20
+Sylveon: Refresh added to Level 23
+Sylveon: Take Down changed from Great TM to Level 25
+Sylveon: Charm changed from Common TM to Level 29
+Sylveon: Baton Pass changed from Common TM to Level 33
+Sylveon: Copycat added to Level 37
+Sylveon: Double Edge changed from Ultra TM to Level 41
+Sylveon: Trump Card added to Level 49
 Sylveon: newVariants changed from 1 to 
 Hawlucha: Dual Chop added to Great TM
 Mega Hawlucha: Dual Chop added to Great TM
+Goodra: Acid Armor added to Level 1
+Phantump: newVariants changed from  to 1
+Trevenant: newVariants changed from  to 1
+Pumpkaboo: newVariants changed from  to 1
+Small Pumpkaboo: img changed from 710 to 710-small
+Small Pumpkaboo: newVariants changed from  to 1
+Large Pumpkaboo: img changed from 710 to 710-large
+Large Pumpkaboo: newVariants changed from  to 1
+Gourgeist: Moonblast changed from Mushroom to Level 57
+Gourgeist: Power Whip changed from Mushroom to Level 70
+Gourgeist: newVariants changed from  to 1
+Small Gourgeist: img changed from 711 to 711-small
+Small Gourgeist: Moonblast changed from Mushroom to Level 57
+Small Gourgeist: Power Whip changed from Mushroom to Level 70
+Small Gourgeist: newVariants changed from  to 1
+Large Gourgeist: img changed from 711 to 711-large
+Large Gourgeist: Moonblast changed from Mushroom to Level 57
+Large Gourgeist: Power Whip changed from Mushroom to Level 70
+Large Gourgeist: newVariants changed from  to 1
 Hoopa: Dual Chop added to Great TM
 Unbound Hoopa: Dual Chop added to Great TM
+Decidueye: Phantom Force changed from Mushroom to Level 66
 Torracat: Dual Chop added to Great TM
 Incineroar: Dual Chop added to Great TM
 Gumshoos: Dual Chop added to Great TM
+Vikavolt: X Scissor changed from Great TM to Level 30
+Vikavolt: Crunch changed from Great TM to Level 35
+Vikavolt: Dig changed from Great TM to Level 40
+Vikavolt: Iron Defense changed from Great TM to Level 53
+Vikavolt: Air Slash changed from Mushroom to Level 59
+Vikavolt: Discharge added to Level 59
 Crabrawler: Dual Chop added to Great TM
+Crabominable: Payback changed from Common TM to Level 29
+Crabominable: Crabhammer added to Level 37
 Crabominable: Dual Chop added to Great TM
+Mega Crabominable: Payback changed from Common TM to Level 29
+Mega Crabominable: Crabhammer added to Level 37
 Mega Crabominable: Dual Chop added to Great TM
+Midday Lycanroc: Accelerock changed from Mushroom to Level 64
+Midnight Lycanroc: Reversal changed from Mushroom to Level 64
 Midnight Lycanroc: Dual Chop added to Great TM
+Dusk Lycanroc: Accelerock changed from Mushroom to Level 64
 Fomantis: Dual Chop added to Great TM
+Lurantis: Solar Beam changed from Ultra TM to Level 50
+Salazzle: Scratch added to Level 1
+Salazzle: Endeavor changed from Common TM to Level 53
 Stufful: Dual Chop added to Great TM
 Bewear: Dual Chop added to Great TM
+Steenee: Splash added to Level 1
+Steenee: Flail added to Level 24
+Tsareena: Splash added to Level 1
+Tsareena: Flail added to Level 24
+Tsareena: Power Whip changed from Mushroom to Level 60
 Wimpod: newVariants changed from 1 to 
 Golisopod: Dual Chop added to Great TM
 Golisopod: Agility added to Great TM
@@ -403,20 +1268,50 @@ Jangmo O: Dual Chop added to Great TM
 Hakamo O: Dual Chop added to Great TM
 Kommo O: Dual Chop added to Great TM
 Tapu Bulu: Dual Chop added to Great TM
+Solgaleo: Moonlight added to Evolution
+Lunala: Morning Sun added to Evolution
 Buzzwole: Dual Chop added to Great TM
+Buzzwole: shvar changed from 1 to 3
+Buzzwole: newVariants changed from  to 1
+Pheromosa: shvar changed from 1 to 3
+Pheromosa: newVariants changed from  to 1
 Guzzlord: Dual Chop added to Great TM
 Marshadow: Dual Chop added to Great TM
+Marshadow: newVariants changed from  to 1
+Blacephalon: shvar changed from 1 to 3
+Blacephalon: newVariants changed from  to 1
 Zeraora: Dual Chop added to Great TM
 Zeraora: newVariants changed from 1 to 
 Mega Zeraora: Dual Chop added to Great TM
 Mega Zeraora: newVariants changed from 1 to 
+Corviknight: Iron Defense changed from Mushroom to Level 57
+Gigantamax Corviknight: Iron Defense changed from Mushroom to Level 57
 Nickit: Roar added to Level 10
 Nickit: First Impression added to Ultra TM
+Nickit: shvar changed from 1 to 3
+Nickit: newVariants changed from  to 1
 Thievul: Roar added to Level 10
 Thievul: Trailblaze added to Great TM
 Thievul: First Impression added to Ultra TM
+Thievul: shvar changed from 1 to 3
+Thievul: newVariants changed from  to 1
+Applin: newVariants changed from  to 1
+Flapple: newVariants changed from  to 1
+Gigantamax Flapple: newVariants changed from  to 1
+Appletun: newVariants changed from  to 1
+Gigantamax Appletun: newVariants changed from  to 1
 Arrokuda: Night Slash added to Great TM
 Barraskewda: Night Slash added to Great TM
+Toxel: shvar changed from 1 to 3
+Toxel: newVariants changed from  to 1
+Amped Toxtricity: shvar changed from 1 to 3
+Amped Toxtricity: newVariants changed from  to 1
+Lowkey Toxtricity: shvar changed from 1 to 3
+Lowkey Toxtricity: newVariants changed from  to 1
+Gigantamax Toxtricity: shvar changed from 1 to 3
+Gigantamax Toxtricity: newVariants changed from  to 1
+Centiskorch: Inferno changed from Mushroom to Level 74
+Gigantamax Centiskorch: Inferno changed from Mushroom to Level 74
 Clobbopus: Egg Move 1 changed from Storm Throw to Knock Off
 Clobbopus: Mach Punch changed from Level 22 to Level 17
 Clobbopus: Storm Throw added to Level 32
@@ -428,6 +1323,7 @@ Grapploct: Storm Throw added to Level 32
 Grapploct: Dual Chop added to Great TM
 Grapploct: Chilling Water added to Common TM
 Grapploct: Bullet Punch removed from Level 17
+Obstagoon: Cross Chop changed from Mushroom to Level 63
 Perrserker: Bite added to Level 22
 Perrserker: Dual Chop added to Great TM
 Perrserker: Spikes added to Common TM
@@ -437,6 +1333,12 @@ Sirfetchd: Feather Dance added to Level 31
 Sirfetchd: Aerial Ace added to Great TM
 Sirfetchd: Night Slash added to Great TM
 Sirfetchd: Agility removed from Level 31
+Mr Rime: Tickle added to Level 1
+Mr Rime: Role Play added to Level 15
+Mr Rime: Protect changed from Common TM to Level 20
+Mr Rime: Recycle changed from Common TM to Level 32
+Mr Rime: Dazzling Gleam changed from Ultra TM to Level 44
+Runerigus: Dark Pulse changed from Great TM to Level 44
 Milcery: Egg Move 1 changed from Moonblast to Milk Drink
 Milcery: Egg Move 3 changed from Earth Power to Mystical Fire
 Milcery: Rare Egg Move changed from Geomancy to Sparkly Swirl
@@ -450,10 +1352,14 @@ Ruby Swirl Alcremie: Mystical Fire changed from Great TM to Egg & Great TM
 Caramel Swirl Alcremie: Mystical Fire changed from Great TM to Egg & Great TM
 Rainbow Swirl Alcremie: Mystical Fire changed from Great TM to Egg & Great TM
 Gigantamax Alcremie: Mystical Fire changed from Great TM to Egg & Great TM
+Eiscue: shvar changed from 1 to 3
+Eiscue: newVariants changed from  to 1
+No Ice Eiscue: shvar changed from 1 to 3
+No Ice Eiscue: newVariants changed from  to 1
 Male Indeedee: Wish added to Level 38
 Male Indeedee: Moonlight removed from Level 38
-Female Indeedee: Wish added to Level 38
 Female Indeedee: Sing added to Level 28
+Female Indeedee: Wish added to Level 38
 Female Indeedee: Tri Attack changed from Level 28 to Ultra TM
 Female Indeedee: Moonlight removed from Level 38
 Duraludon: Night Slash added to Great TM
@@ -466,21 +1372,49 @@ Crowned Zamazenta: Metal Burst changed from Level 44 to Mushroom
 Crowned Zamazenta: Double Kick added to Level 1
 Crowned Zamazenta: Brick Break changed from Great TM to Level 44
 Crowned Zamazenta: Rock Smash removed from Level 1
+Eternatus: newVariants changed from  to 1
+Eternamax Eternatus: newVariants changed from  to 1
+Ice Calyrex: Glacial Lance changed from Evolution to Level 80
+Shadow Calyrex: Astral Barrage changed from Evolution to Level 80
+Kleavor: Vacuum Wave changed from Common TM to Level 1
+Kleavor: Wing Attack added to Level 20
+Kleavor: Air Slash changed from Great TM to Level 49
 Kleavor: Dual Chop added to Great TM
+Ursaluna: Baby Doll Eyes added to Level 1
+Ursaluna: Play Nice changed from Level 25 to Level 1
 Ursaluna: Covet changed from Level 1 to Level 15
 Ursaluna: Feint Attack changed from Level 15 to Level 18
 Ursaluna: Sweet Scent changed from Level 18 to Level 22
 Ursaluna: Slash changed from Level 22 to Level 25
+Ursaluna: Charm changed from Common TM to Level 33
+Ursaluna: Fling changed from Common TM to Level 45
 Ursaluna: Night Slash added to Great TM
-Ursaluna: Play Nice removed from Level 25
+Male Basculegion: shvar changed from 1 to 3
+Male Basculegion: newVariants changed from  to 1
+Female Basculegion: shvar changed from 1 to 3
+Female Basculegion: newVariants changed from  to 1
 Sneasler: Night Slash added to Great TM
+Overqwil: shvar changed from 1 to 3
+Overqwil: newVariants changed from  to 1
 Incarnate Enamorus: Passive changed from Fairy Aura to Cloud Nine
+Sprigatito: shvar changed from 1 to 3
+Sprigatito: newVariants changed from  to 1
+Floragato: shvar changed from 1 to 3
+Floragato: newVariants changed from  to 1
+Meowscarada: shvar changed from 1 to 3
+Meowscarada: newVariants changed from  to 1
 Tarountula: First Impression added to Ultra TM
+Tarountula: shvar changed from 1 to 3
+Tarountula: newVariants changed from  to 1
 Spidops: First Impression added to Ultra TM
+Spidops: shvar changed from 1 to 3
+Spidops: newVariants changed from  to 1
 Green Plumage Squawkabilly: Seed Bomb added to Great TM
 Blue Plumage Squawkabilly: Seed Bomb added to Great TM
 Yellow Plumage Squawkabilly: Seed Bomb added to Great TM
 White Plumage Squawkabilly: Seed Bomb added to Great TM
+Garganacl: Smack Down changed from Common TM to Level 10
+Garganacl: Iron Defense changed from Great TM to Level 20
 Charcadet: Night Slash added to Great TM
 Armarouge: Night Slash added to Great TM
 Maschiff: Focus Energy added to Common TM
@@ -489,13 +1423,23 @@ Maschiff: Lunge removed from Level 46
 Mabosstiff: Focus Energy added to Common TM
 Mabosstiff: Bounce removed from Level 41
 Mabosstiff: Lunge removed from Level 51
+Grafaiai: Bite added to Level 8
 Grafaiai: First Impression added to Ultra TM
 Toedscool: Passive changed from Run Away to Water Absorb
 Toedscool: Egg Move 2 changed from Topsy Turvy to Muddy Water
 Toedscruel: Passive changed from Prankster to Water Absorb
+Klawf: shvar changed from 1 to 3
+Klawf: newVariants changed from  to 1
 Capsakid: newVariants changed from 1 to 
 Scovillain: newVariants changed from 1 to 
 Mega Scovillain: newVariants changed from 1 to 
+Rellor: newVariants changed from  to 1
+Rabsca: Mud Shot changed from Great TM to Level 15
+Rabsca: Dig changed from Great TM to Level 29
+Rabsca: newVariants changed from  to 1
+Tinkatink: newVariants changed from  to 1
+Tinkatuff: newVariants changed from  to 1
+Tinkaton: newVariants changed from  to 1
 Glimmet: Egg Move 1 changed from Calm Mind to Earth Power
 Glimmet: Egg Move 3 changed from Fiery Dance to Mystical Fire
 Glimmet: newVariants changed from 1 to 
@@ -503,6 +1447,8 @@ Glimmora: Earth Power changed from Ultra TM to Egg & Ultra TM
 Glimmora: newVariants changed from 1 to 
 Mega Glimmora: Earth Power changed from Ultra TM to Egg & Ultra TM
 Mega Glimmora: newVariants changed from 1 to 
+Veluza: shvar changed from 1 to 3
+Veluza: newVariants changed from  to 1
 Dondozo: Egg Move 1 changed from Soft Boiled to Salt Cure
 Dondozo: Egg Move 2 changed from Sizzly Slide to Amnesia
 Dondozo: Rare Egg Move changed from Salt Cure to Soft Boiled
@@ -517,6 +1463,14 @@ Annihilape: Night Slash added to Great TM
 Kingambit: Dual Chop added to Great TM
 Great Tusk: Egg Move 3 changed from Collision Course to Heat Crash
 Great Tusk: Rare Egg Move changed from Shift Gear to Collision Course
+Great Tusk: shvar changed from 1 to 3
+Great Tusk: newVariants changed from  to 1
+Scream Tail: shvar changed from 1 to 3
+Scream Tail: newVariants changed from  to 1
+Brute Bonnet: shvar changed from 1 to 3
+Brute Bonnet: newVariants changed from  to 1
+Iron Treads: shvar changed from 1 to 3
+Iron Treads: newVariants changed from  to 1
 Iron Hands: newVariants changed from 1 to 
 Iron Moth: Egg Move 1 changed from Earth Power to Scorching Sands
 Iron Moth: Egg Move 3 changed from Malignant Chain to Sludge Bomb
@@ -528,24 +1482,60 @@ Baxcalibur: newVariants changed from 1 to
 Mega Baxcalibur: Frost Breath added to Great TM
 Mega Baxcalibur: Ice Hammer removed from Level 70
 Mega Baxcalibur: newVariants changed from 1 to 
+Chest Gimmighoul: newVariants changed from  to 1
+Roaming Gimmighoul: shvar changed from 1 to 3
+Roaming Gimmighoul: newVariants changed from  to 1
+Gholdengo: newVariants changed from  to 1
+Roaring Moon: shvar changed from 1 to 3
+Roaring Moon: newVariants changed from  to 1
+Dipplin: newVariants changed from  to 1
 Archaludon: Night Slash added to Great TM
+Hydrapple: newVariants changed from  to 1
+Alola Raichu: Sweet Kiss added to Level 7
+Alola Raichu: Nasty Plot changed from Great TM to Level 13
+Alola Raichu: Charm changed from Common TM to Level 20
 Alola Raichu: newVariants changed from 1 to 
 Alola Sandshrew: Night Slash added to Great TM
+Alola Sandslash: Rollout added to Mushroom
+Alola Sandslash: Iron Defense changed from Great TM to Level 28
 Alola Sandslash: Night Slash added to Great TM
+Alola Vulpix: newVariants changed from  to 1
 Alola Diglett: newVariants changed from 1 to 
 Alola Dugtrio: newVariants changed from 1 to 
+Alola Exeggutor: Psychic changed from Ultra TM to Level 47
+Alola Marowak: Headbutt added to Level 11
+Alola Marowak: Focus Energy changed from Common TM to Level 17
+Alola Marowak: Rage added to Level 23
+Alola Marowak: Fling changed from Common TM to Level 33
+Alola Marowak: Double Edge changed from Ultra TM to Level 47
 Battle Bond Battle Bond Greninja: newVariants changed from 1 to 
 Ash Battle Bond Greninja: newVariants changed from 1 to 
 Eternal Floette: newVariants changed from 1 to 
 Mega Eternal Floette: newVariants changed from 1 to 
 Galar Meowth: Bite added to Level 22
 Galar Meowth: Feint Attack removed from Level 22
+Galar Rapidash: Megahorn changed from Mushroom to Level 56
 Galar Farfetchd: Feather Dance added to Level 31
 Galar Farfetchd: Night Slash added to Great TM
 Galar Farfetchd: Agility removed from Level 31
+Galar Mr Mime: Tickle added to Level 1
+Galar Mr Mime: Role Play added to Level 15
+Galar Mr Mime: Protect changed from Common TM to Level 20
+Galar Mr Mime: Recycle changed from Common TM to Level 32
+Galar Mr Mime: Dazzling Gleam changed from Ultra TM to Level 44
 Galar Darumaka: Egg Move 2 changed from Zing Zap to Thunder Punch
+Hisui Typhlosion: shvar changed from 1 to 3
+Hisui Typhlosion: newVariants changed from  to 1
+Hisui Qwilfish: shvar changed from 1 to 3
+Hisui Qwilfish: newVariants changed from  to 1
 Hisui Sneasel: Night Slash added to Great TM
+Hisui Samurott: Megahorn changed from Mushroom to Level 70
 Hisui Samurott: Night Slash added to Great TM
+Hisui Basculin: shvar changed from 1 to 3
+Hisui Basculin: newVariants changed from  to 1
+Hisui Sliggoo: Body Slam changed from Great TM to Level 45
+Hisui Goodra: Acid Armor added to Level 1
+Hisui Decidueye: Nasty Plot changed from Great TM to Level 24
 Bloodmoon Ursaluna: Mud Shot changed from Level 11 to Level 1
 Bloodmoon Ursaluna: Harden changed from Level 18 to Level 1
 Bloodmoon Ursaluna: Round changed from Level 1 to Level 15
