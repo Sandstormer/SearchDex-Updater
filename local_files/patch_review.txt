@@ -1,3 +1,5 @@
+Gigantamax Blastoise: Atk changed from 108 to 105
+Gigantamax Blastoise: SpAtk changed from 105 to 108
 Metapod: Harden changed from Evolution to Level 1
 Metapod: Tackle added to Level 1
 Metapod: String Shot added to Level 1
@@ -621,12 +623,19 @@ Luxray: Baby Doll Eyes added to Level 11
 Luxray: Electric Terrain changed from Mushroom to Level 67
 Luxray: Night Slash added to Great TM
 Roserade: Water Sport added to Level 7
+Cranidos: shvar changed from 1 to 3
+Cranidos: newVariants changed from  to 1
+Rampardos: shvar changed from 1 to 3
+Rampardos: newVariants changed from  to 1
 Vespiquen: Bug Bite changed from Great TM to Level 1
 Vespiquen: Struggle Bug changed from Common TM to Level 1
 Vespiquen: Bug Buzz changed from Great TM to Level 29
 Lopunny: Frustration added to Level 13
 Mega Lopunny: Passive changed from Super Luck to Long Reach
 Mega Lopunny: Frustration added to Level 13
+Mismagius: Magical Leaf changed from Level 1 to Mushroom
+Mismagius: Phantom Force changed from Level 1 to Mushroom
+Mismagius: Mystical Fire changed from Level 1 to Mushroom
 Glameow: Night Slash added to Great TM
 Glameow: shvar changed from 1 to 3
 Glameow: newVariants changed from  to 1
@@ -1232,6 +1241,10 @@ Midday Lycanroc: Accelerock changed from Mushroom to Level 64
 Midnight Lycanroc: Reversal changed from Mushroom to Level 64
 Midnight Lycanroc: Dual Chop added to Great TM
 Dusk Lycanroc: Accelerock changed from Mushroom to Level 64
+Mudbray: shvar changed from 1 to 3
+Mudbray: newVariants changed from  to 1
+Mudsdale: shvar changed from 1 to 3
+Mudsdale: newVariants changed from  to 1
 Fomantis: Dual Chop added to Great TM
 Lurantis: Solar Beam changed from Ultra TM to Level 50
 Salazzle: Scratch added to Level 1
@@ -1267,7 +1280,15 @@ Mega Drampa: newVariants changed from 1 to
 Jangmo O: Dual Chop added to Great TM
 Hakamo O: Dual Chop added to Great TM
 Kommo O: Dual Chop added to Great TM
+Tapu Koko: shvar changed from 1 to 3
+Tapu Koko: newVariants changed from  to 1
+Tapu Lele: shvar changed from 1 to 3
+Tapu Lele: newVariants changed from  to 1
 Tapu Bulu: Dual Chop added to Great TM
+Tapu Bulu: shvar changed from 1 to 3
+Tapu Bulu: newVariants changed from  to 1
+Tapu Fini: shvar changed from 1 to 3
+Tapu Fini: newVariants changed from  to 1
 Solgaleo: Moonlight added to Evolution
 Lunala: Morning Sun added to Evolution
 Buzzwole: Dual Chop added to Great TM
@@ -1286,6 +1307,7 @@ Mega Zeraora: Dual Chop added to Great TM
 Mega Zeraora: newVariants changed from 1 to 
 Corviknight: Iron Defense changed from Mushroom to Level 57
 Gigantamax Corviknight: Iron Defense changed from Mushroom to Level 57
+Gigantamax Corviknight: newVariants changed from  to 1
 Nickit: Roar added to Level 10
 Nickit: First Impression added to Ultra TM
 Nickit: shvar changed from 1 to 3
@@ -1363,6 +1385,8 @@ Female Indeedee: Wish added to Level 38
 Female Indeedee: Tri Attack changed from Level 28 to Ultra TM
 Female Indeedee: Moonlight removed from Level 38
 Duraludon: Night Slash added to Great TM
+Gigantamax Duraludon: Atk changed from 120 to 110
+Gigantamax Duraludon: Def changed from 110 to 120
 Gigantamax Duraludon: Night Slash added to Great TM
 Hero Of Many Battles Zamazenta: Metal Burst changed from Level 44 to Mushroom
 Hero Of Many Battles Zamazenta: Double Kick added to Level 1
@@ -1474,6 +1498,7 @@ Iron Treads: newVariants changed from  to 1
 Iron Hands: newVariants changed from 1 to 
 Iron Moth: Egg Move 1 changed from Earth Power to Scorching Sands
 Iron Moth: Egg Move 3 changed from Malignant Chain to Sludge Bomb
+Iron Thorns: newVariants changed from  to 1
 Frigibax: newVariants changed from 1 to 
 Arctibax: newVariants changed from 1 to 
 Baxcalibur: Frost Breath added to Great TM
@@ -1486,6 +1511,9 @@ Chest Gimmighoul: newVariants changed from  to 1
 Roaming Gimmighoul: shvar changed from 1 to 3
 Roaming Gimmighoul: newVariants changed from  to 1
 Gholdengo: newVariants changed from  to 1
+Wo Chien: newVariants changed from  to 1
+Ting Lu: newVariants changed from  to 1
+Chi Yu: newVariants changed from  to 1
 Roaring Moon: shvar changed from 1 to 3
 Roaring Moon: newVariants changed from  to 1
 Dipplin: newVariants changed from  to 1
