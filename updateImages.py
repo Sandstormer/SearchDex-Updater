@@ -43,18 +43,6 @@ warnVariantDimensions = 1
 # Warns if variants of the same pokemon have different dimensions
 # This usually happens if the animations are packed differently, not a big problem
 
-# Since there is no official static frame, one must be chosen
-# By default, it chooses the most common frame of the animation
-# However, you can override here to choose a specific frame
-overrideFrame = {
-    '4':-1,
-    '12':0,
-    '49':0,
-    '68':0,
-    '781':99, # Dhelmise at (574,243)
-    '890':-8,
-}
-
 # ===================== Do not touch below this line =======================
 
 import os, json
@@ -68,7 +56,7 @@ def hex_to_rgb(hex_code):
     return tuple(int(hex_code[i:i+2], 16) for i in (0, 2, 4))
 
 def getBestFrame(thisImgPath, altJsonPath=''):
-    # This looks at all the frames in the animation sheet, and crops to the most common one
+    # This opens the sprite animation sheet, and crops to the official static frame
     thisImage = Image.open(f'{thisImgPath}.png')
     if not os.path.isfile(f'{thisImgPath}.json'): # If there is no specific json
         thisImgPath = altJsonPath
@@ -80,20 +68,11 @@ def getBestFrame(thisImgPath, altJsonPath=''):
         allFrames = jsonLoad['textures'][0]['frames']
     else:
         allFrames = jsonLoad['frames']
-
-    if (isinstance(allFrames, list)):
-        indFrames = [list(line['frame'].values()) for line in allFrames] # Each frame [x,y,w,h]
+    if "0001.png" in allFrames:
+        bestFrame = allFrames["0001.png"]
     else:
-        indFrames = [list(line['frame'].values()) for line in allFrames.values()] # Each frame [x,y,w,h]
-
-    # If the pokemon has an override frame, only use that frame
-    if thisImgPath.split('/')[-1] in overrideFrame:
-        if abs(overrideFrame[thisImgPath.split('/')[-1]]) <= len(indFrames):
-            indFrames = [indFrames[overrideFrame[thisImgPath.split('/')[-1]]]]
-
-    # Count how many times each frame occurs
-    frameCount = [sum([lineA==lineB for lineB in indFrames]) for lineA in indFrames]
-    x,y,w,h = indFrames[np.argmax(frameCount)] # Choose the most common frame (ties are what comes first)
+        bestFrame = [line for line in allFrames if line["filename"] == "0001.png"][0]
+    x,y,w,h = list(bestFrame['frame'].values())
     return thisImage.crop((x, y, x+w, y+h))
 
 # Function to do palette swap

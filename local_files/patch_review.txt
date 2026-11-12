@@ -145,6 +145,7 @@ Shellder: shvar changed from 1 to 3
 Shellder: newVariants changed from  to 1
 Cloyster: shvar changed from 1 to 3
 Cloyster: newVariants changed from  to 1
+Haunter: newVariants changed from  to 1
 Gengar: newVariants changed from  to 1
 Mega Gengar: newVariants changed from  to 1
 Gigantamax Gengar: newVariants changed from  to 1
